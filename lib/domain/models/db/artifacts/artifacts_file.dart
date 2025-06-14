@@ -5,7 +5,7 @@ part 'artifacts_file.freezed.dart';
 part 'artifacts_file.g.dart';
 
 @freezed
-class ArtifactsFile with _$ArtifactsFile {
+abstract class ArtifactsFile with _$ArtifactsFile {
   factory ArtifactsFile({
     required List<ArtifactFileModel> artifacts,
   }) = _ArtifactsFile;

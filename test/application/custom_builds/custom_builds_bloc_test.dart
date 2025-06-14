@@ -28,7 +28,11 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
 
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -44,7 +48,7 @@ void main() {
     });
   });
 
-  Future<CustomBuildModel> saveCustomBuild(String charKey) async {
+  Future<CustomBuildModel> saveCustomBuild(String charKey) {
     final artifact = genshinService.artifacts.getArtifactForCard(thunderingFuryKey);
     final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
     return dataService.customBuilds.saveCustomBuild(

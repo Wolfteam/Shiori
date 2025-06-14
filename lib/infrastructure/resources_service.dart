@@ -194,10 +194,12 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   @override
-  String getWeaponImagePath(String filename, WeaponType type) => _getImagePath(filename, AppImageFolderType.weapons, weaponType: type);
+  String getWeaponImagePath(String filename, WeaponType type) =>
+      _getImagePath(filename, AppImageFolderType.weapons, weaponType: type);
 
   @override
-  String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
+  String getMaterialImagePath(String filename, MaterialType type) =>
+      _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
   @override
   String getWishBannerHistoryImagePath(String filename) => _getImagePath(filename, AppImageFolderType.wishBannerHistory);
@@ -244,17 +246,26 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     if (_settingsService.resourceVersion >= Env.minResourceVersion && !_canCheckForUpdates()) {
-      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+      return CheckForUpdatesResult(
+        type: AppResourceUpdateResultType.noUpdatesAvailable,
+        resourceVersion: currentResourcesVersion,
+      );
     }
 
     final isInternetAvailable = await _networkService.isInternetAvailable();
     final isFirstResourceCheck = _settingsService.noResourcesHasBeenDownloaded;
     if (!isInternetAvailable && (isFirstResourceCheck || _settingsService.resourceVersion < Env.minResourceVersion)) {
-      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
+      return CheckForUpdatesResult(
+        type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall,
+        resourceVersion: currentResourcesVersion,
+      );
     }
 
     if (!isInternetAvailable) {
-      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnection, resourceVersion: currentResourcesVersion);
+      return CheckForUpdatesResult(
+        type: AppResourceUpdateResultType.noInternetConnection,
+        resourceVersion: currentResourcesVersion,
+      );
     }
 
     bool canUpdateResourceCheckedDate = false;
@@ -265,11 +276,20 @@ class ResourceServiceImpl implements ResourceService {
       canUpdateResourceCheckedDate = true;
       switch (apiResponse.messageId) {
         case '3':
-          return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(
+            type: AppResourceUpdateResultType.needsLatestAppVersion,
+            resourceVersion: currentResourcesVersion,
+          );
         case '4':
-          return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(
+            type: AppResourceUpdateResultType.noUpdatesAvailable,
+            resourceVersion: currentResourcesVersion,
+          );
         case '5':
-          return CheckForUpdatesResult(type: AppResourceUpdateResultType.apiIsUnavailable, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(
+            type: AppResourceUpdateResultType.apiIsUnavailable,
+            resourceVersion: currentResourcesVersion,
+          );
         case null:
           break;
         default: // Unknown error
@@ -279,7 +299,10 @@ class ResourceServiceImpl implements ResourceService {
 
       final targetResourceVersion = apiResponse.result!.targetResourceVersion;
       if (currentResourcesVersion == targetResourceVersion) {
-        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        return CheckForUpdatesResult(
+          type: AppResourceUpdateResultType.noUpdatesAvailable,
+          resourceVersion: currentResourcesVersion,
+        );
       }
 
       if (currentResourcesVersion > targetResourceVersion) {
@@ -287,15 +310,24 @@ class ResourceServiceImpl implements ResourceService {
           runtimeType,
           'checkForUpdates: Server returned a lower resource version. Current = $currentResourcesVersion -- Target = $targetResourceVersion',
         );
-        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        return CheckForUpdatesResult(
+          type: AppResourceUpdateResultType.noUpdatesAvailable,
+          resourceVersion: currentResourcesVersion,
+        );
       }
 
       final mainFileMustBeDownloaded = apiResponse.result!.jsonFileKeyName.isNotNullEmptyOrWhitespace;
       final partialFilesMustBeDownloaded = apiResponse.result!.keyNames.isNotEmpty;
 
       if (!mainFileMustBeDownloaded && !partialFilesMustBeDownloaded) {
-        _loggingService.warning(runtimeType, 'checkForUpdates: We got a case were we do not have nothing to process. Error = ${apiResponse.message}');
-        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        _loggingService.warning(
+          runtimeType,
+          'checkForUpdates: We got a case were we do not have nothing to process. Error = ${apiResponse.message}',
+        );
+        return CheckForUpdatesResult(
+          type: AppResourceUpdateResultType.noUpdatesAvailable,
+          resourceVersion: currentResourcesVersion,
+        );
       }
 
       final ResourceDiffResponseDto result = apiResponse.result!;
@@ -395,7 +427,12 @@ class ResourceServiceImpl implements ResourceService {
     }
   }
 
-  Future<bool> _processVersionsJsonFile(String destMainFilePath, String tempFolder, String assetsFolder, ProgressChanged? onProgress) async {
+  Future<bool> _processVersionsJsonFile(
+    String destMainFilePath,
+    String tempFolder,
+    String assetsFolder,
+    ProgressChanged? onProgress,
+  ) async {
     _loggingService.info(runtimeType, '_processVersionsJsonFile: Processing main json file...');
     final file = File(destMainFilePath);
     final jsonString = await file.readAsString();
@@ -414,7 +451,12 @@ class ResourceServiceImpl implements ResourceService {
     return processed;
   }
 
-  Future<bool> _processPartialUpdate(String tempFolder, String assetsFolder, List<String> keyNames, ProgressChanged? onProgress) async {
+  Future<bool> _processPartialUpdate(
+    String tempFolder,
+    String assetsFolder,
+    List<String> keyNames,
+    ProgressChanged? onProgress,
+  ) async {
     _loggingService.info(runtimeType, '_processPartialUpdate: Downloading partial files...');
     final processed = await _downloadAssets(tempFolder, keyNames, onProgress);
     if (!processed) {
@@ -455,7 +497,9 @@ class ResourceServiceImpl implements ResourceService {
           if (retryAttempts > 0) {
             await Future.delayed(const Duration(seconds: 1));
           }
-          final List<int> gotBytes = await Future.wait(taken.map((e) => _downloadAsset(destPaths[_cleanKeyName(e)]!, e)).toList());
+          final List<int> gotBytes = await Future.wait(
+            taken.map((e) => _downloadAsset(destPaths[_cleanKeyName(e)]!, e)).toList(),
+          );
           processedItems += taken.length;
           downloadedBytes += gotBytes.sum();
           final progress = processedItems * 100 / total;
@@ -475,7 +519,12 @@ class ResourceServiceImpl implements ResourceService {
         }
 
         final remaining = keyNamesCopy.length;
-        _loggingService.error(runtimeType, '_downloadAssets: Reached maxRetryAttempts = $maxRetryAttempts with remaining items = $remaining', e, s);
+        _loggingService.error(
+          runtimeType,
+          '_downloadAssets: Reached maxRetryAttempts = $maxRetryAttempts with remaining items = $remaining',
+          e,
+          s,
+        );
         await _deleteDirectoryIfExists(tempFolder);
         return false;
       }
@@ -658,8 +707,6 @@ class ResourceServiceImpl implements ResourceService {
         return 'th.json';
       case AppLanguageType.turkish:
         return 'tr.json';
-      default:
-        throw Exception('Invalid language = $languageType');
     }
   }
 }

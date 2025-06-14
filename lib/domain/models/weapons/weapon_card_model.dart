@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'weapon_card_model.freezed.dart';
 
 @freezed
-class WeaponCardModel with _$WeaponCardModel {
+abstract class WeaponCardModel with _$WeaponCardModel {
   const factory WeaponCardModel({
     required String key,
     required String image,

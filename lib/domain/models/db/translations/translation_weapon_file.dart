@@ -4,7 +4,7 @@ part 'translation_weapon_file.freezed.dart';
 part 'translation_weapon_file.g.dart';
 
 @freezed
-class TranslationWeaponFile with _$TranslationWeaponFile {
+abstract class TranslationWeaponFile with _$TranslationWeaponFile {
   factory TranslationWeaponFile({
     required String key,
     required String name,

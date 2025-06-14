@@ -36,9 +36,9 @@ class MonsterBottomSheet extends StatelessWidget {
         showCancelButton: false,
         showOkButton: false,
         child: BlocBuilder<MonstersBloc, MonstersState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => Column(
+          builder: (context, state) => switch (state) {
+            MonstersStateLoading() => const Loading(useScaffold: false),
+            MonstersStateLoaded() => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -52,15 +52,15 @@ class MonsterBottomSheet extends StatelessWidget {
                 const _ButtonBar(),
               ],
             ),
-          ),
+          },
         ),
       );
     }
 
     return BlocBuilder<MonstersBloc, MonstersState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (ctx, state) => switch (state) {
+        MonstersStateLoading() => const Loading(useScaffold: false),
+        MonstersStateLoaded() => RightBottomSheet(
           bottom: const _ButtonBar(),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.others)),
@@ -72,7 +72,7 @@ class MonsterBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      },
     );
   }
 }
@@ -98,7 +98,8 @@ class _OtherFilters extends StatelessWidget {
       children: [
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.type,
-          onAllOrValueSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.typeChanged(v != null ? MonsterType.values[v] : null)),
+          onAllOrValueSelected: (v) =>
+              context.read<MonstersBloc>().add(MonstersEvent.typeChanged(v != null ? MonsterType.values[v] : null)),
           selectedValue: tempType?.index,
           values: MonsterType.values.map((e) => e.index).toList(),
           itemText: (val, _) => s.translateMonsterType(MonsterType.values[val]),

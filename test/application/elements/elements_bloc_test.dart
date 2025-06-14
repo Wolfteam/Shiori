@@ -37,9 +37,11 @@ void main() {
     build: () => ElementsBloc(genshinService),
     act: (bloc) => bloc.add(const ElementsEvent.init()),
     verify: (bloc) {
-      bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      final state = bloc.state;
+      switch (state) {
+        case ElementsStateLoading():
+          throw Exception('Invalid state');
+        case ElementsStateLoaded():
           expect(state.debuffs.length, 4);
           expect(state.reactions.length, 17);
           expect(state.resonances.length, 8);
@@ -59,8 +61,7 @@ void main() {
           for (final img in resonanceImgs) {
             checkAsset(img);
           }
-        },
-      );
+      }
     },
   );
 }

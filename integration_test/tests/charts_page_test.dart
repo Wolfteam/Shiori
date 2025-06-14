@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
@@ -31,7 +32,11 @@ void main() {
       ];
 
       for (final String title in expected) {
-        await widgetTester.dragUntilVisible(find.widgetWithText(Column, title), scrollViewFinder, BasePage.verticalDragOffset);
+        await widgetTester.doAppDragUntilVisible(
+          find.widgetWithText(Column, title),
+          scrollViewFinder,
+          BasePage.verticalDragOffset,
+        );
         expect(find.descendant(of: find.widgetWithText(Column, title), matching: find.byType(Card)), findsAtLeastNWidgets(1));
       }
     });

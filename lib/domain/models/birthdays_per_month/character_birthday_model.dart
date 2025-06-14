@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'character_birthday_model.freezed.dart';
 
 @freezed
-class CharacterBirthdayModel with _$CharacterBirthdayModel {
+abstract class CharacterBirthdayModel with _$CharacterBirthdayModel {
   const factory CharacterBirthdayModel({
     required String key,
     required String name,

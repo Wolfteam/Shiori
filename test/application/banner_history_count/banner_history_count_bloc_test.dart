@@ -158,14 +158,12 @@ void main() {
       act: (bloc) => bloc
         ..add(const BannerHistoryCountEvent.init())
         ..add(const BannerHistoryCountEvent.sortTypeChanged(type: BannerHistorySortType.nameDesc)),
-      verify: (bloc) => bloc.state.map(
-        initial: (state) {
-          checkCommonState(bloc.state, sortType: BannerHistorySortType.nameDesc);
-          final names = state.banners.map((e) => e.name).toList();
-          final sorted = [...names]..sort((x, y) => y.compareTo(x));
-          expect(names, sorted);
-        },
-      ),
+      verify: (bloc) {
+        checkCommonState(bloc.state, sortType: BannerHistorySortType.nameDesc);
+        final names = bloc.state.banners.map((e) => e.name).toList();
+        final sorted = [...names]..sort((x, y) => y.compareTo(x));
+        expect(names, sorted);
+      },
     );
 
     blocTest<BannerHistoryCountBloc, BannerHistoryCountState>(
@@ -174,14 +172,12 @@ void main() {
       act: (bloc) => bloc
         ..add(const BannerHistoryCountEvent.init())
         ..add(const BannerHistoryCountEvent.sortTypeChanged(type: BannerHistorySortType.versionDesc)),
-      verify: (bloc) => bloc.state.map(
-        initial: (state) {
-          checkCommonState(bloc.state, sortType: BannerHistorySortType.versionDesc);
-          final versions = state.versions.map((e) => e).toList();
-          final sorted = [...versions]..sort((x, y) => y.compareTo(x));
-          expect(versions, sorted);
-        },
-      ),
+      verify: (bloc) {
+        checkCommonState(bloc.state, sortType: BannerHistorySortType.versionDesc);
+        final versions = bloc.state.versions.map((e) => e).toList();
+        final sorted = [...versions]..sort((x, y) => y.compareTo(x));
+        expect(versions, sorted);
+      },
     );
 
     blocTest<BannerHistoryCountBloc, BannerHistoryCountState>(
@@ -309,10 +305,20 @@ void main() {
       ..add(const BannerHistoryCountEvent.typeChanged(type: BannerHistoryItemType.weapon))
       ..add(const BannerHistoryCountEvent.versionSelected(version: 1.1)),
     verify: (bloc) {
-      checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, sortType: BannerHistorySortType.nameDesc, selectedVersions: [1.1]);
+      checkCommonState(
+        bloc.state,
+        type: BannerHistoryItemType.weapon,
+        sortType: BannerHistorySortType.nameDesc,
+        selectedVersions: [1.1],
+      );
       final itemsForSearch = bloc.getItemsForSearch();
       final banners = genshinService.bannerHistory.getBanners(bloc.state.selectedVersions.first);
-      final expectedCount = banners.where((el) => el.type == BannerHistoryItemType.weapon).expand((el) => el.items).map((e) => e.key).toSet().length;
+      final expectedCount = banners
+          .where((el) => el.type == BannerHistoryItemType.weapon)
+          .expand((el) => el.items)
+          .map((e) => e.key)
+          .toSet()
+          .length;
       final expectedItems = bloc.state.banners.map((e) => e.key).toSet().toList();
       expect(expectedCount, 14);
       expect(expectedItems.length, expectedCount);

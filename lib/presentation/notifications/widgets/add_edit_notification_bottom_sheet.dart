@@ -33,11 +33,17 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
     required this.isInEditMode,
   });
 
-  static Map<String, dynamic> buildNavigationArgsForAdd(String title, String body) =>
-      <String, dynamic>{_isInEditModeKey: false, _titleKey: title, _bodyKey: body};
+  static Map<String, dynamic> buildNavigationArgsForAdd(String title, String body) => <String, dynamic>{
+    _isInEditModeKey: false,
+    _titleKey: title,
+    _bodyKey: body,
+  };
 
-  static Map<String, dynamic> buildNavigationArgsForEdit(int key, AppNotificationType type) =>
-      <String, dynamic>{_isInEditModeKey: true, _itemKey: key, _itemTypeKey: type};
+  static Map<String, dynamic> buildNavigationArgsForEdit(int key, AppNotificationType type) => <String, dynamic>{
+    _isInEditModeKey: true,
+    _itemKey: key,
+    _itemTypeKey: type,
+  };
 
   static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
     assert(args.isNotEmpty);
@@ -94,8 +100,8 @@ class _FormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotificationBloc, NotificationState>(
-      builder: (ctx, state) => state.map(
-        resin: (state) => NotificationResinForm(
+      builder: (ctx, state) => switch (state) {
+        NotificationStateResin() => NotificationResinForm(
           title: state.title,
           body: state.body,
           showNotification: state.showNotification,
@@ -105,7 +111,7 @@ class _FormWidget extends StatelessWidget {
           images: state.images,
           showOtherImages: state.showOtherImages,
         ),
-        expedition: (state) => NotificationExpeditionForm(
+        NotificationStateExpedition() => NotificationExpeditionForm(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -116,16 +122,7 @@ class _FormWidget extends StatelessWidget {
           images: state.images,
           showOtherImages: state.showOtherImages,
         ),
-        farmingMaterial: (state) => NotificationFarmingMaterialForm(
-          title: state.title,
-          body: state.body,
-          note: state.note,
-          showNotification: state.showNotification,
-          isInEditMode: isInEditMode,
-          images: state.images,
-          showOtherImages: state.showOtherImages,
-        ),
-        farmingArtifact: (state) => NotificationFarmingArtifactForm(
+        NotificationStateFarmingArtifact() => NotificationFarmingArtifactForm(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -135,7 +132,7 @@ class _FormWidget extends StatelessWidget {
           showOtherImages: state.showOtherImages,
           artifactFarmingTimeType: state.artifactFarmingTimeType,
         ),
-        gadget: (state) => NotificationGadgetForm(
+        NotificationStateFarmingMaterial() => NotificationFarmingMaterialForm(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -144,7 +141,16 @@ class _FormWidget extends StatelessWidget {
           images: state.images,
           showOtherImages: state.showOtherImages,
         ),
-        furniture: (state) => NotificationFurnitureForm(
+        NotificationStateGadget() => NotificationGadgetForm(
+          title: state.title,
+          body: state.body,
+          note: state.note,
+          showNotification: state.showNotification,
+          isInEditMode: isInEditMode,
+          images: state.images,
+          showOtherImages: state.showOtherImages,
+        ),
+        NotificationStateFurniture() => NotificationFurnitureForm(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -154,7 +160,7 @@ class _FormWidget extends StatelessWidget {
           showOtherImages: state.showOtherImages,
           timeType: state.timeType,
         ),
-        realmCurrency: (state) => NotificationRealmCurrency(
+        NotificationStateRealmCurrency() => NotificationRealmCurrency(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -166,7 +172,7 @@ class _FormWidget extends StatelessWidget {
           currentRankType: state.currentRealmRankType,
           currentRealmCurrency: state.currentRealmCurrency,
         ),
-        weeklyBoss: (state) => NotificationWeeklyBossForm(
+        NotificationStateWeeklyBoss() => NotificationWeeklyBossForm(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -175,7 +181,7 @@ class _FormWidget extends StatelessWidget {
           images: state.images,
           showOtherImages: state.showOtherImages,
         ),
-        custom: (state) => NotificationCustomForm(
+        NotificationStateCustom() => NotificationCustomForm(
           itemType: state.itemType,
           title: state.title,
           body: state.body,
@@ -188,7 +194,7 @@ class _FormWidget extends StatelessWidget {
           language: state.language,
           useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
         ),
-        dailyCheckIn: (state) => NotificationDailyCheckIn(
+        NotificationStateDailyCheckIn() => NotificationDailyCheckIn(
           title: state.title,
           body: state.body,
           note: state.note,
@@ -197,7 +203,7 @@ class _FormWidget extends StatelessWidget {
           images: state.images,
           showOtherImages: state.showOtherImages,
         ),
-      ),
+      },
     );
   }
 }

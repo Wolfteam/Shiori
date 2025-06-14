@@ -1,24 +1,24 @@
 part of 'backup_restore_bloc.dart';
 
 @freezed
-class BackupRestoreEvent with _$BackupRestoreEvent {
-  const factory BackupRestoreEvent.init() = _Init;
+sealed class BackupRestoreEvent with _$BackupRestoreEvent {
+  const factory BackupRestoreEvent.init() = BackupRestoreEventInit;
 
   const factory BackupRestoreEvent.create({
     required List<AppBackupDataType> dataTypes,
-  }) = _Create;
+  }) = BackupRestoreEventCreate;
 
   const factory BackupRestoreEvent.read({
     required String filePath,
-  }) = _Read;
+  }) = BackupRestoreEventRead;
 
   const factory BackupRestoreEvent.restore({
     required String filePath,
     required List<AppBackupDataType> dataTypes,
     @Default(false) bool imported,
-  }) = _Restore;
+  }) = BackupRestoreEventRestore;
 
   const factory BackupRestoreEvent.delete({
     required String filePath,
-  }) = _Delete;
+  }) = BackupRestoreEventDelete;
 }

@@ -14,11 +14,10 @@ class ChartBirthdaysBloc extends Bloc<ChartBirthdaysEvent, ChartBirthdaysState> 
 
   @override
   Stream<ChartBirthdaysState> mapEventToState(ChartBirthdaysEvent event) async* {
-    final s = await event.map(
-      init: (e) async => _init(),
-    );
-
-    yield s;
+    switch (event) {
+      case ChartBirthdaysEventInit():
+        yield await _init();
+    }
   }
 
   Future<ChartBirthdaysState> _init() async {

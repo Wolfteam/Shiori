@@ -15,31 +15,11 @@ import '../../mocks.mocks.dart';
 
 class MockCharactersBloc extends MockBloc<CharactersEvent, CharactersState> implements CharactersBloc {}
 
-class FakeCharactersState extends Fake implements CharactersState {}
-
-class FakeCharactersEvent extends Fake implements CharactersEvent {}
-
 class MockWeaponsBloc extends MockBloc<WeaponsEvent, WeaponsState> implements WeaponsBloc {}
-
-class FakeWeaponsState extends Fake implements WeaponsState {}
-
-class FakeWeaponsEvent extends Fake implements WeaponsEvent {}
 
 class MockHomeBloc extends MockBloc<HomeEvent, HomeState> implements HomeBloc {}
 
-class FakeHomeState extends Fake implements HomeState {}
-
-class FakeHomeEvent extends Fake implements HomeEvent {}
-
 class MockArtifactsBloc extends MockBloc<ArtifactsEvent, ArtifactsState> implements ArtifactsBloc {}
-
-class FakeArtifactsState extends Fake implements ArtifactsState {}
-
-class FakeArtifactsEvent extends Fake implements ArtifactsEvent {}
-
-class FakeElementsState extends Fake implements ElementsState {}
-
-class FakeElementsEvent extends Fake implements ElementsEvent {}
 
 void main() {
   const defaultAppName = 'Shiori';
@@ -65,16 +45,16 @@ void main() {
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    registerFallbackValue(FakeCharactersState());
-    registerFallbackValue(FakeCharactersEvent());
-    registerFallbackValue(FakeWeaponsState());
-    registerFallbackValue(FakeWeaponsEvent());
-    registerFallbackValue(FakeHomeState());
-    registerFallbackValue(FakeHomeEvent());
-    registerFallbackValue(FakeArtifactsState());
-    registerFallbackValue(FakeArtifactsEvent());
-    registerFallbackValue(FakeElementsState());
-    registerFallbackValue(FakeElementsEvent());
+    registerFallbackValue(const CharactersState.loading());
+    registerFallbackValue(const CharactersEvent.init());
+    registerFallbackValue(const WeaponsState.loading());
+    registerFallbackValue(const WeaponsEvent.init());
+    registerFallbackValue(const HomeState.loading());
+    registerFallbackValue(const HomeEvent.init());
+    registerFallbackValue(const ArtifactsState.loading());
+    registerFallbackValue(const ArtifactsEvent.init());
+    registerFallbackValue(const ElementsState.loading());
+    registerFallbackValue(const ElementsEvent.init());
   });
 
   MainBloc getBloc({
@@ -143,7 +123,10 @@ void main() {
 
   test('Initial state', () {
     final bloc = getBloc();
-    expect(bloc.state, MainState.loading(language: languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value));
+    expect(
+      bloc.state,
+      MainState.loading(language: languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value),
+    );
   });
 
   group('Init', () {

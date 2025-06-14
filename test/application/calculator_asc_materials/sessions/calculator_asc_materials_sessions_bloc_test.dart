@@ -71,13 +71,16 @@ void main() {
       'data exists',
       build: () => getBloc(dataService: dataServiceMock),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.init()),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          verify(calcMock.getAllSessions()).called(1);
-          expect(state.sessions, sessions);
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsSessionsStateLoading():
+            throw Exception('Invalid state');
+          case CalculatorAscMaterialsSessionsStateLoaded():
+            verify(calcMock.getAllSessions()).called(1);
+            expect(state.sessions, sessions);
+        }
+      },
     );
   });
 
@@ -109,24 +112,33 @@ void main() {
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
     when(calcMock.itemAdded).thenReturn(itemAddedOrDeleted);
     when(calcMock.itemDeleted).thenReturn(itemAddedOrDeleted);
-    when(calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage))
-        .thenAnswer((_) => Future.value(createdSession));
+    when(
+      calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage),
+    ).thenAnswer((_) => Future.value(createdSession));
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       'valid call',
       build: () => getBloc(dataService: dataServiceMock),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) => bloc.add(
-        CalculatorAscMaterialsSessionsEvent.createSession(name: createdSession.name, showMaterialUsage: createdSession.showMaterialUsage),
+        CalculatorAscMaterialsSessionsEvent.createSession(
+          name: createdSession.name,
+          showMaterialUsage: createdSession.showMaterialUsage,
+        ),
       ),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.sessions.length, 1);
-          expect(state.sessions.first, createdSession);
-          verify(calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage)).called(1);
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsSessionsStateLoading():
+            throw Exception('Invalid state');
+          case CalculatorAscMaterialsSessionsStateLoaded():
+            expect(state.sessions.length, 1);
+            expect(state.sessions.first, createdSession);
+            verify(
+              calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage),
+            ).called(1);
+        }
+      },
     );
   });
 
@@ -134,7 +146,8 @@ void main() {
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       'invalid state',
       build: () => getBloc(),
-      act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
+      act: (bloc) =>
+          bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
       errors: () => [isA<Exception>()],
     );
 
@@ -142,7 +155,8 @@ void main() {
       'invalid session key',
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
-      act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: -1, name: 'Name', showMaterialUsage: false)),
+      act: (bloc) =>
+          bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: -1, name: 'Name', showMaterialUsage: false)),
       errors: () => [isA<Exception>()],
     );
 
@@ -150,7 +164,8 @@ void main() {
       'invalid session name',
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
-      act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
+      act: (bloc) =>
+          bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
       errors: () => [isA<Exception>()],
     );
 
@@ -158,7 +173,8 @@ void main() {
       'session does not exist',
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
-      act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: 'Updated', showMaterialUsage: false)),
+      act: (bloc) =>
+          bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: 'Updated', showMaterialUsage: false)),
       errors: () => [isA<Exception>()],
     );
 
@@ -167,8 +183,9 @@ void main() {
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
     when(calcMock.itemAdded).thenReturn(itemAddedOrDeleted);
     when(calcMock.itemDeleted).thenReturn(itemAddedOrDeleted);
-    when(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage))
-        .thenAnswer((_) => Future.value(updatedSession));
+    when(
+      calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage),
+    ).thenAnswer((_) => Future.value(updatedSession));
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       'valid call',
@@ -181,14 +198,17 @@ void main() {
           showMaterialUsage: updatedSession.showMaterialUsage,
         ),
       ),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.sessions.length, sessions.length);
-          expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession);
-          verify(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage)).called(1);
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsSessionsStateLoading():
+            throw Exception('Invalid state');
+          case CalculatorAscMaterialsSessionsStateLoaded():
+            expect(state.sessions.length, sessions.length);
+            expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession);
+            verify(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage)).called(1);
+        }
+      },
     );
   });
 
@@ -218,14 +238,17 @@ void main() {
       build: () => getBloc(dataService: dataServiceMock),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: sessions),
       act: (bloc) => bloc.add(CalculatorAscMaterialsSessionsEvent.deleteSession(key: sessions.first.key)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.sessions.length, sessions.length - 1);
-          expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)));
-          verify(calcMock.deleteSession(sessions.first.key)).called(1);
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsSessionsStateLoading():
+            throw Exception('Invalid state');
+          case CalculatorAscMaterialsSessionsStateLoaded():
+            expect(state.sessions.length, sessions.length - 1);
+            expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)));
+            verify(calcMock.deleteSession(sessions.first.key)).called(1);
+        }
+      },
     );
   });
 
@@ -337,22 +360,25 @@ void main() {
         build: () => getBloc(),
         seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: sessions),
         act: (bloc) => bloc.add(event),
-        verify: (bloc) => bloc.state.map(
-          loading: (_) => throw Exception('Invalid state'),
-          loaded: (state) {
-            for (int i = 0; i < sessions.length; i++) {
-              final session = sessions[i];
-              final inState = state.sessions[i];
-              if (inState.key == sessions.last.key) {
-                checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
-              } else {
-                expect(session.numberOfCharacters, inState.numberOfCharacters);
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case CalculatorAscMaterialsSessionsStateLoading():
+              throw Exception('Invalid state');
+            case CalculatorAscMaterialsSessionsStateLoaded():
+              for (int i = 0; i < sessions.length; i++) {
+                final session = sessions[i];
+                final inState = state.sessions[i];
+                if (inState.key == sessions.last.key) {
+                  checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
+                } else {
+                  expect(session.numberOfCharacters, inState.numberOfCharacters);
+                }
+                expect(session.numberOfWeapons, inState.numberOfWeapons);
               }
-              expect(session.numberOfWeapons, inState.numberOfWeapons);
-            }
-            checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
-          },
-        ),
+              checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
+          }
+        },
       );
     }
 
@@ -366,21 +392,24 @@ void main() {
         build: () => getBloc(),
         seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: sessions),
         act: (bloc) => bloc.add(event),
-        verify: (bloc) => bloc.state.map(
-          loading: (_) => throw Exception('Invalid state'),
-          loaded: (state) {
-            for (int i = 0; i < sessions.length; i++) {
-              final session = sessions[i];
-              final inState = state.sessions[i];
-              if (inState.key == sessions.last.key) {
-                checkCount(sessions.last.numberOfWeapons, state.sessions.last.numberOfWeapons, added);
-              } else {
-                expect(session.numberOfWeapons, inState.numberOfWeapons);
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case CalculatorAscMaterialsSessionsStateLoading():
+              throw Exception('Invalid state');
+            case CalculatorAscMaterialsSessionsStateLoaded():
+              for (int i = 0; i < sessions.length; i++) {
+                final session = sessions[i];
+                final inState = state.sessions[i];
+                if (inState.key == sessions.last.key) {
+                  checkCount(sessions.last.numberOfWeapons, state.sessions.last.numberOfWeapons, added);
+                } else {
+                  expect(session.numberOfWeapons, inState.numberOfWeapons);
+                }
+                expect(session.numberOfCharacters, inState.numberOfCharacters);
               }
-              expect(session.numberOfCharacters, inState.numberOfCharacters);
-            }
-          },
-        ),
+          }
+        },
       );
     }
   });

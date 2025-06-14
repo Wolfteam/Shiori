@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'artifact_card_model.freezed.dart';
 
 @freezed
-class ArtifactCardModel with _$ArtifactCardModel {
+abstract class ArtifactCardModel with _$ArtifactCardModel {
   const factory ArtifactCardModel({
     required String key,
     required String name,
@@ -14,7 +14,7 @@ class ArtifactCardModel with _$ArtifactCardModel {
 }
 
 @freezed
-class ArtifactCardBonusModel with _$ArtifactCardBonusModel {
+abstract class ArtifactCardBonusModel with _$ArtifactCardBonusModel {
   const factory ArtifactCardBonusModel({
     required int pieces,
     required String bonus,

@@ -1,56 +1,56 @@
 part of 'tier_list_bloc.dart';
 
 @freezed
-class TierListEvent with _$TierListEvent {
+sealed class TierListEvent with _$TierListEvent {
   const factory TierListEvent.init({
     @Default(false) bool reset,
-  }) = _Init;
+  }) = TierListEventInit;
 
   const factory TierListEvent.rowTextChanged({
     required int index,
     required String newValue,
-  }) = _RowTextChanged;
+  }) = TierListEventRowTextChanged;
 
   const factory TierListEvent.rowPositionChanged({
     required int index,
     required int newIndex,
-  }) = _RowPositionChanged;
+  }) = TierListEventRowPositionChanged;
 
   const factory TierListEvent.rowColorChanged({
     required int index,
     required int newColor,
-  }) = _RowColorChanged;
+  }) = TierListEventRowColorChanged;
 
   const factory TierListEvent.addNewRow({
     required int index,
     required bool above,
-  }) = _AddRow;
+  }) = TierListEventAddRow;
 
   const factory TierListEvent.deleteRow({
     required int index,
-  }) = _DeleteRow;
+  }) = TierListEventDeleteRow;
 
   const factory TierListEvent.clearRow({
     required int index,
-  }) = _ClearRow;
+  }) = TierListEventClearRow;
 
-  const factory TierListEvent.clearAllRows() = _ClearAllRows;
+  const factory TierListEvent.clearAllRows() = TierListEventClearAllRows;
 
   const factory TierListEvent.addCharacterToRow({
     required int index,
     required ItemCommon item,
-  }) = _AddCharacterToRow;
+  }) = TierListEventAddCharacterToRow;
 
   const factory TierListEvent.deleteCharacterFromRow({
     required int index,
     required ItemCommon item,
-  }) = _DeleteCharacterFromRow;
+  }) = TierListEventDeleteCharacterFromRow;
 
-  const factory TierListEvent.readyToSave({required bool ready}) = _ReadyToSave;
+  const factory TierListEvent.readyToSave({required bool ready}) = TierListEventReadyToSave;
 
   const factory TierListEvent.screenshotTaken({
     required bool succeed,
     Object? ex,
     StackTrace? trace,
-  }) = _ScreenshotTaken;
+  }) = TierListEventScreenshotTaken;
 }

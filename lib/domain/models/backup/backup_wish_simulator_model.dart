@@ -5,7 +5,7 @@ part 'backup_wish_simulator_model.freezed.dart';
 part 'backup_wish_simulator_model.g.dart';
 
 @freezed
-class BackupWishSimulatorModel with _$BackupWishSimulatorModel {
+abstract class BackupWishSimulatorModel with _$BackupWishSimulatorModel {
   const factory BackupWishSimulatorModel({
     required List<BackupWishSimulatorBannerPullHistory> pullHistory,
     required List<BackupWishSimulatorBannerItemPullHistory> itemPullHistory,
@@ -15,7 +15,7 @@ class BackupWishSimulatorModel with _$BackupWishSimulatorModel {
 }
 
 @freezed
-class BackupWishSimulatorBannerPullHistory with _$BackupWishSimulatorBannerPullHistory {
+abstract class BackupWishSimulatorBannerPullHistory with _$BackupWishSimulatorBannerPullHistory {
   const factory BackupWishSimulatorBannerPullHistory({
     required BannerItemType type,
     required Map<int, int> currentXStarCount,
@@ -27,7 +27,7 @@ class BackupWishSimulatorBannerPullHistory with _$BackupWishSimulatorBannerPullH
 }
 
 @freezed
-class BackupWishSimulatorBannerItemPullHistory with _$BackupWishSimulatorBannerItemPullHistory {
+abstract class BackupWishSimulatorBannerItemPullHistory with _$BackupWishSimulatorBannerItemPullHistory {
   const factory BackupWishSimulatorBannerItemPullHistory({
     required BannerItemType bannerType,
     required String itemKey,

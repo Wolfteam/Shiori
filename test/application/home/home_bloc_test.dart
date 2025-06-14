@@ -43,9 +43,10 @@ void main() {
   test('Initial state', () => expect(HomeBloc(genshinService, settingsService, localeService).state, const HomeState.loading()));
 
   void checkState(HomeState state, AppServerResetTimeType resetTimeType, {bool checkServerDate = true}) {
-    state.map(
-      loading: (_) => throw Exception('Invalid state'),
-      loaded: (state) {
+    switch (state) {
+      case HomeStateLoading():
+        throw Exception('Invalid state');
+      case HomeStateLoaded():
         expect(state.charAscMaterials, isNotEmpty);
         expect(state.weaponAscMaterials, isNotEmpty);
         expect(state.day, isIn(expectedDays));
@@ -80,8 +81,7 @@ void main() {
         for (final birthday in state.characterImgBirthday) {
           checkItemKeyAndImage(birthday.key, birthday.image);
         }
-      },
-    );
+    }
   }
 
   group('Init', () {
@@ -131,9 +131,11 @@ void main() {
     build: () => HomeBloc(genshinService, settingsService, localeService),
     act: (bloc) => bloc.add(const HomeEvent.dayChanged(newDay: day)),
     verify: (bloc) {
-      bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      final state = bloc.state;
+      switch (state) {
+        case HomeStateLoading():
+          throw Exception('Invalid state');
+        case HomeStateLoaded():
           final charMaterials = genshinService.characters.getCharacterAscensionMaterials(day);
           final weaponMaterials = genshinService.weapons.getWeaponAscensionMaterials(day);
           final now = DateTime.now();
@@ -142,8 +144,7 @@ void main() {
           expect(state.charAscMaterials.length, charMaterials.length);
           expect(state.weaponAscMaterials.length, weaponMaterials.length);
           expect(state.characterImgBirthday.length, charsForBirthday.length);
-        },
-      );
+      }
     },
   );
 }

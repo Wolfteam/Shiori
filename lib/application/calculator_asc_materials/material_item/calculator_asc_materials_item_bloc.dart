@@ -19,37 +19,46 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   final CalculatorAscMaterialsService _calculatorService;
   final ResourceService _resourceService;
 
-  _LoadedState get currentState => state as _LoadedState;
+  CalculatorAscMaterialsItemStateLoaded get currentState => state as CalculatorAscMaterialsItemStateLoaded;
 
   CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService, this._resourceService)
-      : super(const CalculatorAscMaterialsItemState.loading());
+    : super(const CalculatorAscMaterialsItemState.loading());
 
   @override
   Stream<CalculatorAscMaterialsItemState> mapEventToState(CalculatorAscMaterialsItemEvent event) async* {
-    if (event is _Load) {
+    if (event is CalculatorAscMaterialsItemEventLoad) {
       yield const CalculatorAscMaterialsItemState.loading();
     }
 
-    if (event is! _Load && event is! _LoadWith && state is! _LoadedState) {
+    if (event is! CalculatorAscMaterialsItemEventLoad &&
+        event is! CalculatorAscMaterialsItemEventLoadWith &&
+        state is! CalculatorAscMaterialsItemStateLoaded) {
       throw Exception('Invalid state');
     }
 
-    final s = event.map(
-      load: (e) => _defaultLoad(e),
-      loadWith: (e) => _load(e),
-      currentLevelChanged: (e) => _levelChanged(e.newValue, currentState.desiredLevel, true),
-      desiredLevelChanged: (e) => _levelChanged(currentState.currentLevel, e.newValue, false),
-      currentAscensionLevelChanged: (e) => _ascensionChanged(e.newValue, currentState.desiredAscensionLevel, true),
-      desiredAscensionLevelChanged: (e) => _ascensionChanged(currentState.currentAscensionLevel, e.newValue, false),
-      skillCurrentLevelChanged: (e) => _skillChanged(e.index, e.newValue, true),
-      skillDesiredLevelChanged: (e) => _skillChanged(e.index, e.newValue, false),
-      useMaterialsFromInventoryChanged: (e) => currentState.copyWith.call(useMaterialsFromInventory: e.useThem),
-    );
-
-    yield s;
+    switch (event) {
+      case CalculatorAscMaterialsItemEventLoad():
+        yield _defaultLoad(event);
+      case CalculatorAscMaterialsItemEventLoadWith():
+        yield _load(event);
+      case CalculatorAscMaterialsItemEventCurrentLevelChanged():
+        yield _levelChanged(event.newValue, currentState.desiredLevel, true);
+      case CalculatorAscMaterialsItemEventDesiredLevelChanged():
+        yield _levelChanged(currentState.currentLevel, event.newValue, false);
+      case CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged():
+        yield _ascensionChanged(event.newValue, currentState.desiredAscensionLevel, true);
+      case CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged():
+        yield _ascensionChanged(currentState.currentAscensionLevel, event.newValue, false);
+      case CalculatorAscMaterialsItemEventSkillCurrentLevelChanged():
+        yield _skillChanged(event.index, event.newValue, true);
+      case CalculatorAscMaterialsItemEventSkillDesiredLevelChanged():
+        yield _skillChanged(event.index, event.newValue, false);
+      case CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged():
+        yield currentState.copyWith.call(useMaterialsFromInventory: event.useThem);
+    }
   }
 
-  CalculatorAscMaterialsItemState _defaultLoad(_Load e) {
+  CalculatorAscMaterialsItemState _defaultLoad(CalculatorAscMaterialsItemEventLoad e) {
     if (e.isCharacter) {
       final char = _genshinService.characters.getCharacter(e.key);
       final translation = _genshinService.translations.getCharacterTranslation(e.key);
@@ -77,7 +86,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     );
   }
 
-  CalculatorAscMaterialsItemState _load(_LoadWith e) {
+  CalculatorAscMaterialsItemState _load(CalculatorAscMaterialsItemEventLoadWith e) {
     if (e.isCharacter) {
       final char = _genshinService.characters.getCharacter(e.key);
       final translation = _genshinService.translations.getCharacterTranslation(e.key);

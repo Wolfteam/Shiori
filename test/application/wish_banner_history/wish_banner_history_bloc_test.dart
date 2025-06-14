@@ -65,24 +65,27 @@ void main() {
         act: (bloc) => bloc
           ..add(const WishBannerHistoryEvent.init())
           ..add(WishBannerHistoryEvent.groupTypeChanged(type)),
-        verify: (bloc) => bloc.state.maybeMap(
-          loaded: (state) {
-            expect(state.allPeriods, groupedPeriods);
-            expect(state.filteredPeriods, isNotEmpty);
-            expect(state.sortDirectionType, isDefault ? SortDirectionType.desc : SortDirectionType.asc);
-            expect(state.groupedType, type);
-            expect(state.selectedItemKeys, isEmpty);
-            for (final period in state.filteredPeriods) {
-              if (isDefault) {
-                expect(period.groupingKey == period.groupingTitle, isTrue);
-              } else {
-                expect(period.groupingKey != period.groupingTitle, isTrue);
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishBannerHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishBannerHistoryStateLoaded():
+              expect(state.allPeriods, groupedPeriods);
+              expect(state.filteredPeriods, isNotEmpty);
+              expect(state.sortDirectionType, isDefault ? SortDirectionType.desc : SortDirectionType.asc);
+              expect(state.groupedType, type);
+              expect(state.selectedItemKeys, isEmpty);
+              for (final period in state.filteredPeriods) {
+                if (isDefault) {
+                  expect(period.groupingKey == period.groupingTitle, isTrue);
+                } else {
+                  expect(period.groupingKey != period.groupingTitle, isTrue);
+                }
+                expect(period.parts, isNotEmpty);
               }
-              expect(period.parts, isNotEmpty);
-            }
-          },
-          orElse: () => throw Exception('Invalid state'),
-        ),
+          }
+        },
       );
     }
   });
@@ -104,16 +107,19 @@ void main() {
 
           return bloc;
         },
-        verify: (bloc) => bloc.state.maybeMap(
-          loaded: (state) {
-            expect(state.allPeriods, groupedPeriods);
-            expect(state.filteredPeriods, isNotEmpty);
-            expect(state.sortDirectionType, type);
-            expect(state.groupedType, WishBannerGroupedType.version);
-            expect(state.selectedItemKeys, isEmpty);
-          },
-          orElse: () => throw Exception('Invalid state'),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishBannerHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishBannerHistoryStateLoaded():
+              expect(state.allPeriods, groupedPeriods);
+              expect(state.filteredPeriods, isNotEmpty);
+              expect(state.sortDirectionType, type);
+              expect(state.groupedType, WishBannerGroupedType.version);
+              expect(state.selectedItemKeys, isEmpty);
+          }
+        },
       );
     }
   });
@@ -140,16 +146,19 @@ void main() {
           ..add(const WishBannerHistoryEvent.init())
           ..add(WishBannerHistoryEvent.groupTypeChanged(groupType))
           ..add(WishBannerHistoryEvent.itemsSelected(keys: [key])),
-        verify: (bloc) => bloc.state.maybeMap(
-          loaded: (state) {
-            expect(state.allPeriods, groupedPeriods);
-            expect(state.filteredPeriods.length == 1, isTrue);
-            expect(state.filteredPeriods.first.groupingKey, key);
-            expect(state.groupedType, groupType);
-            expect(state.selectedItemKeys, [key]);
-          },
-          orElse: () => throw Exception('Invalid state'),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishBannerHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishBannerHistoryStateLoaded():
+              expect(state.allPeriods, groupedPeriods);
+              expect(state.filteredPeriods.length == 1, isTrue);
+              expect(state.filteredPeriods.first.groupingKey, key);
+              expect(state.groupedType, groupType);
+              expect(state.selectedItemKeys, [key]);
+          }
+        },
       );
 
       blocTest<WishBannerHistoryBloc, WishBannerHistoryState>(
@@ -160,15 +169,18 @@ void main() {
           ..add(WishBannerHistoryEvent.groupTypeChanged(groupType))
           ..add(WishBannerHistoryEvent.itemsSelected(keys: [key]))
           ..add(const WishBannerHistoryEvent.itemsSelected(keys: [])),
-        verify: (bloc) => bloc.state.maybeMap(
-          loaded: (state) {
-            expect(state.allPeriods, groupedPeriods);
-            expect(state.filteredPeriods.length > 1, isTrue);
-            expect(state.groupedType, groupType);
-            expect(state.selectedItemKeys, []);
-          },
-          orElse: () => throw Exception('Invalid state'),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishBannerHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishBannerHistoryStateLoaded():
+              expect(state.allPeriods, groupedPeriods);
+              expect(state.filteredPeriods.length > 1, isTrue);
+              expect(state.groupedType, groupType);
+              expect(state.selectedItemKeys, []);
+          }
+        },
       );
     }
   });

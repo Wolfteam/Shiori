@@ -18,41 +18,40 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocProvider(
-      create: (_) => Injection.calculatorAscMaterialsItemUpdateQuantityBloc..add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(key: itemKey)),
+      create: (_) =>
+          Injection.calculatorAscMaterialsItemUpdateQuantityBloc
+            ..add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(key: itemKey)),
       child: BlocConsumer<CalculatorAscMaterialsItemUpdateQuantityBloc, CalculatorAscMaterialsItemUpdateQuantityState>(
         listener: (context, state) {
-          state.maybeMap(
-            saved: (_) {
-              Navigator.of(context).pop(true);
-            },
-            orElse: () => {},
-          );
+          if (state is CalculatorAscMaterialsItemUpdateQuantityStateSaved) {
+            Navigator.of(context).pop(true);
+          }
         },
-        builder: (context, state) => state.map(
-          loading: (_) => AlertDialog(
+        builder: (context, state) => switch (state) {
+          CalculatorAscMaterialsItemUpdateQuantityStateLoading() => AlertDialog(
             content: Container(
               constraints: const BoxConstraints(maxHeight: 100),
               child: const Loading(useScaffold: false),
             ),
           ),
-          loaded: (state) => ItemQuantityDialog(
+          CalculatorAscMaterialsItemUpdateQuantityStateLoaded() => ItemQuantityDialog(
             quantity: state.quantity,
             title: s.inInventory,
             onSave: (qty) => _onSave(state.key, qty, context),
           ),
-          saved: (state) => ItemQuantityDialog(
+          CalculatorAscMaterialsItemUpdateQuantityStateSaved() => ItemQuantityDialog(
             quantity: state.quantity,
             title: s.inInventory,
             onSave: (qty) => _onSave(state.key, qty, context),
           ),
-        ),
+        },
       ),
     );
   }
 
   void _onSave(String key, int newQuantity, BuildContext context) {
-    context
-        .read<CalculatorAscMaterialsItemUpdateQuantityBloc>()
-        .add(CalculatorAscMaterialsItemUpdateQuantityEvent.update(key: key, quantity: newQuantity));
+    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(
+      CalculatorAscMaterialsItemUpdateQuantityEvent.update(key: key, quantity: newQuantity),
+    );
   }
 }

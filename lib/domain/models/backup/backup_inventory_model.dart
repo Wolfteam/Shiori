@@ -4,7 +4,7 @@ part 'backup_inventory_model.freezed.dart';
 part 'backup_inventory_model.g.dart';
 
 @freezed
-class BackupInventoryModel with _$BackupInventoryModel {
+abstract class BackupInventoryModel with _$BackupInventoryModel {
   const factory BackupInventoryModel({
     required String itemKey,
     required int quantity,

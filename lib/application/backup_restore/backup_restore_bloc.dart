@@ -13,33 +13,31 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   final BackupRestoreService _backupRestoreService;
   final TelemetryService _telemetryService;
 
-  _LoadedState get currentState => state as _LoadedState;
+  BackupRestoreStateLoaded get currentState => state as BackupRestoreStateLoaded;
 
   BackupRestoreBloc(this._backupRestoreService, this._telemetryService) : super(const BackupRestoreState.loading());
 
   @override
   Stream<BackupRestoreState> mapEventToState(BackupRestoreEvent event) async* {
-    if (event is! _Init && state is! _LoadedState) {
+    if (event is! BackupRestoreEventInit && state is! BackupRestoreStateLoaded) {
       throw Exception('Invalid state');
     }
 
-    final s = await event.map(
-      init: (e) => _init(),
-      read: (e) => _read(e.filePath),
-      create: (e) => _create(e.dataTypes),
-      restore: (e) => _restore(e.filePath, e.dataTypes, e.imported),
-      delete: (e) => _delete(e.filePath),
-    );
+    final s = await switch (event) {
+      BackupRestoreEventInit() => _init(),
+      BackupRestoreEventCreate() => _create(event.dataTypes),
+      BackupRestoreEventRead() => _read(event.filePath),
+      BackupRestoreEventRestore() => _restore(event.filePath, event.dataTypes, event.imported),
+      BackupRestoreEventDelete() => _delete(event.filePath),
+    };
 
     yield s;
 
-    final resultExists = s.maybeMap(
-      loaded: (state) => state.createResult != null || state.restoreResult != null || state.readResult != null || state.deleteResult != null,
-      orElse: () => false,
-    );
-
-    if (resultExists) {
-      yield currentState.copyWith(restoreResult: null, readResult: null, createResult: null, deleteResult: null);
+    if (s is BackupRestoreStateLoaded) {
+      final resultExists = s.createResult != null || s.restoreResult != null || s.readResult != null || s.deleteResult != null;
+      if (resultExists) {
+        yield currentState.copyWith(restoreResult: null, readResult: null, createResult: null, deleteResult: null);
+      }
     }
   }
 

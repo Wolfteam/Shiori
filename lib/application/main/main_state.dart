@@ -1,11 +1,11 @@
 part of 'main_bloc.dart';
 
 @freezed
-class MainState with _$MainState {
+sealed class MainState with _$MainState {
   const factory MainState.loading({
     required LanguageModel language,
     @Default(false) bool restarted,
-  }) = _MainLoadingState;
+  }) = MainStateLoading;
 
   const factory MainState.loaded({
     required String appTitle,
@@ -17,7 +17,5 @@ class MainState with _$MainState {
     required bool firstInstall,
     required bool versionChanged,
     AppResourceUpdateResultType? updateResult,
-  }) = _MainLoadedState;
-
-  const MainState._();
+  }) = MainStateLoaded;
 }

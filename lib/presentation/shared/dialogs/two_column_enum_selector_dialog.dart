@@ -31,8 +31,8 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
     required this.maxNumberOfSelections,
     required this.onOk,
     this.showMaxNumberOfSelectionsOnTitle = true,
-  })  : assert(all.length > 0),
-        assert(maxNumberOfSelections > 0);
+  }) : assert(all.length > 0),
+       assert(maxNumberOfSelections > 0);
 
   @override
   State<TwoColumnEnumSelectorDialog> createState() => _TwoColumnEnumSelectorDialogState<TEnum>();
@@ -71,7 +71,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
     final dialogHeight = mq.getHeightForDialogs(_all.length + _selected.length, maxHeight: 400);
     final dialogWidth = mq.getWidthForDialogs();
     final bgColor = theme.brightness == Brightness.dark
-        ? (theme.scaffoldBackgroundColor == Colors.black ? theme.cardColor : theme.colorScheme.surface.withOpacity(0.8))
+        ? (theme.scaffoldBackgroundColor == Colors.black ? theme.cardColor : theme.colorScheme.surface.withValues(alpha: 0.8))
         : theme.dividerColor;
     final canAddMoreItems = _selected.length == widget.maxNumberOfSelections;
     return AlertDialog(
@@ -124,7 +124,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                               key: Key('$index-all'),
                               title: Text(item.translation, overflow: TextOverflow.ellipsis),
                               selected: _selectedLeft == item,
-                              selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                              selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                               onTap: () => _onItemTap(item, true),
                             ),
                           );
@@ -154,7 +154,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                                   child: ListTile(
                                     title: Text(item.translation, overflow: TextOverflow.ellipsis),
                                     selected: _selectedRight == item,
-                                    selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                                    selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                                     onTap: () => _onItemTap(item, false),
                                   ),
                                 );
@@ -190,7 +190,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                             key: Key('$index-all'),
                             title: Text(item.translation, overflow: TextOverflow.ellipsis),
                             selected: _selectedLeft == item,
-                            selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                            selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                             onTap: () => _onItemTap(item, true),
                           ),
                         );
@@ -224,7 +224,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                             child: ListTile(
                               title: Text(item.translation, overflow: TextOverflow.ellipsis),
                               selected: _selectedRight == item,
-                              selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                              selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                               onTap: () => _onItemTap(item, false),
                             ),
                           );

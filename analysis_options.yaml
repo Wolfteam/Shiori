@@ -22,3 +22,4 @@ analyzer:
     - '**/shiori_icons.dart'
   errors:
     missing_return: error
+    invalid_annotation_target: ignore

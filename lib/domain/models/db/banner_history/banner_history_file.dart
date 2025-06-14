@@ -5,7 +5,7 @@ part 'banner_history_file.freezed.dart';
 part 'banner_history_file.g.dart';
 
 @freezed
-class BannerHistoryFile with _$BannerHistoryFile {
+abstract class BannerHistoryFile with _$BannerHistoryFile {
   const factory BannerHistoryFile({
     required List<BannerHistoryPeriodFileModel> banners,
   }) = _BannerHistoryFile;

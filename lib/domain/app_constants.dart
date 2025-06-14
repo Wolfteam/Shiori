@@ -851,8 +851,6 @@ Duration getExpeditionDuration(ExpeditionTimeType type, bool withTimeReduction) 
       return _getExpeditionDuration(12, withTimeReduction);
     case ExpeditionTimeType.twentyHours:
       return _getExpeditionDuration(20, withTimeReduction);
-    default:
-      throw Exception('The provided expedition time type = $type is not valid');
   }
 }
 
@@ -864,8 +862,6 @@ Duration getFurnitureDuration(FurnitureCraftingTimeType type) {
       return const Duration(hours: 14);
     case FurnitureCraftingTimeType.sixteenHours:
       return const Duration(hours: 16);
-    default:
-      throw Exception('The provided furniture creation type = $type is not valid');
   }
 }
 
@@ -875,8 +871,6 @@ Duration getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType type) {
       return const Duration(hours: 12);
     case ArtifactFarmingTimeType.twentyFourHours:
       return const Duration(hours: 24);
-    default:
-      throw Exception('The provided artifact farming time type = $type is not valid');
   }
 }
 
@@ -897,7 +891,12 @@ Duration getRealmCurrencyDuration(int currentRealmCurrency, int currentTrustRank
   return Duration(minutes: minutesLeft);
 }
 
-int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank, DateTime completesAt) {
+int getCurrentRealmCurrency(
+  int initialRealmCurrency,
+  int currentTrustRank,
+  RealmRankType currentRealmRank,
+  DateTime completesAt,
+) {
   final now = DateTime.now();
   final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
   final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);

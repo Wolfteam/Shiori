@@ -121,10 +121,11 @@ class BackupListItem extends StatelessWidget {
 
   Future<void> _share(S s, BuildContext context) {
     final box = context.findRenderObject() as RenderBox?;
-    return Share.shareXFiles(
-      [XFile(backup.filePath)],
+    final params = ShareParams(
+      files: [XFile(backup.filePath)],
       text: s.backup,
       sharePositionOrigin: box != null ? box.localToGlobal(Offset.zero) & box.size : null,
     );
+    return SharePlus.instance.share(params);
   }
 }

@@ -16,11 +16,10 @@ class ChartGendersBloc extends Bloc<ChartGendersEvent, ChartGendersState> {
 
   @override
   Stream<ChartGendersState> mapEventToState(ChartGendersEvent event) async* {
-    final s = event.map(
-      init: (_) => _init(),
-    );
-
-    yield s;
+    switch (event) {
+      case InitChartGendersEvent():
+        yield _init();
+    }
   }
 
   ChartGendersState _init() {

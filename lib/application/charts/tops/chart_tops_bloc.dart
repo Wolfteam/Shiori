@@ -17,11 +17,10 @@ class ChartTopsBloc extends Bloc<ChartTopsEvent, ChartTopsState> {
 
   @override
   Stream<ChartTopsState> mapEventToState(ChartTopsEvent event) async* {
-    final s = await event.map(
-      init: (e) async => _init(),
-    );
-
-    yield s;
+    switch (event) {
+      case ChartTopsEventInit():
+        yield await _init();
+    }
   }
 
   Future<ChartTopsState> _init() async {

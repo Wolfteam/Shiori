@@ -1,10 +1,14 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging_platform_interface/firebase_messaging_platform_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:infinite_listview/infinite_listview.dart';
+import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
@@ -12,11 +16,12 @@ import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/select_enum_dialog.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:window_size/window_size.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import '../fcm_mock.dart';
+import '../permission_handler_mock.dart';
 import 'common_bottom_sheet.dart';
 
 const Key toastKey = Key('toast-body');
@@ -26,8 +31,10 @@ typedef ConfigureSettingsCallBack = Future<void> Function(SettingsService);
 abstract class BasePage {
   static bool initialized = false;
 
-  static const verticalDragOffset = Offset(0, -50);
-  static const horizontalDragOffset = Offset(-800, 0);
+  static const double verticalScrollDelta = 50;
+  static const double horizontalScrollDelta = 800;
+  static const verticalDragOffset = Offset(0, -verticalScrollDelta);
+  static const horizontalDragOffset = Offset(-horizontalScrollDelta, 0);
   static const threeHundredMsDuration = Duration(milliseconds: 300);
 
   final WidgetTester tester;
@@ -96,13 +103,17 @@ abstract class BasePage {
 
   Future<void> _init(bool resetResources, bool deleteData) async {
     if (!initialized) {
-      //This is required by app center
-      WidgetsFlutterBinding.ensureInitialized();
+      setupFirebaseMessagingMocks();
+      PermissionHandlerPlatform.instance = MockPermissionHandler();
+      FirebaseMessagingPlatform.instance = kMockMessagingPlatform;
+      await Firebase.initializeApp();
+      // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
       await Injection.init(isLoggingEnabled: false);
 
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-        setWindowMinSize(SizeUtils.minSizeOnDesktop);
-        setWindowMaxSize(Size.infinite);
+        const size = Size(1366, 768);
+        setWindowMinSize(size);
+        setWindowMaxSize(size);
       }
     }
 
@@ -151,17 +162,23 @@ abstract class BasePage {
     await tester.pumpAndSettle();
   }
 
-  Future<void> selectValueInNumberPickerDialog(dynamic value, {bool scrollsFromBottomToTop = true, int maxIteration = 1000}) async {
+  Future<void> selectValueInNumberPickerDialog(
+    dynamic value, {
+    bool scrollsFromBottomToTop = true,
+    int maxIteration = 1000,
+  }) async {
     //First scroll until value is visible
     final double dy = scrollsFromBottomToTop ? -30 : 30;
     final offset = Offset(0, dy);
     final Finder scrollView = find.byType(InfiniteListView);
     final BuildContext context = tester.element(scrollView);
     final Color textColor = Theme.of(context).colorScheme.primary;
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(
         of: scrollView,
-        matching: find.byWidgetPredicate((widget) => widget is Text && widget.data == '$value' && widget.style?.color == textColor),
+        matching: find.byWidgetPredicate(
+          (widget) => widget is Text && widget.data == '$value' && widget.style?.color == textColor,
+        ),
       ),
       scrollView,
       offset,
@@ -211,7 +228,7 @@ abstract class BasePage {
     if (name.isNotNullEmptyOrWhitespace) {
       final Finder menuItemFinder = find.widgetWithText(DropdownMenuItem<TEnum>, name!);
       if (!menuItemFinder.hasFound) {
-        await tester.dragUntilVisible(menuItemFinder, menu, offset);
+        await tester.doAppDragUntilVisible(menuItemFinder, menu, offset);
         await tester.pumpAndSettle();
       }
 
@@ -222,7 +239,7 @@ abstract class BasePage {
 
     final Finder menuItemFinder = find.byType(DropdownMenuItem<TEnum>).at(index!);
     if (!menuItemFinder.hasFound) {
-      await tester.dragUntilVisible(menuItemFinder, menu, offset);
+      await tester.doAppDragUntilVisible(menuItemFinder, menu, offset);
       await tester.pumpAndSettle();
     }
     await tester.tap(menuItemFinder);
@@ -231,7 +248,7 @@ abstract class BasePage {
 
   Future<void> selectEnumDialogOption<TEnum>(int index) async {
     final key = Key('$index');
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.byKey(key),
       find.descendant(of: find.byType(SelectEnumDialog<TEnum>), matching: find.byType(ListView)),
       verticalDragOffset,
@@ -247,5 +264,10 @@ abstract class BasePage {
   Future<void> tapOnBackButton() async {
     await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
+  }
+
+  DateTime getServerDate() {
+    final settingsService = getIt<SettingsService>();
+    return getIt<GenshinService>().getServerDate(settingsService.serverResetTime);
   }
 }

@@ -4,7 +4,7 @@ part 'backup_custom_builds_model.freezed.dart';
 part 'backup_custom_builds_model.g.dart';
 
 @freezed
-class BackupCustomBuildModel with _$BackupCustomBuildModel {
+abstract class BackupCustomBuildModel with _$BackupCustomBuildModel {
   const factory BackupCustomBuildModel({
     required String characterKey,
     required bool showOnCharacterDetail,
@@ -23,7 +23,7 @@ class BackupCustomBuildModel with _$BackupCustomBuildModel {
 }
 
 @freezed
-class BackupCustomBuildNoteModel with _$BackupCustomBuildNoteModel {
+abstract class BackupCustomBuildNoteModel with _$BackupCustomBuildNoteModel {
   const factory BackupCustomBuildNoteModel({
     required int index,
     required String note,
@@ -33,7 +33,7 @@ class BackupCustomBuildNoteModel with _$BackupCustomBuildNoteModel {
 }
 
 @freezed
-class BackupCustomBuildWeaponModel with _$BackupCustomBuildWeaponModel {
+abstract class BackupCustomBuildWeaponModel with _$BackupCustomBuildWeaponModel {
   const factory BackupCustomBuildWeaponModel({
     required String weaponKey,
     required int index,
@@ -46,7 +46,7 @@ class BackupCustomBuildWeaponModel with _$BackupCustomBuildWeaponModel {
 }
 
 @freezed
-class BackupCustomBuildArtifactModel with _$BackupCustomBuildArtifactModel {
+abstract class BackupCustomBuildArtifactModel with _$BackupCustomBuildArtifactModel {
   const factory BackupCustomBuildArtifactModel({
     required String itemKey,
     required int type,
@@ -58,7 +58,7 @@ class BackupCustomBuildArtifactModel with _$BackupCustomBuildArtifactModel {
 }
 
 @freezed
-class BackupCustomBuildTeamCharacterModel with _$BackupCustomBuildTeamCharacterModel {
+abstract class BackupCustomBuildTeamCharacterModel with _$BackupCustomBuildTeamCharacterModel {
   const factory BackupCustomBuildTeamCharacterModel({
     required int index,
     required String characterKey,
@@ -66,5 +66,6 @@ class BackupCustomBuildTeamCharacterModel with _$BackupCustomBuildTeamCharacterM
     required int subType,
   }) = _BackupCustomBuildTeamCharacterModel;
 
-  factory BackupCustomBuildTeamCharacterModel.fromJson(Map<String, dynamic> json) => _$BackupCustomBuildTeamCharacterModelFromJson(json);
+  factory BackupCustomBuildTeamCharacterModel.fromJson(Map<String, dynamic> json) =>
+      _$BackupCustomBuildTeamCharacterModelFromJson(json);
 }

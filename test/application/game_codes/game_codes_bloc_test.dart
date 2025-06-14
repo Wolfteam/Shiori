@@ -82,9 +82,14 @@ void main() {
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
     apiService = MockApiService();
-    when(apiService.getGameCodes(validAppVersion, validResourceVersion))
-        .thenAnswer((_) => Future.value(ApiListResponseDto(result: apiDefaultGameCodes, succeed: true)));
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    when(
+      apiService.getGameCodes(validAppVersion, validResourceVersion),
+    ).thenAnswer((_) => Future.value(ApiListResponseDto(result: apiDefaultGameCodes, succeed: true)));
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
       dbPath = await getDbPath(_dbFolder);
@@ -102,7 +107,15 @@ void main() {
   test(
     'Initial state',
     () => expect(
-      GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService).state,
+      GameCodesBloc(
+        dataService,
+        telemetryService,
+        apiService,
+        networkService,
+        genshinService,
+        settingsService,
+        deviceInfoService,
+      ).state,
       defaultState,
     ),
   );
@@ -110,14 +123,30 @@ void main() {
   group('Init', () {
     blocTest<GameCodesBloc, GameCodesState>(
       'no game codes have been loaded',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
+      build: () => GameCodesBloc(
+        dataService,
+        telemetryService,
+        apiService,
+        networkService,
+        genshinService,
+        settingsService,
+        deviceInfoService,
+      ),
       act: (bloc) => bloc.add(const GameCodesEvent.init()),
       expect: () => const [defaultState],
     );
 
     blocTest<GameCodesBloc, GameCodesState>(
       'some game codes have been loaded',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
+      build: () => GameCodesBloc(
+        dataService,
+        telemetryService,
+        apiService,
+        networkService,
+        genshinService,
+        settingsService,
+        deviceInfoService,
+      ),
       setUp: () async {
         await dataService.gameCodes.saveGameCodes(defaultGameCodes);
       },
@@ -146,7 +175,15 @@ void main() {
         final networkService = MockNetworkService();
         when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
 
-        return GameCodesBloc(dataService, telemetryService, apiServiceMock, networkService, genshinService, settingsService, deviceInfoService);
+        return GameCodesBloc(
+          dataService,
+          telemetryService,
+          apiServiceMock,
+          networkService,
+          genshinService,
+          settingsService,
+          deviceInfoService,
+        );
       },
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       expect: () => const [
@@ -166,7 +203,15 @@ void main() {
         final apiServiceMock = MockApiService();
         when(apiServiceMock.getGameCodes(validAppVersion, validResourceVersion)).thenAnswer((_) => Future.value(response));
 
-        return GameCodesBloc(dataService, telemetryService, apiServiceMock, networkService, genshinService, settingsService, deviceInfoService);
+        return GameCodesBloc(
+          dataService,
+          telemetryService,
+          apiServiceMock,
+          networkService,
+          genshinService,
+          settingsService,
+          deviceInfoService,
+        );
       },
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       expect: () => const [
@@ -178,18 +223,23 @@ void main() {
 
     blocTest<GameCodesBloc, GameCodesState>(
       'api call succeeds',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
+      build: () => GameCodesBloc(
+        dataService,
+        telemetryService,
+        apiService,
+        networkService,
+        genshinService,
+        settingsService,
+        deviceInfoService,
+      ),
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       skip: 1,
       verify: (bloc) {
-        bloc.state.map(
-          loaded: (state) {
-            expect(state.isInternetAvailable, isNull);
-            expect(state.isBusy, isFalse);
-            expect(state.workingGameCodes.length, 1);
-            expect(state.expiredGameCodes.length, 1);
-          },
-        );
+        final state = bloc.state;
+        expect(state.isInternetAvailable, isNull);
+        expect(state.isBusy, isFalse);
+        expect(state.workingGameCodes.length, 1);
+        expect(state.expiredGameCodes.length, 1);
       },
     );
 
@@ -198,26 +248,39 @@ void main() {
       build: () {
         final settingsMock = MockSettingsService();
         when(settingsMock.lastGameCodesCheckedDate).thenReturn(DateTime.now());
-        return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsMock, deviceInfoService);
+        return GameCodesBloc(
+          dataService,
+          telemetryService,
+          apiService,
+          networkService,
+          genshinService,
+          settingsMock,
+          deviceInfoService,
+        );
       },
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       skip: 2,
       verify: (bloc) {
-        bloc.state.map(
-          loaded: (state) {
-            expect(state.isInternetAvailable, isNull);
-            expect(state.isBusy, isFalse);
-            expect(state.workingGameCodes.length, 0);
-            expect(state.expiredGameCodes.length, 0);
-          },
-        );
+        final state = bloc.state;
+        expect(state.isInternetAvailable, isNull);
+        expect(state.isBusy, isFalse);
+        expect(state.workingGameCodes.length, 0);
+        expect(state.expiredGameCodes.length, 0);
       },
     );
   });
 
   blocTest<GameCodesBloc, GameCodesState>(
     'Mark as used',
-    build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
+    build: () => GameCodesBloc(
+      dataService,
+      telemetryService,
+      apiService,
+      networkService,
+      genshinService,
+      settingsService,
+      deviceInfoService,
+    ),
     setUp: () async {
       await dataService.gameCodes.saveGameCodes(defaultGameCodes);
     },

@@ -57,15 +57,15 @@ class CharacterCard extends StatelessWidget {
     required CharacterCardModel char,
     this.isInSelectionMode = false,
     this.showMaterials = true,
-  })  : keyName = char.key,
-        elementType = char.elementType,
-        isComingSoon = char.isComingSoon,
-        isNew = char.isNew,
-        image = char.image,
-        name = char.name,
-        rarity = char.stars,
-        weaponType = char.weaponType,
-        materials = char.materials;
+  }) : keyName = char.key,
+       elementType = char.elementType,
+       isComingSoon = char.isComingSoon,
+       isNew = char.isNew,
+       image = char.image,
+       name = char.name,
+       rarity = char.stars,
+       weaponType = char.weaponType,
+       materials = char.materials;
 
   @override
   Widget build(BuildContext context) {
@@ -174,9 +174,9 @@ class _CharBottom extends StatelessWidget {
       width: double.infinity,
       padding: Styles.edgeInsetAll5,
       child: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(useScaffold: false),
-          loaded: (state) => Column(
+        builder: (context, state) => switch (state) {
+          SettingsStateLoading() => const Loading(useScaffold: false),
+          SettingsStateLoaded() => Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
@@ -223,7 +223,7 @@ class _CharBottom extends StatelessWidget {
                 ),
             ],
           ),
-        ),
+        },
       ),
     );
   }

@@ -29,11 +29,11 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
   @override
   Stream<TodayMaterialsState> mapEventToState(TodayMaterialsEvent event) async* {
     await _telemetryService.trackAscensionMaterialsOpened();
-    final s = event.when(
-      init: () {
+    switch (event) {
+      case TodayMaterialsEventInit():
         final charMaterials = <TodayCharAscensionMaterialsModel>[];
         final weaponMaterials = <TodayWeaponAscensionMaterialModel>[];
-//TODO: YOU MAY WANT TO SHOW THE BOSS ITEMS AS WELL
+        //TODO: YOU MAY WANT TO SHOW THE BOSS ITEMS AS WELL
         for (final day in days) {
           final charMaterialsForDay = _genshinService.characters.getCharacterAscensionMaterials(day);
           final weaponMaterialsForDay = _genshinService.weapons.getWeaponAscensionMaterials(day);
@@ -53,10 +53,7 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
           }
         }
 
-        return TodayMaterialsState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials);
-      },
-    );
-
-    yield s;
+        yield TodayMaterialsState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials);
+    }
   }
 }

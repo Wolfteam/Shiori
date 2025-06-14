@@ -33,7 +33,11 @@ void main() {
     localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     manuallyInitLocale(localeService, AppLanguageType.english);
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -59,9 +63,10 @@ void main() {
 
   group('Load from key', () {
     void checkKeqingState(CharacterState state, bool isInInventory) {
-      state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      switch (state) {
+        case CharacterStateLoading():
+          throw Exception('Invalid state');
+        case CharacterStateLoaded():
           expect(state.key, 'keqing');
           expect(state.name, 'Keqing');
           checkAsset(state.fullImage);
@@ -84,8 +89,7 @@ void main() {
           expect(state.builds, isNotEmpty);
           expect(state.subStatType, StatType.critDmgPercentage);
           expect(state.stats, isNotEmpty);
-        },
-      );
+      }
     }
 
     blocTest<CharacterBloc, CharacterState>(

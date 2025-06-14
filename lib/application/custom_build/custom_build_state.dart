@@ -1,8 +1,8 @@
 part of 'custom_build_bloc.dart';
 
 @freezed
-class CustomBuildState with _$CustomBuildState {
-  const factory CustomBuildState.loading() = _LoadingState;
+sealed class CustomBuildState with _$CustomBuildState {
+  const factory CustomBuildState.loading() = CustomBuildStateLoading;
 
   const factory CustomBuildState.loaded({
     int? key,
@@ -19,5 +19,5 @@ class CustomBuildState with _$CustomBuildState {
     required List<CharacterSkillType> skillPriorities,
     required List<StatType> subStatsSummary,
     required bool readyForScreenshot,
-  }) = _LoadedState;
+  }) = CustomBuildStateLoaded;
 }

@@ -41,82 +41,91 @@ class ArtifactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocProvider(
       create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<ArtifactBloc, ArtifactState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading.scaffold(),
-          loaded: (state) {
-            final color = state.maxRarity.getRarityColors().first;
+        builder: (context, state) => switch (state) {
+          ArtifactStateLoading() => const Loading.scaffold(),
+          final ArtifactStateLoaded state => _Loaded(state: state),
+        },
+      ),
+    );
+  }
+}
 
-            final main = Main(
-              name: state.name,
-              image: state.image,
-              maxRarity: state.maxRarity,
-            );
-            final children = <Widget>[
-              _Bonus(
-                color: color,
-                bonus: state.bonus,
+class _Loaded extends StatelessWidget {
+  final ArtifactStateLoaded state;
+
+  const _Loaded({required this.state});
+
+  @override
+  Widget build(BuildContext context) {
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final color = state.maxRarity.getRarityColors().first;
+
+    final main = Main(
+      name: state.name,
+      image: state.image,
+      maxRarity: state.maxRarity,
+    );
+    final children = <Widget>[
+      _Bonus(
+        color: color,
+        bonus: state.bonus,
+      ),
+      _Pieces(
+        color: color,
+        pieces: state.images,
+      ),
+      if (state.usedBy.isNotEmpty)
+        _UsedBy(
+          color: color,
+          usedBy: state.usedBy,
+        ),
+      if (state.droppedBy.isNotEmpty)
+        _DroppedBy(
+          color: color,
+          droppedBy: state.droppedBy,
+        ),
+    ];
+    if (isPortrait) {
+      return ScaffoldWithFab(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            main,
+            Padding(
+              padding: Styles.edgeInsetHorizontal5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: children,
               ),
-              _Pieces(
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Scaffold(
+      body: SafeArea(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 40,
+              child: main,
+            ),
+            Expanded(
+              flex: 60,
+              child: DetailLandscapeContent.noTabs(
                 color: color,
-                pieces: state.images,
-              ),
-              if (state.usedBy.isNotEmpty)
-                _UsedBy(
-                  color: color,
-                  usedBy: state.usedBy,
-                ),
-              if (state.droppedBy.isNotEmpty)
-                _DroppedBy(
-                  color: color,
-                  droppedBy: state.droppedBy,
-                ),
-            ];
-            if (isPortrait) {
-              return ScaffoldWithFab(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    main,
-                    Padding(
-                      padding: Styles.edgeInsetHorizontal5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: children,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }
-
-            return Scaffold(
-              body: SafeArea(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      flex: 40,
-                      child: main,
-                    ),
-                    Expanded(
-                      flex: 60,
-                      child: DetailLandscapeContent.noTabs(
-                        color: color,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: children,
-                        ),
-                      ),
-                    ),
-                  ],
+                  children: children,
                 ),
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

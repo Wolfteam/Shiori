@@ -5,7 +5,7 @@ part 'material_file_model.freezed.dart';
 part 'material_file_model.g.dart';
 
 @freezed
-class MaterialFileModel with _$MaterialFileModel {
+abstract class MaterialFileModel with _$MaterialFileModel {
   bool get isAnExperienceMaterial => type == MaterialType.expWeapon || type == MaterialType.expCharacter;
 
   ExperienceMaterialAttributesModel? get experienceAttributes =>
@@ -56,7 +56,7 @@ class MaterialFileModel with _$MaterialFileModel {
 }
 
 @freezed
-class ExperienceMaterialAttributesModel with _$ExperienceMaterialAttributesModel {
+abstract class ExperienceMaterialAttributesModel with _$ExperienceMaterialAttributesModel {
   factory ExperienceMaterialAttributesModel({
     required double experience,
     required double pricePerUsage,
@@ -64,11 +64,12 @@ class ExperienceMaterialAttributesModel with _$ExperienceMaterialAttributesModel
 
   ExperienceMaterialAttributesModel._();
 
-  factory ExperienceMaterialAttributesModel.fromJson(Map<String, dynamic> json) => _$ExperienceMaterialAttributesModelFromJson(json);
+  factory ExperienceMaterialAttributesModel.fromJson(Map<String, dynamic> json) =>
+      _$ExperienceMaterialAttributesModelFromJson(json);
 }
 
 @freezed
-class MaterialPartOfRecipeFileModel with _$MaterialPartOfRecipeFileModel {
+abstract class MaterialPartOfRecipeFileModel with _$MaterialPartOfRecipeFileModel {
   factory MaterialPartOfRecipeFileModel({
     required String createsMaterialKey,
     required List<MaterialObtainedFromFileModel> needs,
@@ -80,7 +81,7 @@ class MaterialPartOfRecipeFileModel with _$MaterialPartOfRecipeFileModel {
 }
 
 @freezed
-class MaterialObtainedFromFileModel with _$MaterialObtainedFromFileModel {
+abstract class MaterialObtainedFromFileModel with _$MaterialObtainedFromFileModel {
   factory MaterialObtainedFromFileModel({
     required String key,
     required int quantity,

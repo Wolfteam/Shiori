@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/models/models.dart';
 
 abstract class NotificationService {
   Future<void> init();

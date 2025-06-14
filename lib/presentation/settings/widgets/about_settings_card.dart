@@ -66,15 +66,13 @@ class AboutSettingsCard extends StatelessWidget {
                   style: textTheme.titleSmall,
                 ),
                 BlocBuilder<SettingsBloc, SettingsState>(
-                  builder: (context, state) {
-                    return state.map(
-                      loading: (_) => const Loading(useScaffold: false),
-                      loaded: (state) => Text(
-                        s.appVersion(state.appVersion),
-                        textAlign: TextAlign.center,
-                        style: textTheme.titleSmall,
-                      ),
-                    );
+                  builder: (context, state) => switch (state) {
+                    SettingsStateLoading() => const Loading(useScaffold: false),
+                    SettingsStateLoaded() => Text(
+                      s.appVersion(state.appVersion),
+                      textAlign: TextAlign.center,
+                      style: textTheme.titleSmall,
+                    ),
                   },
                 ),
                 Text(s.aboutSummary, textAlign: TextAlign.center),
@@ -206,7 +204,10 @@ class AboutSettingsCard extends StatelessWidget {
 
   Future<void> _launchUrl(String url) async {
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url), mode: Platform.isIOS ? LaunchMode.externalApplication : LaunchMode.externalNonBrowserApplication);
+      await launchUrl(
+        Uri.parse(url),
+        mode: Platform.isIOS ? LaunchMode.externalApplication : LaunchMode.externalNonBrowserApplication,
+      );
     }
   }
 

@@ -1,27 +1,28 @@
 part of 'materials_bloc.dart';
 
 @freezed
-class MaterialsEvent with _$MaterialsEvent {
+sealed class MaterialsEvent with _$MaterialsEvent {
   const factory MaterialsEvent.init({
     @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _Init;
+  }) = MaterialsEventInit;
 
   const factory MaterialsEvent.searchChanged({
     required String search,
-  }) = _SearchChanged;
+  }) = MaterialsEventSearchChanged;
 
-  const factory MaterialsEvent.rarityChanged(int rarity) = _RarityChanged;
+  const factory MaterialsEvent.rarityChanged(int rarity) = MaterialsEventRarityChanged;
 
-  const factory MaterialsEvent.typeChanged(MaterialType? type) = _TypeChanged;
+  const factory MaterialsEvent.typeChanged(MaterialType? type) = MaterialsEventTypeChanged;
 
-  const factory MaterialsEvent.filterTypeChanged(MaterialFilterType type) = _FilterTypeChanged;
+  const factory MaterialsEvent.filterTypeChanged(MaterialFilterType type) = MaterialsEventFilterTypeChanged;
 
-  const factory MaterialsEvent.applyFilterChanges() = _ApplyFilterChanges;
+  const factory MaterialsEvent.applyFilterChanges() = MaterialsEventApplyFilterChanges;
 
-  const factory MaterialsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
+  const factory MaterialsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) =
+      MaterialsEventSortDirectionTypeChanged;
 
-  const factory MaterialsEvent.cancelChanges() = _CancelChanges;
+  const factory MaterialsEvent.cancelChanges() = MaterialsEventCancelChanges;
 
-  const factory MaterialsEvent.resetFilters() = _ResetFilters;
+  const factory MaterialsEvent.resetFilters() = MaterialsEventResetFilters;
 }

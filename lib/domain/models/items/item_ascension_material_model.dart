@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'item_ascension_material_model.freezed.dart';
 
 @freezed
-class ItemAscensionMaterialModel with _$ItemAscensionMaterialModel implements SortableGroupedMaterial {
+abstract class ItemAscensionMaterialModel with _$ItemAscensionMaterialModel implements SortableGroupedMaterial {
   @Implements<SortableGroupedMaterial>()
   const factory ItemAscensionMaterialModel({
     required String key,

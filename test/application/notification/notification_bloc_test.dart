@@ -52,7 +52,11 @@ void main() {
     localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     notificationsBloc = NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
 
     return Future(() async {
@@ -131,15 +135,18 @@ void main() {
     'Add should generated a default resin state',
     build: () => buildBloc(),
     act: (bloc) => bloc.add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody)),
-    verify: (bloc) => bloc.state.maybeMap(
-      resin: (state) {
-        checkState(state, AppNotificationType.resin, checkKey: false);
-        checkNotDirtyFields(state, shouldBeDirty: false);
-        expect(state.showOtherImages, false);
-        expect(state.currentResin, 0);
-      },
-      orElse: () => throw Exception('Invalid state'),
-    ),
+    verify: (bloc) {
+      final state = bloc.state;
+      switch (state) {
+        case NotificationStateResin():
+          checkState(state, AppNotificationType.resin, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
+          expect(state.showOtherImages, false);
+          expect(state.currentResin, 0);
+        default:
+          throw Exception('Invalid state');
+      }
+    },
   );
 
   group('Load', () {
@@ -156,14 +163,17 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        resin: (state) {
-          checkState(state, AppNotificationType.resin, checkNote: true);
-          checkNotDirtyFields(state);
-          expect(state.currentResin, 60);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateResin():
+            checkState(state, AppNotificationType.resin, checkNote: true);
+            checkNotDirtyFields(state);
+            expect(state.currentResin, 60);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -187,15 +197,18 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        expedition: (state) {
-          checkState(state, AppNotificationType.expedition, checkNote: true);
-          checkNotDirtyFields(state);
-          expect(state.withTimeReduction, true);
-          expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateExpedition():
+            checkState(state, AppNotificationType.expedition, checkNote: true);
+            checkNotDirtyFields(state);
+            expect(state.withTimeReduction, true);
+            expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -218,21 +231,29 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingArtifact: (state) {
-          checkState(state, AppNotificationType.farmingArtifacts, checkNote: true);
-          checkNotDirtyFields(state);
-          expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingArtifact():
+            checkState(state, AppNotificationType.farmingArtifacts, checkNote: true);
+            checkNotDirtyFields(state);
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
       'a farming material notification',
       setUp: () async {
         final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
+        await dataService.notifications.saveFarmingMaterialNotification(
+          material.key,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
+        );
       },
       tearDown: () async {
         await dataService.deleteThemAll();
@@ -242,13 +263,16 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingMaterial: (state) {
-          checkState(state, AppNotificationType.farmingMaterials, checkNote: true);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingMaterial():
+            checkState(state, AppNotificationType.farmingMaterials, checkNote: true);
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -265,13 +289,16 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        gadget: (state) {
-          checkState(state, AppNotificationType.gadget, checkNote: true);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateGadget():
+            checkState(state, AppNotificationType.gadget, checkNote: true);
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -294,14 +321,17 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        furniture: (state) {
-          checkState(state, AppNotificationType.furniture, checkNote: true);
-          checkNotDirtyFields(state);
-          expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFurniture():
+            checkState(state, AppNotificationType.furniture, checkNote: true);
+            checkNotDirtyFields(state);
+            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -325,16 +355,19 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        realmCurrency: (state) {
-          checkState(state, AppNotificationType.realmCurrency, checkNote: true);
-          checkNotDirtyFields(state);
-          expect(state.currentRealmRankType, RealmRankType.luxury);
-          expect(state.currentTrustRank, 7);
-          expect(state.currentRealmCurrency, 100);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateRealmCurrency():
+            checkState(state, AppNotificationType.realmCurrency, checkNote: true);
+            checkNotDirtyFields(state);
+            expect(state.currentRealmRankType, RealmRankType.luxury);
+            expect(state.currentTrustRank, 7);
+            expect(state.currentRealmCurrency, 100);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -357,13 +390,16 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        weeklyBoss: (state) {
-          checkState(state, AppNotificationType.weeklyBoss, checkNote: true);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateWeeklyBoss():
+            checkState(state, AppNotificationType.weeklyBoss, checkNote: true);
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -379,13 +415,16 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        dailyCheckIn: (state) {
-          checkState(state, AppNotificationType.dailyCheckIn, checkNote: true);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateDailyCheckIn():
+            checkState(state, AppNotificationType.dailyCheckIn, checkNote: true);
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -407,11 +446,15 @@ void main() {
               key = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
             case AppNotificationItemType.material:
               key = fragileResinKey;
-            default:
-              throw Exception('Not mapped type');
           }
-          await dataService.notifications
-              .saveCustomNotification(key, defaultTitle, defaultBody, customNotificationCompletesAt, type, note: defaultNote);
+          await dataService.notifications.saveCustomNotification(
+            key,
+            defaultTitle,
+            defaultBody,
+            customNotificationCompletesAt,
+            type,
+            note: defaultNote,
+          );
         },
         tearDown: () async {
           await dataService.deleteThemAll();
@@ -421,14 +464,17 @@ void main() {
           final notification = dataService.notifications.getAllNotifications().first;
           return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom));
         },
-        verify: (bloc) => bloc.state.maybeMap(
-          custom: (state) {
-            checkState(state, AppNotificationType.custom, checkNote: true);
-            checkNotDirtyFields(state);
-            expect(state.itemType, type);
-          },
-          orElse: () => throw Exception('Invalid state'),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case NotificationStateCustom():
+              checkState(state, AppNotificationType.custom, checkNote: true);
+              checkNotDirtyFields(state);
+              expect(state.itemType, type);
+            default:
+              throw Exception('Invalid state');
+          }
+        },
       );
     }
   });
@@ -443,13 +489,24 @@ void main() {
         ..add(const NotificationEvent.bodyChanged(newValue: 'Body'))
         ..add(const NotificationEvent.noteChanged(newValue: 'Note'))
         ..add(const NotificationEvent.showNotificationChanged(show: false)),
-      verify: (bloc) => bloc.state.maybeMap(
-        resin: (state) {
-          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateResin():
+            checkState(
+              state,
+              AppNotificationType.resin,
+              title: 'Title',
+              body: 'Body',
+              note: 'Note',
+              showNotification: false,
+              checkKey: false,
+            );
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -470,13 +527,24 @@ void main() {
           ..add(const NotificationEvent.noteChanged(newValue: 'Note'))
           ..add(const NotificationEvent.showNotificationChanged(show: false));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        resin: (state) {
-          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateResin():
+            checkState(
+              state,
+              AppNotificationType.resin,
+              title: 'Title',
+              body: 'Body',
+              note: 'Note',
+              showNotification: false,
+              checkKey: false,
+            );
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -487,14 +555,17 @@ void main() {
       act: (bloc) => bloc
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.resinChanged(newValue: 100)),
-      verify: (bloc) => bloc.state.maybeMap(
-        resin: (state) {
-          checkState(state, AppNotificationType.resin, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.currentResin, 100);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateResin():
+            checkState(state, AppNotificationType.resin, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.currentResin, 100);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -512,14 +583,17 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin))
           ..add(const NotificationEvent.resinChanged(newValue: 100));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        resin: (state) {
-          checkState(state, AppNotificationType.resin);
-          checkNotDirtyFields(state);
-          expect(state.currentResin, 100);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateResin():
+            checkState(state, AppNotificationType.resin);
+            checkNotDirtyFields(state);
+            expect(state.currentResin, 100);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -532,15 +606,18 @@ void main() {
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.expedition))
         ..add(const NotificationEvent.expeditionTimeTypeChanged(newValue: ExpeditionTimeType.fourHours))
         ..add(const NotificationEvent.timeReductionChanged(withTimeReduction: true)),
-      verify: (bloc) => bloc.state.maybeMap(
-        expedition: (state) {
-          checkState(state, AppNotificationType.expedition, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.expeditionTimeType, ExpeditionTimeType.fourHours);
-          expect(state.withTimeReduction, true);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateExpedition():
+            checkState(state, AppNotificationType.expedition, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.expeditionTimeType, ExpeditionTimeType.fourHours);
+            expect(state.withTimeReduction, true);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -566,15 +643,18 @@ void main() {
           ..add(const NotificationEvent.expeditionTimeTypeChanged(newValue: ExpeditionTimeType.eightHours))
           ..add(const NotificationEvent.timeReductionChanged(withTimeReduction: false));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        expedition: (state) {
-          checkState(state, AppNotificationType.expedition, checkKey: false);
-          checkNotDirtyFields(state);
-          expect(state.expeditionTimeType, ExpeditionTimeType.eightHours);
-          expect(state.withTimeReduction, false);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateExpedition():
+            checkState(state, AppNotificationType.expedition, checkKey: false);
+            checkNotDirtyFields(state);
+            expect(state.expeditionTimeType, ExpeditionTimeType.eightHours);
+            expect(state.withTimeReduction, false);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -586,14 +666,17 @@ void main() {
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingArtifacts))
         ..add(const NotificationEvent.artifactFarmingTimeTypeChanged(newValue: ArtifactFarmingTimeType.twelveHours)),
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingArtifact: (state) {
-          checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingArtifact():
+            checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -618,14 +701,17 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts))
           ..add(const NotificationEvent.artifactFarmingTimeTypeChanged(newValue: ArtifactFarmingTimeType.twentyFourHours));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingArtifact: (state) {
-          checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
-          checkNotDirtyFields(state);
-          expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingArtifact():
+            checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
+            checkNotDirtyFields(state);
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -641,16 +727,19 @@ void main() {
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingMaterials))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingMaterial: (state) {
-          checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
-          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingMaterial():
+            checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+            final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -658,7 +747,12 @@ void main() {
       build: () => buildBloc(),
       setUp: () async {
         final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
+        await dataService.notifications.saveFarmingMaterialNotification(
+          material.key,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
+        );
       },
       tearDown: () async {
         await dataService.deleteThemAll();
@@ -671,16 +765,19 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        farmingMaterial: (state) {
-          checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
-          checkNotDirtyFields(state);
-          final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
-          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFarmingMaterial():
+            checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
+            checkNotDirtyFields(state);
+            final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+            final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -696,16 +793,19 @@ void main() {
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.gadget))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        gadget: (state) {
-          checkState(state, AppNotificationType.gadget, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
-          final imgPath = resourceService.getGadgetImagePath(gadget.image);
-          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateGadget():
+            checkState(state, AppNotificationType.gadget, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+            final imgPath = resourceService.getGadgetImagePath(gadget.image);
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -726,16 +826,19 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        gadget: (state) {
-          checkState(state, AppNotificationType.gadget, checkKey: false);
-          checkNotDirtyFields(state);
-          final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
-          final imgPath = resourceService.getGadgetImagePath(gadget.image);
-          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateGadget():
+            checkState(state, AppNotificationType.gadget, checkKey: false);
+            checkNotDirtyFields(state);
+            final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+            final imgPath = resourceService.getGadgetImagePath(gadget.image);
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -747,14 +850,17 @@ void main() {
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.furniture))
         ..add(const NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: FurnitureCraftingTimeType.fourteenHours)),
-      verify: (bloc) => bloc.state.maybeMap(
-        furniture: (state) {
-          checkState(state, AppNotificationType.furniture, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFurniture():
+            checkState(state, AppNotificationType.furniture, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -779,14 +885,17 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture))
           ..add(const NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: FurnitureCraftingTimeType.sixteenHours));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        furniture: (state) {
-          checkState(state, AppNotificationType.furniture, checkKey: false);
-          checkNotDirtyFields(state);
-          expect(state.timeType, FurnitureCraftingTimeType.sixteenHours);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateFurniture():
+            checkState(state, AppNotificationType.furniture, checkKey: false);
+            checkNotDirtyFields(state);
+            expect(state.timeType, FurnitureCraftingTimeType.sixteenHours);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -800,16 +909,19 @@ void main() {
         ..add(const NotificationEvent.realmCurrencyChanged(newValue: 100))
         ..add(const NotificationEvent.realmTrustRankLevelChanged(newValue: 10))
         ..add(const NotificationEvent.realmRankTypeChanged(newValue: RealmRankType.luxury)),
-      verify: (bloc) => bloc.state.maybeMap(
-        realmCurrency: (state) {
-          checkState(state, AppNotificationType.realmCurrency, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.currentRealmCurrency, 100);
-          expect(state.currentTrustRank, 10);
-          expect(state.currentRealmRankType, RealmRankType.luxury);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateRealmCurrency():
+            checkState(state, AppNotificationType.realmCurrency, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.currentRealmCurrency, 100);
+            expect(state.currentTrustRank, 10);
+            expect(state.currentRealmRankType, RealmRankType.luxury);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -837,16 +949,19 @@ void main() {
           ..add(const NotificationEvent.realmTrustRankLevelChanged(newValue: 9))
           ..add(const NotificationEvent.realmRankTypeChanged(newValue: RealmRankType.luxury));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        realmCurrency: (state) {
-          checkState(state, AppNotificationType.realmCurrency, checkKey: false);
-          checkNotDirtyFields(state);
-          expect(state.currentRealmCurrency, 1000);
-          expect(state.currentTrustRank, 9);
-          expect(state.currentRealmRankType, RealmRankType.luxury);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateRealmCurrency():
+            checkState(state, AppNotificationType.realmCurrency, checkKey: false);
+            checkNotDirtyFields(state);
+            expect(state.currentRealmCurrency, 1000);
+            expect(state.currentTrustRank, 9);
+            expect(state.currentRealmRankType, RealmRankType.luxury);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -857,13 +972,16 @@ void main() {
       act: (bloc) => bloc
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.weeklyBoss)),
-      verify: (bloc) => bloc.state.maybeMap(
-        weeklyBoss: (state) {
-          checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateWeeklyBoss():
+            checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -889,15 +1007,18 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss))
           ..add(NotificationEvent.imageChanged(newValue: boss.image));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        weeklyBoss: (state) {
-          checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
-          checkNotDirtyFields(state);
-          final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
-          expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateWeeklyBoss():
+            checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
+            checkNotDirtyFields(state);
+            final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
+            expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -909,14 +1030,17 @@ void main() {
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.custom))
         ..add(const NotificationEvent.itemTypeChanged(newValue: AppNotificationItemType.character)),
-      verify: (bloc) => bloc.state.maybeMap(
-        custom: (state) {
-          checkState(state, AppNotificationType.custom, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.itemType, AppNotificationItemType.character);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateCustom():
+            checkState(state, AppNotificationType.custom, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+            expect(state.itemType, AppNotificationItemType.character);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -942,14 +1066,17 @@ void main() {
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom))
           ..add(const NotificationEvent.itemTypeChanged(newValue: AppNotificationItemType.artifact));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        custom: (state) {
-          checkState(state, AppNotificationType.custom, checkKey: false);
-          checkNotDirtyFields(state);
-          expect(state.itemType, AppNotificationItemType.artifact);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateCustom():
+            checkState(state, AppNotificationType.custom, checkKey: false);
+            checkNotDirtyFields(state);
+            expect(state.itemType, AppNotificationItemType.artifact);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 
@@ -960,13 +1087,16 @@ void main() {
       act: (bloc) => bloc
         ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.dailyCheckIn)),
-      verify: (bloc) => bloc.state.maybeMap(
-        dailyCheckIn: (state) {
-          checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
-          checkNotDirtyFields(state, shouldBeDirty: false);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateDailyCheckIn():
+            checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
+            checkNotDirtyFields(state, shouldBeDirty: false);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
 
     blocTest<NotificationBloc, NotificationState>(
@@ -982,13 +1112,16 @@ void main() {
         final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        dailyCheckIn: (state) {
-          checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
-          checkNotDirtyFields(state);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case NotificationStateDailyCheckIn():
+            checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
+            checkNotDirtyFields(state);
+          default:
+            throw Exception('Invalid state');
+        }
+      },
     );
   });
 }

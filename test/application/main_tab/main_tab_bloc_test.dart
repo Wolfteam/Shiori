@@ -7,16 +7,18 @@ void main() {
 
   group('Tab changed', () {
     blocTest<MainTabBloc, MainTabState>(
-      'Tab changed and is valid',
+      'and is valid',
       build: () => MainTabBloc(),
       act: (bloc) => bloc.add(const MainTabEvent.goToTab(index: 1)),
       expect: () => const [MainTabState.initial(1)],
     );
 
     blocTest<MainTabBloc, MainTabState>(
-      'Tab changed and is not valid',
+      'and is not valid',
       build: () => MainTabBloc(),
-      act: (bloc) => bloc..add(const MainTabEvent.goToTab(index: 1))..add(const MainTabEvent.goToTab(index: -1)),
+      act: (bloc) => bloc
+        ..add(const MainTabEvent.goToTab(index: 1))
+        ..add(const MainTabEvent.goToTab(index: -1)),
       expect: () => const [MainTabState.initial(1)],
     );
   });

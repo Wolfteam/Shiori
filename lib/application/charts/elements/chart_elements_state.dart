@@ -1,8 +1,8 @@
 part of 'chart_elements_bloc.dart';
 
 @freezed
-class ChartElementsState with _$ChartElementsState {
-  const factory ChartElementsState.loading() = _LoadingState;
+sealed class ChartElementsState with _$ChartElementsState {
+  const factory ChartElementsState.loading() = ChartElementsStateLoading;
 
   const factory ChartElementsState.loaded({
     required int maxNumberOfColumns,
@@ -15,5 +15,5 @@ class ChartElementsState with _$ChartElementsState {
     required bool canGoToPreviousPage,
     required bool canGoToLastPage,
     @Default(<ElementType>[]) List<ElementType> selectedElementTypes,
-  }) = _LoadedState;
+  }) = ChartElementsStateLoaded;
 }

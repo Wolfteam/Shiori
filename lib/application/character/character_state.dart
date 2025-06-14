@@ -1,8 +1,8 @@
 part of 'character_bloc.dart';
 
 @freezed
-class CharacterState with _$CharacterState {
-  const factory CharacterState.loading() = _LoadingState;
+sealed class CharacterState with _$CharacterState {
+  const factory CharacterState.loading() = CharacterStateLoading;
 
   const factory CharacterState.loaded({
     required String key,
@@ -27,5 +27,5 @@ class CharacterState with _$CharacterState {
     required List<CharacterBuildCardModel> builds,
     required StatType subStatType,
     required List<CharacterFileStatModel> stats,
-  }) = _LoadedState;
+  }) = CharacterStateLoaded;
 }

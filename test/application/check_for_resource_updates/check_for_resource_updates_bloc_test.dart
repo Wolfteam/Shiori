@@ -15,7 +15,8 @@ void main() {
     bool updateResourceCheckedDate = false,
     bool noResourcesHaveBeenDownloaded = false,
   }) {
-    final result = checkForUpdateResult ??
+    final result =
+        checkForUpdateResult ??
         CheckForUpdatesResult(
           resourceVersion: currentResourcesVersion,
           type: AppResourceUpdateResultType.noUpdatesAvailable,
@@ -23,8 +24,9 @@ void main() {
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.version).thenReturn(appVersion);
     final resourceService = MockResourceService();
-    when(resourceService.checkForUpdates(appVersion, currentResourcesVersion, updateResourceCheckedDate: updateResourceCheckedDate))
-        .thenAnswer((_) => Future.value(result));
+    when(
+      resourceService.checkForUpdates(appVersion, currentResourcesVersion, updateResourceCheckedDate: updateResourceCheckedDate),
+    ).thenAnswer((_) => Future.value(result));
     final settingsService = MockSettingsService();
     when(settingsService.resourceVersion).thenReturn(currentResourcesVersion);
     when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHaveBeenDownloaded);
@@ -37,14 +39,17 @@ void main() {
     'Init',
     build: () => getBloc(),
     act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
-    verify: (bloc) => bloc.state.map(
-      loading: (_) => throw Exception('Invalid state'),
-      loaded: (state) {
-        expect(state.updateResultType, isNull);
-        expect(state.currentResourceVersion, -1);
-        expect(state.targetResourceVersion, isNull);
-      },
-    ),
+    verify: (bloc) {
+      final state = bloc.state;
+      switch (state) {
+        case CheckForResourceUpdatesStateLoading():
+          throw Exception('Invalid state');
+        case CheckForResourceUpdatesStateLoaded():
+          expect(state.updateResultType, isNull);
+          expect(state.currentResourceVersion, -1);
+          expect(state.targetResourceVersion, isNull);
+      }
+    },
   );
 
   group('Check for updates', () {
@@ -54,14 +59,14 @@ void main() {
       int currentResourcesVersion, {
       int? targetResourceVersion,
     }) {
-      state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      switch (state) {
+        case CheckForResourceUpdatesStateLoading():
+          throw Exception('Invalid state');
+        case CheckForResourceUpdatesStateLoaded():
           expect(state.updateResultType, resultType);
           expect(state.currentResourceVersion, currentResourcesVersion);
           expect(state.targetResourceVersion, targetResourceVersion);
-        },
-      );
+      }
     }
 
     blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(

@@ -78,8 +78,11 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
-      builder: (ctx, state) => state.maybeMap(
-        loaded: (state) => AppBar(
+      builder: (ctx, state) => switch (state) {
+        CustomBuildStateLoading() => AppBar(
+          title: Text(newBuild ? s.add : s.edit),
+        ),
+        CustomBuildStateLoaded() => AppBar(
           title: Text(newBuild ? s.add : s.edit),
           actions: [
             if (!state.readyForScreenshot)
@@ -88,7 +91,9 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: IconButton(
                   splashRadius: Styles.mediumButtonSplashRadius,
                   icon: const Icon(Icons.save),
-                  onPressed: !(state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty) ? null : () => _saveChanges(context),
+                  onPressed: !(state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty)
+                      ? null
+                      : () => _saveChanges(context),
                 ),
               ),
             if (state.readyForScreenshot)
@@ -123,7 +128,9 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                 onSelected: (e) {
                   switch (e) {
                     case 0:
-                      context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: !state.showOnCharacterDetail));
+                      context.read<CustomBuildBloc>().add(
+                        CustomBuildEvent.showOnCharacterDetailChanged(newValue: !state.showOnCharacterDetail),
+                      );
                     default:
                       throw Exception('Invalid option');
                   }
@@ -153,10 +160,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
           ],
         ),
-        orElse: () => AppBar(
-          title: Text(newBuild ? s.add : s.edit),
-        ),
-      ),
+      },
     );
   }
 
@@ -167,17 +171,19 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Future<void> _takeScreenshot(BuildContext context) {
-    return ScreenshotUtils.takeScreenshot(screenshotController, context).then((taken) {
-      if (taken && context.mounted) {
-        final bloc = context.read<CustomBuildBloc>();
-        bloc.add(const CustomBuildEvent.screenshotWasTaken(succeed: true));
-      }
-    }).catchError((Object ex, StackTrace trace) {
-      if (context.mounted) {
-        final bloc = context.read<CustomBuildBloc>();
-        bloc.add(CustomBuildEvent.screenshotWasTaken(succeed: false, ex: ex, trace: trace));
-      }
-    });
+    return ScreenshotUtils.takeScreenshot(screenshotController, context)
+        .then((taken) {
+          if (taken && context.mounted) {
+            final bloc = context.read<CustomBuildBloc>();
+            bloc.add(const CustomBuildEvent.screenshotWasTaken(succeed: true));
+          }
+        })
+        .catchError((Object ex, StackTrace trace) {
+          if (context.mounted) {
+            final bloc = context.read<CustomBuildBloc>();
+            bloc.add(CustomBuildEvent.screenshotWasTaken(succeed: false, ex: ex, trace: trace));
+          }
+        });
   }
 
   Future<void> _showDeleteDialog(BuildContext context, int? buildKey) {

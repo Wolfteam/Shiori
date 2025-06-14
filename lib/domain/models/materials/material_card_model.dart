@@ -6,7 +6,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'material_card_model.freezed.dart';
 
 @freezed
-class MaterialCardModel with _$MaterialCardModel implements SortableGroupedMaterial {
+abstract class MaterialCardModel with _$MaterialCardModel implements SortableGroupedMaterial {
   @Implements<SortableGroupedMaterial>()
   const factory MaterialCardModel.item({
     required String key,

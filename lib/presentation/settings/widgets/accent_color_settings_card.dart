@@ -39,13 +39,16 @@ class AccentColorSettingsCard extends StatelessWidget {
             ),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => CommonDropdownButton<AppAccentColorType>(
+            builder: (context, state) => switch (state) {
+              SettingsStateLoading() => const Loading(useScaffold: false),
+              SettingsStateLoaded() => CommonDropdownButton<AppAccentColorType>(
                 hint: s.chooseAccentColor,
                 currentValue: state.currentAccentColor,
                 padding: Styles.edgeInsetHorizontal16,
-                values: EnumUtils.getTranslatedAndSortedEnum<AppAccentColorType>(AppAccentColorType.values, (val, _) => _getAccentColorName(val)),
+                values: EnumUtils.getTranslatedAndSortedEnum<AppAccentColorType>(
+                  AppAccentColorType.values,
+                  (val, _) => _getAccentColorName(val),
+                ),
                 leadingIconBuilder: (val) => Container(
                   margin: const EdgeInsets.only(right: 10),
                   decoration: BoxDecoration(
@@ -57,7 +60,7 @@ class AccentColorSettingsCard extends StatelessWidget {
                 ),
                 onChanged: _accentColorChanged,
               ),
-            ),
+            },
           ),
         ],
       ),

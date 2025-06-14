@@ -16,14 +16,11 @@ class ItemReleaseHistoryBloc extends Bloc<ItemReleaseHistoryEvent, ItemReleaseHi
 
   @override
   Stream<ItemReleaseHistoryState> mapEventToState(ItemReleaseHistoryEvent event) async* {
-    final s = await event.map(
-      init: (e) async {
-        await _telemetryService.trackItemReleaseHistoryOpened(e.itemKey);
-        final history = _genshinService.bannerHistory.getItemReleaseHistory(e.itemKey);
-        return ItemReleaseHistoryState.initial(itemKey: e.itemKey, history: history);
-      },
-    );
-
-    yield s;
+    switch (event) {
+      case ItemReleaseHistoryEventInit():
+        await _telemetryService.trackItemReleaseHistoryOpened(event.itemKey);
+        final history = _genshinService.bannerHistory.getItemReleaseHistory(event.itemKey);
+        yield ItemReleaseHistoryState.initial(itemKey: event.itemKey, history: history);
+    }
   }
 }

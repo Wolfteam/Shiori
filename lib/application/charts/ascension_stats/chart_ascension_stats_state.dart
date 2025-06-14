@@ -1,8 +1,8 @@
 part of 'chart_ascension_stats_bloc.dart';
 
 @freezed
-class ChartAscensionStatsState with _$ChartAscensionStatsState {
-  const factory ChartAscensionStatsState.loading() = _LoadingState;
+sealed class ChartAscensionStatsState with _$ChartAscensionStatsState {
+  const factory ChartAscensionStatsState.loading() = ChartAscensionStatsStateLoading;
 
   const factory ChartAscensionStatsState.loaded({
     required int currentPage,
@@ -15,5 +15,5 @@ class ChartAscensionStatsState with _$ChartAscensionStatsState {
     required ItemType itemType,
     required int maxCount,
     required List<ChartAscensionStatModel> ascensionStats,
-  }) = _LoadedState;
+  }) = ChartAscensionStatsStateLoaded;
 }

@@ -34,7 +34,11 @@ void main() {
 
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
 
     return Future(() async {
       await genshinService.init(settingsService.language);
@@ -81,18 +85,28 @@ void main() {
 
     for (final item in results) {
       checkItemKeyAndImage(item.key, item.image);
-      checkBannerRarity(item.rarity, min: item.map(character: (_) => 4, weapon: (_) => 3));
-      if (item.maybeMap(character: (_) => true, orElse: () => false)) {
-        expect(banner.characters.any((c) => c.key == item.key), isTrue);
-      } else {
-        expect(banner.weapons.any((c) => c.key == item.key), isTrue);
+      checkBannerRarity(
+        item.rarity,
+        min: switch (item) {
+          WishSimulatorBannerCharacterResultModel() => 4,
+          WishSimulatorBannerWeaponResultModel() => 3,
+        },
+      );
+      switch (item) {
+        case WishSimulatorBannerCharacterResultModel():
+          expect(banner.characters.any((c) => c.key == item.key), isTrue);
+        case WishSimulatorBannerWeaponResultModel():
+          expect(banner.weapons.any((c) => c.key == item.key), isTrue);
       }
 
       if (item.rarity != WishBannerConstants.maxObtainableRarity || bannerType == BannerItemType.standard) {
         break;
       }
 
-      final expectedType = item.map(character: (_) => BannerItemType.character, weapon: (_) => BannerItemType.weapon);
+      final expectedType = switch (item) {
+        WishSimulatorBannerCharacterResultModel() => BannerItemType.character,
+        WishSimulatorBannerWeaponResultModel() => BannerItemType.weapon,
+      };
       expect(bannerType, expectedType);
     }
   }
@@ -125,10 +139,15 @@ void main() {
       'pull x100 and gets multiple 4 star and at least one 5 star',
       build: () => getBloc(),
       act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 100, period: period)),
-      verify: (bloc) => bloc.state.maybeMap(
-        orElse: () => throw Exception('Invalid state'),
-        loaded: (state) => checkState(0, 100, state.results, minFourStarCount: 9, minFiveStarCount: 1),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case WishSimulatorResultStateLoading():
+            throw Exception('Invalid state');
+          case WishSimulatorResultStateLoaded():
+            checkState(0, 100, state.results, minFourStarCount: 9, minFiveStarCount: 1);
+        }
+      },
     );
   });
 }

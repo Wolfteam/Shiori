@@ -1,8 +1,9 @@
 part of 'settings_bloc.dart';
 
 @freezed
-class SettingsState with _$SettingsState {
-  const factory SettingsState.loading() = _LoadingState;
+sealed class SettingsState with _$SettingsState {
+  const factory SettingsState.loading() = SettingsStateLoading;
+
   const factory SettingsState.loaded({
     required AppThemeType currentTheme,
     required bool useDarkAmoledTheme,
@@ -19,5 +20,5 @@ class SettingsState with _$SettingsState {
     required int resourceVersion,
     required bool checkForUpdatesOnStartup,
     required bool noResourcesHaveBeenDownloaded,
-  }) = _LoadedState;
+  }) = SettingsStateLoaded;
 }

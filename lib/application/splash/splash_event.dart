@@ -1,21 +1,21 @@
 part of 'splash_bloc.dart';
 
 @freezed
-class SplashEvent with _$SplashEvent {
+sealed class SplashEvent with _$SplashEvent {
   const factory SplashEvent.init({
     @Default(false) bool retry,
     @Default(false) bool restarted,
-  }) = _Init;
+  }) = SplashEventInit;
 
-  const factory SplashEvent.applyUpdate({required CheckForUpdatesResult result}) = _ApplyUpdate;
+  const factory SplashEvent.applyUpdate({required CheckForUpdatesResult result}) = SplashEventApplyUpdate;
 
   const factory SplashEvent.progressChanged({
     required double progress,
     required int downloadedBytes,
-  }) = _ProgressChanged;
+  }) = SplashEventProgressChanged;
 
   const factory SplashEvent.updateCompleted({
     required bool applied,
     required int resourceVersion,
-  }) = _UpdateCompleted;
+  }) = SplashEventUpdateCompleted;
 }

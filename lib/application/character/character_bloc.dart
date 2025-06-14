@@ -32,33 +32,31 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
   @override
   Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
-    final s = await event.when(
-      loadFromKey: (key) async {
-        final char = _genshinService.characters.getCharacter(key);
-        final translation = _genshinService.translations.getCharacterTranslation(key);
-
-        await _telemetryService.trackCharacterLoaded(key);
-        return _buildInitialState(char, translation);
-      },
-      addToInventory: (key) async => state.map(
-        loading: (state) async => state,
-        loaded: (state) async {
-          await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.inventory.addCharacterToInventory(key);
-          return state.copyWith.call(isInInventory: true);
-        },
-      ),
-      deleteFromInventory: (key) async => state.map(
-        loading: (state) async => state,
-        loaded: (state) async {
-          await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.inventory.deleteCharacterFromInventory(key);
-          return state.copyWith.call(isInInventory: false);
-        },
-      ),
-    );
-
-    yield s;
+    switch (event) {
+      case CharacterEventLoadFromKey():
+        final char = _genshinService.characters.getCharacter(event.key);
+        final translation = _genshinService.translations.getCharacterTranslation(event.key);
+        await _telemetryService.trackCharacterLoaded(event.key);
+        yield _buildInitialState(char, translation);
+      case CharacterEventAddToInventory():
+        await _telemetryService.trackItemAddedToInventory(event.key, 1);
+        await _dataService.inventory.addCharacterToInventory(event.key);
+        switch (state) {
+          case final CharacterStateLoaded state:
+            yield state.copyWith.call(isInInventory: true);
+          case CharacterStateLoading():
+            break;
+        }
+      case CharacterEventDeleteFromInventory():
+        await _telemetryService.trackItemDeletedFromInventory(event.key);
+        await _dataService.inventory.deleteCharacterFromInventory(event.key);
+        switch (state) {
+          case final CharacterStateLoaded state:
+            yield state.copyWith.call(isInInventory: false);
+          case CharacterStateLoading():
+            break;
+        }
+    }
   }
 
   ItemCommonWithQuantityAndName _mapItemAscensionMaterial(ItemAscensionMaterialFileModel m) {

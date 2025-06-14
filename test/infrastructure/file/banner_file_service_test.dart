@@ -63,7 +63,7 @@ void main() {
 
   group('Get banner history version', () {
     for (final type in SortDirectionType.values) {
-      test('data gets retrieved and sorted by ${type.name}', () async {
+      test('data gets retrieved and sorted by ${type.name}', () {
         final versions = service.getBannerHistoryVersions(type);
         expect(versions, isNotEmpty);
         expect(versions.toSet().length, versions.length);
@@ -83,7 +83,7 @@ void main() {
     });
   });
 
-  test('Get banner history', () async {
+  test('Get banner history', () {
     for (final type in BannerHistoryItemType.values) {
       final banners = service.getBannerHistory(type);
       expect(banners.length, banners.where((el) => el.type == type).length);
@@ -110,7 +110,7 @@ void main() {
   });
 
   group('Get banners', () {
-    test('valid versions', () async {
+    test('valid versions', () {
       final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
       expect(versions.length, versions.toSet().length);
 
@@ -135,18 +135,18 @@ void main() {
       }
     });
 
-    test('version does not have any banner', () async {
+    test('version does not have any banner', () {
       final banners = service.getBanners(1.7);
       expect(banners.isEmpty, isTrue);
     });
 
-    test('invalid version', () async {
+    test('invalid version', () {
       expect(() => service.getBanners(0.1), throwsA(isA<Exception>()));
     });
   });
 
   group('Get item release history', () {
-    test('item exists', () async {
+    test('item exists', () {
       final history = service.getItemReleaseHistory('keqing');
       expect(history.isNotEmpty, isTrue);
 
@@ -156,13 +156,13 @@ void main() {
       }
     });
 
-    test('item does not exist', () async {
+    test('item does not exist', () {
       expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
     });
   });
 
   group('Get elements for charts', () {
-    test('valid versions', () async {
+    test('valid versions', () {
       final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
       final expectedLength = ElementType.values.length;
 
@@ -179,11 +179,11 @@ void main() {
       }
     });
 
-    test('invalid from version', () async {
+    test('invalid from version', () {
       expect(() => service.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
     });
 
-    test('invalid until version', () async {
+    test('invalid until version', () {
       expect(() => service.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
     });
   });
@@ -209,8 +209,6 @@ void main() {
             case BannerHistoryItemType.weapon:
               final weapons = weaponFileService.getItemCommonWithNameByRarity(rarity);
               data.addAll(weapons);
-            default:
-              throw Exception('Invalid type');
           }
 
           final charts = service.getTopCharts(mostReruns, chartType, bannerItemType, data);

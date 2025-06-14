@@ -4,7 +4,7 @@ part 'translation_artifact_file.freezed.dart';
 part 'translation_artifact_file.g.dart';
 
 @freezed
-class TranslationArtifactFile with _$TranslationArtifactFile {
+abstract class TranslationArtifactFile with _$TranslationArtifactFile {
   factory TranslationArtifactFile({
     required String key,
     required String name,

@@ -18,9 +18,10 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   final List<StreamSubscription> _calcItemSubscriptions = [];
 
-  _LoadedState get currentState => state as _LoadedState;
+  CalculatorAscMaterialsSessionsStateLoaded get currentState => state as CalculatorAscMaterialsSessionsStateLoaded;
 
-  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading()) {
+  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService)
+    : super(const CalculatorAscMaterialsSessionsState.loading()) {
     final itemAddedSubs = _dataService.calculator.itemAdded.stream.listen(
       (e) => add(CalculatorAscMaterialsSessionsEvent.itemAdded(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
     );
@@ -34,22 +35,28 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   @override
   Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
-    if (state is! _LoadedState && event is! _Init) {
+    if (state is! CalculatorAscMaterialsSessionsStateLoaded && event is! CalculatorAscMaterialsSessionsEventInit) {
       throw Exception('Invalid state');
     }
 
-    final s = await event.map(
-      init: (_) async => _init(),
-      createSession: (e) async => _createSession(e.name, e.showMaterialUsage),
-      updateSession: (e) async => _updateSession(e.key, e.name, e.showMaterialUsage),
-      deleteSession: (e) async => _deleteSession(e.key),
-      deleteAllSessions: (_) async => _deleteAllSessions(),
-      itemsReordered: (e) async => _itemsReordered(e.updated),
-      itemAdded: (e) async => _changeItemCount(e.sessionKey, true, e.isCharacter),
-      itemDeleted: (e) async => _changeItemCount(e.sessionKey, false, e.isCharacter),
-    );
-
-    yield s;
+    switch (event) {
+      case CalculatorAscMaterialsSessionsEventInit():
+        yield await _init();
+      case CalculatorAscMaterialsSessionsEventCreateSession():
+        yield await _createSession(event.name, event.showMaterialUsage);
+      case CalculatorAscMaterialsSessionsEventUpdateSession():
+        yield await _updateSession(event.key, event.name, event.showMaterialUsage);
+      case CalculatorAscMaterialsSessionsEventDeleteSession():
+        yield await _deleteSession(event.key);
+      case CalculatorAscMaterialsSessionsEventDeleteAllSessions():
+        yield await _deleteAllSessions();
+      case CalculatorAscMaterialsSessionsEventItemsReordered():
+        yield await _itemsReordered(event.updated);
+      case CalculatorAscMaterialsSessionsEventItemAdded():
+        yield _changeItemCount(event.sessionKey, true, event.isCharacter);
+      case CalculatorAscMaterialsSessionsEventItemDeleted():
+        yield _changeItemCount(event.sessionKey, false, event.isCharacter);
+    }
   }
 
   @override
@@ -70,7 +77,11 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     }
 
     await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-    final createdSession = await _dataService.calculator.createSession(name.trim(), currentState.sessions.length, showMaterialUsage);
+    final createdSession = await _dataService.calculator.createSession(
+      name.trim(),
+      currentState.sessions.length,
+      showMaterialUsage,
+    );
     final sessions = [...currentState.sessions, createdSession];
     return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
   }

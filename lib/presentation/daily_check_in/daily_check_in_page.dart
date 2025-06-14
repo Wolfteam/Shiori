@@ -43,9 +43,9 @@ class DailyCheckInPage extends StatelessWidget {
       child: BlocProvider(
         create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadDailyCheckIn: true)),
         child: BlocBuilder<UrlPageBloc, UrlPageState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(showCloseButton: true),
-            loaded: (state) => AppWebView(
+          builder: (context, state) => switch (state) {
+            UrlPageStateLoading() => const Loading(showCloseButton: true),
+            UrlPageStateLoaded() => AppWebView(
               appBar: AppBar(
                 title: Text(s.dailyCheckIn),
                 actions: [
@@ -67,7 +67,7 @@ class DailyCheckInPage extends StatelessWidget {
               script: _script,
               showCloseButton: true,
             ),
-          ),
+          },
         ),
       ),
     );
@@ -86,6 +86,9 @@ class DailyCheckInPage extends StatelessWidget {
       s.loginIssuesMsgA,
       s.loginIssuesMsgB,
     ];
-    await showDialog(context: context, builder: (context) => InfoDialog(explanations: explanations));
+    await showDialog(
+      context: context,
+      builder: (context) => InfoDialog(explanations: explanations),
+    );
   }
 }

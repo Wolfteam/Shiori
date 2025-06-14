@@ -1,8 +1,8 @@
 part of 'tier_list_form_bloc.dart';
 
 @freezed
-class TierListFormEvent with _$TierListFormEvent {
+sealed class TierListFormEvent with _$TierListFormEvent {
   const factory TierListFormEvent.nameChanged({
     required String name,
-  }) = _NameChanged;
+  }) = TierListFormEventNameChanged;
 }

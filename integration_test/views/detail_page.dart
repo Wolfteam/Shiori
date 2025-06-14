@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import 'base_page.dart';
 
 class DetailPage extends BasePage {
@@ -15,7 +16,7 @@ class DetailPage extends BasePage {
 
     for (final String description in expectedDescriptions) {
       final Finder finder = find.widgetWithText(DetailSection, description);
-      await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
+      await tester.doAppDragUntilVisible(finder, scrollViewFinder, verticalOffset);
       await tester.pumpAndSettle();
     }
 
@@ -36,7 +37,7 @@ class DetailPage extends BasePage {
       final String tabTitle = expectedTabTitles[i];
       final Finder tabFinder = find.widgetWithText(Tab, tabTitle);
       expect(tabFinder, findsOneWidget);
-      await tester.dragUntilVisible(tabFinder, tabControllerFinder, horizontalOffset);
+      await tester.doAppDragUntilVisible(tabFinder, tabControllerFinder, horizontalOffset);
 
       await tester.tap(tabFinder);
       await tester.pumpAndSettle();
@@ -45,7 +46,7 @@ class DetailPage extends BasePage {
       final List<String> descriptions = expectedDescriptions[i].split(';');
       for (final String description in descriptions) {
         final Finder finder = find.widgetWithText(DetailSection, description);
-        await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
+        await tester.doAppDragUntilVisible(finder, scrollViewFinder, verticalOffset);
         await tester.pumpAndSettle();
       }
     }
@@ -60,7 +61,7 @@ class DetailPage extends BasePage {
       final List<String> descriptions = expectedDescriptions[i].split(';');
       for (final String description in descriptions) {
         final Finder finder = find.widgetWithText(DetailSection, description);
-        await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
+        await tester.doAppDragUntilVisible(finder, scrollViewFinder, verticalOffset);
         await tester.pumpAndSettle();
       }
     }

@@ -21,11 +21,10 @@ class ChangelogDialog extends StatelessWidget {
           width: mq.getWidthForDialogs(),
           child: SingleChildScrollView(
             child: BlocBuilder<ChangelogBloc, ChangelogState>(
-              builder:
-                  (ctx, state) => state.map(
-                    loading: (_) => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-                    loadedState: (state) => MarkdownBody(data: state.changelog),
-                  ),
+              builder: (ctx, state) => switch (state) {
+                ChangelogStateLoading() => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+                ChangelogStateLoaded() => MarkdownBody(data: state.changelog),
+              },
             ),
           ),
         ),

@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'custom_build_model.freezed.dart';
 
 @freezed
-class CustomBuildModel with _$CustomBuildModel {
+abstract class CustomBuildModel with _$CustomBuildModel {
   const factory CustomBuildModel({
     required int key,
     required String title,

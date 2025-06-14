@@ -1,50 +1,50 @@
 part of 'settings_bloc.dart';
 
 @freezed
-class SettingsEvent with _$SettingsEvent {
-  const factory SettingsEvent.init() = _Init;
+sealed class SettingsEvent with _$SettingsEvent {
+  const factory SettingsEvent.init() = SettingsEventInit;
 
   const factory SettingsEvent.themeChanged({
     required AppThemeType newValue,
-  }) = _ThemeChanged;
+  }) = SettingsEventThemeChanged;
 
   const factory SettingsEvent.useDarkAmoledTheme({
     required bool newValue,
-  }) = _UseDarkAmoledTheme;
+  }) = SettingsEventUseDarkAmoledTheme;
 
   const factory SettingsEvent.accentColorChanged({
     required AppAccentColorType newValue,
-  }) = _AccentColorChanged;
+  }) = SettingsEventAccentColorChanged;
 
   const factory SettingsEvent.languageChanged({
     required AppLanguageType newValue,
-  }) = _LanguageChanged;
+  }) = SettingsEventLanguageChanged;
 
   const factory SettingsEvent.showCharacterDetailsChanged({
     required bool newValue,
-  }) = _ShowCharacterDetailsChanged;
+  }) = SettingsEventShowCharacterDetailsChanged;
 
   const factory SettingsEvent.showWeaponDetailsChanged({
     required bool newValue,
-  }) = _ShowWeaponDetailsChanged;
+  }) = SettingsEventShowWeaponDetailsChanged;
 
   const factory SettingsEvent.serverResetTimeChanged({
     required AppServerResetTimeType newValue,
-  }) = _ServerResetTimeChanged;
+  }) = SettingsEventServerResetTimeChanged;
 
   const factory SettingsEvent.doubleBackToCloseChanged({
     required bool newValue,
-  }) = _DoubleBackToCloseChanged;
+  }) = SettingsEventDoubleBackToCloseChanged;
 
   const factory SettingsEvent.useOfficialMapChanged({
     required bool newValue,
-  }) = _UseOfficialMapChanged;
+  }) = SettingsEventUseOfficialMapChanged;
 
   const factory SettingsEvent.useTwentyFourHoursFormatChanged({
     required bool newValue,
-  }) = _UseTwentyFourHoursFormatChanged;
+  }) = SettingsEventUseTwentyFourHoursFormatChanged;
 
   const factory SettingsEvent.checkForUpdatesOnStartupChanged({
     required bool newValue,
-  }) = _CheckForUpdatesOnStartupChanged;
+  }) = SettingsEventCheckForUpdatesOnStartupChanged;
 }

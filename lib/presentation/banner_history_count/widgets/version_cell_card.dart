@@ -27,11 +27,14 @@ class VersionCellCard extends StatelessWidget {
       margin: Styles.edgeInsetVertical5,
       child: InkWell(
         onTap: () => context.read<BannerHistoryCountBloc>().add(BannerHistoryCountEvent.versionSelected(version: version)),
-        onLongPress: () => showDialog(context: context, builder: (_) => BannerVersionHistoryDialog(version: version)),
+        onLongPress: () => showDialog(
+          context: context,
+          builder: (_) => BannerVersionHistoryDialog(version: version),
+        ),
         borderRadius: borderRadius,
         child: Card(
           margin: margin,
-          color: isSelected ? theme.colorScheme.primaryContainer.withOpacity(0.45) : theme.colorScheme.primaryContainer,
+          color: isSelected ? theme.colorScheme.primaryContainer.withValues(alpha: 0.45) : theme.colorScheme.primaryContainer,
           elevation: isSelected ? 0 : null,
           shape: RoundedRectangleBorder(borderRadius: borderRadius),
           child: Center(

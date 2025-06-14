@@ -31,9 +31,9 @@ class CharacterBottomSheet extends StatelessWidget {
         showCancelButton: false,
         showOkButton: false,
         child: BlocBuilder<CharactersBloc, CharactersState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => Column(
+          builder: (context, state) => switch (state) {
+            CharactersStateLoading() => const Loading(useScaffold: false),
+            CharactersStateLoaded() => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -63,15 +63,15 @@ class CharacterBottomSheet extends StatelessWidget {
                 const _ButtonBar(),
               ],
             ),
-          ),
+          },
         ),
       );
     }
 
     return BlocBuilder<CharactersBloc, CharactersState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (context, state) => switch (state) {
+        CharactersStateLoading() => const Loading(useScaffold: false),
+        CharactersStateLoaded() => RightBottomSheet(
           bottom: const _ButtonBar(),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.elements)),
@@ -103,7 +103,7 @@ class CharacterBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      },
     );
   }
 }
@@ -154,7 +154,8 @@ class _OtherFilters extends StatelessWidget {
           tooltipText: s.region,
           values: RegionType.values.map((e) => e.index).toList(),
           selectedValue: tempRegionType?.index,
-          onAllOrValueSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.regionTypeChanged(v == null ? null : RegionType.values[v])),
+          onAllOrValueSelected: (v) =>
+              context.read<CharactersBloc>().add(CharactersEvent.regionTypeChanged(v == null ? null : RegionType.values[v])),
           itemText: (val, _) => s.translateRegionType(RegionType.values[val]),
           icon: Icon(Shiori.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),

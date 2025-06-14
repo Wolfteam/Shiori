@@ -4,7 +4,7 @@ part 'artifact_file_model.freezed.dart';
 part 'artifact_file_model.g.dart';
 
 @freezed
-class ArtifactFileModel with _$ArtifactFileModel {
+abstract class ArtifactFileModel with _$ArtifactFileModel {
   factory ArtifactFileModel({
     required String key,
     required String image,

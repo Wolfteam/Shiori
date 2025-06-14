@@ -63,11 +63,15 @@ void main() {
       build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc.add(ArtifactsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
-        final emittedState = bloc.state;
-        emittedState.map(
-          loading: (_) => throw Exception('Invalid artifact state'),
-          loaded: (state) {
-            final artifacts = genshinService.artifacts.getArtifactsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+        final state = bloc.state;
+        switch (state) {
+          case ArtifactsStateLoading():
+            throw Exception('Invalid artifact state');
+          case ArtifactsStateLoaded():
+            final artifacts = genshinService.artifacts
+                .getArtifactsForCard()
+                .where((el) => !excludedKeys.contains(el.key))
+                .toList();
             expect(state.artifacts.length, artifacts.length);
             expect(state.collapseNotes, false);
             expect(state.rarity, 0);
@@ -76,8 +80,7 @@ void main() {
             expect(state.tempArtifactFilterType, ArtifactFilterType.name);
             expect(state.sortDirectionType, SortDirectionType.asc);
             expect(state.tempSortDirectionType, SortDirectionType.asc);
-          },
-        );
+        }
       },
     );
   });

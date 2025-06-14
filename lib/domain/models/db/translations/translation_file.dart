@@ -5,7 +5,7 @@ part 'translation_file.freezed.dart';
 part 'translation_file.g.dart';
 
 @freezed
-class TranslationFile with _$TranslationFile {
+abstract class TranslationFile with _$TranslationFile {
   factory TranslationFile({
     required List<TranslationCharacterFile> characters,
     required List<TranslationWeaponFile> weapons,

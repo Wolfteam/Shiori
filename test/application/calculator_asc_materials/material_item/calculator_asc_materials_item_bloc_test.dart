@@ -60,37 +60,40 @@ void main() {
         'item $key exists',
         build: () => getBloc(),
         act: (bloc) => bloc.add(CalculatorAscMaterialsItemEvent.load(key: key, isCharacter: isCharacter)),
-        verify: (bloc) => bloc.state.map(
-          loading: (_) => throw Exception('Invalid State'),
-          loaded: (state) {
-            checkTranslation(state.name);
-            checkAsset(state.imageFullPath);
-            expect(state.currentLevel, itemAscensionLevelMap.entries.first.value);
-            expect(state.desiredLevel, maxItemLevel);
-            expect(state.currentAscensionLevel, minAscensionLevel);
-            expect(state.desiredAscensionLevel, maxAscensionLevel);
-            expect(state.useMaterialsFromInventory, isFalse);
-            if (!isCharacter) {
-              expect(state.skills.isEmpty, isTrue);
-              return;
-            }
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case CalculatorAscMaterialsItemStateLoading():
+              throw Exception('Invalid State');
+            case CalculatorAscMaterialsItemStateLoaded():
+              checkTranslation(state.name);
+              checkAsset(state.imageFullPath);
+              expect(state.currentLevel, itemAscensionLevelMap.entries.first.value);
+              expect(state.desiredLevel, maxItemLevel);
+              expect(state.currentAscensionLevel, minAscensionLevel);
+              expect(state.desiredAscensionLevel, maxAscensionLevel);
+              expect(state.useMaterialsFromInventory, isFalse);
+              if (!isCharacter) {
+                expect(state.skills.isEmpty, isTrue);
+                return;
+              }
 
-            expect(state.skills.length, greaterThanOrEqualTo(3));
-            for (int i = 0; i < state.skills.length; i++) {
-              final skill = state.skills[i];
-              checkItemKeyAndName(skill.key, skill.name);
-              expect(skill.position == i, isTrue);
+              expect(state.skills.length, greaterThanOrEqualTo(3));
+              for (int i = 0; i < state.skills.length; i++) {
+                final skill = state.skills[i];
+                checkItemKeyAndName(skill.key, skill.name);
+                expect(skill.position == i, isTrue);
 
-              expect(skill.currentLevel, minSkillLevel);
-              expect(skill.isCurrentDecEnabled, isFalse);
-              expect(skill.isCurrentIncEnabled, isFalse);
+                expect(skill.currentLevel, minSkillLevel);
+                expect(skill.isCurrentDecEnabled, isFalse);
+                expect(skill.isCurrentIncEnabled, isFalse);
 
-              expect(skill.desiredLevel, maxSkillLevel);
-              expect(skill.isDesiredDecEnabled, isTrue);
-              expect(skill.isDesiredIncEnabled, isFalse);
-            }
-          },
-        ),
+                expect(skill.desiredLevel, maxSkillLevel);
+                expect(skill.isDesiredDecEnabled, isTrue);
+                expect(skill.isDesiredIncEnabled, isFalse);
+              }
+          }
+        },
       );
     }
   });
@@ -150,40 +153,43 @@ void main() {
             skills: skills,
           ),
         ),
-        verify: (bloc) => bloc.state.map(
-          loading: (_) => throw Exception('Invalid State'),
-          loaded: (state) {
-            checkTranslation(state.name);
-            checkAsset(state.imageFullPath);
-            expect(state.currentLevel, currentLevel);
-            expect(state.desiredLevel, desiredLevel);
-            expect(state.currentAscensionLevel, currentAscLevel);
-            expect(state.desiredAscensionLevel, desiredAscLevel);
-            expect(state.useMaterialsFromInventory, isTrue);
-            if (!isCharacter) {
-              expect(state.skills.isEmpty, isTrue);
-              return;
-            }
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case CalculatorAscMaterialsItemStateLoading():
+              throw Exception('Invalid State');
+            case CalculatorAscMaterialsItemStateLoaded():
+              checkTranslation(state.name);
+              checkAsset(state.imageFullPath);
+              expect(state.currentLevel, currentLevel);
+              expect(state.desiredLevel, desiredLevel);
+              expect(state.currentAscensionLevel, currentAscLevel);
+              expect(state.desiredAscensionLevel, desiredAscLevel);
+              expect(state.useMaterialsFromInventory, isTrue);
+              if (!isCharacter) {
+                expect(state.skills.isEmpty, isTrue);
+                return;
+              }
 
-            expect(state.skills.length, skills.length);
-            for (int i = 0; i < state.skills.length; i++) {
-              final skill = state.skills[i];
-              final expectedSkill = skills[i];
+              expect(state.skills.length, skills.length);
+              for (int i = 0; i < state.skills.length; i++) {
+                final skill = state.skills[i];
+                final expectedSkill = skills[i];
 
-              expect(skill.key, expectedSkill.key);
-              expect(skill.name, expectedSkill.name);
-              expect(skill.position, expectedSkill.position);
+                expect(skill.key, expectedSkill.key);
+                expect(skill.name, expectedSkill.name);
+                expect(skill.position, expectedSkill.position);
 
-              expect(skill.currentLevel, expectedSkill.currentLevel);
-              expect(skill.isCurrentDecEnabled, expectedSkill.isCurrentDecEnabled);
-              expect(skill.isCurrentIncEnabled, expectedSkill.isCurrentIncEnabled);
+                expect(skill.currentLevel, expectedSkill.currentLevel);
+                expect(skill.isCurrentDecEnabled, expectedSkill.isCurrentDecEnabled);
+                expect(skill.isCurrentIncEnabled, expectedSkill.isCurrentIncEnabled);
 
-              expect(skill.desiredLevel, expectedSkill.desiredLevel);
-              expect(skill.isDesiredDecEnabled, expectedSkill.isDesiredDecEnabled);
-              expect(skill.isDesiredIncEnabled, expectedSkill.isDesiredIncEnabled);
-            }
-          },
-        ),
+                expect(skill.desiredLevel, expectedSkill.desiredLevel);
+                expect(skill.isDesiredDecEnabled, expectedSkill.isDesiredDecEnabled);
+                expect(skill.isDesiredIncEnabled, expectedSkill.isDesiredIncEnabled);
+              }
+          }
+        },
       );
     }
   });
@@ -211,24 +217,27 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: 50)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, maxItemLevel);
-          expect(state.currentAscensionLevel, 2);
-          expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, maxSkillLevel);
-            expect(skill.isDesiredIncEnabled, isFalse);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, maxItemLevel);
+            expect(state.currentAscensionLevel, 2);
+            expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, maxSkillLevel);
+              expect(skill.isDesiredIncEnabled, isFalse);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -255,24 +264,27 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: 50)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, itemAscensionLevelMap.entries.first.value);
-          expect(state.desiredLevel, 50);
-          expect(state.currentAscensionLevel, 1);
-          expect(state.desiredAscensionLevel, 2);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isFalse);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, 2);
-            expect(skill.isDesiredIncEnabled, isFalse);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, itemAscensionLevelMap.entries.first.value);
+            expect(state.desiredLevel, 50);
+            expect(state.currentAscensionLevel, 1);
+            expect(state.desiredAscensionLevel, 2);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isFalse);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, 2);
+              expect(skill.isDesiredIncEnabled, isFalse);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -284,24 +296,27 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: 50))
         ..add(const CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: 70)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, 70);
-          expect(state.currentAscensionLevel, 2);
-          expect(state.desiredAscensionLevel, 4);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, 5);
-            expect(skill.isDesiredIncEnabled, isTrue);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, 70);
+            expect(state.currentAscensionLevel, 2);
+            expect(state.desiredAscensionLevel, 4);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, 5);
+              expect(skill.isDesiredIncEnabled, isTrue);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -311,24 +326,27 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: 50))
         ..add(const CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: 40)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 40);
-          expect(state.desiredLevel, 40);
-          expect(state.currentAscensionLevel, 2);
-          expect(state.desiredAscensionLevel, 2);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, minSkillLevel + 1);
-            expect(skill.isDesiredIncEnabled, isFalse);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 40);
+            expect(state.desiredLevel, 40);
+            expect(state.currentAscensionLevel, 2);
+            expect(state.desiredAscensionLevel, 2);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, minSkillLevel + 1);
+              expect(skill.isDesiredIncEnabled, isFalse);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -336,7 +354,8 @@ void main() {
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
       'invalid state',
       build: () => getBloc(),
-      act: (bloc) => bloc.add(CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
+      act: (bloc) =>
+          bloc.add(CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
       errors: () => [isA<Exception>()],
     );
 
@@ -355,24 +374,27 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 3)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, maxItemLevel);
-          expect(state.currentAscensionLevel, 3);
-          expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, maxSkillLevel);
-            expect(skill.isDesiredIncEnabled, isFalse);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, maxItemLevel);
+            expect(state.currentAscensionLevel, 3);
+            expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, maxSkillLevel);
+              expect(skill.isDesiredIncEnabled, isFalse);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -380,7 +402,8 @@ void main() {
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
       'invalid state',
       build: () => getBloc(),
-      act: (bloc) => bloc.add(CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
+      act: (bloc) =>
+          bloc.add(CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
       errors: () => [isA<Exception>()],
     );
 
@@ -399,24 +422,27 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: 3)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 20);
-          expect(state.desiredLevel, 50);
-          expect(state.currentAscensionLevel, itemAscensionLevelMap.keys.first);
-          expect(state.desiredAscensionLevel, 3);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isFalse);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, 3);
-            expect(skill.isDesiredIncEnabled, isTrue);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 20);
+            expect(state.desiredLevel, 50);
+            expect(state.currentAscensionLevel, itemAscensionLevelMap.keys.first);
+            expect(state.desiredAscensionLevel, 3);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isFalse);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, 3);
+              expect(skill.isDesiredIncEnabled, isTrue);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -428,24 +454,27 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 2))
         ..add(const CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: 3)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 40);
-          expect(state.desiredLevel, 50);
-          expect(state.currentAscensionLevel, 2);
-          expect(state.desiredAscensionLevel, 3);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, 3);
-            expect(skill.isDesiredIncEnabled, isTrue);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 40);
+            expect(state.desiredLevel, 50);
+            expect(state.currentAscensionLevel, 2);
+            expect(state.desiredAscensionLevel, 3);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, 3);
+              expect(skill.isDesiredIncEnabled, isTrue);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -455,24 +484,27 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: 2))
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 3)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, 50);
-          expect(state.currentAscensionLevel, 3);
-          expect(state.desiredAscensionLevel, 3);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (final skill in state.skills) {
-            expect(skill.currentLevel, minItemLevel);
-            expect(skill.isCurrentIncEnabled, isTrue);
-            expect(skill.isCurrentDecEnabled, isFalse);
-            expect(skill.desiredLevel, 2);
-            expect(skill.isDesiredIncEnabled, isTrue);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, 50);
+            expect(state.currentAscensionLevel, 3);
+            expect(state.desiredAscensionLevel, 3);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (final skill in state.skills) {
+              expect(skill.currentLevel, minItemLevel);
+              expect(skill.isCurrentIncEnabled, isTrue);
+              expect(skill.isCurrentDecEnabled, isFalse);
+              expect(skill.desiredLevel, 2);
+              expect(skill.isDesiredIncEnabled, isTrue);
+              expect(skill.isDesiredDecEnabled, isTrue);
+            }
+        }
+      },
     );
   });
 
@@ -509,31 +541,34 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 2))
         ..add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: 0, newValue: 2)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 40);
-          expect(state.desiredLevel, maxItemLevel);
-          expect(state.currentAscensionLevel, 2);
-          expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (int i = 0; i < state.skills.length; i++) {
-            final skill = state.skills[i];
-            if (i == 0) {
-              expect(skill.currentLevel, 2);
-              expect(skill.isCurrentIncEnabled, isFalse);
-              expect(skill.isCurrentDecEnabled, isTrue);
-            } else {
-              expect(skill.currentLevel, minSkillLevel);
-              expect(skill.isCurrentIncEnabled, isTrue);
-              expect(skill.isCurrentDecEnabled, isFalse);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 40);
+            expect(state.desiredLevel, maxItemLevel);
+            expect(state.currentAscensionLevel, 2);
+            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (int i = 0; i < state.skills.length; i++) {
+              final skill = state.skills[i];
+              if (i == 0) {
+                expect(skill.currentLevel, 2);
+                expect(skill.isCurrentIncEnabled, isFalse);
+                expect(skill.isCurrentDecEnabled, isTrue);
+              } else {
+                expect(skill.currentLevel, minSkillLevel);
+                expect(skill.isCurrentIncEnabled, isTrue);
+                expect(skill.isCurrentDecEnabled, isFalse);
+              }
+              expect(skill.desiredLevel, maxSkillLevel);
+              expect(skill.isDesiredIncEnabled, isFalse);
+              expect(skill.isDesiredDecEnabled, isTrue);
             }
-            expect(skill.desiredLevel, maxSkillLevel);
-            expect(skill.isDesiredIncEnabled, isFalse);
-            expect(skill.isDesiredDecEnabled, isTrue);
-          }
-        },
-      ),
+        }
+      },
     );
   });
 
@@ -569,27 +604,30 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 0, newValue: 9)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.skills.isNotEmpty, isTrue);
-          for (int i = 0; i < state.skills.length; i++) {
-            final skill = state.skills[i];
-            if (i == 0) {
-              expect(skill.desiredLevel, 9);
-              expect(skill.isDesiredIncEnabled, isTrue);
-              expect(skill.isDesiredDecEnabled, isTrue);
-            } else {
-              expect(skill.desiredLevel, maxSkillLevel);
-              expect(skill.isDesiredIncEnabled, isFalse);
-              expect(skill.isDesiredDecEnabled, isTrue);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.skills.isNotEmpty, isTrue);
+            for (int i = 0; i < state.skills.length; i++) {
+              final skill = state.skills[i];
+              if (i == 0) {
+                expect(skill.desiredLevel, 9);
+                expect(skill.isDesiredIncEnabled, isTrue);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              } else {
+                expect(skill.desiredLevel, maxSkillLevel);
+                expect(skill.isDesiredIncEnabled, isFalse);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              }
+              expect(skill.currentLevel, minSkillLevel);
+              expect(skill.isCurrentIncEnabled, isFalse);
+              expect(skill.isCurrentDecEnabled, isFalse);
             }
-            expect(skill.currentLevel, minSkillLevel);
-            expect(skill.isCurrentIncEnabled, isFalse);
-            expect(skill.isCurrentDecEnabled, isFalse);
-          }
-        },
-      ),
+        }
+      },
     );
   });
 
@@ -602,34 +640,37 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 3))
         ..add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: 0, newValue: 4))
         ..add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 0, newValue: 6)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, 90);
-          expect(state.currentAscensionLevel, 3);
-          expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (int i = 0; i < state.skills.length; i++) {
-            final skill = state.skills[i];
-            if (i == 0) {
-              expect(skill.currentLevel, 4);
-              expect(skill.isCurrentIncEnabled, isFalse);
-              expect(skill.isCurrentDecEnabled, isTrue);
-              expect(skill.desiredLevel, 6);
-              expect(skill.isDesiredIncEnabled, isTrue);
-              expect(skill.isDesiredDecEnabled, isTrue);
-            } else {
-              expect(skill.currentLevel, minSkillLevel);
-              expect(skill.isCurrentIncEnabled, isTrue);
-              expect(skill.isCurrentDecEnabled, isFalse);
-              expect(skill.desiredLevel, maxSkillLevel);
-              expect(skill.isDesiredIncEnabled, isFalse);
-              expect(skill.isDesiredDecEnabled, isTrue);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, 90);
+            expect(state.currentAscensionLevel, 3);
+            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (int i = 0; i < state.skills.length; i++) {
+              final skill = state.skills[i];
+              if (i == 0) {
+                expect(skill.currentLevel, 4);
+                expect(skill.isCurrentIncEnabled, isFalse);
+                expect(skill.isCurrentDecEnabled, isTrue);
+                expect(skill.desiredLevel, 6);
+                expect(skill.isDesiredIncEnabled, isTrue);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              } else {
+                expect(skill.currentLevel, minSkillLevel);
+                expect(skill.isCurrentIncEnabled, isTrue);
+                expect(skill.isCurrentDecEnabled, isFalse);
+                expect(skill.desiredLevel, maxSkillLevel);
+                expect(skill.isDesiredIncEnabled, isFalse);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              }
             }
-          }
-        },
-      ),
+        }
+      },
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -640,34 +681,37 @@ void main() {
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: 3))
         ..add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: 0, newValue: 4))
         ..add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 0, newValue: 3)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.currentLevel, 50);
-          expect(state.desiredLevel, 90);
-          expect(state.currentAscensionLevel, 3);
-          expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
-          expect(state.skills.isNotEmpty, isTrue);
-          for (int i = 0; i < state.skills.length; i++) {
-            final skill = state.skills[i];
-            if (i == 0) {
-              expect(skill.currentLevel, 3);
-              expect(skill.isCurrentIncEnabled, isTrue);
-              expect(skill.isCurrentDecEnabled, isTrue);
-              expect(skill.desiredLevel, 3);
-              expect(skill.isDesiredIncEnabled, isTrue);
-              expect(skill.isDesiredDecEnabled, isTrue);
-            } else {
-              expect(skill.currentLevel, minSkillLevel);
-              expect(skill.isCurrentIncEnabled, isTrue);
-              expect(skill.isCurrentDecEnabled, isFalse);
-              expect(skill.desiredLevel, maxSkillLevel);
-              expect(skill.isDesiredIncEnabled, isFalse);
-              expect(skill.isDesiredDecEnabled, isTrue);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CalculatorAscMaterialsItemStateLoading():
+            throw Exception('Invalid State');
+          case CalculatorAscMaterialsItemStateLoaded():
+            expect(state.currentLevel, 50);
+            expect(state.desiredLevel, 90);
+            expect(state.currentAscensionLevel, 3);
+            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last);
+            expect(state.skills.isNotEmpty, isTrue);
+            for (int i = 0; i < state.skills.length; i++) {
+              final skill = state.skills[i];
+              if (i == 0) {
+                expect(skill.currentLevel, 3);
+                expect(skill.isCurrentIncEnabled, isTrue);
+                expect(skill.isCurrentDecEnabled, isTrue);
+                expect(skill.desiredLevel, 3);
+                expect(skill.isDesiredIncEnabled, isTrue);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              } else {
+                expect(skill.currentLevel, minSkillLevel);
+                expect(skill.isCurrentIncEnabled, isTrue);
+                expect(skill.isCurrentDecEnabled, isFalse);
+                expect(skill.desiredLevel, maxSkillLevel);
+                expect(skill.isDesiredIncEnabled, isFalse);
+                expect(skill.isDesiredDecEnabled, isTrue);
+              }
             }
-          }
-        },
-      ),
+        }
+      },
     );
   });
 }

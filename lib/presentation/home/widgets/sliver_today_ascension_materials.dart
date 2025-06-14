@@ -12,9 +12,9 @@ class SliverTodayAscensionMaterials extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocBuilder<HomeBloc, HomeState>(
-      builder: (context, state) => state.map(
-        loading: (_) => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
-        loaded: (state) => SliverMainAxisGroup(
+      builder: (context, state) => switch (state) {
+        HomeStateLoading() => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
+        HomeStateLoaded() => SliverMainAxisGroup(
           slivers: [
             if (state.charAscMaterials.isNotEmpty)
               _SliverClickableTitle(
@@ -36,7 +36,7 @@ class SliverTodayAscensionMaterials extends StatelessWidget {
               ),
           ],
         ),
-      ),
+      },
     );
   }
 }

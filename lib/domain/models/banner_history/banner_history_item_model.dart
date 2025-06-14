@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'banner_history_item_model.freezed.dart';
 
 @freezed
-class BannerHistoryItemModel with _$BannerHistoryItemModel {
+abstract class BannerHistoryItemModel with _$BannerHistoryItemModel {
   int get numberOfTimesReleased => versions.where((el) => el.released).length;
 
   const factory BannerHistoryItemModel({
@@ -21,7 +21,7 @@ class BannerHistoryItemModel with _$BannerHistoryItemModel {
 }
 
 @freezed
-class BannerHistoryItemVersionModel with _$BannerHistoryItemVersionModel {
+abstract class BannerHistoryItemVersionModel with _$BannerHistoryItemVersionModel {
   const factory BannerHistoryItemVersionModel({
     required double version,
     required bool released,

@@ -30,7 +30,10 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading()));
+  test(
+    'Initial state',
+    () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading()),
+  );
 
   group('Load from key', () {
     const key = 'slime-secretions';
@@ -39,9 +42,11 @@ void main() {
       build: () => MaterialBloc(genshinService, telemetryService, resourceService),
       act: (bloc) => bloc.add(const MaterialEvent.loadFromKey(key: key)),
       verify: (bloc) {
-        bloc.state.map(
-          loading: (_) => throw Exception('Invalid state'),
-          loaded: (state) {
+        final state = bloc.state;
+        switch (state) {
+          case MaterialStateLoading():
+            throw Exception('Invalid state');
+          case MaterialStateLoaded():
             checkTranslation(state.name, canBeNull: false);
             checkAsset(state.fullImage);
             expect(state.rarity, 2);
@@ -56,8 +61,7 @@ void main() {
               checkItemKeyAndImage(item.key, item.image);
             }
             checkItemsCommonWithName(state.relatedMaterials);
-          },
-        );
+        }
       },
     );
   });

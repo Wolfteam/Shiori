@@ -54,9 +54,9 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
     }
 
     return BlocBuilder<CharactersBloc, CharactersState>(
-      builder: (context, state) => state.map(
-        loading: (_) => const Loading(),
-        loaded: (state) => SliverScaffoldWithFab(
+      builder: (context, state) => switch (state) {
+        CharactersStateLoading() => const Loading(),
+        CharactersStateLoaded() => SliverScaffoldWithFab(
           scrollController: widget.scrollController,
           appbar: widget.isInSelectionMode ? AppBar(title: Text(s.selectCharacter)) : null,
           slivers: [
@@ -92,7 +92,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
               const SliverNothingFound(),
           ],
         ),
-      ),
+      },
     );
   }
 }

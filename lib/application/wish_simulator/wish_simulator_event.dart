@@ -1,14 +1,14 @@
 part of 'wish_simulator_bloc.dart';
 
 @freezed
-class WishSimulatorEvent with _$WishSimulatorEvent {
-  const factory WishSimulatorEvent.init() = _Init;
+sealed class WishSimulatorEvent with _$WishSimulatorEvent {
+  const factory WishSimulatorEvent.init() = WishSimulatorEventInit;
 
   const factory WishSimulatorEvent.periodChanged({
     required double version,
     required DateTime from,
     required DateTime until,
-  }) = _PeriodChanged;
+  }) = WishSimulatorEventPeriodChanged;
 
-  const factory WishSimulatorEvent.bannerSelected({required int index}) = _BannerSelected;
+  const factory WishSimulatorEvent.bannerSelected({required int index}) = WishSimulatorEventBannerSelected;
 }

@@ -21,27 +21,29 @@ class AppWidget extends StatelessWidget {
       GlobalCupertinoLocalizations.delegate,
     ];
     return BlocBuilder<MainBloc, MainState>(
-      builder: (ctx, state) => state.map<Widget>(
-        loading: (s) => SplashPage(language: s.language, delegates: delegates, restarted: s.restarted),
-        loaded: (s) {
-          final locale = Locale(s.language.code, s.language.countryCode);
-          return MaterialApp(
-            title: s.appTitle,
-            theme: s.accentColor.getThemeData(s.theme, s.useDarkAmoledTheme),
-            //AnnotatedRegion is needed on ios
-            home: AnnotatedRegion(
-              value: s.theme == AppThemeType.dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
-              child: MainTabPage(showChangelog: s.versionChanged, updateResult: s.updateResult),
-            ),
-            themeMode: ThemeMode.dark,
-            //Without this, the lang won't be reloaded
-            locale: locale,
-            localizationsDelegates: delegates,
-            supportedLocales: S.delegate.supportedLocales,
-            scrollBehavior: MyCustomScrollBehavior(),
-          );
-        },
-      ),
+      builder: (ctx, state) {
+        switch (state) {
+          case MainStateLoading():
+            return SplashPage(language: state.language, delegates: delegates, restarted: state.restarted);
+          case MainStateLoaded():
+            final locale = Locale(state.language.code, state.language.countryCode);
+            return MaterialApp(
+              title: state.appTitle,
+              theme: state.accentColor.getThemeData(state.theme, state.useDarkAmoledTheme),
+              //AnnotatedRegion is needed on ios
+              home: AnnotatedRegion(
+                value: state.theme == AppThemeType.dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+                child: MainTabPage(showChangelog: state.versionChanged, updateResult: state.updateResult),
+              ),
+              themeMode: ThemeMode.dark,
+              //Without this, the lang won't be reloaded
+              locale: locale,
+              localizationsDelegates: delegates,
+              supportedLocales: S.delegate.supportedLocales,
+              scrollBehavior: MyCustomScrollBehavior(),
+            );
+        }
+      },
     );
   }
 }
@@ -51,9 +53,9 @@ class AppWidget extends StatelessWidget {
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-        PointerDeviceKind.trackpad,
-        PointerDeviceKind.stylus,
-      };
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    PointerDeviceKind.trackpad,
+    PointerDeviceKind.stylus,
+  };
 }

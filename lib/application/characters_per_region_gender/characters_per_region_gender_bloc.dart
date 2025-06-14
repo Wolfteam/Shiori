@@ -15,10 +15,10 @@ class CharactersPerRegionGenderBloc extends Bloc<CharactersPerRegionGenderEvent,
 
   @override
   Stream<CharactersPerRegionGenderState> mapEventToState(CharactersPerRegionGenderEvent event) async* {
-    final s = event.map(
-      init: (e) => _init(e.regionType, e.onlyFemales),
-    );
-    yield s;
+    switch (event) {
+      case CharactersPerRegionGenderEventInit():
+        yield _init(event.regionType, event.onlyFemales);
+    }
   }
 
   CharactersPerRegionGenderState _init(RegionType regionType, bool onlyFemales) {

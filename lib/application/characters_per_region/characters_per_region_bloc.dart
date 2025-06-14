@@ -15,10 +15,10 @@ class CharactersPerRegionBloc extends Bloc<CharactersPerRegionEvent, CharactersP
 
   @override
   Stream<CharactersPerRegionState> mapEventToState(CharactersPerRegionEvent event) async* {
-    final s = event.map(
-      init: (e) => _init(e.type),
-    );
-    yield s;
+    switch (event) {
+      case CharactersPerRegionEventInit():
+        yield _init(event.type);
+    }
   }
 
   CharactersPerRegionState _init(RegionType type) {

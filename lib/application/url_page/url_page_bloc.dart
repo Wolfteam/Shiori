@@ -31,21 +31,18 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
 
   @override
   Stream<UrlPageState> mapEventToState(UrlPageEvent event) async* {
-    final s = await event.map(
-      init: (e) async {
+    switch (event) {
+      case UrlPageEventInit():
         final finalMapUrl = _settingsService.useOfficialMap ? _getMapUrl() : unofficialMapUrl;
         final isInternetAvailable = await _networkService.isInternetAvailable();
-        await _telemetryService.trackUrlOpened(e.loadMap, e.loadDailyCheckIn, isInternetAvailable);
-        return UrlPageState.loaded(
+        await _telemetryService.trackUrlOpened(event.loadMap, event.loadDailyCheckIn, isInternetAvailable);
+        yield UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: finalMapUrl,
           dailyCheckInUrl: _getDailyCheckInUrl(),
           userAgent: _deviceInfoService.userAgent ?? '',
         );
-      },
-    );
-
-    yield s;
+    }
   }
 
   String _getDailyCheckInUrl() {

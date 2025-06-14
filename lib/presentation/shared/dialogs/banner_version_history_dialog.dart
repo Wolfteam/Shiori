@@ -37,25 +37,26 @@ class BannerVersionHistoryDialog extends StatelessWidget {
           width: mq.getWidthForDialogs(),
           child: SingleChildScrollView(
             child: BlocBuilder<BannerVersionHistoryBloc, BannerVersionHistoryState>(
-              builder: (context, state) => state.maybeMap(
-                loadedState: (state) => state.items.isEmpty
-                    ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
-                    : Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: state.items
-                            .map(
-                              (e) => _VersionDetailPeriod(
-                                from: e.from,
-                                until: e.until,
-                                items: e.items,
-                                showCharacters: showCharacters,
-                                showWeapons: showWeapons,
-                              ),
-                            )
-                            .toList(),
-                      ),
-                orElse: () => const Loading(useScaffold: false),
-              ),
+              builder: (context, state) => switch (state) {
+                BannerVersionHistoryStateLoading() => const Loading(useScaffold: false),
+                final BannerVersionHistoryStateLoaded state when state.items.isEmpty => const NothingFoundColumn(
+                  mainAxisSize: MainAxisSize.min,
+                ),
+                BannerVersionHistoryStateLoaded() => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: state.items
+                      .map(
+                        (e) => _VersionDetailPeriod(
+                          from: e.from,
+                          until: e.until,
+                          items: e.items,
+                          showCharacters: showCharacters,
+                          showWeapons: showWeapons,
+                        ),
+                      )
+                      .toList(),
+                ),
+              },
             ),
           ),
         ),
@@ -150,8 +151,6 @@ class _Items extends StatelessWidget {
               return CharacterIconImage(itemKey: item.key, image: item.iconImage, gradient: gradient);
             case BannerHistoryItemType.weapon:
               return WeaponIconImage(itemKey: item.key, image: item.image, gradient: gradient);
-            default:
-              throw Exception('Banner history item type = $type is not valid');
           }
         },
       ),

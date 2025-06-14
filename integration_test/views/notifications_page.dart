@@ -50,15 +50,15 @@ class NotificationBottomSheet extends CommonBottomSheet {
     await tester.pumpAndSettle();
   }
 
-  Future<void> setTitle(String title) async {
+  Future<void> setTitle(String title) {
     return _setText(title, 'Title');
   }
 
-  Future<void> setBody(String body) async {
+  Future<void> setBody(String body) {
     return _setText(body, 'Body');
   }
 
-  Future<void> setNote(String note) async {
+  Future<void> setNote(String note) {
     return _setText(note, 'Note');
   }
 

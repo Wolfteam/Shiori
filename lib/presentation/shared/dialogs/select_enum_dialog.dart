@@ -74,7 +74,7 @@ class _SelectEnumDialogState<TEnum> extends State<SelectEnumDialog<TEnum>> {
                       : null,
                 ),
                 selected: currentSelectedType == type,
-                selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                 onTap: () {
                   setState(() {
                     currentSelectedType = type;

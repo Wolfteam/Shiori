@@ -1,35 +1,36 @@
 part of 'calculator_asc_materials_sessions_bloc.dart';
 
 @freezed
-class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsEvent {
-  const factory CalculatorAscMaterialsSessionsEvent.init() = _Init;
+sealed class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsEvent {
+  const factory CalculatorAscMaterialsSessionsEvent.init() = CalculatorAscMaterialsSessionsEventInit;
 
   const factory CalculatorAscMaterialsSessionsEvent.createSession({
     required String name,
     required bool showMaterialUsage,
-  }) = _CreateSession;
+  }) = CalculatorAscMaterialsSessionsEventCreateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.updateSession({
     required int key,
     required String name,
     required bool showMaterialUsage,
-  }) = _UpdateSession;
+  }) = CalculatorAscMaterialsSessionsEventUpdateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.deleteSession({
     required int key,
-  }) = _DeleteSession;
+  }) = CalculatorAscMaterialsSessionsEventDeleteSession;
 
-  const factory CalculatorAscMaterialsSessionsEvent.deleteAllSessions() = _DeleteAllSessions;
+  const factory CalculatorAscMaterialsSessionsEvent.deleteAllSessions() = CalculatorAscMaterialsSessionsEventDeleteAllSessions;
 
-  const factory CalculatorAscMaterialsSessionsEvent.itemsReordered(List<CalculatorSessionModel> updated) = _ItemsReordered;
+  const factory CalculatorAscMaterialsSessionsEvent.itemsReordered(List<CalculatorSessionModel> updated) =
+      CalculatorAscMaterialsSessionsEventItemsReordered;
 
   const factory CalculatorAscMaterialsSessionsEvent.itemAdded({
     required int sessionKey,
     required bool isCharacter,
-  }) = _ItemAdded;
+  }) = CalculatorAscMaterialsSessionsEventItemAdded;
 
   const factory CalculatorAscMaterialsSessionsEvent.itemDeleted({
     required int sessionKey,
     required bool isCharacter,
-  }) = _ItemDeleted;
+  }) = CalculatorAscMaterialsSessionsEventItemDeleted;
 }

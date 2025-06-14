@@ -37,20 +37,32 @@ class SplashPage extends StatelessWidget {
         supportedLocales: S.delegate.supportedLocales,
         home: BlocConsumer<SplashBloc, SplashState>(
           listener: (context, state) {
-            state.maybeMap(
-              loaded: (state) => _handleLoadedChange(state.noResourcesHasBeenDownloaded, state.updateResultType, state.result, context),
-              orElse: () {},
-            );
+            switch (state) {
+              case SplashStateLoaded():
+                _handleLoadedChange(state.noResourcesHasBeenDownloaded, state.updateResultType, state.result, context);
+              default:
+                break;
+            }
           },
-          builder: (context, state) => _SplashPage(
-            updateResultType: state.maybeMap(loaded: (state) => state.updateResultType, orElse: () => null),
-            isUpdating: state.maybeMap(loaded: (state) => state.isUpdating, orElse: () => false),
-            isLoading: state.maybeMap(loaded: (state) => state.isLoading, orElse: () => true),
-            updateFailed: state.maybeMap(loaded: (state) => state.updateFailed, orElse: () => false),
-            canSkipUpdate: state.maybeMap(loaded: (state) => state.canSkipUpdate, orElse: () => false),
-            needsLatestAppVersionOnFirstInstall: state.maybeMap(loaded: (state) => state.needsLatestAppVersionOnFirstInstall, orElse: () => false),
-            noInternetConnectionOnFirstInstall: state.maybeMap(loaded: (state) => state.noInternetConnectionOnFirstInstall, orElse: () => false),
-          ),
+          builder: (context, state) => switch (state) {
+            SplashStateLoading() => const _SplashPage(
+              isUpdating: false,
+              isLoading: true,
+              updateFailed: false,
+              canSkipUpdate: false,
+              needsLatestAppVersionOnFirstInstall: false,
+              noInternetConnectionOnFirstInstall: false,
+            ),
+            SplashStateLoaded() => _SplashPage(
+              updateResultType: state.updateResultType,
+              isUpdating: state.isUpdating,
+              isLoading: state.isLoading,
+              updateFailed: state.updateFailed,
+              canSkipUpdate: state.canSkipUpdate,
+              needsLatestAppVersionOnFirstInstall: state.needsLatestAppVersionOnFirstInstall,
+              noInternetConnectionOnFirstInstall: state.noInternetConnectionOnFirstInstall,
+            ),
+          },
         ),
       ),
     );
@@ -119,7 +131,6 @@ class SplashPage extends StatelessWidget {
 
   void _initMain(AppResourceUpdateResultType result, BuildContext context) {
     WakelockPlus.disable();
-    final s = S.of(context);
     context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
   }
 
@@ -213,12 +224,7 @@ class _Buttons extends StatelessWidget {
               ),
               if (canSkipUpdate)
                 TextButton.icon(
-                  onPressed: () {
-                    final s = S.of(context);
-                    context
-                        .read<MainBloc>()
-                        .add(MainEvent.init(updateResultType: updateResultType));
-                  },
+                  onPressed: () => context.read<MainBloc>().add(MainEvent.init(updateResultType: updateResultType)),
                   icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
                   label: Text(s.continueLabel, style: const TextStyle(color: Colors.white)),
                   style: buttonStyle,
@@ -231,7 +237,8 @@ class _Buttons extends StatelessWidget {
   }
 
   String _getErrorMsg(S s) {
-    if (updateResultType == AppResourceUpdateResultType.unknownError || updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall) {
+    if (updateResultType == AppResourceUpdateResultType.unknownError ||
+        updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall) {
       return '${s.unknownErrorWhileUpdating}\n${s.tryAgainLater}';
     }
 
@@ -277,21 +284,23 @@ class _Updating extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  state.maybeMap(
-                    loaded: (state) => state.result?.downloadTotalSize == null
-                        ? const SizedBox.shrink()
-                        : Text(
-                            '${FormatUtils.formatBytes(state.downloadedBytes)} / ${FormatUtils.formatBytes(state.result!.downloadTotalSize!)}',
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
-                          ),
-                    orElse: () => const SizedBox.shrink(),
-                  ),
+                  switch (state) {
+                    SplashStateLoading() => const SizedBox.shrink(),
+                    final SplashStateLoaded state when state.result?.downloadTotalSize == null => const SizedBox.shrink(),
+                    SplashStateLoaded() => Text(
+                      '${FormatUtils.formatBytes(state.downloadedBytes)} / ${FormatUtils.formatBytes(state.result!.downloadTotalSize!)}',
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
+                    ),
+                  },
                   LinearProgressIndicator(
                     color: Colors.white,
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                     backgroundColor: Colors.black,
-                    value: state.maybeMap(loaded: (state) => state.downloadedBytes / state.result!.downloadTotalSize!, orElse: () => null),
+                    value: switch (state) {
+                      SplashStateLoading() => null,
+                      SplashStateLoaded() => state.downloadedBytes / state.result!.downloadTotalSize!,
+                    },
                   ),
                 ],
               ),

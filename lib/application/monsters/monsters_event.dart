@@ -1,25 +1,26 @@
 part of 'monsters_bloc.dart';
 
 @freezed
-class MonstersEvent with _$MonstersEvent {
+sealed class MonstersEvent with _$MonstersEvent {
   const factory MonstersEvent.init({
     @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _Init;
+  }) = MonstersEventInit;
 
   const factory MonstersEvent.searchChanged({
     required String search,
-  }) = _SearchChanged;
+  }) = MonstersEventSearchChanged;
 
-  const factory MonstersEvent.typeChanged(MonsterType? type) = _TypeChanged;
+  const factory MonstersEvent.typeChanged(MonsterType? type) = MonstersEventTypeChanged;
 
-  const factory MonstersEvent.filterTypeChanged(MonsterFilterType type) = _FilterTypeChanged;
+  const factory MonstersEvent.filterTypeChanged(MonsterFilterType type) = MonstersEventFilterTypeChanged;
 
-  const factory MonstersEvent.applyFilterChanges() = _ApplyFilterChanges;
+  const factory MonstersEvent.applyFilterChanges() = MonstersEventApplyFilterChanges;
 
-  const factory MonstersEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
+  const factory MonstersEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) =
+      MonstersEventSortDirectionTypeChanged;
 
-  const factory MonstersEvent.cancelChanges() = _CancelChanges;
+  const factory MonstersEvent.cancelChanges() = MonstersEventCancelChanges;
 
-  const factory MonstersEvent.resetFilters() = _ResetFilters;
+  const factory MonstersEvent.resetFilters() = MonstersEventResetFilters;
 }

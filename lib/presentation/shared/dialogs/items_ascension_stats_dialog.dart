@@ -26,7 +26,8 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
     final theme = Theme.of(context);
     final mq = MediaQuery.of(context);
     return BlocProvider<ItemsAscensionStatsBloc>(
-      create: (context) => Injection.itemsAscensionStatsBloc..add(ItemsAscensionStatsEvent.init(type: statType, itemType: itemType)),
+      create: (context) =>
+          Injection.itemsAscensionStatsBloc..add(ItemsAscensionStatsEvent.init(type: statType, itemType: itemType)),
       child: AlertDialog(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,19 +50,20 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
           ),
         ],
         content: BlocBuilder<ItemsAscensionStatsBloc, ItemsAscensionStatsState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.items.isEmpty
-                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
-                : SizedBox(
-                    height: mq.getHeightForDialogs(state.items.length + 1),
-                    width: mq.getWidthForDialogs(),
-                    child: ListView.builder(
-                      itemCount: state.items.length,
-                      itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: itemType, item: state.items[index]),
-                    ),
-                  ),
-            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-          ),
+          builder: (context, state) => switch (state) {
+            ItemsAscensionStatsStateLoading() => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+            final ItemsAscensionStatsStateLoaded state when state.items.isEmpty => const NothingFoundColumn(
+              mainAxisSize: MainAxisSize.min,
+            ),
+            ItemsAscensionStatsStateLoaded() => SizedBox(
+              height: mq.getHeightForDialogs(state.items.length + 1),
+              width: mq.getWidthForDialogs(),
+              child: ListView.builder(
+                itemCount: state.items.length,
+                itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: itemType, item: state.items[index]),
+              ),
+            ),
+          },
         ),
       ),
     );

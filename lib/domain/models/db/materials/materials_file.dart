@@ -5,7 +5,7 @@ part 'materials_file.freezed.dart';
 part 'materials_file.g.dart';
 
 @freezed
-class MaterialsFile with _$MaterialsFile {
+abstract class MaterialsFile with _$MaterialsFile {
   List<MaterialFileModel> get materials =>
       talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals + experience + ingredient;
 

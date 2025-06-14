@@ -55,7 +55,7 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
                 key: Key('$index'),
                 title: Text(day.value, overflow: TextOverflow.ellipsis),
                 selected: currentSelectedDay == day.key,
-                selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
+                selectedTileColor: theme.colorScheme.secondary.withValues(alpha: 0.2),
                 onTap: () {
                   setState(() {
                     currentSelectedDay = day.key;

@@ -15,23 +15,25 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
   final ResourceService _resourceService;
   final TelemetryService _telemetryService;
 
-  _LoadedState get currentState => state as _LoadedState;
+  WishSimulatorStateLoaded get currentState => state as WishSimulatorStateLoaded;
 
-  WishSimulatorBloc(this._genshinServiceImpl, this._resourceService, this._telemetryService) : super(const WishSimulatorState.loading());
+  WishSimulatorBloc(this._genshinServiceImpl, this._resourceService, this._telemetryService)
+    : super(const WishSimulatorState.loading());
 
   @override
   Stream<WishSimulatorState> mapEventToState(WishSimulatorEvent event) async* {
-    final s = await event.map(
-      init: (e) => _init(),
-      periodChanged: (e) => _periodChanged(e.version, e.from, e.until),
-      bannerSelected: (e) async => _bannerChanged(e.index),
-    );
-
-    yield s;
+    switch (event) {
+      case WishSimulatorEventInit():
+        yield await _init();
+      case WishSimulatorEventPeriodChanged():
+        yield await _periodChanged(event.version, event.from, event.until);
+      case WishSimulatorEventBannerSelected():
+        yield _bannerChanged(event.index);
+    }
   }
 
   void _checkLoadedState() {
-    if (state is! _LoadedState) {
+    if (state is! WishSimulatorStateLoaded) {
       throw Exception('Invalid state');
     }
   }
@@ -70,7 +72,10 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
       return currentState;
     }
 
-    return currentState.copyWith(selectedBannerIndex: index, wishIconImage: _getWishIconImage(currentState.period.banners[index].type));
+    return currentState.copyWith(
+      selectedBannerIndex: index,
+      wishIconImage: _getWishIconImage(currentState.period.banners[index].type),
+    );
   }
 
   String _getWishIconImage(BannerItemType type) {

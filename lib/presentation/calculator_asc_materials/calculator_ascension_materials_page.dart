@@ -61,19 +61,20 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.unfold_more),
               splashRadius: Styles.mediumButtonSplashRadius,
-              onPressed: () => showDialog<SortResult<SortableItemOfT<ItemAscensionMaterials>>>(
-                context: context,
-                builder: (_) => SortItemsDialog<SortableItemOfT<ItemAscensionMaterials>>(
-                  items: state.items.map((e) => SortableItemOfT(e.key, e.name, e)).toList(),
-                ),
-              ).then((result) {
-                if (result == null || !result.somethingChanged || !context.mounted) {
-                  return;
-                }
+              onPressed: () =>
+                  showDialog<SortResult<SortableItemOfT<ItemAscensionMaterials>>>(
+                    context: context,
+                    builder: (_) => SortItemsDialog<SortableItemOfT<ItemAscensionMaterials>>(
+                      items: state.items.map((e) => SortableItemOfT(e.key, e.name, e)).toList(),
+                    ),
+                  ).then((result) {
+                    if (result == null || !result.somethingChanged || !context.mounted) {
+                      return;
+                    }
 
-                final sorted = result.items.map((e) => e.item).toList();
-                context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.itemsReordered(sorted));
-              }),
+                    final sorted = result.items.map((e) => e.item).toList();
+                    context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.itemsReordered(sorted));
+                  }),
             ),
           if (state.items.isNotEmpty)
             IconButton(
@@ -133,30 +134,28 @@ class _FabMenu extends StatelessWidget {
         ),
       ],
       body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-        builder: (context, state) => state.map(
-          initial: (state) {
-            if (state.items.isEmpty) {
-              return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
-            }
-            final summary = state.summary.orderBy((x) => s.translateAscensionSummaryType(x.type)).toList();
-            if (isPortrait) {
-              return _PortraitLayout(
-                sessionKey: sessionKey,
-                items: state.items,
-                summary: summary,
-                showMaterialUsage: state.showMaterialUsage,
-                itemHeight: itemHeight,
-              );
-            }
-            return _LandscapeLayout(
+        builder: (context, state) {
+          if (state.items.isEmpty) {
+            return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
+          }
+          final summary = state.summary.orderBy((x) => s.translateAscensionSummaryType(x.type)).toList();
+          if (isPortrait) {
+            return _PortraitLayout(
               sessionKey: sessionKey,
               items: state.items,
               summary: summary,
               showMaterialUsage: state.showMaterialUsage,
               itemHeight: itemHeight,
             );
-          },
-        ),
+          }
+          return _LandscapeLayout(
+            sessionKey: sessionKey,
+            items: state.items,
+            summary: summary,
+            showMaterialUsage: state.showMaterialUsage,
+            itemHeight: itemHeight,
+          );
+        },
       ),
     );
   }

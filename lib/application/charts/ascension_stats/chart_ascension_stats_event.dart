@@ -1,17 +1,17 @@
 part of 'chart_ascension_stats_bloc.dart';
 
 @freezed
-class ChartAscensionStatsEvent with _$ChartAscensionStatsEvent {
+sealed class ChartAscensionStatsEvent with _$ChartAscensionStatsEvent {
   const factory ChartAscensionStatsEvent.init({
     required ItemType type,
     required int maxNumberOfColumns,
-  }) = _Init;
+  }) = ChartAscensionStatsEventInit;
 
-  const factory ChartAscensionStatsEvent.goToNextPage() = _GoToNextPage;
+  const factory ChartAscensionStatsEvent.goToNextPage() = ChartAscensionStatsEventGoToNextPage;
 
-  const factory ChartAscensionStatsEvent.goToPreviousPage() = _GoToPreviousPage;
+  const factory ChartAscensionStatsEvent.goToPreviousPage() = ChartAscensionStatsEventGoToPreviousPage;
 
-  const factory ChartAscensionStatsEvent.goToFirstPage() = _GoToFirstPage;
+  const factory ChartAscensionStatsEvent.goToFirstPage() = ChartAscensionStatsEventGoToFirstPage;
 
-  const factory ChartAscensionStatsEvent.goToLastPage() = _GoToLastPage;
+  const factory ChartAscensionStatsEvent.goToLastPage() = ChartAscensionStatsEventGoToLastPage;
 }

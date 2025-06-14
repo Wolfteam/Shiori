@@ -30,75 +30,80 @@ class ArtifactSection extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
-      builder: (context, state) => state.maybeMap(
-        loaded: (state) {
-          final color = state.character.elementType.getElementColorFromContext(context);
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: Styles.edgeInsetVertical10,
-                decoration: BoxDecoration(
-                  color: color,
-                  border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
-                ),
-                child: Text(
-                  state.readyForScreenshot ? s.artifacts : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
-              if (!state.readyForScreenshot)
-                OverflowBar(
-                  alignment: MainAxisAlignment.end,
-                  children: [
-                    Tooltip(
-                      message: s.add,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.add),
-                        onPressed: state.artifacts.length < ArtifactType.values.length
-                            ? () => _addArtifact(context, state.artifacts.map((e) => e.type).toList())
-                            : null,
-                      ),
-                    ),
-                    Tooltip(
-                      message: s.clearAll,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.clear_all),
-                        onPressed:
-                            state.artifacts.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
-                      ),
-                    ),
-                  ],
-                ),
-              if (state.artifacts.isEmpty)
-                NothingFound(msg: s.startByAddingArtifacts, padding: Styles.edgeInsetVertical10)
-              else
-                ...state.artifacts.map(
-                  (e) => ArtifactRow(
-                    artifact: e,
+      builder: (context, state) {
+        switch (state) {
+          case CustomBuildStateLoading():
+            return const Loading(useScaffold: false);
+          case CustomBuildStateLoaded():
+            final color = state.character.elementType.getElementColorFromContext(context);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: Styles.edgeInsetVertical10,
+                  decoration: BoxDecoration(
                     color: color,
-                    maxImageWidth: maxItemImageWidth,
-                    readyForScreenshot: state.readyForScreenshot,
+                    border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
+                  ),
+                  child: Text(
+                    state.readyForScreenshot
+                        ? s.artifacts
+                        : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
-              if (state.subStatsSummary.isNotEmpty)
-                SubStatToFocus(
-                  subStatsToFocus: state.subStatsSummary,
-                  color: color,
-                  fontSize: 14,
-                  margin: Styles.edgeInsetAll5,
-                ),
-            ],
-          );
-        },
-        orElse: () => const Loading(useScaffold: false),
-      ),
+                if (!state.readyForScreenshot)
+                  OverflowBar(
+                    alignment: MainAxisAlignment.end,
+                    children: [
+                      Tooltip(
+                        message: s.add,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          splashRadius: Styles.smallButtonSplashRadius,
+                          icon: const Icon(Icons.add),
+                          onPressed: state.artifacts.length < ArtifactType.values.length
+                              ? () => _addArtifact(context, state.artifacts.map((e) => e.type).toList())
+                              : null,
+                        ),
+                      ),
+                      Tooltip(
+                        message: s.clearAll,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          splashRadius: Styles.smallButtonSplashRadius,
+                          icon: const Icon(Icons.clear_all),
+                          onPressed: state.artifacts.isEmpty
+                              ? null
+                              : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
+                        ),
+                      ),
+                    ],
+                  ),
+                if (state.artifacts.isEmpty)
+                  NothingFound(msg: s.startByAddingArtifacts, padding: Styles.edgeInsetVertical10)
+                else
+                  ...state.artifacts.map(
+                    (e) => ArtifactRow(
+                      artifact: e,
+                      color: color,
+                      maxImageWidth: maxItemImageWidth,
+                      readyForScreenshot: state.readyForScreenshot,
+                    ),
+                  ),
+                if (state.subStatsSummary.isNotEmpty)
+                  SubStatToFocus(
+                    subStatsToFocus: state.subStatsSummary,
+                    color: color,
+                    fontSize: 14,
+                    margin: Styles.edgeInsetAll5,
+                  ),
+              ],
+            );
+        }
+      },
     );
   }
 
@@ -127,7 +132,6 @@ class ArtifactSection extends StatelessWidget {
             values: getArtifactPossibleMainStats(selectedType),
           ),
         );
-        break;
     }
 
     if (statType == null || !context.mounted) {

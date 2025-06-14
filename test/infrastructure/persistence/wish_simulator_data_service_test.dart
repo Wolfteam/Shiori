@@ -101,11 +101,17 @@ void main() {
     });
 
     test('item key is not valid', () {
-      expect(() => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, '', ItemType.character), throwsArgumentError);
+      expect(
+        () => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, '', ItemType.character),
+        throwsArgumentError,
+      );
     });
 
     test('item type is not valid', () {
-      expect(() => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, 'mora', ItemType.material), throwsArgumentError);
+      expect(
+        () => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, 'mora', ItemType.material),
+        throwsArgumentError,
+      );
     });
 
     for (final BannerItemType bannerType in BannerItemType.values) {
@@ -228,7 +234,7 @@ void main() {
     });
 
     for (final type in BannerItemType.values) {
-      test('no data exist for type ${type.name}', () async {
+      test('no data exist for type ${type.name}', () {
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
         expect(count, isZero);
       });

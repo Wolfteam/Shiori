@@ -231,7 +231,9 @@ void main() {
       expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
     });
 
-    testWidgets('create session, add 2 items, mark one as inactive thus only materials from the first one should be shown', (widgetTester) async {
+    testWidgets('create session, add 2 items, mark one as inactive thus only materials from the first one should be shown', (
+      widgetTester,
+    ) async {
       const String sessionName = 'Updates 1 item';
       const String charNameA = 'Keqing';
       const String charNameB = 'Nahida';
@@ -272,7 +274,7 @@ void main() {
 
       int count = 0;
       for (final AscensionMaterialSummaryType type in expected) {
-        await widgetTester.dragUntilVisible(
+        await widgetTester.doAppDragUntilVisible(
           find.byWidgetPredicate((widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == type),
           summaryDescriptionFinder,
           BasePage.verticalDragOffset,
@@ -309,22 +311,19 @@ void main() {
 
       await page.addItem(charNameA, true, usesMaterialFromInventory: true);
 
-      final Finder summaryDescriptionFinder = find.widgetWithText(DetailSection, 'Summary');
-      expect(summaryDescriptionFinder, findsOneWidget);
-      await widgetTester.dragUntilVisible(
-        find.byWidgetPredicate((widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == AscensionMaterialSummaryType.currency),
-        summaryDescriptionFinder,
-        BasePage.verticalDragOffset,
-      );
-
-      //Tap on the Mora item
-      expect(find.widgetWithText(MaterialItem, '0 / $requiredQuantity'), findsOneWidget);
       final Finder moraFinder = find.descendant(
         of: find.byWidgetPredicate(
           (widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == AscensionMaterialSummaryType.currency,
         ),
         matching: find.byType(MaterialItem),
       );
+      final Finder customScrollViewFinder = find.byType(CustomScrollView).last;
+      expect(customScrollViewFinder, findsOneWidget);
+      await widgetTester.doAppDragUntilVisible(moraFinder, customScrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.pumpAndSettle();
+
+      //Tap on the Mora item
+      expect(find.widgetWithText(MaterialItem, '0 / $requiredQuantity'), findsOneWidget);
       await widgetTester.tap(moraFinder);
       await widgetTester.pumpAndSettle();
 

@@ -35,9 +35,9 @@ class MaterialsPage extends StatelessWidget {
     return BlocProvider<MaterialsBloc>(
       create: (context) => Injection.materialsBloc..add(MaterialsEvent.init(excludeKeys: excludeKeys)),
       child: BlocBuilder<MaterialsBloc, MaterialsState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => SliverScaffoldWithFab(
+        builder: (context, state) => switch (state) {
+          MaterialsStateLoading() => const Loading(),
+          MaterialsStateLoaded() => SliverScaffoldWithFab(
             appbar: AppBar(title: Text(isInSelectionMode ? s.selectAMaterial : s.materials)),
             slivers: [
               SliverPageFilter(
@@ -68,7 +68,7 @@ class MaterialsPage extends StatelessWidget {
                 const SliverNothingFound(),
             ],
           ),
-        ),
+        },
       ),
     );
   }

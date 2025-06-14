@@ -1,8 +1,8 @@
 part of 'splash_bloc.dart';
 
 @freezed
-class SplashState with _$SplashState {
-  const factory SplashState.loading() = _LoadingState;
+sealed class SplashState with _$SplashState {
+  const factory SplashState.loading() = SplashStateLoading;
 
   const factory SplashState.loaded({
     required AppResourceUpdateResultType updateResultType,
@@ -17,5 +17,5 @@ class SplashState with _$SplashState {
     CheckForUpdatesResult? result,
     @Default(0) double progress,
     @Default(0) int downloadedBytes,
-  }) = _LoadedState;
+  }) = SplashStateLoaded;
 }

@@ -55,31 +55,33 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
               cellBuilder: (context, vicinity) {
                 final Widget child = switch (vicinity) {
                   _ when vicinity.column == 0 && vicinity.row == 0 => VersionsCellText(
-                      type: state.type,
-                      margin: margin,
-                    ),
+                    type: state.type,
+                    margin: margin,
+                  ),
                   _ when vicinity.column > 0 && vicinity.row == 0 => VersionCellCard(
-                      version: state.versions[vicinity.column - 1],
-                      isSelected: state.selectedVersions.contains(state.versions[vicinity.column - 1]),
-                      margin: margin,
-                      cellWidth: _cellWidth,
-                      cellHeight: 60,
-                    ),
+                    version: state.versions[vicinity.column - 1],
+                    isSelected: state.selectedVersions.contains(state.versions[vicinity.column - 1]),
+                    margin: margin,
+                    cellWidth: _cellWidth,
+                    cellHeight: 60,
+                  ),
                   _ when vicinity.column == 0 && vicinity.row > 0 => LeftItemCard(
-                      itemKey: state.banners[vicinity.row - 1].key,
-                      type: state.banners[vicinity.row - 1].type,
-                      name: state.banners[vicinity.row - 1].name,
-                      image: state.banners[vicinity.row - 1].iconImage,
-                      rarity: state.banners[vicinity.row - 1].rarity,
-                      numberOfTimesReleased: state.banners[vicinity.row - 1].numberOfTimesReleased,
-                      margin: margin,
-                    ),
+                    itemKey: state.banners[vicinity.row - 1].key,
+                    type: state.banners[vicinity.row - 1].type,
+                    name: state.banners[vicinity.row - 1].name,
+                    image: state.banners[vicinity.row - 1].iconImage,
+                    rarity: state.banners[vicinity.row - 1].rarity,
+                    numberOfTimesReleased: state.banners[vicinity.row - 1].numberOfTimesReleased,
+                    margin: margin,
+                  ),
                   _ => ContentCard(
-                      banner: state.banners[vicinity.row - 1],
-                      margin: margin,
-                      version: state.versions[vicinity.column - 1],
-                      number: state.banners[vicinity.row - 1].versions.firstWhere((el) => el.version == state.versions[vicinity.column - 1]).number,
-                    ),
+                    banner: state.banners[vicinity.row - 1],
+                    margin: margin,
+                    version: state.versions[vicinity.column - 1],
+                    number: state.banners[vicinity.row - 1].versions
+                        .firstWhere((el) => el.version == state.versions[vicinity.column - 1])
+                        .number,
+                  ),
                 };
                 return TableViewCell(child: child);
               },

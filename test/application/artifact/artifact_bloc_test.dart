@@ -42,9 +42,11 @@ void main() {
       build: () => artifactBloc,
       act: (bloc) => bloc.add(const ArtifactEvent.loadFromKey(key: key)),
       verify: (bloc) {
-        bloc.state.map(
-          loading: (_) => throw Exception('Invalid state'),
-          loaded: (state) {
+        final state = bloc.state;
+        switch (state) {
+          case ArtifactStateLoading():
+            throw Exception('Invalid state');
+          case ArtifactStateLoaded():
             checkTranslation(state.name, canBeNull: false);
             checkAsset(state.image);
             for (final img in state.images) {
@@ -59,8 +61,7 @@ void main() {
             expect(state.minRarity, inInclusiveRange(2, 4));
             expect(state.maxRarity, inInclusiveRange(4, 5));
             expect(state.bonus, isNotEmpty);
-          },
-        );
+        }
       },
     );
   });

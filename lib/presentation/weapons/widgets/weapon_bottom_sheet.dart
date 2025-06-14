@@ -27,8 +27,9 @@ class WeaponBottomSheet extends StatelessWidget {
     required this.areWeaponTypesEnabled,
   });
 
-  static Map<String, dynamic> buildNavigationArgs({bool areWeaponTypesEnabled = true}) =>
-      <String, dynamic>{_areWeaponTypesEnabledKey: areWeaponTypesEnabled};
+  static Map<String, dynamic> buildNavigationArgs({bool areWeaponTypesEnabled = true}) => <String, dynamic>{
+    _areWeaponTypesEnabledKey: areWeaponTypesEnabled,
+  };
 
   static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
     assert(args.isNotEmpty);
@@ -47,9 +48,9 @@ class WeaponBottomSheet extends StatelessWidget {
         showOkButton: false,
         showCancelButton: false,
         child: BlocBuilder<WeaponsBloc, WeaponsState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(),
-            loaded: (state) => Column(
+          builder: (context, state) => switch (state) {
+            WeaponsStateLoading() => const Loading(),
+            WeaponsStateLoaded() => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -74,15 +75,15 @@ class WeaponBottomSheet extends StatelessWidget {
                 _ButtonBar(isResetEnabled: areWeaponTypesEnabled),
               ],
             ),
-          ),
+          },
         ),
       );
     }
 
     return BlocBuilder<WeaponsBloc, WeaponsState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (ctx, state) => switch (state) {
+        WeaponsStateLoading() => const Loading(useScaffold: false),
+        WeaponsStateLoaded() => RightBottomSheet(
           bottom: _ButtonBar(isResetEnabled: areWeaponTypesEnabled),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.type)),
@@ -108,7 +109,7 @@ class WeaponBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      },
     );
   }
 }
@@ -136,8 +137,9 @@ class _OtherFilters extends StatelessWidget {
       children: [
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.location,
-          onAllOrValueSelected: (v) =>
-              context.read<WeaponsBloc>().add(WeaponsEvent.weaponLocationTypeChanged(v != null ? ItemLocationType.values[v] : null)),
+          onAllOrValueSelected: (v) => context.read<WeaponsBloc>().add(
+            WeaponsEvent.weaponLocationTypeChanged(v != null ? ItemLocationType.values[v] : null),
+          ),
           selectedValue: tempWeaponLocationType?.index,
           values: ItemLocationType.values.where((el) => el != ItemLocationType.na).map((e) => e.index).toList(),
           itemText: (val, _) => s.translateItemLocationType(ItemLocationType.values[val]),
@@ -145,7 +147,8 @@ class _OtherFilters extends StatelessWidget {
         ),
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.secondaryState,
-          onAllOrValueSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v != null ? StatType.values[v] : null)),
+          onAllOrValueSelected: (v) =>
+              context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v != null ? StatType.values[v] : null)),
           selectedValue: tempWeaponSubStatType?.index,
           values: getWeaponPossibleAscensionStats().map((e) => e.index).toList(),
           itemText: (val, _) => s.translateStatTypeWithoutValue(StatType.values[val]),

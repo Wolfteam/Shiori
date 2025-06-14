@@ -7,6 +7,7 @@ import 'package:shiori/presentation/custom_build/widgets/weapon_row.dart';
 import 'package:shiori/presentation/custom_builds/widgets/custom_build_card.dart';
 import 'package:shiori/presentation/shared/character_stack_image.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
@@ -30,7 +31,7 @@ void main() {
       await page.addWeapon('the black');
       await page.addWeapon("lion's roar");
       await widgetTester.pumpAndSettle(BasePage.threeHundredMsDuration);
-      await widgetTester.dragUntilVisible(
+      await widgetTester.doAppDragUntilVisible(
         find.byWidgetPredicate((widget) => widget is WeaponRow && widget.weapon.index == 2),
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,
@@ -42,7 +43,7 @@ void main() {
         await page.addArtifact('thundering', type);
       }
       await widgetTester.pumpAndSettle(BasePage.threeHundredMsDuration);
-      await widgetTester.dragUntilVisible(
+      await widgetTester.doAppDragUntilVisible(
         find.byWidgetPredicate((widget) => widget is ArtifactRow && widget.artifact.type == ArtifactType.crown),
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,
@@ -54,7 +55,7 @@ void main() {
       await page.addTeamCharacter('nahida', CharacterRoleType.support, CharacterRoleSubType.dendro);
       await page.addTeamCharacter('kazuha', CharacterRoleType.support, CharacterRoleSubType.anemo);
       await widgetTester.pumpAndSettle(BasePage.threeHundredMsDuration);
-      await widgetTester.dragUntilVisible(
+      await widgetTester.doAppDragUntilVisible(
         find.byWidgetPredicate((widget) => widget is TeamCharacterRow && widget.character.index == 2),
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,

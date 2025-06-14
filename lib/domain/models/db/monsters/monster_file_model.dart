@@ -5,7 +5,7 @@ part 'monster_file_model.freezed.dart';
 part 'monster_file_model.g.dart';
 
 @freezed
-class MonsterFileModel with _$MonsterFileModel {
+abstract class MonsterFileModel with _$MonsterFileModel {
   factory MonsterFileModel({
     required String key,
     required String image,
@@ -20,7 +20,7 @@ class MonsterFileModel with _$MonsterFileModel {
 }
 
 @freezed
-class MonsterDropFileModel with _$MonsterDropFileModel {
+abstract class MonsterDropFileModel with _$MonsterDropFileModel {
   factory MonsterDropFileModel({
     required String key,
     required MonsterDropType type,

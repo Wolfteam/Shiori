@@ -4,7 +4,7 @@ part 'backup_tierlist_model.freezed.dart';
 part 'backup_tierlist_model.g.dart';
 
 @freezed
-class BackupTierListModel with _$BackupTierListModel {
+abstract class BackupTierListModel with _$BackupTierListModel {
   const factory BackupTierListModel({
     required String text,
     required int color,

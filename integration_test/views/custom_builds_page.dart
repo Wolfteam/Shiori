@@ -123,7 +123,7 @@ class CustomBuildsPage extends BasePage {
   }
 
   Future<void> addWeapon(String name) async {
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(of: find.byType(WeaponSection), matching: find.byIcon(Icons.add)),
       find.byType(SingleChildScrollView),
       BasePage.verticalDragOffset,
@@ -140,7 +140,7 @@ class CustomBuildsPage extends BasePage {
   }
 
   Future<void> addArtifact(String name, ArtifactType type) async {
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(of: find.byType(ArtifactSection), matching: find.byIcon(Icons.add)),
       find.byType(SingleChildScrollView),
       BasePage.verticalDragOffset,
@@ -168,7 +168,7 @@ class CustomBuildsPage extends BasePage {
   }
 
   Future<void> addTeamCharacter(String name, CharacterRoleType type, CharacterRoleSubType subType) async {
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(of: find.byType(TeamSection), matching: find.byIcon(Icons.add)),
       find.byType(SingleChildScrollView),
       BasePage.verticalDragOffset,

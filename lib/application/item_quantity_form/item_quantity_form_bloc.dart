@@ -16,15 +16,12 @@ class ItemQuantityFormBloc extends Bloc<ItemQuantityFormEvent, ItemQuantityFormS
 
   @override
   Stream<ItemQuantityFormState> mapEventToState(ItemQuantityFormEvent event) async* {
-    final s = event.map(
-      quantityChanged: (e) {
-        final isValid = e.quantity >= 0 && e.quantity <= maxQuantity;
-        final isDirty = e.quantity != state.quantity;
+    switch (event) {
+      case ItemQuantityFormEventQuantityChange():
+        final isValid = event.quantity >= 0 && event.quantity <= maxQuantity;
+        final isDirty = event.quantity != state.quantity;
 
-        return state.copyWith.call(quantity: e.quantity, isQuantityDirty: isDirty, isQuantityValid: isValid);
-      },
-    );
-
-    yield s;
+        yield state.copyWith.call(quantity: event.quantity, isQuantityDirty: isDirty, isQuantityValid: isValid);
+    }
   }
 }

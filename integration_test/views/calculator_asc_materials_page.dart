@@ -9,6 +9,7 @@ import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import 'views.dart';
 
 class CalculatorAscMaterialsPage extends BasePage {
@@ -64,14 +65,14 @@ class CalculatorAscMaterialsPage extends BasePage {
     await tester.pumpAndSettle();
 
     if (usesMaterialFromInventory) {
-      await tester.dragUntilVisible(
-        find.widgetWithIcon(ToggleButtons, Icons.check),
+      await tester.doAppDragUntilVisible(
+        find.widgetWithIcon(SegmentedButton<bool>, Icons.check),
         find.byType(CustomScrollView).first,
         BasePage.verticalDragOffset,
       );
       await tester.pumpAndSettle();
 
-      final Finder iconFinder = find.descendant(of: find.byType(ToggleButtons), matching: find.byIcon(Icons.check));
+      final Finder iconFinder = find.descendant(of: find.byType(SegmentedButton<bool>), matching: find.byIcon(Icons.check));
       await tester.tap(iconFinder);
       await tester.pumpAndSettle();
     }

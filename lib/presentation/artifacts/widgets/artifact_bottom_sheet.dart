@@ -31,9 +31,9 @@ class ArtifactBottomSheet extends StatelessWidget {
         showCancelButton: false,
         showOkButton: false,
         child: BlocBuilder<ArtifactsBloc, ArtifactsState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => Column(
+          builder: (context, state) => switch (state) {
+            ArtifactsStateLoading() => const Loading(useScaffold: false),
+            ArtifactsStateLoaded() => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -50,15 +50,15 @@ class ArtifactBottomSheet extends StatelessWidget {
                 const _ButtonBar(),
               ],
             ),
-          ),
+          },
         ),
       );
     }
 
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (context, state) => switch (state) {
+        ArtifactsStateLoading() => const Loading(useScaffold: false),
+        ArtifactsStateLoaded() => RightBottomSheet(
           bottom: const _ButtonBar(),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.rarity)),
@@ -74,7 +74,7 @@ class ArtifactBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      },
     );
   }
 }

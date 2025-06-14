@@ -1,8 +1,8 @@
 part of 'artifact_bloc.dart';
 
 @freezed
-class ArtifactState with _$ArtifactState {
-  const factory ArtifactState.loading() = _LoadingState;
+sealed class ArtifactState with _$ArtifactState {
+  const factory ArtifactState.loading() = ArtifactStateLoading;
 
   const factory ArtifactState.loaded({
     required String name,
@@ -13,5 +13,5 @@ class ArtifactState with _$ArtifactState {
     required List<String> images,
     required List<ItemCommonWithName> usedBy,
     required List<ItemCommonWithName> droppedBy,
-  }) = _LoadedState;
+  }) = ArtifactStateLoaded;
 }

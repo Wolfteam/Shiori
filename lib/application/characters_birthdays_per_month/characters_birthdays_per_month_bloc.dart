@@ -12,14 +12,15 @@ class CharactersBirthdaysPerMonthBloc extends Bloc<CharactersBirthdaysPerMonthEv
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
-  CharactersBirthdaysPerMonthBloc(this._genshinService, this._telemetryService) : super(const CharactersBirthdaysPerMonthState.loading());
+  CharactersBirthdaysPerMonthBloc(this._genshinService, this._telemetryService)
+    : super(const CharactersBirthdaysPerMonthState.loading());
 
   @override
   Stream<CharactersBirthdaysPerMonthState> mapEventToState(CharactersBirthdaysPerMonthEvent event) async* {
-    final s = await event.map(
-      init: (e) => _init(e.month),
-    );
-    yield s;
+    switch (event) {
+      case CharactersBirthdaysPerMonthEventBirthdaysPerMonthEvent():
+        yield await _init(event.month);
+    }
   }
 
   Future<CharactersBirthdaysPerMonthState> _init(int month) async {

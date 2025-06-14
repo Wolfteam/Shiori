@@ -130,7 +130,13 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
   }
 
   @override
-  Future<NotificationItem> saveGadgetNotification(String itemKey, String title, String body, {String? note, bool showNotification = true}) async {
+  Future<NotificationItem> saveGadgetNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
     _commonCheck(itemKey, title, body);
 
     final now = DateTime.now();
@@ -355,7 +361,11 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
   }
 
   @override
-  Future<NotificationItem> resetNotification(int key, AppNotificationType type, AppServerResetTimeType serverResetTimeType) async {
+  Future<NotificationItem> resetNotification(
+    int key,
+    AppNotificationType type,
+    AppServerResetTimeType serverResetTimeType,
+  ) async {
     Check.greaterThanOrEqualToZero(key, 'key');
 
     final now = DateTime.now();
@@ -370,13 +380,19 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       case final NotificationFarmingMaterial item:
         item.completesAt = now.add(_genshinService.materials.getMaterial(item.itemKey).farmingRespawnDuration!);
       case final NotificationFarmingArtifact item:
-        item.completesAt = now.add(getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType.values[item.artifactFarmingTimeType]));
+        item.completesAt = now.add(
+          getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType.values[item.artifactFarmingTimeType]),
+        );
       case final NotificationGadget item:
         item.completesAt = now.add(_genshinService.gadgets.getGadget(item.itemKey).cooldownDuration!);
       case final NotificationFurniture item:
         item.completesAt = now.add(getFurnitureDuration(FurnitureCraftingTimeType.values[item.furnitureCraftingTimeType]));
       case final NotificationRealmCurrency item:
-        final duration = getRealmCurrencyDuration(item.realmCurrency, item.realmTrustRank, RealmRankType.values[item.realmRankType]);
+        final duration = getRealmCurrencyDuration(
+          item.realmCurrency,
+          item.realmTrustRank,
+          RealmRankType.values[item.realmRankType],
+        );
         item.realmCurrency = 0;
         item.completesAt = now.add(duration);
       case final NotificationWeeklyBoss item:
@@ -425,7 +441,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     }
 
     item.currentResinValue = currentResinValue;
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -452,7 +468,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     item.withTimeReduction = withTimeReduction;
     item.itemKey = itemKey;
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -474,7 +490,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.completesAt = DateTime.now().add(newDuration);
     }
     item.itemKey = itemKey;
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -498,11 +514,18 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     }
     item.artifactFarmingTimeType = type.index;
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
-  Future<NotificationItem> updateGadgetNotification(int key, String itemKey, String title, String body, bool showNotification, {String? note}) async {
+  Future<NotificationItem> updateGadgetNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) async {
     Check.greaterThanOrEqualToZero(key, 'key');
     _commonCheck(itemKey, title, body);
 
@@ -515,7 +538,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.itemKey = itemKey;
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -538,7 +561,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.completesAt = DateTime.now().add(getFurnitureDuration(type));
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -572,7 +595,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.realmCurrency = currentRealmCurrency;
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -597,7 +620,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -623,11 +646,17 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.completesAt = completesAt;
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
-  Future<NotificationItem> updateDailyCheckInNotification(int key, String title, String body, bool showNotification, {String? note}) async {
+  Future<NotificationItem> updateDailyCheckInNotification(
+    int key,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) async {
     Check.greaterThanOrEqualToZero(key, 'key');
     Check.notEmpty(title, 'title');
     Check.notEmpty(body, 'body');
@@ -639,7 +668,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       item.completesAt = DateTime.now().add(dailyCheckInResetDuration);
     }
 
-    return _updateNotification(item, title, body, note, showNotification);
+    return await _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
@@ -659,146 +688,137 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     }
 
     item.completesAt = completesAt;
-    return _updateNotification(item, item.title, item.body, item.note, item.showNotification);
+    return await _updateNotification(item, item.title, item.body, item.note, item.showNotification);
   }
 
   @override
   BackupNotificationsModel getDataForBackup() {
-    final custom =
-        _notificationsCustomBox.values
-            .map(
-              (e) => BackupCustomNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                notificationItemType: e.notificationItemType,
-              ),
-            )
-            .toList();
-    final expedition =
-        _notificationsExpeditionBox.values
-            .map(
-              (e) => BackupExpeditionNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                expeditionTimeType: e.expeditionTimeType,
-                withTimeReduction: e.withTimeReduction,
-              ),
-            )
-            .toList();
-    final farmingArtifact =
-        _notificationsFarmingArtifactBox.values
-            .map(
-              (e) => BackupFarmingArtifactNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                artifactFarmingTimeType: e.artifactFarmingTimeType,
-              ),
-            )
-            .toList();
-    final farmingMaterial =
-        _notificationsFarmingMaterialBox.values
-            .map(
-              (e) => BackupFarmingMaterialNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-              ),
-            )
-            .toList();
-    final furniture =
-        _notificationsFurnitureBox.values
-            .map(
-              (e) => BackupFurnitureNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                furnitureCraftingTimeType: e.furnitureCraftingTimeType,
-              ),
-            )
-            .toList();
-    final gadget =
-        _notificationsGadgetBox.values
-            .map(
-              (e) => BackupGadgetNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-              ),
-            )
-            .toList();
-    final realmCurrency =
-        _notificationsRealmCurrencyBox.values
-            .map(
-              (e) => BackupRealmCurrencyNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                realmCurrency: e.realmCurrency,
-                realmRankType: e.realmRankType,
-                realmTrustRank: e.realmTrustRank,
-              ),
-            )
-            .toList();
-    final resin =
-        _notificationsResinBox.values
-            .map(
-              (e) => BackupResinNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-                currentResinValue: e.currentResinValue,
-              ),
-            )
-            .toList();
-    final weeklyBoss =
-        _notificationsWeeklyBossBox.values
-            .map(
-              (e) => BackupWeeklyBossNotificationModel(
-                itemKey: e.itemKey,
-                type: e.type,
-                title: e.title,
-                body: e.body,
-                note: e.note,
-                completesAt: e.completesAt,
-                showNotification: e.showNotification,
-              ),
-            )
-            .toList();
+    final custom = _notificationsCustomBox.values
+        .map(
+          (e) => BackupCustomNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            notificationItemType: e.notificationItemType,
+          ),
+        )
+        .toList();
+    final expedition = _notificationsExpeditionBox.values
+        .map(
+          (e) => BackupExpeditionNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            expeditionTimeType: e.expeditionTimeType,
+            withTimeReduction: e.withTimeReduction,
+          ),
+        )
+        .toList();
+    final farmingArtifact = _notificationsFarmingArtifactBox.values
+        .map(
+          (e) => BackupFarmingArtifactNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            artifactFarmingTimeType: e.artifactFarmingTimeType,
+          ),
+        )
+        .toList();
+    final farmingMaterial = _notificationsFarmingMaterialBox.values
+        .map(
+          (e) => BackupFarmingMaterialNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
+    final furniture = _notificationsFurnitureBox.values
+        .map(
+          (e) => BackupFurnitureNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            furnitureCraftingTimeType: e.furnitureCraftingTimeType,
+          ),
+        )
+        .toList();
+    final gadget = _notificationsGadgetBox.values
+        .map(
+          (e) => BackupGadgetNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
+    final realmCurrency = _notificationsRealmCurrencyBox.values
+        .map(
+          (e) => BackupRealmCurrencyNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            realmCurrency: e.realmCurrency,
+            realmRankType: e.realmRankType,
+            realmTrustRank: e.realmTrustRank,
+          ),
+        )
+        .toList();
+    final resin = _notificationsResinBox.values
+        .map(
+          (e) => BackupResinNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+            currentResinValue: e.currentResinValue,
+          ),
+        )
+        .toList();
+    final weeklyBoss = _notificationsWeeklyBossBox.values
+        .map(
+          (e) => BackupWeeklyBossNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
     return BackupNotificationsModel(
       custom: custom,
       expeditions: expedition,
@@ -818,7 +838,13 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     for (final notif in data.custom) {
       final isDailyCheckIn = AppNotificationType.values[notif.type] == AppNotificationType.dailyCheckIn;
       if (isDailyCheckIn) {
-        await saveDailyCheckInNotification(notif.itemKey, notif.title, notif.body, note: notif.note, showNotification: notif.showNotification);
+        await saveDailyCheckInNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
       } else {
         await saveCustomNotification(
           notif.itemKey,
@@ -856,7 +882,13 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     }
 
     for (final notif in data.farmingMaterial) {
-      await saveFarmingMaterialNotification(notif.itemKey, notif.title, notif.body, note: notif.note, showNotification: notif.showNotification);
+      await saveFarmingMaterialNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
     }
 
     for (final notif in data.furniture) {
@@ -871,7 +903,13 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     }
 
     for (final notif in data.gadgets) {
-      await saveGadgetNotification(notif.itemKey, notif.title, notif.body, note: notif.note, showNotification: notif.showNotification);
+      await saveGadgetNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
     }
 
     for (final notif in data.realmCurrency) {
@@ -962,7 +1000,11 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       final NotificationRealmCurrency item => _mapToNotificationItemFromRealmCurrency(item),
       final NotificationWeeklyBoss item => _mapToNotificationItemFromWeeklyBoss(item),
       final NotificationCustom item => _mapToNotificationItemFromCustom(item),
-      _ => throw ArgumentError.value(AppNotificationType.values[e.type], 'type', 'The provided app notification type is not valid'),
+      _ => throw ArgumentError.value(
+        AppNotificationType.values[e.type],
+        'type',
+        'The provided app notification type is not valid',
+      ),
     };
   }
 
@@ -973,7 +1015,9 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
 
   NotificationItem _mapToNotificationItemFromExpedition(NotificationExpedition e) {
     final expeditionType = ExpeditionTimeType.values[e.expeditionTimeType];
-    return _mapToNotificationItemFromBase(e).copyWith.call(expeditionTimeType: expeditionType, withTimeReduction: e.withTimeReduction);
+    return _mapToNotificationItemFromBase(
+      e,
+    ).copyWith.call(expeditionTimeType: expeditionType, withTimeReduction: e.withTimeReduction);
   }
 
   NotificationItem _mapToNotificationItemFromFarmingArtifact(NotificationFarmingArtifact e) {
@@ -986,7 +1030,9 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
   }
 
   NotificationItem _mapToNotificationItemFromFurniture(NotificationFurniture e) {
-    return _mapToNotificationItemFromBase(e).copyWith.call(furnitureCraftingTimeType: FurnitureCraftingTimeType.values[e.furnitureCraftingTimeType]);
+    return _mapToNotificationItemFromBase(
+      e,
+    ).copyWith.call(furnitureCraftingTimeType: FurnitureCraftingTimeType.values[e.furnitureCraftingTimeType]);
   }
 
   NotificationItem _mapToNotificationItemFromGadget(NotificationGadget e) {

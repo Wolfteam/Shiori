@@ -1,33 +1,33 @@
 part of 'weapons_bloc.dart';
 
 @freezed
-class WeaponsEvent with _$WeaponsEvent {
+sealed class WeaponsEvent with _$WeaponsEvent {
   const factory WeaponsEvent.init({
     @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
     @Default(<WeaponType>[]) List<WeaponType> weaponTypes,
     @Default(true) bool areWeaponTypesEnabled,
-  }) = _Init;
+  }) = WeaponsEventInit;
 
   const factory WeaponsEvent.searchChanged({
     required String search,
-  }) = _SearchChanged;
+  }) = WeaponsEventSearchChanged;
 
-  const factory WeaponsEvent.weaponTypeChanged(WeaponType weaponType) = _WeaponTypesChanged;
+  const factory WeaponsEvent.weaponTypeChanged(WeaponType weaponType) = WeaponsEventWeaponTypesChanged;
 
-  const factory WeaponsEvent.rarityChanged(int rarity) = _RarityChanged;
+  const factory WeaponsEvent.rarityChanged(int rarity) = WeaponsEventRarityChanged;
 
-  const factory WeaponsEvent.weaponFilterTypeChanged(WeaponFilterType filterType) = _WeaponFilterChanged;
+  const factory WeaponsEvent.weaponFilterTypeChanged(WeaponFilterType filterType) = WeaponsEventWeaponFilterChanged;
 
-  const factory WeaponsEvent.applyFilterChanges() = _ApplyFilterChanges;
+  const factory WeaponsEvent.applyFilterChanges() = WeaponsEventApplyFilterChanges;
 
-  const factory WeaponsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
+  const factory WeaponsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = WeaponsEventSortDirectionTypeChanged;
 
-  const factory WeaponsEvent.weaponSubStatTypeChanged(StatType? subStatType) = _WeaponSubStatTypeChanged;
+  const factory WeaponsEvent.weaponSubStatTypeChanged(StatType? subStatType) = WeaponsEventWeaponSubStatTypeChanged;
 
-  const factory WeaponsEvent.weaponLocationTypeChanged(ItemLocationType? locationType) = _WeaponLocationTypeChanged;
+  const factory WeaponsEvent.weaponLocationTypeChanged(ItemLocationType? locationType) = WeaponsEventWeaponLocationTypeChanged;
 
-  const factory WeaponsEvent.cancelChanges() = _CancelChanges;
+  const factory WeaponsEvent.cancelChanges() = WeaponsEventCancelChanges;
 
-  const factory WeaponsEvent.resetFilters() = _ResetFilters;
+  const factory WeaponsEvent.resetFilters() = WeaponsEventResetFilters;
 }

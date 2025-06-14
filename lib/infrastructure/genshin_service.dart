@@ -66,18 +66,42 @@ class GenshinServiceImpl implements GenshinService {
   @override
   Future<void> init(AppLanguageType languageType, {bool noResourcesHaveBeenDownloaded = false}) async {
     await Future.wait([
-      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _artifacts.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.artifacts),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
       _bannerHistory.init(
         _resourceService.getJsonFilePath(AppJsonFileType.bannerHistory),
         noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
       ),
-      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
-      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _characters.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.characters),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _elements.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.elements),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _furniture.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.furniture),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _gadgets.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.gadgets),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _materials.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.materials),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _monsters.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.monsters),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _weapons.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.weapons),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
       _translations.initTranslations(
         languageType,
         _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType),
@@ -105,8 +129,6 @@ class GenshinServiceImpl implements GenshinService {
         server = nowUtc.add(const Duration(hours: 1));
       case AppServerResetTimeType.asia:
         server = nowUtc.add(const Duration(hours: 8));
-      default:
-        throw Exception('Invalid server reset type');
     }
 
     if (server.hour >= serverResetHour) {
@@ -170,8 +192,6 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType!);
-      default:
-        throw Exception('The provided notification type = $notificationType is not valid');
     }
   }
 
@@ -193,8 +213,6 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationItemType.material:
         final material = materials.getMaterial(itemKey);
         return _resourceService.getMaterialImagePath(material.image, material.type);
-      default:
-        throw Exception('The provided notification item type = $notificationItemType');
     }
   }
 
@@ -252,8 +270,7 @@ class GenshinServiceImpl implements GenshinService {
         final count = itemType == ItemType.character ? characters.countByStatType(stat) : weapons.countByStatType(stat);
         return ChartAscensionStatModel(type: stat, itemType: itemType, quantity: count);
       },
-    ).toList()
-      ..sort((x, y) => y.quantity.compareTo(x.quantity));
+    ).toList()..sort((x, y) => y.quantity.compareTo(x.quantity));
   }
 
   @override

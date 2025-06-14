@@ -5,7 +5,7 @@ part 'item_ascension_material_file_model.freezed.dart';
 part 'item_ascension_material_file_model.g.dart';
 
 @freezed
-class ItemAscensionMaterialFileModel with _$ItemAscensionMaterialFileModel {
+abstract class ItemAscensionMaterialFileModel with _$ItemAscensionMaterialFileModel {
   factory ItemAscensionMaterialFileModel({
     required String key,
     required MaterialType type,

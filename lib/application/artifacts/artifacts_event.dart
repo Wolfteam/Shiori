@@ -1,28 +1,30 @@
 part of 'artifacts_bloc.dart';
 
 @freezed
-class ArtifactsEvent with _$ArtifactsEvent {
+sealed class ArtifactsEvent with _$ArtifactsEvent {
   const factory ArtifactsEvent.init({
     @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
     ArtifactType? type,
-  }) = _Init;
+  }) = ArtifactsEventInit;
 
-  const factory ArtifactsEvent.collapseNotes({required bool collapse}) = _CollapseNotesChanged;
+  const factory ArtifactsEvent.collapseNotes({required bool collapse}) = ArtifactsEventCollapseNotesChanged;
 
   const factory ArtifactsEvent.searchChanged({
     required String search,
-  }) = _SearchChanged;
+  }) = ArtifactsEventSearchChanged;
 
-  const factory ArtifactsEvent.rarityChanged(int rarity) = _RarityChanged;
+  const factory ArtifactsEvent.rarityChanged(int rarity) = ArtifactsEventRarityChanged;
 
-  const factory ArtifactsEvent.artifactFilterTypeChanged(ArtifactFilterType artifactFilterType) = _ArtifactFilterChanged;
+  const factory ArtifactsEvent.artifactFilterTypeChanged(ArtifactFilterType artifactFilterType) =
+      ArtifactsEventArtifactFilterChanged;
 
-  const factory ArtifactsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
+  const factory ArtifactsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) =
+      ArtifactsEventSortDirectionTypeChanged;
 
-  const factory ArtifactsEvent.applyFilterChanges() = _ApplyFilterChanges;
+  const factory ArtifactsEvent.applyFilterChanges() = ArtifactsEventApplyFilterChanges;
 
-  const factory ArtifactsEvent.cancelChanges() = _CancelChanges;
+  const factory ArtifactsEvent.cancelChanges() = ArtifactsEventCancelChanges;
 
-  const factory ArtifactsEvent.resetFilters() = _ResetFilters;
+  const factory ArtifactsEvent.resetFilters() = ArtifactsEventResetFilters;
 }

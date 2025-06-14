@@ -132,8 +132,6 @@ class WeaponRow extends StatelessWidget {
                   icon = const Icon(Icons.notes);
                 case _Options.level:
                   icon = const Icon(Icons.arrow_upward);
-                default:
-                  throw Exception('The provided weapon option type = ${e.enumValue} is not valid');
               }
 
               return Row(
@@ -154,8 +152,6 @@ class WeaponRow extends StatelessWidget {
                   return s.refinements;
                 case _Options.level:
                   return s.level;
-                default:
-                  throw Exception('The provided weapon option type = $type is not valid');
               }
             },
           ),
@@ -197,8 +193,6 @@ class WeaponRow extends StatelessWidget {
         }
 
         bloc.add(CustomBuildEvent.weaponStatChanged(key: weapon.key, newValue: newValue));
-      default:
-        throw Exception('The weapon option is not valid');
     }
   }
 }
@@ -224,7 +218,9 @@ class _TopDecoration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final margin = alignment == Alignment.topRight ? const EdgeInsets.only(top: 4, right: 4) : const EdgeInsets.only(top: 4, left: 4);
+    final margin = alignment == Alignment.topRight
+        ? const EdgeInsets.only(top: 4, right: 4)
+        : const EdgeInsets.only(top: 4, left: 4);
     final borderRadius = alignment == Alignment.topRight
         ? const BorderRadius.only(
             topLeft: Radius.circular(10),

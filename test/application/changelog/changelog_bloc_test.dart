@@ -24,12 +24,12 @@ void main() {
 
   group('changelog', () {
     void checkState(ChangelogState state, {String expectedChangelog = ChangelogProviderImpl.defaultChangelog}) {
-      state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loadedState: (state) {
+      switch (state) {
+        case ChangelogStateLoading():
+          throw Exception('Invalid state');
+        case ChangelogStateLoaded():
           expect(state.changelog == expectedChangelog, isTrue);
-        },
-      );
+      }
     }
 
     blocTest<ChangelogBloc, ChangelogState>(

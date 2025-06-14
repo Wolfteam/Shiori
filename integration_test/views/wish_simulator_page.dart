@@ -22,9 +22,11 @@ class WishSimulatorPage extends BasePage {
   }
 
   Future<void> selectBannerType(BannerItemType type) async {
-    final Finder scrollViewFinder = find.ancestor(of: find.byType(BannerTopImage), matching: find.byType(SingleChildScrollView)).first;
+    final Finder scrollViewFinder = find
+        .ancestor(of: find.byType(BannerTopImage), matching: find.byType(SingleChildScrollView))
+        .first;
     final Offset offset = tester.isLandscape ? BasePage.horizontalDragOffset : BasePage.verticalDragOffset;
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.byWidgetPredicate((widget) => widget is BannerTopImage && widget.type == type).first,
       scrollViewFinder,
       offset,

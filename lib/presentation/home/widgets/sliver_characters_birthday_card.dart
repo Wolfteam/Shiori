@@ -16,26 +16,25 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
     final s = S.of(context);
     return SliverToBoxAdapter(
       child: BlocBuilder<HomeBloc, HomeState>(
-        builder: (ctx, state) => state.map(
-          loading: (_) => const Loading(useScaffold: false),
-          loaded: (state) => state.characterImgBirthday.isNotEmpty
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    MainTitle(title: s.todayBirthdays),
-                    SizedBox(
-                      height: Styles.homeCardHeight,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: state.characterImgBirthday.length,
-                        itemBuilder: (ctx, index) => _CakeCard(item: state.characterImgBirthday[index]),
-                      ),
-                    ),
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
+        builder: (ctx, state) => switch (state) {
+          HomeStateLoading() => const Loading(useScaffold: false),
+          final HomeStateLoaded state when state.characterImgBirthday.isEmpty => const SizedBox.shrink(),
+          HomeStateLoaded() => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              MainTitle(title: s.todayBirthdays),
+              SizedBox(
+                height: Styles.homeCardHeight,
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: state.characterImgBirthday.length,
+                  itemBuilder: (ctx, index) => _CakeCard(item: state.characterImgBirthday[index]),
+                ),
+              ),
+            ],
+          ),
+        },
       ),
     );
   }

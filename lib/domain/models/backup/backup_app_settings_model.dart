@@ -5,7 +5,7 @@ part 'backup_app_settings_model.freezed.dart';
 part 'backup_app_settings_model.g.dart';
 
 @freezed
-class BackupAppSettingsModel with _$BackupAppSettingsModel {
+abstract class BackupAppSettingsModel with _$BackupAppSettingsModel {
   const factory BackupAppSettingsModel({
     AppThemeType? appTheme,
     bool? useDarkAmoled,

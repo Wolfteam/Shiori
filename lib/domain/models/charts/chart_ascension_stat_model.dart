@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'chart_ascension_stat_model.freezed.dart';
 
 @freezed
-class ChartAscensionStatModel with _$ChartAscensionStatModel {
+abstract class ChartAscensionStatModel with _$ChartAscensionStatModel {
   const factory ChartAscensionStatModel({
     required StatType type,
     required ItemType itemType,

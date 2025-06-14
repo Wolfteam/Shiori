@@ -80,7 +80,9 @@ void main() {
 
     expect(
       got.notificationItemType,
-      got.type != AppNotificationType.custom && got.type != AppNotificationType.dailyCheckIn ? null : expected.notificationItemType,
+      got.type != AppNotificationType.custom && got.type != AppNotificationType.dailyCheckIn
+          ? null
+          : expected.notificationItemType,
     );
 
     expect(
@@ -144,7 +146,7 @@ void main() {
     };
   }
 
-  Future<NotificationItem> saveNotification(AppNotificationType type, DataService dataService) async {
+  Future<NotificationItem> saveNotification(AppNotificationType type, DataService dataService) {
     final String itemKey = getValidItemKey(type);
     final String title = 'The title for type $type';
     final String body = 'The body for type $type';
@@ -152,75 +154,75 @@ void main() {
 
     return switch (type) {
       AppNotificationType.resin => dataService.notifications.saveResinNotification(
-          itemKey,
-          title,
-          body,
-          100,
-          note: note,
-        ),
+        itemKey,
+        title,
+        body,
+        100,
+        note: note,
+      ),
       AppNotificationType.expedition => dataService.notifications.saveExpeditionNotification(
-          itemKey,
-          title,
-          body,
-          ExpeditionTimeType.fourHours,
-          note: note,
-        ),
+        itemKey,
+        title,
+        body,
+        ExpeditionTimeType.fourHours,
+        note: note,
+      ),
       AppNotificationType.farmingMaterials => dataService.notifications.saveFarmingMaterialNotification(
-          itemKey,
-          title,
-          body,
-          note: note,
-        ),
+        itemKey,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.farmingArtifacts => dataService.notifications.saveFarmingArtifactNotification(
-          itemKey,
-          ArtifactFarmingTimeType.twentyFourHours,
-          title,
-          body,
-          note: note,
-        ),
+        itemKey,
+        ArtifactFarmingTimeType.twentyFourHours,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.gadget => dataService.notifications.saveGadgetNotification(
-          genshinService.gadgets.getAllGadgetsForNotifications().first.key,
-          title,
-          body,
-          note: note,
-        ),
+        genshinService.gadgets.getAllGadgetsForNotifications().first.key,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.furniture => dataService.notifications.saveFurnitureNotification(
-          genshinService.furniture.getDefaultFurnitureForNotifications().key,
-          FurnitureCraftingTimeType.sixteenHours,
-          title,
-          body,
-          note: note,
-        ),
+        genshinService.furniture.getDefaultFurnitureForNotifications().key,
+        FurnitureCraftingTimeType.sixteenHours,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.realmCurrency => dataService.notifications.saveRealmCurrencyNotification(
-          itemKey,
-          RealmRankType.exquisite,
-          realmTrustRank.keys.first,
-          10,
-          title,
-          body,
-          note: note,
-        ),
+        itemKey,
+        RealmRankType.exquisite,
+        realmTrustRank.keys.first,
+        10,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.weeklyBoss => dataService.notifications.saveWeeklyBossNotification(
-          itemKey,
-          AppServerResetTimeType.northAmerica,
-          title,
-          body,
-          note: note,
-        ),
+        itemKey,
+        AppServerResetTimeType.northAmerica,
+        title,
+        body,
+        note: note,
+      ),
       AppNotificationType.custom => dataService.notifications.saveCustomNotification(
-          itemKey,
-          title,
-          body,
-          DateTime.now().add(const Duration(days: 10)),
-          AppNotificationItemType.character,
-          note: note,
-        ),
+        itemKey,
+        title,
+        body,
+        DateTime.now().add(const Duration(days: 10)),
+        AppNotificationItemType.character,
+        note: note,
+      ),
       AppNotificationType.dailyCheckIn => dataService.notifications.saveDailyCheckInNotification(
-          itemKey,
-          title,
-          body,
-          note: note,
-        ),
+        itemKey,
+        title,
+        body,
+        note: note,
+      ),
     };
   }
 
@@ -554,14 +556,26 @@ void main() {
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.saveFurnitureNotification('', FurnitureCraftingTimeType.fourteenHours, 'title', 'body', note: 'Note'),
+        dataService.notifications.saveFurnitureNotification(
+          '',
+          FurnitureCraftingTimeType.fourteenHours,
+          'title',
+          'body',
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid title', () {
       expect(
-        dataService.notifications.saveFurnitureNotification(getValidItemKey(type), FurnitureCraftingTimeType.fourteenHours, '', 'body', note: 'Note'),
+        dataService.notifications.saveFurnitureNotification(
+          getValidItemKey(type),
+          FurnitureCraftingTimeType.fourteenHours,
+          '',
+          'body',
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
@@ -609,7 +623,13 @@ void main() {
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.saveFarmingArtifactNotification('', ArtifactFarmingTimeType.twentyFourHours, 'title', 'body', note: 'Note'),
+        dataService.notifications.saveFarmingArtifactNotification(
+          '',
+          ArtifactFarmingTimeType.twentyFourHours,
+          'title',
+          'body',
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
@@ -673,11 +693,17 @@ void main() {
     });
 
     test('invalid title', () {
-      expect(dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), '', 'body', note: 'Note'), throwsArgumentError);
+      expect(
+        dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), '', 'body', note: 'Note'),
+        throwsArgumentError,
+      );
     });
 
     test('invalid body', () {
-      expect(dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), 'title', '', note: 'Note'), throwsArgumentError);
+      expect(
+        dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), 'title', '', note: 'Note'),
+        throwsArgumentError,
+      );
     });
 
     test('valid call', () async {
@@ -805,7 +831,13 @@ void main() {
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.saveWeeklyBossNotification('', AppServerResetTimeType.northAmerica, 'title', 'body', note: 'Note'),
+        dataService.notifications.saveWeeklyBossNotification(
+          '',
+          AppServerResetTimeType.northAmerica,
+          'title',
+          'body',
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
@@ -866,7 +898,14 @@ void main() {
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.saveCustomNotification('', 'title', 'body', DateTime.now(), AppNotificationItemType.character, note: 'Note'),
+        dataService.notifications.saveCustomNotification(
+          '',
+          'title',
+          'body',
+          DateTime.now(),
+          AppNotificationItemType.character,
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
@@ -932,11 +971,17 @@ void main() {
     });
 
     test('invalid title', () {
-      expect(dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), '', 'body', note: 'Note'), throwsArgumentError);
+      expect(
+        dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), '', 'body', note: 'Note'),
+        throwsArgumentError,
+      );
     });
 
     test('invalid body', () {
-      expect(dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), 'title', '', note: 'Note'), throwsArgumentError);
+      expect(
+        dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), 'title', '', note: 'Note'),
+        throwsArgumentError,
+      );
     });
 
     test('valid call', () async {
@@ -1009,12 +1054,19 @@ void main() {
       });
 
       test('of type = ${type.name} which does not exist', () {
-        expect(dataService.notifications.resetNotification(666, type, AppServerResetTimeType.europe), throwsA(isA<NotFoundError>()));
+        expect(
+          dataService.notifications.resetNotification(666, type, AppServerResetTimeType.europe),
+          throwsA(isA<NotFoundError>()),
+        );
       });
 
       test('of type = ${type.name} which exists', () async {
         final notification = await saveNotification(type, dataService);
-        final updatedNotification = await dataService.notifications.resetNotification(notification.key, type, AppServerResetTimeType.northAmerica);
+        final updatedNotification = await dataService.notifications.resetNotification(
+          notification.key,
+          type,
+          AppServerResetTimeType.northAmerica,
+        );
 
         switch (type) {
           case AppNotificationType.custom:
@@ -1162,35 +1214,76 @@ void main() {
 
     test('invalid key', () {
       expect(
-        dataService.notifications.updateExpeditionNotification(-1, validItemKey, ExpeditionTimeType.eightHours, 'title', 'body', true, true),
+        dataService.notifications.updateExpeditionNotification(
+          -1,
+          validItemKey,
+          ExpeditionTimeType.eightHours,
+          'title',
+          'body',
+          true,
+          true,
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.updateExpeditionNotification(1, '', ExpeditionTimeType.eightHours, 'title', 'body', true, true, note: 'Note'),
+        dataService.notifications.updateExpeditionNotification(
+          1,
+          '',
+          ExpeditionTimeType.eightHours,
+          'title',
+          'body',
+          true,
+          true,
+          note: 'Note',
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid title', () {
       expect(
-        dataService.notifications.updateExpeditionNotification(1, validItemKey, ExpeditionTimeType.eightHours, '', 'body', true, true),
+        dataService.notifications.updateExpeditionNotification(
+          1,
+          validItemKey,
+          ExpeditionTimeType.eightHours,
+          '',
+          'body',
+          true,
+          true,
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid body', () {
       expect(
-        dataService.notifications.updateExpeditionNotification(1, validItemKey, ExpeditionTimeType.eightHours, 'title', '', true, true),
+        dataService.notifications.updateExpeditionNotification(
+          1,
+          validItemKey,
+          ExpeditionTimeType.eightHours,
+          'title',
+          '',
+          true,
+          true,
+        ),
         throwsArgumentError,
       );
     });
 
     test('which does not exist', () {
       expect(
-        dataService.notifications.updateExpeditionNotification(666, validItemKey, ExpeditionTimeType.eightHours, 'title', 'body', true, true),
+        dataService.notifications.updateExpeditionNotification(
+          666,
+          validItemKey,
+          ExpeditionTimeType.eightHours,
+          'title',
+          'body',
+          true,
+          true,
+        ),
         throwsA(isA<NotFoundError>()),
       );
     });
@@ -1213,7 +1306,10 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
-      expect(updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt), isTrue);
+      expect(
+        updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
+        isTrue,
+      );
       expect(updated.withTimeReduction, !notification.withTimeReduction);
       expect(updated.expeditionTimeType, expeditionTime);
     });
@@ -1318,7 +1414,13 @@ void main() {
 
     test('invalid key', () {
       expect(
-        dataService.notifications.updateFarmingArtifactNotification(-1, ArtifactFarmingTimeType.twelveHours, 'title', 'body', true),
+        dataService.notifications.updateFarmingArtifactNotification(
+          -1,
+          ArtifactFarmingTimeType.twelveHours,
+          'title',
+          'body',
+          true,
+        ),
         throwsArgumentError,
       );
     });
@@ -1339,7 +1441,13 @@ void main() {
 
     test('which does not exist', () {
       expect(
-        dataService.notifications.updateFarmingArtifactNotification(666, ArtifactFarmingTimeType.twelveHours, 'title', 'body', true),
+        dataService.notifications.updateFarmingArtifactNotification(
+          666,
+          ArtifactFarmingTimeType.twelveHours,
+          'title',
+          'body',
+          true,
+        ),
         throwsA(isA<NotFoundError>()),
       );
     });
@@ -1359,7 +1467,10 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
-      expect(updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt), isTrue);
+      expect(
+        updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
+        isTrue,
+      );
       expect(updated.artifactFarmingTimeType, farmingTime);
     });
   });
@@ -1503,7 +1614,10 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
-      expect(updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt), isTrue);
+      expect(
+        updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
+        isTrue,
+      );
       expect(updated.furnitureCraftingTimeType, craftingTime);
     });
   });
@@ -1588,7 +1702,10 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
-      expect(updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt), isTrue);
+      expect(
+        updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
+        isTrue,
+      );
       expect(updated.realmRankType, rankType);
       expect(updated.realmTrustRank, realmTrustRank.keys.last);
       expect(updated.realmCurrency, notification.realmCurrency! * 2);
@@ -1618,7 +1735,14 @@ void main() {
 
     test('invalid key', () {
       expect(
-        dataService.notifications.updateWeeklyBossNotification(-1, AppServerResetTimeType.europe, 'itemKey', 'title', 'body', true),
+        dataService.notifications.updateWeeklyBossNotification(
+          -1,
+          AppServerResetTimeType.europe,
+          'itemKey',
+          'title',
+          'body',
+          true,
+        ),
         throwsArgumentError,
       );
     });
@@ -1646,7 +1770,14 @@ void main() {
 
     test('which does not exist', () {
       expect(
-        dataService.notifications.updateWeeklyBossNotification(666, AppServerResetTimeType.europe, 'itemKey', 'title', 'body', true),
+        dataService.notifications.updateWeeklyBossNotification(
+          666,
+          AppServerResetTimeType.europe,
+          'itemKey',
+          'title',
+          'body',
+          true,
+        ),
         throwsA(isA<NotFoundError>()),
       );
     });
@@ -1694,35 +1825,75 @@ void main() {
 
     test('invalid key', () {
       expect(
-        dataService.notifications.updateCustomNotification(-1, 'itemKey', 'title', 'body', DateTime.now(), true, AppNotificationItemType.character),
+        dataService.notifications.updateCustomNotification(
+          -1,
+          'itemKey',
+          'title',
+          'body',
+          DateTime.now(),
+          true,
+          AppNotificationItemType.character,
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid item key', () {
       expect(
-        dataService.notifications.updateCustomNotification(-1, '', 'title', 'body', DateTime.now(), true, AppNotificationItemType.character),
+        dataService.notifications.updateCustomNotification(
+          -1,
+          '',
+          'title',
+          'body',
+          DateTime.now(),
+          true,
+          AppNotificationItemType.character,
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid title', () {
       expect(
-        dataService.notifications.updateCustomNotification(1, 'itemKey', '', 'body', DateTime.now(), true, AppNotificationItemType.character),
+        dataService.notifications.updateCustomNotification(
+          1,
+          'itemKey',
+          '',
+          'body',
+          DateTime.now(),
+          true,
+          AppNotificationItemType.character,
+        ),
         throwsArgumentError,
       );
     });
 
     test('invalid body', () {
       expect(
-        dataService.notifications.updateCustomNotification(1, 'itemKey', 'title', '', DateTime.now(), true, AppNotificationItemType.character),
+        dataService.notifications.updateCustomNotification(
+          1,
+          'itemKey',
+          'title',
+          '',
+          DateTime.now(),
+          true,
+          AppNotificationItemType.character,
+        ),
         throwsArgumentError,
       );
     });
 
     test('which does not exist', () {
       expect(
-        dataService.notifications.updateCustomNotification(666, 'itemKey', 'title', 'body', DateTime.now(), true, AppNotificationItemType.character),
+        dataService.notifications.updateCustomNotification(
+          666,
+          'itemKey',
+          'title',
+          'body',
+          DateTime.now(),
+          true,
+          AppNotificationItemType.character,
+        ),
         throwsA(isA<NotFoundError>()),
       );
     });

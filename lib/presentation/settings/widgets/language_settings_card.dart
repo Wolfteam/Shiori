@@ -40,16 +40,19 @@ class LanguageSettingsCard extends StatelessWidget {
             ),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => CommonDropdownButton<AppLanguageType>(
+            builder: (context, state) => switch (state) {
+              SettingsStateLoading() => const Loading(useScaffold: false),
+              SettingsStateLoaded() => CommonDropdownButton<AppLanguageType>(
                 hint: s.chooseLanguage,
                 currentValue: state.currentLanguage,
                 padding: Styles.edgeInsetHorizontal16,
-                values: EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(AppLanguageType.values, (val, _) => s.translateAppLanguageType(val)),
+                values: EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(
+                  AppLanguageType.values,
+                  (val, _) => s.translateAppLanguageType(val),
+                ),
                 onChanged: _languageChanged,
               ),
-            ),
+            },
           ),
         ],
       ),

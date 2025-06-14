@@ -43,7 +43,7 @@ class CharacterStackImage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black.withValues(alpha: 0.5),
                 padding: Styles.edgeInsetAll10,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,

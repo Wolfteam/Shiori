@@ -21,16 +21,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   @override
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
-    final s = event.when(
-      init: () {
+    switch (event) {
+      case HomeEventInit():
         final date = _genshinService.getServerDate(_settingsService.serverResetTime);
         final day = date.weekday;
-        return _buildInitialState(day);
-      },
-      dayChanged: (newDay) => _buildInitialState(newDay),
-    );
-
-    yield s;
+        yield _buildInitialState(day);
+      case HomeEventDayChanged():
+        yield _buildInitialState(event.newDay);
+    }
   }
 
   HomeState _buildInitialState(int day) {

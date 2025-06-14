@@ -7,7 +7,7 @@ part 'character_file_model.freezed.dart';
 part 'character_file_model.g.dart';
 
 @freezed
-class CharacterFileModel with _$CharacterFileModel {
+abstract class CharacterFileModel with _$CharacterFileModel {
   factory CharacterFileModel({
     required String key,
     required int rarity,
@@ -41,7 +41,7 @@ class CharacterFileModel with _$CharacterFileModel {
 }
 
 @freezed
-class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialModel {
+abstract class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialModel {
   factory CharacterFileAscensionMaterialModel({
     required int rank,
     required int level,
@@ -50,11 +50,12 @@ class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialM
 
   const CharacterFileAscensionMaterialModel._();
 
-  factory CharacterFileAscensionMaterialModel.fromJson(Map<String, dynamic> json) => _$CharacterFileAscensionMaterialModelFromJson(json);
+  factory CharacterFileAscensionMaterialModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileAscensionMaterialModelFromJson(json);
 }
 
 @freezed
-class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscensionMaterialModel {
+abstract class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscensionMaterialModel {
   factory CharacterFileTalentAscensionMaterialModel({
     required int level,
     required List<ItemAscensionMaterialFileModel> materials,
@@ -62,11 +63,12 @@ class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscens
 
   const CharacterFileTalentAscensionMaterialModel._();
 
-  factory CharacterFileTalentAscensionMaterialModel.fromJson(Map<String, dynamic> json) => _$CharacterFileTalentAscensionMaterialModelFromJson(json);
+  factory CharacterFileTalentAscensionMaterialModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileTalentAscensionMaterialModelFromJson(json);
 }
 
 @freezed
-class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTalentAscensionMaterialModel {
+abstract class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTalentAscensionMaterialModel {
   factory CharacterFileMultiTalentAscensionMaterialModel({
     required int number,
     required List<CharacterFileTalentAscensionMaterialModel> materials,
@@ -79,7 +81,7 @@ class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTa
 }
 
 @freezed
-class CharacterFileBuild with _$CharacterFileBuild {
+abstract class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
     required bool isRecommended,
     required CharacterRoleType type,
@@ -96,7 +98,7 @@ class CharacterFileBuild with _$CharacterFileBuild {
 }
 
 @freezed
-class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
+abstract class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
   factory CharacterFileArtifactBuild({
     String? oneKey,
     required List<CharacterFileArtifactMultipleBuild> multiples,
@@ -109,7 +111,7 @@ class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
 }
 
 @freezed
-class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBuild {
+abstract class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBuild {
   factory CharacterFileArtifactMultipleBuild({
     required String key,
     required int quantity,
@@ -117,11 +119,12 @@ class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBui
 
   CharacterFileArtifactMultipleBuild._();
 
-  factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) => _$CharacterFileArtifactMultipleBuildFromJson(json);
+  factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileArtifactMultipleBuildFromJson(json);
 }
 
 @freezed
-class CharacterFileSkillModel with _$CharacterFileSkillModel {
+abstract class CharacterFileSkillModel with _$CharacterFileSkillModel {
   factory CharacterFileSkillModel({
     required String key,
     required CharacterSkillType type,
@@ -135,7 +138,7 @@ class CharacterFileSkillModel with _$CharacterFileSkillModel {
 }
 
 @freezed
-class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
+abstract class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
   factory CharacterFileSkillStatModel({
     required String key,
     required List<double> values,
@@ -147,7 +150,7 @@ class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
 }
 
 @freezed
-class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
+abstract class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
   factory CharacterFilePassiveModel({
     required String key,
     required int unlockedAt,
@@ -160,7 +163,7 @@ class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
 }
 
 @freezed
-class CharacterFileConstellationModel with _$CharacterFileConstellationModel {
+abstract class CharacterFileConstellationModel with _$CharacterFileConstellationModel {
   factory CharacterFileConstellationModel({
     required String key,
     required int number,
@@ -173,7 +176,7 @@ class CharacterFileConstellationModel with _$CharacterFileConstellationModel {
 }
 
 @freezed
-class CharacterFileStatModel with _$CharacterFileStatModel {
+abstract class CharacterFileStatModel with _$CharacterFileStatModel {
   factory CharacterFileStatModel({
     required int level,
     required double baseHp,

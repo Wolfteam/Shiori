@@ -20,7 +20,7 @@ abstract class BaseBackupNotificationModel {
 }
 
 @freezed
-class BackupNotificationsModel with _$BackupNotificationsModel {
+abstract class BackupNotificationsModel with _$BackupNotificationsModel {
   const factory BackupNotificationsModel({
     required List<BackupCustomNotificationModel> custom,
     required List<BackupExpeditionNotificationModel> expeditions,
@@ -37,7 +37,7 @@ class BackupNotificationsModel with _$BackupNotificationsModel {
 }
 
 @freezed
-class BackupNotificationModel with _$BackupNotificationModel {
+sealed class BackupNotificationModel with _$BackupNotificationModel {
   @Implements<BaseBackupNotificationModel>()
   const factory BackupNotificationModel.custom({
     required String itemKey,

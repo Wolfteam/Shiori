@@ -62,185 +62,187 @@ class CharacterPage extends StatelessWidget {
     return BlocProvider<CharacterBloc>(
       create: (context) => Injection.characterBloc..add(CharacterEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<CharacterBloc, CharacterState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading.scaffold(),
-          loaded: (state) {
-            final Color color = state.elementType.getElementColorFromContext(context);
+        builder: (context, state) {
+          switch (state) {
+            case CharacterStateLoading():
+              return const Loading.scaffold();
+            case CharacterStateLoaded():
+              final Color color = state.elementType.getElementColorFromContext(context);
 
-            final main = _Main(
-              itemKey: state.key,
-              elementType: state.elementType,
-              name: state.name,
-              rarity: state.rarity,
-              region: state.region,
-              role: state.role,
-              weaponType: state.weaponType,
-              birthday: state.birthday,
-              fullImage: state.fullImage,
-              secondFullImage: state.secondFullImage,
-              isInInventory: state.isInInventory,
-            );
-
-            if (isPortrait) {
-              return ScaffoldWithFab(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    main,
-                    Padding(
-                      padding: Styles.edgeInsetHorizontal5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          _Description(
-                            color: color,
-                            description: state.description,
-                            subStatType: state.subStatType,
-                            stats: state.stats,
-                          ),
-                          if (state.builds.isNotEmpty)
-                            _Builds(
-                              color: color,
-                              elementType: state.elementType,
-                              builds: state.builds,
-                            ),
-                          _Skills(
-                            color: color,
-                            skills: state.skills,
-                          ),
-                          _Passives(
-                            color: color,
-                            passives: state.passives,
-                          ),
-                          _Constellations(
-                            color: color,
-                            constellations: state.constellations,
-                          ),
-                          if (state.ascensionMaterials.isNotEmpty)
-                            _AscensionMaterials(
-                              color: color,
-                              ascensionMaterials: state.ascensionMaterials,
-                            ),
-                          if (state.talentAscensionsMaterials.isNotEmpty)
-                            _TalentAscensionMaterials(
-                              color: color,
-                              talentAscensionsMaterials: state.talentAscensionsMaterials,
-                            ),
-                          ...state.multiTalentAscensionMaterials.map(
-                            (multi) => _TalentAscensionMaterials(
-                              color: color,
-                              number: multi.number,
-                              talentAscensionsMaterials: multi.materials,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+              final main = _Main(
+                itemKey: state.key,
+                elementType: state.elementType,
+                name: state.name,
+                rarity: state.rarity,
+                region: state.region,
+                role: state.role,
+                weaponType: state.weaponType,
+                birthday: state.birthday,
+                fullImage: state.fullImage,
+                secondFullImage: state.secondFullImage,
+                isInInventory: state.isInInventory,
               );
-            }
-            final tabs = [
-              s.description,
-              s.skills,
-              s.passives,
-              s.constellations,
-              s.materials,
-            ];
-            return Scaffold(
-              body: SafeArea(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(flex: 40, child: main),
-                    Expanded(
-                      flex: 60,
-                      child: DetailLandscapeContent(
-                        color: color,
-                        tabs: tabs,
-                        children: [
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                _Description.noButtons(
-                                  color: color,
-                                  description: state.description,
-                                  subStatType: state.subStatType,
-                                ),
-                                if (state.builds.isNotEmpty)
-                                  _Builds(
-                                    color: color,
-                                    elementType: state.elementType,
-                                    builds: state.builds,
-                                    expanded: true,
-                                  ),
-                                StatsTable(
-                                  color: color,
-                                  stats: state.stats.map((e) => StatItem.character(e, state.subStatType, s)).toList(),
-                                ),
-                              ],
+
+              if (isPortrait) {
+                return ScaffoldWithFab(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      main,
+                      Padding(
+                        padding: Styles.edgeInsetHorizontal5,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            _Description(
+                              color: color,
+                              description: state.description,
+                              subStatType: state.subStatType,
+                              stats: state.stats,
                             ),
-                          ),
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: _Skills(
+                            if (state.builds.isNotEmpty)
+                              _Builds(
+                                color: color,
+                                elementType: state.elementType,
+                                builds: state.builds,
+                              ),
+                            _Skills(
                               color: color,
                               skills: state.skills,
-                              expanded: true,
                             ),
-                          ),
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: _Passives(
+                            _Passives(
                               color: color,
                               passives: state.passives,
-                              expanded: true,
                             ),
-                          ),
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: _Constellations(
+                            _Constellations(
                               color: color,
                               constellations: state.constellations,
-                              expanded: true,
                             ),
-                          ),
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                if (state.ascensionMaterials.isNotEmpty)
-                                  _AscensionMaterials(
-                                    color: color,
-                                    ascensionMaterials: state.ascensionMaterials,
-                                  ),
-                                if (state.talentAscensionsMaterials.isNotEmpty)
-                                  _TalentAscensionMaterials(
-                                    color: color,
-                                    talentAscensionsMaterials: state.talentAscensionsMaterials,
-                                  ),
-                                ...state.multiTalentAscensionMaterials.map(
-                                  (multi) => _TalentAscensionMaterials(
-                                    color: color,
-                                    number: multi.number,
-                                    talentAscensionsMaterials: multi.materials,
-                                  ),
-                                ),
-                              ],
+                            if (state.ascensionMaterials.isNotEmpty)
+                              _AscensionMaterials(
+                                color: color,
+                                ascensionMaterials: state.ascensionMaterials,
+                              ),
+                            if (state.talentAscensionsMaterials.isNotEmpty)
+                              _TalentAscensionMaterials(
+                                color: color,
+                                talentAscensionsMaterials: state.talentAscensionsMaterials,
+                              ),
+                            ...state.multiTalentAscensionMaterials.map(
+                              (multi) => _TalentAscensionMaterials(
+                                color: color,
+                                number: multi.number,
+                                talentAscensionsMaterials: multi.materials,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                );
+              }
+              final tabs = [
+                s.description,
+                s.skills,
+                s.passives,
+                s.constellations,
+                s.materials,
+              ];
+              return Scaffold(
+                body: SafeArea(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(flex: 40, child: main),
+                      Expanded(
+                        flex: 60,
+                        child: DetailLandscapeContent(
+                          color: color,
+                          tabs: tabs,
+                          children: [
+                            SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  _Description.noButtons(
+                                    color: color,
+                                    description: state.description,
+                                    subStatType: state.subStatType,
+                                  ),
+                                  if (state.builds.isNotEmpty)
+                                    _Builds(
+                                      color: color,
+                                      elementType: state.elementType,
+                                      builds: state.builds,
+                                      expanded: true,
+                                    ),
+                                  StatsTable(
+                                    color: color,
+                                    stats: state.stats.map((e) => StatItem.character(e, state.subStatType, s)).toList(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: _Skills(
+                                color: color,
+                                skills: state.skills,
+                                expanded: true,
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: _Passives(
+                                color: color,
+                                passives: state.passives,
+                                expanded: true,
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: _Constellations(
+                                color: color,
+                                constellations: state.constellations,
+                                expanded: true,
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  if (state.ascensionMaterials.isNotEmpty)
+                                    _AscensionMaterials(
+                                      color: color,
+                                      ascensionMaterials: state.ascensionMaterials,
+                                    ),
+                                  if (state.talentAscensionsMaterials.isNotEmpty)
+                                    _TalentAscensionMaterials(
+                                      color: color,
+                                      talentAscensionsMaterials: state.talentAscensionsMaterials,
+                                    ),
+                                  ...state.multiTalentAscensionMaterials.map(
+                                    (multi) => _TalentAscensionMaterials(
+                                      color: color,
+                                      number: multi.number,
+                                      talentAscensionsMaterials: multi.materials,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
-        ),
+              );
+          }
+        },
       ),
     );
   }

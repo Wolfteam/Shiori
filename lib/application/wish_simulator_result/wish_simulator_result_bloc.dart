@@ -22,16 +22,15 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
   final Random _random;
 
   WishSimulatorResultBloc(this._dataService, this._telemetryService)
-      : _random = Random(),
-        super(const WishSimulatorResultState.loading());
+    : _random = Random(),
+      super(const WishSimulatorResultState.loading());
 
   @override
   Stream<WishSimulatorResultState> mapEventToState(WishSimulatorResultEvent event) async* {
-    final s = await event.map(
-      init: (e) => _pull(e.pulls, e.bannerIndex, e.period),
-    );
-
-    yield s;
+    switch (event) {
+      case WishSimulatorResultEventInit():
+        yield await _pull(event.pulls, event.bannerIndex, event.period);
+    }
   }
 
   Future<WishSimulatorResultState> _pull(int pulls, int bannerIndex, WishSimulatorBannerItemsPerPeriodModel period) async {
@@ -45,32 +44,48 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type, defaultXStarCount: bannerRates.defaultXStarCount);
+    final history = await _dataService.wishSimulator.getBannerPullHistory(
+      banner.type,
+      defaultXStarCount: bannerRates.defaultXStarCount,
+    );
     final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
-      final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
+      final int randomRarity =
+          bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
       history.initXStarCountIfNeeded(randomRarity);
 
       final isRarityInFeatured = banner.featuredItems.isEmpty || banner.featuredItems.any((el) => el.rarity == randomRarity);
       final winsFiftyFifty = isRarityInFeatured && history.shouldWinFiftyFifty(randomRarity);
-      final pool = [
-        ...banner.characters.map(
-          (e) => WishSimulatorBannerItemResultModel.character(key: e.key, image: e.image, rarity: e.rarity, elementType: e.elementType),
-        ),
-        ...banner.weapons.map(
-          (e) => WishSimulatorBannerItemResultModel.weapon(key: e.key, image: e.image, rarity: e.rarity, weaponType: e.weaponType),
-        ),
-      ].where((el) {
-        if (el.rarity != randomRarity) {
-          return false;
-        }
+      final pool =
+          [
+            ...banner.characters.map(
+              (e) => WishSimulatorBannerItemResultModel.character(
+                key: e.key,
+                image: e.image,
+                rarity: e.rarity,
+                elementType: e.elementType,
+              ),
+            ),
+            ...banner.weapons.map(
+              (e) => WishSimulatorBannerItemResultModel.weapon(
+                key: e.key,
+                image: e.image,
+                rarity: e.rarity,
+                weaponType: e.weaponType,
+              ),
+            ),
+          ].where((el) {
+            if (el.rarity != randomRarity) {
+              return false;
+            }
 
-        if (!isRarityInFeatured) {
-          return true;
-        }
+            if (!isRarityInFeatured) {
+              return true;
+            }
 
-        return banner.featuredItems.isEmpty || banner.featuredItems.any((p) => winsFiftyFifty ? p.key == el.key : p.key != el.key);
-      }).toList();
+            return banner.featuredItems.isEmpty ||
+                banner.featuredItems.any((p) => winsFiftyFifty ? p.key == el.key : p.key != el.key);
+          }).toList();
 
       assert(pool.isNotEmpty);
       pool.shuffle(_random);
@@ -80,18 +95,25 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       final bool? gotFeaturedItem = !bannerRates.canBeGuaranteed(randomRarity)
           ? true
           : !isRarityInFeatured
-              ? null
-              : winsFiftyFifty;
+          ? null
+          : winsFiftyFifty;
       await history.pull(randomRarity, gotFeaturedItem);
 
-      final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
+      final itemType = switch (pickedItem) {
+        WishSimulatorBannerCharacterResultModel() => ItemType.character,
+        WishSimulatorBannerWeaponResultModel() => ItemType.weapon,
+      };
       await _dataService.wishSimulator.saveBannerItemPullHistory(banner.type, pickedItem.key, itemType);
     }
-    final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
+    final fromUntilString =
+        '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
     await _telemetryService.trackWishSimulatorResult(bannerIndex, period.version, banner.type, fromUntilString);
 
     final sortedResults = results.orderByDescending((el) => el.rarity).thenBy((el) {
-      final typeName = el.map(character: (_) => ItemType.character.name, weapon: (_) => ItemType.weapon.name);
+      final typeName = switch (el) {
+        WishSimulatorBannerCharacterResultModel() => ItemType.character.name,
+        WishSimulatorBannerWeaponResultModel() => ItemType.weapon.name,
+      };
       return '$typeName-${el.key}';
     }).toList();
     return WishSimulatorResultState.loaded(results: sortedResults);
@@ -137,15 +159,12 @@ class _BannerRate {
     this.initialRate,
     this.softRateIncreasesAt,
     this.hardRateIncreasesAt,
-  )   : assert(rarity >= WishBannerConstants.minObtainableRarity),
-        assert(guaranteedAt > 0 && guaranteedAt > hardRateIncreasesAt),
-        assert(initialRate > 0 && initialRate < 100),
-        assert(softRateIncreasesAt > 0 && softRateIncreasesAt < hardRateIncreasesAt);
+  ) : assert(rarity >= WishBannerConstants.minObtainableRarity),
+      assert(guaranteedAt > 0 && guaranteedAt > hardRateIncreasesAt),
+      assert(initialRate > 0 && initialRate < 100),
+      assert(softRateIncreasesAt > 0 && softRateIncreasesAt < hardRateIncreasesAt);
 
-  const _BannerRate.simple(this.rarity, this.initialRate)
-      : guaranteedAt = -1,
-        softRateIncreasesAt = -1,
-        hardRateIncreasesAt = -1;
+  const _BannerRate.simple(this.rarity, this.initialRate) : guaranteedAt = -1, softRateIncreasesAt = -1, hardRateIncreasesAt = -1;
 
   double _getSoftRateMultiplier() {
     if (rarity == WishBannerConstants.maxObtainableRarity) {

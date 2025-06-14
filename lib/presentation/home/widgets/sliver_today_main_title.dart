@@ -17,9 +17,9 @@ class SliverTodayMainTitle extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       sliver: SliverToBoxAdapter(
         child: BlocBuilder<HomeBloc, HomeState>(
-          builder: (ctx, state) => state.map(
-            loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => Container(
+          builder: (ctx, state) => switch (state) {
+            HomeStateLoading() => const Loading(useScaffold: false),
+            HomeStateLoaded() => Container(
               margin: Styles.edgeInsetHorizontal16,
               child: GestureDetector(
                 onTap: () => _openDayWeekDialog(state.day, context),
@@ -40,7 +40,7 @@ class SliverTodayMainTitle extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          },
         ),
       ),
     );

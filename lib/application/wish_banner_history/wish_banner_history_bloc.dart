@@ -17,34 +17,30 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
 
   @override
   Stream<WishBannerHistoryState> mapEventToState(WishBannerHistoryEvent event) async* {
-    final s = event.map(
-      init: (_) => _init(SortDirectionType.desc),
-      groupTypeChanged: (e) => state.maybeMap(
-        loaded: (state) => _groupTypeChanged(state, e.type),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      sortDirectionTypeChanged: (e) => state.maybeMap(
-        loaded: (state) => _sortDirectionTypeChanged(state, e.type),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      itemsSelected: (e) => state.maybeMap(
-        loaded: (state) => _itemsSelected(state, e.keys),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-    );
-
-    yield s;
+    switch (event) {
+      case WishBannerHistoryEventInit():
+        yield _init(SortDirectionType.desc);
+      case WishBannerHistoryEventGroupTypeChanged():
+        yield _groupTypeChanged(state as WishBannerHistoryStateLoaded, event.type);
+      case WishBannerHistoryEventSortDirectionTypeChanged():
+        yield _sortDirectionTypeChanged(state as WishBannerHistoryStateLoaded, event.type);
+      case WishBannerHistoryEventItemsSelected():
+        yield _itemsSelected(state as WishBannerHistoryStateLoaded, event.keys);
+    }
   }
 
   List<ItemCommonWithNameOnly> getItemsForSearch() {
-    return state.map(
-      loading: (_) => throw Exception('Invalid state'),
-      loaded: (state) => state.filteredPeriods.map((e) => ItemCommonWithNameOnly(e.groupingKey, e.groupingTitle)).toList(),
-    );
+    switch (state) {
+      case WishBannerHistoryStateLoading():
+        throw Exception('Invalid state');
+      case final WishBannerHistoryStateLoaded state:
+        return state.filteredPeriods.map((e) => ItemCommonWithNameOnly(e.groupingKey, e.groupingTitle)).toList();
+    }
   }
 
   WishBannerHistoryState _init(SortDirectionType sortDirectionType) {
-    final grouped = _genshinService.bannerHistory.getWishBannersHistoryGroupedByVersion()..sort((x, y) => _sort(x, y, sortDirectionType));
+    final grouped = _genshinService.bannerHistory.getWishBannersHistoryGroupedByVersion()
+      ..sort((x, y) => _sort(x, y, sortDirectionType));
     return WishBannerHistoryState.loaded(
       allPeriods: grouped,
       filteredPeriods: grouped,
@@ -53,7 +49,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     );
   }
 
-  WishBannerHistoryState _groupTypeChanged(_LoadedState state, WishBannerGroupedType type) {
+  WishBannerHistoryState _groupTypeChanged(WishBannerHistoryStateLoaded state, WishBannerGroupedType type) {
     if (state.groupedType == type) {
       return state;
     }
@@ -68,7 +64,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     }
   }
 
-  WishBannerHistoryState _groupByCharacterOrWeapon(_LoadedState state, WishBannerGroupedType groupedType) {
+  WishBannerHistoryState _groupByCharacterOrWeapon(WishBannerHistoryStateLoaded state, WishBannerGroupedType groupedType) {
     const sortType = SortDirectionType.asc;
     final groups = _getGroupedByCharacterOrWeaponPeriod(state.allPeriods, groupedType)..sort((x, y) => _sort(x, y, sortType));
     return state.copyWith(filteredPeriods: groups, groupedType: groupedType, selectedItemKeys: [], sortDirectionType: sortType);
@@ -94,12 +90,14 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     return groupsMap.entries.map((e) {
       final parts = e.value..sort((x, y) => x.version.compareTo(y.version));
       final firstPart = parts.first;
-      final groupingTitle = (groupByCharacter ? firstPart.featuredCharacters : firstPart.featuredWeapons).firstWhere((c) => c.key == e.key).name;
+      final groupingTitle = (groupByCharacter ? firstPart.featuredCharacters : firstPart.featuredWeapons)
+          .firstWhere((c) => c.key == e.key)
+          .name;
       return WishBannerHistoryGroupedPeriodModel(groupingKey: e.key, groupingTitle: groupingTitle, parts: parts);
     }).toList();
   }
 
-  WishBannerHistoryState _sortDirectionTypeChanged(_LoadedState state, SortDirectionType type) {
+  WishBannerHistoryState _sortDirectionTypeChanged(WishBannerHistoryStateLoaded state, SortDirectionType type) {
     if (state.sortDirectionType == type) {
       return state;
     }
@@ -108,7 +106,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     return state.copyWith(filteredPeriods: periods, sortDirectionType: type);
   }
 
-  WishBannerHistoryState _itemsSelected(_LoadedState state, List<String> keys) {
+  WishBannerHistoryState _itemsSelected(WishBannerHistoryStateLoaded state, List<String> keys) {
     if (keys.equals(state.selectedItemKeys)) {
       return state;
     }

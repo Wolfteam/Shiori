@@ -1,8 +1,9 @@
 part of 'artifacts_bloc.dart';
 
 @freezed
-class ArtifactsState with _$ArtifactsState {
-  const factory ArtifactsState.loading() = _LoadingState;
+sealed class ArtifactsState with _$ArtifactsState {
+  const factory ArtifactsState.loading() = ArtifactsStateLoading;
+
   const factory ArtifactsState.loaded({
     required List<ArtifactCardModel> artifacts,
     required bool collapseNotes,
@@ -15,5 +16,5 @@ class ArtifactsState with _$ArtifactsState {
     required SortDirectionType tempSortDirectionType,
     @Default(<String>[]) List<String> excludeKeys,
     ArtifactType? type,
-  }) = _LoadedState;
+  }) = ArtifactsStateLoaded;
 }

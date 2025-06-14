@@ -1,20 +1,20 @@
 part of 'chart_elements_bloc.dart';
 
 @freezed
-class ChartElementsEvent with _$ChartElementsEvent {
+sealed class ChartElementsEvent with _$ChartElementsEvent {
   const factory ChartElementsEvent.init({
     required int maxNumberOfColumns,
-  }) = _Init;
+  }) = ChartElementsEventInit;
 
   const factory ChartElementsEvent.elementSelected({
     required ElementType type,
-  }) = _ElementSelected;
+  }) = ChartElementsEventElementSelected;
 
-  const factory ChartElementsEvent.goToNextPage() = _GoToNextPage;
+  const factory ChartElementsEvent.goToNextPage() = ChartElementsEventGoToNextPage;
 
-  const factory ChartElementsEvent.goToPreviousPage() = _GoToPreviousPage;
+  const factory ChartElementsEvent.goToPreviousPage() = ChartElementsEventGoToPreviousPage;
 
-  const factory ChartElementsEvent.goToFirstPage() = _GoToFirstPage;
+  const factory ChartElementsEvent.goToFirstPage() = ChartElementsEventGoToFirstPage;
 
-  const factory ChartElementsEvent.goToLastPage() = _GoToLastPage;
+  const factory ChartElementsEvent.goToLastPage() = ChartElementsEventGoToLastPage;
 }

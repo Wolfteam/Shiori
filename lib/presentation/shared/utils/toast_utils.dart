@@ -84,8 +84,6 @@ class _ToastBody extends StatelessWidget {
       case ToastType.error:
         bgColor = Colors.red;
         icon = const Icon(Icons.dangerous, color: Colors.white);
-      default:
-        throw Exception('Invalid toast type = $type');
     }
     return Container(
       key: const Key('toast-body'),

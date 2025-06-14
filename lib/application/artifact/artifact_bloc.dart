@@ -22,31 +22,32 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
   Stream<ArtifactState> mapEventToState(ArtifactEvent event) async* {
     yield const ArtifactState.loading();
 
-    final s = await event.map(
-      loadFromKey: (e) async {
-        final artifact = _genshinService.artifacts.getArtifact(e.key);
-        final artifactImgPath = _resourceService.getArtifactImagePath(artifact.image);
-        final translation = _genshinService.translations.getArtifactTranslation(e.key);
-        final usedBy = _genshinService.characters.getCharacterForItemsUsingArtifact(e.key);
-        final droppedBy = _genshinService.monsters.getRelatedMonsterToArtifactForItems(e.key);
-        final images = _genshinService.artifacts.getArtifactRelatedParts(artifactImgPath, artifact.image, translation.bonus.length);
-        final bonus = _genshinService.artifacts.getArtifactBonus(translation);
+    switch (event) {
+      case final ArtifactEventLoad e:
+        yield await _loadFromKey(e);
+    }
+  }
 
-        await _telemetryService.trackArtifactLoaded(e.key);
+  Future<ArtifactState> _loadFromKey(ArtifactEventLoad e) async {
+    final artifact = _genshinService.artifacts.getArtifact(e.key);
+    final artifactImgPath = _resourceService.getArtifactImagePath(artifact.image);
+    final translation = _genshinService.translations.getArtifactTranslation(e.key);
+    final usedBy = _genshinService.characters.getCharacterForItemsUsingArtifact(e.key);
+    final droppedBy = _genshinService.monsters.getRelatedMonsterToArtifactForItems(e.key);
+    final images = _genshinService.artifacts.getArtifactRelatedParts(artifactImgPath, artifact.image, translation.bonus.length);
+    final bonus = _genshinService.artifacts.getArtifactBonus(translation);
 
-        return ArtifactState.loaded(
-          name: translation.name,
-          image: artifactImgPath,
-          minRarity: artifact.minRarity,
-          maxRarity: artifact.maxRarity,
-          bonus: bonus,
-          images: images,
-          usedBy: usedBy,
-          droppedBy: droppedBy,
-        );
-      },
+    await _telemetryService.trackArtifactLoaded(e.key);
+
+    return ArtifactState.loaded(
+      name: translation.name,
+      image: artifactImgPath,
+      minRarity: artifact.minRarity,
+      maxRarity: artifact.maxRarity,
+      bonus: bonus,
+      images: images,
+      usedBy: usedBy,
+      droppedBy: droppedBy,
     );
-
-    yield s;
   }
 }

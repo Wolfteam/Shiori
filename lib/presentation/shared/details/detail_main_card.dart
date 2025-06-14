@@ -36,7 +36,7 @@ class DetailMainCard extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(minWidth: min(300, width * 0.3), maxWidth: min(500, width * 0.8)),
       child: Card(
-        color: color.withOpacity(0.5),
+        color: color.withValues(alpha: 0.5),
         shape: Styles.cardShape,
         child: Padding(
           padding: Styles.edgeInsetAll10,

@@ -50,92 +50,94 @@ class MaterialPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading.scaffold(),
-          loaded: (state) {
-            final color = state.rarity.getRarityColors().first;
-            final main = _Main(
-              name: state.name,
-              image: state.fullImage,
-              type: state.type,
-              rarity: state.rarity,
-              days: state.days,
-            );
-            final children = <Widget>[
-              if (state.description.isNotNullEmptyOrWhitespace)
-                DetailSection(
-                  title: s.description,
-                  color: color,
-                  description: state.description,
-                ),
-              if (state.obtainedFrom.isNotEmpty)
-                _ObtainedFrom(
-                  color: color,
-                  obtainedFrom: state.obtainedFrom,
-                ),
-              if (state.relatedMaterials.isNotEmpty)
-                _RelatedTo(
-                  color: color,
-                  relatedTo: state.relatedMaterials,
-                ),
-              if (state.characters.isNotEmpty)
-                _Characters(
-                  color: color,
-                  characters: state.characters,
-                ),
-              if (state.weapons.isNotEmpty)
-                _Weapons(
-                  color: color,
-                  weapons: state.weapons,
-                ),
-              if (state.droppedBy.isNotEmpty)
-                _DroppedBy(
-                  color: color,
-                  droppedBy: state.droppedBy,
-                ),
-            ];
-            if (isPortrait) {
-              return ScaffoldWithFab(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    main,
-                    Padding(
-                      padding: Styles.edgeInsetHorizontal5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: children,
-                      ),
-                    ),
-                  ],
-                ),
+        builder: (context, state) {
+          switch (state) {
+            case bloc.MaterialStateLoading():
+              return const Loading.scaffold();
+            case bloc.MaterialStateLoaded():
+              final color = state.rarity.getRarityColors().first;
+              final main = _Main(
+                name: state.name,
+                image: state.fullImage,
+                type: state.type,
+                rarity: state.rarity,
+                days: state.days,
               );
-            }
-            return Scaffold(
-              body: SafeArea(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      flex: 40,
-                      child: main,
-                    ),
-                    Expanded(
-                      flex: 60,
-                      child: DetailLandscapeContent.noTabs(
-                        color: color,
+              final children = <Widget>[
+                if (state.description.isNotNullEmptyOrWhitespace)
+                  DetailSection(
+                    title: s.description,
+                    color: color,
+                    description: state.description,
+                  ),
+                if (state.obtainedFrom.isNotEmpty)
+                  _ObtainedFrom(
+                    color: color,
+                    obtainedFrom: state.obtainedFrom,
+                  ),
+                if (state.relatedMaterials.isNotEmpty)
+                  _RelatedTo(
+                    color: color,
+                    relatedTo: state.relatedMaterials,
+                  ),
+                if (state.characters.isNotEmpty)
+                  _Characters(
+                    color: color,
+                    characters: state.characters,
+                  ),
+                if (state.weapons.isNotEmpty)
+                  _Weapons(
+                    color: color,
+                    weapons: state.weapons,
+                  ),
+                if (state.droppedBy.isNotEmpty)
+                  _DroppedBy(
+                    color: color,
+                    droppedBy: state.droppedBy,
+                  ),
+              ];
+              if (isPortrait) {
+                return ScaffoldWithFab(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      main,
+                      Padding(
+                        padding: Styles.edgeInsetHorizontal5,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: children,
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                );
+              }
+              return Scaffold(
+                body: SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        flex: 40,
+                        child: main,
+                      ),
+                      Expanded(
+                        flex: 60,
+                        child: DetailLandscapeContent.noTabs(
+                          color: color,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: children,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
-        ),
+              );
+          }
+        },
       ),
     );
   }

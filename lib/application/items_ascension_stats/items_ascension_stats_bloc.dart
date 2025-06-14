@@ -12,15 +12,15 @@ part 'items_ascension_stats_state.dart';
 
 class ItemsAscensionStatsBloc extends Bloc<ItemsAscensionStatsEvent, ItemsAscensionStatsState> {
   final GenshinService _genshinService;
+
   ItemsAscensionStatsBloc(this._genshinService) : super(const ItemsAscensionStatsState.loading());
 
   @override
   Stream<ItemsAscensionStatsState> mapEventToState(ItemsAscensionStatsEvent event) async* {
-    final s = event.map(
-      init: (e) => _init(e.type, e.itemType),
-    );
-
-    yield s;
+    switch (event) {
+      case ItemsAscensionStatsEventInit():
+        yield _init(event.type, event.itemType);
+    }
   }
 
   ItemsAscensionStatsState _init(StatType statType, ItemType itemType) {

@@ -1,35 +1,37 @@
 part of 'characters_bloc.dart';
 
 @freezed
-class CharactersEvent with _$CharactersEvent {
+sealed class CharactersEvent with _$CharactersEvent {
   const factory CharactersEvent.init({
     @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _Init;
+  }) = CharactersEventInit;
 
   const factory CharactersEvent.searchChanged({
     required String search,
-  }) = _SearchChanged;
+  }) = CharactersEventSearchChanged;
 
-  const factory CharactersEvent.weaponTypeChanged(WeaponType weaponType) = _WeaponTypesChanged;
+  const factory CharactersEvent.weaponTypeChanged(WeaponType weaponType) = CharactersEventWeaponTypeChanged;
 
-  const factory CharactersEvent.elementTypeChanged(ElementType elementType) = _ElementTypesChanged;
+  const factory CharactersEvent.elementTypeChanged(ElementType elementType) = CharactersEventElementTypeChanged;
 
-  const factory CharactersEvent.rarityChanged(int rarity) = _RarityChanged;
+  const factory CharactersEvent.rarityChanged(int rarity) = CharactersEventRarityChanged;
 
-  const factory CharactersEvent.itemStatusChanged(ItemStatusType? statusType) = _ReleasedUnreleasedTypeChanged;
+  const factory CharactersEvent.itemStatusChanged(ItemStatusType? statusType) = CharactersEventItemStatusTypeChanged;
 
-  const factory CharactersEvent.characterFilterTypeChanged(CharacterFilterType characterFilterType) = _CharacterFilterChanged;
+  const factory CharactersEvent.characterFilterTypeChanged(CharacterFilterType characterFilterType) =
+      CharactersEventCharacterFilterTypeChanged;
 
-  const factory CharactersEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
+  const factory CharactersEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) =
+      CharactersEventSortDirectionTypeChanged;
 
-  const factory CharactersEvent.roleTypeChanged(CharacterRoleType? roleType) = _CharacterTypeChanged;
+  const factory CharactersEvent.roleTypeChanged(CharacterRoleType? roleType) = CharactersEventCharacterRoleTypeChanged;
 
-  const factory CharactersEvent.regionTypeChanged(RegionType? regionType) = _RegionTypeChanged;
+  const factory CharactersEvent.regionTypeChanged(RegionType? regionType) = CharactersEventRegionTypeChanged;
 
-  const factory CharactersEvent.applyFilterChanges() = _ApplyFilterChanges;
+  const factory CharactersEvent.applyFilterChanges() = CharactersEventApplyFilterChanges;
 
-  const factory CharactersEvent.cancelChanges() = _CancelChanges;
+  const factory CharactersEvent.cancelChanges() = CharactersEventCancelChanges;
 
-  const factory CharactersEvent.resetFilters() = _ResetFilters;
+  const factory CharactersEvent.resetFilters() = CharactersEventResetFilters;
 }

@@ -18,16 +18,16 @@ class ElementsPage extends StatelessWidget {
         child: BlocProvider<ElementsBloc>(
           create: (ctx) => Injection.elementsBloc..add(const ElementsEvent.init()),
           child: BlocBuilder<ElementsBloc, ElementsState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => CustomScrollView(
+            builder: (context, state) => switch (state) {
+              ElementsStateLoading() => const Loading(useScaffold: false),
+              ElementsStateLoaded() => CustomScrollView(
                 slivers: [
                   SliverElementDebuffs(debuffs: state.debuffs),
                   SliverElementReactions(reactions: state.reactions),
                   SliverElementResonances(resonances: state.resonances),
                 ],
               ),
-            ),
+            },
           ),
         ),
       ),
