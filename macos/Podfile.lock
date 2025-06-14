@@ -7,38 +7,38 @@ PODS:
     - FlutterMacOS
   - file_picker (0.0.1):
     - FlutterMacOS
-  - Firebase/CoreOnly (11.10.0):
-    - FirebaseCore (~> 11.10.0)
-  - Firebase/Messaging (11.10.0):
+  - Firebase/CoreOnly (11.13.0):
+    - FirebaseCore (~> 11.13.0)
+  - Firebase/Messaging (11.13.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 11.10.0)
-  - firebase_core (3.13.1):
-    - Firebase/CoreOnly (~> 11.10.0)
+    - FirebaseMessaging (~> 11.13.0)
+  - firebase_core (3.14.0):
+    - Firebase/CoreOnly (~> 11.13.0)
     - FlutterMacOS
-  - firebase_messaging (15.2.6):
-    - Firebase/CoreOnly (~> 11.10.0)
-    - Firebase/Messaging (~> 11.10.0)
+  - firebase_messaging (15.2.7):
+    - Firebase/CoreOnly (~> 11.13.0)
+    - Firebase/Messaging (~> 11.13.0)
     - firebase_core
     - FlutterMacOS
-  - FirebaseCore (11.10.0):
-    - FirebaseCoreInternal (~> 11.10.0)
-    - GoogleUtilities/Environment (~> 8.0)
-    - GoogleUtilities/Logger (~> 8.0)
-  - FirebaseCoreInternal (11.10.0):
-    - "GoogleUtilities/NSData+zlib (~> 8.0)"
-  - FirebaseInstallations (11.10.0):
-    - FirebaseCore (~> 11.10.0)
-    - GoogleUtilities/Environment (~> 8.0)
-    - GoogleUtilities/UserDefaults (~> 8.0)
+  - FirebaseCore (11.13.0):
+    - FirebaseCoreInternal (~> 11.13.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Logger (~> 8.1)
+  - FirebaseCoreInternal (11.13.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+  - FirebaseInstallations (11.13.0):
+    - FirebaseCore (~> 11.13.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
     - PromisesObjC (~> 2.4)
-  - FirebaseMessaging (11.10.0):
-    - FirebaseCore (~> 11.10.0)
+  - FirebaseMessaging (11.13.0):
+    - FirebaseCore (~> 11.13.0)
     - FirebaseInstallations (~> 11.0)
     - GoogleDataTransport (~> 10.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
-    - GoogleUtilities/Environment (~> 8.0)
-    - GoogleUtilities/Reachability (~> 8.0)
-    - GoogleUtilities/UserDefaults (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Reachability (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
     - nanopb (~> 3.30910.0)
   - flutter_inappwebview_macos (0.0.1):
     - FlutterMacOS
@@ -89,15 +89,15 @@ PODS:
     - Flutter
     - FlutterMacOS
   - PromisesObjC (2.4.0)
-  - purchases_flutter (8.10.1):
+  - purchases_flutter (8.10.2):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 13.35.0)
-  - PurchasesHybridCommon (13.35.0):
-    - RevenueCat (= 5.27.1)
+    - PurchasesHybridCommon (= 13.36.0)
+  - PurchasesHybridCommon (13.36.0):
+    - RevenueCat (= 5.28.1)
   - rate_my_app (2.3.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.27.1)
+  - RevenueCat (5.28.1)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -199,13 +199,13 @@ SPEC CHECKSUMS:
   device_info_plus: 4fb280989f669696856f8b129e4a5e3cd6c48f76
   devicelocale: 456a07c045d3113938aa4983065bd8526e2af792
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
-  Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
-  firebase_core: 25e649fdb52de4f20314f9e54b914e7298875acc
-  firebase_messaging: cfe5129bd3b65e4da0b2ac98b9af0735ef2fd564
-  FirebaseCore: 8344daef5e2661eb004b177488d6f9f0f24251b7
-  FirebaseCoreInternal: ef4505d2afb1d0ebbc33162cb3795382904b5679
-  FirebaseInstallations: 9980995bdd06ec8081dfb6ab364162bdd64245c3
-  FirebaseMessaging: 2b9f56aa4ed286e1f0ce2ee1d413aabb8f9f5cb9
+  Firebase: 3435bc66b4d494c2f22c79fd3aae4c1db6662327
+  firebase_core: 1095fcf33161d99bc34aa10f7c0d89414a208d15
+  firebase_messaging: 6417056ffb85141607618ddfef9fec9f3caab3ea
+  FirebaseCore: c692c7f1c75305ab6aff2b367f25e11d73aa8bd0
+  FirebaseCoreInternal: 29d7b3af4aaf0b8f3ed20b568c13df399b06f68c
+  FirebaseInstallations: 0ee9074f2c1e86561ace168ee1470dc67aabaf02
+  FirebaseMessaging: 195bbdb73e6ca1dbc76cd46e73f3552c084ef6e4
   flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
   flutter_local_notifications: 4bf37a31afde695b56091b4ae3e4d9c7a7e6cda0
   flutter_timezone: d59eea86178cbd7943cd2431cc2eaa9850f935d8
@@ -218,10 +218,10 @@ SPEC CHECKSUMS:
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  purchases_flutter: cad46d5fcfef49be0897cdc7e1bea53bc7eba45d
-  PurchasesHybridCommon: 18288b8ad932cfeb5f142f592d5c65e626a35770
+  purchases_flutter: 3efb883d24e1359805f23a6af3bcd308ecc4924a
+  PurchasesHybridCommon: 27d71a65d486bbfd6822a58c9802f7191e438c05
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  RevenueCat: 87171c9f2412778354c8523f5625d1fece2560a5
+  RevenueCat: 3fafcf295834118ed6e6ec9388a20a4c9092b1e6
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16
