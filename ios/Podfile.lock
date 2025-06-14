@@ -141,9 +141,9 @@ PODS:
     - Flutter
     - FlutterMacOS
   - RevenueCat (5.27.1)
-  - SDWebImage (5.21.0):
-    - SDWebImage/Core (= 5.21.0)
-  - SDWebImage/Core (5.21.0)
+  - SDWebImage (5.21.1):
+    - SDWebImage/Core (= 5.21.1)
+  - SDWebImage/Core (5.21.1)
   - share_plus (0.0.1):
     - Flutter
   - shared_preferences_foundation (0.0.1):
@@ -286,7 +286,7 @@ SPEC CHECKSUMS:
   PurchasesHybridCommon: 18288b8ad932cfeb5f142f592d5c65e626a35770
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
   RevenueCat: 87171c9f2412778354c8523f5625d1fece2560a5
-  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
+  SDWebImage: f29024626962457f3470184232766516dee8dfea
   share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   store_checker: bcaa4c645cbb578f7f087cd6088d42ba26135470
