@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:two_dimensional_scrollables/two_dimensional_scrollables.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
@@ -22,7 +25,6 @@ void main() {
 
   Future<void> filter(String name, double version, bool isCharacter, WidgetTester widgetTester) async {
     final DetailPage page = DetailPage(widgetTester);
-
     //Select the type
     await page.tapOnPopupMenuButtonIcon(Icons.swap_horiz, isCharacter ? 0 : 1);
 
@@ -32,9 +34,13 @@ void main() {
     //Scroll to version
     final versionString = version.toStringAsFixed(1);
     final Finder table = find.byType(TableView);
-    await widgetTester.dragUntilVisible(find.text(versionString), table, BasePage.horizontalDragOffset);
+    final double horizontalScrollDelta = -min(BasePage.horizontalScrollDelta, widgetTester.getWidth(3));
+    final Offset horizontalOffset = Offset(horizontalScrollDelta, 0);
+    await widgetTester.doAppDragUntilVisible(find.text(versionString), table, horizontalOffset);
+    await widgetTester.pumpAndSettle();
+
     //Kinda hack, for some reason the drag ends up being in a weird position, so we have to go back
-    await widgetTester.drag(table, Offset(BasePage.horizontalDragOffset.dx.abs() / 2, 0));
+    await widgetTester.drag(table, Offset(horizontalScrollDelta.abs(), 0));
     await widgetTester.pumpAndSettle();
 
     //Tap on version button
@@ -45,7 +51,7 @@ void main() {
     await widgetTester.pumpAndSettle();
 
     //Scroll down until we found item
-    await widgetTester.dragUntilVisible(find.text(name), table, BasePage.verticalDragOffset);
+    await widgetTester.doAppDragUntilVisible(find.text(name), table, BasePage.verticalDragOffset);
     await widgetTester.pumpAndSettle();
 
     //Tap search icon

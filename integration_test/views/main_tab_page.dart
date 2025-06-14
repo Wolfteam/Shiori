@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/home/widgets/banner_history_count_card.dart';
@@ -74,7 +72,7 @@ class MainTabPage extends BasePage {
 
     if (!updatesWereSkipped) {
       final Finder charAscMaterialsFinder = find.byType(SliverCharacterAscensionMaterials);
-      await tester.doAppDragUntilVisible(charAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
+      await tester.doAppDragIfNotVisible(charAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
       await tester.pumpAndSettle();
       expect(
         find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial)),
@@ -87,12 +85,13 @@ class MainTabPage extends BasePage {
       await tester.pumpAndSettle();
 
       final Finder weaponAscMaterialsFinder = find.byType(SliverWeaponAscensionMaterials);
-      await tester.doAppDragUntilVisible(weaponAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
+      await tester.doAppDragIfNotVisible(weaponAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
       await tester.pumpAndSettle();
       expect(
         find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial)),
         findsAtLeastNWidgets(2),
       );
+      //TODO: WARN IN THIS DRAG
       await tester.drag(
         find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial).first),
         BasePage.horizontalDragOffset,
@@ -110,7 +109,7 @@ class MainTabPage extends BasePage {
     ];
 
     for (final Type type in expectedTypes) {
-      await tester.dragUntilVisible(find.byType(type), customScrollView, BasePage.verticalDragOffset);
+      await tester.doAppDragUntilVisible(find.byType(type), customScrollView, BasePage.verticalDragOffset);
       await tester.pumpAndSettle();
 
       final Finder listViewFinder = find.ancestor(of: find.byType(type), matching: find.byType(ListView));
@@ -163,9 +162,6 @@ class MainTabPage extends BasePage {
   }
 
   Future<MainTabPage> doCheckOnMapTab({bool updatesWereSkipped = false}) async {
-    if (Platform.isMacOS) {
-      return this;
-    }
     await _tapOnTab(_MainPageTabType.map);
     expect(find.byType(AppWebView), findsOneWidget);
     return this;
@@ -197,6 +193,7 @@ class MainTabPage extends BasePage {
     expect(finder, findsOneWidget);
 
     await tester.tap(finder);
+    await tester.pump(const Duration(milliseconds: 100));
     await tester.pumpAndSettle();
 
     final days = <int, String>{
@@ -209,6 +206,7 @@ class MainTabPage extends BasePage {
       DateTime.sunday: 'Sunday',
     };
 
+    //TODO: CHANGE THIS LOGIC CAUSE THE DAY DOES NOT CHANGE UNTIL WE REACH THE CORRECT TIMEZONE
     final int currentDay = DateTime.now().weekday;
     int newDay = currentDay;
     if (newDay == DateTime.sunday) {
@@ -221,29 +219,20 @@ class MainTabPage extends BasePage {
     final String newDayText = days[newDay]!;
 
     final Finder listViewFinder = find.descendant(of: find.byType(AlertDialog), matching: find.byType(ListView));
-    await tester.dragUntilVisible(listViewFinder, find.widgetWithText(ListTile, currentDayText), BasePage.verticalDragOffset);
+    final Finder currentDayFinder = find.widgetWithText(ListTile, currentDayText);
+    final Finder newDayFinder = find.widgetWithText(ListTile, newDayText);
+
+    await tester.doAppDragUntilVisible(newDayFinder, listViewFinder, BasePage.verticalDragOffset);
     await tester.pumpAndSettle();
 
-    expect(
-      tester.widget<ListTile>(find.widgetWithText(ListTile, currentDayText)).selected,
-      isTrue,
-    );
-    expect(
-      tester.widget<ListTile>(find.widgetWithText(ListTile, newDayText)).selected,
-      isFalse,
-    );
+    expect(tester.widget<ListTile>(currentDayFinder).selected, isTrue);
+    expect(tester.widget<ListTile>(newDayFinder).selected, isFalse);
 
-    await tester.tap(find.widgetWithText(ListTile, newDayText));
+    await tester.tap(newDayFinder);
     await tester.pumpAndSettle();
 
-    expect(
-      tester.widget<ListTile>(find.widgetWithText(ListTile, currentDayText)).selected,
-      isFalse,
-    );
-    expect(
-      tester.widget<ListTile>(find.widgetWithText(ListTile, newDayText)).selected,
-      isTrue,
-    );
+    expect(tester.widget<ListTile>(currentDayFinder).selected, isFalse);
+    expect(tester.widget<ListTile>(newDayFinder).selected, isTrue);
 
     await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
@@ -253,7 +242,7 @@ class MainTabPage extends BasePage {
 
   Future<MainTabPage> tapOnTodayAscMaterials(bool forCharacters) async {
     final String text = forCharacters ? 'For characters' : 'For weapons';
-    await tester.dragUntilVisible(find.text(text), find.byType(CustomScrollView), BasePage.verticalDragOffset);
+    await tester.doAppDragUntilVisible(find.text(text), find.byType(CustomScrollView), BasePage.verticalDragOffset);
     await tester.pumpAndSettle();
 
     final Finder listTileFinder = find.ancestor(of: find.text(text), matching: find.byType(ListTile));
@@ -366,7 +355,7 @@ class MainTabPage extends BasePage {
     } else if (secondCardRow.contains(type)) {
       verticalType = MyInventoryCard;
     } else if (thirdCardRow.contains(type)) {
-      verticalType = !Platform.isMacOS ? DailyCheckInCard : GameCodesCard;
+      verticalType = DailyCheckInCard;
     } else {
       verticalType = SettingsCard;
     }
@@ -400,7 +389,7 @@ class MainTabPage extends BasePage {
     final Finder verticalCustomScrollViewFinder = find.byType(CustomScrollView);
     expect(verticalCustomScrollViewFinder, findsOneWidget);
 
-    await tester.dragUntilVisible(find.byType(verticalType), verticalCustomScrollViewFinder, BasePage.verticalDragOffset);
+    await tester.doAppDragUntilVisible(find.byType(verticalType), verticalCustomScrollViewFinder, BasePage.verticalDragOffset);
     await tester.pumpAndSettle();
 
     if (verticalType == horizontalType) {
@@ -411,10 +400,10 @@ class MainTabPage extends BasePage {
     expect(horizontalScrollViewFinder, findsOneWidget);
     final horizontalListView = tester.widget<ListView>(horizontalScrollViewFinder);
 
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.byType(horizontalType),
       find.byWidget(horizontalListView),
-      BasePage.horizontalDragOffset,
+      const Offset(-100, 0),
       maxIteration: 1000,
     );
     await tester.pumpAndSettle();

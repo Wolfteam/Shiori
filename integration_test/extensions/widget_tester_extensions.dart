@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/main.dart';
 import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
 import 'package:shiori/presentation/mobile_scaffold.dart';
 
@@ -20,6 +21,11 @@ extension PumpUntilFound on WidgetTester {
   bool get isLandscape {
     final size = view.display.size;
     return size.width > size.height;
+  }
+
+  Size get appSize {
+    final mediaQuery = element(find.byType(MyApp)).findAncestorWidgetOfExactType<MediaQuery>()!.data;
+    return mediaQuery.size;
   }
 
   Future<void> _pumpUntil(
@@ -84,26 +90,43 @@ extension PumpUntilFound on WidgetTester {
 
     //Move to the expected location
     await gesture.moveTo(to, timeStamp: kLongPressTimeout);
-    await pump();
+    await pump(kPressTimeout);
 
     //Stop the gesture
     await gesture.up();
-    await pump();
+    await pump(kPressTimeout);
+
+    await pumpAndSettle();
+  }
+
+  Future<void> doAppDragIfNotVisible(
+    FinderBase<Element> finder,
+    FinderBase<Element> view,
+    Offset moveStep, {
+    int maxIteration = 300,
+    Duration duration = const Duration(milliseconds: 50),
+    bool continuous = false,
+  }) {
+    if (finder.evaluate().isNotEmpty) {
+      return Future.value();
+    }
+    return doAppDragUntilVisible(finder, view, moveStep, maxIteration: maxIteration, duration: duration, continuous: continuous);
   }
 
   Future<void> doAppDragUntilVisible(
     FinderBase<Element> finder,
     FinderBase<Element> view,
     Offset moveStep, {
-    int maxIteration = 50,
+    int maxIteration = 300,
     Duration duration = const Duration(milliseconds: 50),
     bool continuous = false,
   }) async {
-    if (finder.evaluate().isNotEmpty) {
-      return;
-    }
-
     await dragUntilVisible(finder, view, moveStep, maxIteration: maxIteration, duration: duration, continuous: continuous);
     await pump(duration * 2);
+  }
+
+  double getWidth(int dividedBy) {
+    final double width = appSize.width;
+    return width / dividedBy;
   }
 }

@@ -15,7 +15,6 @@ import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/select_enum_dialog.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -31,8 +30,10 @@ typedef ConfigureSettingsCallBack = Future<void> Function(SettingsService);
 abstract class BasePage {
   static bool initialized = false;
 
-  static const verticalDragOffset = Offset(0, -50);
-  static const horizontalDragOffset = Offset(-800, 0);
+  static const double verticalScrollDelta = 50;
+  static const double horizontalScrollDelta = 800;
+  static const verticalDragOffset = Offset(0, -verticalScrollDelta);
+  static const horizontalDragOffset = Offset(-horizontalScrollDelta, 0);
   static const threeHundredMsDuration = Duration(milliseconds: 300);
 
   final WidgetTester tester;
@@ -109,8 +110,9 @@ abstract class BasePage {
       await Injection.init(isLoggingEnabled: false);
 
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-        setWindowMinSize(SizeUtils.minSizeOnDesktop);
-        setWindowMaxSize(Size.infinite);
+        const size = Size(1366, 768);
+        setWindowMinSize(size);
+        setWindowMaxSize(size);
       }
     }
 
@@ -170,7 +172,7 @@ abstract class BasePage {
     final Finder scrollView = find.byType(InfiniteListView);
     final BuildContext context = tester.element(scrollView);
     final Color textColor = Theme.of(context).colorScheme.primary;
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(
         of: scrollView,
         matching: find.byWidgetPredicate(
@@ -225,7 +227,7 @@ abstract class BasePage {
     if (name.isNotNullEmptyOrWhitespace) {
       final Finder menuItemFinder = find.widgetWithText(DropdownMenuItem<TEnum>, name!);
       if (!menuItemFinder.hasFound) {
-        await tester.dragUntilVisible(menuItemFinder, menu, offset);
+        await tester.doAppDragUntilVisible(menuItemFinder, menu, offset);
         await tester.pumpAndSettle();
       }
 
@@ -236,7 +238,7 @@ abstract class BasePage {
 
     final Finder menuItemFinder = find.byType(DropdownMenuItem<TEnum>).at(index!);
     if (!menuItemFinder.hasFound) {
-      await tester.dragUntilVisible(menuItemFinder, menu, offset);
+      await tester.doAppDragUntilVisible(menuItemFinder, menu, offset);
       await tester.pumpAndSettle();
     }
     await tester.tap(menuItemFinder);
@@ -245,7 +247,7 @@ abstract class BasePage {
 
   Future<void> selectEnumDialogOption<TEnum>(int index) async {
     final key = Key('$index');
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.byKey(key),
       find.descendant(of: find.byType(SelectEnumDialog<TEnum>), matching: find.byType(ListView)),
       verticalDragOffset,

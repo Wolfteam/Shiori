@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/home/widgets/char_card_ascension_material.dart';
 import 'package:shiori/presentation/home/widgets/weapon_card_ascension_material.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
@@ -31,7 +32,7 @@ void main() {
       await navigate(true, widgetTester);
 
       final Finder scrollViewFinder = find.byType(CustomScrollView);
-      await widgetTester.dragUntilVisible(find.text('For characters'), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.doAppDragUntilVisible(find.text('For characters'), scrollViewFinder, BasePage.verticalDragOffset);
       await widgetTester.pumpAndSettle();
 
       expect(find.byType(CharCardAscensionMaterial), findsAtLeastNWidgets(2));
@@ -41,7 +42,7 @@ void main() {
       await navigate(false, widgetTester);
 
       final Finder scrollViewFinder = find.byType(CustomScrollView);
-      await widgetTester.dragUntilVisible(find.text('For weapons'), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.doAppDragUntilVisible(find.text('For weapons'), scrollViewFinder, BasePage.verticalDragOffset);
       await widgetTester.pumpAndSettle();
 
       expect(find.byType(WeaponCardAscensionMaterial), findsAtLeastNWidgets(2));

@@ -25,13 +25,15 @@ void main() {
       });
     }
 
-    testWidgets('changes banner', (widgetTester) async {
+    testWidgets('changes banner and do one pull', (widgetTester) async {
       final page = WishSimulatorPage(widgetTester);
       await page.navigate();
 
       final historyPage = await page.tapSettings();
 
       await historyPage.tapOnBanner('nahida', '3.2');
+
+      await page.doOnePull();
     });
   });
 
