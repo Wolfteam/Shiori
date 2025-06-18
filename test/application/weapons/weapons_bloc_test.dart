@@ -65,9 +65,11 @@ void main() {
       build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(WeaponsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
-        bloc.state.map(
-          loading: (_) => throw Exception('Invalid artifact state'),
-          loaded: (state) {
+        final state = bloc.state;
+        switch (state) {
+          case WeaponsStateLoading():
+            throw Exception('Invalid artifact state');
+          case WeaponsStateLoaded():
             final weapons = genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.weapons.length, weapons.length);
             expect(state.showWeaponDetails, true);
@@ -77,8 +79,7 @@ void main() {
             expect(state.tempWeaponFilterType, WeaponFilterType.rarity);
             expect(state.sortDirectionType, SortDirectionType.asc);
             expect(state.tempSortDirectionType, SortDirectionType.asc);
-          },
-        );
+        }
       },
     );
   });
@@ -196,8 +197,12 @@ void main() {
         ..add(const WeaponsEvent.cancelChanges()),
       skip: 13,
       expect: () {
-        final weapons = genshinService.weapons.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
-          ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
+        final weapons =
+            genshinService.weapons
+                .getWeaponsForCard()
+                .where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5)
+                .toList()
+              ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         return [
           WeaponsState.loaded(
             weapons: weapons,

@@ -67,12 +67,14 @@ void main() {
       build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(CharactersEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
-        final emittedState = bloc.state;
-        emittedState.map(
-          loading: (_) => throw Exception('Invalid artifact state'),
-          loaded: (state) {
-            final characters = genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList()
-              ..sort((x, y) => x.name.compareTo(y.name));
+        final state = bloc.state;
+        switch (state) {
+          case CharactersStateLoading():
+            throw Exception('Invalid artifact state');
+          case CharactersStateLoaded():
+            final characters =
+                genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList()
+                  ..sort((x, y) => x.name.compareTo(y.name));
             expect(state.characters.length, characters.length);
             expect(state.showCharacterDetails, true);
             expect(state.rarity, 0);
@@ -81,8 +83,7 @@ void main() {
             expect(state.tempCharacterFilterType, CharacterFilterType.name);
             expect(state.sortDirectionType, SortDirectionType.asc);
             expect(state.tempSortDirectionType, SortDirectionType.asc);
-          },
-        );
+        }
       },
     );
   });
@@ -212,8 +213,10 @@ void main() {
         ..add(const CharactersEvent.cancelChanges()),
       skip: 16,
       expect: () {
-        final characters =
-            genshinService.characters.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
+        final characters = genshinService.characters
+            .getCharactersForCard()
+            .where((el) => el.elementType == ElementType.electro && el.stars == 5)
+            .toList();
         return [
           CharactersState.loaded(
             characters: characters,

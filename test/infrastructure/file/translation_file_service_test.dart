@@ -42,7 +42,10 @@ void main() {
           }
           expect(skill.stats, isNotEmpty);
           for (final ability in skill.abilities) {
-            final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace || ability.description.isNotNullEmptyOrWhitespace || ability.secondDescription.isNotNullEmptyOrWhitespace;
+            final oneAtLeast =
+                ability.name.isNotNullEmptyOrWhitespace ||
+                ability.description.isNotNullEmptyOrWhitespace ||
+                ability.secondDescription.isNotNullEmptyOrWhitespace;
 
             if (!oneAtLeast) {
               expect(ability.descriptions, isNotEmpty);
@@ -61,8 +64,6 @@ void main() {
               expect(stats.length, 15);
             case CharacterSkillType.others:
               break;
-            default:
-              throw Exception('Skill is not mapped');
           }
           final hasPendingParam = stats.expand((el) => el.descriptions).any((el) => el.contains('param'));
           expect(hasPendingParam, equals(false));

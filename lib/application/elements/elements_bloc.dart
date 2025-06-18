@@ -15,19 +15,14 @@ class ElementsBloc extends Bloc<ElementsEvent, ElementsState> {
   ElementsBloc(this._genshinService) : super(const ElementsState.loading());
 
   @override
-  Stream<ElementsState> mapEventToState(
-    ElementsEvent event,
-  ) async* {
-    final s = event.when(
-      init: () {
+  Stream<ElementsState> mapEventToState(ElementsEvent event) async* {
+    switch (event) {
+      case ElementsEventInit():
         final debuffs = _genshinService.elements.getElementDebuffs();
         final reactions = _genshinService.elements.getElementReactions();
         final resonances = _genshinService.elements.getElementResonances();
 
-        return ElementsState.loaded(debuffs: debuffs, reactions: reactions, resonances: resonances);
-      },
-    );
-
-    yield s;
+        yield ElementsState.loaded(debuffs: debuffs, reactions: reactions, resonances: resonances);
+    }
   }
 }

@@ -21,8 +21,9 @@ class ThemeSettingsCard extends StatelessWidget {
     final s = S.of(context);
     return SettingsCard(
       child: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) => state.maybeMap(
-          loaded: (state) => Column(
+        builder: (context, state) => switch (state) {
+          SettingsStateLoading() => const Loading(useScaffold: false),
+          SettingsStateLoaded() => Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Row(
@@ -47,7 +48,10 @@ class ThemeSettingsCard extends StatelessWidget {
               CommonDropdownButton<AppThemeType>(
                 hint: s.chooseBaseAppTheme,
                 currentValue: state.currentTheme,
-                values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(AppThemeType.values, (val, _) => s.translateAppThemeType(val)),
+                values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(
+                  AppThemeType.values,
+                  (val, _) => s.translateAppThemeType(val),
+                ),
                 onChanged: _appThemeChanged,
                 padding: Styles.edgeInsetHorizontal16,
               ),
@@ -64,8 +68,7 @@ class ThemeSettingsCard extends StatelessWidget {
                 ),
             ],
           ),
-          orElse: () => const Loading(useScaffold: false),
-        ),
+        },
       ),
     );
   }

@@ -49,7 +49,11 @@ void main() {
     final notificationService = MockNotificationService();
     final localeService = LocaleServiceImpl(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     return Future(() async {
       await genshinService.init(settingsService.language);
       dbPath = await getDbPath(_dbFolder);
@@ -97,12 +101,15 @@ void main() {
       },
       build: () => getBloc(),
       act: (bloc) => bloc.add(const BackupRestoreEvent.init()),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
-          expect(state.backups.length, greaterThanOrEqualTo(1));
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case BackupRestoreStateLoadine():
+            throw Exception('Invalid state');
+          case BackupRestoreStateLoaded():
+            expect(state.backups.length, greaterThanOrEqualTo(1));
+        }
+      },
     );
   });
 
@@ -124,12 +131,18 @@ void main() {
         const BackupRestoreState.loaded(backups: []),
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.readResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.readResult,
+              },
               'readResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => false, loaded: (state) => state.readResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => false,
+                BackupRestoreStateLoaded() => state.readResult!.succeed,
+              },
               'state.readResult.succeed',
               isFalse,
             ),
@@ -155,17 +168,26 @@ void main() {
       expect: () => [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.readResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.readResult,
+              },
               'readResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => false, loaded: (state) => state.readResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => false,
+                BackupRestoreStateLoaded() => state.readResult!.succeed,
+              },
               'state.readResult.succeed',
               isTrue,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(loading: (_) => 0, loaded: (state) => state.backups.length),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => 0,
+            BackupRestoreStateLoaded() => state.backups.length,
+          },
           'readResult',
           greaterThanOrEqualTo(1),
         ),
@@ -199,12 +221,18 @@ void main() {
         const BackupRestoreState.loaded(backups: []),
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.createResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.createResult,
+              },
               'createResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.createResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.createResult!.succeed,
+              },
               'state.createResult.succeed',
               isFalse,
             ),
@@ -233,17 +261,26 @@ void main() {
       expect: () => [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.createResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.createResult,
+              },
               'createResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.createResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.createResult!.succeed,
+              },
               'state.createResult.succeed',
               isTrue,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(loading: (_) => null, loaded: (state) => state.backups.any((el) => el.filePath == bkPath)),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => null,
+            BackupRestoreStateLoaded() => state.backups.any((el) => el.filePath == bkPath),
+          },
           'state.backups.any',
           isTrue,
         ),
@@ -256,17 +293,26 @@ void main() {
       return [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.restoreResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.restoreResult,
+              },
               'restoreResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.restoreResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.restoreResult!.succeed,
+              },
               'state.restoreResult.succeed',
               isFalse,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(loading: (_) => false, loaded: (state) => state.restoreResult == null),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => false,
+            BackupRestoreStateLoaded() => state.restoreResult == null,
+          },
           'restoreResult',
           isTrue,
         ),
@@ -352,20 +398,26 @@ void main() {
       expect: () => [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.restoreResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.restoreResult,
+              },
               'restoreResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.restoreResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.restoreResult!.succeed,
+              },
               'state.restoreResult.succeed',
               isTrue,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(
-            loading: (_) => false,
-            loaded: (state) => state.restoreResult == null && state.backups.any((el) => el.filePath == bkPath),
-          ),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => false,
+            BackupRestoreStateLoaded() => state.restoreResult == null && state.backups.any((el) => el.filePath == bkPath),
+          },
           'state.backups.any',
           isTrue,
         ),
@@ -391,17 +443,26 @@ void main() {
       expect: () => [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.deleteResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.deleteResult,
+              },
               'deleteResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.deleteResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.deleteResult!.succeed,
+              },
               'state.deleteResult.succeed',
               isFalse,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(loading: (_) => false, loaded: (state) => state.deleteResult == null),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => false,
+            BackupRestoreStateLoaded() => state.deleteResult == null,
+          },
           'deleteResult',
           isTrue,
         ),
@@ -426,20 +487,26 @@ void main() {
       expect: () => [
         isA<BackupRestoreState>()
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.deleteResult),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.deleteResult,
+              },
               'deleteResult',
               isNotNull,
             )
             .having(
-              (state) => state.map(loading: (_) => null, loaded: (state) => state.deleteResult!.succeed),
+              (state) => switch (state) {
+                BackupRestoreStateLoadine() => null,
+                BackupRestoreStateLoaded() => state.deleteResult!.succeed,
+              },
               'state.deleteResult.succeed',
               isTrue,
             ),
         isA<BackupRestoreState>().having(
-          (state) => state.map(
-            loading: (_) => false,
-            loaded: (state) => state.deleteResult == null && state.backups.every((el) => el.filePath != bkPath),
-          ),
+          (state) => switch (state) {
+            BackupRestoreStateLoadine() => false,
+            BackupRestoreStateLoaded() => state.deleteResult == null && state.backups.every((el) => el.filePath != bkPath),
+          },
           'state.backups.every',
           isTrue,
         ),

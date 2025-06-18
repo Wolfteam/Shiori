@@ -28,90 +28,100 @@ class WeaponSection extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
-      builder: (context, state) => state.maybeMap(
-        loaded: (state) {
-          final color = state.character.elementType.getElementColorFromContext(context);
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: Styles.edgeInsetVertical10,
-                decoration: BoxDecoration(
-                  color: color,
-                  border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
-                ),
-                child: Text(
-                  state.readyForScreenshot ? s.weapons : '${s.weapons} (${state.weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
-              if (!state.readyForScreenshot)
-                OverflowBar(
-                  alignment: MainAxisAlignment.end,
-                  children: [
-                    Tooltip(
-                      message: s.add,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.add),
-                        onPressed: () => _openWeaponsPage(context, state.weapons.map((e) => e.key).toList(), state.character.weaponType),
-                      ),
-                    ),
-                    Tooltip(
-                      message: s.sort,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.sort),
-                        onPressed: state.weapons.length < 2
-                            ? null
-                            : () => showDialog<SortResult>(
-                                  context: context,
-                                  builder: (_) => SortItemsDialog(
-                                    items: state.weapons.map((e) => SortableItem(e.key, e.name)).toList(),
-                                  ),
-                                ).then(
-                                  (result) {
-                                    if (result == null || !result.somethingChanged || !context.mounted) {
-                                      return;
-                                    }
-
-                                    context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
-                                  },
-                                ),
-                      ),
-                    ),
-                    Tooltip(
-                      message: s.clearAll,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.clear_all),
-                        onPressed: state.weapons.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteWeapons()),
-                      ),
-                    ),
-                  ],
-                ),
-              if (state.weapons.isEmpty)
-                NothingFound(msg: s.startByAddingWeapons, padding: Styles.edgeInsetVertical10)
-              else
-                ...state.weapons.map(
-                  (e) => WeaponRow(
-                    weapon: e,
+      builder: (context, state) {
+        switch (state) {
+          case CustomBuildStateLoading():
+            return const Loading(useScaffold: false);
+          case CustomBuildStateLoaded():
+            final color = state.character.elementType.getElementColorFromContext(context);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: Styles.edgeInsetVertical10,
+                  decoration: BoxDecoration(
                     color: color,
-                    maxImageWidth: maxItemImageWidth,
-                    weaponCount: state.weapons.length,
-                    readyForScreenshot: state.readyForScreenshot,
+                    border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
+                  ),
+                  child: Text(
+                    state.readyForScreenshot
+                        ? s.weapons
+                        : '${s.weapons} (${state.weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
-            ],
-          );
-        },
-        orElse: () => const Loading(useScaffold: false),
-      ),
+                if (!state.readyForScreenshot)
+                  OverflowBar(
+                    alignment: MainAxisAlignment.end,
+                    children: [
+                      Tooltip(
+                        message: s.add,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          splashRadius: Styles.smallButtonSplashRadius,
+                          icon: const Icon(Icons.add),
+                          onPressed: () =>
+                              _openWeaponsPage(context, state.weapons.map((e) => e.key).toList(), state.character.weaponType),
+                        ),
+                      ),
+                      Tooltip(
+                        message: s.sort,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          splashRadius: Styles.smallButtonSplashRadius,
+                          icon: const Icon(Icons.sort),
+                          onPressed: state.weapons.length < 2
+                              ? null
+                              : () =>
+                                    showDialog<SortResult>(
+                                      context: context,
+                                      builder: (_) => SortItemsDialog(
+                                        items: state.weapons.map((e) => SortableItem(e.key, e.name)).toList(),
+                                      ),
+                                    ).then(
+                                      (result) {
+                                        if (result == null || !result.somethingChanged || !context.mounted) {
+                                          return;
+                                        }
+
+                                        context.read<CustomBuildBloc>().add(
+                                          CustomBuildEvent.weaponsOrderChanged(weapons: result.items),
+                                        );
+                                      },
+                                    ),
+                        ),
+                      ),
+                      Tooltip(
+                        message: s.clearAll,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          splashRadius: Styles.smallButtonSplashRadius,
+                          icon: const Icon(Icons.clear_all),
+                          onPressed: state.weapons.isEmpty
+                              ? null
+                              : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteWeapons()),
+                        ),
+                      ),
+                    ],
+                  ),
+                if (state.weapons.isEmpty)
+                  NothingFound(msg: s.startByAddingWeapons, padding: Styles.edgeInsetVertical10)
+                else
+                  ...state.weapons.map(
+                    (e) => WeaponRow(
+                      weapon: e,
+                      color: color,
+                      maxImageWidth: maxItemImageWidth,
+                      weaponCount: state.weapons.length,
+                      readyForScreenshot: state.readyForScreenshot,
+                    ),
+                  ),
+              ],
+            );
+        }
+      },
     );
   }
 

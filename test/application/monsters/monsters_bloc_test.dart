@@ -55,19 +55,21 @@ void main() {
       build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc.add(MonstersEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
-        final emittedState = bloc.state;
-        emittedState.map(
-          loading: (_) => throw Exception('Invalid artifact state'),
-          loaded: (state) {
-            final monsters = genshinService.monsters.getAllMonstersForCard().where((el) => !excludedKeys.contains(el.key)).toList();
-
+        final state = bloc.state;
+        switch (state) {
+          case MonstersStateLoading():
+            throw Exception('Invalid artifact state');
+          case MonstersStateLoaded():
+            final monsters = genshinService.monsters
+                .getAllMonstersForCard()
+                .where((el) => !excludedKeys.contains(el.key))
+                .toList();
             expect(state.monsters.length, monsters.length);
             expect(state.filterType, MonsterFilterType.name);
             expect(state.tempFilterType, MonsterFilterType.name);
             expect(state.sortDirectionType, SortDirectionType.asc);
             expect(state.tempSortDirectionType, SortDirectionType.asc);
-          },
-        );
+        }
       },
     );
   });

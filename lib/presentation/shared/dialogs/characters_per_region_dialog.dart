@@ -47,19 +47,23 @@ class CharactersPerRegionDialog extends StatelessWidget {
           ),
         ],
         content: BlocBuilder<CharactersPerRegionBloc, CharactersPerRegionState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.items.isEmpty
-                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
-                : SizedBox(
-                    height: mq.getHeightForDialogs(state.items.length + 1),
-                    width: mq.getWidthForDialogs(),
-                    child: ListView.builder(
-                      itemCount: state.items.length,
-                      itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: ItemType.character, item: state.items[index]),
-                    ),
-                  ),
-            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-          ),
+          builder: (context, state) => switch (state) {
+            CharactersPerRegionStateLoading() => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+            final CharactersPerRegionStateLoaded state when state.items.isEmpty => const NothingFoundColumn(
+              mainAxisSize: MainAxisSize.min,
+            ),
+            CharactersPerRegionStateLoaded() => SizedBox(
+              height: mq.getHeightForDialogs(state.items.length + 1),
+              width: mq.getWidthForDialogs(),
+              child: ListView.builder(
+                itemCount: state.items.length,
+                itemBuilder: (context, index) => DialogListItemRow.fromItem(
+                  itemType: ItemType.character,
+                  item: state.items[index],
+                ),
+              ),
+            ),
+          },
         ),
       ),
     );

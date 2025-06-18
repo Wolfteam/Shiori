@@ -17,18 +17,17 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
   final TelemetryService _telemetryService;
 
   CheckForResourceUpdatesBloc(this._resourceService, this._settingsService, this._deviceInfoService, this._telemetryService)
-      : super(const CheckForResourceUpdatesState.loading());
+    : super(const CheckForResourceUpdatesState.loading());
 
   @override
   Stream<CheckForResourceUpdatesState> mapEventToState(CheckForResourceUpdatesEvent event) async* {
-    if (event is _CheckForUpdates) {
-      yield const CheckForResourceUpdatesState.loading();
+    switch (event) {
+      case CheckForResourceUpdatesEventInit():
+        yield await _init();
+      case CheckForResourceUpdatesEventCheckForUpdates():
+        yield const CheckForResourceUpdatesState.loading();
+        yield await _checkForUpdates();
     }
-    final s = await event.map(
-      init: (_) => _init(),
-      checkForUpdates: (_) => _checkForUpdates(),
-    );
-    yield s;
   }
 
   Future<CheckForResourceUpdatesState> _init() {
@@ -51,7 +50,9 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
     return CheckForResourceUpdatesState.loaded(
       updateResultType: result.type,
       currentResourceVersion: _settingsService.resourceVersion,
-      targetResourceVersion: result.resourceVersion == _settingsService.resourceVersion || result.type != AppResourceUpdateResultType.updatesAvailable
+      targetResourceVersion:
+          result.resourceVersion == _settingsService.resourceVersion ||
+              result.type != AppResourceUpdateResultType.updatesAvailable
           ? null
           : result.resourceVersion,
       downloadTotalSize: result.downloadTotalSize,

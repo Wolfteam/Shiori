@@ -26,7 +26,9 @@ class WeaponsPage extends StatefulWidget {
     final bloc = context.read<WeaponsBloc>();
     bloc.add(WeaponsEvent.init(excludeKeys: excludeKeys, weaponTypes: weaponTypes, areWeaponTypesEnabled: areWeaponTypesEnabled));
 
-    final route = MaterialPageRoute<String>(builder: (ctx) => WeaponsPage(isInSelectionMode: true, areWeaponTypesEnabled: areWeaponTypesEnabled));
+    final route = MaterialPageRoute<String>(
+      builder: (ctx) => WeaponsPage(isInSelectionMode: true, areWeaponTypesEnabled: areWeaponTypesEnabled),
+    );
     final keyName = await Navigator.of(context).push(route);
     await route.completed;
 
@@ -55,9 +57,9 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
     super.build(context);
     final s = S.of(context);
     return BlocBuilder<WeaponsBloc, WeaponsState>(
-      builder: (context, state) => state.map(
-        loading: (_) => const Loading(),
-        loaded: (state) => SliverScaffoldWithFab(
+      builder: (context, state) => switch (state) {
+        WeaponsStateLoading() => const Loading(),
+        WeaponsStateLoaded() => SliverScaffoldWithFab(
           scrollController: widget.scrollController,
           appbar: widget.isInSelectionMode ? AppBar(title: Text(s.selectWeapon)) : null,
           slivers: [
@@ -96,7 +98,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
               const SliverNothingFound(),
           ],
         ),
-      ),
+      },
     );
   }
 }

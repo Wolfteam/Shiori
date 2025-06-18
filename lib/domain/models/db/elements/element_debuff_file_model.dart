@@ -6,7 +6,7 @@ part 'element_debuff_file_model.freezed.dart';
 part 'element_debuff_file_model.g.dart';
 
 @freezed
-class ElementDebuffFileModel with _$ElementDebuffFileModel {
+abstract class ElementDebuffFileModel with _$ElementDebuffFileModel {
   String get fullImagePath => Assets.getElementPathFromType(type);
 
   factory ElementDebuffFileModel({

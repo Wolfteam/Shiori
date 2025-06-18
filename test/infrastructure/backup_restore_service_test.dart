@@ -331,8 +331,8 @@ void main() {
                 rarity: rarity == WishBannerConstants.maxObtainableRarity
                     ? wishSimulatorRandom.nextInt(e == BannerItemType.character ? 90 : 80)
                     : rarity == WishBannerConstants.maxObtainableRarity - 1
-                        ? wishSimulatorRandom.nextInt(10)
-                        : 0,
+                    ? wishSimulatorRandom.nextInt(10)
+                    : 0,
             },
             fiftyFiftyXStarGuaranteed: {
               for (final rarity in rarities) rarity: wishSimulatorRandom.nextBool(),
@@ -424,7 +424,10 @@ void main() {
     expect(got.position, expected.position);
   }
 
-  void checkCalAscMatSessionItem(BackupCalculatorAscMaterialsSessionItemModel got, BackupCalculatorAscMaterialsSessionItemModel expected) {
+  void checkCalAscMatSessionItem(
+    BackupCalculatorAscMaterialsSessionItemModel got,
+    BackupCalculatorAscMaterialsSessionItemModel expected,
+  ) {
     expect(got.itemKey, expected.itemKey);
     expect(got.position, expected.position);
     expect(got.currentLevel, expected.currentLevel);
@@ -549,12 +552,18 @@ void main() {
     expect(got.withTimeReduction, expected.withTimeReduction);
   }
 
-  void checkFarmingArtifactNotification(BackupFarmingArtifactNotificationModel got, BackupFarmingArtifactNotificationModel expected) {
+  void checkFarmingArtifactNotification(
+    BackupFarmingArtifactNotificationModel got,
+    BackupFarmingArtifactNotificationModel expected,
+  ) {
     checkNotification(got, expected);
     expect(got.artifactFarmingTimeType, expected.artifactFarmingTimeType);
   }
 
-  void checkFarmingMaterialNotification(BackupFarmingMaterialNotificationModel got, BackupFarmingMaterialNotificationModel expected) {
+  void checkFarmingMaterialNotification(
+    BackupFarmingMaterialNotificationModel got,
+    BackupFarmingMaterialNotificationModel expected,
+  ) {
     checkNotification(got, expected);
   }
 
@@ -589,7 +598,10 @@ void main() {
     expect(got.fiftyFiftyXStarGuaranteed, expected.fiftyFiftyXStarGuaranteed);
   }
 
-  void checkWishSimualtorItemPullHistory(BackupWishSimulatorBannerItemPullHistory got, BackupWishSimulatorBannerItemPullHistory expected) {
+  void checkWishSimualtorItemPullHistory(
+    BackupWishSimulatorBannerItemPullHistory got,
+    BackupWishSimulatorBannerItemPullHistory expected,
+  ) {
     expect(got.bannerType, expected.bannerType);
     expect(got.itemKey, expected.itemKey);
     expect(got.itemType, expected.itemType);
@@ -882,7 +894,12 @@ void main() {
 
       final notificationService = MockNotificationService();
 
-      final service = getService(settings, dataService: dataServiceMock, settingsService: settingsService, notificationService: notificationService);
+      final service = getService(
+        settings,
+        dataService: dataServiceMock,
+        settingsService: settingsService,
+        notificationService: notificationService,
+      );
       final restored = await service.restoreBackup(bk, AppBackupDataType.values);
       expect(restored, isTrue);
 

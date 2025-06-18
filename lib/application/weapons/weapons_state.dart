@@ -1,8 +1,9 @@
 part of 'weapons_bloc.dart';
 
 @freezed
-class WeaponsState with _$WeaponsState {
-  const factory WeaponsState.loading() = _LoadingState;
+sealed class WeaponsState with _$WeaponsState {
+  const factory WeaponsState.loading() = WeaponsStateLoading;
+
   const factory WeaponsState.loaded({
     required List<WeaponCardModel> weapons,
     String? search,
@@ -21,5 +22,5 @@ class WeaponsState with _$WeaponsState {
     ItemLocationType? tempWeaponLocationType,
     @Default(<String>[]) List<String> excludeKeys,
     @Default(true) bool areWeaponTypesEnabled,
-  }) = _LoadedState;
+  }) = WeaponsStateLoaded;
 }

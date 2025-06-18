@@ -1,8 +1,8 @@
 part of 'characters_bloc.dart';
 
 @freezed
-class CharactersState with _$CharactersState {
-  const factory CharactersState.loading() = _LoadingState;
+sealed class CharactersState with _$CharactersState {
+  const factory CharactersState.loading() = CharactersStateLoading;
 
   const factory CharactersState.loaded({
     required List<CharacterCardModel> characters,
@@ -25,5 +25,5 @@ class CharactersState with _$CharactersState {
     RegionType? regionType,
     RegionType? tempRegionType,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _LoadedState;
+  }) = CharactersStateLoaded;
 }

@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../../common.dart';
+import '../../../dummy_mocks.dart';
 import '../../../mocks.mocks.dart';
 import '../../../nice_mocks.mocks.dart' as nice_mocks;
 
@@ -147,6 +148,7 @@ void main() {
   );
 
   setUpAll(() {
+    provideDummyMocks();
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
       final settingsService = MockSettingsService();
@@ -163,12 +165,12 @@ void main() {
   });
 
   CalculatorAscMaterialsBloc getBloc(DataService dataService) => CalculatorAscMaterialsBloc(
-        genshinService,
-        MockTelemetryService(),
-        calcAscMatService,
-        dataService,
-        resourceService,
-      );
+    genshinService,
+    MockTelemetryService(),
+    calcAscMatService,
+    dataService,
+    resourceService,
+  );
 
   test(
     'Initial state',
@@ -377,11 +379,17 @@ void main() {
         ),
       ),
       expect: () => [
-        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
+        CalculatorAscMaterialsState.initial(
+          sessionKey: session.key,
+          items: [],
+          summary: [],
+          showMaterialUsage: session.showMaterialUsage,
+        ),
       ],
       verify: (_) {
-        final verifyAddSession =
-            verify(calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final verifyAddSession = verify(
+          calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())),
+        );
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
@@ -465,7 +473,8 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is already in the session',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
+      seed: () =>
+          CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.addWeapon(
           key: theCatchItem.key,
@@ -499,11 +508,17 @@ void main() {
         ),
       ),
       expect: () => [
-        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
+        CalculatorAscMaterialsState.initial(
+          sessionKey: session.key,
+          items: [],
+          summary: [],
+          showMaterialUsage: session.showMaterialUsage,
+        ),
       ],
       verify: (_) {
-        final verifyAddSession =
-            verify(calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final verifyAddSession = verify(
+          calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())),
+        );
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
@@ -546,8 +561,12 @@ void main() {
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: 1)),
       verify: (bloc) {
         verify(calcMock.deleteSessionItem(sessionKey, 1, redistribute: false)).called(1);
-        verify(calcMock.updateSessionItem(sessionKey, 0, captureThat(isA<ItemAscensionMaterials>()), [], redistribute: false)).called(1);
-        verify(calcMock.redistributeInventoryMaterialsFromSessionPosition(1, onlyMaterialKeys: anyNamed('onlyMaterialKeys'))).called(1);
+        verify(
+          calcMock.updateSessionItem(sessionKey, 0, captureThat(isA<ItemAscensionMaterials>()), [], redistribute: false),
+        ).called(1);
+        verify(
+          calcMock.redistributeInventoryMaterialsFromSessionPosition(1, onlyMaterialKeys: anyNamed('onlyMaterialKeys')),
+        ).called(1);
         verify(calcMock.getAllSessionItems(sessionKey)).called(1);
       },
     );
@@ -669,7 +688,8 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is a weapon',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
+      seed: () =>
+          CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
@@ -713,11 +733,22 @@ void main() {
         ),
       ),
       expect: () => [
-        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
+        CalculatorAscMaterialsState.initial(
+          sessionKey: session.key,
+          items: [],
+          summary: [],
+          showMaterialUsage: session.showMaterialUsage,
+        ),
       ],
       verify: (_) {
-        final updateItemVerify =
-            verify(calcMock.updateSessionItem(session.key, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final updateItemVerify = verify(
+          calcMock.updateSessionItem(
+            session.key,
+            0,
+            captureThat(isA<ItemAscensionMaterials>()),
+            captureThat(isA<List<String>>()),
+          ),
+        );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
         expect(updatedItem.key, keqingItem.key);
@@ -766,7 +797,8 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
+      seed: () =>
+          CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
@@ -785,7 +817,8 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid asc level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
+      seed: () =>
+          CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
@@ -849,8 +882,14 @@ void main() {
         CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
-        final updateItemVerify =
-            verify(calcMock.updateSessionItem(session.key, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final updateItemVerify = verify(
+          calcMock.updateSessionItem(
+            session.key,
+            0,
+            captureThat(isA<ItemAscensionMaterials>()),
+            captureThat(isA<List<String>>()),
+          ),
+        );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
         expect(updatedItem.key, theCatchItem.key);
@@ -882,7 +921,12 @@ void main() {
       build: () => getBloc(dataServiceMock),
       act: (bloc) => bloc.add(CalculatorAscMaterialsEvent.clearAllItems(session.key)),
       expect: () => [
-        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
+        CalculatorAscMaterialsState.initial(
+          sessionKey: session.key,
+          items: [],
+          summary: [],
+          showMaterialUsage: session.showMaterialUsage,
+        ),
       ],
       verify: (_) {
         verify(calcMock.deleteAllSessionItems(session.key)).called(1);
@@ -901,7 +945,12 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'empty list',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem, keqingItem], summary: [], showMaterialUsage: false),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: 1,
+        items: [theCatchItem, keqingItem],
+        summary: [],
+        showMaterialUsage: false,
+      ),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.itemsReordered([])),
       errors: () => [isA<Exception>()],
     );
@@ -923,7 +972,12 @@ void main() {
       ),
       act: (bloc) => bloc.add(CalculatorAscMaterialsEvent.itemsReordered(updatedItems)),
       expect: () => [
-        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
+        CalculatorAscMaterialsState.initial(
+          sessionKey: session.key,
+          items: [],
+          summary: [],
+          showMaterialUsage: session.showMaterialUsage,
+        ),
       ],
       verify: (_) {
         verify(calcMock.reorderItems(session.key, updatedItems));

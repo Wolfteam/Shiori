@@ -1,8 +1,8 @@
 part of 'calculator_asc_materials_item_bloc.dart';
 
 @freezed
-class CalculatorAscMaterialsItemState with _$CalculatorAscMaterialsItemState {
-  const factory CalculatorAscMaterialsItemState.loading() = _LoadingState;
+sealed class CalculatorAscMaterialsItemState with _$CalculatorAscMaterialsItemState {
+  const factory CalculatorAscMaterialsItemState.loading() = CalculatorAscMaterialsItemStateLoading;
 
   const factory CalculatorAscMaterialsItemState.loaded({
     required String name,
@@ -13,5 +13,5 @@ class CalculatorAscMaterialsItemState with _$CalculatorAscMaterialsItemState {
     required int desiredAscensionLevel,
     required bool useMaterialsFromInventory,
     @Default([]) List<CharacterSkill> skills,
-  }) = _LoadedState;
+  }) = CalculatorAscMaterialsItemStateLoaded;
 }

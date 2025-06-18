@@ -23,17 +23,14 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
   @override
   @override
   Stream<MaterialState> mapEventToState(MaterialEvent event) async* {
-    final s = await event.map(
-      loadFromKey: (e) async {
-        final material = _genshinService.materials.getMaterial(e.key);
-        if (e.addToQueue) {
-          await _telemetryService.trackMaterialLoaded(e.key);
+    switch (event) {
+      case MaterialEventLoad():
+        final material = _genshinService.materials.getMaterial(event.key);
+        if (event.addToQueue) {
+          await _telemetryService.trackMaterialLoaded(event.key);
         }
-        return _buildInitialState(material);
-      },
-    );
-
-    yield s;
+        yield _buildInitialState(material);
+    }
   }
 
   MaterialState _buildInitialState(MaterialFileModel material) {

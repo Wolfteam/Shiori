@@ -9,8 +9,6 @@ extension I18nExtensions on S {
         return dark;
       case AppThemeType.light:
         return light;
-      default:
-        throw Exception('The provided app theme = $theme is not valid');
     }
   }
 
@@ -48,8 +46,6 @@ extension I18nExtensions on S {
         return 'Türkçe';
       case AppLanguageType.ukrainian:
         return 'Українська ($unofficial)';
-      default:
-        throw Exception('The provided app lang = $lang is not valid');
     }
   }
 
@@ -65,8 +61,6 @@ extension I18nExtensions on S {
         return polearm;
       case WeaponType.sword:
         return sword;
-      default:
-        throw Exception('The provided weapon type = $type is not valid');
     }
   }
 
@@ -88,8 +82,6 @@ extension I18nExtensions on S {
         return quest;
       case ItemLocationType.playstation:
         return playstation;
-      default:
-        throw Exception('The provided location type = $type is not valid');
     }
   }
 
@@ -153,8 +145,6 @@ extension I18nExtensions on S {
         return def(value);
       case StatType.dendroDmgBonusPercentage:
         return xDmgBonusPercentage(value, translateElementType(ElementType.dendro));
-      default:
-        throw Exception('The provided stat type = $type is not valid');
     }
   }
 
@@ -199,8 +189,6 @@ extension I18nExtensions on S {
         return hydro;
       case ElementType.pyro:
         return pyro;
-      default:
-        throw Exception('Invalid element type = $type');
     }
   }
 
@@ -210,8 +198,6 @@ extension I18nExtensions on S {
         return asc;
       case SortDirectionType.desc:
         return desc;
-      default:
-        throw Exception('Invalid sort direction type = $type');
     }
   }
 
@@ -223,8 +209,6 @@ extension I18nExtensions on S {
         return comingSoon;
       case ItemStatusType.newItem:
         return brandNew;
-      default:
-        throw Exception('Invalid released-unreleased type = $type');
     }
   }
 
@@ -234,8 +218,6 @@ extension I18nExtensions on S {
         return name;
       case CharacterFilterType.rarity:
         return rarity;
-      default:
-        throw Exception('Invalid character filter type = $type');
     }
   }
 
@@ -249,8 +231,6 @@ extension I18nExtensions on S {
         return rarity;
       case WeaponFilterType.subStat:
         return subStat;
-      default:
-        throw Exception('Invalid weapon filter type = $type');
     }
   }
 
@@ -260,8 +240,6 @@ extension I18nExtensions on S {
         return name;
       case ArtifactFilterType.rarity:
         return rarity;
-      default:
-        throw Exception('Invalid artifact filter type = $type');
     }
   }
 
@@ -279,8 +257,6 @@ extension I18nExtensions on S {
         return charRoleOffFieldDps;
       case CharacterRoleType.na:
         return na;
-      default:
-        throw Exception('Invalid character type = $type');
     }
   }
 
@@ -294,8 +270,6 @@ extension I18nExtensions on S {
         return elementalBurst;
       case CharacterSkillType.others:
         return others;
-      default:
-        throw Exception('Invalid character skill type = $type');
     }
   }
 
@@ -315,8 +289,6 @@ extension I18nExtensions on S {
         return press;
       case CharacterSkillAbilityType.elementalAbsorption:
         return elementalAbsorption;
-      default:
-        throw Exception('Invalid character skill ability type = $type');
     }
   }
 
@@ -338,8 +310,6 @@ extension I18nExtensions on S {
         return natlan;
       case RegionType.sumeru:
         return sumeru;
-      default:
-        throw Exception('Invalid region type = $type');
     }
   }
 
@@ -359,8 +329,6 @@ extension I18nExtensions on S {
         return others;
       case AscensionMaterialSummaryType.exp:
         return '$experience ($approximate)';
-      default:
-        throw Exception('Invalid ascension material type = $type');
     }
   }
 
@@ -372,8 +340,6 @@ extension I18nExtensions on S {
         return europe;
       case AppServerResetTimeType.asia:
         return asia;
-      default:
-        throw Exception('Invalid server reset time type = $type');
     }
   }
 
@@ -385,8 +351,6 @@ extension I18nExtensions on S {
         return rarity;
       case MaterialFilterType.grouped:
         return grouped;
-      default:
-        throw Exception('Invalid material filter type = $type');
     }
   }
 
@@ -414,8 +378,6 @@ extension I18nExtensions on S {
       case MaterialType.expWeapon:
       case MaterialType.expCharacter:
         return experience;
-      default:
-        throw Exception('Invalid material type = $type');
     }
   }
 
@@ -439,8 +401,6 @@ extension I18nExtensions on S {
         return automaton;
       case MonsterType.na:
         return na;
-      default:
-        throw Exception('Invalid monster type = $type');
     }
   }
 
@@ -448,8 +408,6 @@ extension I18nExtensions on S {
     switch (type) {
       case MonsterFilterType.name:
         return name;
-      default:
-        throw Exception('Invalid monster filter type = $type');
     }
   }
 
@@ -475,8 +433,6 @@ extension I18nExtensions on S {
         return custom;
       case AppNotificationType.dailyCheckIn:
         return dailyCheckIn;
-      default:
-        throw Exception('Invalid app notification type = $type');
     }
   }
 
@@ -490,8 +446,6 @@ extension I18nExtensions on S {
         return xHours(12);
       case ExpeditionTimeType.twentyHours:
         return xHours(20);
-      default:
-        throw Exception('Invalid expedition time type = $type');
     }
   }
 
@@ -507,8 +461,6 @@ extension I18nExtensions on S {
         return monsters;
       case AppNotificationItemType.material:
         return materials;
-      default:
-        throw Exception('Invalid app notification item type = $type');
     }
   }
 
@@ -518,8 +470,6 @@ extension I18nExtensions on S {
         return xHours(12);
       case ArtifactFarmingTimeType.twentyFourHours:
         return xHours(24);
-      default:
-        throw Exception('Invalid artifact farming time type = $type');
     }
   }
 
@@ -531,8 +481,6 @@ extension I18nExtensions on S {
         return xHours(14);
       case FurnitureCraftingTimeType.sixteenHours:
         return xHours(16);
-      default:
-        throw Exception('Invalid furniture crafting time type = $type');
     }
   }
 
@@ -559,8 +507,6 @@ extension I18nExtensions on S {
         translation = luxury;
       case RealmRankType.fitForAKing:
         translation = fitForAKing;
-      default:
-        throw Exception('Invalid realm rank type = $type');
     }
     if (!showRatio) {
       return translation;

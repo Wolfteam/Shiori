@@ -16,11 +16,10 @@ class ChartRegionsBloc extends Bloc<ChartRegionsEvent, ChartRegionsState> {
 
   @override
   Stream<ChartRegionsState> mapEventToState(ChartRegionsEvent event) async* {
-    final s = event.map(
-      init: (_) => _init(),
-    );
-
-    yield s;
+    switch (event) {
+      case ChartRegionsEventInit():
+        yield _init();
+    }
   }
 
   ChartRegionsState _init() {

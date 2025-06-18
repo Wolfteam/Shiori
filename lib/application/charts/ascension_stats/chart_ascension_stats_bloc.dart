@@ -17,38 +17,37 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
   final List<ChartAscensionStatModel> _weaponAscensionStats;
 
   ChartAscensionStatsBloc(GenshinService genshinService)
-      : _characterAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.character),
-        _weaponAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.weapon),
-        super(const ChartAscensionStatsState.loading());
+    : _characterAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.character),
+      _weaponAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.weapon),
+      super(const ChartAscensionStatsState.loading());
 
   @override
   Stream<ChartAscensionStatsState> mapEventToState(ChartAscensionStatsEvent event) async* {
-    final s = event.map(
-      init: (e) => _init(e.type, e.maxNumberOfColumns),
-      goToNextPage: (e) => state.maybeMap(
-        loaded: _goToNextPage,
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToPreviousPage: (e) => state.maybeMap(
-        loaded: _goToPreviousPage,
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToFirstPage: (e) => state.maybeMap(
-        loaded: (state) => _goToFirstOrLastPage(state, true),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToLastPage: (e) => state.maybeMap(
-        loaded: (state) => _goToFirstOrLastPage(state, false),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-    );
+    if (event is! ChartAscensionStatsEventInit && state is! ChartAscensionStatsStateLoaded) {
+      throw Exception('Invalid state');
+    }
 
-    yield s;
+    switch (event) {
+      case ChartAscensionStatsEventInit():
+        yield _init(event.type, event.maxNumberOfColumns);
+      case ChartAscensionStatsEventGoToNextPage():
+        yield _goToNextPage(state as ChartAscensionStatsStateLoaded);
+      case ChartAscensionStatsEventGoToPreviousPage():
+        yield _goToPreviousPage(state as ChartAscensionStatsStateLoaded);
+      case ChartAscensionStatsEventGoToFirstPage():
+        yield _goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, true);
+      case ChartAscensionStatsEventGoToLastPage():
+        yield _goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, false);
+    }
   }
 
   ChartAscensionStatsState _init(ItemType itemType, int maxNumberOfColumns) {
-    if (state.mapOrNull(loaded: (state) => state.itemType == itemType && state.maxNumberOfColumns == maxNumberOfColumns) == true) {
-      return state;
+    switch (state) {
+      case final ChartAscensionStatsStateLoaded state
+          when state.itemType == itemType && state.maxNumberOfColumns == maxNumberOfColumns:
+        return state;
+      default:
+        break;
     }
 
     if (maxNumberOfColumns < 1) {
@@ -96,12 +95,12 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     return pages.ceil();
   }
 
-  ChartAscensionStatsState _goToFirstOrLastPage(_LoadedState state, bool toFirstPage) {
+  ChartAscensionStatsState _goToFirstOrLastPage(ChartAscensionStatsStateLoaded state, bool toFirstPage) {
     final page = toFirstPage ? _firstPage : state.maxPage;
     return _pageChanged(state, page);
   }
 
-  ChartAscensionStatsState _goToNextPage(_LoadedState state) {
+  ChartAscensionStatsState _goToNextPage(ChartAscensionStatsStateLoaded state) {
     if (!_canGoToNextPage(state.currentPage, state.maxPage)) {
       throw Exception('Cannot go to the next page');
     }
@@ -109,7 +108,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     return _pageChanged(state, newPage);
   }
 
-  ChartAscensionStatsState _goToPreviousPage(_LoadedState state) {
+  ChartAscensionStatsState _goToPreviousPage(ChartAscensionStatsStateLoaded state) {
     if (!_canGoToPreviousPage(state.currentPage)) {
       throw Exception('Cannot go to the previous page');
     }
@@ -117,7 +116,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     return _pageChanged(state, newPage);
   }
 
-  ChartAscensionStatsState _pageChanged(_LoadedState state, int newPage) {
+  ChartAscensionStatsState _pageChanged(ChartAscensionStatsStateLoaded state, int newPage) {
     if (newPage < _firstPage) {
       throw Exception('The newPage = $newPage cannot be less than $_firstPage');
     }

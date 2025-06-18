@@ -29,7 +29,7 @@ abstract class _CommonBaseState {
 }
 
 @freezed
-class NotificationState with _$NotificationState {
+sealed class NotificationState with _$NotificationState {
   @Implements<_CommonBaseState>()
   const factory NotificationState.resin({
     int? key,
@@ -47,7 +47,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _ResinState;
+  }) = NotificationStateResin;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.expedition({
@@ -67,7 +67,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _ExpeditionState;
+  }) = NotificationStateExpedition;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.farmingArtifact({
@@ -86,7 +86,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _FarmingArtifactState;
+  }) = NotificationStateFarmingArtifact;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.farmingMaterial({
@@ -104,7 +104,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _FarmingMaterialState;
+  }) = NotificationStateFarmingMaterial;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.gadget({
@@ -122,7 +122,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _GadgetState;
+  }) = NotificationStateGadget;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.furniture({
@@ -141,7 +141,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _FurnitureState;
+  }) = NotificationStateFurniture;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.realmCurrency({
@@ -162,7 +162,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _RealmCurrencyState;
+  }) = NotificationStateRealmCurrency;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.weeklyBoss({
@@ -180,7 +180,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _WeeklyBossState;
+  }) = NotificationStateWeeklyBoss;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.custom({
@@ -202,7 +202,7 @@ class NotificationState with _$NotificationState {
     required DateTime scheduledDate,
     required LanguageModel language,
     @Default(false) bool useTwentyFourHoursFormat,
-  }) = _CustomState;
+  }) = NotificationStateCustom;
 
   @Implements<_CommonBaseState>()
   const factory NotificationState.dailyCheckIn({
@@ -220,5 +220,5 @@ class NotificationState with _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-  }) = _DailyCheckInState;
+  }) = NotificationStateDailyCheckIn;
 }

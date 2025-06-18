@@ -1,7 +1,7 @@
 part of 'banner_history_count_bloc.dart';
 
 @freezed
-class BannerHistoryCountState with _$BannerHistoryCountState {
+sealed class BannerHistoryCountState with _$BannerHistoryCountState {
   const factory BannerHistoryCountState.initial({
     required BannerHistoryItemType type,
     required BannerHistorySortType sortType,
@@ -10,5 +10,5 @@ class BannerHistoryCountState with _$BannerHistoryCountState {
     required int maxNumberOfItems,
     @Default(<double>[]) List<double> selectedVersions,
     @Default(<String>[]) List<String> selectedItemKeys,
-  }) = _InitialState;
+  }) = BannerHistoryCountStateInitial;
 }

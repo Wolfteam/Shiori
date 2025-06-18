@@ -39,8 +39,6 @@ class Assets {
         return _getElementPath('hydro$imageSuffix');
       case ElementType.pyro:
         return _getElementPath('pyro$imageSuffix');
-      default:
-        throw Exception('Invalid element type = $type');
     }
   }
 
@@ -66,8 +64,6 @@ class Assets {
         return '$otherImgsBasePath/goblet$imageFileExtension';
       case ArtifactType.plume:
         return '$otherImgsBasePath/plume$imageFileExtension';
-      default:
-        throw Exception('Invalid artifact type = $type');
     }
   }
 
@@ -83,8 +79,6 @@ class Assets {
         return '$weaponTypesBasePath/polearm$imageFileExtension';
       case WeaponType.sword:
         return '$weaponTypesBasePath/sword$imageFileExtension';
-      default:
-        throw Exception('Invalid weapon type = $type');
     }
   }
 
@@ -100,8 +94,6 @@ class Assets {
         return '$weaponNormalSkillTypesPath/polearm$imageFileExtension';
       case WeaponType.sword:
         return '$weaponNormalSkillTypesPath/sword$imageFileExtension';
-      default:
-        throw Exception('Invalid weapon type = $type');
     }
   }
 }

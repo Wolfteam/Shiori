@@ -6,7 +6,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'item_ascension_materials.freezed.dart';
 
 @freezed
-class ItemAscensionMaterials with _$ItemAscensionMaterials {
+sealed class ItemAscensionMaterials with _$ItemAscensionMaterials {
   const factory ItemAscensionMaterials.forCharacters({
     required String key,
     required String name,

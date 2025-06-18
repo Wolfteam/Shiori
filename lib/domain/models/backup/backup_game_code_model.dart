@@ -4,7 +4,7 @@ part 'backup_game_code_model.freezed.dart';
 part 'backup_game_code_model.g.dart';
 
 @freezed
-class BackupGameCodeModel with _$BackupGameCodeModel {
+abstract class BackupGameCodeModel with _$BackupGameCodeModel {
   const factory BackupGameCodeModel({
     required String code,
     DateTime? usedOn,
@@ -19,7 +19,7 @@ class BackupGameCodeModel with _$BackupGameCodeModel {
 }
 
 @freezed
-class BackupGameCodeRewardModel with _$BackupGameCodeRewardModel {
+abstract class BackupGameCodeRewardModel with _$BackupGameCodeRewardModel {
   const factory BackupGameCodeRewardModel({
     required String itemKey,
     required int quantity,

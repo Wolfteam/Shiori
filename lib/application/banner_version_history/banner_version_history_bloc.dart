@@ -20,11 +20,10 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
 
   @override
   Stream<BannerVersionHistoryState> mapEventToState(BannerVersionHistoryEvent event) async* {
-    final s = await event.map(
-      init: (e) => _init(e.version),
-    );
-
-    yield s;
+    switch (event) {
+      case BannerVersionHistoryEventInit():
+        yield await _init(event.version);
+    }
   }
 
   Future<BannerVersionHistoryState> _init(double version) async {
@@ -36,25 +35,26 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
         )
         .values
         .map(
-      (e) {
-        final group = e.first;
-        final items = e.expand((el) => el.items).toList();
-        final finalItems = <ItemCommonWithRarityAndType>[];
-        //this is to avoid duplicate items (e.g: on double banners like 2.4)
-        for (final item in items) {
-          if (finalItems.any((el) => el.key == item.key)) {
-            continue;
-          }
-          finalItems.add(item);
-        }
+          (e) {
+            final group = e.first;
+            final items = e.expand((el) => el.items).toList();
+            final finalItems = <ItemCommonWithRarityAndType>[];
+            //this is to avoid duplicate items (e.g: on double banners like 2.4)
+            for (final item in items) {
+              if (finalItems.any((el) => el.key == item.key)) {
+                continue;
+              }
+              finalItems.add(item);
+            }
 
-        return BannerHistoryGroupedPeriodModel(
-          from: DateFormat(periodDateFormat).format(group.from),
-          until: DateFormat(periodDateFormat).format(group.until),
-          items: finalItems,
-        );
-      },
-    ).toList();
+            return BannerHistoryGroupedPeriodModel(
+              from: DateFormat(periodDateFormat).format(group.from),
+              until: DateFormat(periodDateFormat).format(group.until),
+              items: finalItems,
+            );
+          },
+        )
+        .toList();
     return BannerVersionHistoryState.loadedState(version: version, items: grouped);
   }
 }

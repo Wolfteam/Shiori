@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'game_code_model.freezed.dart';
 
 @freezed
-class GameCodeModel with _$GameCodeModel {
+abstract class GameCodeModel with _$GameCodeModel {
   const factory GameCodeModel({
     required String code,
     AppServerResetTimeType? region,

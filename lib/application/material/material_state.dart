@@ -1,8 +1,9 @@
 part of 'material_bloc.dart';
 
 @freezed
-class MaterialState with _$MaterialState {
-  const factory MaterialState.loading() = _LoadingState;
+sealed class MaterialState with _$MaterialState {
+  const factory MaterialState.loading() = MaterialStateLoading;
+
   const factory MaterialState.loaded({
     required String name,
     required String fullImage,
@@ -15,5 +16,5 @@ class MaterialState with _$MaterialState {
     required List<ItemObtainedFrom> obtainedFrom,
     required List<ItemCommonWithName> relatedMaterials,
     required List<ItemCommonWithName> droppedBy,
-  }) = _LoadedState;
+  }) = MaterialStateLoaded;
 }

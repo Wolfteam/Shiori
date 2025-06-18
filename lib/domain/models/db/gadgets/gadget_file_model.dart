@@ -4,7 +4,7 @@ part 'gadget_file_model.freezed.dart';
 part 'gadget_file_model.g.dart';
 
 @freezed
-class GadgetFileModel with _$GadgetFileModel {
+abstract class GadgetFileModel with _$GadgetFileModel {
   Duration? get cooldownDuration => cooldown == null ? null : Duration(hours: cooldown!);
 
   factory GadgetFileModel({

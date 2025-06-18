@@ -56,9 +56,13 @@ class LeftItemCard extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             if (type == BannerHistoryItemType.character)
-              AbsorbPointer(child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false))
+              AbsorbPointer(
+                child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false),
+              )
             else
-              AbsorbPointer(child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false)),
+              AbsorbPointer(
+                child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false),
+              ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -81,7 +85,7 @@ class LeftItemCard extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 3),
                 child: CircleAvatar(
                   radius: 15,
-                  backgroundColor: Colors.black.withOpacity(0.6),
+                  backgroundColor: Colors.black.withValues(alpha: 0.6),
                   child: Tooltip(
                     message: '$numberOfTimesReleased',
                     child: Text(
@@ -113,7 +117,10 @@ class LeftItemCard extends StatelessWidget {
             await WeaponPage.route(itemKey, context);
         }
       case _ItemOptionsType.releaseHistory:
-        await showDialog(context: context, builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey, itemName: name));
+        await showDialog(
+          context: context,
+          builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey, itemName: name),
+        );
     }
   }
 }

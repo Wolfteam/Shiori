@@ -39,30 +39,31 @@ void main() {
   );
 
   group('Init', () {
-    void validVersionCheck(BannerVersionHistoryState state, double version) => state.map(
-          loading: (_) => throw Exception('Invalid state'),
-          loadedState: (state) {
-            final validItemTypes = [ItemType.character, ItemType.weapon];
-            expect(state.version, version);
-            expect(state.items.isNotEmpty, isTrue);
-            for (final grouped in state.items) {
-              final from = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.from);
-              final until = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.until);
-              expect(until.isAfter(from), isTrue);
-              expect(grouped.items.isNotEmpty, isTrue);
+    void validVersionCheck(BannerVersionHistoryState state, double version) {
+      switch (state) {
+        case BannerVersionHistoryStateLoading():
+          throw Exception('Invalid state');
+        case BannerVersionHistoryStateLoaded():
+          final validItemTypes = [ItemType.character, ItemType.weapon];
+          expect(state.version, version);
+          expect(state.items.isNotEmpty, isTrue);
+          for (final grouped in state.items) {
+            final from = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.from);
+            final until = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.until);
+            expect(until.isAfter(from), isTrue);
+            expect(grouped.items.isNotEmpty, isTrue);
 
-              final keys = grouped.items.map((e) => e.key).toList();
-              expect(keys.toSet().length == keys.length, isTrue);
+            final keys = grouped.items.map((e) => e.key).toList();
+            expect(keys.toSet().length == keys.length, isTrue);
 
-              for (final group in grouped.items) {
-                checkItemKeyAndImage(group.key, group.image);
-                expect(group.rarity >= 4, isTrue);
-                expect(validItemTypes.contains(group.type), isTrue);
-              }
+            for (final group in grouped.items) {
+              checkItemKeyAndImage(group.key, group.image);
+              expect(group.rarity >= 4, isTrue);
+              expect(validItemTypes.contains(group.type), isTrue);
             }
-            return null;
-          },
-        );
+          }
+      }
+    }
 
     blocTest<BannerVersionHistoryBloc, BannerVersionHistoryState>(
       'valid version',

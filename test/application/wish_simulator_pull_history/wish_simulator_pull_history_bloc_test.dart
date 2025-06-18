@@ -67,7 +67,8 @@ void main() {
         String itemKey;
         ItemType itemType;
         int rarity;
-        final pickCharacters = pickedBanner.type == BannerItemType.character || (pickedBanner.type == BannerItemType.standard && random.nextBool());
+        final pickCharacters =
+            pickedBanner.type == BannerItemType.character || (pickedBanner.type == BannerItemType.standard && random.nextBool());
 
         if (pickCharacters) {
           final character = pickedBanner.characters[random.nextInt(pickedBanner.characters.length)];
@@ -152,18 +153,23 @@ void main() {
           return WishSimulatorPullHistoryBloc(genshinService, dataServiceMock);
         },
         act: (bloc) => bloc..add(WishSimulatorPullHistoryEvent.init(bannerType: type)),
-        verify: (bloc) => bloc.state.maybeMap(
-          orElse: () => throw Exception('Invalid state'),
-          loaded: (state) => checkState(
-            state.bannerType,
-            type,
-            state.allItems,
-            state.items,
-            state.maxPage,
-            state.currentPage,
-            shouldBeEmpty: true,
-          ),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishSimulatorPullHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishSimulatorPullHistoryStateLoaded():
+              checkState(
+                state.bannerType,
+                type,
+                state.allItems,
+                state.items,
+                state.maxPage,
+                state.currentPage,
+                shouldBeEmpty: true,
+              );
+          }
+        },
       );
     }
 
@@ -172,17 +178,22 @@ void main() {
         'with banner = ${type.name}',
         build: () => getBloc(),
         act: (bloc) => bloc..add(WishSimulatorPullHistoryEvent.init(bannerType: type)),
-        verify: (bloc) => bloc.state.maybeMap(
-          orElse: () => throw Exception('Invalid state'),
-          loaded: (state) => checkState(
-            state.bannerType,
-            type,
-            state.allItems,
-            state.items,
-            state.maxPage,
-            state.currentPage,
-          ),
-        ),
+        verify: (bloc) {
+          final state = bloc.state;
+          switch (state) {
+            case WishSimulatorPullHistoryStateLoading():
+              throw Exception('Invalid state');
+            case WishSimulatorPullHistoryStateLoaded():
+              checkState(
+                state.bannerType,
+                type,
+                state.allItems,
+                state.items,
+                state.maxPage,
+                state.currentPage,
+              );
+          }
+        },
       );
     }
 
@@ -213,18 +224,23 @@ void main() {
       act: (bloc) => bloc
         ..add(const WishSimulatorPullHistoryEvent.init(bannerType: BannerItemType.character))
         ..add(const WishSimulatorPullHistoryEvent.pageChanged(page: 2)),
-      verify: (bloc) => bloc.state.maybeMap(
-        orElse: () => throw Exception('Invalid state'),
-        loaded: (state) => checkState(
-          state.bannerType,
-          BannerItemType.character,
-          state.allItems,
-          state.items,
-          state.maxPage,
-          state.currentPage,
-          expectedCurrentPage: 2,
-        ),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case WishSimulatorPullHistoryStateLoading():
+            throw Exception('Invalid state');
+          case WishSimulatorPullHistoryStateLoaded():
+            checkState(
+              state.bannerType,
+              BannerItemType.character,
+              state.allItems,
+              state.items,
+              state.maxPage,
+              state.currentPage,
+              expectedCurrentPage: 2,
+            );
+        }
+      },
     );
 
     blocTest(
@@ -253,21 +269,24 @@ void main() {
       act: (bloc) => bloc
         ..add(WishSimulatorPullHistoryEvent.init(bannerType: type))
         ..add(WishSimulatorPullHistoryEvent.deleteData(bannerType: type)),
-      verify: (bloc) => bloc.state.maybeMap(
-        orElse: () => throw Exception('Invalid state'),
-        loaded: (state) {
-          checkState(
-            state.bannerType,
-            type,
-            state.allItems,
-            state.items,
-            state.maxPage,
-            state.currentPage,
-            shouldBeEmpty: true,
-          );
-          verify(wishSimulatorMock.clearBannerItemPullHistory(type)).called(1);
-        },
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case WishSimulatorPullHistoryStateLoading():
+            throw Exception('Invalid state');
+          case WishSimulatorPullHistoryStateLoaded():
+            checkState(
+              state.bannerType,
+              type,
+              state.allItems,
+              state.items,
+              state.maxPage,
+              state.currentPage,
+              shouldBeEmpty: true,
+            );
+            verify(wishSimulatorMock.clearBannerItemPullHistory(type)).called(1);
+        }
+      },
     );
   }
 }

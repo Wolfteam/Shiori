@@ -69,7 +69,7 @@ class Styles {
   static const Color paimonColor = Color.fromARGB(255, 191, 138, 104);
 
   static LinearGradient blackGradientForCircleItems = LinearGradient(
-    colors: [Colors.black.withOpacity(0.6), Colors.black.withOpacity(0.8)],
+    colors: [Colors.black.withValues(alpha: 0.6), Colors.black.withValues(alpha: 0.8)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
@@ -147,12 +147,12 @@ class Styles {
 
   static List<BoxShadow> commonBlackShadow = [
     BoxShadow(
-      color: Colors.black.withOpacity(0.6),
+      color: Colors.black.withValues(alpha: 0.6),
       blurRadius: 40,
       spreadRadius: 20,
     ),
     BoxShadow(
-      color: Colors.black.withOpacity(0.4),
+      color: Colors.black.withValues(alpha: 0.4),
       blurRadius: 20,
       spreadRadius: 10,
     ),
@@ -178,19 +178,23 @@ class Styles {
     }
 
     final EdgeInsets padding = switch (Theme.of(context).platform) {
-      TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-      TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.iOS => const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+      TargetPlatform.macOS ||
+      TargetPlatform.linux ||
+      TargetPlatform.windows => const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      TargetPlatform.android ||
+      TargetPlatform.fuchsia ||
+      TargetPlatform.iOS => const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
     };
 
     final (TextStyle defaultTextStyle, BoxDecoration defaultDecoration) = switch (Theme.of(context)) {
       ThemeData(brightness: Brightness.dark, :final TextTheme textTheme, :final TargetPlatform platform) => (
-          textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: getDefaultFontSize(platform)),
-          BoxDecoration(color: Colors.white.withOpacity(0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
-        ),
+        textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: getDefaultFontSize(platform)),
+        BoxDecoration(color: Colors.white.withValues(alpha: 0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
+      ),
       ThemeData(brightness: Brightness.light, :final TextTheme textTheme, :final TargetPlatform platform) => (
-          textTheme.bodyMedium!.copyWith(color: Colors.white, fontSize: getDefaultFontSize(platform)),
-          BoxDecoration(color: Colors.grey[700]!.withOpacity(0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
-        ),
+        textTheme.bodyMedium!.copyWith(color: Colors.white, fontSize: getDefaultFontSize(platform)),
+        BoxDecoration(color: Colors.grey[700]!.withValues(alpha: 0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
+      ),
     };
 
     return (defaultTextStyle, defaultDecoration, padding);

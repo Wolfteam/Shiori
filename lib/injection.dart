@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
-import 'package:path/path.dart' as Path;
+import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/api_service.dart';
@@ -43,7 +43,15 @@ class Injection {
     final genshinService = getIt<GenshinService>();
     final settingsService = getIt<SettingsService>();
     final deviceInfoService = getIt<DeviceInfoService>();
-    return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService);
+    return GameCodesBloc(
+      dataService,
+      telemetryService,
+      apiService,
+      networkService,
+      genshinService,
+      settingsService,
+      deviceInfoService,
+    );
   }
 
   static ItemQuantityFormBloc get itemQuantityFormBloc {
@@ -233,7 +241,16 @@ class Injection {
     final dataService = getIt<DataService>();
     final apiService = getIt<ApiService>();
     final networkService = getIt<NetworkService>();
-    return SplashBloc(resourceService, settingsService, deviceInfoService, telemetryService, dataService, apiService, networkService, localeService);
+    return SplashBloc(
+      resourceService,
+      settingsService,
+      deviceInfoService,
+      telemetryService,
+      dataService,
+      apiService,
+      networkService,
+      localeService,
+    );
   }
 
   static CheckForResourceUpdatesBloc get checkForResourceUpdatesBlocBloc {
@@ -327,10 +344,10 @@ class Injection {
     getIt.registerSingleton<DeviceInfoService>(DeviceInfoServiceImpl());
 
     File? loggingFile;
-    if (kDebugMode) {
+    if (kDebugMode && isLoggingEnabled) {
       try {
         final Directory? loggingDir = await getDownloadsDirectory();
-        final String loggingPath = Path.join(loggingDir!.path, 'logs.txt');
+        final String loggingPath = path.join(loggingDir!.path, 'logs.txt');
         loggingFile = File(loggingPath);
         if (!await loggingFile.exists()) {
           await loggingFile.create(recursive: true);
@@ -340,7 +357,9 @@ class Injection {
       }
     }
 
-    getIt.registerLazySingleton<LoggingService>(() => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, loggingFile));
+    getIt.registerLazySingleton<LoggingService>(
+      () => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, loggingFile),
+    );
 
     getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));
 
@@ -362,7 +381,9 @@ class Injection {
 
     getIt.registerLazySingleton<TelemetryService>(() => TelemetryServiceImpl(getIt<DeviceInfoService>()));
 
-    getIt.registerLazySingleton<NotificationService>(() => NotificationServiceImpl(getIt<LoggingService>(), getIt<SettingsService>()));
+    getIt.registerLazySingleton<NotificationService>(
+      () => NotificationServiceImpl(getIt<LoggingService>(), getIt<SettingsService>()),
+    );
 
     getIt.registerLazySingleton<ChangelogProvider>(
       () => ChangelogProviderImpl(getIt<LoggingService>(), getIt<NetworkService>(), getIt<ApiService>()),

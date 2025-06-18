@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'character_skill.freezed.dart';
 
 @freezed
-class CharacterSkill with _$CharacterSkill {
+abstract class CharacterSkill with _$CharacterSkill {
   const factory CharacterSkill.skill({
     required String key,
     required int position,

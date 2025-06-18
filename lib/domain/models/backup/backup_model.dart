@@ -7,7 +7,7 @@ part 'backup_model.freezed.dart';
 part 'backup_model.g.dart';
 
 @freezed
-class BackupModel with _$BackupModel {
+abstract class BackupModel with _$BackupModel {
   const factory BackupModel({
     required String appVersion,
     required int resourceVersion,
@@ -28,7 +28,7 @@ class BackupModel with _$BackupModel {
 }
 
 @freezed
-class BackupFileItemModel with _$BackupFileItemModel {
+abstract class BackupFileItemModel with _$BackupFileItemModel {
   String get filename => basename(filePath);
 
   const factory BackupFileItemModel({

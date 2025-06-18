@@ -65,13 +65,13 @@ class WeaponCard extends StatelessWidget {
     this.imgWidth = 80,
     this.imgHeight = 70,
     this.withShape = true,
-  })  : type = null,
-        baseAtk = null,
-        subStatType = null,
-        subStatValue = null,
-        withoutDetails = true,
-        isInSelectionMode = false,
-        withElevation = false;
+  }) : type = null,
+       baseAtk = null,
+       subStatType = null,
+       subStatValue = null,
+       withoutDetails = true,
+       isInSelectionMode = false,
+       withElevation = false;
 
   WeaponCard.item({
     super.key,
@@ -81,16 +81,16 @@ class WeaponCard extends StatelessWidget {
     this.isInSelectionMode = false,
     this.withElevation = true,
     this.withShape = true,
-  })  : keyName = weapon.key,
-        baseAtk = weapon.baseAtk,
-        image = weapon.image,
-        name = weapon.name,
-        rarity = weapon.rarity,
-        type = weapon.type,
-        subStatType = weapon.subStatType,
-        subStatValue = weapon.subStatValue,
-        isComingSoon = weapon.isComingSoon,
-        withoutDetails = false;
+  }) : keyName = weapon.key,
+       baseAtk = weapon.baseAtk,
+       image = weapon.image,
+       name = weapon.name,
+       rarity = weapon.rarity,
+       type = weapon.type,
+       subStatType = weapon.subStatType,
+       subStatValue = weapon.subStatValue,
+       isComingSoon = weapon.isComingSoon,
+       withoutDetails = false;
 
   @override
   Widget build(BuildContext context) {
@@ -177,9 +177,9 @@ class _Bottom extends StatelessWidget {
       width: double.infinity,
       padding: Styles.edgeInsetAll5,
       child: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(useScaffold: false),
-          loaded: (state) => Column(
+        builder: (context, state) => switch (state) {
+          SettingsStateLoading() => const Loading(useScaffold: false),
+          SettingsStateLoaded() => Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
@@ -223,7 +223,7 @@ class _Bottom extends StatelessWidget {
                 ),
             ],
           ),
-        ),
+        },
       ),
     );
   }

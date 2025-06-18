@@ -29,67 +29,53 @@ class _WishBannerHistoryPageState extends State<WishBannerHistoryPage> with Sing
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final iconSize = Styles.getIconSizeForItemPopupMenuFilter(false, true);
     return BlocProvider<WishBannerHistoryBloc>(
       create: (context) => Injection.wishBannerHistoryBloc..add(const WishBannerHistoryEvent.init()),
       child: BlocBuilder<WishBannerHistoryBloc, WishBannerHistoryState>(
         builder: (context, state) => Scaffold(
           appBar: AppBar(
             title: Text(s.bannerHistory),
-            actions: [
-              state.map(
-                loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => IconButton(
+            actions: switch (state) {
+              WishBannerHistoryStateLoading() => [],
+              WishBannerHistoryStateLoaded() => [
+                IconButton(
                   icon: const Icon(Icons.search),
                   tooltip: s.search,
                   splashRadius: Styles.mediumButtonSplashRadius,
-                  onPressed: () => showSearch<List<String>>(
-                    context: context,
-                    delegate: ItemCommonWithNameAppBarSearchDelegate.withNameOnly(
-                      itemsWithNameOnly: context.read<WishBannerHistoryBloc>().getItemsForSearch(),
-                      selected: [...state.selectedItemKeys],
-                    ),
-                  ).then((keys) {
-                    if (keys == null || !context.mounted) {
-                      return;
-                    }
-                    context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.itemsSelected(keys: keys));
-                  }),
+                  onPressed: () => _search(state, context),
                 ),
-              ),
-              state.map(
-                loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => ItemPopupMenuFilter<WishBannerGroupedType>(
+                ItemPopupMenuFilter<WishBannerGroupedType>(
                   tooltipText: s.groupBy,
                   splashRadius: Styles.mediumButtonSplashRadius,
                   values: WishBannerGroupedType.values,
                   selectedValue: state.groupedType,
                   onSelected: (v) => context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.groupTypeChanged(v)),
                   itemText: (val, _) => s.translateWishBannerGroupedType(val),
-                  icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(false, true)),
+                  icon: Icon(Icons.filter_list, size: iconSize),
                 ),
-              ),
-              state.map(
-                loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => SortDirectionPopupMenuFilter(
+                SortDirectionPopupMenuFilter(
                   selectedSortDirection: state.sortDirectionType,
                   splashRadius: Styles.mediumButtonSplashRadius,
-                  onSelected: (v) => context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.sortDirectionTypeChanged(v)),
-                  icon: Icon(Icons.sort, size: Styles.getIconSizeForItemPopupMenuFilter(false, true)),
+                  onSelected: (v) =>
+                      context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.sortDirectionTypeChanged(v)),
+                  icon: Icon(Icons.sort, size: iconSize),
                 ),
-              ),
-              if (state.maybeMap(loaded: (state) => state.selectedItemKeys.isNotEmpty, orElse: () => false))
-                IconButton(
-                  onPressed: () => context.read<WishBannerHistoryBloc>().add(const WishBannerHistoryEvent.itemsSelected(keys: [])),
-                  icon: Icon(Icons.clear_all, size: Styles.getIconSizeForItemPopupMenuFilter(false, true)),
-                  splashRadius: Styles.mediumButtonSplashRadius,
-                  tooltip: s.clearAll,
-                ),
-            ],
+                if (state.selectedItemKeys.isNotEmpty)
+                  IconButton(
+                    onPressed: () =>
+                        context.read<WishBannerHistoryBloc>().add(const WishBannerHistoryEvent.itemsSelected(keys: [])),
+                    icon: Icon(Icons.clear_all, size: iconSize),
+                    splashRadius: Styles.mediumButtonSplashRadius,
+                    tooltip: s.clearAll,
+                  ),
+              ],
+            },
           ),
           body: SafeArea(
-            child: state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => ListView.builder(
+            child: switch (state) {
+              WishBannerHistoryStateLoading() => const Loading(useScaffold: false),
+              WishBannerHistoryStateLoaded() => ListView.builder(
                 controller: scrollController,
                 itemCount: state.filteredPeriods.length,
                 itemBuilder: (context, index) => GroupedBannerPeriod(
@@ -98,11 +84,26 @@ class _WishBannerHistoryPageState extends State<WishBannerHistoryPage> with Sing
                   forSelection: widget.forSelection,
                 ),
               ),
-            ),
+            },
           ),
           floatingActionButton: getAppFab(),
         ),
       ),
     );
+  }
+
+  Future<void> _search(WishBannerHistoryStateLoaded state, BuildContext context) {
+    return showSearch<List<String>>(
+      context: context,
+      delegate: ItemCommonWithNameAppBarSearchDelegate.withNameOnly(
+        itemsWithNameOnly: context.read<WishBannerHistoryBloc>().getItemsForSearch(),
+        selected: [...state.selectedItemKeys],
+      ),
+    ).then((keys) {
+      if (keys == null || !context.mounted) {
+        return;
+      }
+      context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.itemsSelected(keys: keys));
+    });
   }
 }

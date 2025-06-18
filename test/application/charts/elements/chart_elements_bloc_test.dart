@@ -11,6 +11,7 @@ import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../../common.dart';
+import '../../../dummy_mocks.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
@@ -20,6 +21,7 @@ void main() {
   late List<double> versions;
 
   setUpAll(() {
+    provideDummyMocks();
     TestWidgetsFlutterBinding.ensureInitialized();
     settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);

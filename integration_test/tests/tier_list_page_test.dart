@@ -86,7 +86,10 @@ void main() {
       }
 
       const int rowIndex = 1;
-      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)), findsOneWidget);
+      expect(
+        find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)),
+        findsOneWidget,
+      );
 
       await page.tapOnSettingPopupMenuItem(rowIndex, 4);
 
@@ -101,9 +104,15 @@ void main() {
       await page.tapClearAllButton();
 
       const String row = 'SSS';
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
+        findsOneWidget,
+      );
       await page.tapOnSettingPopupMenuItem(0, 0);
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row),
+        findsOneWidget,
+      );
     });
 
     testWidgets('adds row below SSS', (widgetTester) async {
@@ -114,9 +123,15 @@ void main() {
       await page.tapClearAllButton();
 
       const String row = 'SS';
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row),
+        findsOneWidget,
+      );
       await page.tapOnSettingPopupMenuItem(0, 1);
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 2 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 2 && widget.title == row),
+        findsOneWidget,
+      );
     });
 
     testWidgets('renames SSS row', (widgetTester) async {
@@ -128,7 +143,10 @@ void main() {
 
       const String row = 'SSS';
       const String newName = '$row - Updated';
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
+        findsOneWidget,
+      );
       await page.tapOnSettingPopupMenuItem(0, 2);
 
       await widgetTester.enterText(find.byType(TextField), newName);
@@ -137,7 +155,10 @@ void main() {
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == newName), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == newName),
+        findsOneWidget,
+      );
     });
 
     testWidgets('deletes SSS row', (widgetTester) async {
@@ -148,7 +169,10 @@ void main() {
       await page.tapClearAllButton();
 
       const String row = 'SSS';
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsOneWidget);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
+        findsOneWidget,
+      );
       await page.tapOnSettingPopupMenuItem(0, 3);
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsNothing);
     });
@@ -163,7 +187,11 @@ void main() {
       const String row = 'SSS';
       expect(
         find.byWidgetPredicate(
-          (widget) => widget is TierListRow && widget.index == 0 && widget.title == row && widget.color.value == Colors.red.value,
+          (widget) =>
+              widget is TierListRow &&
+              widget.index == 0 &&
+              widget.title == row &&
+              widget.color.toARGB32() == Colors.red.toARGB32(),
         ),
         findsOneWidget,
       );
@@ -183,7 +211,11 @@ void main() {
 
       expect(
         find.byWidgetPredicate(
-          (widget) => widget is TierListRow && widget.index == 0 && widget.title == row && widget.color.value == Colors.red.value,
+          (widget) =>
+              widget is TierListRow &&
+              widget.index == 0 &&
+              widget.title == row &&
+              widget.color.toARGB32() == Colors.red.toARGB32(),
         ),
         findsNothing,
       );

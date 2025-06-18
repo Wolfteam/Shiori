@@ -29,37 +29,49 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     0xff8bc34a,
   ];
 
-  _LoadedState get currentState => state as _LoadedState;
+  TierListStateLoaded get currentState => state as TierListStateLoaded;
 
   TierListBloc(this._genshinService, this._dataService, this._telemetryService, this._loggingService) : super(_initialState);
 
   @override
   Stream<TierListState> mapEventToState(TierListEvent event) async* {
-    final s = await event.map(
-      init: (e) async => _init(e.reset),
-      rowTextChanged: (e) async => _rowTextChanged(e.index, e.newValue),
-      rowPositionChanged: (e) async => _rowPositionChanged(e.index, e.newIndex),
-      rowColorChanged: (e) async => _rowColorChanged(e.index, e.newColor),
-      addNewRow: (e) async => _addNewRow(e.index, e.above),
-      deleteRow: (e) async => _deleteRow(e.index),
-      clearRow: (e) async => _clearRow(e.index),
-      clearAllRows: (_) async => _clearAllRows(),
-      addCharacterToRow: (e) async => _addCharacterToRow(e.index, e.item),
-      deleteCharacterFromRow: (e) async => _deleteCharacterFromRow(e.index, e.item),
-      readyToSave: (e) async => currentState.copyWith.call(readyToSave: e.ready),
-      screenshotTaken: (e) async {
-        if (e.succeed) {
+    switch (event) {
+      case TierListEventInit():
+        yield await _init(event.reset);
+      case TierListEventRowTextChanged():
+        yield await _rowTextChanged(event.index, event.newValue);
+      case TierListEventRowPositionChanged():
+        yield await _rowPositionChanged(event.index, event.newIndex);
+      case TierListEventRowColorChanged():
+        yield await _rowColorChanged(event.index, event.newColor);
+      case TierListEventAddRow():
+        yield await _addNewRow(event.index, event.above);
+      case TierListEventDeleteRow():
+        yield await _deleteRow(event.index);
+      case TierListEventClearRow():
+        yield await _clearRow(event.index);
+      case TierListEventClearAllRows():
+        yield await _clearAllRows();
+      case TierListEventAddCharacterToRow():
+        yield await _addCharacterToRow(event.index, event.item);
+      case TierListEventDeleteCharacterFromRow():
+        yield await _deleteCharacterFromRow(event.index, event.item);
+      case TierListEventReadyToSave():
+        yield currentState.copyWith.call(readyToSave: event.ready);
+      case TierListEventScreenshotTaken():
+        if (event.succeed) {
           await _telemetryService.trackTierListBuilderScreenShootTaken();
-          return _init(false);
-        } else {
-          _loggingService.error(runtimeType, 'Something went wrong while taking the tier list builder screenshot', e.ex, e.trace);
+          yield await _init(false);
+          return;
         }
-
-        return currentState;
-      },
-    );
-
-    yield s;
+        _loggingService.error(
+          runtimeType,
+          'Something went wrong while taking the tier list builder screenshot',
+          event.ex,
+          event.trace,
+        );
+        yield currentState;
+    }
   }
 
   Future<TierListState> _init(bool reset) async {
@@ -135,8 +147,10 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   }
 
   Future<TierListState> _clearAllRows() async {
-    final chars =
-        _updateAvailableChars(_genshinService.characters.getDefaultCharacterTierList(defaultColors).expand((row) => row.items).toList(), []);
+    final chars = _updateAvailableChars(
+      _genshinService.characters.getDefaultCharacterTierList(defaultColors).expand((row) => row.items).toList(),
+      [],
+    );
     final updatedRows = currentState.rows.map((row) => row.copyWith.call(items: [])).toList();
     await _dataService.tierList.saveTierList(updatedRows);
     return currentState.copyWith.call(rows: updatedRows, charsAvailable: chars, readyToSave: false);

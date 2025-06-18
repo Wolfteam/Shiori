@@ -1,8 +1,8 @@
 part of 'materials_bloc.dart';
 
 @freezed
-class MaterialsState with _$MaterialsState {
-  const factory MaterialsState.loading() = _LoadingState;
+sealed class MaterialsState with _$MaterialsState {
+  const factory MaterialsState.loading() = MaterialsStateLoading;
 
   const factory MaterialsState.loaded({
     required List<MaterialCardModel> materials,
@@ -16,5 +16,5 @@ class MaterialsState with _$MaterialsState {
     required SortDirectionType sortDirectionType,
     required SortDirectionType tempSortDirectionType,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _LoadedState;
+  }) = MaterialsStateLoaded;
 }

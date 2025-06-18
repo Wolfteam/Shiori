@@ -54,8 +54,6 @@ void main() {
             }
           case MonsterDropType.artifact:
             expect(() => artifactFileService.getArtifact(drop.key), returnsNormally);
-          default:
-            throw Exception('DropType = ${drop.type} is not valid');
         }
       }
 
