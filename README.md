@@ -39,7 +39,7 @@
 ### Discord
 <p align="left">
     <a href="https://discord.gg/A8SgudQMwP">
-      <img height="100" width="100" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />
+      <img height="100" width="100" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d80db9971f10a9757c99_Symbol.svg" />
     </a>
 </p>
 
