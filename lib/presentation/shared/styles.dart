@@ -34,7 +34,7 @@ class Styles {
       topLeft: Radius.circular(35),
     ),
   );
-  static const modalBottomSheetContainerMargin = EdgeInsets.only(left: 10, right: 10, bottom: 10);
+  static const modalBottomSheetContainerMargin = EdgeInsets.symmetric(horizontal: 10);
   static const modalBottomSheetContainerPadding = EdgeInsets.only(left: 10, right: 10, top: 10);
 
   static const listItemWithIconOffset = Offset(-20, 0);

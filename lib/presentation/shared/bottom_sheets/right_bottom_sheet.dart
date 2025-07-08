@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class RightBottomSheet extends StatelessWidget {
   final List<Widget> children;
@@ -21,27 +22,31 @@ class RightBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final filterTitle = title ?? s.filters;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                BottomSheetTitle(
-                  icon: icon,
-                  title: filterTitle,
-                ),
-                ...children,
-              ],
+    return Container(
+      padding: Styles.edgeInsetVertical10,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  BottomSheetTitle(
+                    icon: icon,
+                    title: filterTitle,
+                    margin: EdgeInsets.zero,
+                  ),
+                  ...children,
+                ],
+              ),
             ),
           ),
-        ),
-        Divider(color: Theme.of(context).primaryColor),
-        bottom,
-      ],
+          Divider(color: Theme.of(context).primaryColor),
+          bottom,
+        ],
+      ),
     );
   }
 }
