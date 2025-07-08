@@ -193,12 +193,11 @@ void checkCharacterFileTalentAscensionMaterialModel(
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
 
     if (checkMaterialTypeAndLength) {
-      final expectedLengthForTalents =
-          ascMaterial.level == 10
-              ? 3
-              : ascMaterial.level >= 7
-              ? 2
-              : 1;
+      final expectedLengthForTalents = ascMaterial.level == 10
+          ? 3
+          : ascMaterial.level >= 7
+          ? 2
+          : 1;
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.talents).length, expectedLengthForTalents);
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
@@ -208,7 +207,11 @@ void checkCharacterFileTalentAscensionMaterialModel(
 
 //This regex will not match color tags
 final _tagPattern = RegExp(r'\{([^{}]+)#?([^{}]+)\}([^{}]*)\{/\1\}', caseSensitive: false);
-void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true}) {
+
+//This makes sure that if we have brackets, only the {paramX} are allowed
+final _bracesPattern = RegExp(r'\{(?!param\d+\})[^}]*\}');
+
+void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true, bool checkParamX = true}) {
   if (canBeNull && text.isNullEmptyOrWhitespace) {
     return;
   }
@@ -219,10 +222,18 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
   expect(weirdCharacters, isFalse);
   if (checkForColor) {
     final hasColor = text.contains('{color}') || text.contains('{/color}');
-    expect(hasColor, isFalse);
+    expect(hasColor, isFalse, reason: 'Text contains invalid color tags. $text');
   }
 
   expect(_tagPattern.hasMatch(text), isFalse);
+
+  if (checkParamX) {
+    expect(
+      _bracesPattern.hasMatch(text),
+      isFalse,
+      reason: 'Text contains invalid content between curly braces. Only {paramX} is allowed. $text',
+    );
+  }
 }
 
 ResourceService getResourceService(SettingsService settingsService) {
