@@ -505,6 +505,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) {
         final state = bloc.state;
@@ -523,6 +524,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
       errors: () => [isA<Exception>()],
@@ -543,6 +545,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
       verify: (bloc) {
@@ -561,6 +564,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
       errors: () => [isA<Exception>()],
     );
@@ -570,6 +574,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
@@ -589,6 +594,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 6)),
       errors: () => [isA<Exception>()],
     );
@@ -598,6 +604,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) {
@@ -616,6 +623,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey))
@@ -628,6 +636,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.deleteWeapons()),
       verify: (bloc) {
