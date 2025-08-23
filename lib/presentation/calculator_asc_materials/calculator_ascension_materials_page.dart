@@ -103,10 +103,23 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-class _FabMenu extends StatelessWidget {
+class _FabMenu extends StatefulWidget {
   final int sessionKey;
 
   const _FabMenu({required this.sessionKey});
+
+  @override
+  State<_FabMenu> createState() => _FabMenuState();
+}
+
+class _FabMenuState extends State<_FabMenu> {
+  final ScrollController _fabScrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _fabScrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +134,8 @@ class _FabMenu extends StatelessWidget {
 
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
+      scrollController: _fabScrollController,
+      hideOnScroll: true,
       items: [
         HawkFabMenuItem(
           label: s.addCharacter,
@@ -141,19 +156,21 @@ class _FabMenu extends StatelessWidget {
           final summary = state.summary.orderBy((x) => s.translateAscensionSummaryType(x.type)).toList();
           if (isPortrait) {
             return _PortraitLayout(
-              sessionKey: sessionKey,
+              sessionKey: state.sessionKey,
               items: state.items,
               summary: summary,
               showMaterialUsage: state.showMaterialUsage,
               itemHeight: itemHeight,
+              fabScrollController: _fabScrollController,
             );
           }
           return _LandscapeLayout(
-            sessionKey: sessionKey,
+            sessionKey: state.sessionKey,
             items: state.items,
             summary: summary,
             showMaterialUsage: state.showMaterialUsage,
             itemHeight: itemHeight,
+            fabScrollController: _fabScrollController,
           );
         },
       ),
@@ -177,7 +194,7 @@ class _FabMenu extends StatelessWidget {
     await ModalBottomSheetUtils.showAppModalBottomSheet(
       context,
       EndDrawerItemType.calculatorAscMaterialsAdd,
-      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(sessionKey, keyName),
+      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(widget.sessionKey, keyName),
     );
   }
 
@@ -198,7 +215,7 @@ class _FabMenu extends StatelessWidget {
     await ModalBottomSheetUtils.showAppModalBottomSheet(
       context,
       EndDrawerItemType.calculatorAscMaterialsAdd,
-      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(sessionKey, keyName, isAWeapon: true),
+      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(widget.sessionKey, keyName, isAWeapon: true),
     );
   }
 }
@@ -209,6 +226,7 @@ class _PortraitLayout extends StatelessWidget {
   final List<AscensionMaterialsSummary> summary;
   final bool showMaterialUsage;
   final double itemHeight;
+  final ScrollController fabScrollController;
 
   const _PortraitLayout({
     required this.sessionKey,
@@ -216,6 +234,7 @@ class _PortraitLayout extends StatelessWidget {
     required this.summary,
     required this.showMaterialUsage,
     required this.itemHeight,
+    required this.fabScrollController,
   });
 
   @override
@@ -224,6 +243,7 @@ class _PortraitLayout extends StatelessWidget {
     final theme = Theme.of(context);
 
     return CustomScrollView(
+      controller: fabScrollController,
       slivers: [
         SliverToBoxAdapter(
           child: DetailSection(
@@ -291,6 +311,7 @@ class _LandscapeLayout extends StatefulWidget {
   final List<AscensionMaterialsSummary> summary;
   final bool showMaterialUsage;
   final double itemHeight;
+  final ScrollController fabScrollController;
 
   const _LandscapeLayout({
     required this.sessionKey,
@@ -298,6 +319,7 @@ class _LandscapeLayout extends StatefulWidget {
     required this.summary,
     required this.showMaterialUsage,
     required this.itemHeight,
+    required this.fabScrollController,
   });
 
   @override
@@ -311,7 +333,7 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
   @override
   void initState() {
     super.initState();
-    _controllerRight = ScrollController();
+    _controllerRight = widget.fabScrollController;
     _controllerLeft = ScrollController();
   }
 

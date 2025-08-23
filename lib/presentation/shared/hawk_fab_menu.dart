@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 /// Wrapper that builds a FAB menu on top of [body] in a [Stack]
 class HawkFabMenu extends StatefulWidget {
@@ -10,6 +11,8 @@ class HawkFabMenu extends StatefulWidget {
   final AnimatedIconData? icon;
   final Color? fabColor;
   final Color? iconColor;
+  final ScrollController? scrollController;
+  final bool hideOnScroll;
 
   HawkFabMenu({
     required this.body,
@@ -18,6 +21,8 @@ class HawkFabMenu extends StatefulWidget {
     this.icon,
     this.fabColor,
     this.iconColor,
+    this.scrollController,
+    this.hideOnScroll = false,
   }) : assert(items.isNotEmpty);
 
   @override
@@ -31,11 +36,20 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
   /// The [Duration] for every animation
   final Duration _duration = const Duration(milliseconds: 500);
 
+  /// Flag to track if FAB is visible
+  bool _isFabVisible = true;
+
+  /// Animation controller for FAB visibility
+  late AnimationController _fabAnimationController;
+
   /// Animation controller that animates the menu item
   late AnimationController _iconAnimationCtrl;
 
   /// Animation that animates the menu item
   late Animation<double> _iconAnimationTween;
+
+  /// Animation for showing/hiding the FAB
+  late Animation<double> _fabAnimation;
 
   @override
   void initState() {
@@ -48,6 +62,22 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
       begin: 0.0,
       end: 1.0,
     ).animate(_iconAnimationCtrl);
+
+    // Setup FAB visibility animation
+    _fabAnimationController = AnimationController(
+      vsync: this,
+      duration: kThemeAnimationDuration,
+      value: 1.0, // Start as visible
+    );
+    _fabAnimation = CurvedAnimation(
+      parent: _fabAnimationController,
+      curve: Curves.easeInOut,
+    );
+
+    // Add scroll listener if hideOnScroll is enabled
+    if (widget.hideOnScroll && widget.scrollController != null) {
+      widget.scrollController!.addListener(_handleScroll);
+    }
   }
 
   /// Closes the menu if open and vice versa
@@ -71,6 +101,47 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
     return true;
   }
 
+  /// Handle scroll events to show/hide FAB
+  void _handleScroll() {
+    if (!widget.hideOnScroll || widget.scrollController == null) {
+      return;
+    }
+
+    final ScrollController controller = widget.scrollController!;
+
+    // Don't do anything if we can't get scroll positions
+    if (!controller.hasClients) {
+      return;
+    }
+
+    // Check scroll direction by the delta of position
+    if (controller.position.userScrollDirection == ScrollDirection.reverse) {
+      // Scrolling down - hide the FAB
+      if (_isFabVisible) {
+        _isFabVisible = false;
+        _fabAnimationController.reverse();
+        // Close menu if it's open
+        if (_isOpen) _toggleMenu();
+      }
+    } else if (controller.position.userScrollDirection == ScrollDirection.forward) {
+      // Scrolling up - show the FAB
+      if (!_isFabVisible) {
+        _isFabVisible = true;
+        _fabAnimationController.forward();
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _iconAnimationCtrl.dispose();
+    _fabAnimationController.dispose();
+    if (widget.hideOnScroll && widget.scrollController != null) {
+      widget.scrollController!.removeListener(_handleScroll);
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -90,8 +161,8 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
       child: Stack(
         children: <Widget>[
           widget.body,
-          if (_isOpen) _buildBlurWidget() else Container(),
-          if (_isOpen) _buildMenuItemList() else Container(),
+          if (_isOpen) _buildBlurWidget(),
+          if (_isOpen) _buildMenuItemList(),
           _buildMenuButton(context),
         ],
       ),
@@ -107,20 +178,20 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
         scale: AnimationController(
           vsync: this,
           value: 0.7,
-          duration: _duration,
+          duration: kThemeAnimationDuration,
         )..forward(),
         child: SizeTransition(
           axis: Axis.horizontal,
           sizeFactor: AnimationController(
             vsync: this,
             value: 0.5,
-            duration: _duration,
+            duration: kThemeAnimationDuration,
           )..forward(),
           child: FadeTransition(
             opacity: AnimationController(
               vsync: this,
               value: 0.0,
-              duration: _duration,
+              duration: kThemeAnimationDuration,
             )..forward(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -162,13 +233,16 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
     return Positioned(
       bottom: 10,
       right: 10,
-      child: FloatingActionButton(
-        backgroundColor: widget.fabColor,
-        onPressed: _toggleMenu,
-        child: AnimatedIcon(
-          icon: widget.icon ?? AnimatedIcons.menu_close,
-          progress: _iconAnimationTween,
-          color: widget.iconColor,
+      child: ScaleTransition(
+        scale: _fabAnimation,
+        child: FloatingActionButton(
+          backgroundColor: widget.fabColor,
+          onPressed: _toggleMenu,
+          child: AnimatedIcon(
+            icon: widget.icon ?? AnimatedIcons.menu_close,
+            progress: _iconAnimationTween,
+            color: widget.iconColor,
+          ),
         ),
       ),
     );

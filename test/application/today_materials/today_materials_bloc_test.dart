@@ -55,7 +55,6 @@ void main() {
               (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList())
                   .toSet();
           expect(days.length, TodayMaterialsBloc.days.length);
-          ;
       }
     },
   );
