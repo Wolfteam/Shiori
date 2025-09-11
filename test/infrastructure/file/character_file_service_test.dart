@@ -362,9 +362,9 @@ void main() {
         checkAsset(material.image);
         expect(material.name, allOf([isNotNull, isNotEmpty]));
         final List<String> ignore = [
-          'teachings-of-conflict',
-          'teachings-of-kindling',
-          'teachings-of-contention',
+          'teachings-of-vagrancy',
+          'teachings-of-elysium',
+          'teachings-of-moonlight',
         ];
         if (ignore.contains(material.key)) {
           continue;

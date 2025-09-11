@@ -57,16 +57,21 @@ void main() {
           expect(dayName, state.dayName);
         }
 
+        final allChars = genshinService.characters.getCharactersForCard();
+
         for (final material in state.charAscMaterials) {
           checkKey(material.key);
           checkTranslation(material.name, canBeNull: false);
           checkAsset(material.image);
           expect(material.days, isNotEmpty);
           expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
-          if (material.key == 'teachings-of-kindling') {
-            continue;
+          if (material.characters.isEmpty) {
+            final charsThatUseThisMaterial = allChars.where((c) => c.materials.contains(material.key)).toList();
+            for (final char in charsThatUseThisMaterial) {
+              expect(char.isComingSoon, isTrue);
+            }
           }
-          checkItemsCommonWithName(material.characters);
+          checkItemsCommonWithName(material.characters, checkEmpty: material.characters.isNotEmpty);
         }
 
         for (final material in state.weaponAscMaterials) {
