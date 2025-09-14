@@ -24,7 +24,6 @@ import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
 Future<void> main() async {
-  //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Injection.init();

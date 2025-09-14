@@ -72,7 +72,6 @@ void main() {
           expect(ascensionNumber == 4, isTrue);
         default:
           expect(ascensionNumber == 6, isTrue);
-          break;
       }
 
       var repetitionCount = 0;

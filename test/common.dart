@@ -166,12 +166,7 @@ void checkCharacterFileAscensionMaterialModel(
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
-      final types = [
-        MaterialType.jewels,
-        MaterialType.local,
-        MaterialType.common,
-        MaterialType.currency,
-      ];
+      final types = [MaterialType.jewels, MaterialType.local, MaterialType.common, MaterialType.currency];
       for (final type in types) {
         final materials = ascMaterial.materials.where((el) => el.type == type).toList();
         expect(materials.length == 1, isTrue);
@@ -201,8 +196,8 @@ void checkCharacterFileTalentAscensionMaterialModel(
       final expectedLengthForTalents = ascMaterial.level == 10
           ? 3
           : ascMaterial.level >= 7
-              ? 2
-              : 1;
+          ? 2
+          : 1;
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.talents).length, expectedLengthForTalents);
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
@@ -210,7 +205,13 @@ void checkCharacterFileTalentAscensionMaterialModel(
   }
 }
 
-void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true}) {
+//This regex will not match color tags
+final _tagPattern = RegExp(r'\{([^{}]+)#?([^{}]+)\}([^{}]*)\{/\1\}', caseSensitive: false);
+
+//This makes sure that if we have brackets, only the {paramX} are allowed
+final _bracesPattern = RegExp(r'\{(?!param\d+\})[^}]*\}');
+
+void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true, bool checkParamX = true}) {
   if (canBeNull && text.isNullEmptyOrWhitespace) {
     return;
   }
@@ -221,7 +222,17 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
   expect(weirdCharacters, isFalse);
   if (checkForColor) {
     final hasColor = text.contains('{color}') || text.contains('{/color}');
-    expect(hasColor, isFalse);
+    expect(hasColor, isFalse, reason: 'Text contains invalid color tags. $text');
+  }
+
+  expect(_tagPattern.hasMatch(text), isFalse);
+
+  if (checkParamX) {
+    expect(
+      _bracesPattern.hasMatch(text),
+      isFalse,
+      reason: 'Text contains invalid content between curly braces. Only {paramX} is allowed. $text',
+    );
   }
 }
 

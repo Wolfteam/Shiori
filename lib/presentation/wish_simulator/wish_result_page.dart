@@ -23,7 +23,8 @@ class WishResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => Injection.wishSimulatorResultBloc..add(WishSimulatorResultEvent.init(bannerIndex: index, pulls: qty, period: period)),
+      create: (context) =>
+          Injection.wishSimulatorResultBloc..add(WishSimulatorResultEvent.init(bannerIndex: index, pulls: qty, period: period)),
       child: Scaffold(
         body: SafeArea(
           child: Ink(
@@ -63,28 +64,28 @@ class WishResultPage extends StatelessWidget {
                         alignment: Alignment.center,
                         margin: Styles.edgeInsetHorizontal16,
                         child: BlocBuilder<WishSimulatorResultBloc, WishSimulatorResultState>(
-                          builder: (context, state) => state.maybeMap(
-                            loaded: (state) => ListView.builder(
+                          builder: (context, state) => switch (state) {
+                            WishSimulatorResultStateLoading() => const Loading(useScaffold: false),
+                            WishSimulatorResultStateLoaded() => ListView.builder(
                               shrinkWrap: true,
                               itemCount: state.results.length,
                               scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) => state.results[index].map(
-                                character: (char) => WishResultItem.character(
+                              itemBuilder: (context, index) => switch (state.results[index]) {
+                                final WishSimulatorBannerCharacterResultModel char => WishResultItem.character(
                                   itemKey: char.key,
                                   image: char.image,
                                   rarity: char.rarity,
                                   elementType: char.elementType,
                                 ),
-                                weapon: (weapon) => WishResultItem.weapon(
+                                final WishSimulatorBannerWeaponResultModel weapon => WishResultItem.weapon(
                                   itemKey: weapon.key,
                                   image: weapon.image,
                                   rarity: weapon.rarity,
                                   weaponType: weapon.weaponType,
                                 ),
-                              ),
+                              },
                             ),
-                            orElse: () => const Loading(useScaffold: false),
-                          ),
+                          },
                         ),
                       ),
                     ),

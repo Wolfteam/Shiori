@@ -1,8 +1,9 @@
 part of 'weapon_bloc.dart';
 
 @freezed
-class WeaponState with _$WeaponState {
-  const factory WeaponState.loading() = _LoadingState;
+sealed class WeaponState with _$WeaponState {
+  const factory WeaponState.loading() = WeaponStateLoading;
+
   const factory WeaponState.loaded({
     required String key,
     required String name,
@@ -20,5 +21,5 @@ class WeaponState with _$WeaponState {
     required List<ItemCommonWithName> characters,
     required List<WeaponFileStatModel> stats,
     required List<ItemCommonWithQuantityAndName> craftingMaterials,
-  }) = _LoadedState;
+  }) = WeaponStateLoaded;
 }

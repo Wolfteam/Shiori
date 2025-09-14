@@ -6,7 +6,7 @@ part 'element_reaction_file_model.freezed.dart';
 part 'element_reaction_file_model.g.dart';
 
 @freezed
-class ElementReactionFileModel with _$ElementReactionFileModel {
+abstract class ElementReactionFileModel with _$ElementReactionFileModel {
   List<String> get principalImages => principal.map((e) => Assets.getElementPathFromType(e)).toList();
 
   List<String> get secondaryImages => secondary.map((e) => Assets.getElementPathFromType(e)).toList();

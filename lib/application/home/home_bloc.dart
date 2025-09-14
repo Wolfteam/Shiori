@@ -17,21 +17,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final SettingsService _settingsService;
   final LocaleService _localeService;
 
-  HomeBloc(this._genshinService, this._settingsService, this._localeService) : super(const HomeState.loading()) {
-    on<HomeEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  HomeBloc(this._genshinService, this._settingsService, this._localeService) : super(const HomeState.loading());
 
-  Future<void> _mapEventToState(HomeEvent event, Emitter<HomeState> emit) async {
-    final s = event.when(
-      init: () {
+  @override
+  Stream<HomeState> mapEventToState(HomeEvent event) async* {
+    switch (event) {
+      case HomeEventInit():
         final date = _genshinService.getServerDate(_settingsService.serverResetTime);
         final day = date.weekday;
-        return _buildInitialState(day);
-      },
-      dayChanged: (newDay) => _buildInitialState(newDay),
-    );
-
-    emit(s);
+        yield _buildInitialState(day);
+      case HomeEventDayChanged():
+        yield _buildInitialState(event.newDay);
+    }
   }
 
   HomeState _buildInitialState(int day) {

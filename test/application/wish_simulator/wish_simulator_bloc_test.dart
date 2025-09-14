@@ -93,13 +93,16 @@ void main() {
     'Init',
     build: () => WishSimulatorBloc(genshinService, resourceService, telemetryService),
     act: (bloc) => bloc..add(const WishSimulatorEvent.init()),
-    verify: (bloc) => bloc.state.maybeMap(
-      loaded: (state) {
-        final version = genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.desc).first;
-        checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
-      },
-      orElse: () => throw Exception('Invalid state'),
-    ),
+    verify: (bloc) {
+      final state = bloc.state;
+      switch (state) {
+        case WishSimulatorStateLoading():
+          throw Exception('Invalid state');
+        case WishSimulatorStateLoaded():
+          final version = genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.desc).first;
+          checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
+      }
+    },
   );
 
   group('Period changed', () {
@@ -108,7 +111,9 @@ void main() {
       build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const WishSimulatorEvent.init())
-        ..add(WishSimulatorEvent.periodChanged(version: 0, from: DateTime.now(), until: DateTime.now().add(const Duration(days: 3)))),
+        ..add(
+          WishSimulatorEvent.periodChanged(version: 0, from: DateTime.now(), until: DateTime.now().add(const Duration(days: 3))),
+        ),
       errors: () => [isA<Exception>()],
     );
 
@@ -131,12 +136,15 @@ void main() {
           ..add(const WishSimulatorEvent.init())
           ..add(WishSimulatorEvent.periodChanged(version: version, from: banner.from, until: banner.until));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case WishSimulatorStateLoading():
+            throw Exception('Invalid state');
+          case WishSimulatorStateLoaded():
+            checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
+        }
+      },
     );
   });
 
@@ -162,12 +170,21 @@ void main() {
           ..add(WishSimulatorEvent.periodChanged(version: version, from: banner.from, until: banner.until))
           ..add(const WishSimulatorEvent.bannerSelected(index: bannerIndex));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period, expectedSelectedBannerIndex: bannerIndex);
-        },
-        orElse: () => throw Exception('Invalid state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case WishSimulatorStateLoading():
+            throw Exception('Invalid state');
+          case WishSimulatorStateLoaded():
+            checkState(
+              version,
+              state.wishIconImage,
+              state.selectedBannerIndex,
+              state.period,
+              expectedSelectedBannerIndex: bannerIndex,
+            );
+        }
+      },
     );
   });
 }

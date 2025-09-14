@@ -33,7 +33,7 @@ class GroupedBannerPeriod extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ColoredBox(
-          color: theme.colorScheme.primary.withOpacity(0.5),
+          color: theme.colorScheme.primary.withValues(alpha: 0.5),
           child: Container(
             margin: const EdgeInsets.only(left: 5),
             child: count != null
@@ -99,6 +99,9 @@ class GroupedBannerPeriod extends StatelessWidget {
       Navigator.pop(context, part);
       return Future.value();
     }
-    return showDialog(context: context, builder: (context) => BannerVersionHistoryDialog(version: part.version));
+    return showDialog(
+      context: context,
+      builder: (context) => BannerVersionHistoryDialog(version: part.version),
+    );
   }
 }

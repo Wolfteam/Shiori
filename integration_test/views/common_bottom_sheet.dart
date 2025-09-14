@@ -6,6 +6,7 @@ import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import 'base_page.dart';
 
 class CommonBottomSheet extends BasePage {
@@ -90,7 +91,7 @@ class CommonBottomSheet extends BasePage {
   Future<CommonBottomSheet> doVerticalScroll(Finder matching) async {
     final Finder scrollView = find.ancestor(of: find.byType(BottomSheetTitle), matching: find.byType(SingleChildScrollView));
     expect(scrollView, findsOneWidget);
-    await tester.dragUntilVisible(
+    await tester.doAppDragUntilVisible(
       find.descendant(of: scrollView, matching: matching.first),
       scrollView,
       BasePage.verticalDragOffset,

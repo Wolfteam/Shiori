@@ -1,6 +1,6 @@
 part of 'artifact_bloc.dart';
 
 @freezed
-class ArtifactEvent with _$ArtifactEvent {
-  const factory ArtifactEvent.loadFromKey({required String key}) = _LoadArtifact;
+sealed class ArtifactEvent with _$ArtifactEvent {
+  const factory ArtifactEvent.loadFromKey({required String key}) = ArtifactEventLoad;
 }

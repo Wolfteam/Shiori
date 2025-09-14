@@ -36,32 +36,25 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     this._genshinService,
     this._settingsService,
     this._deviceInfoService,
-  ) : super(_initialState) {
-    on<GameCodesEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ) : super(_initialState);
 
-  Future<void> _mapEventToState(GameCodesEvent event, Emitter<GameCodesState> emit) async {
-    if (event is _Refresh) {
-      final isInternetAvailable = await _networkService.isInternetAvailable();
-      if (!isInternetAvailable) {
-        emit(state.copyWith.call(isInternetAvailable: false));
-        emit(state.copyWith.call(isInternetAvailable: null));
-        return;
-      }
-      emit(_initialState.copyWith.call(isBusy: true));
-    }
-
-    final s = await event.maybeWhen(
-      init: () async => _init(),
-      markAsUsed: (code, wasUsed) async => _markAsUsed(code, wasUsed),
-      refresh: () async => _refresh(),
-      orElse: () async => _initialState,
-    );
-
-    emit(s);
-
-    if (s.unknownErrorOccurred == true || s.isBusy) {
-      emit(s.copyWith(unknownErrorOccurred: false, isBusy: false));
+  @override
+  Stream<GameCodesState> mapEventToState(GameCodesEvent event) async* {
+    switch (event) {
+      case GameCodesEventInit():
+        yield await _init();
+      case GameCodesEventMarkAsUsed():
+        yield await _markAsUsed(event.code, event.wasUsed);
+      case GameCodesEventRefresh():
+        final isInternetAvailable = await _networkService.isInternetAvailable();
+        if (!isInternetAvailable) {
+          yield state.copyWith.call(isInternetAvailable: false);
+          yield state.copyWith.call(isInternetAvailable: null);
+          return;
+        }
+        yield state.copyWith(isBusy: true);
+        yield await _refresh();
+        yield state.copyWith(unknownErrorOccurred: false, isBusy: false);
     }
   }
 

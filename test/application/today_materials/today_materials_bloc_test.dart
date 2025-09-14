@@ -38,19 +38,24 @@ void main() {
     build: () => TodayMaterialsBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const TodayMaterialsEvent.init()),
     verify: (bloc) {
-      bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      final state = bloc.state;
+      switch (state) {
+        case TodayMaterialsStateLoading():
+          throw Exception('Invalid state');
+        case TodayMaterialsStateLoaded():
           expect(state.charAscMaterials, isNotEmpty);
           expect(state.weaponAscMaterials, isNotEmpty);
           expect(state.charAscMaterials, isNotEmpty);
-          final items = state.charAscMaterials.expand((el) => el.characters).toList() + state.weaponAscMaterials.expand((el) => el.weapons).toList();
+          final items =
+              state.charAscMaterials.expand((el) => el.characters).toList() +
+              state.weaponAscMaterials.expand((el) => el.weapons).toList();
           checkItemsCommonWithName(items);
 
-          final days = (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList()).toSet();
+          final days =
+              (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList())
+                  .toSet();
           expect(days.length, TodayMaterialsBloc.days.length);
-        },
-      );
+      }
     },
   );
 }

@@ -1,12 +1,12 @@
 part of 'wish_simulator_bloc.dart';
 
 @freezed
-class WishSimulatorState with _$WishSimulatorState {
-  const factory WishSimulatorState.loading() = _LoadingState;
+sealed class WishSimulatorState with _$WishSimulatorState {
+  const factory WishSimulatorState.loading() = WishSimulatorStateLoading;
 
   const factory WishSimulatorState.loaded({
     required String wishIconImage,
     required int selectedBannerIndex,
     required WishSimulatorBannerItemsPerPeriodModel period,
-  }) = _LoadedState;
+  }) = WishSimulatorStateLoaded;
 }

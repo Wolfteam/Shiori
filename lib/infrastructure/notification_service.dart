@@ -34,7 +34,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   try {
     //This may fail if there's an instance already registered
     await Injection.init();
-  } catch (_, __) {
+  } catch (_) {
     //No op
   }
 
@@ -78,7 +78,12 @@ class NotificationServiceImpl implements NotificationService {
       _loggingService.info(runtimeType, 'init: ${e.msg}, assigning the generic one...');
       _setDefaultTimeZone();
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...', e, s);
+      _loggingService.error(
+        runtimeType,
+        'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...',
+        e,
+        s,
+      );
       _setDefaultTimeZone();
     }
 
@@ -166,7 +171,9 @@ class NotificationServiceImpl implements NotificationService {
     }
     //Due to changes starting from android 14, we need to request for special permissions...
     if (Platform.isAndroid) {
-      final bool? granted = await _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!.requestExactAlarmsPermission();
+      final bool? granted = await _flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
+          .requestExactAlarmsPermission();
 
       if (granted == null || !granted) {
         return;
@@ -187,7 +194,6 @@ class NotificationServiceImpl implements NotificationService {
       body,
       scheduledDate,
       specifics,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       payload: payload,
     );
@@ -212,8 +218,18 @@ class NotificationServiceImpl implements NotificationService {
       largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
       tag: _getTagFromNotificationType(type),
     );
-    const iOS = DarwinNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
-    const macOS = DarwinNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
+    const iOS = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+      threadIdentifier: _channelId,
+    );
+    const macOS = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+      threadIdentifier: _channelId,
+    );
 
     return NotificationDetails(android: android, iOS: iOS, macOS: macOS);
   }
@@ -277,7 +293,9 @@ class NotificationServiceImpl implements NotificationService {
     }
 
     //Android does not show notifications if the app is in the foreground, that's why we manually create one
-    final bool hasTitleAndBody = (message.notification?.title.isNotNullEmptyOrWhitespace ?? false) && (message.notification?.body.isNotNullEmptyOrWhitespace ?? false);
+    final bool hasTitleAndBody =
+        (message.notification?.title.isNotNullEmptyOrWhitespace ?? false) &&
+        (message.notification?.body.isNotNullEmptyOrWhitespace ?? false);
     if (!show || !hasTitleAndBody) {
       return;
     }
@@ -292,7 +310,7 @@ class NotificationServiceImpl implements NotificationService {
     return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
   }
 
-  Future<void> _onTokenRefresh(String deviceToken) async {
+  Future<void> _onTokenRefresh(String deviceToken) {
     if (_settingsService.pushNotificationsToken != deviceToken) {
       _settingsService.pushNotificationsToken = deviceToken;
       _settingsService.mustRegisterPushNotificationsToken = true;
@@ -304,8 +322,6 @@ class NotificationServiceImpl implements NotificationService {
     switch (type) {
       case AppPushNotificationType.newGameCodesAvailable:
         _settingsService.lastGameCodesCheckedDate = null;
-      default:
-        break;
     }
   }
 }

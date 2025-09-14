@@ -12,39 +12,37 @@ class TodayMaterialsPage extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return BlocBuilder<TodayMaterialsBloc, TodayMaterialsState>(
-      builder: (context, state) {
-        return state.when(
-          loading: () => const Loading(),
-          loaded: (charsMaterials, weaponMaterials) => Scaffold(
-            appBar: AppBar(title: Text(s.materials)),
-            body: SafeArea(
-              child: CustomScrollView(
-                slivers: [
-                  SliverPadding(
-                    padding: const EdgeInsets.only(left: 10, top: 10),
-                    sliver: SliverToBoxAdapter(
-                      child: Text(
-                        s.forCharacters,
-                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                      ),
+      builder: (context, state) => switch (state) {
+        TodayMaterialsStateLoading() => const Loading(),
+        TodayMaterialsStateLoaded() => Scaffold(
+          appBar: AppBar(title: Text(s.materials)),
+          body: SafeArea(
+            child: CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.only(left: 10, top: 10),
+                  sliver: SliverToBoxAdapter(
+                    child: Text(
+                      s.forCharacters,
+                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SliverCharacterAscensionMaterials(charAscMaterials: charsMaterials, useListView: false),
-                  SliverPadding(
-                    padding: const EdgeInsets.only(left: 10, top: 10),
-                    sliver: SliverToBoxAdapter(
-                      child: Text(
-                        s.forWeapons,
-                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                      ),
+                ),
+                SliverCharacterAscensionMaterials(charAscMaterials: state.charAscMaterials, useListView: false),
+                SliverPadding(
+                  padding: const EdgeInsets.only(left: 10, top: 10),
+                  sliver: SliverToBoxAdapter(
+                    child: Text(
+                      s.forWeapons,
+                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SliverWeaponAscensionMaterials(weaponAscMaterials: weaponMaterials, useListView: false),
-                ],
-              ),
+                ),
+                SliverWeaponAscensionMaterials(weaponAscMaterials: state.weaponAscMaterials, useListView: false),
+              ],
             ),
           ),
-        );
+        ),
       },
     );
   }

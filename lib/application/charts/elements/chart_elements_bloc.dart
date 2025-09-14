@@ -15,37 +15,29 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   final List<double> versions;
 
   ChartElementsBloc(this._genshinService)
-      : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
-        super(const ChartElementsState.loading()) {
-    on<ChartElementsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+    : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
+      super(const ChartElementsState.loading());
 
-  Future<void> _mapEventToState(ChartElementsEvent event, Emitter<ChartElementsState> emit) async {
-    final s = event.map(
-      init: (e) => _init(e.maxNumberOfColumns),
-      elementSelected: (e) => state.maybeMap(
-        loaded: (state) => _elementSelectionChanged(state, e.type),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToNextPage: (e) => state.maybeMap(
-        loaded: _goToNextPage,
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToPreviousPage: (e) => state.maybeMap(
-        loaded: _goToPreviousPage,
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToFirstPage: (e) => state.maybeMap(
-        loaded: (state) => _goToFirstOrLastPage(state, true),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-      goToLastPage: (e) => state.maybeMap(
-        loaded: (state) => _goToFirstOrLastPage(state, false),
-        orElse: () => throw Exception('Invalid state'),
-      ),
-    );
+  @override
+  Stream<ChartElementsState> mapEventToState(ChartElementsEvent event) async* {
+    if (event is! ChartElementsEventInit && state is! ChartElementsStateLoaded) {
+      throw Exception('Invalid state');
+    }
 
-    emit(s);
+    switch (event) {
+      case ChartElementsEventInit():
+        yield _init(event.maxNumberOfColumns);
+      case ChartElementsEventElementSelected():
+        yield _elementSelectionChanged(state as ChartElementsStateLoaded, event.type);
+      case ChartElementsEventGoToNextPage():
+        yield _goToNextPage(state as ChartElementsStateLoaded);
+      case ChartElementsEventGoToPreviousPage():
+        yield _goToPreviousPage(state as ChartElementsStateLoaded);
+      case ChartElementsEventGoToFirstPage():
+        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, true);
+      case ChartElementsEventGoToLastPage():
+        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, false);
+    }
   }
 
   //Some versions were skipped (e.g: 1.7, 1.8, 1.9), that's why we use this function
@@ -78,7 +70,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     );
   }
 
-  ChartElementsState _elementSelectionChanged(_LoadedState state, ElementType type) {
+  ChartElementsState _elementSelectionChanged(ChartElementsStateLoaded state, ElementType type) {
     final selectedTypes = [...state.selectedElementTypes];
     if (selectedTypes.contains(type)) {
       selectedTypes.remove(type);
@@ -86,7 +78,10 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       selectedTypes.add(type);
     }
 
-    return state.copyWith(selectedElementTypes: selectedTypes, filteredElements: _getFilteredElements(state.elements, selectedTypes));
+    return state.copyWith(
+      selectedElementTypes: selectedTypes,
+      filteredElements: _getFilteredElements(state.elements, selectedTypes),
+    );
   }
 
   List<ChartElementItemModel> _getFilteredElements(List<ChartElementItemModel> elements, List<ElementType> selectedTypes) =>
@@ -94,7 +89,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   double _getStep(int maxNumberOfColumns) => maxNumberOfColumns * gameVersionIncrementsBy;
 
-  ChartElementsState _goToFirstOrLastPage(_LoadedState state, bool toFirstPage) {
+  ChartElementsState _goToFirstOrLastPage(ChartElementsStateLoaded state, bool toFirstPage) {
     final firstVersion = versions.first;
     if (toFirstPage) {
       return _newVersionChanged(state, firstVersion);
@@ -104,7 +99,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, fromVersion);
   }
 
-  ChartElementsState _goToNextPage(_LoadedState state) {
+  ChartElementsState _goToNextPage(ChartElementsStateLoaded state) {
     if (!_canGoToNextPage(state.lastVersion)) {
       throw Exception('Cannot go to the next page');
     }
@@ -112,7 +107,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, newVersion);
   }
 
-  ChartElementsState _goToPreviousPage(_LoadedState state) {
+  ChartElementsState _goToPreviousPage(ChartElementsStateLoaded state) {
     if (!_canGoToPreviousPage(state.firstVersion)) {
       throw Exception('Cannot go to the previous page');
     }
@@ -120,7 +115,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, newVersion);
   }
 
-  ChartElementsState _newVersionChanged(_LoadedState state, double newFirstVersion) {
+  ChartElementsState _newVersionChanged(ChartElementsStateLoaded state, double newFirstVersion) {
     final step = _getStep(state.maxNumberOfColumns);
     double newLastVersion = (newFirstVersion + step).truncateToDecimalPlaces();
 

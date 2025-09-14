@@ -1,5 +1,9 @@
 include: package:lint/strict.yaml
 
+formatter:
+  page_width: 130
+  trailing_commas: preserve
+
 linter:
   rules:
     prefer_single_quotes: true
@@ -18,3 +22,4 @@ analyzer:
     - '**/shiori_icons.dart'
   errors:
     missing_return: error
+    invalid_annotation_target: ignore

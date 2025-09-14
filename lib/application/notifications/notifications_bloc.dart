@@ -21,19 +21,23 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final SettingsService _settingsService;
   final TelemetryService _telemetryService;
 
-  NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService) : super(_initialState) {
-    on<NotificationsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService)
+    : super(_initialState);
 
-  Future<void> _mapEventToState(NotificationsEvent event, Emitter<NotificationsState> emit) async {
-    final s = await event.map(
-      init: (_) async => _buildInitialState(),
-      delete: (e) async => _deleteNotification(e.id, e.type),
-      reset: (e) async => _resetNotification(e.id, e.type),
-      stop: (e) async => _stopNotification(e.id, e.type),
-      reduceHours: (e) async => _reduceHours(e.id, e.type, e.hoursToReduce),
-    );
-    emit(s);
+  @override
+  Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
+    switch (event) {
+      case NotificationsEventInit():
+        yield _buildInitialState();
+      case NotificationsEventDelete():
+        yield await _deleteNotification(event.id, event.type);
+      case NotificationsEventReset():
+        yield await _resetNotification(event.id, event.type);
+      case NotificationsEventStop():
+        yield await _stopNotification(event.id, event.type);
+      case NotificationsEventReduceHour():
+        yield await _reduceHours(event.id, event.type, event.hoursToReduce);
+    }
   }
 
   NotificationsState _buildInitialState() {

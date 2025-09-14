@@ -1,8 +1,8 @@
 part of 'wish_banner_history_bloc.dart';
 
 @freezed
-class WishBannerHistoryState with _$WishBannerHistoryState {
-  const factory WishBannerHistoryState.loading() = _LoadingState;
+sealed class WishBannerHistoryState with _$WishBannerHistoryState {
+  const factory WishBannerHistoryState.loading() = WishBannerHistoryStateLoading;
 
   const factory WishBannerHistoryState.loaded({
     required List<WishBannerHistoryGroupedPeriodModel> allPeriods,
@@ -10,5 +10,5 @@ class WishBannerHistoryState with _$WishBannerHistoryState {
     required SortDirectionType sortDirectionType,
     required WishBannerGroupedType groupedType,
     @Default(<String>[]) List<String> selectedItemKeys,
-  }) = _LoadedState;
+  }) = WishBannerHistoryStateLoaded;
 }

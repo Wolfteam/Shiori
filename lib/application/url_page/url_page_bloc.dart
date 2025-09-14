@@ -27,26 +27,22 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
     this._telemetryService,
     this._deviceInfoService,
     this._settingsService,
-  ) : super(const UrlPageState.loading()) {
-    on<UrlPageEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ) : super(const UrlPageState.loading());
 
-  Future<void> _mapEventToState(UrlPageEvent event, Emitter<UrlPageState> emit) async {
-    final s = await event.map(
-      init: (e) async {
+  @override
+  Stream<UrlPageState> mapEventToState(UrlPageEvent event) async* {
+    switch (event) {
+      case UrlPageEventInit():
         final finalMapUrl = _settingsService.useOfficialMap ? _getMapUrl() : unofficialMapUrl;
         final isInternetAvailable = await _networkService.isInternetAvailable();
-        await _telemetryService.trackUrlOpened(e.loadMap, e.loadDailyCheckIn, isInternetAvailable);
-        return UrlPageState.loaded(
+        await _telemetryService.trackUrlOpened(event.loadMap, event.loadDailyCheckIn, isInternetAvailable);
+        yield UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: finalMapUrl,
           dailyCheckInUrl: _getDailyCheckInUrl(),
           userAgent: _deviceInfoService.userAgent ?? '',
         );
-      },
-    );
-
-    emit(s);
+    }
   }
 
   String _getDailyCheckInUrl() {

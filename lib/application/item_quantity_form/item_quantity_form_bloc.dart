@@ -10,22 +10,18 @@ part 'item_quantity_form_state.dart';
 const _defaultState = ItemQuantityFormState.loaded(quantity: 0, isQuantityDirty: false, isQuantityValid: true);
 
 class ItemQuantityFormBloc extends Bloc<ItemQuantityFormEvent, ItemQuantityFormState> {
-  ItemQuantityFormBloc() : super(_defaultState) {
-    on<ItemQuantityFormEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ItemQuantityFormBloc() : super(_defaultState);
 
   static int maxQuantity = 9999999999;
 
-  Future<void> _mapEventToState(ItemQuantityFormEvent event, Emitter<ItemQuantityFormState> emit) async {
-    final s = event.map(
-      quantityChanged: (e) {
-        final isValid = e.quantity >= 0 && e.quantity <= maxQuantity;
-        final isDirty = e.quantity != state.quantity;
+  @override
+  Stream<ItemQuantityFormState> mapEventToState(ItemQuantityFormEvent event) async* {
+    switch (event) {
+      case ItemQuantityFormEventQuantityChange():
+        final isValid = event.quantity >= 0 && event.quantity <= maxQuantity;
+        final isDirty = event.quantity != state.quantity;
 
-        return state.copyWith.call(quantity: e.quantity, isQuantityDirty: isDirty, isQuantityValid: isValid);
-      },
-    );
-
-    emit(s);
+        yield state.copyWith.call(quantity: event.quantity, isQuantityDirty: isDirty, isQuantityValid: isValid);
+    }
   }
 }

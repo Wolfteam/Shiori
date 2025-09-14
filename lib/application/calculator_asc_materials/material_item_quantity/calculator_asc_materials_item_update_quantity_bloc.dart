@@ -14,30 +14,28 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
   final TelemetryService _telemetryService;
 
   CalculatorAscMaterialsItemUpdateQuantityBloc(this._dataService, this._telemetryService)
-      : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading()) {
-    on<CalculatorAscMaterialsItemUpdateQuantityEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+    : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading());
 
-  Future<void> _mapEventToState(
+  @override
+  Stream<CalculatorAscMaterialsItemUpdateQuantityState> mapEventToState(
     CalculatorAscMaterialsItemUpdateQuantityEvent event,
-    Emitter<CalculatorAscMaterialsItemUpdateQuantityState> emit,
-  ) async {
-    final s = await event.map(
-      load: (e) async {
-        final int quantity = _dataService.inventory.getItemQuantityFromInventory(e.key, ItemType.material);
-        return CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: e.key, quantity: quantity);
-      },
-      update: (e) async {
-        await _updateMaterialQuantity(e.key, e.quantity);
-        return CalculatorAscMaterialsItemUpdateQuantityState.saved(key: e.key, quantity: e.quantity);
-      },
-    );
-
-    emit(s);
+  ) async* {
+    switch (event) {
+      case CalculatorAscMaterialsItemUpdateQuantityEventLoad():
+        final int quantity = _dataService.inventory.getItemQuantityFromInventory(event.key, ItemType.material);
+        yield CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: event.key, quantity: quantity);
+      case CalculatorAscMaterialsItemUpdateQuantityEventUpdate():
+        await _updateMaterialQuantity(event.key, event.quantity);
+        yield CalculatorAscMaterialsItemUpdateQuantityState.saved(key: event.key, quantity: event.quantity);
+    }
   }
 
   Future<void> _updateMaterialQuantity(String key, int quantity) async {
     await _telemetryService.trackItemUpdatedInInventory(key, quantity);
-    await _dataService.inventory.addMaterialToInventory(key, quantity, redistribute: _dataService.calculator.redistributeInventoryMaterial);
+    await _dataService.inventory.addMaterialToInventory(
+      key,
+      quantity,
+      redistribute: _dataService.calculator.redistributeInventoryMaterial,
+    );
   }
 }

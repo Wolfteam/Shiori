@@ -23,7 +23,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   final DataService _dataService;
   final ResourceService _resourceService;
 
-  _InitialState get currentState => state as _InitialState;
+  CalculatorAscMaterialsStateInitial get currentState => state as CalculatorAscMaterialsStateInitial;
 
   CalculatorAscMaterialsBloc(
     this._genshinService,
@@ -31,23 +31,28 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._calculatorService,
     this._dataService,
     this._resourceService,
-  ) : super(_initialState) {
-    on<CalculatorAscMaterialsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ) : super(_initialState);
 
-  Future<void> _mapEventToState(CalculatorAscMaterialsEvent event, Emitter<CalculatorAscMaterialsState> emit) async {
-    final s = await event.map(
-      init: (e) async => _init(e.sessionKey),
-      addCharacter: (e) async => _addCharacter(e),
-      addWeapon: (e) async => _addWeapon(e),
-      removeItem: (e) async => _removeItem(e),
-      updateCharacter: (e) async => _updateCharacter(e),
-      updateWeapon: (e) async => _updateWeapon(e),
-      clearAllItems: (e) async => _clearAllItems(e.sessionKey),
-      itemsReordered: (e) async => _itemsReordered(e.updated),
-    );
-
-    emit(s);
+  @override
+  Stream<CalculatorAscMaterialsState> mapEventToState(CalculatorAscMaterialsEvent event) async* {
+    switch (event) {
+      case CalculatorAscMaterialsEventInit():
+        yield _init(event.sessionKey);
+      case CalculatorAscMaterialsEventAddCharacter():
+        yield await _addCharacter(event);
+      case CalculatorAscMaterialsEventUpdateCharacter():
+        yield await _updateCharacter(event);
+      case CalculatorAscMaterialsEventAddWeapon():
+        yield await _addWeapon(event);
+      case CalculatorAscMaterialsEventUpdateWeapon():
+        yield await _updateWeapon(event);
+      case CalculatorAscMaterialsEventRemoveItem():
+        yield await _removeItem(event);
+      case CalculatorAscMaterialsEventClearAllItems():
+        yield await _clearAllItems(event.sessionKey);
+      case CalculatorAscMaterialsEventItemsReordered():
+        yield await _itemsReordered(event.updated);
+    }
   }
 
   CalculatorAscMaterialsState _init(int sessionKey) {
@@ -55,10 +60,15 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     final items = _dataService.calculator.getAllSessionItems(sessionKey);
     final materialsForSummary = _buildMaterialsForSummary(items);
     final summary = _calculatorService.generateSummary(materialsForSummary);
-    return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: items, summary: summary, showMaterialUsage: session.showMaterialUsage);
+    return CalculatorAscMaterialsState.initial(
+      sessionKey: sessionKey,
+      items: items,
+      summary: summary,
+      showMaterialUsage: session.showMaterialUsage,
+    );
   }
 
-  Future<CalculatorAscMaterialsState> _addCharacter(_AddCharacter e) async {
+  Future<CalculatorAscMaterialsState> _addCharacter(CalculatorAscMaterialsEventAddCharacter e) async {
     _checkSessionKey(e.sessionKey);
     _checkKeyNotInSession(e.key, true);
     _checkLevels(e.currentLevel, e.desiredLevel);
@@ -96,7 +106,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     return _init(e.sessionKey);
   }
 
-  Future<CalculatorAscMaterialsState> _addWeapon(_AddWeapon e) async {
+  Future<CalculatorAscMaterialsState> _addWeapon(CalculatorAscMaterialsEventAddWeapon e) async {
     _checkSessionKey(e.sessionKey);
     _checkKeyNotInSession(e.key, false);
     _checkLevels(e.currentLevel, e.desiredLevel);
@@ -129,7 +139,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     return _init(e.sessionKey);
   }
 
-  Future<CalculatorAscMaterialsState> _removeItem(_RemoveItem e) async {
+  Future<CalculatorAscMaterialsState> _removeItem(CalculatorAscMaterialsEventRemoveItem e) async {
     _checkSessionKey(e.sessionKey);
     _checkItemIndex(e.index);
 
@@ -138,7 +148,10 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     //this item
     final itemToDelete = itemsToLoop.elementAt(e.index);
     final itemPosition = itemToDelete.position;
-    final possibleMaterialItemKeys = _calculatorService.getAllPossibleMaterialKeysToUse(itemToDelete.key, itemToDelete.isCharacter);
+    final possibleMaterialItemKeys = _calculatorService.getAllPossibleMaterialKeysToUse(
+      itemToDelete.key,
+      itemToDelete.isCharacter,
+    );
     itemsToLoop.removeAt(e.index);
 
     await _dataService.calculator.deleteSessionItem(e.sessionKey, itemPosition, redistribute: false);
@@ -148,11 +161,14 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       await _dataService.calculator.updateSessionItem(e.sessionKey, i, item, [], redistribute: false);
     }
 
-    await _dataService.calculator.redistributeInventoryMaterialsFromSessionPosition(e.sessionKey, onlyMaterialKeys: possibleMaterialItemKeys);
+    await _dataService.calculator.redistributeInventoryMaterialsFromSessionPosition(
+      e.sessionKey,
+      onlyMaterialKeys: possibleMaterialItemKeys,
+    );
     return _init(e.sessionKey);
   }
 
-  Future<CalculatorAscMaterialsState> _updateCharacter(_UpdateCharacter e) {
+  Future<CalculatorAscMaterialsState> _updateCharacter(CalculatorAscMaterialsEventUpdateCharacter e) {
     _checkSessionKey(e.sessionKey);
     _checkItemIndex(e.index);
     _checkLevels(e.currentLevel, e.desiredLevel);
@@ -187,7 +203,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     return _updateItem(e.sessionKey, e.index, updatedChar, allPossibleMaterialKeys);
   }
 
-  Future<CalculatorAscMaterialsState> _updateWeapon(_UpdateWeapon e) {
+  Future<CalculatorAscMaterialsState> _updateWeapon(CalculatorAscMaterialsEventUpdateWeapon e) {
     _checkSessionKey(e.sessionKey);
     _checkItemIndex(e.index);
     _checkLevels(e.currentLevel, e.desiredLevel);

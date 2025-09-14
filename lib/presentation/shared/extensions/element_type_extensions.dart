@@ -31,10 +31,8 @@ extension ElementTypeExtensions on ElementType {
         color = useDarkColors ? const Color.fromARGB(alpha, 4, 179, 241) : const Color.fromARGB(alpha, 4, 225, 250);
       case ElementType.pyro:
         color = useDarkColors ? const Color.fromARGB(alpha, 243, 124, 35) : const Color.fromARGB(alpha, 249, 163, 104);
-      default:
-        throw Exception('Invalid element type = $this');
     }
 
-    return useDarkColors ? color : color.withOpacity(0.5);
+    return useDarkColors ? color : color.withValues(alpha: 0.5);
   }
 }

@@ -10,24 +10,19 @@ part 'custom_builds_state.dart';
 class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
   final DataService _dataService;
 
-  CustomBuildsBloc(this._dataService) : super(const CustomBuildsState.loaded()) {
-    on<CustomBuildsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  CustomBuildsBloc(this._dataService) : super(const CustomBuildsState.loaded());
 
-  Future<void> _mapEventToState(CustomBuildsEvent event, Emitter<CustomBuildsState> emit) async {
-    final s = await event.map(
-      load: (_) async {
+  @override
+  Stream<CustomBuildsState> mapEventToState(CustomBuildsEvent event) async* {
+    switch (event) {
+      case CustomBuildsEventLoad():
         final builds = _dataService.customBuilds.getAllCustomBuilds();
-        return state.copyWith.call(builds: builds);
-      },
-      delete: (e) async {
-        await _dataService.customBuilds.deleteCustomBuild(e.key);
+        yield state.copyWith.call(builds: builds);
+      case CustomBuildsEventDelete():
+        await _dataService.customBuilds.deleteCustomBuild(event.key);
         final builds = [...state.builds];
-        builds.removeWhere((el) => el.key == e.key);
-        return state.copyWith.call(builds: builds);
-      },
-    );
-
-    emit(s);
+        builds.removeWhere((el) => el.key == event.key);
+        yield state.copyWith.call(builds: builds);
+    }
   }
 }

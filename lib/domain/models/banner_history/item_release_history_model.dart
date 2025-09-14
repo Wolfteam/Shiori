@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'item_release_history_model.freezed.dart';
 
 @freezed
-class ItemReleaseHistoryModel with _$ItemReleaseHistoryModel {
+abstract class ItemReleaseHistoryModel with _$ItemReleaseHistoryModel {
   const factory ItemReleaseHistoryModel({
     required double version,
     required List<ItemReleaseHistoryDatesModel> dates,
@@ -11,7 +11,7 @@ class ItemReleaseHistoryModel with _$ItemReleaseHistoryModel {
 }
 
 @freezed
-class ItemReleaseHistoryDatesModel with _$ItemReleaseHistoryDatesModel {
+abstract class ItemReleaseHistoryDatesModel with _$ItemReleaseHistoryDatesModel {
   const factory ItemReleaseHistoryDatesModel({
     required DateTime from,
     required DateTime until,

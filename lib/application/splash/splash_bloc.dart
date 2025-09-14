@@ -43,20 +43,19 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     this._networkService,
     LocaleService localeService,
   ) : _language = localeService.getLocaleWithoutLang(),
-      super(const SplashState.loading()) {
-    on<SplashEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+      super(const SplashState.loading());
 
-  Future<void> _mapEventToState(SplashEvent event, Emitter<SplashState> emit) async {
+  @override
+  Stream<SplashState> mapEventToState(SplashEvent event) async* {
     await _sendTelemetryData();
 
-    if (event is _Init) {
-      final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
-      //This is just to trigger a change in the ui
-      if (event.retry) {
-        const type = AppResourceUpdateResultType.retrying;
-        emit(
-          SplashState.loaded(
+    switch (event) {
+      case SplashEventInit():
+        final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
+        //This is just to trigger a change in the ui
+        if (event.retry) {
+          const type = AppResourceUpdateResultType.retrying;
+          yield SplashState.loaded(
             updateResultType: type,
             language: _language,
             noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
@@ -66,19 +65,17 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             canSkipUpdate: _canSkipUpdate(type),
             noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
             needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
-          ),
-        );
-        await Future.delayed(const Duration(seconds: 1));
-      }
+          );
+          await Future.delayed(const Duration(seconds: 1));
+        }
 
-      final skipCheck =
-          !noResourcesHasBeenDownloaded &&
-          !_settingsService.checkForUpdatesOnStartup &&
-          _settingsService.resourceVersion >= Env.minResourceVersion;
-      if (skipCheck) {
-        const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
-        emit(
-          SplashState.loaded(
+        final skipCheck =
+            !noResourcesHasBeenDownloaded &&
+            !_settingsService.checkForUpdatesOnStartup &&
+            _settingsService.resourceVersion >= Env.minResourceVersion;
+        if (skipCheck) {
+          const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
+          yield SplashState.loaded(
             updateResultType: resultType,
             language: _language,
             noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
@@ -88,16 +85,14 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             canSkipUpdate: _canSkipUpdate(resultType),
             noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
             needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
-          ),
-        );
-      }
+          );
+        }
 
-      final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
-      final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
-      final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
-      await _telemetryService.trackCheckForResourceUpdates(resultType);
-      emit(
-        SplashState.loaded(
+        final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
+        final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
+        final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
+        await _telemetryService.trackCheckForResourceUpdates(resultType);
+        yield SplashState.loaded(
           updateResultType: resultType,
           language: _language,
           result: result,
@@ -108,19 +103,14 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           canSkipUpdate: _canSkipUpdate(resultType),
           noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
           needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
-        ),
-      );
-      return;
-    }
+        );
+      case SplashEventApplyUpdate():
+        assert(state is SplashStateLoaded, 'The current state should be loaded');
+        final currentState = state as SplashStateLoaded;
+        assert(currentState.result != null, 'The update result must not be null');
 
-    if (event is _ApplyUpdate) {
-      assert(state is _LoadedState, 'The current state should be loaded');
-      final currentState = state as _LoadedState;
-      assert(currentState.result != null, 'The update result must not be null');
-
-      const type = AppResourceUpdateResultType.updating;
-      emit(
-        currentState.copyWith(
+        const type = AppResourceUpdateResultType.updating;
+        yield currentState.copyWith(
           updateResultType: type,
           isUpdating: _isUpdating(type),
           isLoading: _isLoading(type),
@@ -128,61 +118,52 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           canSkipUpdate: _canSkipUpdate(type),
           noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
           needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
-        ),
-      );
+        );
 
-      //the stream is required to avoid blocking the bloc
-      final result = currentState.result!;
-      final downloadStream =
-          _resourceService
-              .downloadAndApplyUpdates(
-                result.resourceVersion,
-                result.jsonFileKeyName,
-                keyNames: result.keyNames,
-                onProgress:
-                    (progress, downloadedBytes) =>
-                        add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
-              )
-              .asStream();
+        //the stream is required to avoid blocking the bloc
+        final result = currentState.result!;
+        final downloadStream = _resourceService
+            .downloadAndApplyUpdates(
+              result.resourceVersion,
+              result.jsonFileKeyName,
+              keyNames: result.keyNames,
+              onProgress: (progress, downloadedBytes) =>
+                  add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
+            )
+            .asStream();
 
-      await _downloadStream?.cancel();
-      _downloadStream = downloadStream.listen(
-        (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
-      );
-    }
+        await _downloadStream?.cancel();
+        _downloadStream = downloadStream.listen(
+          (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
+        );
+      case SplashEventProgressChanged():
+        assert(state is SplashStateLoaded, 'The current state should be loaded');
+        if (event.progress < 0) {
+          throw Exception('Invalid progress value');
+        }
 
-    if (event is _ProgressChanged) {
-      assert(state is _LoadedState, 'The current state should be loaded');
-      if (event.progress < 0) {
-        throw Exception('Invalid progress value');
-      }
+        final currentState = state as SplashStateLoaded;
+        final double progress = event.progress;
+        final int downloadedBytes = event.downloadedBytes;
+        final int downloadTotalSize = currentState.result!.downloadTotalSize!;
+        if (progress >= 100) {
+          yield currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize);
+          return;
+        }
 
-      final currentState = state as _LoadedState;
-      final double progress = event.progress;
-      final int downloadedBytes = event.downloadedBytes;
-      final int downloadTotalSize = currentState.result!.downloadTotalSize!;
-      if (progress >= 100) {
-        emit(currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize));
-        return;
-      }
-
-      final diff = (progress - currentState.progress).abs();
-      if (diff < 1) {
-        return;
-      }
-      emit(currentState.copyWith(progress: progress, downloadedBytes: downloadedBytes));
-    }
-
-    if (event is _UpdateCompleted) {
-      final appliedResult =
-          event.applied
-              ? AppResourceUpdateResultType.updated
-              : _settingsService.noResourcesHasBeenDownloaded
-              ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
-              : AppResourceUpdateResultType.unknownError;
-      await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
-      emit(
-        SplashState.loaded(
+        final diff = (progress - currentState.progress).abs();
+        if (diff < 1) {
+          return;
+        }
+        yield currentState.copyWith(progress: progress, downloadedBytes: downloadedBytes);
+      case SplashEventUpdateCompleted():
+        final appliedResult = event.applied
+            ? AppResourceUpdateResultType.updated
+            : _settingsService.noResourcesHasBeenDownloaded
+            ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
+            : AppResourceUpdateResultType.unknownError;
+        await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
+        yield SplashState.loaded(
           updateResultType: appliedResult,
           language: _language,
           progress: 100,
@@ -193,8 +174,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           canSkipUpdate: _canSkipUpdate(appliedResult),
           noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(appliedResult),
           needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(appliedResult),
-        ),
-      );
+        );
     }
   }
 

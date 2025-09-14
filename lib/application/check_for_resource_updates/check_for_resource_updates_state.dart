@@ -1,8 +1,8 @@
 part of 'check_for_resource_updates_bloc.dart';
 
 @freezed
-class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
-  const factory CheckForResourceUpdatesState.loading() = _LoadingState;
+sealed class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
+  const factory CheckForResourceUpdatesState.loading() = CheckForResourceUpdatesStateLoading;
 
   const factory CheckForResourceUpdatesState.loaded({
     required int currentResourceVersion,
@@ -10,5 +10,5 @@ class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
     AppResourceUpdateResultType? updateResultType,
     int? targetResourceVersion,
     int? downloadTotalSize,
-  }) = _LoadedState;
+  }) = CheckForResourceUpdatesStateLoaded;
 }

@@ -1,95 +1,95 @@
 part of 'notification_bloc.dart';
 
 @freezed
-class NotificationEvent with _$NotificationEvent {
+sealed class NotificationEvent with _$NotificationEvent {
   //Common
   const factory NotificationEvent.add({
     required String defaultTitle,
     required String defaultBody,
-  }) = _Add;
+  }) = NotificationEventAdd;
 
   const factory NotificationEvent.edit({
     required int key,
     required AppNotificationType type,
-  }) = _Edit;
+  }) = NotificationEventEdit;
 
   const factory NotificationEvent.typeChanged({
     required AppNotificationType newValue,
-  }) = _TypeChanged;
+  }) = NotificationEventTypeChanged;
 
   const factory NotificationEvent.titleChanged({
     required String newValue,
-  }) = _TitleChanged;
+  }) = NotificationEventTitleChanged;
 
   const factory NotificationEvent.bodyChanged({
     required String newValue,
-  }) = _BodyChanged;
+  }) = NotificationEventBodyChanged;
 
   const factory NotificationEvent.noteChanged({
     required String newValue,
-  }) = _NoteChanged;
+  }) = NotificationEventNoteChanged;
 
   const factory NotificationEvent.showNotificationChanged({
     required bool show,
-  }) = _ShowNotificationChanged;
+  }) = NotificationEventShowNotificationChanged;
 
   const factory NotificationEvent.showOtherImages({
     required bool show,
-  }) = _ShowOtherImages;
+  }) = NotificationEventShowOtherImages;
 
   const factory NotificationEvent.imageChanged({
     required String newValue,
-  }) = _ImageChanged;
+  }) = NotificationEventImageChanged;
 
-  const factory NotificationEvent.saveChanges() = _SaveChanges;
+  const factory NotificationEvent.saveChanges() = NotificationEventSaveChanges;
 
   //Resin specific
   const factory NotificationEvent.resinChanged({
     required int newValue,
-  }) = _ResinChanged;
+  }) = NotificationEventResinChanged;
 
   //Expedition specific
   const factory NotificationEvent.expeditionTimeTypeChanged({
     required ExpeditionTimeType newValue,
-  }) = _ExpeditionTimeTypeChanged;
+  }) = NotificationEventExpeditionTimeTypeChanged;
 
   const factory NotificationEvent.timeReductionChanged({
     required bool withTimeReduction,
-  }) = _TimeReductionChanged;
+  }) = NotificationEventTimeReductionChanged;
 
   //Farming - Artifact specific
   const factory NotificationEvent.artifactFarmingTimeTypeChanged({
     required ArtifactFarmingTimeType newValue,
-  }) = _ArtifactFarmingTimeTypeChanged;
+  }) = NotificationEventArtifactFarmingTimeTypeChanged;
 
   //Furniture specific
   const factory NotificationEvent.furnitureCraftingTimeTypeChanged({
     required FurnitureCraftingTimeType newValue,
-  }) = _FurnitureCraftingTimeTypeChanged;
+  }) = NotificationEventFurnitureCraftingTimeTypeChanged;
 
   //Realm currency specific
   const factory NotificationEvent.realmCurrencyChanged({
     required int newValue,
-  }) = _RealmCurrencyChanged;
+  }) = NotificationEventRealmCurrencyChanged;
 
   const factory NotificationEvent.realmRankTypeChanged({
     required RealmRankType newValue,
-  }) = _RealmRankTypeChanged;
+  }) = NotificationEventRealmRankTypeChanged;
 
   const factory NotificationEvent.realmTrustRankLevelChanged({
     required int newValue,
-  }) = _RealmTrustRankLevelChanged;
+  }) = NotificationEventRealmTrustRankLevelChanged;
 
   //Custom specific
   const factory NotificationEvent.itemTypeChanged({
     required AppNotificationItemType newValue,
-  }) = _ItemTypeChanged;
+  }) = NotificationEventItemTypeChanged;
 
   const factory NotificationEvent.keySelected({
     required String keyName,
-  }) = _KeySelected;
+  }) = NotificationEventKeySelected;
 
   const factory NotificationEvent.customDateChanged({
     required DateTime newValue,
-  }) = _CustomDateChanged;
+  }) = NotificationEventCustomDateChanged;
 }

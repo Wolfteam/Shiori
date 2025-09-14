@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -15,48 +14,54 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   final GenshinService _genshinService;
   final List<MonsterCardModel> _allMonsters = [];
 
-  _LoadedState get currentState => state as _LoadedState;
+  MonstersStateLoaded get currentState => state as MonstersStateLoaded;
 
-  MonstersBloc(this._genshinService) : super(const MonstersState.loading()) {
-    on<MonstersEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  MonstersBloc(this._genshinService) : super(const MonstersState.loading());
 
-  Future<void> _mapEventToState(MonstersEvent event, Emitter<MonstersState> emit) async {
-    final s = event.map(
-      init: (e) {
-        if (_allMonsters.isEmpty || e.force) {
+  @override
+  Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
+    switch (event) {
+      case MonstersEventInit():
+        if (_allMonsters.isEmpty || event.force) {
           _allMonsters.clear();
           _allMonsters.addAll(_genshinService.monsters.getAllMonstersForCard());
         }
 
-        return _buildInitialState(excludeKeys: e.excludeKeys);
-      },
-      sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
-      typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
-      filterTypeChanged: (e) => currentState.copyWith.call(tempFilterType: e.type),
-      searchChanged: (e) => _buildInitialState(
-        search: e.search,
-        type: currentState.type,
-        filterType: currentState.filterType,
-        sortDirectionType: currentState.sortDirectionType,
-      ),
-      applyFilterChanges: (_) => _buildInitialState(
-        search: currentState.search,
-        type: currentState.tempType,
-        filterType: currentState.tempFilterType,
-        sortDirectionType: currentState.tempSortDirectionType,
-      ),
-      cancelChanges: (_) => currentState.copyWith.call(
-        tempFilterType: currentState.filterType,
-        tempSortDirectionType: currentState.sortDirectionType,
-        tempType: currentState.type,
-      ),
-      resetFilters: (_) => _buildInitialState(
-        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
-      ),
-    );
+        yield _buildInitialState(excludeKeys: event.excludeKeys);
+      case MonstersEventSearchChanged():
+        yield _buildInitialState(
+          search: event.search,
+          type: currentState.type,
+          filterType: currentState.filterType,
+          sortDirectionType: currentState.sortDirectionType,
+        );
+      case MonstersEventTypeChanged():
+        yield currentState.copyWith.call(tempType: event.type);
+      case MonstersEventFilterTypeChanged():
+        yield currentState.copyWith.call(tempFilterType: event.type);
+      case MonstersEventApplyFilterChanges():
+        yield _buildInitialState(
+          search: currentState.search,
+          type: currentState.tempType,
+          filterType: currentState.tempFilterType,
+          sortDirectionType: currentState.tempSortDirectionType,
+        );
+      case MonstersEventSortDirectionTypeChanged():
+        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+      case MonstersEventCancelChanges():
+        yield currentState.copyWith.call(
+          tempFilterType: currentState.filterType,
+          tempSortDirectionType: currentState.sortDirectionType,
+          tempType: currentState.type,
+        );
+      case MonstersEventResetFilters():
+        final excludedKeys = switch (state) {
+          MonstersStateLoading() => <String>[],
+          final MonstersStateLoaded state => state.excludeKeys,
+        };
 
-    emit(s);
+        yield _buildInitialState(excludeKeys: excludedKeys);
+    }
   }
 
   MonstersState _buildInitialState({
@@ -66,15 +71,16 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
     MonsterFilterType filterType = MonsterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
-    final isLoaded = state is _LoadedState;
+    final isLoaded = state is MonstersStateLoaded;
     var data = [..._allMonsters];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }
 
     if (!isLoaded) {
+      _sortData(data, filterType, sortDirectionType);
       return MonstersState.loaded(
-        monsters: _sortData(data, filterType, sortDirectionType),
+        monsters: data,
         search: search,
         type: type,
         tempType: type,
@@ -94,8 +100,9 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
       data = data.where((el) => el.type == type).toList();
     }
 
+    _sortData(data, filterType, sortDirectionType);
     final s = currentState.copyWith.call(
-      monsters: _sortData(data, filterType, sortDirectionType),
+      monsters: data,
       search: search,
       type: type,
       tempType: type,
@@ -108,12 +115,14 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
     return s;
   }
 
-  List<MonsterCardModel> _sortData(List<MonsterCardModel> data, MonsterFilterType filterType, SortDirectionType sortDirectionType) {
+  void _sortData(List<MonsterCardModel> data, MonsterFilterType filterType, SortDirectionType sortDirectionType) {
     switch (filterType) {
       case MonsterFilterType.name:
-        return sortDirectionType == SortDirectionType.asc ? data.orderBy((el) => el.name).toList() : data.orderByDescending((el) => el.name).toList();
-      default:
-        return data;
+        if (sortDirectionType == SortDirectionType.asc) {
+          data.sort((x, y) => x.name.compareTo(y.name));
+        } else {
+          data.sort((x, y) => y.name.compareTo(x.name));
+        }
     }
   }
 }

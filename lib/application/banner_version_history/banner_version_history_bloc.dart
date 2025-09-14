@@ -16,16 +16,14 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
 
   static const periodDateFormat = 'yyyy/MM/dd';
 
-  BannerVersionHistoryBloc(this._genshinService, this._telemetryService) : super(const BannerVersionHistoryState.loading()) {
-    on<BannerVersionHistoryEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  BannerVersionHistoryBloc(this._genshinService, this._telemetryService) : super(const BannerVersionHistoryState.loading());
 
-  Future<void> _mapEventToState(BannerVersionHistoryEvent event, Emitter<BannerVersionHistoryState> emit) async {
-    final s = await event.map(
-      init: (e) => _init(e.version),
-    );
-
-    emit(s);
+  @override
+  Stream<BannerVersionHistoryState> mapEventToState(BannerVersionHistoryEvent event) async* {
+    switch (event) {
+      case BannerVersionHistoryEventInit():
+        yield await _init(event.version);
+    }
   }
 
   Future<BannerVersionHistoryState> _init(double version) async {
@@ -37,25 +35,26 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
         )
         .values
         .map(
-      (e) {
-        final group = e.first;
-        final items = e.expand((el) => el.items).toList();
-        final finalItems = <ItemCommonWithRarityAndType>[];
-        //this is to avoid duplicate items (e.g: on double banners like 2.4)
-        for (final item in items) {
-          if (finalItems.any((el) => el.key == item.key)) {
-            continue;
-          }
-          finalItems.add(item);
-        }
+          (e) {
+            final group = e.first;
+            final items = e.expand((el) => el.items).toList();
+            final finalItems = <ItemCommonWithRarityAndType>[];
+            //this is to avoid duplicate items (e.g: on double banners like 2.4)
+            for (final item in items) {
+              if (finalItems.any((el) => el.key == item.key)) {
+                continue;
+              }
+              finalItems.add(item);
+            }
 
-        return BannerHistoryGroupedPeriodModel(
-          from: DateFormat(periodDateFormat).format(group.from),
-          until: DateFormat(periodDateFormat).format(group.until),
-          items: finalItems,
-        );
-      },
-    ).toList();
+            return BannerHistoryGroupedPeriodModel(
+              from: DateFormat(periodDateFormat).format(group.from),
+              until: DateFormat(periodDateFormat).format(group.until),
+              items: finalItems,
+            );
+          },
+        )
+        .toList();
     return BannerVersionHistoryState.loadedState(version: version, items: grouped);
   }
 }

@@ -81,8 +81,6 @@ class TeamCharacterRow extends StatelessWidget {
                   icon = const Icon(Icons.delete);
                 case _Options.update:
                   icon = const Icon(Icons.edit);
-                default:
-                  throw Exception('The provided team character option type = ${e.enumValue} is not valid');
               }
 
               return Row(
@@ -101,8 +99,6 @@ class TeamCharacterRow extends StatelessWidget {
                   return s.delete;
                 case _Options.update:
                   return s.update;
-                default:
-                  throw Exception('The provided team character option type = $type is not valid');
               }
             },
           ),
@@ -126,14 +122,15 @@ class TeamCharacterRow extends StatelessWidget {
           return;
         }
 
-        final subType = await showDialog<CharacterRoleSubType>(context: context, builder: (_) => const SelectCharacterRoleSubTypeDialog());
+        final subType = await showDialog<CharacterRoleSubType>(
+          context: context,
+          builder: (_) => const SelectCharacterRoleSubTypeDialog(),
+        );
         if (subType == null) {
           return;
         }
 
         bloc.add(CustomBuildEvent.addTeamCharacter(key: character.key, roleType: roleType, subType: subType));
-      default:
-        throw Exception('The team character option is not valid');
     }
   }
 }

@@ -49,9 +49,9 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
 
     final s = S.of(context);
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
-      builder: (context, state) => state.map(
-        loading: (_) => const Loading(),
-        loaded: (state) => SliverScaffoldWithFab(
+      builder: (context, state) => switch (state) {
+        ArtifactsStateLoading() => const Loading(),
+        ArtifactsStateLoaded() => SliverScaffoldWithFab(
           scrollController: widget.scrollController,
           appbar: !widget.isInSelectionMode ? null : AppBar(title: Text(s.selectAnArtifact)),
           slivers: [
@@ -88,7 +88,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
               const SliverNothingFound(),
           ],
         ),
-      ),
+      },
     );
   }
 }

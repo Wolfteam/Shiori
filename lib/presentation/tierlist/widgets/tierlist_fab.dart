@@ -15,7 +15,7 @@ class TierListFab extends StatelessWidget {
     return BlocBuilder<TierListBloc, TierListState>(
       builder: (ctx, state) => !state.readyToSave && state.charsAvailable.isNotEmpty
           ? ColoredBox(
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black.withValues(alpha: 0.5),
               child: SizedBox(
                 height: height,
                 width: double.infinity,
@@ -45,7 +45,7 @@ class _DraggableItem extends StatelessWidget {
       data: item,
       feedback: CharacterIconImage.circleItem(item: item, forDrag: true),
       childWhenDragging: CircleAvatar(
-        backgroundColor: Colors.black.withOpacity(0.4),
+        backgroundColor: Colors.black.withValues(alpha: 0.4),
         radius: radius,
       ),
       child: Container(

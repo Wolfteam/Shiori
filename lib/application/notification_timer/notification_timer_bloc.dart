@@ -10,26 +10,25 @@ part 'notification_timer_state.dart';
 class NotificationTimerBloc extends Bloc<NotificationTimerEvent, NotificationTimerState> {
   Timer? _timer;
 
-  NotificationTimerBloc() : super(NotificationTimerState.loaded(completesAt: DateTime.now(), remaining: Duration.zero)) {
-    on<NotificationTimerEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  NotificationTimerBloc() : super(NotificationTimerState.loaded(completesAt: DateTime.now(), remaining: Duration.zero));
 
-  Future<void> _mapEventToState(NotificationTimerEvent event, Emitter<NotificationTimerState> emit) async {
-    final s = event.map(
-      init: (e) {
+  @override
+  Stream<NotificationTimerState> mapEventToState(NotificationTimerEvent event) async* {
+    switch (event) {
+      case NotificationTimerEventInit():
         _startTime();
-        return NotificationTimerState.loaded(completesAt: e.completesAt, remaining: e.completesAt.difference(DateTime.now()));
-      },
-      refresh: (e) {
+        yield NotificationTimerState.loaded(
+          completesAt: event.completesAt,
+          remaining: event.completesAt.difference(DateTime.now()),
+        );
+      case NotificationTimerEventRefresh():
         if (state.remaining.inSeconds > 0) {
-          return state.copyWith.call(remaining: state.completesAt.difference(DateTime.now()));
+          yield state.copyWith.call(remaining: state.completesAt.difference(DateTime.now()));
+        } else {
+          _cancelTimer();
+          yield state;
         }
-        _cancelTimer();
-        return state;
-      },
-    );
-
-    emit(s);
+    }
   }
 
   @override

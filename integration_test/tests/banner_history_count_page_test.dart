@@ -1,12 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
+import 'package:two_dimensional_scrollables/two_dimensional_scrollables.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
   const String character = 'Nahida';
-  const String version = '3.2';
+  const double version = 3.2;
   const String weapon = 'A Thousand Floating Dreams';
 
   Future<void> navigate(WidgetTester widgetTester) async {
@@ -19,9 +23,8 @@ void main() {
     await mainPage.tapOnBannerHistoryCard();
   }
 
-  Future<void> filter(String name, String version, bool isCharacter, WidgetTester widgetTester) async {
+  Future<void> filter(String name, double version, bool isCharacter, WidgetTester widgetTester) async {
     final DetailPage page = DetailPage(widgetTester);
-
     //Select the type
     await page.tapOnPopupMenuButtonIcon(Icons.swap_horiz, isCharacter ? 0 : 1);
 
@@ -29,20 +32,26 @@ void main() {
     await page.tapOnPopupMenuButtonIcon(Icons.sort, 7);
 
     //Scroll to version
-    final Finder horizontalListViewFinder = find.ancestor(of: find.byIcon(Icons.check_circle), matching: find.byType(ListView)).first;
-    await widgetTester.dragUntilVisible(find.text(version), horizontalListViewFinder, BasePage.horizontalDragOffset);
+    final versionString = version.toStringAsFixed(1);
+    final Finder table = find.byType(TableView);
+    final double horizontalScrollDelta = -min(BasePage.horizontalScrollDelta, widgetTester.getWidth(3));
+    final Offset horizontalOffset = Offset(horizontalScrollDelta, 0);
+    await widgetTester.doAppDragUntilVisible(find.text(versionString), table, horizontalOffset);
+    await widgetTester.pumpAndSettle();
+
+    //Kinda hack, for some reason the drag ends up being in a weird position, so we have to go back
+    await widgetTester.drag(table, Offset(horizontalScrollDelta.abs(), 0));
     await widgetTester.pumpAndSettle();
 
     //Tap on version button
-    final Finder versionButton = find.text(version);
+    final Finder versionButton = find.text(versionString);
     expect(versionButton, findsOneWidget);
 
     await widgetTester.tap(versionButton);
     await widgetTester.pumpAndSettle();
 
     //Scroll down until we found item
-    final Finder verticalListViewFinder = find.ancestor(of: horizontalListViewFinder, matching: find.byType(ListView));
-    await widgetTester.dragUntilVisible(find.text(name), verticalListViewFinder, BasePage.verticalDragOffset);
+    await widgetTester.doAppDragUntilVisible(find.text(name), table, BasePage.verticalDragOffset);
     await widgetTester.pumpAndSettle();
 
     //Tap search icon

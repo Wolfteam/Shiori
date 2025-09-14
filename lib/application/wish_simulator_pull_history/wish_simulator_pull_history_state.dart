@@ -1,8 +1,8 @@
 part of 'wish_simulator_pull_history_bloc.dart';
 
 @freezed
-class WishSimulatorPullHistoryState with _$WishSimulatorPullHistoryState {
-  const factory WishSimulatorPullHistoryState.loading() = _LoadingState;
+sealed class WishSimulatorPullHistoryState with _$WishSimulatorPullHistoryState {
+  const factory WishSimulatorPullHistoryState.loading() = WishSimulatorPullHistoryStateLoading;
 
   const factory WishSimulatorPullHistoryState.loaded({
     required BannerItemType bannerType,
@@ -10,5 +10,5 @@ class WishSimulatorPullHistoryState with _$WishSimulatorPullHistoryState {
     required List<WishSimulatorBannerItemPullHistoryModel> items,
     required int currentPage,
     required int maxPage,
-  }) = _LoadedState;
+  }) = WishSimulatorPullHistoryStateLoaded;
 }

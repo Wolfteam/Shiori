@@ -1,11 +1,11 @@
 part of 'chart_regions_bloc.dart';
 
 @freezed
-class ChartRegionsState with _$ChartRegionsState {
-  const factory ChartRegionsState.loading() = _LoadingState;
+sealed class ChartRegionsState with _$ChartRegionsState {
+  const factory ChartRegionsState.loading() = ChartRegionsStateLoading;
 
   const factory ChartRegionsState.loaded({
     required int maxCount,
     required List<ChartCharacterRegionModel> items,
-  }) = _LoadedState;
+  }) = ChartRegionsStateLoaded;
 }

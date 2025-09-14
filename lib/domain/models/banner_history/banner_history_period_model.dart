@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'banner_history_period_model.freezed.dart';
 
 @freezed
-class BannerHistoryPeriodModel with _$BannerHistoryPeriodModel {
+abstract class BannerHistoryPeriodModel with _$BannerHistoryPeriodModel {
   const factory BannerHistoryPeriodModel({
     required BannerHistoryItemType type,
     required DateTime from,
@@ -16,7 +16,7 @@ class BannerHistoryPeriodModel with _$BannerHistoryPeriodModel {
 }
 
 @freezed
-class BannerHistoryGroupedPeriodModel with _$BannerHistoryGroupedPeriodModel {
+abstract class BannerHistoryGroupedPeriodModel with _$BannerHistoryGroupedPeriodModel {
   const factory BannerHistoryGroupedPeriodModel({
     required String from,
     required String until,

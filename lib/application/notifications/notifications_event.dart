@@ -1,27 +1,27 @@
 part of 'notifications_bloc.dart';
 
 @freezed
-class NotificationsEvent with _$NotificationsEvent {
-  const factory NotificationsEvent.init() = _Init;
+sealed class NotificationsEvent with _$NotificationsEvent {
+  const factory NotificationsEvent.init() = NotificationsEventInit;
 
   const factory NotificationsEvent.delete({
     required int id,
     required AppNotificationType type,
-  }) = _Delete;
+  }) = NotificationsEventDelete;
 
   const factory NotificationsEvent.reset({
     required int id,
     required AppNotificationType type,
-  }) = _Reset;
+  }) = NotificationsEventReset;
 
   const factory NotificationsEvent.stop({
     required int id,
     required AppNotificationType type,
-  }) = _Stop;
+  }) = NotificationsEventStop;
 
   const factory NotificationsEvent.reduceHours({
     required int id,
     required AppNotificationType type,
     required int hoursToReduce,
-  }) = _ReduceHour;
+  }) = NotificationsEventReduceHour;
 }

@@ -64,7 +64,14 @@ void main() {
           ),
         )
         .toList();
-    final materials = calculatorService.getCharacterMaterialsToUse(char, currentLevel, desiredLevel, currentAscLevel, desiredAscLevel, skills);
+    final materials = calculatorService.getCharacterMaterialsToUse(
+      char,
+      currentLevel,
+      desiredLevel,
+      currentAscLevel,
+      desiredAscLevel,
+      skills,
+    );
     return ItemAscensionMaterials.forCharacters(
       key: key,
       name: 'Name',
@@ -90,7 +97,13 @@ void main() {
     bool useMaterialsFromInventory = false,
   }) {
     final weapon = genshinService.weapons.getWeapon(key);
-    final materials = calculatorService.getWeaponMaterialsToUse(weapon, currentLevel, desiredLevel, currentAscLevel, desiredAscLevel);
+    final materials = calculatorService.getWeaponMaterialsToUse(
+      weapon,
+      currentLevel,
+      desiredLevel,
+      currentAscLevel,
+      desiredAscLevel,
+    );
     return ItemAscensionMaterials.forWeapons(
       key: key,
       name: 'Name',
@@ -269,7 +282,7 @@ void main() {
       expect(dataService.calculator.updateSession(-1, 'Updated', false), throwsArgumentError);
     });
 
-    test('name is not valid', () async {
+    test('name is not valid', () {
       expect(dataService.calculator.updateSession(1, '', false), throwsArgumentError);
     });
 
@@ -385,7 +398,7 @@ void main() {
       expect(() => dataService.calculator.getAllSessionItems(-1), throwsArgumentError);
     });
 
-    test('no data exists, returns empty', () async {
+    test('no data exists, returns empty', () {
       final items = dataService.calculator.getAllSessionItems(666);
       expect(items.isEmpty, isTrue);
     });
@@ -1202,19 +1215,37 @@ void main() {
       });
     });
 
-    test('provided array is empty', () async {
+    test('provided array is empty', () {
       expect(dataService.calculator.reorderSessions([]), throwsArgumentError);
     });
 
-    test('data was provided but no previous data exist', () async {
-      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0, showMaterialUsage: false)];
+    test('data was provided but no previous data exist', () {
+      const updated = [
+        CalculatorSessionModel(
+          key: 1,
+          name: 'NA',
+          position: 0,
+          numberOfWeapons: 0,
+          numberOfCharacters: 0,
+          showMaterialUsage: false,
+        ),
+      ];
       expect(dataService.calculator.reorderSessions(updated), throwsArgumentError);
     });
 
     test('data was provided and previous data exists but invalid arrays', () async {
       await dataService.calculator.createSession('A', 0, false);
       await dataService.calculator.createSession('B', 0, false);
-      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0, showMaterialUsage: false)];
+      const updated = [
+        CalculatorSessionModel(
+          key: 1,
+          name: 'NA',
+          position: 0,
+          numberOfWeapons: 0,
+          numberOfCharacters: 0,
+          showMaterialUsage: false,
+        ),
+      ];
       expect(dataService.calculator.reorderSessions(updated), throwsArgumentError);
     });
 
@@ -1249,11 +1280,11 @@ void main() {
       });
     });
 
-    test('session key is not valid', () async {
+    test('session key is not valid', () {
       expect(dataService.calculator.reorderItems(-1, []), throwsArgumentError);
     });
 
-    test('session does not exist', () async {
+    test('session does not exist', () {
       expect(dataService.calculator.reorderItems(666, []), throwsA(isA<NotFoundError>()));
     });
 

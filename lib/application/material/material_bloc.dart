@@ -18,22 +18,19 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
   final TelemetryService _telemetryService;
   final ResourceService _resourceService;
 
-  MaterialBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const MaterialState.loading()) {
-    on<MaterialEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  MaterialBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const MaterialState.loading());
 
-  Future<void> _mapEventToState(MaterialEvent event, Emitter<MaterialState> emit) async {
-    final s = await event.map(
-      loadFromKey: (e) async {
-        final material = _genshinService.materials.getMaterial(e.key);
-        if (e.addToQueue) {
-          await _telemetryService.trackMaterialLoaded(e.key);
+  @override
+  @override
+  Stream<MaterialState> mapEventToState(MaterialEvent event) async* {
+    switch (event) {
+      case MaterialEventLoad():
+        final material = _genshinService.materials.getMaterial(event.key);
+        if (event.addToQueue) {
+          await _telemetryService.trackMaterialLoaded(event.key);
         }
-        return _buildInitialState(material);
-      },
-    );
-
-    emit(s);
+        yield _buildInitialState(material);
+    }
   }
 
   MaterialState _buildInitialState(MaterialFileModel material) {

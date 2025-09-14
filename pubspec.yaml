@@ -15,66 +15,66 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.8.10+190
+version: 1.8.14+195
 
 environment:
-  sdk: '>=3.7.0 <4.0.0'
+  sdk: '>=3.8.0 <4.0.0'
 
 dependencies:
   darq: ^2.0.0
-  device_info_plus: ^11.3.3
+  device_info_plus: ^11.4.0
   devicelocale: ^0.8.1
   envied: ^1.1.1
-  file_picker: ^9.0.2
-  firebase_core: ^3.12.1
-  firebase_messaging: ^15.2.4
-  fl_chart: ^0.70.2
+  file_picker: ^10.2.0
+  firebase_core: ^3.14.0
+  firebase_messaging: ^15.2.7
+  fl_chart: ^1.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
-  flutter_local_notifications: ^18.0.1
+  flutter_local_notifications: ^19.2.1
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.7.6+2
+  flutter_markdown_plus: ^1.0.3
   flutter_slidable: ^4.0.0
-  flutter_timezone: ^4.1.0
+  flutter_timezone: ^4.1.1
   fluttertoast: ^8.2.12
-  freezed_annotation: ^2.4.4
+  freezed_annotation: ^3.0.0
   get_it: ^7.7.0
   grouped_list: ^6.0.0
-  hive_ce: ^2.10.1
-  hive_ce_flutter: ^2.2.0
-  http: ^1.3.0
+  hive_ce: ^2.11.3
+  hive_ce_flutter: ^2.3.1
+  http: ^1.4.0
   image_gallery_saver_plus: ^4.0.1
   infinite_listview: ^1.1.0
-  internet_connection_checker_plus: ^2.7.1
-  intl: ^0.19.0
+  internet_connection_checker_plus: ^2.7.2
+  intl: ^0.20.2
   json_annotation: ^4.9.0
   logger: ^2.5.0
   open_file: ^3.5.10
   package_info_plus: ^8.3.0
   path: ^1.9.1
   path_provider: ^2.1.5
-  permission_handler: ^11.4.0
+  permission_handler: ^12.0.0+1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^8.6.0
+  purchases_flutter: ^8.10.2
   rate_my_app: ^2.3.1
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
   screenshot: ^3.0.0
-  share_plus: ^10.1.4
-  shared_preferences: ^2.5.2
+  share_plus: ^11.0.0
+  shared_preferences: ^2.5.3
   sprintf: ^7.0.0
   store_checker: ^1.8.0
   synchronized: ^3.3.1
   transparent_image: ^2.0.1
-  two_dimensional_scrollables: ^0.3.3
+  two_dimensional_scrollables: ^0.3.6
   url_launcher: ^6.3.1
   version: ^3.0.0
   version_tracker: ^2.4.1
-  wakelock_plus: ^1.2.10
+  wakelock_plus: ^1.3.2
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
@@ -84,18 +84,23 @@ dev_dependencies:
   bloc_test: ^9.1.7
   build_runner:
   envied_generator: ^1.1.1
-  flutter_launcher_icons: ^0.14.3
+  flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.7
-  hive_ce_generator: ^1.8.2
+  freezed: ^3.0.6
+  hive_ce_generator: ^1.9.2
   integration_test:
     sdk: flutter
   intl_utils: ^2.8.10
-  json_serializable: ^6.9.4
+  json_serializable: ^6.9.5
   lint: ^2.8.0
-  mockito: ^5.4.5
-  msix: ^3.16.8
+  mockito: ^5.4.6
+  msix: ^3.16.9
+
+# Until https://github.com/RevenueCat/purchases-flutter/pull/1331 gets merged
+dependency_overrides:
+  freezed: ^3.0.6
+  freezed_annotation: ^3.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -106,6 +111,8 @@ flutter_launcher_icons:
   macos:
     generate: true
     image_path: "assets/icon/icon_macos.png"
+  windows:
+    generate: true
 
 flutter:
   uses-material-design: true
@@ -132,3 +139,7 @@ msix_config:
   languages: en
   capabilities: 'internetClient'
   store: true
+  toast_activator:
+    clsid: "d49b0314-ee7a-4626-bf79-97cdb8a991bb"
+    arguments: "msix-args"
+    display_name: "Shiori"

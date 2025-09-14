@@ -20,37 +20,36 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   final DataService _dataService;
   final ResourceService _resourceService;
 
-  WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService) : super(const WeaponState.loading()) {
-    on<WeaponEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService)
+    : super(const WeaponState.loading());
 
-  Future<void> _mapEventToState(WeaponEvent event, Emitter<WeaponState> emit) async {
-    final s = await event.when(
-      loadFromKey: (key) async {
-        final weapon = _genshinService.weapons.getWeapon(key);
+  @override
+  Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
+    switch (event) {
+      case WeaponEventLoadWeaponFromName():
+        final weapon = _genshinService.weapons.getWeapon(event.key);
         final translation = _genshinService.translations.getWeaponTranslation(weapon.key);
-        await _telemetryService.trackWeaponLoaded(key);
-        return _buildInitialState(weapon, translation);
-      },
-      addToInventory: (key) async => state.map(
-        loading: (state) async => state,
-        loaded: (state) async {
-          await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.inventory.addWeaponToInventory(key);
-          return state.copyWith.call(isInInventory: true);
-        },
-      ),
-      deleteFromInventory: (key) async => state.map(
-        loading: (state) async => state,
-        loaded: (state) async {
-          await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.inventory.deleteWeaponFromInventory(key);
-          return state.copyWith.call(isInInventory: false);
-        },
-      ),
-    );
-
-    emit(s);
+        await _telemetryService.trackWeaponLoaded(event.key);
+        yield _buildInitialState(weapon, translation);
+      case WeaponEventAddToInventory():
+        switch (state) {
+          case final WeaponStateLoaded state:
+            await _telemetryService.trackItemAddedToInventory(event.key, 1);
+            await _dataService.inventory.addWeaponToInventory(event.key);
+            yield state.copyWith.call(isInInventory: true);
+          default:
+            break;
+        }
+      case WeaponEventDeleteFromInventory():
+        switch (state) {
+          case final WeaponStateLoaded state:
+            await _telemetryService.trackItemDeletedFromInventory(event.key);
+            await _dataService.inventory.deleteWeaponFromInventory(event.key);
+            yield state.copyWith.call(isInInventory: false);
+          default:
+            break;
+        }
+    }
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
@@ -63,7 +62,9 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
 
-    final refinements = translation.refinements.mapIndexed((index, e) => WeaponFileRefinementModel(level: index + 1, description: e)).toList();
+    final refinements = translation.refinements
+        .mapIndexed((index, e) => WeaponFileRefinementModel(level: index + 1, description: e))
+        .toList();
 
     final craftingMaterials = weapon.craftingMaterials.map((e) {
       final material = _genshinService.materials.getMaterialForCard(e.key);

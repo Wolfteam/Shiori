@@ -1,35 +1,35 @@
 part of 'inventory_bloc.dart';
 
 @freezed
-class InventoryEvent with _$InventoryEvent {
-  const factory InventoryEvent.init() = _Init;
+sealed class InventoryEvent with _$InventoryEvent {
+  const factory InventoryEvent.init() = InventoryEventInit;
 
   const factory InventoryEvent.addCharacter({
     required String key,
-  }) = _AddCharacter;
+  }) = InventoryEventAddCharacter;
 
   const factory InventoryEvent.addWeapon({
     required String key,
-  }) = _AddWeapon;
+  }) = InventoryEventAddWeapon;
 
   const factory InventoryEvent.deleteCharacter({
     required String key,
-  }) = _DeleteCharacter;
+  }) = InventoryEventDeleteCharacter;
 
   const factory InventoryEvent.deleteWeapon({
     required String key,
-  }) = _DeleteWeapon;
+  }) = InventoryEventDeleteWeapon;
 
   const factory InventoryEvent.updateMaterial({
     required String key,
     required int quantity,
-  }) = _AddMaterial;
+  }) = InventoryEventUpdateMaterial;
 
-  const factory InventoryEvent.clearAllCharacters() = _ClearAllCharacters;
+  const factory InventoryEvent.clearAllCharacters() = InventoryEventClearAllCharacters;
 
-  const factory InventoryEvent.clearAllWeapons() = _ClearAllWeapons;
+  const factory InventoryEvent.clearAllWeapons() = InventoryEventClearAllWeapons;
 
-  const factory InventoryEvent.clearAllMaterials() = _ClearAllMaterials;
+  const factory InventoryEvent.clearAllMaterials() = InventoryEventClearAllMaterials;
 
-  const factory InventoryEvent.refresh({required ItemType type}) = _Refresh;
+  const factory InventoryEvent.refresh({required ItemType type}) = InventoryEventRefresh;
 }

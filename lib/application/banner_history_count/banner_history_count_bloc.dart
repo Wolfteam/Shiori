@@ -27,20 +27,22 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
   final List<BannerHistoryItemModel> _characterBanners = [];
   final List<BannerHistoryItemModel> _weaponBanners = [];
 
-  BannerHistoryCountBloc(this._genshinService, this._telemetryService) : super(_initialState) {
-    on<BannerHistoryCountEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  BannerHistoryCountBloc(this._genshinService, this._telemetryService) : super(_initialState);
 
-  Future<void> _mapEventToState(BannerHistoryCountEvent event, Emitter<BannerHistoryCountState> emit) async {
-    final s = await event.map(
-      init: (e) async => _init(),
-      typeChanged: (e) async => _typeChanged(e.type),
-      sortTypeChanged: (e) async => _sortTypeChanged(e.type),
-      versionSelected: (e) async => _versionSelected(e.version),
-      itemsSelected: (e) async => _itemsSelected(e.keys),
-    );
-
-    emit(s);
+  @override
+  Stream<BannerHistoryCountState> mapEventToState(BannerHistoryCountEvent event) async* {
+    switch (event) {
+      case BannerHistoryCountEventInit():
+        yield await _init();
+      case BannerHistoryCountEventTypeChanged():
+        yield _typeChanged(event.type);
+      case BannerHistoryCountEventSortTypeChanged():
+        yield _sortTypeChanged(event.type);
+      case BannerHistoryCountEventVersionSelected():
+        yield _versionSelected(event.version);
+      case BannerHistoryCountEventCharactersSelected():
+        yield _itemsSelected(event.keys);
+    }
   }
 
   List<ItemCommonWithName> getItemsForSearch() {
@@ -76,8 +78,6 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
         banners.addAll(_getFinalSortedBanners(_characterBanners, selectedVersions, state.sortType));
       case BannerHistoryItemType.weapon:
         banners.addAll(_getFinalSortedBanners(_weaponBanners, selectedVersions, state.sortType));
-      default:
-        throw Exception('Banner history item type = $type is not valid');
     }
 
     return state.copyWith.call(
@@ -127,20 +127,31 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
       banners.removeWhere((el) => !keys.contains(el.key));
     }
 
-    final selectedVersions = state.selectedVersions.isEmpty ? _getSortedVersions(state.versions, state.sortType) : state.selectedVersions;
+    final selectedVersions = state.selectedVersions.isEmpty
+        ? _getSortedVersions(state.versions, state.sortType)
+        : state.selectedVersions;
     return state.copyWith.call(
       banners: _getFinalSortedBanners(banners, selectedVersions, state.sortType),
       selectedItemKeys: keys,
     );
   }
 
-  List<BannerHistoryItemModel> _getFinalSortedBanners(List<BannerHistoryItemModel> banners, List<double> versions, BannerHistorySortType sortType) {
+  List<BannerHistoryItemModel> _getFinalSortedBanners(
+    List<BannerHistoryItemModel> banners,
+    List<double> versions,
+    BannerHistorySortType sortType,
+  ) {
     final sortedBannerByVersion = <BannerHistoryItemModel>[];
     for (final version in versions) {
-      final onVersion = banners
-          .where((el) => el.versions.any((v) => v.released && v.version == version && !sortedBannerByVersion.any((x) => x.key == el.key)))
-          .toList()
-        ..sort((x, y) => y.rarity.compareTo(x.rarity));
+      final onVersion =
+          banners
+              .where(
+                (el) => el.versions.any(
+                  (v) => v.released && v.version == version && !sortedBannerByVersion.any((x) => x.key == el.key),
+                ),
+              )
+              .toList()
+            ..sort((x, y) => y.rarity.compareTo(x.rarity));
 
       if (onVersion.isEmpty) {
         continue;
@@ -188,8 +199,6 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
         banners.addAll(_characterBanners);
       case BannerHistoryItemType.weapon:
         banners.addAll(_weaponBanners);
-      default:
-        throw Exception('Banner history item type = $type is not valid');
     }
     return banners;
   }

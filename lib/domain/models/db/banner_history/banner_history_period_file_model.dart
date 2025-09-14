@@ -5,7 +5,7 @@ part 'banner_history_period_file_model.freezed.dart';
 part 'banner_history_period_file_model.g.dart';
 
 @freezed
-class BannerHistoryPeriodFileModel with _$BannerHistoryPeriodFileModel {
+abstract class BannerHistoryPeriodFileModel with _$BannerHistoryPeriodFileModel {
   const factory BannerHistoryPeriodFileModel({
     required BannerHistoryItemType type,
     required DateTime from,

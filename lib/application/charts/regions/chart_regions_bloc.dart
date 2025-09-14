@@ -12,16 +12,14 @@ part 'chart_regions_state.dart';
 class ChartRegionsBloc extends Bloc<ChartRegionsEvent, ChartRegionsState> {
   final GenshinService _genshinService;
 
-  ChartRegionsBloc(this._genshinService) : super(const ChartRegionsState.loading()) {
-    on<ChartRegionsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ChartRegionsBloc(this._genshinService) : super(const ChartRegionsState.loading());
 
-  Future<void> _mapEventToState(ChartRegionsEvent event, Emitter<ChartRegionsState> emit) async {
-    final s = event.map(
-      init: (_) => _init(),
-    );
-
-    emit(s);
+  @override
+  Stream<ChartRegionsState> mapEventToState(ChartRegionsEvent event) async* {
+    switch (event) {
+      case ChartRegionsEventInit():
+        yield _init();
+    }
   }
 
   ChartRegionsState _init() {

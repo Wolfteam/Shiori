@@ -29,67 +29,56 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       _dataService.inventory.itemDeletedFromInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
       _dataService.inventory.itemUpdatedInInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
     ];
-    on<InventoryEvent>((event, emit) => _mapEventToState(event, emit));
   }
 
-  Future<void> _mapEventToState(InventoryEvent event, Emitter<InventoryState> emit) async {
-    final s = await event.map(
-      init: (_) async {
+  @override
+  Stream<InventoryState> mapEventToState(InventoryEvent event) async* {
+    switch (event) {
+      case InventoryEventInit():
         final characters = _dataService.inventory.getAllCharactersInInventory();
         final weapons = _dataService.inventory.getAllWeaponsInInventory();
         final materials = _dataService.inventory.getAllMaterialsInInventory();
-
-        return InventoryState.loaded(characters: characters, weapons: weapons, materials: materials);
-      },
-      addCharacter: (e) async {
-        await _telemetryService.trackItemAddedToInventory(e.key, 1);
-        await _dataService.inventory.addCharacterToInventory(e.key, raiseEvent: false);
-        return _refreshItems(ItemType.character);
-      },
-      addWeapon: (e) async {
-        await _telemetryService.trackItemAddedToInventory(e.key, 1);
-        await _dataService.inventory.addWeaponToInventory(e.key, raiseEvent: false);
-        return _refreshItems(ItemType.weapon);
-      },
-      deleteCharacter: (e) async {
-        await _telemetryService.trackItemDeletedFromInventory(e.key);
-        await _dataService.inventory.deleteCharacterFromInventory(e.key, raiseEvent: false);
-        return _refreshItems(ItemType.character);
-      },
-      deleteWeapon: (e) async {
-        await _telemetryService.trackItemDeletedFromInventory(e.key);
-        await _dataService.inventory.deleteWeaponFromInventory(e.key, raiseEvent: false);
-        return _refreshItems(ItemType.weapon);
-      },
-      updateMaterial: (e) async {
-        await _telemetryService.trackItemUpdatedInInventory(e.key, e.quantity);
+        yield InventoryState.loaded(characters: characters, weapons: weapons, materials: materials);
+      case InventoryEventAddCharacter():
+        await _telemetryService.trackItemAddedToInventory(event.key, 1);
+        await _dataService.inventory.addCharacterToInventory(event.key, raiseEvent: false);
+        yield _refreshItems(ItemType.character);
+      case InventoryEventAddWeapon():
+        await _telemetryService.trackItemAddedToInventory(event.key, 1);
+        await _dataService.inventory.addWeaponToInventory(event.key, raiseEvent: false);
+        yield _refreshItems(ItemType.weapon);
+      case InventoryEventDeleteCharacter():
+        await _telemetryService.trackItemDeletedFromInventory(event.key);
+        await _dataService.inventory.deleteCharacterFromInventory(event.key, raiseEvent: false);
+        yield _refreshItems(ItemType.character);
+      case InventoryEventDeleteWeapon():
+        await _telemetryService.trackItemDeletedFromInventory(event.key);
+        await _dataService.inventory.deleteWeaponFromInventory(event.key, raiseEvent: false);
+        yield _refreshItems(ItemType.weapon);
+      case InventoryEventUpdateMaterial():
+        await _telemetryService.trackItemUpdatedInInventory(event.key, event.quantity);
         await _dataService.inventory.addMaterialToInventory(
-          e.key,
-          e.quantity,
+          event.key,
+          event.quantity,
           redistribute: _dataService.calculator.redistributeInventoryMaterial,
           raiseEvent: false,
         );
-        return _refreshItems(ItemType.material);
-      },
-      clearAllCharacters: (_) async {
+        yield _refreshItems(ItemType.material);
+      case InventoryEventClearAllCharacters():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.character);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.character, raiseEvent: false);
-        return state.copyWith.call(characters: []);
-      },
-      clearAllWeapons: (_) async {
+        yield state.copyWith.call(characters: []);
+      case InventoryEventClearAllWeapons():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.weapon);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.weapon, raiseEvent: false);
-        return state.copyWith.call(weapons: []);
-      },
-      clearAllMaterials: (_) async {
+        yield state.copyWith.call(weapons: []);
+      case InventoryEventClearAllMaterials():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.material);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.material, raiseEvent: false);
-        return _refreshItems(ItemType.material);
-      },
-      refresh: (e) async => _refreshItems(e.type),
-    );
-
-    emit(s);
+        yield _refreshItems(ItemType.material);
+      case InventoryEventRefresh():
+        yield _refreshItems(event.type);
+    }
   }
 
   @override
@@ -113,9 +102,6 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
 
   List<String> getItemsKeysToExclude() {
     final upcoming = _genshinService.getUpcomingKeys();
-    return state.maybeMap(
-      loaded: (state) => state.characters.map((e) => e.key).toList() + state.weapons.map((e) => e.key).toList() + upcoming,
-      orElse: () => upcoming,
-    );
+    return state.characters.map((e) => e.key).toList() + state.weapons.map((e) => e.key).toList() + upcoming;
   }
 }

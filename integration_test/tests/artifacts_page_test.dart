@@ -24,7 +24,7 @@ void main() {
     await bottomSheet.tapOnButton(onOk: true);
   }
 
-  Future<void> filterForGladiator(WidgetTester widgetTester) async {
+  Future<void> filterForGladiator(WidgetTester widgetTester) {
     return filter('gladiator', 5, widgetTester);
   }
 

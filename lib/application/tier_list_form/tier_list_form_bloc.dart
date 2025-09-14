@@ -11,22 +11,18 @@ part 'tier_list_form_state.dart';
 const _initialState = TierListFormState.loaded(name: '', isNameDirty: false, isNameValid: false);
 
 class TierListFormBloc extends Bloc<TierListFormEvent, TierListFormState> {
-  TierListFormBloc() : super(_initialState) {
-    on<TierListFormEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  TierListFormBloc() : super(_initialState);
 
   static int nameMaxLength = 25;
 
-  Future<void> _mapEventToState(TierListFormEvent event, Emitter<TierListFormState> emit) async {
-    final s = event.map(
-      nameChanged: (e) {
-        final isValid = e.name.isNotNullEmptyOrWhitespace && e.name.length <= nameMaxLength;
-        final isDirty = e.name != state.name;
+  @override
+  Stream<TierListFormState> mapEventToState(TierListFormEvent event) async* {
+    switch (event) {
+      case TierListFormEventNameChanged():
+        final isValid = event.name.isNotNullEmptyOrWhitespace && event.name.length <= nameMaxLength;
+        final isDirty = event.name != state.name;
 
-        return state.copyWith.call(name: e.name, isNameDirty: isDirty, isNameValid: isValid);
-      },
-    );
-
-    emit(s);
+        yield state.copyWith.call(name: event.name, isNameDirty: isDirty, isNameValid: isValid);
+    }
   }
 }

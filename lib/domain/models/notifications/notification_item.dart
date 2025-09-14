@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'notification_item.freezed.dart';
 
 @freezed
-class NotificationItem with _$NotificationItem {
+abstract class NotificationItem with _$NotificationItem {
   Duration get duration => scheduledDate.difference(createdAt);
 
   Duration get remaining => completesAt.difference(DateTime.now());

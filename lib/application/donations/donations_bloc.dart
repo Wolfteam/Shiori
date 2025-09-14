@@ -20,26 +20,35 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
   //The user id must be something like 12345_xyz
   static String appUserIdRegex = '([a-zA-Z0-9]{5,20})';
 
-  DonationsBloc(this._purchaseService, this._networkService, this._telemetryService) : super(const DonationsState.loading()) {
-    on<DonationsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  DonationsBloc(this._purchaseService, this._networkService, this._telemetryService) : super(const DonationsState.loading());
 
-  Future<void> _mapEventToState(DonationsEvent event, Emitter<DonationsState> emit) async {
-    emit(const DonationsState.loading());
+  @override
+  Stream<DonationsState> mapEventToState(DonationsEvent event) async* {
+    yield const DonationsState.loading();
 
     if (!await _networkService.isInternetAvailable()) {
-      emit(const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: true, canMakePurchases: false));
+      yield const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: true, canMakePurchases: false);
       return;
     }
 
     if (!await _purchaseService.isPlatformSupported()) {
-      emit(const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: false, canMakePurchases: false));
+      yield const DonationsState.initial(
+        packages: [],
+        isInitialized: false,
+        noInternetConnection: false,
+        canMakePurchases: false,
+      );
       return;
     }
 
     final canMakePurchases = await _purchaseService.canMakePurchases();
     if (!canMakePurchases) {
-      emit(DonationsState.initial(packages: [], isInitialized: _purchaseService.isInitialized, noInternetConnection: false, canMakePurchases: false));
+      yield DonationsState.initial(
+        packages: [],
+        isInitialized: _purchaseService.isInitialized,
+        noInternetConnection: false,
+        canMakePurchases: false,
+      );
       return;
     }
 
@@ -47,29 +56,21 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       await _purchaseService.init();
     }
 
-    final s = await event.map(
-      init: (_) => _init(),
-      restorePurchases: (e) => _restorePurchases(),
-      purchase: (e) => _purchase(e),
-    );
+    final s = await switch (event) {
+      DonationsEventInit() => _init(),
+      DonationsEventRestorePurchases() => _restorePurchases(),
+      final DonationsEventPurchase e => _purchase(e),
+    };
 
-    emit(s);
-    final newState = await s.maybeMap(
-      purchaseCompleted: (state) async {
-        if (state.error) {
-          return _init();
-        }
-        return state;
-      },
-      restoreCompleted: (state) async {
-        if (state.error) {
-          return _init();
-        }
-        return state;
-      },
-      orElse: () async => s,
-    );
-    emit(newState);
+    yield s;
+
+    switch (s) {
+      case final DonationsStatePurchaseCompleted state when state.error:
+      case final DonationsStateRestoreCompleted state when state.error:
+        yield await _init();
+      default:
+        break;
+    }
   }
 
   Future<DonationsState> _init() async {
@@ -88,7 +89,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
     return DonationsState.restoreCompleted(error: !restored);
   }
 
-  Future<DonationsState> _purchase(_Purchase e) async {
+  Future<DonationsState> _purchase(DonationsEventPurchase e) async {
     if (e.identifier.isNullEmptyOrWhitespace) {
       throw Exception('Invalid package identifier');
     }

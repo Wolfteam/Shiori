@@ -13,16 +13,14 @@ class ChartTopsBloc extends Bloc<ChartTopsEvent, ChartTopsState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
-  ChartTopsBloc(this._genshinService, this._telemetryService) : super(const ChartTopsState.loading()) {
-    on<ChartTopsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ChartTopsBloc(this._genshinService, this._telemetryService) : super(const ChartTopsState.loading());
 
-  Future<void> _mapEventToState(ChartTopsEvent event, Emitter<ChartTopsState> emit) async {
-    final s = await event.map(
-      init: (e) async => _init(),
-    );
-
-    emit(s);
+  @override
+  Stream<ChartTopsState> mapEventToState(ChartTopsEvent event) async* {
+    switch (event) {
+      case ChartTopsEventInit():
+        yield await _init();
+    }
   }
 
   Future<ChartTopsState> _init() async {

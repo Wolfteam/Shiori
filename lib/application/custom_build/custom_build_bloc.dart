@@ -43,124 +43,113 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     this._loggingService,
     this._resourceService,
     this._customBuildsBloc,
-  ) : super(const CustomBuildState.loading()) {
-    on<CustomBuildEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ) : super(const CustomBuildState.loading());
 
-  Future<void> _mapEventToState(CustomBuildEvent event, Emitter<CustomBuildState> emit) async {
-    final s = await event.map(
-      load: (e) async => _init(e.key, e.initialTitle),
-      characterChanged: (e) async => state.maybeMap(
-        loaded: (state) => _characterChanged(e, state),
-        orElse: () => state,
-      ),
-      titleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(title: e.newValue, readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      roleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(type: e.newValue, readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      subRoleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(subType: e.newValue, readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      showOnCharacterDetailChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(showOnCharacterDetail: e.newValue, readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      isRecommendedChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(isRecommended: e.newValue, readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      addNote: (e) async => state.maybeMap(
-        loaded: (state) => _addNote(e, state),
-        orElse: () => state,
-      ),
-      deleteNote: (e) async => state.maybeMap(
-        loaded: (state) => _deleteNote(e, state),
-        orElse: () => state,
-      ),
-      addSkillPriority: (e) async => state.maybeMap(
-        loaded: (state) => _addSkillPriority(e, state),
-        orElse: () => state,
-      ),
-      deleteSkillPriority: (e) async => state.maybeMap(
-        loaded: (state) => _deleteSkillPriority(e, state),
-        orElse: () => state,
-      ),
-      addWeapon: (e) async => state.maybeMap(
-        loaded: (state) => _addWeapon(e, state),
-        orElse: () => state,
-      ),
-      weaponRefinementChanged: (e) async => state.maybeMap(
-        loaded: (state) => _weaponRefinementChanged(e, state),
-        orElse: () => state,
-      ),
-      weaponStatChanged: (e) async => state.maybeMap(
-        loaded: (state) => _weaponStatChanged(e, state),
-        orElse: () => state,
-      ),
-      weaponsOrderChanged: (e) async => state.maybeMap(
-        loaded: (state) => _weaponsOrderChanged(e, state),
-        orElse: () => state,
-      ),
-      deleteWeapon: (e) async => state.maybeMap(
-        loaded: (state) => _deleteWeapon(e, state),
-        orElse: () => state,
-      ),
-      deleteWeapons: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(weapons: [], readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      addArtifact: (e) async => state.maybeMap(
-        loaded: (state) => _addArtifact(e, state),
-        orElse: () => state,
-      ),
-      addArtifactSubStats: (e) async => state.maybeMap(
-        loaded: (state) => _addArtifactSubStats(e, state),
-        orElse: () => state,
-      ),
-      deleteArtifact: (e) async => state.maybeMap(
-        loaded: (state) => _deleteArtifact(e, state),
-        orElse: () => state,
-      ),
-      deleteArtifacts: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(artifacts: [], subStatsSummary: [], readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      addTeamCharacter: (e) async => state.maybeMap(
-        loaded: (state) => _addTeamCharacter(e, state),
-        orElse: () => state,
-      ),
-      teamCharactersOrderChanged: (e) async => state.maybeMap(
-        loaded: (state) => _teamCharactersOrderChanged(e, state),
-        orElse: () => state,
-      ),
-      deleteTeamCharacter: (e) async => state.maybeMap(
-        loaded: (state) => _deleteTeamCharacter(e, state),
-        orElse: () => state,
-      ),
-      deleteTeamCharacters: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(teamCharacters: [], readyForScreenshot: false),
-        orElse: () => state,
-      ),
-      readyForScreenshot: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(readyForScreenshot: e.ready),
-        orElse: () => state,
-      ),
-      saveChanges: (e) async => state.maybeMap(
-        loaded: (state) => _saveChanges(state),
-        orElse: () async => state,
-      ),
-      screenshotWasTaken: (e) async => state.maybeMap(
-        loaded: (state) => _onScreenShootTaken(e, state),
-        orElse: () async => state,
-      ),
-    );
-
-    emit(s);
+  @override
+  Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
+    switch (event) {
+      case CustomBuildEventInit():
+        yield _init(event.key, event.initialTitle);
+      case CustomBuildEventCharacterChanged():
+        yield _characterChanged(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventTitleChanged():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(title: event.newValue, readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventRoleChanged():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(type: event.newValue, readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventSubRoleChanged():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(subType: event.newValue, readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventShowOnCharacterDetailChanged():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(showOnCharacterDetail: event.newValue, readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventIsRecommendedChanged():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(isRecommended: event.newValue, readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventAddSkillPriority():
+        yield _addSkillPriority(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteSkillPriority():
+        yield _deleteSkillPriority(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventAddNote():
+        yield _addNote(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteNote():
+        yield _deleteNote(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventAddWeapon():
+        yield _addWeapon(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventWeaponRefinementChanged():
+        yield _weaponRefinementChanged(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventWeaponStatChanged():
+        yield _weaponStatChanged(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventWeaponsOrderChanged():
+        yield _weaponsOrderChanged(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteWeapon():
+        yield _deleteWeapon(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteWeapons():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(weapons: [], readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventAddArtifact():
+        yield _addArtifact(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventAddArtifactSubStats():
+        yield _addArtifactSubStats(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteArtifact():
+        yield _deleteArtifact(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteArtifacts():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(artifacts: [], subStatsSummary: [], readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventAddTeamCharacter():
+        yield _addTeamCharacter(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventTeamCharactersOrderChanged():
+        yield _teamCharactersOrderChanged(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteTeamCharacter():
+        yield _deleteTeamCharacter(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventDeleteTeamCharacters():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(teamCharacters: [], readyForScreenshot: false);
+          default:
+            break;
+        }
+      case CustomBuildEventReadyForScreenshot():
+        switch (state) {
+          case final CustomBuildStateLoaded state:
+            yield state.copyWith.call(readyForScreenshot: event.ready);
+          default:
+            break;
+        }
+      case CustomBuildEventScreenshotWasTaken():
+        yield await _onScreenShootTaken(event, state as CustomBuildStateLoaded);
+      case CustomBuildEventSaveChanges():
+        yield await _saveChanges(state as CustomBuildStateLoaded);
+    }
   }
 
   CustomBuildState _init(int? key, String initialTitle) {
@@ -202,7 +191,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     );
   }
 
-  CustomBuildState _addNote(_AddNote e, _LoadedState state) {
+  CustomBuildState _addNote(CustomBuildEventAddNote e, CustomBuildStateLoaded state) {
     if (e.note.isNullEmptyOrWhitespace || state.notes.length >= maxNumberOfNotes) {
       throw Exception('Note is not valid');
     }
@@ -210,7 +199,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(notes: [...state.notes, newNote], readyForScreenshot: false);
   }
 
-  CustomBuildState _deleteNote(_DeleteNote e, _LoadedState state) {
+  CustomBuildState _deleteNote(CustomBuildEventDeleteNote e, CustomBuildStateLoaded state) {
     if (e.index < 0 || e.index >= state.notes.length) {
       throw Exception('The provided note index = ${e.index} is not valid');
     }
@@ -220,7 +209,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(notes: notes, readyForScreenshot: false);
   }
 
-  CustomBuildState _addSkillPriority(_AddSkillPriority e, _LoadedState state) {
+  CustomBuildState _addSkillPriority(CustomBuildEventAddSkillPriority e, CustomBuildStateLoaded state) {
     if (state.skillPriorities.contains(e.type)) {
       return state;
     }
@@ -230,7 +219,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(skillPriorities: [...state.skillPriorities, e.type], readyForScreenshot: false);
   }
 
-  CustomBuildState _deleteSkillPriority(_DeleteSkillPriority e, _LoadedState state) {
+  CustomBuildState _deleteSkillPriority(CustomBuildEventDeleteSkillPriority e, CustomBuildStateLoaded state) {
     if (e.index < 0 || e.index >= state.skillPriorities.length) {
       throw Exception('The provided skill index = ${e.index} is not valid');
     }
@@ -240,7 +229,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(skillPriorities: skillPriorities, readyForScreenshot: false);
   }
 
-  CustomBuildState _characterChanged(_CharacterChanged e, _LoadedState state) {
+  CustomBuildState _characterChanged(CustomBuildEventCharacterChanged e, CustomBuildStateLoaded state) {
     if (state.character.key == e.newKey) {
       return state;
     }
@@ -251,10 +240,15 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       teamCharacters.removeWhere((el) => el.key == e.newKey);
     }
 
-    return state.copyWith.call(character: newCharacter, readyForScreenshot: false, weapons: weapons, teamCharacters: teamCharacters);
+    return state.copyWith.call(
+      character: newCharacter,
+      readyForScreenshot: false,
+      weapons: weapons,
+      teamCharacters: teamCharacters,
+    );
   }
 
-  CustomBuildState _addWeapon(_AddWeapon e, _LoadedState state) {
+  CustomBuildState _addWeapon(CustomBuildEventAddWeapon e, CustomBuildStateLoaded state) {
     if (state.weapons.any((el) => el.key == e.key)) {
       throw Exception('Weapons cannot be repeated in the state');
     }
@@ -289,7 +283,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
-  CustomBuildState _weaponsOrderChanged(_WeaponsOrderChanged e, _LoadedState state) {
+  CustomBuildState _weaponsOrderChanged(CustomBuildEventWeaponsOrderChanged e, CustomBuildStateLoaded state) {
     final weapons = <CustomBuildWeaponModel>[];
     for (var i = 0; i < e.weapons.length; i++) {
       final sortableItem = e.weapons[i];
@@ -303,7 +297,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
-  CustomBuildState _weaponRefinementChanged(_WeaponRefinementChanged e, _LoadedState state) {
+  CustomBuildState _weaponRefinementChanged(CustomBuildEventWeaponRefinementChanged e, CustomBuildStateLoaded state) {
     final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
     if (current == null) {
       throw Exception('Weapon = ${e.key} does not exist in the state');
@@ -327,7 +321,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
-  CustomBuildState _weaponStatChanged(_WeaponStatChanged e, _LoadedState state) {
+  CustomBuildState _weaponStatChanged(CustomBuildEventWeaponStatChanged e, CustomBuildStateLoaded state) {
     final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
     if (current == null) {
       throw Exception('Weapon = ${e.key} does not exist in the state');
@@ -346,7 +340,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
-  CustomBuildState _deleteWeapon(_DeleteWeapon e, _LoadedState state) {
+  CustomBuildState _deleteWeapon(CustomBuildEventDeleteWeapon e, CustomBuildStateLoaded state) {
     if (!state.weapons.any((el) => el.key == e.key)) {
       throw Exception('Weapon = ${e.key} does not exist');
     }
@@ -356,7 +350,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(weapons: updated, readyForScreenshot: false);
   }
 
-  CustomBuildState _addArtifact(_AddArtifact e, _LoadedState state) {
+  CustomBuildState _addArtifact(CustomBuildEventAddArtifact e, CustomBuildStateLoaded state) {
     final fullArtifact = _genshinService.artifacts.getArtifact(e.key);
     final translation = _genshinService.translations.getArtifactTranslation(e.key);
     final img = _genshinService.artifacts.getArtifactRelatedPart(
@@ -393,10 +387,13 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       );
       updatedArtifacts.add(newOne);
     }
-    return state.copyWith.call(artifacts: updatedArtifacts..sort((x, y) => x.type.index.compareTo(y.type.index)), readyForScreenshot: false);
+    return state.copyWith.call(
+      artifacts: updatedArtifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
+      readyForScreenshot: false,
+    );
   }
 
-  CustomBuildState _addArtifactSubStats(_AddArtifactSubStats e, _LoadedState state) {
+  CustomBuildState _addArtifactSubStats(CustomBuildEventAddArtifactSubStats e, CustomBuildStateLoaded state) {
     final artifact = state.artifacts.firstWhereOrNull((el) => el.type == e.type);
     if (artifact == null) {
       throw Exception('Artifact type = ${e.type} is not in the state');
@@ -419,7 +416,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     );
   }
 
-  CustomBuildState _deleteArtifact(_DeleteArtifact e, _LoadedState state) {
+  CustomBuildState _deleteArtifact(CustomBuildEventDeleteArtifact e, CustomBuildStateLoaded state) {
     if (!state.artifacts.any((el) => el.type == e.type)) {
       throw Exception('Artifact type = ${e.type} is not in the state');
     }
@@ -433,7 +430,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     );
   }
 
-  CustomBuildState _addTeamCharacter(_AddTeamCharacter e, _LoadedState state) {
+  CustomBuildState _addTeamCharacter(CustomBuildEventAddTeamCharacter e, CustomBuildStateLoaded state) {
     if (state.teamCharacters.length + 1 == maxNumberOfTeamCharacters) {
       throw Exception('Cannot add more than = $maxNumberOfTeamCharacters team characters to the state');
     }
@@ -471,7 +468,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(teamCharacters: updatedTeamCharacters, readyForScreenshot: false);
   }
 
-  CustomBuildState _teamCharactersOrderChanged(_TeamCharactersOrderChanged e, _LoadedState state) {
+  CustomBuildState _teamCharactersOrderChanged(CustomBuildEventTeamCharactersOrderChanged e, CustomBuildStateLoaded state) {
     final teamCharacters = <CustomBuildTeamCharacterModel>[];
     for (var i = 0; i < e.characters.length; i++) {
       final sortableItem = e.characters[i];
@@ -485,7 +482,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(teamCharacters: teamCharacters, readyForScreenshot: false);
   }
 
-  CustomBuildState _deleteTeamCharacter(_DeleteTeamCharacter e, _LoadedState state) {
+  CustomBuildState _deleteTeamCharacter(CustomBuildEventDeleteTeamCharacter e, CustomBuildStateLoaded state) {
     if (!state.teamCharacters.any((el) => el.key == e.key)) {
       throw Exception('Team character = ${e.key} is not in the state');
     }
@@ -495,8 +492,8 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return state.copyWith.call(teamCharacters: updated, readyForScreenshot: false);
   }
 
-  Future<CustomBuildState> _saveChanges(_LoadedState state) async {
-    _LoadedState updatedState;
+  Future<CustomBuildState> _saveChanges(CustomBuildStateLoaded state) async {
+    CustomBuildStateLoaded updatedState;
     if (state.key != null) {
       await _dataService.customBuilds.updateCustomBuild(
         state.key!,
@@ -511,7 +508,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         state.teamCharacters,
         state.skillPriorities,
       );
-      updatedState = _init(state.key, state.title) as _LoadedState;
+      updatedState = _init(state.key, state.title) as CustomBuildStateLoaded;
     } else {
       final build = await _dataService.customBuilds.saveCustomBuild(
         state.character.key,
@@ -526,7 +523,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         state.teamCharacters,
         state.skillPriorities,
       );
-      updatedState = _init(build.key, state.title) as _LoadedState;
+      updatedState = _init(build.key, state.title) as CustomBuildStateLoaded;
     }
 
     await _telemetryService.trackCustomBuildSaved(state.character.key, state.type, state.subType);
@@ -534,7 +531,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     return updatedState.copyWith.call(readyForScreenshot: true);
   }
 
-  Future<CustomBuildState> _onScreenShootTaken(_ScreenshotWasTaken e, _LoadedState state) async {
+  Future<CustomBuildState> _onScreenShootTaken(CustomBuildEventScreenshotWasTaken e, CustomBuildStateLoaded state) async {
     if (e.succeed) {
       await _telemetryService.trackCustomBuildScreenShootTaken(state.character.key, state.type, state.subType);
       return state.copyWith.call(readyForScreenshot: false);

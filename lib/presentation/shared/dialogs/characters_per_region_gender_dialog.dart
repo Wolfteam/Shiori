@@ -52,19 +52,23 @@ class CharactersPerRegionGenderDialog extends StatelessWidget {
           ),
         ],
         content: BlocBuilder<CharactersPerRegionGenderBloc, CharactersPerRegionGenderState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.items.isEmpty
-                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
-                : SizedBox(
-                    height: mq.getHeightForDialogs(state.items.length + 1),
-                    width: mq.getWidthForDialogs(),
-                    child: ListView.builder(
-                      itemCount: state.items.length,
-                      itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: ItemType.character, item: state.items[index]),
-                    ),
-                  ),
-            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-          ),
+          builder: (context, state) => switch (state) {
+            CharactersPerRegionGenderStateLoading() => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+            final CharactersPerRegionGenderStateLoaded state when state.items.isEmpty => const NothingFoundColumn(
+              mainAxisSize: MainAxisSize.min,
+            ),
+            CharactersPerRegionGenderStateLoaded() => SizedBox(
+              height: mq.getHeightForDialogs(state.items.length + 1),
+              width: mq.getWidthForDialogs(),
+              child: ListView.builder(
+                itemCount: state.items.length,
+                itemBuilder: (context, index) => DialogListItemRow.fromItem(
+                  itemType: ItemType.character,
+                  item: state.items[index],
+                ),
+              ),
+            ),
+          },
         ),
       ),
     );

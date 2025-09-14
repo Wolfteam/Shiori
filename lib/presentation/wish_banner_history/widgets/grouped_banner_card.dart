@@ -130,11 +130,11 @@ class _ClickableText extends StatelessWidget {
     }
   }
 
-  Future<void> _goToCharacterPage(String itemKey, BuildContext context) async {
+  Future<void> _goToCharacterPage(String itemKey, BuildContext context) {
     return CharacterPage.route(itemKey, context);
   }
 
-  Future<void> _goToWeaponPage(String itemKey, BuildContext context) async {
+  Future<void> _goToWeaponPage(String itemKey, BuildContext context) {
     return WeaponPage.route(itemKey, context);
   }
 }

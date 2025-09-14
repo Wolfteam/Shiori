@@ -11,15 +11,14 @@ part 'characters_per_region_state.dart';
 class CharactersPerRegionBloc extends Bloc<CharactersPerRegionEvent, CharactersPerRegionState> {
   final GenshinService _genshinService;
 
-  CharactersPerRegionBloc(this._genshinService) : super(const CharactersPerRegionState.loading()) {
-    on<CharactersPerRegionEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  CharactersPerRegionBloc(this._genshinService) : super(const CharactersPerRegionState.loading());
 
-  Future<void> _mapEventToState(CharactersPerRegionEvent event, Emitter<CharactersPerRegionState> emit) async {
-    final s = event.map(
-      init: (e) => _init(e.type),
-    );
-    emit(s);
+  @override
+  Stream<CharactersPerRegionState> mapEventToState(CharactersPerRegionEvent event) async* {
+    switch (event) {
+      case CharactersPerRegionEventInit():
+        yield _init(event.type);
+    }
   }
 
   CharactersPerRegionState _init(RegionType type) {

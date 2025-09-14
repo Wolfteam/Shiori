@@ -4,7 +4,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'wish_banner_history_grouped_period_model.freezed.dart';
 
 @freezed
-class WishBannerHistoryGroupedPeriodModel with _$WishBannerHistoryGroupedPeriodModel {
+abstract class WishBannerHistoryGroupedPeriodModel with _$WishBannerHistoryGroupedPeriodModel {
   const factory WishBannerHistoryGroupedPeriodModel({
     required String groupingKey,
     required String groupingTitle,
@@ -13,7 +13,7 @@ class WishBannerHistoryGroupedPeriodModel with _$WishBannerHistoryGroupedPeriodM
 }
 
 @freezed
-class WishBannerHistoryPartItemModel with _$WishBannerHistoryPartItemModel {
+abstract class WishBannerHistoryPartItemModel with _$WishBannerHistoryPartItemModel {
   const factory WishBannerHistoryPartItemModel({
     required List<ItemCommonWithNameAndRarity> featuredCharacters,
     required List<ItemCommonWithNameAndRarity> featuredWeapons,

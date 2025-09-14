@@ -47,14 +47,14 @@ class ModalBottomSheetUtils {
         shape: Styles.modalBottomSheetShape,
         isScrollControlled: true,
         useSafeArea: true,
-        builder: (ctx) => getBottomSheetFromEndDrawerItemType(context, type, args: args),
+        builder: (ctx) => SafeArea(child: getBottomSheetFromEndDrawerItemType(context, type, args: args)),
       );
       return;
     }
 
     await showCustomModalBottomSheet(
       context: context,
-      builder: (ctx) => getBottomSheetFromEndDrawerItemType(context, type, args: args),
+      builder: (ctx) => SafeArea(child: getBottomSheetFromEndDrawerItemType(context, type, args: args)),
     );
   }
 }

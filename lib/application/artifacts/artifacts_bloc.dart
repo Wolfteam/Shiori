@@ -14,56 +14,57 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   final GenshinService _genshinService;
   final List<ArtifactCardModel> _allArtifacts = [];
 
-  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading()) {
-    on<ArtifactsEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading());
 
-  _LoadedState get currentState => state as _LoadedState;
+  ArtifactsStateLoaded get currentState => state as ArtifactsStateLoaded;
 
-  Future<void> _mapEventToState(ArtifactsEvent event, Emitter<ArtifactsState> emit) async {
-    final s = event.map(
-      init: (e) {
-        if (_allArtifacts.isEmpty || e.force) {
+  @override
+  Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
+    switch (event) {
+      case ArtifactsEventInit():
+        if (_allArtifacts.isEmpty || event.force) {
           _allArtifacts.clear();
           _allArtifacts.addAll(_genshinService.artifacts.getArtifactsForCard());
         }
 
-        return _buildInitialState(excludeKeys: e.excludeKeys, type: e.type);
-      },
-      artifactFilterTypeChanged: (e) => currentState.copyWith.call(tempArtifactFilterType: e.artifactFilterType),
-      rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
-      sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
-      searchChanged: (e) => _buildInitialState(
-        search: e.search,
-        artifactFilterType: currentState.artifactFilterType,
-        rarity: currentState.rarity,
-        sortDirectionType: currentState.sortDirectionType,
-        excludeKeys: currentState.excludeKeys,
-        type: currentState.type,
-      ),
-      applyFilterChanges: (_) => _buildInitialState(
-        search: currentState.search,
-        artifactFilterType: currentState.tempArtifactFilterType,
-        rarity: currentState.tempRarity,
-        sortDirectionType: currentState.tempSortDirectionType,
-        excludeKeys: currentState.excludeKeys,
-        type: currentState.type,
-      ),
-      cancelChanges: (_) => currentState.copyWith.call(
-        tempArtifactFilterType: currentState.artifactFilterType,
-        tempRarity: currentState.rarity,
-        tempSortDirectionType: currentState.sortDirectionType,
-        excludeKeys: currentState.excludeKeys,
-        type: currentState.type,
-      ),
-      collapseNotes: (e) => currentState.copyWith.call(collapseNotes: e.collapse),
-      resetFilters: (_) => _buildInitialState(
-        excludeKeys: currentState.excludeKeys,
-        type: currentState.type,
-      ),
-    );
-
-    emit(s);
+        yield _buildInitialState(excludeKeys: event.excludeKeys, type: event.type);
+      case ArtifactsEventCollapseNotesChanged():
+        yield currentState.copyWith.call(collapseNotes: event.collapse);
+      case ArtifactsEventSearchChanged():
+        yield _buildInitialState(
+          search: event.search,
+          artifactFilterType: currentState.artifactFilterType,
+          rarity: currentState.rarity,
+          sortDirectionType: currentState.sortDirectionType,
+          excludeKeys: currentState.excludeKeys,
+          type: currentState.type,
+        );
+      case ArtifactsEventRarityChanged():
+        yield currentState.copyWith.call(tempRarity: event.rarity);
+      case ArtifactsEventArtifactFilterChanged():
+        yield currentState.copyWith.call(tempArtifactFilterType: event.artifactFilterType);
+      case ArtifactsEventSortDirectionTypeChanged():
+        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+      case ArtifactsEventApplyFilterChanges():
+        yield _buildInitialState(
+          search: currentState.search,
+          artifactFilterType: currentState.tempArtifactFilterType,
+          rarity: currentState.tempRarity,
+          sortDirectionType: currentState.tempSortDirectionType,
+          excludeKeys: currentState.excludeKeys,
+          type: currentState.type,
+        );
+      case ArtifactsEventCancelChanges():
+        yield currentState.copyWith.call(
+          tempArtifactFilterType: currentState.artifactFilterType,
+          tempRarity: currentState.rarity,
+          tempSortDirectionType: currentState.sortDirectionType,
+          excludeKeys: currentState.excludeKeys,
+          type: currentState.type,
+        );
+      case ArtifactsEventResetFilters():
+        yield _buildInitialState(excludeKeys: currentState.excludeKeys, type: currentState.type);
+    }
   }
 
   ArtifactsState _buildInitialState({
@@ -74,7 +75,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     SortDirectionType sortDirectionType = SortDirectionType.asc,
     ArtifactType? type,
   }) {
-    final isLoaded = state is _LoadedState;
+    final isLoaded = state is ArtifactsStateLoaded;
     var data = [..._allArtifacts];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
@@ -135,8 +136,6 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
         }
-      default:
-        break;
     }
   }
 }

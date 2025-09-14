@@ -5,7 +5,7 @@ import 'package:shiori/domain/wish_banner_constants.dart';
 part 'wish_simulator_banner_item_model.freezed.dart';
 
 @freezed
-class WishSimulatorBannerItemsPerPeriodModel with _$WishSimulatorBannerItemsPerPeriodModel {
+abstract class WishSimulatorBannerItemsPerPeriodModel with _$WishSimulatorBannerItemsPerPeriodModel {
   const factory WishSimulatorBannerItemsPerPeriodModel({
     required double version,
     required DateTime from,
@@ -15,7 +15,7 @@ class WishSimulatorBannerItemsPerPeriodModel with _$WishSimulatorBannerItemsPerP
 }
 
 @freezed
-class WishSimulatorBannerItemModel with _$WishSimulatorBannerItemModel {
+abstract class WishSimulatorBannerItemModel with _$WishSimulatorBannerItemModel {
   List<String> get featuredImages {
     switch (type) {
       case BannerItemType.character:
@@ -38,7 +38,7 @@ class WishSimulatorBannerItemModel with _$WishSimulatorBannerItemModel {
 }
 
 @freezed
-class WishSimulatorBannerFeaturedItemModel with _$WishSimulatorBannerFeaturedItemModel {
+abstract class WishSimulatorBannerFeaturedItemModel with _$WishSimulatorBannerFeaturedItemModel {
   const factory WishSimulatorBannerFeaturedItemModel({
     required String key,
     required String iconImage,
@@ -48,7 +48,7 @@ class WishSimulatorBannerFeaturedItemModel with _$WishSimulatorBannerFeaturedIte
 }
 
 @freezed
-class WishSimulatorBannerCharacterModel with _$WishSimulatorBannerCharacterModel {
+abstract class WishSimulatorBannerCharacterModel with _$WishSimulatorBannerCharacterModel {
   const factory WishSimulatorBannerCharacterModel({
     required String key,
     required int rarity,
@@ -59,7 +59,7 @@ class WishSimulatorBannerCharacterModel with _$WishSimulatorBannerCharacterModel
 }
 
 @freezed
-class WishSimulatorBannerWeaponModel with _$WishSimulatorBannerWeaponModel {
+abstract class WishSimulatorBannerWeaponModel with _$WishSimulatorBannerWeaponModel {
   const factory WishSimulatorBannerWeaponModel({
     required String key,
     required int rarity,

@@ -42,7 +42,10 @@ void main() {
           }
           expect(skill.stats, isNotEmpty);
           for (final ability in skill.abilities) {
-            final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace || ability.description.isNotNullEmptyOrWhitespace || ability.secondDescription.isNotNullEmptyOrWhitespace;
+            final oneAtLeast =
+                ability.name.isNotNullEmptyOrWhitespace ||
+                ability.description.isNotNullEmptyOrWhitespace ||
+                ability.secondDescription.isNotNullEmptyOrWhitespace;
 
             if (!oneAtLeast) {
               expect(ability.descriptions, isNotEmpty);
@@ -61,11 +64,15 @@ void main() {
               expect(stats.length, 15);
             case CharacterSkillType.others:
               break;
-            default:
-              throw Exception('Skill is not mapped');
           }
           final hasPendingParam = stats.expand((el) => el.descriptions).any((el) => el.contains('param'));
           expect(hasPendingParam, equals(false));
+
+          for (final stat in stats) {
+            for (final description in stat.descriptions) {
+              checkTranslation(description);
+            }
+          }
         }
 
         for (final passive in translation.passives) {
@@ -106,8 +113,8 @@ void main() {
         final detail = service.getWeapon(weapon.key);
         final translation = service.translations.getWeaponTranslation(weapon.key);
         checkKey(translation.key);
-        checkTranslation(translation.name, canBeNull: false);
-        checkTranslation(translation.description, canBeNull: false);
+        checkTranslation(translation.name, canBeNull: false, checkParamX: false);
+        checkTranslation(translation.description, canBeNull: false, checkParamX: false);
         if (detail.rarity > 2) {
           //all weapons with a rarity > 2 have 5 refinements except the following
           //the ps4 sword, the aloy weapon
@@ -122,7 +129,7 @@ void main() {
         }
 
         for (final refinement in translation.refinements) {
-          checkTranslation(refinement, canBeNull: false, checkForColor: false);
+          checkTranslation(refinement, canBeNull: false, checkForColor: false, checkParamX: false);
         }
       }
     }

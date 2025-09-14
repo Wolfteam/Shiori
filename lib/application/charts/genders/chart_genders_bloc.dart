@@ -12,16 +12,14 @@ part 'chart_genders_state.dart';
 class ChartGendersBloc extends Bloc<ChartGendersEvent, ChartGendersState> {
   final GenshinService _genshinService;
 
-  ChartGendersBloc(this._genshinService) : super(const ChartGendersState.loading()) {
-    on<ChartGendersEvent>((event, emit) => _mapEventToState(event, emit));
-  }
+  ChartGendersBloc(this._genshinService) : super(const ChartGendersState.loading());
 
-  Future<void> _mapEventToState(ChartGendersEvent event, Emitter<ChartGendersState> emit) async {
-    final s = event.map(
-      init: (_) => _init(),
-    );
-
-    emit(s);
+  @override
+  Stream<ChartGendersState> mapEventToState(ChartGendersEvent event) async* {
+    switch (event) {
+      case InitChartGendersEvent():
+        yield _init();
+    }
   }
 
   ChartGendersState _init() {

@@ -5,7 +5,7 @@ part 'weapons_file.freezed.dart';
 part 'weapons_file.g.dart';
 
 @freezed
-class WeaponsFile with _$WeaponsFile {
+abstract class WeaponsFile with _$WeaponsFile {
   List<WeaponFileModel> get weapons => bows + swords + claymores + catalysts + polearms;
 
   factory WeaponsFile({

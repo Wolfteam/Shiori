@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'custom_build_weapon_model.freezed.dart';
 
 @freezed
-class CustomBuildWeaponModel with _$CustomBuildWeaponModel {
+abstract class CustomBuildWeaponModel with _$CustomBuildWeaponModel {
   const factory CustomBuildWeaponModel({
     required String key,
     required int index,
