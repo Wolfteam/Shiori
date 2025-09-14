@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -16,27 +17,28 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsBloc(this._genshinService)
     : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
-      super(const ChartElementsState.loading());
+      super(const ChartElementsState.loading()) {
+    on<ChartElementsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ChartElementsState> mapEventToState(ChartElementsEvent event) async* {
+  Future<void> _mapEventToState(ChartElementsEvent event, Emitter<ChartElementsState> emit) async {
     if (event is! ChartElementsEventInit && state is! ChartElementsStateLoaded) {
       throw Exception('Invalid state');
     }
 
     switch (event) {
       case ChartElementsEventInit():
-        yield _init(event.maxNumberOfColumns);
+        emit(_init(event.maxNumberOfColumns));
       case ChartElementsEventElementSelected():
-        yield _elementSelectionChanged(state as ChartElementsStateLoaded, event.type);
+        emit(_elementSelectionChanged(state as ChartElementsStateLoaded, event.type));
       case ChartElementsEventGoToNextPage():
-        yield _goToNextPage(state as ChartElementsStateLoaded);
+        emit(_goToNextPage(state as ChartElementsStateLoaded));
       case ChartElementsEventGoToPreviousPage():
-        yield _goToPreviousPage(state as ChartElementsStateLoaded);
+        emit(_goToPreviousPage(state as ChartElementsStateLoaded));
       case ChartElementsEventGoToFirstPage():
-        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, true);
+        emit(_goToFirstOrLastPage(state as ChartElementsStateLoaded, true));
       case ChartElementsEventGoToLastPage():
-        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, false);
+        emit(_goToFirstOrLastPage(state as ChartElementsStateLoaded, false));
     }
   }
 

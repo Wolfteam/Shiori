@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -17,12 +18,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final SettingsService _settingsService;
   final List<CharacterCardModel> _allCharacters = [];
 
-  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading());
+  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading()) {
+    on<CharactersEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
   CharactersStateLoaded get currentState => state as CharactersStateLoaded;
 
-  @override
-  Stream<CharactersState> mapEventToState(CharactersEvent event) async* {
+  Future<void> _mapEventToState(CharactersEvent event, Emitter<CharactersState> emit) async {
     switch (event) {
       case CharactersEventInit():
         if (_allCharacters.isEmpty || event.force) {
@@ -30,70 +32,78 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
           _allCharacters.addAll(_genshinService.characters.getCharactersForCard());
         }
 
-        yield _buildInitialState(
-          excludeKeys: event.excludeKeys,
-          elementTypes: ElementType.values,
-          weaponTypes: WeaponType.values,
+        emit(
+          _buildInitialState(
+            excludeKeys: event.excludeKeys,
+            elementTypes: ElementType.values,
+            weaponTypes: WeaponType.values,
+          ),
         );
       case CharactersEventSearchChanged():
-        yield _buildInitialState(
-          search: event.search,
-          characterFilterType: currentState.characterFilterType,
-          elementTypes: currentState.elementTypes,
-          rarity: currentState.rarity,
-          statusType: currentState.statusType,
-          sortDirectionType: currentState.sortDirectionType,
-          weaponTypes: currentState.weaponTypes,
-          roleType: currentState.tempRoleType,
-          excludeKeys: currentState.excludeKeys,
+        emit(
+          _buildInitialState(
+            search: event.search,
+            characterFilterType: currentState.characterFilterType,
+            elementTypes: currentState.elementTypes,
+            rarity: currentState.rarity,
+            statusType: currentState.statusType,
+            sortDirectionType: currentState.sortDirectionType,
+            weaponTypes: currentState.weaponTypes,
+            roleType: currentState.tempRoleType,
+            excludeKeys: currentState.excludeKeys,
+          ),
         );
       case CharactersEventWeaponTypeChanged():
-        yield _weaponTypeChanged(event.weaponType);
+        emit(_weaponTypeChanged(event.weaponType));
       case CharactersEventElementTypeChanged():
-        yield _elementTypeChanged(event.elementType);
+        emit(_elementTypeChanged(event.elementType));
       case CharactersEventRarityChanged():
-        yield currentState.copyWith.call(tempRarity: event.rarity);
+        emit(currentState.copyWith.call(tempRarity: event.rarity));
       case CharactersEventItemStatusTypeChanged():
-        yield currentState.copyWith.call(tempStatusType: event.statusType);
+        emit(currentState.copyWith.call(tempStatusType: event.statusType));
       case CharactersEventCharacterFilterTypeChanged():
-        yield currentState.copyWith.call(tempCharacterFilterType: event.characterFilterType);
+        emit(currentState.copyWith.call(tempCharacterFilterType: event.characterFilterType));
       case CharactersEventSortDirectionTypeChanged():
-        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        emit(currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType));
       case CharactersEventCharacterRoleTypeChanged():
-        yield currentState.copyWith.call(tempRoleType: event.roleType);
+        emit(currentState.copyWith.call(tempRoleType: event.roleType));
       case CharactersEventRegionTypeChanged():
-        yield currentState.copyWith.call(tempRegionType: event.regionType);
+        emit(currentState.copyWith.call(tempRegionType: event.regionType));
       case CharactersEventApplyFilterChanges():
-        yield _buildInitialState(
-          search: currentState.search,
-          characterFilterType: currentState.tempCharacterFilterType,
-          elementTypes: currentState.tempElementTypes,
-          rarity: currentState.tempRarity,
-          statusType: currentState.tempStatusType,
-          sortDirectionType: currentState.tempSortDirectionType,
-          weaponTypes: currentState.tempWeaponTypes,
-          roleType: currentState.tempRoleType,
-          excludeKeys: currentState.excludeKeys,
-          regionType: currentState.tempRegionType,
+        emit(
+          _buildInitialState(
+            search: currentState.search,
+            characterFilterType: currentState.tempCharacterFilterType,
+            elementTypes: currentState.tempElementTypes,
+            rarity: currentState.tempRarity,
+            statusType: currentState.tempStatusType,
+            sortDirectionType: currentState.tempSortDirectionType,
+            weaponTypes: currentState.tempWeaponTypes,
+            roleType: currentState.tempRoleType,
+            excludeKeys: currentState.excludeKeys,
+            regionType: currentState.tempRegionType,
+          ),
         );
       case CharactersEventCancelChanges():
-        yield currentState.copyWith.call(
-          tempCharacterFilterType: currentState.characterFilterType,
-          tempElementTypes: currentState.elementTypes,
-          tempRarity: currentState.rarity,
-          tempStatusType: currentState.statusType,
-          tempSortDirectionType: currentState.sortDirectionType,
-          tempWeaponTypes: currentState.weaponTypes,
-          tempRoleType: currentState.roleType,
-          excludeKeys: currentState.excludeKeys,
-          tempRegionType: currentState.regionType,
+        emit(
+          currentState.copyWith.call(
+            tempCharacterFilterType: currentState.characterFilterType,
+            tempElementTypes: currentState.elementTypes,
+            tempRarity: currentState.rarity,
+            tempStatusType: currentState.statusType,
+            tempSortDirectionType: currentState.sortDirectionType,
+            tempWeaponTypes: currentState.weaponTypes,
+            tempRoleType: currentState.roleType,
+            excludeKeys: currentState.excludeKeys,
+            tempRegionType: currentState.regionType,
+          ),
         );
       case CharactersEventResetFilters():
         final excludedKeys = switch (state) {
           CharactersStateLoading() => <String>[],
           final CharactersStateLoaded state => state.excludeKeys,
         };
-        yield _buildInitialState(excludeKeys: excludedKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values);
+        emit(_buildInitialState(excludeKeys: excludedKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values));
     }
   }
 

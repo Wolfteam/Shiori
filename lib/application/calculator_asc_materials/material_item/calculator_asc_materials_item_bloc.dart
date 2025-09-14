@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
@@ -22,12 +23,13 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   CalculatorAscMaterialsItemStateLoaded get currentState => state as CalculatorAscMaterialsItemStateLoaded;
 
   CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService, this._resourceService)
-    : super(const CalculatorAscMaterialsItemState.loading());
+    : super(const CalculatorAscMaterialsItemState.loading()) {
+    on<CalculatorAscMaterialsItemEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsItemState> mapEventToState(CalculatorAscMaterialsItemEvent event) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsItemEvent event, Emitter<CalculatorAscMaterialsItemState> emit) async {
     if (event is CalculatorAscMaterialsItemEventLoad) {
-      yield const CalculatorAscMaterialsItemState.loading();
+      emit(const CalculatorAscMaterialsItemState.loading());
     }
 
     if (event is! CalculatorAscMaterialsItemEventLoad &&
@@ -36,26 +38,29 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       throw Exception('Invalid state');
     }
 
-    switch (event) {
-      case CalculatorAscMaterialsItemEventLoad():
-        yield _defaultLoad(event);
-      case CalculatorAscMaterialsItemEventLoadWith():
-        yield _load(event);
-      case CalculatorAscMaterialsItemEventCurrentLevelChanged():
-        yield _levelChanged(event.newValue, currentState.desiredLevel, true);
-      case CalculatorAscMaterialsItemEventDesiredLevelChanged():
-        yield _levelChanged(currentState.currentLevel, event.newValue, false);
-      case CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged():
-        yield _ascensionChanged(event.newValue, currentState.desiredAscensionLevel, true);
-      case CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged():
-        yield _ascensionChanged(currentState.currentAscensionLevel, event.newValue, false);
-      case CalculatorAscMaterialsItemEventSkillCurrentLevelChanged():
-        yield _skillChanged(event.index, event.newValue, true);
-      case CalculatorAscMaterialsItemEventSkillDesiredLevelChanged():
-        yield _skillChanged(event.index, event.newValue, false);
-      case CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged():
-        yield currentState.copyWith.call(useMaterialsFromInventory: event.useThem);
-    }
+    final s = switch (event) {
+      CalculatorAscMaterialsItemEventLoad() => _defaultLoad(event),
+      CalculatorAscMaterialsItemEventLoadWith() => _load(event),
+      CalculatorAscMaterialsItemEventCurrentLevelChanged() => _levelChanged(event.newValue, currentState.desiredLevel, true),
+      CalculatorAscMaterialsItemEventDesiredLevelChanged() => _levelChanged(currentState.currentLevel, event.newValue, false),
+      CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged() => _ascensionChanged(
+        event.newValue,
+        currentState.desiredAscensionLevel,
+        true,
+      ),
+      CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged() => _ascensionChanged(
+        currentState.currentAscensionLevel,
+        event.newValue,
+        false,
+      ),
+      CalculatorAscMaterialsItemEventSkillCurrentLevelChanged() => _skillChanged(event.index, event.newValue, true),
+      CalculatorAscMaterialsItemEventSkillDesiredLevelChanged() => _skillChanged(event.index, event.newValue, false),
+      CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged() => currentState.copyWith.call(
+        useMaterialsFromInventory: event.useThem,
+      ),
+    };
+
+    emit(s);
   }
 
   CalculatorAscMaterialsItemState _defaultLoad(CalculatorAscMaterialsItemEventLoad e) {

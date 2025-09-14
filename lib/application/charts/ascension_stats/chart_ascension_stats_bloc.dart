@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -19,25 +20,26 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
   ChartAscensionStatsBloc(GenshinService genshinService)
     : _characterAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.character),
       _weaponAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.weapon),
-      super(const ChartAscensionStatsState.loading());
+      super(const ChartAscensionStatsState.loading()) {
+    on<ChartAscensionStatsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ChartAscensionStatsState> mapEventToState(ChartAscensionStatsEvent event) async* {
+  Future<void> _mapEventToState(ChartAscensionStatsEvent event, Emitter<ChartAscensionStatsState> emit) async {
     if (event is! ChartAscensionStatsEventInit && state is! ChartAscensionStatsStateLoaded) {
       throw Exception('Invalid state');
     }
 
     switch (event) {
       case ChartAscensionStatsEventInit():
-        yield _init(event.type, event.maxNumberOfColumns);
+        emit(_init(event.type, event.maxNumberOfColumns));
       case ChartAscensionStatsEventGoToNextPage():
-        yield _goToNextPage(state as ChartAscensionStatsStateLoaded);
+        emit(_goToNextPage(state as ChartAscensionStatsStateLoaded));
       case ChartAscensionStatsEventGoToPreviousPage():
-        yield _goToPreviousPage(state as ChartAscensionStatsStateLoaded);
+        emit(_goToPreviousPage(state as ChartAscensionStatsStateLoaded));
       case ChartAscensionStatsEventGoToFirstPage():
-        yield _goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, true);
+        emit(_goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, true));
       case ChartAscensionStatsEventGoToLastPage():
-        yield _goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, false);
+        emit(_goToFirstOrLastPage(state as ChartAscensionStatsStateLoaded, false));
     }
   }
 

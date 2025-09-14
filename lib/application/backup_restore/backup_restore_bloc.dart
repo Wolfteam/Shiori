@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -15,10 +16,11 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
 
   BackupRestoreStateLoaded get currentState => state as BackupRestoreStateLoaded;
 
-  BackupRestoreBloc(this._backupRestoreService, this._telemetryService) : super(const BackupRestoreState.loading());
+  BackupRestoreBloc(this._backupRestoreService, this._telemetryService) : super(const BackupRestoreState.loading()) {
+    on<BackupRestoreEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<BackupRestoreState> mapEventToState(BackupRestoreEvent event) async* {
+  Future<void> _mapEventToState(BackupRestoreEvent event, Emitter<BackupRestoreState> emit) async {
     if (event is! BackupRestoreEventInit && state is! BackupRestoreStateLoaded) {
       throw Exception('Invalid state');
     }
@@ -31,12 +33,13 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
       BackupRestoreEventDelete() => _delete(event.filePath),
     };
 
-    yield s;
+    emit(s);
 
     if (s is BackupRestoreStateLoaded) {
       final resultExists = s.createResult != null || s.restoreResult != null || s.readResult != null || s.deleteResult != null;
       if (resultExists) {
-        yield currentState.copyWith(restoreResult: null, readResult: null, createResult: null, deleteResult: null);
+        final state = currentState.copyWith(restoreResult: null, readResult: null, createResult: null, deleteResult: null);
+        emit(state);
       }
     }
   }

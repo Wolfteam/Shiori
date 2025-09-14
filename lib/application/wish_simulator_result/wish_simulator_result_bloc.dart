@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -23,13 +24,14 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
   WishSimulatorResultBloc(this._dataService, this._telemetryService)
     : _random = Random(),
-      super(const WishSimulatorResultState.loading());
+      super(const WishSimulatorResultState.loading()) {
+    on<WishSimulatorResultEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WishSimulatorResultState> mapEventToState(WishSimulatorResultEvent event) async* {
+  Future<void> _mapEventToState(WishSimulatorResultEvent event, Emitter<WishSimulatorResultState> emit) async {
     switch (event) {
       case WishSimulatorResultEventInit():
-        yield await _pull(event.pulls, event.bannerIndex, event.period);
+        emit(await _pull(event.pulls, event.bannerIndex, event.period));
     }
   }
 

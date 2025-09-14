@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -36,25 +37,26 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     this._genshinService,
     this._settingsService,
     this._deviceInfoService,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<GameCodesEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<GameCodesState> mapEventToState(GameCodesEvent event) async* {
+  Future<void> _mapEventToState(GameCodesEvent event, Emitter<GameCodesState> emit) async {
     switch (event) {
       case GameCodesEventInit():
-        yield await _init();
+        emit(await _init());
       case GameCodesEventMarkAsUsed():
-        yield await _markAsUsed(event.code, event.wasUsed);
+        emit(await _markAsUsed(event.code, event.wasUsed));
       case GameCodesEventRefresh():
         final isInternetAvailable = await _networkService.isInternetAvailable();
         if (!isInternetAvailable) {
-          yield state.copyWith.call(isInternetAvailable: false);
-          yield state.copyWith.call(isInternetAvailable: null);
+          emit(state.copyWith.call(isInternetAvailable: false));
+          emit(state.copyWith.call(isInternetAvailable: null));
           return;
         }
-        yield state.copyWith(isBusy: true);
-        yield await _refresh();
-        yield state.copyWith(unknownErrorOccurred: false, isBusy: false);
+        emit(state.copyWith(isBusy: true));
+        emit(await _refresh());
+        emit(state.copyWith(unknownErrorOccurred: false, isBusy: false));
     }
   }
 

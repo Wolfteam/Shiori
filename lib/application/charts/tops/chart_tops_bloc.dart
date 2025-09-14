@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -13,13 +14,14 @@ class ChartTopsBloc extends Bloc<ChartTopsEvent, ChartTopsState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
-  ChartTopsBloc(this._genshinService, this._telemetryService) : super(const ChartTopsState.loading());
+  ChartTopsBloc(this._genshinService, this._telemetryService) : super(const ChartTopsState.loading()) {
+    on<ChartTopsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ChartTopsState> mapEventToState(ChartTopsEvent event) async* {
+  Future<void> _mapEventToState(ChartTopsEvent event, Emitter<ChartTopsState> emit) async {
     switch (event) {
       case ChartTopsEventInit():
-        yield await _init();
+        emit(await _init());
     }
   }
 

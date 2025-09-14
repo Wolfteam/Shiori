@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
@@ -53,83 +54,86 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     this._settingsService,
     this._resourceService,
     this._notificationsBloc,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<NotificationEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<NotificationState> mapEventToState(NotificationEvent event) async* {
+  Future<void> _mapEventToState(NotificationEvent event, Emitter<NotificationState> emit) async {
     //TODO: HANDLE RECURRING NOTIFICATIONS
     switch (event) {
       case NotificationEventAdd():
-        yield _buildAddState(event.defaultTitle, event.defaultBody);
+        emit(_buildAddState(event.defaultTitle, event.defaultBody));
       case NotificationEventEdit():
-        yield _buildEditState(event.key, event.type);
+        emit(_buildEditState(event.key, event.type));
       case NotificationEventTypeChanged():
-        yield _typeChanged(event.newValue);
+        emit(_typeChanged(event.newValue));
       case NotificationEventTitleChanged():
-        yield state.copyWith.call(
-          title: event.newValue,
-          isTitleValid: _isTitleValid(event.newValue),
-          isTitleDirty: true,
+        emit(
+          state.copyWith.call(
+            title: event.newValue,
+            isTitleValid: _isTitleValid(event.newValue),
+            isTitleDirty: true,
+          ),
         );
       case NotificationEventBodyChanged():
-        yield state.copyWith.call(body: event.newValue, isBodyValid: _isBodyValid(event.newValue), isBodyDirty: true);
+        emit(state.copyWith.call(body: event.newValue, isBodyValid: _isBodyValid(event.newValue), isBodyDirty: true));
       case NotificationEventNoteChanged():
-        yield state.copyWith.call(note: event.newValue, isNoteValid: _isNoteValid(event.newValue), isNoteDirty: true);
+        emit(state.copyWith.call(note: event.newValue, isNoteValid: _isNoteValid(event.newValue), isNoteDirty: true));
       case NotificationEventShowNotificationChanged():
-        yield state.copyWith.call(showNotification: event.show);
+        emit(state.copyWith.call(showNotification: event.show));
       case NotificationEventShowOtherImages():
-        yield state.copyWith.call(showOtherImages: event.show);
+        emit(state.copyWith.call(showOtherImages: event.show));
       case NotificationEventImageChanged():
         final images = state.images.map((el) => el.copyWith.call(isSelected: el.image == event.newValue)).toList();
-        yield state.copyWith.call(images: images);
+        emit(state.copyWith.call(images: images));
       case NotificationEventSaveChanges():
-        yield await _saveChanges();
+        emit(await _saveChanges());
       case NotificationEventResinChanged():
         switch (state) {
           case final NotificationStateResin state:
-            yield state.copyWith.call(currentResin: event.newValue);
+            emit(state.copyWith.call(currentResin: event.newValue));
           default:
             break;
         }
       case NotificationEventExpeditionTimeTypeChanged():
         switch (state) {
           case final NotificationStateExpedition state:
-            yield state.copyWith.call(expeditionTimeType: event.newValue);
+            emit(state.copyWith.call(expeditionTimeType: event.newValue));
           default:
             break;
         }
       case NotificationEventTimeReductionChanged():
         switch (state) {
           case final NotificationStateExpedition state:
-            yield state.copyWith.call(withTimeReduction: event.withTimeReduction);
+            emit(state.copyWith.call(withTimeReduction: event.withTimeReduction));
           default:
             break;
         }
       case NotificationEventArtifactFarmingTimeTypeChanged():
         switch (state) {
           case final NotificationStateFarmingArtifact state:
-            yield state.copyWith.call(artifactFarmingTimeType: event.newValue);
+            emit(state.copyWith.call(artifactFarmingTimeType: event.newValue));
           default:
             break;
         }
       case NotificationEventFurnitureCraftingTimeTypeChanged():
         switch (state) {
           case final NotificationStateFurniture state:
-            yield state.copyWith.call(timeType: event.newValue);
+            emit(state.copyWith.call(timeType: event.newValue));
           default:
             break;
         }
       case NotificationEventRealmCurrencyChanged():
         switch (state) {
           case final NotificationStateRealmCurrency state:
-            yield state.copyWith.call(currentRealmCurrency: event.newValue);
+            emit(state.copyWith.call(currentRealmCurrency: event.newValue));
           default:
             break;
         }
       case NotificationEventRealmRankTypeChanged():
         switch (state) {
           case final NotificationStateRealmCurrency state:
-            yield state.copyWith.call(currentRealmRankType: event.newValue);
+            emit(state.copyWith.call(currentRealmRankType: event.newValue));
           default:
             break;
         }
@@ -141,28 +145,28 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
             if (state.currentRealmCurrency > max) {
               currentRealmCurrency = max - 1;
             }
-            yield state.copyWith.call(currentTrustRank: event.newValue, currentRealmCurrency: currentRealmCurrency);
+            emit(state.copyWith.call(currentTrustRank: event.newValue, currentRealmCurrency: currentRealmCurrency));
           default:
             break;
         }
       case NotificationEventItemTypeChanged():
         switch (state) {
           case NotificationStateCustom():
-            yield _itemTypeChanged(event.newValue);
+            emit(_itemTypeChanged(event.newValue));
           default:
             break;
         }
       case NotificationEventKeySelected():
         switch (state) {
           case NotificationStateCustom():
-            yield _itemKeySelected(event.keyName);
+            emit(_itemKeySelected(event.keyName));
           default:
             break;
         }
       case NotificationEventCustomDateChanged():
         switch (state) {
           case final NotificationStateCustom state:
-            yield state.copyWith.call(scheduledDate: event.newValue);
+            emit(state.copyWith.call(scheduledDate: event.newValue));
           default:
             break;
         }

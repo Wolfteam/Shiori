@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -17,17 +18,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final SettingsService _settingsService;
   final LocaleService _localeService;
 
-  HomeBloc(this._genshinService, this._settingsService, this._localeService) : super(const HomeState.loading());
+  HomeBloc(this._genshinService, this._settingsService, this._localeService) : super(const HomeState.loading()) {
+    on<HomeEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<HomeState> mapEventToState(HomeEvent event) async* {
+  Future<void> _mapEventToState(HomeEvent event, Emitter<HomeState> emit) async {
     switch (event) {
       case HomeEventInit():
         final date = _genshinService.getServerDate(_settingsService.serverResetTime);
         final day = date.weekday;
-        yield _buildInitialState(day);
+        emit(_buildInitialState(day));
       case HomeEventDayChanged():
-        yield _buildInitialState(event.newDay);
+        emit(_buildInitialState(event.newDay));
     }
   }
 

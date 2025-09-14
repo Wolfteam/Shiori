@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -27,22 +28,20 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
   final List<BannerHistoryItemModel> _characterBanners = [];
   final List<BannerHistoryItemModel> _weaponBanners = [];
 
-  BannerHistoryCountBloc(this._genshinService, this._telemetryService) : super(_initialState);
+  BannerHistoryCountBloc(this._genshinService, this._telemetryService) : super(_initialState) {
+    on<BannerHistoryCountEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<BannerHistoryCountState> mapEventToState(BannerHistoryCountEvent event) async* {
-    switch (event) {
-      case BannerHistoryCountEventInit():
-        yield await _init();
-      case BannerHistoryCountEventTypeChanged():
-        yield _typeChanged(event.type);
-      case BannerHistoryCountEventSortTypeChanged():
-        yield _sortTypeChanged(event.type);
-      case BannerHistoryCountEventVersionSelected():
-        yield _versionSelected(event.version);
-      case BannerHistoryCountEventCharactersSelected():
-        yield _itemsSelected(event.keys);
-    }
+  Future<void> _mapEventToState(BannerHistoryCountEvent event, Emitter<BannerHistoryCountState> emit) async {
+    final state = switch (event) {
+      BannerHistoryCountEventInit() => await _init(),
+      BannerHistoryCountEventTypeChanged() => _typeChanged(event.type),
+      BannerHistoryCountEventSortTypeChanged() => _sortTypeChanged(event.type),
+      BannerHistoryCountEventVersionSelected() => _versionSelected(event.version),
+      BannerHistoryCountEventCharactersSelected() => _itemsSelected(event.keys),
+    };
+
+    emit(state);
   }
 
   List<ItemCommonWithName> getItemsForSearch() {

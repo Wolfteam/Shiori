@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
@@ -43,112 +44,113 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     this._loggingService,
     this._resourceService,
     this._customBuildsBloc,
-  ) : super(const CustomBuildState.loading());
+  ) : super(const CustomBuildState.loading()) {
+    on<CustomBuildEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
+  Future<void> _mapEventToState(CustomBuildEvent event, Emitter<CustomBuildState> emit) async {
     switch (event) {
       case CustomBuildEventInit():
-        yield _init(event.key, event.initialTitle);
+        emit(_init(event.key, event.initialTitle));
       case CustomBuildEventCharacterChanged():
-        yield _characterChanged(event, state as CustomBuildStateLoaded);
+        emit(_characterChanged(event, state as CustomBuildStateLoaded));
       case CustomBuildEventTitleChanged():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(title: event.newValue, readyForScreenshot: false);
+            emit(state.copyWith.call(title: event.newValue, readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventRoleChanged():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(type: event.newValue, readyForScreenshot: false);
+            emit(state.copyWith.call(type: event.newValue, readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventSubRoleChanged():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(subType: event.newValue, readyForScreenshot: false);
+            emit(state.copyWith.call(subType: event.newValue, readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventShowOnCharacterDetailChanged():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(showOnCharacterDetail: event.newValue, readyForScreenshot: false);
+            emit(state.copyWith.call(showOnCharacterDetail: event.newValue, readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventIsRecommendedChanged():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(isRecommended: event.newValue, readyForScreenshot: false);
+            emit(state.copyWith.call(isRecommended: event.newValue, readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventAddSkillPriority():
-        yield _addSkillPriority(event, state as CustomBuildStateLoaded);
+        emit(_addSkillPriority(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteSkillPriority():
-        yield _deleteSkillPriority(event, state as CustomBuildStateLoaded);
+        emit(_deleteSkillPriority(event, state as CustomBuildStateLoaded));
       case CustomBuildEventAddNote():
-        yield _addNote(event, state as CustomBuildStateLoaded);
+        emit(_addNote(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteNote():
-        yield _deleteNote(event, state as CustomBuildStateLoaded);
+        emit(_deleteNote(event, state as CustomBuildStateLoaded));
       case CustomBuildEventAddWeapon():
-        yield _addWeapon(event, state as CustomBuildStateLoaded);
+        emit(_addWeapon(event, state as CustomBuildStateLoaded));
       case CustomBuildEventWeaponRefinementChanged():
-        yield _weaponRefinementChanged(event, state as CustomBuildStateLoaded);
+        emit(_weaponRefinementChanged(event, state as CustomBuildStateLoaded));
       case CustomBuildEventWeaponStatChanged():
-        yield _weaponStatChanged(event, state as CustomBuildStateLoaded);
+        emit(_weaponStatChanged(event, state as CustomBuildStateLoaded));
       case CustomBuildEventWeaponsOrderChanged():
-        yield _weaponsOrderChanged(event, state as CustomBuildStateLoaded);
+        emit(_weaponsOrderChanged(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteWeapon():
-        yield _deleteWeapon(event, state as CustomBuildStateLoaded);
+        emit(_deleteWeapon(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteWeapons():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(weapons: [], readyForScreenshot: false);
+            emit(state.copyWith.call(weapons: [], readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventAddArtifact():
-        yield _addArtifact(event, state as CustomBuildStateLoaded);
+        emit(_addArtifact(event, state as CustomBuildStateLoaded));
       case CustomBuildEventAddArtifactSubStats():
-        yield _addArtifactSubStats(event, state as CustomBuildStateLoaded);
+        emit(_addArtifactSubStats(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteArtifact():
-        yield _deleteArtifact(event, state as CustomBuildStateLoaded);
+        emit(_deleteArtifact(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteArtifacts():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(artifacts: [], subStatsSummary: [], readyForScreenshot: false);
+            emit(state.copyWith.call(artifacts: [], subStatsSummary: [], readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventAddTeamCharacter():
-        yield _addTeamCharacter(event, state as CustomBuildStateLoaded);
+        emit(_addTeamCharacter(event, state as CustomBuildStateLoaded));
       case CustomBuildEventTeamCharactersOrderChanged():
-        yield _teamCharactersOrderChanged(event, state as CustomBuildStateLoaded);
+        emit(_teamCharactersOrderChanged(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteTeamCharacter():
-        yield _deleteTeamCharacter(event, state as CustomBuildStateLoaded);
+        emit(_deleteTeamCharacter(event, state as CustomBuildStateLoaded));
       case CustomBuildEventDeleteTeamCharacters():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(teamCharacters: [], readyForScreenshot: false);
+            emit(state.copyWith.call(teamCharacters: [], readyForScreenshot: false));
           default:
             break;
         }
       case CustomBuildEventReadyForScreenshot():
         switch (state) {
           case final CustomBuildStateLoaded state:
-            yield state.copyWith.call(readyForScreenshot: event.ready);
+            emit(state.copyWith.call(readyForScreenshot: event.ready));
           default:
             break;
         }
       case CustomBuildEventScreenshotWasTaken():
-        yield await _onScreenShootTaken(event, state as CustomBuildStateLoaded);
+        emit(await _onScreenShootTaken(event, state as CustomBuildStateLoaded));
       case CustomBuildEventSaveChanges():
-        yield await _saveChanges(state as CustomBuildStateLoaded);
+        emit(await _saveChanges(state as CustomBuildStateLoaded));
     }
   }
 

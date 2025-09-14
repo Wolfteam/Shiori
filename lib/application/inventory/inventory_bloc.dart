@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -29,32 +30,32 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       _dataService.inventory.itemDeletedFromInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
       _dataService.inventory.itemUpdatedInInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
     ];
+    on<InventoryEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
   }
 
-  @override
-  Stream<InventoryState> mapEventToState(InventoryEvent event) async* {
+  Future<void> _mapEventToState(InventoryEvent event, Emitter<InventoryState> emit) async {
     switch (event) {
       case InventoryEventInit():
         final characters = _dataService.inventory.getAllCharactersInInventory();
         final weapons = _dataService.inventory.getAllWeaponsInInventory();
         final materials = _dataService.inventory.getAllMaterialsInInventory();
-        yield InventoryState.loaded(characters: characters, weapons: weapons, materials: materials);
+        emit(InventoryState.loaded(characters: characters, weapons: weapons, materials: materials));
       case InventoryEventAddCharacter():
         await _telemetryService.trackItemAddedToInventory(event.key, 1);
         await _dataService.inventory.addCharacterToInventory(event.key, raiseEvent: false);
-        yield _refreshItems(ItemType.character);
+        emit(_refreshItems(ItemType.character));
       case InventoryEventAddWeapon():
         await _telemetryService.trackItemAddedToInventory(event.key, 1);
         await _dataService.inventory.addWeaponToInventory(event.key, raiseEvent: false);
-        yield _refreshItems(ItemType.weapon);
+        emit(_refreshItems(ItemType.weapon));
       case InventoryEventDeleteCharacter():
         await _telemetryService.trackItemDeletedFromInventory(event.key);
         await _dataService.inventory.deleteCharacterFromInventory(event.key, raiseEvent: false);
-        yield _refreshItems(ItemType.character);
+        emit(_refreshItems(ItemType.character));
       case InventoryEventDeleteWeapon():
         await _telemetryService.trackItemDeletedFromInventory(event.key);
         await _dataService.inventory.deleteWeaponFromInventory(event.key, raiseEvent: false);
-        yield _refreshItems(ItemType.weapon);
+        emit(_refreshItems(ItemType.weapon));
       case InventoryEventUpdateMaterial():
         await _telemetryService.trackItemUpdatedInInventory(event.key, event.quantity);
         await _dataService.inventory.addMaterialToInventory(
@@ -63,21 +64,21 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
           redistribute: _dataService.calculator.redistributeInventoryMaterial,
           raiseEvent: false,
         );
-        yield _refreshItems(ItemType.material);
+        emit(_refreshItems(ItemType.material));
       case InventoryEventClearAllCharacters():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.character);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.character, raiseEvent: false);
-        yield state.copyWith.call(characters: []);
+        emit(state.copyWith.call(characters: []));
       case InventoryEventClearAllWeapons():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.weapon);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.weapon, raiseEvent: false);
-        yield state.copyWith.call(weapons: []);
+        emit(state.copyWith.call(weapons: []));
       case InventoryEventClearAllMaterials():
         await _telemetryService.trackItemsDeletedFromInventory(ItemType.material);
         await _dataService.inventory.deleteItemsFromInventory(ItemType.material, raiseEvent: false);
-        yield _refreshItems(ItemType.material);
+        emit(_refreshItems(ItemType.material));
       case InventoryEventRefresh():
-        yield _refreshItems(event.type);
+        emit(_refreshItems(event.type));
     }
   }
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -12,17 +13,18 @@ part 'elements_state.dart';
 class ElementsBloc extends Bloc<ElementsEvent, ElementsState> {
   final GenshinService _genshinService;
 
-  ElementsBloc(this._genshinService) : super(const ElementsState.loading());
+  ElementsBloc(this._genshinService) : super(const ElementsState.loading()) {
+    on<ElementsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ElementsState> mapEventToState(ElementsEvent event) async* {
+  Future<void> _mapEventToState(ElementsEvent event, Emitter<ElementsState> emit) async {
     switch (event) {
       case ElementsEventInit():
         final debuffs = _genshinService.elements.getElementDebuffs();
         final reactions = _genshinService.elements.getElementReactions();
         final resonances = _genshinService.elements.getElementResonances();
 
-        yield ElementsState.loaded(debuffs: debuffs, reactions: reactions, resonances: resonances);
+        emit(ElementsState.loaded(debuffs: debuffs, reactions: reactions, resonances: resonances));
     }
   }
 }

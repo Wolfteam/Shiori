@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -17,7 +18,7 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
   final ResourceService _resourceService;
 
   ArtifactBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const ArtifactState.loading()) {
-    on<ArtifactEvent>((event, emit) => _mapEventToState(event, emit));
+    on<ArtifactEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
   }
 
   Future<void> _mapEventToState(ArtifactEvent event, Emitter<ArtifactState> emit) async {
@@ -25,7 +26,8 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
 
     switch (event) {
       case final ArtifactEventLoad e:
-        yield await _loadFromKey(e);
+        final state = await _loadFromKey(e);
+        emit(state);
     }
   }
 
@@ -50,7 +52,5 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
       usedBy: usedBy,
       droppedBy: droppedBy,
     );
-
-    yield s;
   }
 }

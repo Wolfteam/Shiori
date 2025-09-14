@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -31,28 +32,23 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._calculatorService,
     this._dataService,
     this._resourceService,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<CalculatorAscMaterialsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsState> mapEventToState(CalculatorAscMaterialsEvent event) async* {
-    switch (event) {
-      case CalculatorAscMaterialsEventInit():
-        yield _init(event.sessionKey);
-      case CalculatorAscMaterialsEventAddCharacter():
-        yield await _addCharacter(event);
-      case CalculatorAscMaterialsEventUpdateCharacter():
-        yield await _updateCharacter(event);
-      case CalculatorAscMaterialsEventAddWeapon():
-        yield await _addWeapon(event);
-      case CalculatorAscMaterialsEventUpdateWeapon():
-        yield await _updateWeapon(event);
-      case CalculatorAscMaterialsEventRemoveItem():
-        yield await _removeItem(event);
-      case CalculatorAscMaterialsEventClearAllItems():
-        yield await _clearAllItems(event.sessionKey);
-      case CalculatorAscMaterialsEventItemsReordered():
-        yield await _itemsReordered(event.updated);
-    }
+  Future<void> _mapEventToState(CalculatorAscMaterialsEvent event, Emitter<CalculatorAscMaterialsState> emit) async {
+    final state = switch (event) {
+      CalculatorAscMaterialsEventInit() => _init(event.sessionKey),
+      CalculatorAscMaterialsEventAddCharacter() => await _addCharacter(event),
+      CalculatorAscMaterialsEventUpdateCharacter() => await _updateCharacter(event),
+      CalculatorAscMaterialsEventAddWeapon() => await _addWeapon(event),
+      CalculatorAscMaterialsEventUpdateWeapon() => await _updateWeapon(event),
+      CalculatorAscMaterialsEventRemoveItem() => await _removeItem(event),
+      CalculatorAscMaterialsEventClearAllItems() => await _clearAllItems(event.sessionKey),
+      CalculatorAscMaterialsEventItemsReordered() => await _itemsReordered(event.updated),
+    };
+
+    emit(state);
   }
 
   CalculatorAscMaterialsState _init(int sessionKey) {

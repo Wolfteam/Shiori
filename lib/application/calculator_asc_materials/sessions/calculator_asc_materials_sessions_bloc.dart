@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -31,32 +32,30 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
     _calcItemSubscriptions.add(itemAddedSubs);
     _calcItemSubscriptions.add(itemDeletedSubs);
+
+    on<CalculatorAscMaterialsSessionsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
   }
 
-  @override
-  Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
+  Future<void> _mapEventToState(
+    CalculatorAscMaterialsSessionsEvent event,
+    Emitter<CalculatorAscMaterialsSessionsState> emit,
+  ) async {
     if (state is! CalculatorAscMaterialsSessionsStateLoaded && event is! CalculatorAscMaterialsSessionsEventInit) {
       throw Exception('Invalid state');
     }
 
-    switch (event) {
-      case CalculatorAscMaterialsSessionsEventInit():
-        yield await _init();
-      case CalculatorAscMaterialsSessionsEventCreateSession():
-        yield await _createSession(event.name, event.showMaterialUsage);
-      case CalculatorAscMaterialsSessionsEventUpdateSession():
-        yield await _updateSession(event.key, event.name, event.showMaterialUsage);
-      case CalculatorAscMaterialsSessionsEventDeleteSession():
-        yield await _deleteSession(event.key);
-      case CalculatorAscMaterialsSessionsEventDeleteAllSessions():
-        yield await _deleteAllSessions();
-      case CalculatorAscMaterialsSessionsEventItemsReordered():
-        yield await _itemsReordered(event.updated);
-      case CalculatorAscMaterialsSessionsEventItemAdded():
-        yield _changeItemCount(event.sessionKey, true, event.isCharacter);
-      case CalculatorAscMaterialsSessionsEventItemDeleted():
-        yield _changeItemCount(event.sessionKey, false, event.isCharacter);
-    }
+    final updatedState = switch (event) {
+      CalculatorAscMaterialsSessionsEventInit() => await _init(),
+      CalculatorAscMaterialsSessionsEventCreateSession() => await _createSession(event.name, event.showMaterialUsage),
+      CalculatorAscMaterialsSessionsEventUpdateSession() => await _updateSession(event.key, event.name, event.showMaterialUsage),
+      CalculatorAscMaterialsSessionsEventDeleteSession() => await _deleteSession(event.key),
+      CalculatorAscMaterialsSessionsEventDeleteAllSessions() => await _deleteAllSessions(),
+      CalculatorAscMaterialsSessionsEventItemsReordered() => await _itemsReordered(event.updated),
+      CalculatorAscMaterialsSessionsEventItemAdded() => _changeItemCount(event.sessionKey, true, event.isCharacter),
+      CalculatorAscMaterialsSessionsEventItemDeleted() => _changeItemCount(event.sessionKey, false, event.isCharacter),
+    };
+
+    emit(updatedState);
   }
 
   @override
