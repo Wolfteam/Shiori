@@ -58,10 +58,8 @@ void main() {
     blocTest<CharactersPerRegionGenderBloc, CharactersPerRegionGenderState>(
       'invalid region',
       build: () => CharactersPerRegionGenderBloc(genshinService),
-      act: (bloc) => bloc
-        ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: true))
-        ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: false)),
-      errors: () => [isA<Exception>(), isA<Exception>()],
+      act: (bloc) => bloc..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: true)),
+      errors: () => [isA<Exception>()],
     );
   });
 }

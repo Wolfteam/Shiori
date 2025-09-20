@@ -566,7 +566,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<Exception>((e) => e.toString().contains('does not exist'))],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -595,6 +595,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 6)),
       errors: () => [isA<Exception>()],
     );
@@ -605,6 +606,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) {
@@ -1241,6 +1243,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.saveChanges()),
+      errors: () => [isA<ArgumentError>()],
       verify: (bloc) {
         final state = bloc.state;
         switch (state) {

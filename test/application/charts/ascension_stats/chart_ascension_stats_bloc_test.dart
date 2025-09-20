@@ -90,14 +90,15 @@ void main() {
       expect: () => [],
     );
 
-    blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
-      'invalid item type',
-      build: () => ChartAscensionStatsBloc(genshinService),
-      act: (bloc) => bloc
-        ..add(const ChartAscensionStatsEvent.init(type: ItemType.artifact, maxNumberOfColumns: 10))
-        ..add(const ChartAscensionStatsEvent.init(type: ItemType.material, maxNumberOfColumns: 10)),
-      errors: () => [isA<Exception>(), isA<Exception>()],
-    );
+    const invalidTypes = [ItemType.artifact, ItemType.material];
+    for (final type in invalidTypes) {
+      blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
+        'with type (${type.name}) which is not valid',
+        build: () => ChartAscensionStatsBloc(genshinService),
+        act: (bloc) => bloc..add(ChartAscensionStatsEvent.init(type: type, maxNumberOfColumns: 10)),
+        errors: () => [isA<Exception>()],
+      );
+    }
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'max number of columns is not valid',

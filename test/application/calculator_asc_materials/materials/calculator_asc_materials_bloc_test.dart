@@ -546,7 +546,16 @@ void main() {
     );
 
     const int sessionKey = 1;
+    const session = CalculatorSessionModel(
+      key: sessionKey,
+      name: 'dummy',
+      numberOfCharacters: 0,
+      numberOfWeapons: 1,
+      position: 0,
+      showMaterialUsage: false,
+    );
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(sessionKey)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -556,7 +565,7 @@ void main() {
         sessionKey: sessionKey,
         items: [keqingItem, theCatchItem],
         summary: [],
-        showMaterialUsage: false,
+        showMaterialUsage: session.showMaterialUsage,
       ),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: 1)),
       verify: (bloc) {
