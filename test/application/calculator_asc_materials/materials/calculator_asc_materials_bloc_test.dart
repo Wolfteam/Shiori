@@ -246,7 +246,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -264,7 +264,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -282,7 +282,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentAscLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -294,7 +294,7 @@ void main() {
           sessionKey: 1,
           currentLevel: 20,
           desiredLevel: maxItemLevel,
-          currentAscensionLevel: -1,
+          currentAscensionLevel: itemAscensionLevelMap.keys.first,
           desiredAscensionLevel: itemAscensionLevelMap.keys.last,
           useMaterialsFromInventory: false,
           skills: characterSkills
@@ -314,7 +314,7 @@ void main() {
               .toList(),
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'skill.desiredLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -356,7 +356,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
@@ -416,7 +416,7 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -433,7 +433,7 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -450,7 +450,7 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentAscLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -486,7 +486,7 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
@@ -535,14 +535,14 @@ void main() {
       'invalid session key',
       build: () => getBloc(MockDataService()),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.removeItem(sessionKey: -1, index: 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid index key',
       build: () => getBloc(MockDataService()),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.removeItem(sessionKey: 1, index: 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
 
     const int sessionKey = 1;
@@ -598,7 +598,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -617,7 +617,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -637,7 +637,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -657,7 +657,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredAscLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -670,7 +670,7 @@ void main() {
           sessionKey: 1,
           currentLevel: 20,
           desiredLevel: maxItemLevel,
-          currentAscensionLevel: -1,
+          currentAscensionLevel: itemAscensionLevelMap.keys.first,
           desiredAscensionLevel: itemAscensionLevelMap.keys.last,
           useMaterialsFromInventory: false,
           isActive: true,
@@ -691,7 +691,7 @@ void main() {
               .toList(),
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'skill.currentLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -712,7 +712,7 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
@@ -782,7 +782,7 @@ void main() {
           isActive: true,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -800,7 +800,7 @@ void main() {
           isActive: true,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -820,7 +820,7 @@ void main() {
           isActive: true,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -840,7 +840,7 @@ void main() {
           isActive: true,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredAscLevel')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -859,7 +859,7 @@ void main() {
           isActive: true,
         ),
       ),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
@@ -912,7 +912,7 @@ void main() {
       'invalid session key',
       build: () => getBloc(MockDataService()),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.clearAllItems(-1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
@@ -948,7 +948,7 @@ void main() {
       'no session has been loaded',
       build: () => getBloc(MockDataService()),
       act: (bloc) => bloc.add(CalculatorAscMaterialsEvent.itemsReordered([theCatchItem])),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'sessionKey')],
     );
 
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -961,7 +961,7 @@ void main() {
         showMaterialUsage: false,
       ),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.itemsReordered([])),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final currentItems = [theCatchItem, keqingItem];

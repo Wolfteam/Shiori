@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -118,21 +119,21 @@ void main() {
       'invalid pulls',
       build: () => getBloc(),
       act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 0, period: period)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'pulls')],
     );
 
     blocTest(
       'invalid banner index',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 0, period: period)),
-      errors: () => [isA<Exception>()],
+      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: -1, pulls: 10, period: period)),
+      errors: () => [predicate<RangeError>((e) => e.name == 'bannerIndex')],
     );
 
     blocTest(
       'banner index does not exist in period',
       build: () => getBloc(),
       act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: period.banners.length + 1, pulls: 1, period: period)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'bannerIndex')],
     );
 
     blocTest(
@@ -143,7 +144,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case WishSimulatorResultStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case WishSimulatorResultStateLoaded():
             checkState(0, 100, state.results, minFourStarCount: 9, minFiveStarCount: 1);
         }

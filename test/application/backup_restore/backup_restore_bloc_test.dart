@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -105,7 +106,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case BackupRestoreStateLoadine():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case BackupRestoreStateLoaded():
             expect(state.backups.length, greaterThanOrEqualTo(1));
         }
@@ -118,7 +119,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const BackupRestoreEvent.read(filePath: 'non/existent/path')),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<BackupRestoreBloc, BackupRestoreState>(
@@ -200,7 +201,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const BackupRestoreEvent.create(dataTypes: AppBackupDataType.values)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     const types = AppBackupDataType.values;
@@ -323,7 +324,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const BackupRestoreEvent.restore(filePath: '', dataTypes: AppBackupDataType.values)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<BackupRestoreBloc, BackupRestoreState>(
@@ -430,7 +431,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const BackupRestoreEvent.delete(filePath: '')),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<BackupRestoreBloc, BackupRestoreState>(

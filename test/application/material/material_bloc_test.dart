@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -45,7 +46,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case MaterialStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case MaterialStateLoaded():
             checkTranslation(state.name, canBeNull: false);
             checkAsset(state.fullImage);

@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -58,7 +59,7 @@ void main() {
     void checkState(WeaponState state, bool isInInventory) {
       switch (state) {
         case WeaponStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case WeaponStateLoaded():
           expect(state.key, key);
           expect(state.name, 'Aquila Favonia');

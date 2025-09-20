@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 
 import '../../mocks.mocks.dart';
@@ -43,7 +44,7 @@ void main() {
       final state = bloc.state;
       switch (state) {
         case CheckForResourceUpdatesStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case CheckForResourceUpdatesStateLoaded():
           expect(state.updateResultType, isNull);
           expect(state.currentResourceVersion, -1);
@@ -61,7 +62,7 @@ void main() {
     }) {
       switch (state) {
         case CheckForResourceUpdatesStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case CheckForResourceUpdatesStateLoaded():
           expect(state.updateResultType, resultType);
           expect(state.currentResourceVersion, currentResourcesVersion);

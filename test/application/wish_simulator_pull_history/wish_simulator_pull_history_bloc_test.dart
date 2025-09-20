@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -157,7 +158,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishSimulatorPullHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishSimulatorPullHistoryStateLoaded():
               checkState(
                 state.bannerType,
@@ -182,7 +183,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishSimulatorPullHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishSimulatorPullHistoryStateLoaded():
               checkState(
                 state.bannerType,
@@ -215,7 +216,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const WishSimulatorPullHistoryEvent.init(bannerType: BannerItemType.character))
         ..add(const WishSimulatorPullHistoryEvent.pageChanged(page: 0)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'newPage')],
     );
 
     blocTest(
@@ -228,7 +229,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case WishSimulatorPullHistoryStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case WishSimulatorPullHistoryStateLoaded():
             checkState(
               state.bannerType,
@@ -273,7 +274,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case WishSimulatorPullHistoryStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case WishSimulatorPullHistoryStateLoaded():
             checkState(
               state.bannerType,

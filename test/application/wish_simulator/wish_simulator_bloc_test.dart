@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -97,7 +98,7 @@ void main() {
       final state = bloc.state;
       switch (state) {
         case WishSimulatorStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case WishSimulatorStateLoaded():
           final version = genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.desc).first;
           checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
@@ -114,7 +115,7 @@ void main() {
         ..add(
           WishSimulatorEvent.periodChanged(version: 0, from: DateTime.now(), until: DateTime.now().add(const Duration(days: 3))),
         ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'version')],
     );
 
     blocTest(
@@ -123,7 +124,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const WishSimulatorEvent.init())
         ..add(WishSimulatorEvent.periodChanged(version: 1.0, from: DateTime.now(), until: DateTime.now())),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.toString().contains('not valid'))],
     );
 
     const double version = 1.3;
@@ -140,7 +141,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case WishSimulatorStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case WishSimulatorStateLoaded():
             checkState(version, state.wishIconImage, state.selectedBannerIndex, state.period);
         }
@@ -155,7 +156,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const WishSimulatorEvent.init())
         ..add(const WishSimulatorEvent.bannerSelected(index: -1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
 
     const int bannerIndex = 1;
@@ -174,7 +175,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case WishSimulatorStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case WishSimulatorStateLoaded():
             checkState(
               version,

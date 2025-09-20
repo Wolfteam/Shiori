@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -303,10 +304,22 @@ void main() {
     });
 
     test('invalid month and day', () {
-      expect(() => service.getCharacterBirthdays(), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(month: -1), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(day: -1), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(month: DateTime.february, day: 31), throwsA(isA<Exception>()));
+      expect(
+        () => service.getCharacterBirthdays(),
+        throwsA(predicate<ArgumentError>((e) => e.toString().toLowerCase().contains('must provide'))),
+      );
+      expect(
+        () => service.getCharacterBirthdays(month: -1),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'month')),
+      );
+      expect(
+        () => service.getCharacterBirthdays(day: -1),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'day')),
+      );
+      expect(
+        () => service.getCharacterBirthdays(month: DateTime.february, day: 31),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'day')),
+      );
     });
   });
 
@@ -406,7 +419,10 @@ void main() {
     });
 
     test('invalid region', () {
-      expect(() => service.getCharactersForItemsByRegion(RegionType.anotherWorld), throwsA(isA<Exception>()));
+      expect(
+        () => service.getCharactersForItemsByRegion(RegionType.anotherWorld),
+        throwsA(isA<OperationNotSupportedError>()),
+      );
     });
   });
 
@@ -431,8 +447,14 @@ void main() {
     });
 
     test('invalid region', () {
-      expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, true), throwsA(isA<Exception>()));
-      expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, false), throwsA(isA<Exception>()));
+      expect(
+        () => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, true),
+        throwsA(isA<OperationNotSupportedError>()),
+      );
+      expect(
+        () => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, false),
+        throwsA(isA<OperationNotSupportedError>()),
+      );
     });
   });
 
@@ -485,7 +507,10 @@ void main() {
     });
 
     test('invalid region', () {
-      expect(() => service.getCharacterGendersByRegionForCharts(RegionType.anotherWorld), throwsA(isA<Exception>()));
+      expect(
+        () => service.getCharacterGendersByRegionForCharts(RegionType.anotherWorld),
+        throwsA(isA<OperationNotSupportedError>()),
+      );
     });
   });
 

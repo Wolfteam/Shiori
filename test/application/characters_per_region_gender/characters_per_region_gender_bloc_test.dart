@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -59,7 +60,7 @@ void main() {
       'invalid region',
       build: () => CharactersPerRegionGenderBloc(genshinService),
       act: (bloc) => bloc..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: true)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<OperationNotSupportedError>()],
     );
   });
 }

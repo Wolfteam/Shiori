@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -46,7 +47,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case ItemReleaseHistoryStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case ItemReleaseHistoryStateInitial():
             expect(state.itemKey, 'keqing');
             expect(state.history.isNotEmpty, isTrue);
@@ -64,7 +65,7 @@ void main() {
       'invalid item key',
       build: () => ItemReleaseHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const ItemReleaseHistoryEvent.init(itemKey: 'no-existent-item')),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
   });
 }

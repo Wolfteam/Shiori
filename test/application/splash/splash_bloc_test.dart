@@ -254,8 +254,9 @@ void main() {
         );
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(defaultAppVersion, defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
-        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames))
-            .thenAnswer((_) => Future.value(true));
+        when(
+          resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames),
+        ).thenAnswer((_) => Future.value(true));
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);
@@ -295,8 +296,9 @@ void main() {
         );
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(defaultAppVersion, defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
-        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames))
-            .thenAnswer((_) => Future.value(true));
+        when(
+          resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames),
+        ).thenAnswer((_) => Future.value(true));
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);
@@ -564,7 +566,7 @@ void main() {
       ),
       build: () => getBloc(MockResourceService()),
       act: (bloc) => bloc.add(const SplashEvent.progressChanged(progress: -1, downloadedBytes: 0)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'progress')],
     );
   });
 

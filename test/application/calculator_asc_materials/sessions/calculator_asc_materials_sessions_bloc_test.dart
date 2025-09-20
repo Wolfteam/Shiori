@@ -4,6 +4,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -75,7 +76,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsSessionsStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             verify(calcMock.getAllSessions()).called(1);
             expect(state.sessions, sessions);
@@ -89,7 +90,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.createSession(name: '', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -97,7 +98,7 @@ void main() {
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.createSession(name: '', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'name')],
     );
 
     const createdSession = CalculatorSessionModel(
@@ -130,7 +131,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsSessionsStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             expect(state.sessions.length, 1);
             expect(state.sessions.first, createdSession);
@@ -148,7 +149,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) =>
           bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -157,7 +158,7 @@ void main() {
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) =>
           bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: -1, name: 'Name', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'key')],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -166,7 +167,7 @@ void main() {
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) =>
           bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: '', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'name')],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -175,7 +176,7 @@ void main() {
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) =>
           bloc.add(const CalculatorAscMaterialsSessionsEvent.updateSession(key: 1, name: 'Updated', showMaterialUsage: false)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
 
     final updatedSession = sessions[1].copyWith(name: 'Updated');
@@ -202,7 +203,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsSessionsStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             expect(state.sessions.length, sessions.length);
             expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession);
@@ -217,7 +218,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.deleteSession(key: 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -225,7 +226,7 @@ void main() {
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.deleteSession(key: -1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'key')],
     );
 
     final dataServiceMock = MockDataService();
@@ -242,7 +243,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsSessionsStateLoading():
-            throw Exception('Invalid state');
+            throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             expect(state.sessions.length, sessions.length - 1);
             expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)));
@@ -275,7 +276,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.itemsReordered([])),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -283,7 +284,7 @@ void main() {
       build: () => getBloc(),
       seed: () => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.itemsReordered([])),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
 
     final updated = [sessions.last, sessions[1], sessions.first];
@@ -309,14 +310,14 @@ void main() {
       'item added but invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.itemAdded(sessionKey: 1, isCharacter: true)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       'item deleted but invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsSessionsEvent.itemDeleted(sessionKey: 1, isCharacter: true)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
@@ -364,7 +365,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case CalculatorAscMaterialsSessionsStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case CalculatorAscMaterialsSessionsStateLoaded():
               for (int i = 0; i < sessions.length; i++) {
                 final session = sessions[i];
@@ -396,7 +397,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case CalculatorAscMaterialsSessionsStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case CalculatorAscMaterialsSessionsStateLoaded():
               for (int i = 0; i < sessions.length; i++) {
                 final session = sessions[i];

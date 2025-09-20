@@ -56,7 +56,7 @@ void main() {
       'invalid month',
       build: () => CharactersBirthdaysPerMonthBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const CharactersBirthdaysPerMonthEvent.init(month: 13)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'month')],
     );
   });
 }
