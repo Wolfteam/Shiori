@@ -92,6 +92,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
               needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
             ),
           );
+          return;
         }
 
         final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
