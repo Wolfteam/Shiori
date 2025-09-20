@@ -95,7 +95,7 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       case ItemType.weapon:
         return state.copyWith.call(weapons: _dataService.inventory.getAllWeaponsInInventory());
       case ItemType.artifact:
-        throw Exception('Not implemented');
+        throw UnimplementedError('$type is not implemented');
       case ItemType.material:
         return state.copyWith.call(materials: _dataService.inventory.getAllMaterialsInInventory());
     }

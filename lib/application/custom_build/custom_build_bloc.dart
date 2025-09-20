@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -194,16 +195,21 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   }
 
   CustomBuildState _addNote(CustomBuildEventAddNote e, CustomBuildStateLoaded state) {
-    if (e.note.isNullEmptyOrWhitespace || state.notes.length >= maxNumberOfNotes) {
-      throw Exception('Note is not valid');
+    if (e.note.isNullEmptyOrWhitespace) {
+      throw ArgumentError.value(e.note, 'note');
     }
+
+    if (state.notes.length >= maxNumberOfNotes) {
+      throw UnsupportedError('Cannot add more than notes than $maxNumberOfNotes');
+    }
+
     final newNote = CustomBuildNoteModel(index: state.notes.length, note: e.note);
     return state.copyWith.call(notes: [...state.notes, newNote], readyForScreenshot: false);
   }
 
   CustomBuildState _deleteNote(CustomBuildEventDeleteNote e, CustomBuildStateLoaded state) {
     if (e.index < 0 || e.index >= state.notes.length) {
-      throw Exception('The provided note index = ${e.index} is not valid');
+      throw RangeError.index(e.index, state.notes, 'index');
     }
 
     final notes = [...state.notes];
@@ -216,14 +222,14 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       return state;
     }
     if (!validSkillTypes.contains(e.type)) {
-      throw Exception('Skill type = ${e.type} is not valid');
+      throw ArgumentError.value(e.type, 'type');
     }
     return state.copyWith.call(skillPriorities: [...state.skillPriorities, e.type], readyForScreenshot: false);
   }
 
   CustomBuildState _deleteSkillPriority(CustomBuildEventDeleteSkillPriority e, CustomBuildStateLoaded state) {
     if (e.index < 0 || e.index >= state.skillPriorities.length) {
-      throw Exception('The provided skill index = ${e.index} is not valid');
+      throw RangeError.index(e.index, state.skillPriorities, 'index');
     }
 
     final skillPriorities = [...state.skillPriorities];
@@ -252,21 +258,21 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _addWeapon(CustomBuildEventAddWeapon e, CustomBuildStateLoaded state) {
     if (state.weapons.any((el) => el.key == e.key)) {
-      throw Exception('Weapons cannot be repeated in the state');
+      throw UnsupportedError('Weapons cannot be repeated in the state');
     }
 
     if (state.weapons.length + 1 > maxNumberOfWeapons) {
-      throw Exception('Cannot add more than = $maxNumberOfWeapons weapons to the state');
+      throw UnsupportedError('Cannot add more than = $maxNumberOfWeapons weapons to the state');
     }
 
     final weapon = _genshinService.weapons.getWeapon(e.key);
     final translation = _genshinService.translations.getWeaponTranslation(e.key);
     if (state.character.weaponType != weapon.type) {
-      throw Exception('Type = ${weapon.type} is not valid for character = ${state.character.key}');
+      throw UnsupportedError('Type = ${weapon.type} is not valid for character = ${state.character.key}');
     }
 
     if (weapon.stats.isEmpty) {
-      throw Exception('Weapon = ${e.key} does not have any stat');
+      throw UnsupportedError('Weapon = ${e.key} does not have any stat');
     }
 
     final stat = weapon.stats.last;
@@ -291,7 +297,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       final sortableItem = e.weapons[i];
       final current = state.weapons.firstWhereOrNull((el) => el.key == sortableItem.key);
       if (current == null) {
-        throw Exception('Team Character with key = ${sortableItem.key} does not exist');
+        throw NotFoundError(sortableItem.key, 'state.weapons', 'Weapon does not exist');
       }
       weapons.add(current.copyWith.call(index: i));
     }
@@ -302,7 +308,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   CustomBuildState _weaponRefinementChanged(CustomBuildEventWeaponRefinementChanged e, CustomBuildStateLoaded state) {
     final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
     if (current == null) {
-      throw Exception('Weapon = ${e.key} does not exist in the state');
+      throw NotFoundError(e.key, 'state.weapons', 'Weapon does not exist');
     }
 
     if (current.refinement == e.newValue) {
@@ -311,7 +317,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final maxValue = getWeaponMaxRefinementLevel(current.rarity);
     if (e.newValue > maxValue || e.newValue <= 0) {
-      throw Exception('The provided refinement = ${e.newValue} cannot exceed = $maxValue');
+      throw RangeError.range(e.newValue, 1, maxValue, 'newValue');
     }
 
     final index = state.weapons.indexOf(current);
@@ -326,7 +332,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   CustomBuildState _weaponStatChanged(CustomBuildEventWeaponStatChanged e, CustomBuildStateLoaded state) {
     final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
     if (current == null) {
-      throw Exception('Weapon = ${e.key} does not exist in the state');
+      throw NotFoundError(e.key, 'state.weapons', 'Weapon does not exist in the state');
     }
 
     if (current.stat == e.newValue) {
@@ -344,7 +350,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteWeapon(CustomBuildEventDeleteWeapon e, CustomBuildStateLoaded state) {
     if (!state.weapons.any((el) => el.key == e.key)) {
-      throw Exception('Weapon = ${e.key} does not exist');
+      throw NotFoundError(e.key, 'state.weapons', 'Weapon does not exist in the state');
     }
 
     final updated = [...state.weapons];
@@ -398,12 +404,12 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   CustomBuildState _addArtifactSubStats(CustomBuildEventAddArtifactSubStats e, CustomBuildStateLoaded state) {
     final artifact = state.artifacts.firstWhereOrNull((el) => el.type == e.type);
     if (artifact == null) {
-      throw Exception('Artifact type = ${e.type} is not in the state');
+      throw NotFoundError(e.type, 'state.artifacts', 'Artifact type does not exist in the state');
     }
 
     final possibleSubStats = getArtifactPossibleSubStats(artifact.statType);
     if (e.subStats.any((s) => !possibleSubStats.contains(s))) {
-      throw Exception('One of the provided sub-stats is not valid');
+      throw ArgumentError.value(e.subStats, 'substats');
     }
 
     final index = state.artifacts.indexOf(artifact);
@@ -420,7 +426,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteArtifact(CustomBuildEventDeleteArtifact e, CustomBuildStateLoaded state) {
     if (!state.artifacts.any((el) => el.type == e.type)) {
-      throw Exception('Artifact type = ${e.type} is not in the state');
+      throw NotFoundError(e.type, 'state.artifacts', 'Artifact type does not exist in the state');
     }
 
     final updated = [...state.artifacts];
@@ -434,11 +440,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _addTeamCharacter(CustomBuildEventAddTeamCharacter e, CustomBuildStateLoaded state) {
     if (state.teamCharacters.length + 1 == maxNumberOfTeamCharacters) {
-      throw Exception('Cannot add more than = $maxNumberOfTeamCharacters team characters to the state');
+      throw UnsupportedError('Cannot add more than = $maxNumberOfTeamCharacters team characters to the state');
     }
 
     if (e.key == state.character.key) {
-      throw Exception('The selected character cannot be in the team characters');
+      throw ArgumentError.value(e.key, 'key', 'The selected character cannot be in the team characters');
     }
 
     final char = _genshinService.characters.getCharacterForCard(e.key);
@@ -476,7 +482,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       final sortableItem = e.characters[i];
       final current = state.teamCharacters.firstWhereOrNull((el) => el.key == sortableItem.key);
       if (current == null) {
-        throw Exception('Team Character with key = ${sortableItem.key} does not exist');
+        throw NotFoundError(sortableItem.key, 'state.teamCharacters', 'Team Character does not exist');
       }
       teamCharacters.add(current.copyWith.call(index: i));
     }
@@ -486,7 +492,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteTeamCharacter(CustomBuildEventDeleteTeamCharacter e, CustomBuildStateLoaded state) {
     if (!state.teamCharacters.any((el) => el.key == e.key)) {
-      throw Exception('Team character = ${e.key} is not in the state');
+      throw NotFoundError(e.key, 'state.teamCharacters', 'Character does not exist in the state');
     }
 
     final updated = [...state.teamCharacters];

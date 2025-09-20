@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -41,7 +42,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     Emitter<CalculatorAscMaterialsSessionsState> emit,
   ) async {
     if (state is! CalculatorAscMaterialsSessionsStateLoaded && event is! CalculatorAscMaterialsSessionsEventInit) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
     final updatedState = switch (event) {
@@ -72,7 +73,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _createSession(String name, bool showMaterialUsage) async {
     if (name.isNullEmptyOrWhitespace) {
-      throw Exception('The provided session name is not valid');
+      throw ArgumentError.value(name, 'name');
     }
 
     await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
@@ -87,16 +88,16 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _updateSession(int key, String name, bool showMaterialUsage) async {
     if (key < 0) {
-      throw Exception('SessionKey = $key is not valid');
+      throw RangeError.range(key, 0, null, 'key');
     }
 
     if (name.isNullEmptyOrWhitespace) {
-      throw Exception('The provided session name is not valid');
+      throw ArgumentError.value(name, 'name');
     }
 
     final CalculatorSessionModel? current = currentState.sessions.firstWhereOrDefault((el) => el.key == key);
     if (current == null) {
-      throw Exception('SessionKey = $key does not exist');
+      throw NotFoundError(key, 'key', 'Session does not exist');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
     final updatedSession = await _dataService.calculator.updateSession(key, name.trim(), showMaterialUsage);
@@ -109,7 +110,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _deleteSession(int key) async {
     if (key < 0) {
-      throw Exception('SessionKey = $key is not valid');
+      throw RangeError.range(key, 0, null, 'key');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
     await _dataService.calculator.deleteSession(key);
@@ -126,7 +127,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _itemsReordered(List<CalculatorSessionModel> updated) async {
     if (updated.isEmpty) {
-      throw Exception('The updated reordered items are empty');
+      throw UnsupportedError('The updated reordered items are empty');
     }
 
     await _dataService.calculator.reorderSessions(updated);

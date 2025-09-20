@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -36,7 +37,7 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
 
   void _checkLoadedState() {
     if (state is! WishSimulatorStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
   }
 
@@ -67,7 +68,7 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
     _checkLoadedState();
 
     if (index < 0 || index > currentState.period.banners.length - 1) {
-      throw Exception('The provided index = $index is not valid');
+      throw RangeError.range(index, 0, currentState.period.banners.length, 'index');
     }
 
     if (index == currentState.selectedBannerIndex) {

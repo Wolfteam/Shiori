@@ -6,6 +6,7 @@ import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -35,7 +36,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     if (event is! CalculatorAscMaterialsItemEventLoad &&
         event is! CalculatorAscMaterialsItemEventLoadWith &&
         state is! CalculatorAscMaterialsItemStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
     final s = switch (event) {
@@ -122,11 +123,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     if (currentLevel < minItemLevel || currentLevel > maxItemLevel) {
-      throw Exception('Current level = $currentLevel is not valid');
+      throw RangeError.range(currentLevel, minItemLevel, maxItemLevel, 'currentLevel');
     }
 
     if (desiredLevel < minItemLevel || desiredLevel > maxItemLevel) {
-      throw Exception('Desired level = $desiredLevel is not valid');
+      throw RangeError.range(desiredLevel, minItemLevel, maxItemLevel, 'desiredLevel');
     }
 
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
@@ -151,11 +152,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     if (currentLevel < 0 || currentLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Current asc level = $currentLevel is not valid');
+      throw RangeError.range(currentLevel, 0, itemAscensionLevelMap.entries.last.key, 'currentLevel');
     }
 
     if (desiredLevel < 0 || desiredLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Desired asc level = $desiredLevel is not valid');
+      throw RangeError.range(desiredLevel, 0, itemAscensionLevelMap.entries.last.key, 'desiredLevel');
     }
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
     final bothAreZero = tuple.$1 == tuple.$2 && tuple.$1 == 0;
@@ -192,11 +193,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _skillChanged(int skillIndex, int newValue, bool currentChanged) {
     if (skillIndex < 0 || skillIndex > currentState.skills.length) {
-      throw Exception('Skill index = $skillIndex is not valid');
+      throw RangeError.range(skillIndex, 0, currentState.skills.length, 'skillIndex');
     }
 
     if (newValue < minSkillLevel || newValue > maxSkillLevel) {
-      throw Exception('Skill value = $newValue is not valid');
+      throw RangeError.range(newValue, minSkillLevel, maxSkillLevel, 'newValue');
     }
 
     final skills = <CharacterSkill>[];

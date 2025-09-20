@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -22,7 +23,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
 
   Future<void> _mapEventToState(BackupRestoreEvent event, Emitter<BackupRestoreState> emit) async {
     if (event is! BackupRestoreEventInit && state is! BackupRestoreStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
     final s = await switch (event) {

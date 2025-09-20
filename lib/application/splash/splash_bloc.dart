@@ -150,7 +150,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       case SplashEventProgressChanged():
         assert(state is SplashStateLoaded, 'The current state should be loaded');
         if (event.progress < 0) {
-          throw Exception('Invalid progress value');
+          throw RangeError.range(event.progress, 0, null, 'progress');
         }
 
         final currentState = state as SplashStateLoaded;

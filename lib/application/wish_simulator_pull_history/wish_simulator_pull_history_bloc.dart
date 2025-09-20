@@ -69,7 +69,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
           name = weapon.name;
           rarity = weapon.rarity;
         default:
-          throw Exception('Item type = $type is not valid here');
+          throw UnsupportedError('Item type = $type is not valid here');
       }
 
       return WishSimulatorBannerItemPullHistoryModel(
@@ -93,7 +93,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
   WishSimulatorPullHistoryState _pageChanged(WishSimulatorPullHistoryStateLoaded state, int newPage) {
     final selectedPage = newPage - 1;
     if (selectedPage < 0 || selectedPage > state.maxPage) {
-      throw Exception('Page = $newPage is not valid');
+      throw RangeError.range(selectedPage, 0, state.maxPage, 'newPage');
     }
 
     if (state.currentPage == newPage) {

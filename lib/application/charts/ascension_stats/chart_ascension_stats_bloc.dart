@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 
@@ -26,7 +27,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
 
   Future<void> _mapEventToState(ChartAscensionStatsEvent event, Emitter<ChartAscensionStatsState> emit) async {
     if (event is! ChartAscensionStatsEventInit && state is! ChartAscensionStatsStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
     switch (event) {
@@ -53,7 +54,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     }
 
     if (maxNumberOfColumns < 1) {
-      throw Exception('The provided maxNumberOfColumns = $maxNumberOfColumns is not valid');
+      throw RangeError.range(maxNumberOfColumns, 1, null, 'maxNumberOfColumns');
     }
 
     final ascensionStats = <ChartAscensionStatModel>[];
@@ -63,7 +64,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
       case ItemType.weapon:
         ascensionStats.addAll(_weaponAscensionStats.take(maxNumberOfColumns));
       default:
-        throw Exception('ItemType = $itemType is not valid');
+        throw ArgumentError.value(itemType, 'itemType');
     }
 
     final maxPage = _getMaxPage(itemType, maxNumberOfColumns);
@@ -83,7 +84,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
 
   int _getMaxPage(ItemType itemType, int take) {
     if (take <= 0) {
-      throw Exception('Take = $take is not valid');
+      throw RangeError.range(take, 1, null, 'take');
     }
     double pages = 0;
     switch (itemType) {
@@ -92,7 +93,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
       case ItemType.weapon:
         pages = _weaponAscensionStats.length / take;
       default:
-        throw Exception('ItemType = $itemType is not valid');
+        throw ArgumentError.value(itemType, 'itemType');
     }
     return pages.ceil();
   }
@@ -104,7 +105,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
 
   ChartAscensionStatsState _goToNextPage(ChartAscensionStatsStateLoaded state) {
     if (!_canGoToNextPage(state.currentPage, state.maxPage)) {
-      throw Exception('Cannot go to the next page');
+      throw PaginationError.cannotGoToNext();
     }
     final newPage = state.currentPage + 1;
     return _pageChanged(state, newPage);
@@ -112,7 +113,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
 
   ChartAscensionStatsState _goToPreviousPage(ChartAscensionStatsStateLoaded state) {
     if (!_canGoToPreviousPage(state.currentPage)) {
-      throw Exception('Cannot go to the previous page');
+      throw PaginationError.cannotGoToPrevious();
     }
     final newPage = state.currentPage - 1;
     return _pageChanged(state, newPage);
@@ -120,11 +121,11 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
 
   ChartAscensionStatsState _pageChanged(ChartAscensionStatsStateLoaded state, int newPage) {
     if (newPage < _firstPage) {
-      throw Exception('The newPage = $newPage cannot be less than $_firstPage');
+      throw PaginationError.newPageIsLessThanFirstOne(newPage, _firstPage);
     }
 
     if (state.currentPage == newPage) {
-      throw Exception('We are already on the same page = $newPage');
+      throw PaginationError.samePage(newPage);
     }
 
     final skip = state.maxNumberOfColumns * (newPage - 1);
@@ -135,7 +136,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
       case ItemType.weapon:
         ascensionStats.addAll(_weaponAscensionStats.skip(skip).take(state.maxNumberOfColumns));
       default:
-        throw Exception('ItemType = ${state.itemType} is not valid');
+        throw ArgumentError.value(state.itemType, 'itemType');
     }
     return state.copyWith(
       canGoToFirstPage: _canGoToFirstPage(newPage),

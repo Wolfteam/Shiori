@@ -4,6 +4,7 @@ import 'package:collection/collection.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 
@@ -34,7 +35,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
   List<ItemCommonWithNameOnly> getItemsForSearch() {
     switch (state) {
       case WishBannerHistoryStateLoading():
-        throw Exception('Invalid state');
+        throw InvalidStateError(runtimeType);
       case final WishBannerHistoryStateLoaded state:
         return state.filteredPeriods.map((e) => ItemCommonWithNameOnly(e.groupingKey, e.groupingTitle)).toList();
     }
