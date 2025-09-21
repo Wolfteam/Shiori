@@ -120,7 +120,7 @@ void main() {
     build: () => BannerHistoryCountBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const BannerHistoryCountEvent.init()),
     verify: (bloc) {
-      final charsWithoutBanner = ['aloy', 'mona', 'qiqi', 'amber', 'kaeya', 'lisa', 'diluc', 'jean'];
+      final charsWithoutBanner = ['aloy', 'mona', 'qiqi', 'amber', 'kaeya', 'lisa', 'diluc', 'jean', 'aino'];
       final allCharsCount = genshinService.characters
           .getCharactersForCard()
           .where((el) => !el.isComingSoon && !el.key.startsWith('traveler') && !charsWithoutBanner.contains(el.key))
