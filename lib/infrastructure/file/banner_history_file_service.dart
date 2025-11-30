@@ -5,6 +5,7 @@ import 'package:darq/darq.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -111,7 +112,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   List<BannerHistoryPeriodModel> getBanners(double version) {
     if (version < getBannerHistoryVersions(SortDirectionType.asc).first) {
-      throw Exception('Version = $version is not valid');
+      throw ArgumentError.value(version, 'version');
     }
     final banners =
         _bannerHistoryFile.banners
@@ -163,7 +164,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         .toList();
 
     if (history.isEmpty) {
-      throw Exception('There is no banner history associated to itemKey = $itemKey');
+      throw NotFoundError(itemKey, 'itemKey', 'No banner history found');
     }
     return history.groupListsBy((el) => el.version).entries.map((e) {
       //with the multi banners, we need to group the dates to avoid showing up repeated ones
@@ -180,16 +181,16 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion) {
     final allVersions = getBannerHistoryVersions(SortDirectionType.asc);
-    if (fromVersion < allVersions.first) {
-      throw Exception('The fromVersion = $fromVersion is not valid');
+    if (fromVersion < allVersions.first || fromVersion > allVersions.last) {
+      throw ArgumentError.value(fromVersion, 'fromVersion');
     }
 
-    if (untilVersion > allVersions.last) {
-      throw Exception('The untilVersion = $untilVersion is not valid');
+    if (untilVersion > allVersions.last || untilVersion < allVersions.first) {
+      throw ArgumentError.value(untilVersion, 'untilVersion');
     }
 
     if (fromVersion > untilVersion) {
-      throw Exception('The fromVersion = $fromVersion cannot be greater than untilVersion = $untilVersion');
+      throw RangeError('The fromVersion = $fromVersion cannot be greater than untilVersion = $untilVersion');
     }
 
     final banners =
@@ -264,7 +265,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     List<ItemCommonWithName> items,
   ) {
     if (items.isEmpty) {
-      throw Exception('You need to provide at least one item');
+      throw UnsupportedError('Items cannot be empty');
     }
 
     final selected = _bannerHistoryFile.banners
@@ -317,11 +318,11 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   WishSimulatorBannerItemsPerPeriodModel getWishSimulatorBannerPerPeriod(double version, DateTime from, DateTime until) {
     if (version <= 0) {
-      throw Exception('The provided version = $version is not valid');
+      throw RangeError.range(version, 1, null, 'version');
     }
 
     if (until.difference(from).inDays < 0) {
-      throw Exception('The provided date range, from = $from and until = $until are not valid');
+      throw RangeError('The provided date range, from = $from and until = $until are not valid');
     }
 
     final otherCharacters = _characters
@@ -449,7 +450,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     }
 
     if (banners.isEmpty) {
-      throw Exception('Either version = $version, from = $from or until = $until is not valid');
+      throw RangeError('Either version = $version, from = $from or until = $until is not valid');
     }
 
     banners.add(getWishSimulatorStandardBanner());

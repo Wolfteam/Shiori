@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -17,16 +18,19 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
   final TelemetryService _telemetryService;
 
   CheckForResourceUpdatesBloc(this._resourceService, this._settingsService, this._deviceInfoService, this._telemetryService)
-    : super(const CheckForResourceUpdatesState.loading());
+    : super(const CheckForResourceUpdatesState.loading()) {
+    on<CheckForResourceUpdatesEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CheckForResourceUpdatesState> mapEventToState(CheckForResourceUpdatesEvent event) async* {
+  Future<void> _mapEventToState(CheckForResourceUpdatesEvent event, Emitter<CheckForResourceUpdatesState> emit) async {
     switch (event) {
       case CheckForResourceUpdatesEventInit():
-        yield await _init();
+        final state = await _init();
+        emit(state);
       case CheckForResourceUpdatesEventCheckForUpdates():
-        yield const CheckForResourceUpdatesState.loading();
-        yield await _checkForUpdates();
+        emit(const CheckForResourceUpdatesState.loading());
+        final state = await _checkForUpdates();
+        emit(state);
     }
   }
 

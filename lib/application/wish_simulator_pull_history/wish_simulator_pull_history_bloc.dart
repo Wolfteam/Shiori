@@ -1,3 +1,4 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
@@ -19,10 +20,11 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
 
   static const int take = 5;
 
-  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService) : super(const WishSimulatorPullHistoryState.loading());
+  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService) : super(const WishSimulatorPullHistoryState.loading()) {
+    on<WishSimulatorPullHistoryEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WishSimulatorPullHistoryState> mapEventToState(WishSimulatorPullHistoryEvent event) async* {
+  Future<void> _mapEventToState(WishSimulatorPullHistoryEvent event, Emitter<WishSimulatorPullHistoryState> emit) async {
     if (_allCharacters.isEmpty) {
       final allCharacters = _genshinService.characters.getCharactersForCard();
       _allCharacters.addAll(allCharacters);
@@ -37,18 +39,18 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
       case WishSimulatorPullHistoryEventInit():
         switch (state) {
           case WishSimulatorPullHistoryStateLoading():
-            yield _init(event.bannerType);
+            emit(_init(event.bannerType));
           case final WishSimulatorPullHistoryStateLoaded state:
             if (state.bannerType == event.bannerType) {
-              yield state;
+              emit(state);
             } else {
-              yield _init(event.bannerType);
+              emit(_init(event.bannerType));
             }
         }
       case WishSimulatorPullHistoryEventPageChanged():
-        yield _pageChanged(state as WishSimulatorPullHistoryStateLoaded, event.page);
+        emit(_pageChanged(state as WishSimulatorPullHistoryStateLoaded, event.page));
       case WishSimulatorPullHistoryEventDeleteData():
-        yield await _deleteData(event.bannerType);
+        emit(await _deleteData(event.bannerType));
     }
   }
 
@@ -67,7 +69,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
           name = weapon.name;
           rarity = weapon.rarity;
         default:
-          throw Exception('Item type = $type is not valid here');
+          throw UnsupportedError('Item type = $type is not valid here');
       }
 
       return WishSimulatorBannerItemPullHistoryModel(
@@ -91,7 +93,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
   WishSimulatorPullHistoryState _pageChanged(WishSimulatorPullHistoryStateLoaded state, int newPage) {
     final selectedPage = newPage - 1;
     if (selectedPage < 0 || selectedPage > state.maxPage) {
-      throw Exception('Page = $newPage is not valid');
+      throw RangeError.range(selectedPage, 0, state.maxPage, 'newPage');
     }
 
     if (state.currentPage == newPage) {

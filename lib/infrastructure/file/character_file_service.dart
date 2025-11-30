@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -35,7 +36,14 @@ class CharacterFileServiceImpl extends CharacterFileService {
   @override
   WeaponFileService get weapons => _weapons;
 
-  CharacterFileServiceImpl(this._resourceService, this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
+  CharacterFileServiceImpl(
+    this._resourceService,
+    this._localeService,
+    this._artifacts,
+    this._materials,
+    this._weapons,
+    this._translations,
+  );
 
   @override
   Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
@@ -125,7 +133,9 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
     for (final char in chars) {
       final multiTalentAscensionMaterials =
-          (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialFileModel>[]).toList();
+          (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ??
+                  <ItemAscensionMaterialFileModel>[])
+              .toList();
 
       final ascensionMaterial = char.ascensionMaterials.expand((e) => e.materials).toList();
       final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
@@ -150,7 +160,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
         if (char.isComingSoon) {
           continue;
         }
-        final normalAscMaterial = char.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty ||
+        final normalAscMaterial =
+            char.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty ||
             char.talentAscensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
 
         // The travelers have different ascension materials,
@@ -194,8 +205,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
               characters: characters,
               days: e.days,
             );
-    }).toList()
-      ..sort((x, y) => x.name.compareTo(y.name));
+    }).toList()..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
@@ -211,10 +221,16 @@ class CharacterFileServiceImpl extends CharacterFileService {
         .groupListsBy((char) => _localeService.getCharBirthDate(char.birthday).month)
         .entries;
 
-    final birthdays = grouped
-        .map((e) => ChartBirthdayMonthModel(month: e.key, items: e.value.map((e) => _fromCharFileModelToItemCommonWithName(e)).toList()))
-        .toList()
-      ..sort((x, y) => x.month.compareTo(y.month));
+    final birthdays =
+        grouped
+            .map(
+              (e) => ChartBirthdayMonthModel(
+                month: e.key,
+                items: e.value.map((e) => _fromCharFileModelToItemCommonWithName(e)).toList(),
+              ),
+            )
+            .toList()
+          ..sort((x, y) => x.month.compareTo(y.month));
 
     assert(birthdays.length == 12, 'Birthday items for chart should not be empty and must be equal to 12');
 
@@ -226,26 +242,30 @@ class CharacterFileServiceImpl extends CharacterFileService {
     return RegionType.values.where((el) => el != RegionType.anotherWorld).map((type) {
       final quantity = _charactersFile.characters.where((el) => !el.isComingSoon && el.region == type).length;
       return ChartCharacterRegionModel(regionType: type, quantity: quantity);
-    }).toList()
-      ..sort((x, y) => y.quantity.compareTo(x.quantity));
+    }).toList()..sort((x, y) => y.quantity.compareTo(x.quantity));
   }
 
   @override
   ChartGenderModel getCharacterGendersByRegionForCharts(RegionType regionType) {
     if (regionType == RegionType.anotherWorld) {
-      throw Exception('Another world is not supported');
+      throw OperationNotSupportedError.value(regionType, 'regionTpe');
     }
 
     final characters = _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType).toList();
     final maleCount = characters.where((el) => !el.isFemale).length;
     final femaleCount = characters.where((el) => el.isFemale).length;
-    return ChartGenderModel(regionType: regionType, maleCount: maleCount, femaleCount: femaleCount, maxCount: max(maleCount, femaleCount));
+    return ChartGenderModel(
+      regionType: regionType,
+      maleCount: maleCount,
+      femaleCount: femaleCount,
+      maxCount: max(maleCount, femaleCount),
+    );
   }
 
   @override
   List<ItemCommonWithName> getCharactersForItemsByRegion(RegionType regionType) {
     if (regionType == RegionType.anotherWorld) {
-      throw Exception('Another world is not supported');
+      throw OperationNotSupportedError.value(regionType, 'regionType');
     }
 
     return _charactersFile.characters
@@ -258,7 +278,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
   @override
   List<ItemCommonWithName> getCharactersForItemsByRegionAndGender(RegionType regionType, bool onlyFemales) {
     if (regionType == RegionType.anotherWorld) {
-      throw Exception('Another world is not supported');
+      throw OperationNotSupportedError.value(regionType, 'regionType');
     }
 
     return _charactersFile.characters
@@ -271,67 +291,74 @@ class CharacterFileServiceImpl extends CharacterFileService {
   @override
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day}) {
     if (month == null && day == null) {
-      throw Exception('You must provide a month, day or both');
+      throw ArgumentError('You must provide a month, day or both');
     }
 
     if (month != null && (month < DateTime.january || month > DateTime.december)) {
-      throw Exception('The provided month = $month is not valid');
+      throw RangeError.range(month, DateTime.january, DateTime.december, 'month');
     }
 
-    if (day != null && day <= 0) {
-      throw Exception('The provided day = $day is not valid');
+    if (day != null && (day <= 0 || day > 31)) {
+      throw RangeError.range(day, 1, 31, 'day');
     }
 
     if (day != null && month != null) {
       final lastDay = DateUtils.getLastDayOfMonth(month);
       if (day > lastDay) {
-        throw Exception('The provided day = $day is not valid for month = $month');
+        throw ArgumentError.value(day, 'day', 'The provided day = $day is not valid for month = $month');
       }
     }
 
-    return _charactersFile.characters.where((char) {
-      if (char.isComingSoon) {
-        return false;
-      }
+    return _charactersFile.characters
+        .where((char) {
+          if (char.isComingSoon) {
+            return false;
+          }
 
-      if (char.birthday.isNullEmptyOrWhitespace) {
-        return false;
-      }
+          if (char.birthday.isNullEmptyOrWhitespace) {
+            return false;
+          }
 
-      final charBirthday = _localeService.getCharBirthDate(char.birthday);
-      if (month != null && day != null) {
-        return charBirthday.month == month && charBirthday.day == day;
-      }
-      if (month != null) {
-        return charBirthday.month == month;
-      }
-      if (day != null) {
-        return charBirthday.day == day;
-      }
+          final charBirthday = _localeService.getCharBirthDate(char.birthday);
+          if (month != null && day != null) {
+            return charBirthday.month == month && charBirthday.day == day;
+          }
+          if (month != null) {
+            return charBirthday.month == month;
+          }
+          if (day != null) {
+            return charBirthday.day == day;
+          }
 
-      return true;
-    }).map((e) {
-      final char = getCharacterForCard(e.key);
-      final birthday = _localeService.getCharBirthDate(e.birthday);
-      final now = DateTime.now().getStartingDate();
-      return CharacterBirthdayModel(
-        key: e.key,
-        name: char.name,
-        image: char.image,
-        iconImage: char.iconImage,
-        birthday: birthday,
-        birthdayString: e.birthday!,
-        daysUntilBirthday: now.difference(birthday).inDays.abs(),
-      );
-    }).toList()
+          return true;
+        })
+        .map((e) {
+          final char = getCharacterForCard(e.key);
+          final birthday = _localeService.getCharBirthDate(e.birthday);
+          final now = DateTime.now().getStartingDate();
+          return CharacterBirthdayModel(
+            key: e.key,
+            name: char.name,
+            image: char.image,
+            iconImage: char.iconImage,
+            birthday: birthday,
+            birthdayString: e.birthday!,
+            daysUntilBirthday: now.difference(birthday).inDays.abs(),
+          );
+        })
+        .toList()
       ..sort((x, y) => x.daysUntilBirthday.compareTo(y.daysUntilBirthday));
   }
 
   @override
-  List<String> getUpcomingCharactersKeys() => _charactersFile.characters.where((el) => el.isComingSoon).map((e) => e.key).toList();
+  List<String> getUpcomingCharactersKeys() =>
+      _charactersFile.characters.where((el) => el.isComingSoon).map((e) => e.key).toList();
 
   @override
-  List<CharacterSkillStatModel> getCharacterSkillStats(List<CharacterFileSkillStatModel> skillStats, List<String> statsTranslations) {
+  List<CharacterSkillStatModel> getCharacterSkillStats(
+    List<CharacterFileSkillStatModel> skillStats,
+    List<String> statsTranslations,
+  ) {
     final stats = <CharacterSkillStatModel>[];
     if (skillStats.isEmpty || statsTranslations.isEmpty) {
       return stats;
@@ -391,7 +418,10 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   @override
   List<ItemCommonWithName> getItemCommonWithNameByRarity(int rarity) {
-    return _charactersFile.characters.where((el) => el.rarity == rarity).map((e) => _fromCharFileModelToItemCommonWithName(e)).toList();
+    return _charactersFile.characters
+        .where((el) => el.rarity == rarity)
+        .map((e) => _fromCharFileModelToItemCommonWithName(e))
+        .toList();
   }
 
   @override
@@ -411,7 +441,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
     final translation = _translations.getCharacterTranslation(character.key);
 
     //The reduce is to take the material with the biggest level of each type
-    final multiTalentAscensionMaterials = character.multiTalentAscensionMaterials ?? <CharacterFileMultiTalentAscensionMaterialModel>[];
+    final multiTalentAscensionMaterials =
+        character.multiTalentAscensionMaterials ?? <CharacterFileMultiTalentAscensionMaterialModel>[];
 
     final ascensionMaterial = character.ascensionMaterials.isNotEmpty
         ? character.ascensionMaterials.reduce((current, next) => current.level > next.level ? current : next)
@@ -420,11 +451,14 @@ class CharacterFileServiceImpl extends CharacterFileService {
     final talentMaterial = character.talentAscensionMaterials.isNotEmpty
         ? character.talentAscensionMaterials.reduce((current, next) => current.level > next.level ? current : next)
         : multiTalentAscensionMaterials.isNotEmpty
-            ? multiTalentAscensionMaterials.expand((e) => e.materials).reduce((current, next) => current.level > next.level ? current : next)
-            : null;
+        ? multiTalentAscensionMaterials
+              .expand((e) => e.materials)
+              .reduce((current, next) => current.level > next.level ? current : next)
+        : null;
 
     final materials =
-        (ascensionMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]);
+        (ascensionMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]) +
+        (talentMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]);
 
     final quickMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
@@ -448,7 +482,11 @@ class CharacterFileServiceImpl extends CharacterFileService {
   //TODO: MOVE THE MAPS TO A COMMON PLACE?
 
   ItemCommon _fromCharFileModelToItemCommon(CharacterFileModel char) {
-    return ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image), _resourceService.getCharacterIconImagePath(char.iconImage));
+    return ItemCommon(
+      char.key,
+      _resourceService.getCharacterImagePath(char.image),
+      _resourceService.getCharacterIconImagePath(char.iconImage),
+    );
   }
 
   ItemCommonWithName _fromCharFileModelToItemCommonWithName(CharacterFileModel char) {

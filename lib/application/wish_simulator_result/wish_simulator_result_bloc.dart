@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -23,23 +25,24 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
   WishSimulatorResultBloc(this._dataService, this._telemetryService)
     : _random = Random(),
-      super(const WishSimulatorResultState.loading());
+      super(const WishSimulatorResultState.loading()) {
+    on<WishSimulatorResultEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WishSimulatorResultState> mapEventToState(WishSimulatorResultEvent event) async* {
+  Future<void> _mapEventToState(WishSimulatorResultEvent event, Emitter<WishSimulatorResultState> emit) async {
     switch (event) {
       case WishSimulatorResultEventInit():
-        yield await _pull(event.pulls, event.bannerIndex, event.period);
+        emit(await _pull(event.pulls, event.bannerIndex, event.period));
     }
   }
 
   Future<WishSimulatorResultState> _pull(int pulls, int bannerIndex, WishSimulatorBannerItemsPerPeriodModel period) async {
     if (pulls <= 0) {
-      throw Exception('The provided pulls = $pulls is not valid');
+      throw RangeError.range(pulls, 0, null, 'pulls');
     }
 
     if (bannerIndex < 0 || period.banners.elementAtOrNull(bannerIndex) == null) {
-      throw Exception('The provided bannerIndex = $bannerIndex is not valid');
+      throw RangeError.index(bannerIndex, period.banners, 'bannerIndex');
     }
 
     final banner = period.banners[bannerIndex];
@@ -235,7 +238,7 @@ class _RatesPerBannerType {
   bool canBeGuaranteed(int rarity) {
     final rate = _rates.firstWhereOrNull((el) => el.rarity == rarity);
     if (rate == null) {
-      throw Exception('Rarity = $rarity does not have an associated rate');
+      throw NotFoundError(rarity, 'rarity', 'Rarity not have an associated rate');
     }
 
     return rate.canBeGuaranteed;
@@ -243,7 +246,7 @@ class _RatesPerBannerType {
 
   int? getRarityIfGuaranteed(WishSimulatorBannerPullHistory history) {
     if (history.type != type.index) {
-      throw Exception('The rates only apply to banners of type = $type');
+      throw UnsupportedError('The rates only apply to banners of type = $type');
     }
     for (final rate in _rates) {
       if (!rate.canBeGuaranteed) {

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -144,7 +145,7 @@ void main() {
           expect(state.showOtherImages, false);
           expect(state.currentResin, 0);
         default:
-          throw Exception('Invalid state');
+          throw InvalidStateError();
       }
     },
   );
@@ -171,7 +172,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.currentResin, 60);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -206,7 +207,7 @@ void main() {
             expect(state.withTimeReduction, true);
             expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -239,7 +240,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -270,7 +271,7 @@ void main() {
             checkState(state, AppNotificationType.farmingMaterials, checkNote: true);
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -296,7 +297,7 @@ void main() {
             checkState(state, AppNotificationType.gadget, checkNote: true);
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -329,7 +330,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -365,7 +366,7 @@ void main() {
             expect(state.currentTrustRank, 7);
             expect(state.currentRealmCurrency, 100);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -397,7 +398,7 @@ void main() {
             checkState(state, AppNotificationType.weeklyBoss, checkNote: true);
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -422,7 +423,7 @@ void main() {
             checkState(state, AppNotificationType.dailyCheckIn, checkNote: true);
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -472,7 +473,7 @@ void main() {
               checkNotDirtyFields(state);
               expect(state.itemType, type);
             default:
-              throw Exception('Invalid state');
+              throw InvalidStateError();
           }
         },
       );
@@ -504,7 +505,7 @@ void main() {
             );
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -542,7 +543,7 @@ void main() {
             );
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -563,7 +564,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             expect(state.currentResin, 100);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -591,7 +592,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.currentResin, 100);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -615,7 +616,7 @@ void main() {
             expect(state.expeditionTimeType, ExpeditionTimeType.fourHours);
             expect(state.withTimeReduction, true);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -652,7 +653,7 @@ void main() {
             expect(state.expeditionTimeType, ExpeditionTimeType.eightHours);
             expect(state.withTimeReduction, false);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -674,7 +675,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -709,7 +710,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -737,7 +738,7 @@ void main() {
             final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
             expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -775,7 +776,7 @@ void main() {
             final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
             expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -803,7 +804,7 @@ void main() {
             final imgPath = resourceService.getGadgetImagePath(gadget.image);
             expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -836,7 +837,7 @@ void main() {
             final imgPath = resourceService.getGadgetImagePath(gadget.image);
             expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -858,7 +859,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -893,7 +894,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.timeType, FurnitureCraftingTimeType.sixteenHours);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -919,7 +920,7 @@ void main() {
             expect(state.currentTrustRank, 10);
             expect(state.currentRealmRankType, RealmRankType.luxury);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -959,7 +960,7 @@ void main() {
             expect(state.currentTrustRank, 9);
             expect(state.currentRealmRankType, RealmRankType.luxury);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -979,7 +980,7 @@ void main() {
             checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -1016,7 +1017,7 @@ void main() {
             final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
             expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -1038,7 +1039,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             expect(state.itemType, AppNotificationItemType.character);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -1074,7 +1075,7 @@ void main() {
             checkNotDirtyFields(state);
             expect(state.itemType, AppNotificationItemType.artifact);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -1094,7 +1095,7 @@ void main() {
             checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );
@@ -1119,7 +1120,7 @@ void main() {
             checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
             checkNotDirtyFields(state);
           default:
-            throw Exception('Invalid state');
+            throw InvalidStateError();
         }
       },
     );

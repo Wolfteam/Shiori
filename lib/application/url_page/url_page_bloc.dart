@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -27,21 +28,23 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
     this._telemetryService,
     this._deviceInfoService,
     this._settingsService,
-  ) : super(const UrlPageState.loading());
+  ) : super(const UrlPageState.loading()) {
+    on<UrlPageEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<UrlPageState> mapEventToState(UrlPageEvent event) async* {
+  Future<void> _mapEventToState(UrlPageEvent event, Emitter<UrlPageState> emit) async {
     switch (event) {
       case UrlPageEventInit():
         final finalMapUrl = _settingsService.useOfficialMap ? _getMapUrl() : unofficialMapUrl;
         final isInternetAvailable = await _networkService.isInternetAvailable();
         await _telemetryService.trackUrlOpened(event.loadMap, event.loadDailyCheckIn, isInternetAvailable);
-        yield UrlPageState.loaded(
+        final state = UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: finalMapUrl,
           dailyCheckInUrl: _getDailyCheckInUrl(),
           userAgent: _deviceInfoService.userAgent ?? '',
         );
+        emit(state);
     }
   }
 

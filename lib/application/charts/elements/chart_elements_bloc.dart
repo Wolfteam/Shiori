@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -16,27 +18,28 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsBloc(this._genshinService)
     : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
-      super(const ChartElementsState.loading());
+      super(const ChartElementsState.loading()) {
+    on<ChartElementsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ChartElementsState> mapEventToState(ChartElementsEvent event) async* {
+  Future<void> _mapEventToState(ChartElementsEvent event, Emitter<ChartElementsState> emit) async {
     if (event is! ChartElementsEventInit && state is! ChartElementsStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
     switch (event) {
       case ChartElementsEventInit():
-        yield _init(event.maxNumberOfColumns);
+        emit(_init(event.maxNumberOfColumns));
       case ChartElementsEventElementSelected():
-        yield _elementSelectionChanged(state as ChartElementsStateLoaded, event.type);
+        emit(_elementSelectionChanged(state as ChartElementsStateLoaded, event.type));
       case ChartElementsEventGoToNextPage():
-        yield _goToNextPage(state as ChartElementsStateLoaded);
+        emit(_goToNextPage(state as ChartElementsStateLoaded));
       case ChartElementsEventGoToPreviousPage():
-        yield _goToPreviousPage(state as ChartElementsStateLoaded);
+        emit(_goToPreviousPage(state as ChartElementsStateLoaded));
       case ChartElementsEventGoToFirstPage():
-        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, true);
+        emit(_goToFirstOrLastPage(state as ChartElementsStateLoaded, true));
       case ChartElementsEventGoToLastPage():
-        yield _goToFirstOrLastPage(state as ChartElementsStateLoaded, false);
+        emit(_goToFirstOrLastPage(state as ChartElementsStateLoaded, false));
     }
   }
 
@@ -48,7 +51,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsState _init(int maxNumberOfColumns) {
     if (maxNumberOfColumns < 1) {
-      throw Exception('The provided maxNumberOfColumns = $maxNumberOfColumns is not valid');
+      throw RangeError.range(maxNumberOfColumns, 1, null, 'maxNumberOfColumns');
     }
     final firstVersion = versions.first;
     double lastVersion = firstVersion + _getStep(maxNumberOfColumns);
@@ -101,7 +104,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsState _goToNextPage(ChartElementsStateLoaded state) {
     if (!_canGoToNextPage(state.lastVersion)) {
-      throw Exception('Cannot go to the next page');
+      throw PaginationError.cannotGoToNext();
     }
     final newVersion = (state.firstVersion + gameVersionIncrementsBy).truncateToDecimalPlaces();
     return _newVersionChanged(state, newVersion);
@@ -109,7 +112,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsState _goToPreviousPage(ChartElementsStateLoaded state) {
     if (!_canGoToPreviousPage(state.firstVersion)) {
-      throw Exception('Cannot go to the previous page');
+      throw PaginationError.cannotGoToPrevious();
     }
     final newVersion = (state.firstVersion - gameVersionIncrementsBy).truncateToDecimalPlaces();
     return _newVersionChanged(state, newVersion);
@@ -123,15 +126,19 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       newLastVersion = versions.last;
     }
     if (newFirstVersion < versions.first) {
-      throw Exception('First version = $newFirstVersion cannot be greater than = ${versions.first}');
+      throw ArgumentError.value(newFirstVersion, 'newFirstVersion', 'Version cannot be less than ${versions.first}');
     }
 
     if (newLastVersion > versions.last) {
-      throw Exception('Last version = $newLastVersion cannot be greater than = ${versions.last}');
+      throw ArgumentError.value(newLastVersion, 'newLastVersion', 'Version cannot be greater than ${versions.last}');
     }
 
     if (state.firstVersion == newFirstVersion && state.lastVersion == newLastVersion) {
-      throw Exception('The state already has the same first and last version');
+      throw throw ArgumentError.value(
+        newFirstVersion,
+        'newFirstVersion',
+        'The state already has the same first and last version',
+      );
     }
 
     assert(newFirstVersion != newLastVersion, 'New and last version cannot be equal');

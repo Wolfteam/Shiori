@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,22 +22,23 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   final ResourceService _resourceService;
 
   WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService)
-    : super(const WeaponState.loading());
+    : super(const WeaponState.loading()) {
+    on<WeaponEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
+  Future<void> _mapEventToState(WeaponEvent event, Emitter<WeaponState> emit) async {
     switch (event) {
       case WeaponEventLoadWeaponFromName():
         final weapon = _genshinService.weapons.getWeapon(event.key);
         final translation = _genshinService.translations.getWeaponTranslation(weapon.key);
         await _telemetryService.trackWeaponLoaded(event.key);
-        yield _buildInitialState(weapon, translation);
+        emit(_buildInitialState(weapon, translation));
       case WeaponEventAddToInventory():
         switch (state) {
           case final WeaponStateLoaded state:
             await _telemetryService.trackItemAddedToInventory(event.key, 1);
             await _dataService.inventory.addWeaponToInventory(event.key);
-            yield state.copyWith.call(isInInventory: true);
+            emit(state.copyWith.call(isInInventory: true));
           default:
             break;
         }
@@ -45,7 +47,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
           case final WeaponStateLoaded state:
             await _telemetryService.trackItemDeletedFromInventory(event.key);
             await _dataService.inventory.deleteWeaponFromInventory(event.key);
-            yield state.copyWith.call(isInInventory: false);
+            emit(state.copyWith.call(isInInventory: false));
           default:
             break;
         }

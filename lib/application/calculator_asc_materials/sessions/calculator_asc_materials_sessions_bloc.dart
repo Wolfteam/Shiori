@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -31,32 +33,30 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
     _calcItemSubscriptions.add(itemAddedSubs);
     _calcItemSubscriptions.add(itemDeletedSubs);
+
+    on<CalculatorAscMaterialsSessionsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
   }
 
-  @override
-  Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
+  Future<void> _mapEventToState(
+    CalculatorAscMaterialsSessionsEvent event,
+    Emitter<CalculatorAscMaterialsSessionsState> emit,
+  ) async {
     if (state is! CalculatorAscMaterialsSessionsStateLoaded && event is! CalculatorAscMaterialsSessionsEventInit) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
-    switch (event) {
-      case CalculatorAscMaterialsSessionsEventInit():
-        yield await _init();
-      case CalculatorAscMaterialsSessionsEventCreateSession():
-        yield await _createSession(event.name, event.showMaterialUsage);
-      case CalculatorAscMaterialsSessionsEventUpdateSession():
-        yield await _updateSession(event.key, event.name, event.showMaterialUsage);
-      case CalculatorAscMaterialsSessionsEventDeleteSession():
-        yield await _deleteSession(event.key);
-      case CalculatorAscMaterialsSessionsEventDeleteAllSessions():
-        yield await _deleteAllSessions();
-      case CalculatorAscMaterialsSessionsEventItemsReordered():
-        yield await _itemsReordered(event.updated);
-      case CalculatorAscMaterialsSessionsEventItemAdded():
-        yield _changeItemCount(event.sessionKey, true, event.isCharacter);
-      case CalculatorAscMaterialsSessionsEventItemDeleted():
-        yield _changeItemCount(event.sessionKey, false, event.isCharacter);
-    }
+    final updatedState = switch (event) {
+      CalculatorAscMaterialsSessionsEventInit() => await _init(),
+      CalculatorAscMaterialsSessionsEventCreateSession() => await _createSession(event.name, event.showMaterialUsage),
+      CalculatorAscMaterialsSessionsEventUpdateSession() => await _updateSession(event.key, event.name, event.showMaterialUsage),
+      CalculatorAscMaterialsSessionsEventDeleteSession() => await _deleteSession(event.key),
+      CalculatorAscMaterialsSessionsEventDeleteAllSessions() => await _deleteAllSessions(),
+      CalculatorAscMaterialsSessionsEventItemsReordered() => await _itemsReordered(event.updated),
+      CalculatorAscMaterialsSessionsEventItemAdded() => _changeItemCount(event.sessionKey, true, event.isCharacter),
+      CalculatorAscMaterialsSessionsEventItemDeleted() => _changeItemCount(event.sessionKey, false, event.isCharacter),
+    };
+
+    emit(updatedState);
   }
 
   @override
@@ -73,7 +73,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _createSession(String name, bool showMaterialUsage) async {
     if (name.isNullEmptyOrWhitespace) {
-      throw Exception('The provided session name is not valid');
+      throw ArgumentError.value(name, 'name');
     }
 
     await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
@@ -88,16 +88,16 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _updateSession(int key, String name, bool showMaterialUsage) async {
     if (key < 0) {
-      throw Exception('SessionKey = $key is not valid');
+      throw RangeError.range(key, 0, null, 'key');
     }
 
     if (name.isNullEmptyOrWhitespace) {
-      throw Exception('The provided session name is not valid');
+      throw ArgumentError.value(name, 'name');
     }
 
     final CalculatorSessionModel? current = currentState.sessions.firstWhereOrDefault((el) => el.key == key);
     if (current == null) {
-      throw Exception('SessionKey = $key does not exist');
+      throw NotFoundError(key, 'key', 'Session does not exist');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
     final updatedSession = await _dataService.calculator.updateSession(key, name.trim(), showMaterialUsage);
@@ -110,7 +110,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _deleteSession(int key) async {
     if (key < 0) {
-      throw Exception('SessionKey = $key is not valid');
+      throw RangeError.range(key, 0, null, 'key');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
     await _dataService.calculator.deleteSession(key);
@@ -127,7 +127,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   Future<CalculatorAscMaterialsSessionsState> _itemsReordered(List<CalculatorSessionModel> updated) async {
     if (updated.isEmpty) {
-      throw Exception('The updated reordered items are empty');
+      throw UnsupportedError('The updated reordered items are empty');
     }
 
     await _dataService.calculator.reorderSessions(updated);

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -16,15 +17,17 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
   final TelemetryService _telemetryService;
   final ResourceService _resourceService;
 
-  ArtifactBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const ArtifactState.loading());
+  ArtifactBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const ArtifactState.loading()) {
+    on<ArtifactEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ArtifactState> mapEventToState(ArtifactEvent event) async* {
-    yield const ArtifactState.loading();
+  Future<void> _mapEventToState(ArtifactEvent event, Emitter<ArtifactState> emit) async {
+    emit(const ArtifactState.loading());
 
     switch (event) {
       case final ArtifactEventLoad e:
-        yield await _loadFromKey(e);
+        final state = await _loadFromKey(e);
+        emit(state);
     }
   }
 

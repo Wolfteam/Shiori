@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -17,12 +18,13 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   final SettingsService _settingsService;
   final List<WeaponCardModel> _allWeapons = [];
 
-  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading());
+  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading()) {
+    on<WeaponsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
   WeaponsStateLoaded get currentState => state as WeaponsStateLoaded;
 
-  @override
-  Stream<WeaponsState> mapEventToState(WeaponsEvent event) async* {
+  Future<void> _mapEventToState(WeaponsEvent event, Emitter<WeaponsState> emit) async {
     switch (event) {
       case WeaponsEventInit():
         if (_allWeapons.isEmpty || event.force) {
@@ -30,64 +32,72 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
           _allWeapons.addAll(_genshinService.weapons.getWeaponsForCard());
         }
 
-        yield _buildInitialState(
-          excludeKeys: event.excludeKeys,
-          weaponTypes: event.weaponTypes.isEmpty ? WeaponType.values : event.weaponTypes,
-          areWeaponTypesEnabled: event.areWeaponTypesEnabled,
+        emit(
+          _buildInitialState(
+            excludeKeys: event.excludeKeys,
+            weaponTypes: event.weaponTypes.isEmpty ? WeaponType.values : event.weaponTypes,
+            areWeaponTypesEnabled: event.areWeaponTypesEnabled,
+          ),
         );
       case WeaponsEventSearchChanged():
-        yield _buildInitialState(
-          search: event.search,
-          weaponFilterType: currentState.weaponFilterType,
-          rarity: currentState.rarity,
-          sortDirectionType: currentState.sortDirectionType,
-          weaponTypes: currentState.weaponTypes,
-          weaponSubStatType: currentState.weaponSubStatType,
-          locationType: currentState.weaponLocationType,
-          excludeKeys: currentState.excludeKeys,
-          areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+        emit(
+          _buildInitialState(
+            search: event.search,
+            weaponFilterType: currentState.weaponFilterType,
+            rarity: currentState.rarity,
+            sortDirectionType: currentState.sortDirectionType,
+            weaponTypes: currentState.weaponTypes,
+            weaponSubStatType: currentState.weaponSubStatType,
+            locationType: currentState.weaponLocationType,
+            excludeKeys: currentState.excludeKeys,
+            areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+          ),
         );
       case WeaponsEventWeaponTypesChanged():
-        yield _weaponTypeChanged(event.weaponType);
+        emit(_weaponTypeChanged(event.weaponType));
       case WeaponsEventRarityChanged():
-        yield currentState.copyWith.call(tempRarity: event.rarity);
+        emit(currentState.copyWith.call(tempRarity: event.rarity));
       case WeaponsEventWeaponFilterChanged():
-        yield currentState.copyWith.call(tempWeaponFilterType: event.filterType);
+        emit(currentState.copyWith.call(tempWeaponFilterType: event.filterType));
       case WeaponsEventApplyFilterChanges():
-        yield _buildInitialState(
-          search: currentState.search,
-          weaponFilterType: currentState.tempWeaponFilterType,
-          rarity: currentState.tempRarity,
-          sortDirectionType: currentState.tempSortDirectionType,
-          weaponTypes: currentState.tempWeaponTypes,
-          weaponSubStatType: currentState.tempWeaponSubStatType,
-          locationType: currentState.tempWeaponLocationType,
-          excludeKeys: currentState.excludeKeys,
-          areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+        emit(
+          _buildInitialState(
+            search: currentState.search,
+            weaponFilterType: currentState.tempWeaponFilterType,
+            rarity: currentState.tempRarity,
+            sortDirectionType: currentState.tempSortDirectionType,
+            weaponTypes: currentState.tempWeaponTypes,
+            weaponSubStatType: currentState.tempWeaponSubStatType,
+            locationType: currentState.tempWeaponLocationType,
+            excludeKeys: currentState.excludeKeys,
+            areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+          ),
         );
       case WeaponsEventSortDirectionTypeChanged():
-        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        emit(currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType));
       case WeaponsEventWeaponSubStatTypeChanged():
-        yield currentState.copyWith.call(tempWeaponSubStatType: event.subStatType);
+        emit(currentState.copyWith.call(tempWeaponSubStatType: event.subStatType));
       case WeaponsEventWeaponLocationTypeChanged():
-        yield currentState.copyWith.call(tempWeaponLocationType: event.locationType);
+        emit(currentState.copyWith.call(tempWeaponLocationType: event.locationType));
       case WeaponsEventCancelChanges():
-        yield currentState.copyWith.call(
-          tempWeaponFilterType: currentState.weaponFilterType,
-          tempRarity: currentState.rarity,
-          tempSortDirectionType: currentState.sortDirectionType,
-          tempWeaponTypes: currentState.weaponTypes,
-          tempWeaponSubStatType: currentState.weaponSubStatType,
-          tempWeaponLocationType: currentState.weaponLocationType,
-          excludeKeys: currentState.excludeKeys,
-          areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+        emit(
+          currentState.copyWith.call(
+            tempWeaponFilterType: currentState.weaponFilterType,
+            tempRarity: currentState.rarity,
+            tempSortDirectionType: currentState.sortDirectionType,
+            tempWeaponTypes: currentState.weaponTypes,
+            tempWeaponSubStatType: currentState.weaponSubStatType,
+            tempWeaponLocationType: currentState.weaponLocationType,
+            excludeKeys: currentState.excludeKeys,
+            areWeaponTypesEnabled: currentState.areWeaponTypesEnabled,
+          ),
         );
       case WeaponsEventResetFilters():
         final excludedKeys = switch (state) {
           WeaponsStateLoading() => <String>[],
           final WeaponsStateLoaded state => state.excludeKeys,
         };
-        yield _buildInitialState(excludeKeys: excludedKeys, weaponTypes: WeaponType.values);
+        emit(_buildInitialState(excludeKeys: excludedKeys, weaponTypes: WeaponType.values));
     }
   }
 

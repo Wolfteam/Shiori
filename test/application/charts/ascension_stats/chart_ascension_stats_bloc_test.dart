@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -90,20 +91,21 @@ void main() {
       expect: () => [],
     );
 
-    blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
-      'invalid item type',
-      build: () => ChartAscensionStatsBloc(genshinService),
-      act: (bloc) => bloc
-        ..add(const ChartAscensionStatsEvent.init(type: ItemType.artifact, maxNumberOfColumns: 10))
-        ..add(const ChartAscensionStatsEvent.init(type: ItemType.material, maxNumberOfColumns: 10)),
-      errors: () => [isA<Exception>(), isA<Exception>()],
-    );
+    const invalidTypes = [ItemType.artifact, ItemType.material];
+    for (final type in invalidTypes) {
+      blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
+        'with type (${type.name}) which is not valid',
+        build: () => ChartAscensionStatsBloc(genshinService),
+        act: (bloc) => bloc..add(ChartAscensionStatsEvent.init(type: type, maxNumberOfColumns: 10)),
+        errors: () => [predicate<ArgumentError>((e) => e.name == 'itemType')],
+      );
+    }
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'max number of columns is not valid',
       build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.init(type: ItemType.material, maxNumberOfColumns: 0)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'maxNumberOfColumns')],
     );
   });
 
@@ -138,14 +140,14 @@ void main() {
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10000))
         ..add(const ChartAscensionStatsEvent.goToNextPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.name == 'nextPage')],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
       build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToNextPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -181,14 +183,14 @@ void main() {
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 1))
         ..add(const ChartAscensionStatsEvent.goToPreviousPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.name == 'previousPage')],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
       build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToPreviousPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -225,14 +227,14 @@ void main() {
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 1))
         ..add(const ChartAscensionStatsEvent.goToFirstPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.message.toString().contains('already'))],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
       build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToFirstPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -270,14 +272,14 @@ void main() {
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10000))
         ..add(const ChartAscensionStatsEvent.goToLastPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.toString().contains('already'))],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
       build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToLastPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 }

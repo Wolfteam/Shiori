@@ -1,3 +1,4 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/item_type.dart';
@@ -14,19 +15,21 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
   final TelemetryService _telemetryService;
 
   CalculatorAscMaterialsItemUpdateQuantityBloc(this._dataService, this._telemetryService)
-    : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading());
+    : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading()) {
+    on<CalculatorAscMaterialsItemUpdateQuantityEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsItemUpdateQuantityState> mapEventToState(
+  Future<void> _mapEventToState(
     CalculatorAscMaterialsItemUpdateQuantityEvent event,
-  ) async* {
+    Emitter<CalculatorAscMaterialsItemUpdateQuantityState> emit,
+  ) async {
     switch (event) {
       case CalculatorAscMaterialsItemUpdateQuantityEventLoad():
         final int quantity = _dataService.inventory.getItemQuantityFromInventory(event.key, ItemType.material);
-        yield CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: event.key, quantity: quantity);
+        emit(CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: event.key, quantity: quantity));
       case CalculatorAscMaterialsItemUpdateQuantityEventUpdate():
         await _updateMaterialQuantity(event.key, event.quantity);
-        yield CalculatorAscMaterialsItemUpdateQuantityState.saved(key: event.key, quantity: event.quantity);
+        emit(CalculatorAscMaterialsItemUpdateQuantityState.saved(key: event.key, quantity: event.quantity));
     }
   }
 

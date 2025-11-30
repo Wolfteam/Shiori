@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -64,7 +65,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case CalculatorAscMaterialsItemStateLoading():
-              throw Exception('Invalid State');
+              throw InvalidStateError();
             case CalculatorAscMaterialsItemStateLoaded():
               checkTranslation(state.name);
               checkAsset(state.imageFullPath);
@@ -157,7 +158,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case CalculatorAscMaterialsItemStateLoading():
-              throw Exception('Invalid State');
+              throw InvalidStateError();
             case CalculatorAscMaterialsItemStateLoaded():
               checkTranslation(state.name);
               checkAsset(state.imageFullPath);
@@ -199,7 +200,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: 50)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -208,7 +209,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: maxItemLevel + 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentLevel')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -221,7 +222,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, maxItemLevel);
@@ -246,7 +247,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: 50)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -255,7 +256,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: minItemLevel - 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredLevel')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -268,7 +269,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, itemAscensionLevelMap.entries.first.value);
             expect(state.desiredLevel, 50);
@@ -300,7 +301,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, 70);
@@ -330,7 +331,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 40);
             expect(state.desiredLevel, 40);
@@ -356,7 +357,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) =>
           bloc.add(CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -365,7 +366,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: -1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'currentLevel')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -378,7 +379,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, maxItemLevel);
@@ -404,7 +405,7 @@ void main() {
       build: () => getBloc(),
       act: (bloc) =>
           bloc.add(CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.first)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -413,7 +414,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: itemAscensionLevelMap.keys.last + 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'desiredLevel')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -426,7 +427,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 20);
             expect(state.desiredLevel, 50);
@@ -458,7 +459,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 40);
             expect(state.desiredLevel, 50);
@@ -488,7 +489,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, 50);
@@ -513,7 +514,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: 0, newValue: 2)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -522,7 +523,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: -1, newValue: 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'skillIndex')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -531,7 +532,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: 0, newValue: minSkillLevel - 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'newValue')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -545,7 +546,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 40);
             expect(state.desiredLevel, maxItemLevel);
@@ -577,7 +578,7 @@ void main() {
       'invalid state',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 1, newValue: 9)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -586,7 +587,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 5, newValue: 9)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'skillIndex')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -595,7 +596,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorAscMaterialsItemEvent.load(key: validCharKey, isCharacter: true))
         ..add(const CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: 1, newValue: maxSkillLevel + 1)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'newValue')],
     );
 
     blocTest<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
@@ -608,7 +609,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.skills.isNotEmpty, isTrue);
             for (int i = 0; i < state.skills.length; i++) {
@@ -644,7 +645,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, 90);
@@ -685,7 +686,7 @@ void main() {
         final state = bloc.state;
         switch (state) {
           case CalculatorAscMaterialsItemStateLoading():
-            throw Exception('Invalid State');
+            throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
             expect(state.currentLevel, 50);
             expect(state.desiredLevel, 90);

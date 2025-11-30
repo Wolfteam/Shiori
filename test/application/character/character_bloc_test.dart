@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -65,7 +66,7 @@ void main() {
     void checkKeqingState(CharacterState state, bool isInInventory) {
       switch (state) {
         case CharacterStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case CharacterStateLoaded():
           expect(state.key, 'keqing');
           expect(state.name, 'Keqing');

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -45,7 +46,7 @@ void main() {
   void checkState(HomeState state, AppServerResetTimeType resetTimeType, {bool checkServerDate = true}) {
     switch (state) {
       case HomeStateLoading():
-        throw Exception('Invalid state');
+        throw InvalidStateError();
       case HomeStateLoaded():
         expect(state.charAscMaterials, isNotEmpty);
         expect(state.weaponAscMaterials, isNotEmpty);
@@ -139,7 +140,7 @@ void main() {
       final state = bloc.state;
       switch (state) {
         case HomeStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case HomeStateLoaded():
           final charMaterials = genshinService.characters.getCharacterAscensionMaterials(day);
           final weaponMaterials = genshinService.weapons.getWeaponAscensionMaterials(day);

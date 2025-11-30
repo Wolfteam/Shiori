@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,18 +19,18 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
   final TelemetryService _telemetryService;
   final ResourceService _resourceService;
 
-  MaterialBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const MaterialState.loading());
+  MaterialBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const MaterialState.loading()) {
+    on<MaterialEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  @override
-  Stream<MaterialState> mapEventToState(MaterialEvent event) async* {
+  Future<void> _mapEventToState(MaterialEvent event, Emitter<MaterialState> emit) async {
     switch (event) {
       case MaterialEventLoad():
         final material = _genshinService.materials.getMaterial(event.key);
         if (event.addToQueue) {
           await _telemetryService.trackMaterialLoaded(event.key);
         }
-        yield _buildInitialState(material);
+        emit(_buildInitialState(material));
     }
   }
 

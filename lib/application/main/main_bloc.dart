@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -59,27 +60,28 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._weaponsBloc,
     this._homeBloc,
     this._artifactsBloc,
-  ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang()));
+  ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang())) {
+    on<MainEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
   MainStateLoaded get currentState => state as MainStateLoaded;
 
-  @override
-  Stream<MainState> mapEventToState(MainEvent event) async* {
+  Future<void> _mapEventToState(MainEvent event, Emitter<MainState> emit) async {
     switch (event) {
       case MainEventInit():
-        yield await _init(init: true, updateResult: event.updateResultType);
+        emit(await _init(init: true, updateResult: event.updateResultType));
       case MainEventThemeChanged():
-        yield await _loadThemeData(event.newValue, _settingsService.accentColor);
+        emit(await _loadThemeData(event.newValue, _settingsService.accentColor));
       case MainEventUseDarkAmoledThemeChanged():
-        yield await _loadThemeData(_settingsService.appTheme, _settingsService.accentColor);
+        emit(await _loadThemeData(_settingsService.appTheme, _settingsService.accentColor));
       case MainEventAccentColorChanged():
-        yield await _loadThemeData(_settingsService.appTheme, event.newValue);
+        emit(await _loadThemeData(_settingsService.appTheme, event.newValue));
       case MainEventLanguageChanged():
-        yield await _init(languageChanged: true);
+        emit(await _init(languageChanged: true));
       case MainEventRestart():
-        yield MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true);
+        emit(MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true));
       case MainEventDeleteAllData():
-        yield await _deleteAllData();
+        emit(await _deleteAllData());
     }
   }
 

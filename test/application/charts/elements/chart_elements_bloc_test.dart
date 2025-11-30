@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -92,7 +93,7 @@ void main() {
       'max number of columns is not valid',
       build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.init(maxNumberOfColumns: 0)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'maxNumberOfColumns')],
     );
   });
 
@@ -191,14 +192,14 @@ void main() {
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 10000))
         ..add(const ChartElementsEvent.goToNextPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.name == 'nextPage')],
     );
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
       build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToNextPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -238,14 +239,14 @@ void main() {
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 1))
         ..add(const ChartElementsEvent.goToPreviousPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<PaginationError>((e) => e.name == 'previousPage')],
     );
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
       build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToPreviousPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -286,14 +287,14 @@ void main() {
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 1))
         ..add(const ChartElementsEvent.goToFirstPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.toString().contains('already'))],
     );
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
       build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToFirstPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 
@@ -332,14 +333,14 @@ void main() {
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 10000))
         ..add(const ChartElementsEvent.goToLastPage()),
       skip: 1,
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'newFirstVersion')],
     );
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
       build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToLastPage()),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<InvalidStateError>()],
     );
   });
 }

@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -22,40 +24,44 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   CalculatorAscMaterialsItemStateLoaded get currentState => state as CalculatorAscMaterialsItemStateLoaded;
 
   CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService, this._resourceService)
-    : super(const CalculatorAscMaterialsItemState.loading());
+    : super(const CalculatorAscMaterialsItemState.loading()) {
+    on<CalculatorAscMaterialsItemEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsItemState> mapEventToState(CalculatorAscMaterialsItemEvent event) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsItemEvent event, Emitter<CalculatorAscMaterialsItemState> emit) async {
     if (event is CalculatorAscMaterialsItemEventLoad) {
-      yield const CalculatorAscMaterialsItemState.loading();
+      emit(const CalculatorAscMaterialsItemState.loading());
     }
 
     if (event is! CalculatorAscMaterialsItemEventLoad &&
         event is! CalculatorAscMaterialsItemEventLoadWith &&
         state is! CalculatorAscMaterialsItemStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
 
-    switch (event) {
-      case CalculatorAscMaterialsItemEventLoad():
-        yield _defaultLoad(event);
-      case CalculatorAscMaterialsItemEventLoadWith():
-        yield _load(event);
-      case CalculatorAscMaterialsItemEventCurrentLevelChanged():
-        yield _levelChanged(event.newValue, currentState.desiredLevel, true);
-      case CalculatorAscMaterialsItemEventDesiredLevelChanged():
-        yield _levelChanged(currentState.currentLevel, event.newValue, false);
-      case CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged():
-        yield _ascensionChanged(event.newValue, currentState.desiredAscensionLevel, true);
-      case CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged():
-        yield _ascensionChanged(currentState.currentAscensionLevel, event.newValue, false);
-      case CalculatorAscMaterialsItemEventSkillCurrentLevelChanged():
-        yield _skillChanged(event.index, event.newValue, true);
-      case CalculatorAscMaterialsItemEventSkillDesiredLevelChanged():
-        yield _skillChanged(event.index, event.newValue, false);
-      case CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged():
-        yield currentState.copyWith.call(useMaterialsFromInventory: event.useThem);
-    }
+    final s = switch (event) {
+      CalculatorAscMaterialsItemEventLoad() => _defaultLoad(event),
+      CalculatorAscMaterialsItemEventLoadWith() => _load(event),
+      CalculatorAscMaterialsItemEventCurrentLevelChanged() => _levelChanged(event.newValue, currentState.desiredLevel, true),
+      CalculatorAscMaterialsItemEventDesiredLevelChanged() => _levelChanged(currentState.currentLevel, event.newValue, false),
+      CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged() => _ascensionChanged(
+        event.newValue,
+        currentState.desiredAscensionLevel,
+        true,
+      ),
+      CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged() => _ascensionChanged(
+        currentState.currentAscensionLevel,
+        event.newValue,
+        false,
+      ),
+      CalculatorAscMaterialsItemEventSkillCurrentLevelChanged() => _skillChanged(event.index, event.newValue, true),
+      CalculatorAscMaterialsItemEventSkillDesiredLevelChanged() => _skillChanged(event.index, event.newValue, false),
+      CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged() => currentState.copyWith.call(
+        useMaterialsFromInventory: event.useThem,
+      ),
+    };
+
+    emit(s);
   }
 
   CalculatorAscMaterialsItemState _defaultLoad(CalculatorAscMaterialsItemEventLoad e) {
@@ -117,11 +123,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     if (currentLevel < minItemLevel || currentLevel > maxItemLevel) {
-      throw Exception('Current level = $currentLevel is not valid');
+      throw RangeError.range(currentLevel, minItemLevel, maxItemLevel, 'currentLevel');
     }
 
     if (desiredLevel < minItemLevel || desiredLevel > maxItemLevel) {
-      throw Exception('Desired level = $desiredLevel is not valid');
+      throw RangeError.range(desiredLevel, minItemLevel, maxItemLevel, 'desiredLevel');
     }
 
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
@@ -146,11 +152,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     if (currentLevel < 0 || currentLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Current asc level = $currentLevel is not valid');
+      throw RangeError.range(currentLevel, 0, itemAscensionLevelMap.entries.last.key, 'currentLevel');
     }
 
     if (desiredLevel < 0 || desiredLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Desired asc level = $desiredLevel is not valid');
+      throw RangeError.range(desiredLevel, 0, itemAscensionLevelMap.entries.last.key, 'desiredLevel');
     }
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
     final bothAreZero = tuple.$1 == tuple.$2 && tuple.$1 == 0;
@@ -187,11 +193,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _skillChanged(int skillIndex, int newValue, bool currentChanged) {
     if (skillIndex < 0 || skillIndex > currentState.skills.length) {
-      throw Exception('Skill index = $skillIndex is not valid');
+      throw RangeError.range(skillIndex, 0, currentState.skills.length, 'skillIndex');
     }
 
     if (newValue < minSkillLevel || newValue > maxSkillLevel) {
-      throw Exception('Skill value = $newValue is not valid');
+      throw RangeError.range(newValue, minSkillLevel, maxSkillLevel, 'newValue');
     }
 
     final skills = <CharacterSkill>[];

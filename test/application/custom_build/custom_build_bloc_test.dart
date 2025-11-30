@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -388,7 +389,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
         ..add(const CustomBuildEvent.addNote(note: '')),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'note')],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -416,7 +417,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
         ..add(const CustomBuildEvent.deleteNote(index: 10)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
   });
 
@@ -465,7 +466,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.others)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'type')],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -495,7 +496,7 @@ void main() {
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.normalAttack))
         ..add(const CustomBuildEvent.deleteSkillPriority(index: 2)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'index')],
     );
   });
 
@@ -527,7 +528,7 @@ void main() {
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<UnsupportedError>((e) => e.message!.contains('repeated'))],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -537,7 +538,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<UnsupportedError>((e) => e.message!.contains('not valid'))],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -566,7 +567,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -595,8 +596,9 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 6)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<RangeError>((e) => e.name == 'newValue')],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -605,6 +607,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) {
@@ -628,7 +631,7 @@ void main() {
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -923,7 +926,7 @@ void main() {
             subStats: [StatType.critRatePercentage, StatType.critDmgPercentage],
           ),
         ),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -932,26 +935,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addArtifactSubStats(
-            type: ArtifactType.flower,
-            subStats: [StatType.critRatePercentage, StatType.hp],
-          ),
-        ),
-      errors: () => [isA<Exception>()],
-    );
-
-    blocTest<CustomBuildBloc, CustomBuildState>(
-      'add sub-stats, sub-stat is not valid',
-      build: () => getBloc(),
-      act: (bloc) => bloc
-        ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+          const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp),
+        )
         ..add(
           const CustomBuildEvent.addArtifactSubStats(
             type: ArtifactType.flower,
             subStats: [StatType.critRatePercentage, StatType.hp],
           ),
         ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'substats')],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -980,7 +972,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.deleteArtifact(type: ArtifactType.crown)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1043,7 +1035,7 @@ void main() {
             subType: CharacterRoleSubType.electro,
           ),
         ),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'key')],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1151,7 +1143,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.deleteTeamCharacter(key: ganyuKey)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<NotFoundError>()],
     );
   });
 
@@ -1241,6 +1233,7 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.saveChanges()),
+      errors: () => [isA<ArgumentError>()],
       verify: (bloc) {
         final state = bloc.state;
         switch (state) {

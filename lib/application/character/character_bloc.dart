@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
@@ -28,22 +29,24 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     this._localeService,
     this._dataService,
     this._resourceService,
-  ) : super(const CharacterState.loading());
+  ) : super(const CharacterState.loading()) {
+    on<CharacterEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
+  Future<void> _mapEventToState(CharacterEvent event, Emitter<CharacterState> emit) async {
     switch (event) {
       case CharacterEventLoadFromKey():
         final char = _genshinService.characters.getCharacter(event.key);
         final translation = _genshinService.translations.getCharacterTranslation(event.key);
         await _telemetryService.trackCharacterLoaded(event.key);
-        yield _buildInitialState(char, translation);
+        final state = _buildInitialState(char, translation);
+        emit(state);
       case CharacterEventAddToInventory():
         await _telemetryService.trackItemAddedToInventory(event.key, 1);
         await _dataService.inventory.addCharacterToInventory(event.key);
         switch (state) {
           case final CharacterStateLoaded state:
-            yield state.copyWith.call(isInInventory: true);
+            emit(state.copyWith.call(isInInventory: true));
           case CharacterStateLoading():
             break;
         }
@@ -52,7 +55,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         await _dataService.inventory.deleteCharacterFromInventory(event.key);
         switch (state) {
           case final CharacterStateLoaded state:
-            yield state.copyWith.call(isInInventory: false);
+            emit(state.copyWith.call(isInInventory: false));
           case CharacterStateLoading():
             break;
         }

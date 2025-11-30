@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
@@ -18,10 +19,11 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
 
   MaterialsStateLoaded get currentState => state as MaterialsStateLoaded;
 
-  MaterialsBloc(this._genshinService) : super(const MaterialsState.loading());
+  MaterialsBloc(this._genshinService) : super(const MaterialsState.loading()) {
+    on<MaterialsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
+  Future<void> _mapEventToState(MaterialsEvent event, Emitter<MaterialsState> emit) async {
     switch (event) {
       case MaterialsEventInit():
         if (_allMaterials.isEmpty || event.force) {
@@ -29,37 +31,43 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
           _allMaterials.addAll(_genshinService.materials.getAllMaterialsForCard());
         }
 
-        yield _buildInitialState(excludeKeys: event.excludeKeys);
+        emit(_buildInitialState(excludeKeys: event.excludeKeys));
       case MaterialsEventSearchChanged():
-        yield _buildInitialState(
-          search: event.search,
-          rarity: currentState.rarity,
-          type: currentState.type,
-          filterType: currentState.filterType,
-          sortDirectionType: currentState.sortDirectionType,
+        emit(
+          _buildInitialState(
+            search: event.search,
+            rarity: currentState.rarity,
+            type: currentState.type,
+            filterType: currentState.filterType,
+            sortDirectionType: currentState.sortDirectionType,
+          ),
         );
       case MaterialsEventRarityChanged():
-        yield currentState.copyWith.call(tempRarity: event.rarity);
+        emit(currentState.copyWith.call(tempRarity: event.rarity));
       case MaterialsEventTypeChanged():
-        yield currentState.copyWith.call(tempType: event.type);
+        emit(currentState.copyWith.call(tempType: event.type));
       case MaterialsEventFilterTypeChanged():
-        yield currentState.copyWith.call(tempFilterType: event.type);
+        emit(currentState.copyWith.call(tempFilterType: event.type));
       case MaterialsEventApplyFilterChanges():
-        yield _buildInitialState(
-          search: currentState.search,
-          rarity: currentState.tempRarity,
-          type: currentState.tempType,
-          filterType: currentState.tempFilterType,
-          sortDirectionType: currentState.tempSortDirectionType,
+        emit(
+          _buildInitialState(
+            search: currentState.search,
+            rarity: currentState.tempRarity,
+            type: currentState.tempType,
+            filterType: currentState.tempFilterType,
+            sortDirectionType: currentState.tempSortDirectionType,
+          ),
         );
       case MaterialsEventSortDirectionTypeChanged():
-        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        emit(currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType));
       case MaterialsEventCancelChanges():
-        yield currentState.copyWith.call(
-          tempFilterType: currentState.filterType,
-          tempRarity: currentState.rarity,
-          tempSortDirectionType: currentState.sortDirectionType,
-          tempType: currentState.type,
+        emit(
+          currentState.copyWith.call(
+            tempFilterType: currentState.filterType,
+            tempRarity: currentState.rarity,
+            tempSortDirectionType: currentState.sortDirectionType,
+            tempType: currentState.type,
+          ),
         );
       case MaterialsEventResetFilters():
         final excludedKeys = switch (state) {
@@ -67,7 +75,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
           final MaterialsStateLoaded state => state.excludeKeys,
         };
 
-        yield _buildInitialState(excludeKeys: excludedKeys);
+        emit(_buildInitialState(excludeKeys: excludedKeys));
     }
   }
 

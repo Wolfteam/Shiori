@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -24,10 +25,11 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
     DateTime.sunday,
   ];
 
-  TodayMaterialsBloc(this._genshinService, this._telemetryService) : super(const TodayMaterialsState.loading());
+  TodayMaterialsBloc(this._genshinService, this._telemetryService) : super(const TodayMaterialsState.loading()) {
+    on<TodayMaterialsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<TodayMaterialsState> mapEventToState(TodayMaterialsEvent event) async* {
+  Future<void> _mapEventToState(TodayMaterialsEvent event, Emitter<TodayMaterialsState> emit) async {
     await _telemetryService.trackAscensionMaterialsOpened();
     switch (event) {
       case TodayMaterialsEventInit():
@@ -53,7 +55,7 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
           }
         }
 
-        yield TodayMaterialsState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials);
+        emit(TodayMaterialsState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials));
     }
   }
 }

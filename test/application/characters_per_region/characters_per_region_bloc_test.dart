@@ -53,7 +53,7 @@ void main() {
       'invalid region',
       build: () => CharactersPerRegionBloc(genshinService),
       act: (bloc) => bloc.add(const CharactersPerRegionEvent.init(type: RegionType.anotherWorld)),
-      errors: () => [isA<Exception>()],
+      errors: () => [isA<UnsupportedError>()],
     );
   });
 }

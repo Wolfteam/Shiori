@@ -21,6 +21,7 @@ environment:
   sdk: '>=3.8.0 <4.0.0'
 
 dependencies:
+  bloc_concurrency: ^0.3.0
   darq: ^2.0.0
   device_info_plus: ^11.4.0
   devicelocale: ^0.8.1
@@ -31,7 +32,7 @@ dependencies:
   fl_chart: ^1.0.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.1
+  flutter_bloc: ^9.1.1
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
   flutter_local_notifications: ^19.2.1
@@ -81,7 +82,7 @@ dependencies:
       path: plugins/window_size
 
 dev_dependencies:
-  bloc_test: ^8.5.0
+  bloc_test: ^10.0.0
   build_runner:
   envied_generator: ^1.1.1
   flutter_launcher_icons: ^0.14.4

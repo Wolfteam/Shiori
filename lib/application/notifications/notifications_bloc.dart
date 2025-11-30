@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -22,21 +23,22 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final TelemetryService _telemetryService;
 
   NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService)
-    : super(_initialState);
+    : super(_initialState) {
+    on<NotificationsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
+  Future<void> _mapEventToState(NotificationsEvent event, Emitter<NotificationsState> emit) async {
     switch (event) {
       case NotificationsEventInit():
-        yield _buildInitialState();
+        emit(_buildInitialState());
       case NotificationsEventDelete():
-        yield await _deleteNotification(event.id, event.type);
+        emit(await _deleteNotification(event.id, event.type));
       case NotificationsEventReset():
-        yield await _resetNotification(event.id, event.type);
+        emit(await _resetNotification(event.id, event.type));
       case NotificationsEventStop():
-        yield await _stopNotification(event.id, event.type);
+        emit(await _stopNotification(event.id, event.type));
       case NotificationsEventReduceHour():
-        yield await _reduceHours(event.id, event.type, event.hoursToReduce);
+        emit(await _reduceHours(event.id, event.type, event.hoursToReduce));
     }
   }
 

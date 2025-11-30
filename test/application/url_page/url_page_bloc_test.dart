@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/app_language_type.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -45,7 +46,7 @@ void main() {
       final state = bloc.state;
       switch (state) {
         case UrlPageStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case UrlPageStateLoaded():
           expect(state.hasInternetConnection, true);
           expect(state.mapUrl.startsWith(bloc.officialMapUrl), true);

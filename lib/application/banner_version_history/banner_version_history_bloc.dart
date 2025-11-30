@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
@@ -16,13 +17,15 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
 
   static const periodDateFormat = 'yyyy/MM/dd';
 
-  BannerVersionHistoryBloc(this._genshinService, this._telemetryService) : super(const BannerVersionHistoryState.loading());
+  BannerVersionHistoryBloc(this._genshinService, this._telemetryService) : super(const BannerVersionHistoryState.loading()) {
+    on<BannerVersionHistoryEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<BannerVersionHistoryState> mapEventToState(BannerVersionHistoryEvent event) async* {
+  Future<void> _mapEventToState(BannerVersionHistoryEvent event, Emitter<BannerVersionHistoryState> emit) async {
     switch (event) {
       case BannerVersionHistoryEventInit():
-        yield await _init(event.version);
+        final state = await _init(event.version);
+        emit(state);
     }
   }
 

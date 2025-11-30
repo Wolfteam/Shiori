@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -69,7 +70,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishBannerHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
               expect(state.allPeriods, groupedPeriods);
               expect(state.filteredPeriods, isNotEmpty);
@@ -111,7 +112,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishBannerHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
               expect(state.allPeriods, groupedPeriods);
               expect(state.filteredPeriods, isNotEmpty);
@@ -150,7 +151,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishBannerHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
               expect(state.allPeriods, groupedPeriods);
               expect(state.filteredPeriods.length == 1, isTrue);
@@ -173,7 +174,7 @@ void main() {
           final state = bloc.state;
           switch (state) {
             case WishBannerHistoryStateLoading():
-              throw Exception('Invalid state');
+              throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
               expect(state.allPeriods, groupedPeriods);
               expect(state.filteredPeriods.length > 1, isTrue);

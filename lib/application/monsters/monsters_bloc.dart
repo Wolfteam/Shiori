@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -16,10 +17,11 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
 
   MonstersStateLoaded get currentState => state as MonstersStateLoaded;
 
-  MonstersBloc(this._genshinService) : super(const MonstersState.loading());
+  MonstersBloc(this._genshinService) : super(const MonstersState.loading()) {
+    on<MonstersEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
+  Future<void> _mapEventToState(MonstersEvent event, Emitter<MonstersState> emit) async {
     switch (event) {
       case MonstersEventInit():
         if (_allMonsters.isEmpty || event.force) {
@@ -27,32 +29,38 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
           _allMonsters.addAll(_genshinService.monsters.getAllMonstersForCard());
         }
 
-        yield _buildInitialState(excludeKeys: event.excludeKeys);
+        emit(_buildInitialState(excludeKeys: event.excludeKeys));
       case MonstersEventSearchChanged():
-        yield _buildInitialState(
-          search: event.search,
-          type: currentState.type,
-          filterType: currentState.filterType,
-          sortDirectionType: currentState.sortDirectionType,
+        emit(
+          _buildInitialState(
+            search: event.search,
+            type: currentState.type,
+            filterType: currentState.filterType,
+            sortDirectionType: currentState.sortDirectionType,
+          ),
         );
       case MonstersEventTypeChanged():
-        yield currentState.copyWith.call(tempType: event.type);
+        emit(currentState.copyWith.call(tempType: event.type));
       case MonstersEventFilterTypeChanged():
-        yield currentState.copyWith.call(tempFilterType: event.type);
+        emit(currentState.copyWith.call(tempFilterType: event.type));
       case MonstersEventApplyFilterChanges():
-        yield _buildInitialState(
-          search: currentState.search,
-          type: currentState.tempType,
-          filterType: currentState.tempFilterType,
-          sortDirectionType: currentState.tempSortDirectionType,
+        emit(
+          _buildInitialState(
+            search: currentState.search,
+            type: currentState.tempType,
+            filterType: currentState.tempFilterType,
+            sortDirectionType: currentState.tempSortDirectionType,
+          ),
         );
       case MonstersEventSortDirectionTypeChanged():
-        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        emit(currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType));
       case MonstersEventCancelChanges():
-        yield currentState.copyWith.call(
-          tempFilterType: currentState.filterType,
-          tempSortDirectionType: currentState.sortDirectionType,
-          tempType: currentState.type,
+        emit(
+          currentState.copyWith.call(
+            tempFilterType: currentState.filterType,
+            tempSortDirectionType: currentState.sortDirectionType,
+            tempType: currentState.type,
+          ),
         );
       case MonstersEventResetFilters():
         final excludedKeys = switch (state) {
@@ -60,7 +68,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
           final MonstersStateLoaded state => state.excludeKeys,
         };
 
-        yield _buildInitialState(excludeKeys: excludedKeys);
+        emit(_buildInitialState(excludeKeys: excludedKeys));
     }
   }
 

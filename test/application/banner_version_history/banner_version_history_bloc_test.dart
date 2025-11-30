@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -42,7 +43,7 @@ void main() {
     void validVersionCheck(BannerVersionHistoryState state, double version) {
       switch (state) {
         case BannerVersionHistoryStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case BannerVersionHistoryStateLoaded():
           final validItemTypes = [ItemType.character, ItemType.weapon];
           expect(state.version, version);
@@ -83,7 +84,7 @@ void main() {
       'invalid version',
       build: () => BannerVersionHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const BannerVersionHistoryEvent.init(version: 0.5)),
-      errors: () => [isA<Exception>()],
+      errors: () => [predicate<ArgumentError>((e) => e.name == 'version')],
     );
   });
 }

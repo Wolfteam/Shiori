@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -14,12 +15,13 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   final GenshinService _genshinService;
   final List<ArtifactCardModel> _allArtifacts = [];
 
-  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading());
+  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading()) {
+    on<ArtifactsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
   ArtifactsStateLoaded get currentState => state as ArtifactsStateLoaded;
 
-  @override
-  Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
+  Future<void> _mapEventToState(ArtifactsEvent event, Emitter<ArtifactsState> emit) async {
     switch (event) {
       case ArtifactsEventInit():
         if (_allArtifacts.isEmpty || event.force) {
@@ -27,11 +29,13 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
           _allArtifacts.addAll(_genshinService.artifacts.getArtifactsForCard());
         }
 
-        yield _buildInitialState(excludeKeys: event.excludeKeys, type: event.type);
+        final state = _buildInitialState(excludeKeys: event.excludeKeys, type: event.type);
+        emit(state);
       case ArtifactsEventCollapseNotesChanged():
-        yield currentState.copyWith.call(collapseNotes: event.collapse);
+        final state = currentState.copyWith.call(collapseNotes: event.collapse);
+        emit(state);
       case ArtifactsEventSearchChanged():
-        yield _buildInitialState(
+        final state = _buildInitialState(
           search: event.search,
           artifactFilterType: currentState.artifactFilterType,
           rarity: currentState.rarity,
@@ -39,14 +43,18 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
           excludeKeys: currentState.excludeKeys,
           type: currentState.type,
         );
+        emit(state);
       case ArtifactsEventRarityChanged():
-        yield currentState.copyWith.call(tempRarity: event.rarity);
+        final state = currentState.copyWith.call(tempRarity: event.rarity);
+        emit(state);
       case ArtifactsEventArtifactFilterChanged():
-        yield currentState.copyWith.call(tempArtifactFilterType: event.artifactFilterType);
+        final state = currentState.copyWith.call(tempArtifactFilterType: event.artifactFilterType);
+        emit(state);
       case ArtifactsEventSortDirectionTypeChanged():
-        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        final state = currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+        emit(state);
       case ArtifactsEventApplyFilterChanges():
-        yield _buildInitialState(
+        final state = _buildInitialState(
           search: currentState.search,
           artifactFilterType: currentState.tempArtifactFilterType,
           rarity: currentState.tempRarity,
@@ -54,16 +62,19 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
           excludeKeys: currentState.excludeKeys,
           type: currentState.type,
         );
+        emit(state);
       case ArtifactsEventCancelChanges():
-        yield currentState.copyWith.call(
+        final state = currentState.copyWith.call(
           tempArtifactFilterType: currentState.artifactFilterType,
           tempRarity: currentState.rarity,
           tempSortDirectionType: currentState.sortDirectionType,
           excludeKeys: currentState.excludeKeys,
           type: currentState.type,
         );
+        emit(state);
       case ArtifactsEventResetFilters():
-        yield _buildInitialState(excludeKeys: currentState.excludeKeys, type: currentState.type);
+        final state = _buildInitialState(excludeKeys: currentState.excludeKeys, type: currentState.type);
+        emit(state);
     }
   }
 

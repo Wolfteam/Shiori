@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/changelog/changelog_bloc.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -26,7 +27,7 @@ void main() {
     void checkState(ChangelogState state, {String expectedChangelog = ChangelogProviderImpl.defaultChangelog}) {
       switch (state) {
         case ChangelogStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case ChangelogStateLoaded():
           expect(state.changelog == expectedChangelog, isTrue);
       }

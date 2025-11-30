@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -31,37 +32,38 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
 
   TierListStateLoaded get currentState => state as TierListStateLoaded;
 
-  TierListBloc(this._genshinService, this._dataService, this._telemetryService, this._loggingService) : super(_initialState);
+  TierListBloc(this._genshinService, this._dataService, this._telemetryService, this._loggingService) : super(_initialState) {
+    on<TierListEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<TierListState> mapEventToState(TierListEvent event) async* {
+  Future<void> _mapEventToState(TierListEvent event, Emitter<TierListState> emit) async {
     switch (event) {
       case TierListEventInit():
-        yield await _init(event.reset);
+        emit(await _init(event.reset));
       case TierListEventRowTextChanged():
-        yield await _rowTextChanged(event.index, event.newValue);
+        emit(await _rowTextChanged(event.index, event.newValue));
       case TierListEventRowPositionChanged():
-        yield await _rowPositionChanged(event.index, event.newIndex);
+        emit(await _rowPositionChanged(event.index, event.newIndex));
       case TierListEventRowColorChanged():
-        yield await _rowColorChanged(event.index, event.newColor);
+        emit(await _rowColorChanged(event.index, event.newColor));
       case TierListEventAddRow():
-        yield await _addNewRow(event.index, event.above);
+        emit(await _addNewRow(event.index, event.above));
       case TierListEventDeleteRow():
-        yield await _deleteRow(event.index);
+        emit(await _deleteRow(event.index));
       case TierListEventClearRow():
-        yield await _clearRow(event.index);
+        emit(await _clearRow(event.index));
       case TierListEventClearAllRows():
-        yield await _clearAllRows();
+        emit(await _clearAllRows());
       case TierListEventAddCharacterToRow():
-        yield await _addCharacterToRow(event.index, event.item);
+        emit(await _addCharacterToRow(event.index, event.item));
       case TierListEventDeleteCharacterFromRow():
-        yield await _deleteCharacterFromRow(event.index, event.item);
+        emit(await _deleteCharacterFromRow(event.index, event.item));
       case TierListEventReadyToSave():
-        yield currentState.copyWith.call(readyToSave: event.ready);
+        emit(currentState.copyWith.call(readyToSave: event.ready));
       case TierListEventScreenshotTaken():
         if (event.succeed) {
           await _telemetryService.trackTierListBuilderScreenShootTaken();
-          yield await _init(false);
+          emit(await _init(false));
           return;
         }
         _loggingService.error(
@@ -70,7 +72,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
           event.ex,
           event.trace,
         );
-        yield currentState;
+        emit(currentState);
     }
   }
 

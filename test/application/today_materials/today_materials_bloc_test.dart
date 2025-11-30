@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/app_language_type.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -41,7 +42,7 @@ void main() {
       final state = bloc.state;
       switch (state) {
         case TodayMaterialsStateLoading():
-          throw Exception('Invalid state');
+          throw InvalidStateError();
         case TodayMaterialsStateLoaded():
           expect(state.charAscMaterials, isNotEmpty);
           expect(state.weaponAscMaterials, isNotEmpty);

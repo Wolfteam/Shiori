@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:collection/collection.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 
@@ -13,26 +15,27 @@ part 'wish_banner_history_state.dart';
 class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHistoryState> {
   final GenshinService _genshinService;
 
-  WishBannerHistoryBloc(this._genshinService) : super(const WishBannerHistoryState.loading());
+  WishBannerHistoryBloc(this._genshinService) : super(const WishBannerHistoryState.loading()) {
+    on<WishBannerHistoryEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WishBannerHistoryState> mapEventToState(WishBannerHistoryEvent event) async* {
+  Future<void> _mapEventToState(WishBannerHistoryEvent event, Emitter<WishBannerHistoryState> emit) async {
     switch (event) {
       case WishBannerHistoryEventInit():
-        yield _init(SortDirectionType.desc);
+        emit(_init(SortDirectionType.desc));
       case WishBannerHistoryEventGroupTypeChanged():
-        yield _groupTypeChanged(state as WishBannerHistoryStateLoaded, event.type);
+        emit(_groupTypeChanged(state as WishBannerHistoryStateLoaded, event.type));
       case WishBannerHistoryEventSortDirectionTypeChanged():
-        yield _sortDirectionTypeChanged(state as WishBannerHistoryStateLoaded, event.type);
+        emit(_sortDirectionTypeChanged(state as WishBannerHistoryStateLoaded, event.type));
       case WishBannerHistoryEventItemsSelected():
-        yield _itemsSelected(state as WishBannerHistoryStateLoaded, event.keys);
+        emit(_itemsSelected(state as WishBannerHistoryStateLoaded, event.keys));
     }
   }
 
   List<ItemCommonWithNameOnly> getItemsForSearch() {
     switch (state) {
       case WishBannerHistoryStateLoading():
-        throw Exception('Invalid state');
+        throw InvalidStateError(runtimeType);
       case final WishBannerHistoryStateLoaded state:
         return state.filteredPeriods.map((e) => ItemCommonWithNameOnly(e.groupingKey, e.groupingTitle)).toList();
     }

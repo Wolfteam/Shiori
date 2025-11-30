@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -18,23 +20,24 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
   WishSimulatorStateLoaded get currentState => state as WishSimulatorStateLoaded;
 
   WishSimulatorBloc(this._genshinServiceImpl, this._resourceService, this._telemetryService)
-    : super(const WishSimulatorState.loading());
+    : super(const WishSimulatorState.loading()) {
+    on<WishSimulatorEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<WishSimulatorState> mapEventToState(WishSimulatorEvent event) async* {
+  Future<void> _mapEventToState(WishSimulatorEvent event, Emitter<WishSimulatorState> emit) async {
     switch (event) {
       case WishSimulatorEventInit():
-        yield await _init();
+        emit(await _init());
       case WishSimulatorEventPeriodChanged():
-        yield await _periodChanged(event.version, event.from, event.until);
+        emit(await _periodChanged(event.version, event.from, event.until));
       case WishSimulatorEventBannerSelected():
-        yield _bannerChanged(event.index);
+        emit(_bannerChanged(event.index));
     }
   }
 
   void _checkLoadedState() {
     if (state is! WishSimulatorStateLoaded) {
-      throw Exception('Invalid state');
+      throw InvalidStateError(runtimeType);
     }
   }
 
@@ -65,7 +68,7 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
     _checkLoadedState();
 
     if (index < 0 || index > currentState.period.banners.length - 1) {
-      throw Exception('The provided index = $index is not valid');
+      throw RangeError.range(index, 0, currentState.period.banners.length, 'index');
     }
 
     if (index == currentState.selectedBannerIndex) {

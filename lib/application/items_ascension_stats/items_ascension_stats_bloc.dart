@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -13,13 +14,14 @@ part 'items_ascension_stats_state.dart';
 class ItemsAscensionStatsBloc extends Bloc<ItemsAscensionStatsEvent, ItemsAscensionStatsState> {
   final GenshinService _genshinService;
 
-  ItemsAscensionStatsBloc(this._genshinService) : super(const ItemsAscensionStatsState.loading());
+  ItemsAscensionStatsBloc(this._genshinService) : super(const ItemsAscensionStatsState.loading()) {
+    on<ItemsAscensionStatsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ItemsAscensionStatsState> mapEventToState(ItemsAscensionStatsEvent event) async* {
+  Future<void> _mapEventToState(ItemsAscensionStatsEvent event, Emitter<ItemsAscensionStatsState> emit) async {
     switch (event) {
       case ItemsAscensionStatsEventInit():
-        yield _init(event.type, event.itemType);
+        emit(_init(event.type, event.itemType));
     }
   }
 

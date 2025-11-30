@@ -1,6 +1,7 @@
 import 'package:darq/darq.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 
@@ -141,7 +142,10 @@ void main() {
     });
 
     test('invalid version', () {
-      expect(() => service.getBanners(0.1), throwsA(isA<Exception>()));
+      expect(
+        () => service.getBanners(0.1),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'version')),
+      );
     });
   });
 
@@ -157,7 +161,7 @@ void main() {
     });
 
     test('item does not exist', () {
-      expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
+      expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<NotFoundError>()));
     });
   });
 
@@ -180,11 +184,17 @@ void main() {
     });
 
     test('invalid from version', () {
-      expect(() => service.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
+      expect(
+        () => service.getElementsForCharts(-1, 2.1),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'fromVersion')),
+      );
     });
 
     test('invalid until version', () {
-      expect(() => service.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
+      expect(
+        () => service.getElementsForCharts(1, -1),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'untilVersion')),
+      );
     });
   });
 
@@ -192,7 +202,7 @@ void main() {
     test('no items were provided', () {
       expect(
         () => service.getTopCharts(true, ChartType.characterBirthdays, BannerHistoryItemType.character, []),
-        throwsA(isA<Exception>()),
+        throwsA(isA<UnsupportedError>()),
       );
     });
 
@@ -230,14 +240,14 @@ void main() {
     test('invalid version', () {
       expect(
         () => service.getWishSimulatorBannerPerPeriod(0, DateTime.now(), DateTime.now()),
-        throwsA(isA<Exception>()),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'version')),
       );
     });
 
     test('invalid date range', () {
       expect(
         () => service.getWishSimulatorBannerPerPeriod(0, DateTime.now().add(const Duration(days: 1)), DateTime.now()),
-        throwsA(isA<Exception>()),
+        throwsA(predicate<ArgumentError>((e) => e.name == 'version')),
       );
     });
 
@@ -248,7 +258,7 @@ void main() {
           DateTime.now(),
           DateTime.now().add(const Duration(days: 30)),
         ),
-        throwsA(isA<Exception>()),
+        throwsA(predicate<RangeError>((e) => e.toString().toLowerCase().contains('is not valid'))),
       );
     });
 

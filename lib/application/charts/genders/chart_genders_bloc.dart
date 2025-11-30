@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -12,13 +13,14 @@ part 'chart_genders_state.dart';
 class ChartGendersBloc extends Bloc<ChartGendersEvent, ChartGendersState> {
   final GenshinService _genshinService;
 
-  ChartGendersBloc(this._genshinService) : super(const ChartGendersState.loading());
+  ChartGendersBloc(this._genshinService) : super(const ChartGendersState.loading()) {
+    on<ChartGendersEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<ChartGendersState> mapEventToState(ChartGendersEvent event) async* {
+  Future<void> _mapEventToState(ChartGendersEvent event, Emitter<ChartGendersState> emit) async {
     switch (event) {
       case InitChartGendersEvent():
-        yield _init();
+        emit(_init());
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -11,13 +12,14 @@ part 'characters_per_region_gender_state.dart';
 class CharactersPerRegionGenderBloc extends Bloc<CharactersPerRegionGenderEvent, CharactersPerRegionGenderState> {
   final GenshinService _genshinService;
 
-  CharactersPerRegionGenderBloc(this._genshinService) : super(const CharactersPerRegionGenderState.loading());
+  CharactersPerRegionGenderBloc(this._genshinService) : super(const CharactersPerRegionGenderState.loading()) {
+    on<CharactersPerRegionGenderEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CharactersPerRegionGenderState> mapEventToState(CharactersPerRegionGenderEvent event) async* {
+  Future<void> _mapEventToState(CharactersPerRegionGenderEvent event, Emitter<CharactersPerRegionGenderState> emit) async {
     switch (event) {
       case CharactersPerRegionGenderEventInit():
-        yield _init(event.regionType, event.onlyFemales);
+        emit(_init(event.regionType, event.onlyFemales));
     }
   }
 

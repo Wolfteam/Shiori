@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -31,28 +32,23 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._calculatorService,
     this._dataService,
     this._resourceService,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<CalculatorAscMaterialsEvent>((event, emit) => _mapEventToState(event, emit), transformer: sequential());
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsState> mapEventToState(CalculatorAscMaterialsEvent event) async* {
-    switch (event) {
-      case CalculatorAscMaterialsEventInit():
-        yield _init(event.sessionKey);
-      case CalculatorAscMaterialsEventAddCharacter():
-        yield await _addCharacter(event);
-      case CalculatorAscMaterialsEventUpdateCharacter():
-        yield await _updateCharacter(event);
-      case CalculatorAscMaterialsEventAddWeapon():
-        yield await _addWeapon(event);
-      case CalculatorAscMaterialsEventUpdateWeapon():
-        yield await _updateWeapon(event);
-      case CalculatorAscMaterialsEventRemoveItem():
-        yield await _removeItem(event);
-      case CalculatorAscMaterialsEventClearAllItems():
-        yield await _clearAllItems(event.sessionKey);
-      case CalculatorAscMaterialsEventItemsReordered():
-        yield await _itemsReordered(event.updated);
-    }
+  Future<void> _mapEventToState(CalculatorAscMaterialsEvent event, Emitter<CalculatorAscMaterialsState> emit) async {
+    final state = switch (event) {
+      CalculatorAscMaterialsEventInit() => _init(event.sessionKey),
+      CalculatorAscMaterialsEventAddCharacter() => await _addCharacter(event),
+      CalculatorAscMaterialsEventUpdateCharacter() => await _updateCharacter(event),
+      CalculatorAscMaterialsEventAddWeapon() => await _addWeapon(event),
+      CalculatorAscMaterialsEventUpdateWeapon() => await _updateWeapon(event),
+      CalculatorAscMaterialsEventRemoveItem() => await _removeItem(event),
+      CalculatorAscMaterialsEventClearAllItems() => await _clearAllItems(event.sessionKey),
+      CalculatorAscMaterialsEventItemsReordered() => await _itemsReordered(event.updated),
+    };
+
+    emit(state);
   }
 
   CalculatorAscMaterialsState _init(int sessionKey) {
@@ -177,7 +173,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
     final currentChar = currentState.items.elementAt(e.index);
     if (!currentChar.isCharacter) {
-      throw Exception('Item = ${currentChar.key} at index = ${e.index} is not a character');
+      throw UnsupportedError('Item = ${currentChar.key} at index = ${e.index} is not a character');
     }
     final char = _genshinService.characters.getCharacter(currentChar.key);
     final updatedChar = currentChar.copyWith.call(
@@ -211,7 +207,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
     final currentWeapon = currentState.items.elementAt(e.index);
     if (!currentWeapon.isWeapon) {
-      throw Exception('Item = ${currentWeapon.key} at index = ${e.index} is not a weapon');
+      throw UnsupportedError('Item = ${currentWeapon.key} at index = ${e.index} is not a weapon');
     }
 
     final weapon = _genshinService.weapons.getWeapon(currentWeapon.key);
@@ -245,7 +241,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   Future<CalculatorAscMaterialsState> _itemsReordered(List<ItemAscensionMaterials> updated) async {
     _checkSessionKey(state.sessionKey);
     if (updated.isEmpty) {
-      throw Exception('The updated reordered items are empty');
+      throw UnsupportedError('The updated reordered items are empty');
     }
 
     await _dataService.calculator.reorderItems(currentState.sessionKey, updated);
@@ -272,61 +268,61 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
   void _checkSessionKey(int sessionKey) {
     if (sessionKey < 0) {
-      throw Exception('SessionKey = $sessionKey is not valid');
+      throw RangeError.range(sessionKey, 0, null, 'sessionKey');
     }
   }
 
   void _checkKeyNotInSession(String key, bool isCharacter) {
     if (isCharacter && state.items.any((el) => el.key == key && el.isCharacter)) {
-      throw Exception('Character = $key is already in the session');
+      throw UnsupportedError('Character = $key is already in the session');
     }
 
     if (!isCharacter && state.items.any((el) => el.key == key && el.isWeapon)) {
-      throw Exception('Weapon = $key is already in the session');
+      throw UnsupportedError('Weapon = $key is already in the session');
     }
   }
 
   void _checkItemIndex(int index) {
     if (index < 0 || index >= state.items.length) {
-      throw Exception('Index = $index is not valid');
+      throw RangeError.range(index, 0, state.items.length, 'index');
     }
 
     if (state.items.elementAtOrNull(index) == null) {
-      throw Exception('No item was found at index = $index');
+      throw ArgumentError.value(index, 'index', 'No item was found at index');
     }
   }
 
   void _checkLevels(int currentLevel, int desiredLevel) {
     if (currentLevel < minItemLevel || currentLevel > maxItemLevel) {
-      throw Exception('Current level = $currentLevel is not valid');
+      throw RangeError.range(currentLevel, minItemLevel, maxItemLevel, 'currentLevel');
     }
 
     if (desiredLevel < minItemLevel || desiredLevel > maxItemLevel) {
-      throw Exception('Desired level = $desiredLevel is not valid');
+      throw RangeError.range(desiredLevel, minItemLevel, maxItemLevel, 'desiredLevel');
     }
   }
 
   void _checkAscLevels(int currentAscLevel, int desiredAscLevel) {
     if (currentAscLevel < 0 || currentAscLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Current asc level = $currentAscLevel is not valid');
+      throw RangeError.range(currentAscLevel, 0, itemAscensionLevelMap.entries.last.key, 'currentAscLevel');
     }
 
     if (desiredAscLevel < 0 || desiredAscLevel > itemAscensionLevelMap.entries.last.key) {
-      throw Exception('Desired asc level = $desiredAscLevel is not valid');
+      throw RangeError.range(desiredAscLevel, 0, itemAscensionLevelMap.entries.last.key, 'desiredAscLevel');
     }
   }
 
   void _checkSkills(List<CharacterSkill> skills) {
     if (skills.isEmpty) {
-      throw Exception('Skills are empty');
+      throw UnsupportedError('Skills are empty');
     }
     for (final skill in skills) {
       if (skill.currentLevel < minSkillLevel || skill.currentLevel > maxSkillLevel) {
-        throw Exception('Skill current level = ${skill.currentLevel} is not valid');
+        throw RangeError.range(skill.currentLevel, minSkillLevel, maxSkillLevel, 'skill.currentLevel');
       }
 
       if (skill.desiredLevel < minSkillLevel || skill.desiredLevel > maxSkillLevel) {
-        throw Exception('Skill current level = ${skill.desiredLevel} is not valid');
+        throw RangeError.range(skill.desiredLevel, minSkillLevel, maxSkillLevel, 'skill.desiredLevel');
       }
     }
   }
