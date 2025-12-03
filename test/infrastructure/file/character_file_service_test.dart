@@ -211,7 +211,7 @@ void main() {
           checkAsset(service.resources.getSkillImagePath(passive.image));
         }
 
-        expect(passive.unlockedAt, isIn([-1, 1, 4]));
+        expect(passive.unlockedAt, isIn([-2, -1, 1, 4]));
       }
 
       for (final constellation in detail.constellations) {
@@ -224,14 +224,14 @@ void main() {
 
       final statAscCount = detail.stats.where((e) => e.isAnAscension).length;
       if (!detail.isComingSoon) {
-        expect(statAscCount == 6, isTrue);
+        expect(statAscCount == 7, isTrue);
       } else {
-        expect(statAscCount <= 6, isTrue);
+        expect(statAscCount <= 7, isTrue);
       }
       var repetitionCount = 0;
       for (var i = 0; i < detail.stats.length; i++) {
         final stat = detail.stats[i];
-        expect(stat.level, inInclusiveRange(1, 90));
+        expect(stat.level, inInclusiveRange(1, 100));
         expect(stat.baseAtk, greaterThan(0));
         expect(stat.baseHp, greaterThan(0));
         expect(stat.baseDef, greaterThan(0));
