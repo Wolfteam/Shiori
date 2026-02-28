@@ -21,7 +21,7 @@ void main() {
     return ChangelogBloc(changelogProvider);
   }
 
-  test('Initial state', () => expect(getBloc().state, const ChangelogState.loading()));
+  test('Initial state', () => expect(getBloc().state, const ChangelogState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('changelog', () {
     void checkState(ChangelogState state, {String expectedChangelog = ChangelogProviderImpl.defaultChangelog}) {
@@ -29,7 +29,7 @@ void main() {
         case ChangelogStateLoading():
           throw InvalidStateError();
         case ChangelogStateLoaded():
-          expect(state.changelog == expectedChangelog, isTrue);
+          expect(state.changelog == expectedChangelog, isTrue, reason: 'Should be true (property=changelog == expectedChangelog)');
       }
     }
 

@@ -38,13 +38,13 @@ void manuallyInitLocale(LocaleService service, AppLanguageType language) {
 }
 
 void checkKey(String value) {
-  expect(value, allOf([isNotEmpty, isNotNull]));
+  expect(value, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty');
   final lower = value.toLowerCase();
-  expect(lower, equals(value));
+  expect(lower, equals(value), reason: 'Should equal expected value');
 }
 
 void checkKeys(List<String> keys) {
-  expect(keys.toSet().length, equals(keys.length));
+  expect(keys.toSet().length, equals(keys.length), reason: 'Should equal expected value (property=toSet())');
 }
 
 Future<bool> _assetExists(String path) async {
@@ -63,7 +63,7 @@ Future<bool> _assetExists(String path) async {
 Future<bool> _fileExists(String path) => File(path).exists();
 
 void checkAsset(String path, {bool isAnAsset = false}) {
-  expect(path, allOf([isNotEmpty, isNotNull]));
+  expect(path, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty');
   final ext = p.extension(path);
   if (isAnAsset) {
     expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
@@ -80,7 +80,7 @@ void isValidWebp(String path) {
   final raf = File(path).openSync();
   final bytes = raf.readSync(12).toList();
   raf.closeSync();
-  expect(bytes.length, 12);
+  expect(bytes.length, 12, reason: 'Should match expected value (expected=12)');
 
   //RIFF
   final first = bytes.take(4).join(',');
@@ -102,7 +102,7 @@ void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
   }
 
   if (checkEmpty) {
-    expect(items, isNotEmpty);
+    expect(items, isNotEmpty, reason: 'Should not be empty');
   }
 }
 
@@ -112,7 +112,7 @@ void checkItemsCommonWithName(List<ItemCommonWithName> items, {bool checkEmpty =
   }
 
   if (checkEmpty) {
-    expect(items, isNotEmpty);
+    expect(items, isNotEmpty, reason: 'Should not be empty');
   }
 }
 
@@ -143,15 +143,19 @@ void checkItemKeyAndName(String key, String name) {
 void checkBannerRarity(int rarity, {int? min, int? max}) {
   final minRarity = min ?? WishBannerConstants.minObtainableRarity;
   final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
-  expect(rarity >= minRarity && rarity <= maxRarity, isTrue);
+  expect(rarity >= minRarity && rarity <= maxRarity, isTrue, reason: 'Should be true');
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {
-  expect(all, isNotEmpty);
+  expect(all, isNotEmpty, reason: 'Should not be empty');
   for (final material in all) {
     checkKey(material.key);
-    expect(() => materialFileService.getMaterial(material.key), returnsNormally);
-    expect(material.quantity, greaterThanOrEqualTo(0));
+    expect(
+      () => materialFileService.getMaterial(material.key),
+      returnsNormally,
+      reason: 'Should execute without throwing (key=${material.key})',
+    );
+    expect(material.quantity, greaterThanOrEqualTo(0), reason: 'Should be greater than expected (property=quantity)');
   }
 }
 
@@ -160,16 +164,24 @@ void checkCharacterFileAscensionMaterialModel(
   List<CharacterFileAscensionMaterialModel> all, {
   bool checkMaterialType = true,
 }) {
-  expect(all, isNotEmpty);
+  expect(all, isNotEmpty, reason: 'Should not be empty');
   for (final ascMaterial in all) {
-    expect(ascMaterial.rank, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]));
-    expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
+    expect(
+      ascMaterial.rank,
+      allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]),
+      reason: 'Should be greater than expected (property=rank)',
+    );
+    expect(
+      ascMaterial.level,
+      allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]),
+      reason: 'Should be greater than expected (property=level)',
+    );
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
       final types = [MaterialType.jewels, MaterialType.local, MaterialType.common, MaterialType.currency];
       for (final type in types) {
         final materials = ascMaterial.materials.where((el) => el.type == type).toList();
-        expect(materials.length == 1, isTrue);
+        expect(materials.length == 1, isTrue, reason: 'Should be true (property=length == 1)');
         final current = materials.first;
         final expected = materialFileService.getMaterial(current.key);
         expect(
@@ -187,9 +199,9 @@ void checkCharacterFileTalentAscensionMaterialModel(
   List<CharacterFileTalentAscensionMaterialModel> all, {
   bool checkMaterialTypeAndLength = true,
 }) {
-  expect(all, isNotEmpty);
+  expect(all, isNotEmpty, reason: 'Should not be empty');
   for (final ascMaterial in all) {
-    expect(ascMaterial.level, inInclusiveRange(2, 10));
+    expect(ascMaterial.level, inInclusiveRange(2, 10), reason: 'Should be within expected range (property=level)');
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
 
     if (checkMaterialTypeAndLength) {
@@ -198,9 +210,21 @@ void checkCharacterFileTalentAscensionMaterialModel(
           : ascMaterial.level >= 7
           ? 2
           : 1;
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.talents).length, expectedLengthForTalents);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+      expect(
+        ascMaterial.materials.where((el) => el.type == MaterialType.talents).length,
+        expectedLengthForTalents,
+        reason: 'Should match expected value (property=length, expectedLengthForTalents)',
+      );
+      expect(
+        ascMaterial.materials.where((el) => el.type == MaterialType.common).length,
+        1,
+        reason: 'Should match expected value (property=length, 1)',
+      );
+      expect(
+        ascMaterial.materials.where((el) => el.type == MaterialType.currency).length,
+        1,
+        reason: 'Should match expected value (property=length, 1)',
+      );
     }
   }
 }
@@ -216,16 +240,16 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
     return;
   }
 
-  expect(text, allOf([isNotNull, isNotEmpty]));
+  expect(text, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty');
   final weirdCharacters = text!.contains('#') || text.contains('LAYOUT');
 
-  expect(weirdCharacters, isFalse);
+  expect(weirdCharacters, isFalse, reason: 'Should be false');
   if (checkForColor) {
     final hasColor = text.contains('{color}') || text.contains('{/color}');
     expect(hasColor, isFalse, reason: 'Text contains invalid color tags. $text');
   }
 
-  expect(_tagPattern.hasMatch(text), isFalse);
+  expect(_tagPattern.hasMatch(text), isFalse, reason: 'Should be false (property=hasMatch(text))');
 
   if (checkParamX) {
     expect(

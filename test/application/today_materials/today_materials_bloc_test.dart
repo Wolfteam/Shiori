@@ -31,7 +31,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(TodayMaterialsBloc(genshinService, telemetryService).state, const TodayMaterialsState.loading()),
+    () => expect(TodayMaterialsBloc(genshinService, telemetryService).state, const TodayMaterialsState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<TodayMaterialsBloc, TodayMaterialsState>(
@@ -44,9 +44,9 @@ void main() {
         case TodayMaterialsStateLoading():
           throw InvalidStateError();
         case TodayMaterialsStateLoaded():
-          expect(state.charAscMaterials, isNotEmpty);
-          expect(state.weaponAscMaterials, isNotEmpty);
-          expect(state.charAscMaterials, isNotEmpty);
+          expect(state.charAscMaterials, isNotEmpty, reason: 'Should not be empty (property=charAscMaterials)');
+          expect(state.weaponAscMaterials, isNotEmpty, reason: 'Should not be empty (property=weaponAscMaterials)');
+          expect(state.charAscMaterials, isNotEmpty, reason: 'Should not be empty (property=charAscMaterials)');
           final items =
               state.charAscMaterials.expand((el) => el.characters).toList() +
               state.weaponAscMaterials.expand((el) => el.weapons).toList();
@@ -55,7 +55,7 @@ void main() {
           final days =
               (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList())
                   .toSet();
-          expect(days.length, TodayMaterialsBloc.days.length);
+          expect(days.length, TodayMaterialsBloc.days.length, reason: 'Should match expected value');
       }
     },
   );

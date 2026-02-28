@@ -35,8 +35,7 @@ void main() {
     'Initial state',
     () => expect(
       BannerVersionHistoryBloc(genshinService, telemetryService).state,
-      const BannerVersionHistoryState.loading(),
-    ),
+      const BannerVersionHistoryState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {
@@ -46,21 +45,21 @@ void main() {
           throw InvalidStateError();
         case BannerVersionHistoryStateLoaded():
           final validItemTypes = [ItemType.character, ItemType.weapon];
-          expect(state.version, version);
-          expect(state.items.isNotEmpty, isTrue);
+          expect(state.version, version, reason: 'Should match expected value (property=version)');
+          expect(state.items.isNotEmpty, isTrue, reason: 'Should be true (property=items)');
           for (final grouped in state.items) {
             final from = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.from);
             final until = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.until);
-            expect(until.isAfter(from), isTrue);
-            expect(grouped.items.isNotEmpty, isTrue);
+            expect(until.isAfter(from), isTrue, reason: 'Should be true (property=isAfter(from))');
+            expect(grouped.items.isNotEmpty, isTrue, reason: 'Should be true (property=items)');
 
             final keys = grouped.items.map((e) => e.key).toList();
-            expect(keys.toSet().length == keys.length, isTrue);
+            expect(keys.toSet().length == keys.length, isTrue, reason: 'Should be true (property=length == keys)');
 
             for (final group in grouped.items) {
               checkItemKeyAndImage(group.key, group.image);
-              expect(group.rarity >= 4, isTrue);
-              expect(validItemTypes.contains(group.type), isTrue);
+              expect(group.rarity >= 4, isTrue, reason: 'Should be true (property=rarity >= 4, isTrue)');
+              expect(validItemTypes.contains(group.type), isTrue, reason: 'Should be true (property=type))');
             }
           }
       }

@@ -34,7 +34,7 @@ void main() {
     return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, MockTelemetryService());
   }
 
-  test('Initial state', () => expect(getBloc().state, const CheckForResourceUpdatesState.loading()));
+  test('Initial state', () => expect(getBloc().state, const CheckForResourceUpdatesState.loading(), reason: 'Should match expected value (property=state)'));
 
   blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
     'Init',
@@ -46,9 +46,9 @@ void main() {
         case CheckForResourceUpdatesStateLoading():
           throw InvalidStateError();
         case CheckForResourceUpdatesStateLoaded():
-          expect(state.updateResultType, isNull);
-          expect(state.currentResourceVersion, -1);
-          expect(state.targetResourceVersion, isNull);
+          expect(state.updateResultType, isNull, reason: 'Should be null (property=updateResultType)');
+          expect(state.currentResourceVersion, -1, reason: 'Should match expected value (property=currentResourceVersion, expected=-1)');
+          expect(state.targetResourceVersion, isNull, reason: 'Should be null (property=targetResourceVersion)');
       }
     },
   );
@@ -64,9 +64,9 @@ void main() {
         case CheckForResourceUpdatesStateLoading():
           throw InvalidStateError();
         case CheckForResourceUpdatesStateLoaded():
-          expect(state.updateResultType, resultType);
-          expect(state.currentResourceVersion, currentResourcesVersion);
-          expect(state.targetResourceVersion, targetResourceVersion);
+          expect(state.updateResultType, resultType, reason: 'Should match expected value (property=updateResultType)');
+          expect(state.currentResourceVersion, currentResourcesVersion, reason: 'Should match expected value (property=currentResourceVersion)');
+          expect(state.targetResourceVersion, targetResourceVersion, reason: 'Should match expected value (property=targetResourceVersion)');
       }
     }
 

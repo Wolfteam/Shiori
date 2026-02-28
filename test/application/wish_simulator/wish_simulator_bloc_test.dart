@@ -41,25 +41,25 @@ void main() {
     WishSimulatorBannerItemsPerPeriodModel period, {
     int expectedSelectedBannerIndex = 0,
   }) {
-    expect(selectedBannerIndex == expectedSelectedBannerIndex, isTrue);
+    expect(selectedBannerIndex == expectedSelectedBannerIndex, isTrue, reason: 'Should be true');
     checkAsset(wishIconImage);
-    expect(period.version == expectedVersion, isTrue);
+    expect(period.version == expectedVersion, isTrue, reason: 'Should be true (property=version == expectedVersion)');
 
     for (final type in BannerItemType.values) {
-      expect(period.banners.any((el) => el.type == type), isTrue);
+      expect(period.banners.any((el) => el.type == type), isTrue, reason: 'Should be true (property=type == type), isTrue)');
     }
     for (final banner in period.banners) {
       checkAsset(banner.image);
-      expect(banner.featuredImages.isNotEmpty, isTrue);
+      expect(banner.featuredImages.isNotEmpty, isTrue, reason: 'Should be true (property=featuredImages)');
 
       if (banner.type == BannerItemType.standard) {
-        expect(banner.featuredItems.isEmpty, isTrue);
+        expect(banner.featuredItems.isEmpty, isTrue, reason: 'Should be true (property=featuredItems)');
       } else {
-        expect(banner.featuredItems.isNotEmpty, isTrue);
+        expect(banner.featuredItems.isNotEmpty, isTrue, reason: 'Should be true (property=featuredItems)');
       }
 
-      expect(banner.characters.isNotEmpty, isTrue);
-      expect(banner.weapons.isNotEmpty, isTrue);
+      expect(banner.characters.isNotEmpty, isTrue, reason: 'Should be true (property=characters)');
+      expect(banner.weapons.isNotEmpty, isTrue, reason: 'Should be true (property=weapons)');
 
       for (final img in banner.featuredImages) {
         checkAsset(img);
@@ -68,7 +68,7 @@ void main() {
       for (final item in banner.featuredItems) {
         checkItemKeyAndImage(item.key, item.iconImage);
         checkBannerRarity(item.rarity);
-        expect(item.type, isIn([ItemType.character, ItemType.weapon]));
+        expect(item.type, isIn([ItemType.character, ItemType.weapon]), reason: 'Should match expected value (property=type)');
       }
 
       for (final item in banner.characters) {
@@ -87,7 +87,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const WishSimulatorState.loading()),
+    () => expect(getBloc().state, const WishSimulatorState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest(

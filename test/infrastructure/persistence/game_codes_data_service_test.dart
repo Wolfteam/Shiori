@@ -93,22 +93,22 @@ void main() {
   });
 
   void checkGameCodeRewards(List<ItemAscensionMaterialModel> gotRewards, List<ItemAscensionMaterialModel> expectedRewards) {
-    expect(gotRewards.length, expectedRewards.length);
+    expect(gotRewards.length, expectedRewards.length, reason: 'Should match expected value');
     for (int i = 0; i < gotRewards.length; i++) {
       final got = gotRewards[i];
       final expected = expectedRewards[i];
-      expect(got.key, expected.key);
-      expect(got.requiredQuantity, expected.requiredQuantity);
+      expect(got.key, expected.key, reason: 'Should match expected value (property=key)');
+      expect(got.requiredQuantity, expected.requiredQuantity, reason: 'Should match expected value (property=requiredQuantity)');
     }
   }
 
   void checkGameCode(GameCodeModel got, GameCodeModel expected) {
-    expect(got.code, expected.code);
-    expect(got.isExpired, expected.isExpired);
-    expect(got.expiredOn, expected.expiredOn);
-    expect(got.discoveredOn, expected.discoveredOn);
-    expect(got.isUsed, expected.isUsed);
-    expect(got.region, expected.region);
+    expect(got.code, expected.code, reason: 'Should match expected value (property=code)');
+    expect(got.isExpired, expected.isExpired, reason: 'Should match expected value (property=isExpired)');
+    expect(got.expiredOn, expected.expiredOn, reason: 'Should match expected value (property=expiredOn)');
+    expect(got.discoveredOn, expected.discoveredOn, reason: 'Should match expected value (property=discoveredOn)');
+    expect(got.isUsed, expected.isUsed, reason: 'Should match expected value (property=isUsed)');
+    expect(got.region, expected.region, reason: 'Should match expected value (property=region)');
     checkGameCodeRewards(got.rewards, expected.rewards);
   }
 
@@ -134,13 +134,13 @@ void main() {
 
     test('no data exist', () {
       final codes = dataService.gameCodes.getAllGameCodes();
-      expect(codes.isEmpty, isTrue);
+      expect(codes.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       final codes = dataService.gameCodes.getAllGameCodes();
-      expect(codes.length, gameCodes.length);
+      expect(codes.length, gameCodes.length, reason: 'Should match expected value');
       for (int i = 0; i < gameCodes.length; i++) {
         final got = codes[i];
         final expected = gameCodes[i];
@@ -170,13 +170,13 @@ void main() {
     });
 
     test('nothing to save thus completes normally', () {
-      expect(dataService.gameCodes.saveGameCodes([]), completes);
+      expect(dataService.gameCodes.saveGameCodes([]), completes, reason: 'Should match expected value (property=saveGameCodes([]))');
     });
 
     test('no previous game codes exist', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       final allGameCodes = dataService.gameCodes.getAllGameCodes();
-      expect(allGameCodes.length, gameCodes.length);
+      expect(allGameCodes.length, gameCodes.length, reason: 'Should match expected value');
       for (int i = 0; i < gameCodes.length; i++) {
         final got = allGameCodes[i];
         final expected = gameCodes[i];
@@ -189,7 +189,7 @@ void main() {
       final updated = gameCodes.first.copyWith(expiredOn: DateTime.now(), isExpired: true);
       await dataService.gameCodes.saveGameCodes([updated]);
       final allGameCodes = dataService.gameCodes.getAllGameCodes();
-      expect(allGameCodes.length, 1);
+      expect(allGameCodes.length, 1, reason: 'Should match expected value (expected=1)');
       checkGameCode(allGameCodes.first, updated);
     });
   });
@@ -215,18 +215,18 @@ void main() {
     });
 
     test('invalid code', () {
-      expect(dataService.gameCodes.markCodeAsUsed(''), throwsArgumentError);
+      expect(dataService.gameCodes.markCodeAsUsed(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('code does not exist', () {
-      expect(dataService.gameCodes.markCodeAsUsed('QWERTY'), throwsA(isA<NotFoundError>()));
+      expect(dataService.gameCodes.markCodeAsUsed('QWERTY'), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('code exists and it is marked as used', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       await dataService.gameCodes.markCodeAsUsed(gameCodes.first.code);
       final updatedCodes = dataService.gameCodes.getAllGameCodes();
-      expect(updatedCodes.first.isUsed, isTrue);
+      expect(updatedCodes.first.isUsed, isTrue, reason: 'Should be true (property=isUsed)');
     });
 
     test('code exists, it was used and it is marked as unused', () async {
@@ -234,7 +234,7 @@ void main() {
       await dataService.gameCodes.markCodeAsUsed(gameCodes.first.code);
       await dataService.gameCodes.markCodeAsUsed(gameCodes.first.code, wasUsed: false);
       final updatedCodes = dataService.gameCodes.getAllGameCodes();
-      expect(updatedCodes.first.isUsed, isFalse);
+      expect(updatedCodes.first.isUsed, isFalse, reason: 'Should be false (property=isUsed)');
     });
   });
 
@@ -260,27 +260,27 @@ void main() {
 
     test('no data exist', () {
       final bk = dataService.gameCodes.getDataForBackup();
-      expect(bk.isEmpty, isTrue);
+      expect(bk.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       final bk = dataService.gameCodes.getDataForBackup();
-      expect(bk.length, gameCodes.length);
+      expect(bk.length, gameCodes.length, reason: 'Should match expected value');
       for (int i = 0; i < gameCodes.length; i++) {
         final got = bk[i];
         final expected = gameCodes[i];
-        expect(got.code, expected.code);
-        expect(got.discoveredOn, expected.discoveredOn);
-        expect(got.expiredOn, expected.expiredOn);
-        expect(got.isExpired, expected.isExpired);
-        expect(got.region, expected.region?.index);
-        expect(got.rewards.length, expected.rewards.length);
+        expect(got.code, expected.code, reason: 'Should match expected value (property=code)');
+        expect(got.discoveredOn, expected.discoveredOn, reason: 'Should match expected value (property=discoveredOn)');
+        expect(got.expiredOn, expected.expiredOn, reason: 'Should match expected value (property=expiredOn)');
+        expect(got.isExpired, expected.isExpired, reason: 'Should match expected value (property=isExpired)');
+        expect(got.region, expected.region?.index, reason: 'Should match expected value (property=region)');
+        expect(got.rewards.length, expected.rewards.length, reason: 'Should match expected value (property=rewards)');
         for (int i = 0; i < got.rewards.length; i++) {
           final gotReward = got.rewards[i];
           final expectedReward = expected.rewards[i];
-          expect(gotReward.itemKey, expectedReward.key);
-          expect(gotReward.quantity, expectedReward.requiredQuantity);
+          expect(gotReward.itemKey, expectedReward.key, reason: 'Should match expected value (property=itemKey)');
+          expect(gotReward.quantity, expectedReward.requiredQuantity, reason: 'Should match expected value (property=quantity)');
         }
       }
     });
@@ -307,14 +307,14 @@ void main() {
     });
 
     test('empty backup and no data exist', () {
-      expect(dataService.gameCodes.restoreFromBackup([]), completes);
+      expect(dataService.gameCodes.restoreFromBackup([]), completes, reason: 'Should match expected value (property=restoreFromBackup([]))');
     });
 
     test('empty backup and data exists thus it gets deleted', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       await dataService.gameCodes.restoreFromBackup([]);
       final allGameCodes = dataService.gameCodes.getAllGameCodes();
-      expect(allGameCodes.isEmpty, isTrue);
+      expect(allGameCodes.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data gets restored', () async {
@@ -322,21 +322,21 @@ void main() {
       final bk = dataService.gameCodes.getDataForBackup().map((e) => e.copyWith(code: '${e.code}-bk')).toList();
       await dataService.gameCodes.restoreFromBackup(bk);
       final allGameCodes = dataService.gameCodes.getAllGameCodes();
-      expect(allGameCodes.isNotEmpty, isTrue);
+      expect(allGameCodes.isNotEmpty, isTrue, reason: 'Should be true');
       for (int i = 0; i < gameCodes.length; i++) {
         final got = bk[i];
         final expected = bk[i];
-        expect(got.code, expected.code);
-        expect(got.discoveredOn, expected.discoveredOn);
-        expect(got.expiredOn, expected.expiredOn);
-        expect(got.isExpired, expected.isExpired);
-        expect(got.region, expected.region);
-        expect(got.rewards.length, expected.rewards.length);
+        expect(got.code, expected.code, reason: 'Should match expected value (property=code)');
+        expect(got.discoveredOn, expected.discoveredOn, reason: 'Should match expected value (property=discoveredOn)');
+        expect(got.expiredOn, expected.expiredOn, reason: 'Should match expected value (property=expiredOn)');
+        expect(got.isExpired, expected.isExpired, reason: 'Should match expected value (property=isExpired)');
+        expect(got.region, expected.region, reason: 'Should match expected value (property=region)');
+        expect(got.rewards.length, expected.rewards.length, reason: 'Should match expected value (property=rewards)');
         for (int i = 0; i < got.rewards.length; i++) {
           final gotReward = got.rewards[i];
           final expectedReward = expected.rewards[i];
-          expect(gotReward.itemKey, expectedReward.itemKey);
-          expect(gotReward.quantity, expectedReward.quantity);
+          expect(gotReward.itemKey, expectedReward.itemKey, reason: 'Should match expected value (property=itemKey)');
+          expect(gotReward.quantity, expectedReward.quantity, reason: 'Should match expected value (property=quantity)');
         }
       }
     });

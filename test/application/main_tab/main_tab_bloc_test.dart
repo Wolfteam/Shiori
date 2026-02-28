@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/application/bloc.dart';
 
 void main() {
-  test('Initial state', () => expect(MainTabBloc().state, const MainTabState.initial(2)));
+  test('Initial state', () => expect(MainTabBloc().state, const MainTabState.initial(2), reason: 'Should match expected value (property=state)'));
 
   group('Tab changed', () {
     blocTest<MainTabBloc, MainTabState>(

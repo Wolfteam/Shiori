@@ -105,61 +105,61 @@ void main() {
   });
 
   void checkWeapons(List<CustomBuildWeaponModel> gotWeapons, List<CustomBuildWeaponModel> expectedWeapons) {
-    expect(gotWeapons.length, expectedWeapons.length);
+    expect(gotWeapons.length, expectedWeapons.length, reason: 'Should match expected value');
     for (int i = 0; i < gotWeapons.length; i++) {
       final gotWeapon = gotWeapons[i];
       final expectedWeapon = expectedWeapons[i];
-      expect(gotWeapon.key, expectedWeapon.key);
-      expect(gotWeapon.index, expectedWeapon.index);
-      expect(gotWeapon.refinement, expectedWeapon.refinement);
-      expect(gotWeapon.stat.level, expectedWeapon.stat.level);
-      expect(gotWeapon.stat.isAnAscension, expectedWeapon.stat.isAnAscension);
+      expect(gotWeapon.key, expectedWeapon.key, reason: 'Should match expected value (property=key)');
+      expect(gotWeapon.index, expectedWeapon.index, reason: 'Should match expected value (property=index)');
+      expect(gotWeapon.refinement, expectedWeapon.refinement, reason: 'Should match expected value (property=refinement)');
+      expect(gotWeapon.stat.level, expectedWeapon.stat.level, reason: 'Should match expected value (property=level)');
+      expect(gotWeapon.stat.isAnAscension, expectedWeapon.stat.isAnAscension, reason: 'Should match expected value (property=isAnAscension)');
     }
   }
 
   void checkArtifacts(List<CustomBuildArtifactModel> gotArtifacts, List<CustomBuildArtifactModel> expectedArtifacts) {
-    expect(gotArtifacts.length, expectedArtifacts.length);
+    expect(gotArtifacts.length, expectedArtifacts.length, reason: 'Should match expected value');
     for (int i = 0; i < gotArtifacts.length; i++) {
       final gotArtifact = gotArtifacts[i];
       final expectedArtifact = expectedArtifacts[i];
-      expect(gotArtifact.key, expectedArtifact.key);
-      expect(gotArtifact.type, expectedArtifact.type);
-      expect(gotArtifact.statType, expectedArtifact.statType);
-      expect(gotArtifact.subStats, expectedArtifact.subStats);
+      expect(gotArtifact.key, expectedArtifact.key, reason: 'Should match expected value (property=key)');
+      expect(gotArtifact.type, expectedArtifact.type, reason: 'Should match expected value (property=type)');
+      expect(gotArtifact.statType, expectedArtifact.statType, reason: 'Should match expected value (property=statType)');
+      expect(gotArtifact.subStats, expectedArtifact.subStats, reason: 'Should match expected value (property=subStats)');
     }
   }
 
   void checkTeamCharacters(List<CustomBuildTeamCharacterModel> gotTeams, List<CustomBuildTeamCharacterModel> expectedTeams) {
-    expect(gotTeams.length, expectedTeams.length);
+    expect(gotTeams.length, expectedTeams.length, reason: 'Should match expected value');
     for (int i = 0; i < gotTeams.length; i++) {
       final gotTeamChar = gotTeams[i];
       final expectedTeamChar = expectedTeams[i];
-      expect(gotTeamChar.key, expectedTeamChar.key);
-      expect(gotTeamChar.index, expectedTeamChar.index);
-      expect(gotTeamChar.roleType, expectedTeamChar.roleType);
-      expect(gotTeamChar.subType, expectedTeamChar.subType);
+      expect(gotTeamChar.key, expectedTeamChar.key, reason: 'Should match expected value (property=key)');
+      expect(gotTeamChar.index, expectedTeamChar.index, reason: 'Should match expected value (property=index)');
+      expect(gotTeamChar.roleType, expectedTeamChar.roleType, reason: 'Should match expected value (property=roleType)');
+      expect(gotTeamChar.subType, expectedTeamChar.subType, reason: 'Should match expected value (property=subType)');
     }
   }
 
   void checkNotes(List<CustomBuildNoteModel> gotNotes, List<CustomBuildNoteModel> expectedNotes) {
-    expect(gotNotes.length, expectedNotes.length);
+    expect(gotNotes.length, expectedNotes.length, reason: 'Should match expected value');
     for (int i = 0; i < gotNotes.length; i++) {
       final gotNote = gotNotes[i];
       final expectedNote = expectedNotes[i];
-      expect(gotNote.index, expectedNote.index);
-      expect(gotNote.note, expectedNote.note);
+      expect(gotNote.index, expectedNote.index, reason: 'Should match expected value (property=index)');
+      expect(gotNote.note, expectedNote.note, reason: 'Should match expected value (property=note)');
     }
   }
 
   void checkBuild(CustomBuildModel got, CustomBuildModel expected) {
-    expect(got.key, expected.key);
-    expect(got.title, expected.title);
-    expect(got.type, expected.type);
-    expect(got.subType, expected.subType);
-    expect(got.showOnCharacterDetail, expected.showOnCharacterDetail);
-    expect(got.isRecommended, expected.isRecommended);
-    expect(got.skillPriorities, expected.skillPriorities);
-    expect(got.subStatsSummary, expected.subStatsSummary);
+    expect(got.key, expected.key, reason: 'Should match expected value (property=key)');
+    expect(got.title, expected.title, reason: 'Should match expected value (property=title)');
+    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
+    expect(got.subType, expected.subType, reason: 'Should match expected value (property=subType)');
+    expect(got.showOnCharacterDetail, expected.showOnCharacterDetail, reason: 'Should match expected value (property=showOnCharacterDetail)');
+    expect(got.isRecommended, expected.isRecommended, reason: 'Should match expected value (property=isRecommended)');
+    expect(got.skillPriorities, expected.skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
+    expect(got.subStatsSummary, expected.subStatsSummary, reason: 'Should match expected value (property=subStatsSummary)');
 
     checkWeapons(got.weapons, expected.weapons);
     checkArtifacts(got.artifacts, expected.artifacts);
@@ -189,7 +189,7 @@ void main() {
 
     test('no data exists', () {
       final builds = dataService.customBuilds.getAllCustomBuilds();
-      expect(builds.isEmpty, isTrue);
+      expect(builds.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
@@ -207,7 +207,7 @@ void main() {
         CharacterSkillType.values,
       );
       final builds = dataService.customBuilds.getAllCustomBuilds();
-      expect(builds.length, 1);
+      expect(builds.length, 1, reason: 'Should match expected value (expected=1)');
       checkBuild(builds.first, build);
     });
   });
@@ -233,11 +233,11 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(() => dataService.customBuilds.getCustomBuild(-1), throwsArgumentError);
+      expect(() => dataService.customBuilds.getCustomBuild(-1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('build does not exist', () {
-      expect(() => dataService.customBuilds.getCustomBuild(666), throwsA(isA<NotFoundError>()));
+      expect(() => dataService.customBuilds.getCustomBuild(666), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('build exists', () async {
@@ -294,8 +294,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('title is not valid', () {
@@ -313,8 +312,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('empty weapons', () {
@@ -332,8 +330,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('empty artifacts', () {
@@ -351,8 +348,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -369,7 +365,7 @@ void main() {
         keqingTeamCharacters,
         CharacterSkillType.values,
       );
-      expect(build.key >= 0, isTrue);
+      expect(build.key >= 0, isTrue, reason: 'Should be true (property=key >= 0, isTrue)');
     });
   });
 
@@ -408,8 +404,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('title is not valid', () {
@@ -427,8 +422,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('weapons are empty', () {
@@ -446,8 +440,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('artifacts are empty', () {
@@ -465,8 +458,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('build does not exist', () {
@@ -484,8 +476,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -567,12 +558,12 @@ void main() {
         skillPriorities,
       );
 
-      expect(updatedBuild.title, 'Updated');
-      expect(updatedBuild.type, CharacterRoleType.dps);
-      expect(updatedBuild.subType, CharacterRoleSubType.none);
-      expect(updatedBuild.showOnCharacterDetail, isFalse);
-      expect(updatedBuild.isRecommended, isFalse);
-      expect(updatedBuild.skillPriorities, skillPriorities);
+      expect(updatedBuild.title, 'Updated', reason: 'Should match expected value (property=title, expected=\'Updated\')');
+      expect(updatedBuild.type, CharacterRoleType.dps, reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)');
+      expect(updatedBuild.subType, CharacterRoleSubType.none, reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.none)');
+      expect(updatedBuild.showOnCharacterDetail, isFalse, reason: 'Should be false (property=showOnCharacterDetail)');
+      expect(updatedBuild.isRecommended, isFalse, reason: 'Should be false (property=isRecommended)');
+      expect(updatedBuild.skillPriorities, skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
       checkWeapons(updatedBuild.weapons, updatedWeapons);
       checkArtifacts(updatedBuild.artifacts, updatedArtifacts);
       checkTeamCharacters(updatedBuild.teamCharacters, updatedTeamChars);
@@ -601,11 +592,11 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.customBuilds.deleteCustomBuild(-1), throwsArgumentError);
+      expect(dataService.customBuilds.deleteCustomBuild(-1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('build does not exist', () {
-      expect(dataService.customBuilds.deleteCustomBuild(666), completes);
+      expect(dataService.customBuilds.deleteCustomBuild(666), completes, reason: 'Should match expected value (property=deleteCustomBuild(666))');
     });
 
     test('build exists and gets deleted', () async {
@@ -623,7 +614,7 @@ void main() {
         CharacterSkillType.values,
       );
       await dataService.customBuilds.deleteCustomBuild(build.key);
-      expect(() => dataService.customBuilds.getCustomBuild(build.key), throwsA(isA<NotFoundError>()));
+      expect(() => dataService.customBuilds.getCustomBuild(build.key), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
   });
 
@@ -648,12 +639,12 @@ void main() {
     });
 
     test('invalid key', () {
-      expect(() => dataService.customBuilds.getCustomBuildsForCharacter(''), throwsArgumentError);
+      expect(() => dataService.customBuilds.getCustomBuildsForCharacter(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not have any created build', () {
       final builds = dataService.customBuilds.getCustomBuildsForCharacter('ganyu');
-      expect(builds.isEmpty, isTrue);
+      expect(builds.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('which has 1 created build', () async {
@@ -671,16 +662,16 @@ void main() {
         CharacterSkillType.values,
       );
       final builds = dataService.customBuilds.getCustomBuildsForCharacter(build.character.key);
-      expect(builds.length, 1);
+      expect(builds.length, 1, reason: 'Should match expected value (expected=1)');
       final got = builds.first;
-      expect(got.isRecommended, build.isRecommended);
-      expect(got.type, build.type);
-      expect(got.subType, build.subType);
-      expect(got.skillPriorities, build.skillPriorities);
-      expect(got.subStatsToFocus, build.subStatsSummary);
-      expect(got.isCustomBuild, isTrue);
-      expect(got.weapons.length, keqingWeapons.length);
-      expect(got.artifacts.length, 1);
+      expect(got.isRecommended, build.isRecommended, reason: 'Should match expected value (property=isRecommended)');
+      expect(got.type, build.type, reason: 'Should match expected value (property=type)');
+      expect(got.subType, build.subType, reason: 'Should match expected value (property=subType)');
+      expect(got.skillPriorities, build.skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
+      expect(got.subStatsToFocus, build.subStatsSummary, reason: 'Should match expected value (property=subStatsToFocus)');
+      expect(got.isCustomBuild, isTrue, reason: 'Should be true (property=isCustomBuild)');
+      expect(got.weapons.length, keqingWeapons.length, reason: 'Should match expected value (property=weapons)');
+      expect(got.artifacts.length, 1, reason: 'Should match expected value (property=artifacts, expected=1)');
     });
   });
 
@@ -706,7 +697,7 @@ void main() {
 
     test('no data exist', () {
       final bk = dataService.customBuilds.getDataForBackup();
-      expect(bk.isEmpty, isTrue);
+      expect(bk.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exist', () async {
@@ -724,8 +715,8 @@ void main() {
         CharacterSkillType.values,
       );
       final bk = dataService.customBuilds.getDataForBackup();
-      expect(bk.isNotEmpty, isTrue);
-      expect(bk.first.characterKey, 'keqing');
+      expect(bk.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(bk.first.characterKey, 'keqing', reason: 'Should match expected value (property=characterKey, expected=\'keqing\')');
     });
   });
 
@@ -750,7 +741,7 @@ void main() {
     });
 
     test('empty backup and no data exist', () {
-      expect(dataService.customBuilds.restoreFromBackup([]), completes);
+      expect(dataService.customBuilds.restoreFromBackup([]), completes, reason: 'Should match expected value (property=restoreFromBackup([]))');
     });
 
     test('empty backup and data exists thus it gets deleted', () async {
@@ -769,7 +760,7 @@ void main() {
       );
       await dataService.customBuilds.restoreFromBackup([]);
       final builds = dataService.customBuilds.getAllCustomBuilds();
-      expect(builds.isEmpty, isTrue);
+      expect(builds.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data gets restored', () async {

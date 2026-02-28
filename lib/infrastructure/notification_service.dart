@@ -71,7 +71,7 @@ class NotificationServiceImpl implements NotificationService {
       }
       tz.initializeTimeZones();
       final currentTimeZone = await FlutterTimezone.getLocalTimezone();
-      _location = tz.getLocation(currentTimeZone);
+      _location = tz.getLocation(currentTimeZone.identifier);
       tz.setLocalLocation(_location);
     } on tz.LocationNotFoundException catch (e) {
       //https://github.com/srawlins/timezone/issues/92

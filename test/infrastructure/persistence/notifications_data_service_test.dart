@@ -48,65 +48,56 @@ void main() {
     bool checkCompletesAt = true,
     bool checkSpecifics = true,
   }) {
-    expect(got.key, expected.key);
-    expect(got.itemKey, itemKey ?? expected.itemKey);
-    expect(got.title, title ?? expected.title);
-    expect(got.body, body ?? expected.body);
-    expect(got.createdAt, expected.createdAt);
-    expect(got.scheduledDate, expected.scheduledDate);
+    expect(got.key, expected.key, reason: 'Should match expected value (property=key)');
+    expect(got.itemKey, itemKey ?? expected.itemKey, reason: 'Should match expected value (property=itemKey)');
+    expect(got.title, title ?? expected.title, reason: 'Should match expected value (property=title)');
+    expect(got.body, body ?? expected.body, reason: 'Should match expected value (property=body)');
+    expect(got.createdAt, expected.createdAt, reason: 'Should match expected value (property=createdAt)');
+    expect(got.scheduledDate, expected.scheduledDate, reason: 'Should match expected value (property=scheduledDate)');
     if (checkCompletesAt) {
-      expect(got.completesAt, expected.completesAt);
+      expect(got.completesAt, expected.completesAt, reason: 'Should match expected value (property=completesAt)');
     }
-    expect(got.type, expected.type);
-    expect(got.note, note ?? expected.note);
-    expect(got.showNotification, showNotification ?? expected.showNotification);
+    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
+    expect(got.note, note ?? expected.note, reason: 'Should match expected value (property=note)');
+    expect(got.showNotification, showNotification ?? expected.showNotification, reason: 'Should match expected value (property=showNotification)');
     if (!checkSpecifics) {
       return;
     }
 
     expect(
       got.currentResinValue,
-      got.type != AppNotificationType.resin ? 0 : expected.currentResinValue,
-    );
+      got.type != AppNotificationType.resin ? 0 : expected.currentResinValue, reason: 'Should match expected value (property=currentResinValue)');
 
     expect(
       got.expeditionTimeType,
-      got.type != AppNotificationType.expedition ? null : expected.expeditionTimeType,
-    );
+      got.type != AppNotificationType.expedition ? null : expected.expeditionTimeType, reason: 'Should match expected value (property=expeditionTimeType)');
     expect(
       got.withTimeReduction,
-      got.type != AppNotificationType.expedition ? false : expected.withTimeReduction,
-    );
+      got.type != AppNotificationType.expedition ? false : expected.withTimeReduction, reason: 'Should match expected value (property=withTimeReduction)');
 
     expect(
       got.notificationItemType,
       got.type != AppNotificationType.custom && got.type != AppNotificationType.dailyCheckIn
           ? null
-          : expected.notificationItemType,
-    );
+          : expected.notificationItemType, reason: 'Should match expected value (property=notificationItemType)');
 
     expect(
       got.artifactFarmingTimeType,
-      got.type != AppNotificationType.farmingArtifacts ? null : expected.artifactFarmingTimeType,
-    );
+      got.type != AppNotificationType.farmingArtifacts ? null : expected.artifactFarmingTimeType, reason: 'Should match expected value (property=artifactFarmingTimeType)');
 
     expect(
       got.furnitureCraftingTimeType,
-      got.type != AppNotificationType.furniture ? null : expected.furnitureCraftingTimeType,
-    );
+      got.type != AppNotificationType.furniture ? null : expected.furnitureCraftingTimeType, reason: 'Should match expected value (property=furnitureCraftingTimeType)');
 
     expect(
       got.realmTrustRank,
-      got.type != AppNotificationType.realmCurrency ? null : expected.realmTrustRank,
-    );
+      got.type != AppNotificationType.realmCurrency ? null : expected.realmTrustRank, reason: 'Should match expected value (property=realmTrustRank)');
     expect(
       got.realmRankType,
-      got.type != AppNotificationType.realmCurrency ? null : expected.realmRankType,
-    );
+      got.type != AppNotificationType.realmCurrency ? null : expected.realmRankType, reason: 'Should match expected value (property=realmRankType)');
     expect(
       got.realmCurrency,
-      got.type != AppNotificationType.realmCurrency ? null : expected.realmCurrency,
-    );
+      got.type != AppNotificationType.realmCurrency ? null : expected.realmCurrency, reason: 'Should match expected value (property=realmCurrency)');
   }
 
   void checkUpdatedNotification(
@@ -227,67 +218,67 @@ void main() {
   }
 
   void checkBackupCommon(BaseBackupNotificationModel got, NotificationItem expected) {
-    expect(got.type, expected.type.index);
-    expect(got.itemKey, expected.itemKey);
-    expect(got.completesAt.difference(expected.completesAt).inSeconds <= 1, isTrue);
-    expect(got.showNotification, expected.showNotification);
-    expect(got.note, expected.note);
-    expect(got.title, expected.title);
-    expect(got.body, expected.body);
+    expect(got.type, expected.type.index, reason: 'Should match expected value (property=type)');
+    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
+    expect(got.completesAt.difference(expected.completesAt).inSeconds <= 1, isTrue, reason: 'Should be true (property=inSeconds <= 1, isTrue)');
+    expect(got.showNotification, expected.showNotification, reason: 'Should match expected value (property=showNotification)');
+    expect(got.note, expected.note, reason: 'Should match expected value (property=note)');
+    expect(got.title, expected.title, reason: 'Should match expected value (property=title)');
+    expect(got.body, expected.body, reason: 'Should match expected value (property=body)');
   }
 
   void checkBackup(BackupNotificationsModel bk, List<NotificationItem> notifications) {
-    expect(bk.custom.length, 2);
+    expect(bk.custom.length, 2, reason: 'Should match expected value (property=custom, expected=2)');
     for (final custom in bk.custom) {
       final expectedCustom = notifications.firstWhere((el) => el.type.index == custom.type);
       checkBackupCommon(custom, expectedCustom);
-      expect(custom.notificationItemType, expectedCustom.notificationItemType!.index);
+      expect(custom.notificationItemType, expectedCustom.notificationItemType!.index, reason: 'Should match expected value (property=notificationItemType)');
     }
 
-    expect(bk.expeditions.length, 1);
+    expect(bk.expeditions.length, 1, reason: 'Should match expected value (property=expeditions, expected=1)');
     final gotExpedition = bk.expeditions.first;
     final expectedExpedition = notifications.firstWhere((el) => el.type.index == gotExpedition.type);
     checkBackupCommon(gotExpedition, expectedExpedition);
-    expect(gotExpedition.expeditionTimeType, expectedExpedition.expeditionTimeType!.index);
-    expect(gotExpedition.withTimeReduction, expectedExpedition.withTimeReduction);
+    expect(gotExpedition.expeditionTimeType, expectedExpedition.expeditionTimeType!.index, reason: 'Should match expected value (property=expeditionTimeType)');
+    expect(gotExpedition.withTimeReduction, expectedExpedition.withTimeReduction, reason: 'Should match expected value (property=withTimeReduction)');
 
-    expect(bk.farmingArtifact.length, 1);
+    expect(bk.farmingArtifact.length, 1, reason: 'Should match expected value (property=farmingArtifact, expected=1)');
     final gotFarmingArtifact = bk.farmingArtifact.first;
     final expectedFarmingArtifact = notifications.firstWhere((el) => el.type.index == gotFarmingArtifact.type);
     checkBackupCommon(gotFarmingArtifact, expectedFarmingArtifact);
-    expect(gotFarmingArtifact.artifactFarmingTimeType, expectedFarmingArtifact.artifactFarmingTimeType!.index);
+    expect(gotFarmingArtifact.artifactFarmingTimeType, expectedFarmingArtifact.artifactFarmingTimeType!.index, reason: 'Should match expected value (property=artifactFarmingTimeType)');
 
-    expect(bk.farmingMaterial.length, 1);
+    expect(bk.farmingMaterial.length, 1, reason: 'Should match expected value (property=farmingMaterial, expected=1)');
     final gotFarmingMaterial = bk.farmingMaterial.first;
     final expectedFarmingMaterial = notifications.firstWhere((el) => el.type.index == gotFarmingMaterial.type);
     checkBackupCommon(gotFarmingMaterial, expectedFarmingMaterial);
 
-    expect(bk.furniture.length, 1);
+    expect(bk.furniture.length, 1, reason: 'Should match expected value (property=furniture, expected=1)');
     final gotFurniture = bk.furniture.first;
     final expectedFurniture = notifications.firstWhere((el) => el.type.index == gotFurniture.type);
     checkBackupCommon(gotFurniture, expectedFurniture);
-    expect(gotFurniture.furnitureCraftingTimeType, expectedFurniture.furnitureCraftingTimeType!.index);
+    expect(gotFurniture.furnitureCraftingTimeType, expectedFurniture.furnitureCraftingTimeType!.index, reason: 'Should match expected value (property=furnitureCraftingTimeType)');
 
-    expect(bk.gadgets.length, 1);
+    expect(bk.gadgets.length, 1, reason: 'Should match expected value (property=gadgets, expected=1)');
     final gotGadget = bk.gadgets.first;
     final expectedGadget = notifications.firstWhere((el) => el.type.index == gotGadget.type);
     checkBackupCommon(gotGadget, expectedGadget);
 
-    expect(bk.realmCurrency.length, 1);
+    expect(bk.realmCurrency.length, 1, reason: 'Should match expected value (property=realmCurrency, expected=1)');
     final gotRealmCurrency = bk.realmCurrency.first;
     final expectedRealmCurrency = notifications.firstWhere((el) => el.type.index == gotRealmCurrency.type);
     checkBackupCommon(gotRealmCurrency, expectedRealmCurrency);
-    expect(gotRealmCurrency.realmTrustRank, expectedRealmCurrency.realmTrustRank);
-    expect(gotRealmCurrency.realmRankType, expectedRealmCurrency.realmRankType!.index);
-    expect(gotRealmCurrency.realmCurrency, expectedRealmCurrency.realmCurrency);
+    expect(gotRealmCurrency.realmTrustRank, expectedRealmCurrency.realmTrustRank, reason: 'Should match expected value (property=realmTrustRank)');
+    expect(gotRealmCurrency.realmRankType, expectedRealmCurrency.realmRankType!.index, reason: 'Should match expected value (property=realmRankType)');
+    expect(gotRealmCurrency.realmCurrency, expectedRealmCurrency.realmCurrency, reason: 'Should match expected value (property=realmCurrency)');
 
-    expect(bk.resin.length, 1);
+    expect(bk.resin.length, 1, reason: 'Should match expected value (property=resin, expected=1)');
     final gotResin = bk.resin.first;
     final expectedResin = notifications.firstWhere((el) => el.type.index == gotResin.type);
     checkBackupCommon(gotResin, expectedResin);
-    expect(gotResin.currentResinValue, expectedResin.currentResinValue);
+    expect(gotResin.currentResinValue, expectedResin.currentResinValue, reason: 'Should match expected value (property=currentResinValue)');
 
-    expect(bk.weeklyBosses.length, 1);
+    expect(bk.weeklyBosses.length, 1, reason: 'Should match expected value (property=weeklyBosses, expected=1)');
     final gotWeeklyBoss = bk.weeklyBosses.first;
     final expectedWeeklyBoss = notifications.firstWhere((el) => el.type.index == gotWeeklyBoss.type);
     checkBackupCommon(gotWeeklyBoss, expectedWeeklyBoss);
@@ -315,13 +306,13 @@ void main() {
 
     test('no data exist', () {
       final notifications = dataService.notifications.getAllNotifications();
-      expect(notifications.isEmpty, isTrue);
+      expect(notifications.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       final expected = await dataService.notifications.saveDailyCheckInNotification('primogem', 'Resin', '4u');
       final notifications = dataService.notifications.getAllNotifications();
-      expect(notifications.length, 1);
+      expect(notifications.length, 1, reason: 'Should match expected value (expected=1)');
       final got = notifications.first;
       checkNotification(got, expected);
     });
@@ -349,11 +340,11 @@ void main() {
 
     for (final type in AppNotificationType.values) {
       test('key is not valid for type = ${type.name}', () {
-        expect(() => dataService.notifications.getNotification(-1, type), throwsArgumentError);
+        expect(() => dataService.notifications.getNotification(-1, type), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('for type = ${type.name} which does not exist', () {
-        expect(() => dataService.notifications.getNotification(666, type), throwsA(isA<NotFoundError>()));
+        expect(() => dataService.notifications.getNotification(666, type), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
       });
 
       test('for type = ${type.name} which exists', () async {
@@ -386,28 +377,25 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.notifications.saveResinNotification('', 'title', 'body', 0, note: 'Note'), throwsArgumentError);
+      expect(dataService.notifications.saveResinNotification('', 'title', 'body', 0, note: 'Note'), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.saveResinNotification(getValidItemKey(type), '', 'body', 0, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.saveResinNotification(getValidItemKey(type), 'title', '', 0, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid resin value', () {
       expect(
         dataService.notifications.saveResinNotification(getValidItemKey(type), 'title', 'body', -1, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -448,8 +436,7 @@ void main() {
           note: 'Note',
           withTimeReduction: true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -462,8 +449,7 @@ void main() {
           note: 'Note',
           withTimeReduction: true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -476,8 +462,7 @@ void main() {
           note: 'Note',
           withTimeReduction: true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -509,21 +494,19 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.notifications.saveGadgetNotification('', 'title', 'body', note: 'Note'), throwsArgumentError);
+      expect(dataService.notifications.saveGadgetNotification('', 'title', 'body', note: 'Note'), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.saveGadgetNotification(getValidItemKey(type), '', 'body', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.saveGadgetNotification(getValidItemKey(type), 'title', '', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -563,8 +546,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -576,8 +558,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -589,8 +570,7 @@ void main() {
           '',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -630,8 +610,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -643,8 +622,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -656,8 +634,7 @@ void main() {
           '',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -689,21 +666,19 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.notifications.saveFarmingMaterialNotification('', 'title', 'body', note: 'Note'), throwsArgumentError);
+      expect(dataService.notifications.saveFarmingMaterialNotification('', 'title', 'body', note: 'Note'), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), '', 'body', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.saveFarmingMaterialNotification(getValidItemKey(type), 'title', '', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -737,8 +712,7 @@ void main() {
     test('invalid item key', () {
       expect(
         dataService.notifications.saveRealmCurrencyNotification('', RealmRankType.cozy, 1, 100, 'title', 'body', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -752,8 +726,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -767,8 +740,7 @@ void main() {
           '',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid rank level', () {
@@ -782,8 +754,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid realm currency', () {
@@ -797,8 +768,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -838,8 +808,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -851,8 +820,7 @@ void main() {
           'body',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -864,8 +832,7 @@ void main() {
           '',
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -906,8 +873,7 @@ void main() {
           AppNotificationItemType.character,
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -920,8 +886,7 @@ void main() {
           AppNotificationItemType.character,
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -934,8 +899,7 @@ void main() {
           AppNotificationItemType.character,
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -967,21 +931,19 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.notifications.saveDailyCheckInNotification('', 'title', 'body', note: 'Note'), throwsArgumentError);
+      expect(dataService.notifications.saveDailyCheckInNotification('', 'title', 'body', note: 'Note'), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), '', 'body', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.saveDailyCheckInNotification(getValidItemKey(type), 'title', '', note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('valid call', () async {
@@ -1013,17 +975,17 @@ void main() {
 
     for (final type in AppNotificationType.values) {
       test('key is not valid for type = ${type.name}', () {
-        expect(dataService.notifications.deleteNotification(-1, type), throwsArgumentError);
+        expect(dataService.notifications.deleteNotification(-1, type), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('of type = ${type.name} which does not exist', () {
-        expect(dataService.notifications.deleteNotification(666, type), completes);
+        expect(dataService.notifications.deleteNotification(666, type), completes, reason: 'Should match expected value (property=deleteNotification(666, type))');
       });
 
       test('of type = ${type.name} which exists', () async {
         final notification = await saveNotification(type, dataService);
         await dataService.notifications.deleteNotification(notification.key, type);
-        expect(() => dataService.notifications.getNotification(notification.key, type), throwsA(isA<NotFoundError>()));
+        expect(() => dataService.notifications.getNotification(notification.key, type), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
       });
     }
   });
@@ -1050,14 +1012,13 @@ void main() {
 
     for (final type in AppNotificationType.values) {
       test('key is not valid for type = ${type.name}', () {
-        expect(dataService.notifications.resetNotification(-1, type, AppServerResetTimeType.asia), throwsArgumentError);
+        expect(dataService.notifications.resetNotification(-1, type, AppServerResetTimeType.asia), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('of type = ${type.name} which does not exist', () {
         expect(
           dataService.notifications.resetNotification(666, type, AppServerResetTimeType.europe),
-          throwsA(isA<NotFoundError>()),
-        );
+          throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
       });
 
       test('of type = ${type.name} which exists', () async {
@@ -1070,12 +1031,12 @@ void main() {
 
         switch (type) {
           case AppNotificationType.custom:
-            expect(updatedNotification.completesAt, notification.completesAt);
+            expect(updatedNotification.completesAt, notification.completesAt, reason: 'Should match expected value (property=completesAt)');
           case AppNotificationType.weeklyBoss:
             final Duration diff = notification.completesAt.difference(updatedNotification.completesAt);
-            expect(diff.inSeconds <= 1, isTrue);
+            expect(diff.inSeconds <= 1, isTrue, reason: 'Should be true (property=inSeconds <= 1, isTrue)');
           default:
-            expect(updatedNotification.completesAt.isAfter(notification.completesAt), isTrue);
+            expect(updatedNotification.completesAt.isAfter(notification.completesAt), isTrue, reason: 'Should be true (property=completesAt))');
         }
       });
     }
@@ -1103,17 +1064,17 @@ void main() {
 
     for (final type in AppNotificationType.values) {
       test('key is not valid for type ${type.name}', () {
-        expect(dataService.notifications.stopNotification(-1, type), throwsArgumentError);
+        expect(dataService.notifications.stopNotification(-1, type), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('for type ${type.name} which does not exist', () {
-        expect(dataService.notifications.stopNotification(666, type), throwsA(isA<NotFoundError>()));
+        expect(dataService.notifications.stopNotification(666, type), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
       });
 
       test('for type ${type.name} which exists', () async {
         final notification = await saveNotification(type, dataService);
         final updatedNotification = await dataService.notifications.stopNotification(notification.key, type);
-        expect(updatedNotification.completesAt.isBeforeInclusive(DateTime.now()), isTrue);
+        expect(updatedNotification.completesAt.isBeforeInclusive(DateTime.now()), isTrue, reason: 'Should be true (property=now()))');
       });
     }
   });
@@ -1140,35 +1101,31 @@ void main() {
     });
 
     test('invalid key', () {
-      expect(dataService.notifications.updateResinNotification(-1, 'title', 'body', 0, true, note: 'Note'), throwsArgumentError);
+      expect(dataService.notifications.updateResinNotification(-1, 'title', 'body', 0, true, note: 'Note'), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateResinNotification(1, '', 'body', 0, true, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateResinNotification(1, 'title', '', 0, true, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid resin value', () {
       expect(
         dataService.notifications.updateResinNotification(1, 'title', 'body', -1, true, note: 'Note'),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
       expect(
         dataService.notifications.updateResinNotification(666, 'title', 'body', 0, true),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1185,8 +1142,8 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
-      expect(updated.completesAt.isAfter(notification.completesAt), isTrue);
-      expect(updated.currentResinValue, notification.currentResinValue ~/ 2);
+      expect(updated.completesAt.isAfter(notification.completesAt), isTrue, reason: 'Should be true (property=completesAt))');
+      expect(updated.currentResinValue, notification.currentResinValue ~/ 2, reason: 'Should match expected value (property=currentResinValue)');
     });
   });
 
@@ -1223,8 +1180,7 @@ void main() {
           true,
           true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid item key', () {
@@ -1239,8 +1195,7 @@ void main() {
           true,
           note: 'Note',
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -1254,8 +1209,7 @@ void main() {
           true,
           true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -1269,8 +1223,7 @@ void main() {
           true,
           true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
@@ -1284,8 +1237,7 @@ void main() {
           true,
           true,
         ),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1308,10 +1260,9 @@ void main() {
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
       expect(
         updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
-        isTrue,
-      );
-      expect(updated.withTimeReduction, !notification.withTimeReduction);
-      expect(updated.expeditionTimeType, expeditionTime);
+        isTrue, reason: 'Should be true (property=completesAt))');
+      expect(updated.withTimeReduction, !notification.withTimeReduction, reason: 'Should match expected value (property=withTimeReduction)');
+      expect(updated.expeditionTimeType, expeditionTime, reason: 'Should match expected value (property=expeditionTimeType)');
     });
   });
 
@@ -1340,36 +1291,31 @@ void main() {
     test('invalid key', () {
       expect(
         dataService.notifications.updateFarmingMaterialNotification(-1, validItemKey, 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid item key', () {
       expect(
         dataService.notifications.updateFarmingMaterialNotification(1, '', 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateFarmingMaterialNotification(1, validItemKey, '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateFarmingMaterialNotification(1, validItemKey, 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
       expect(
         dataService.notifications.updateFarmingMaterialNotification(666, validItemKey, 'title', 'body', true),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1387,7 +1333,7 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
-      expect(updated.completesAt.isAfter(notification.completesAt), isTrue);
+      expect(updated.completesAt.isAfter(notification.completesAt), isTrue, reason: 'Should be true (property=completesAt))');
     });
   });
 
@@ -1421,22 +1367,19 @@ void main() {
           'body',
           true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateFarmingArtifactNotification(1, ArtifactFarmingTimeType.twelveHours, '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateFarmingArtifactNotification(1, ArtifactFarmingTimeType.twelveHours, 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
@@ -1448,8 +1391,7 @@ void main() {
           'body',
           true,
         ),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1469,9 +1411,8 @@ void main() {
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
       expect(
         updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
-        isTrue,
-      );
-      expect(updated.artifactFarmingTimeType, farmingTime);
+        isTrue, reason: 'Should be true (property=completesAt))');
+      expect(updated.artifactFarmingTimeType, farmingTime, reason: 'Should match expected value (property=artifactFarmingTimeType)');
     });
   });
 
@@ -1499,36 +1440,31 @@ void main() {
     test('invalid key', () {
       expect(
         dataService.notifications.updateGadgetNotification(-1, 'itemKey', 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid item key', () {
       expect(
         dataService.notifications.updateGadgetNotification(1, '', 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateGadgetNotification(1, 'itemKey', '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateGadgetNotification(1, 'itemKey', 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
       expect(
         dataService.notifications.updateGadgetNotification(666, 'itemKey', 'title', 'body', true),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1546,7 +1482,7 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
-      expect(updated.completesAt.isAfter(notification.completesAt), isTrue);
+      expect(updated.completesAt.isAfter(notification.completesAt), isTrue, reason: 'Should be true (property=completesAt))');
     });
   });
 
@@ -1574,29 +1510,25 @@ void main() {
     test('invalid key', () {
       expect(
         dataService.notifications.updateFurnitureNotification(-1, FurnitureCraftingTimeType.twelveHours, 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateFurnitureNotification(1, FurnitureCraftingTimeType.twelveHours, '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateFurnitureNotification(1, FurnitureCraftingTimeType.twelveHours, 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
       expect(
         dataService.notifications.updateFurnitureNotification(666, FurnitureCraftingTimeType.twelveHours, 'title', 'body', true),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1616,9 +1548,8 @@ void main() {
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
       expect(
         updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
-        isTrue,
-      );
-      expect(updated.furnitureCraftingTimeType, craftingTime);
+        isTrue, reason: 'Should be true (property=completesAt))');
+      expect(updated.furnitureCraftingTimeType, craftingTime, reason: 'Should match expected value (property=furnitureCraftingTimeType)');
     });
   });
 
@@ -1646,43 +1577,37 @@ void main() {
     test('invalid key', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(-1, RealmRankType.cozy, 1, 1, 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid trust rank level', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(1, RealmRankType.cozy, 0, 1, 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid realm currency', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(1, RealmRankType.cozy, 1, -1, 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(1, RealmRankType.cozy, 1, 1, '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(1, RealmRankType.cozy, 1, 1, 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
       expect(
         dataService.notifications.updateRealmCurrencyNotification(666, RealmRankType.cozy, 1, 1, 'title', 'body', true),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1704,11 +1629,10 @@ void main() {
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
       expect(
         updated.completesAt.isAfter(notification.completesAt) || updated.completesAt.isBefore(notification.completesAt),
-        isTrue,
-      );
-      expect(updated.realmRankType, rankType);
-      expect(updated.realmTrustRank, realmTrustRank.keys.last);
-      expect(updated.realmCurrency, notification.realmCurrency! * 2);
+        isTrue, reason: 'Should be true (property=completesAt))');
+      expect(updated.realmRankType, rankType, reason: 'Should match expected value (property=realmRankType)');
+      expect(updated.realmTrustRank, realmTrustRank.keys.last, reason: 'Should match expected value (property=realmTrustRank)');
+      expect(updated.realmCurrency, notification.realmCurrency! * 2, reason: 'Should match expected value (property=realmCurrency)');
     });
   });
 
@@ -1743,29 +1667,25 @@ void main() {
           'body',
           true,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid item key', () {
       expect(
         dataService.notifications.updateWeeklyBossNotification(-1, AppServerResetTimeType.europe, '', 'title', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
       expect(
         dataService.notifications.updateWeeklyBossNotification(1, AppServerResetTimeType.europe, 'itemKey', '', 'body', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
       expect(
         dataService.notifications.updateWeeklyBossNotification(1, AppServerResetTimeType.europe, 'itemKey', 'title', '', true),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
@@ -1778,8 +1698,7 @@ void main() {
           'body',
           true,
         ),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1798,7 +1717,7 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
-      expect(updated.completesAt, notification.completesAt);
+      expect(updated.completesAt, notification.completesAt, reason: 'Should match expected value (property=completesAt)');
     });
   });
 
@@ -1834,8 +1753,7 @@ void main() {
           true,
           AppNotificationItemType.character,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid item key', () {
@@ -1849,8 +1767,7 @@ void main() {
           true,
           AppNotificationItemType.character,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
@@ -1864,8 +1781,7 @@ void main() {
           true,
           AppNotificationItemType.character,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
@@ -1879,8 +1795,7 @@ void main() {
           true,
           AppNotificationItemType.character,
         ),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
@@ -1894,8 +1809,7 @@ void main() {
           true,
           AppNotificationItemType.character,
         ),
-        throwsA(isA<NotFoundError>()),
-      );
+        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1917,8 +1831,8 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification, itemKey: itemKey);
-      expect(updated.completesAt, completesAt);
-      expect(updated.notificationItemType, notificationType);
+      expect(updated.completesAt, completesAt, reason: 'Should match expected value (property=completesAt)');
+      expect(updated.notificationItemType, notificationType, reason: 'Should match expected value (property=notificationItemType)');
     });
   });
 
@@ -1944,19 +1858,19 @@ void main() {
     });
 
     test('invalid key', () {
-      expect(dataService.notifications.updateDailyCheckInNotification(-1, 'title', 'body', true), throwsArgumentError);
+      expect(dataService.notifications.updateDailyCheckInNotification(-1, 'title', 'body', true), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid title', () {
-      expect(dataService.notifications.updateDailyCheckInNotification(1, '', 'body', true), throwsArgumentError);
+      expect(dataService.notifications.updateDailyCheckInNotification(1, '', 'body', true), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('invalid body', () {
-      expect(dataService.notifications.updateDailyCheckInNotification(1, 'title', '', true), throwsArgumentError);
+      expect(dataService.notifications.updateDailyCheckInNotification(1, 'title', '', true), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist', () {
-      expect(dataService.notifications.updateDailyCheckInNotification(666, 'title', 'body', true), throwsA(isA<NotFoundError>()));
+      expect(dataService.notifications.updateDailyCheckInNotification(666, 'title', 'body', true), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
     });
 
     test('valid call', () async {
@@ -1972,7 +1886,7 @@ void main() {
         note: note,
       );
       checkUpdatedNotification(updated, notification, title, body, note, !notification.showNotification);
-      expect(updated.completesAt.difference(notification.completesAt).inSeconds <= 1, isTrue);
+      expect(updated.completesAt.difference(notification.completesAt).inSeconds <= 1, isTrue, reason: 'Should be true (property=inSeconds <= 1, isTrue)');
     });
   });
 
@@ -1999,24 +1913,24 @@ void main() {
 
     for (final type in AppNotificationType.values) {
       test('invalid key for type ${type.name}', () {
-        expect(dataService.notifications.reduceNotificationHours(-1, type, 1), throwsArgumentError);
+        expect(dataService.notifications.reduceNotificationHours(-1, type, 1), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('invalid hours for type ${type.name}', () {
-        expect(dataService.notifications.reduceNotificationHours(1, type, 0), throwsArgumentError);
+        expect(dataService.notifications.reduceNotificationHours(1, type, 0), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       if (notSupportedTypes.contains(type)) {
         test('not supported type ${type.name}', () {
-          expect(dataService.notifications.reduceNotificationHours(1, type, 1), throwsArgumentError);
+          expect(dataService.notifications.reduceNotificationHours(1, type, 1), throwsArgumentError, reason: 'Should throw expected exception');
         });
       } else {
         test('valid call for type ${type.name}', () async {
           const int hours = 1;
           final notification = await saveNotification(type, dataService);
           final updatedNotification = await dataService.notifications.reduceNotificationHours(notification.key, type, hours);
-          expect(updatedNotification.completesAt.isBefore(notification.completesAt), isTrue);
-          expect(updatedNotification.completesAt.difference(notification.completesAt).inHours.abs(), hours);
+          expect(updatedNotification.completesAt.isBefore(notification.completesAt), isTrue, reason: 'Should be true (property=completesAt))');
+          expect(updatedNotification.completesAt.difference(notification.completesAt).inHours.abs(), hours, reason: 'Should match expected value (property=abs())');
         });
       }
     }
@@ -2044,15 +1958,15 @@ void main() {
 
     test('no data exist', () {
       final bk = dataService.notifications.getDataForBackup();
-      expect(bk.custom, isEmpty);
-      expect(bk.expeditions, isEmpty);
-      expect(bk.farmingArtifact, isEmpty);
-      expect(bk.farmingMaterial, isEmpty);
-      expect(bk.furniture, isEmpty);
-      expect(bk.gadgets, isEmpty);
-      expect(bk.realmCurrency, isEmpty);
-      expect(bk.resin, isEmpty);
-      expect(bk.weeklyBosses, isEmpty);
+      expect(bk.custom, isEmpty, reason: 'Should be empty (property=custom)');
+      expect(bk.expeditions, isEmpty, reason: 'Should be empty (property=expeditions)');
+      expect(bk.farmingArtifact, isEmpty, reason: 'Should be empty (property=farmingArtifact)');
+      expect(bk.farmingMaterial, isEmpty, reason: 'Should be empty (property=farmingMaterial)');
+      expect(bk.furniture, isEmpty, reason: 'Should be empty (property=furniture)');
+      expect(bk.gadgets, isEmpty, reason: 'Should be empty (property=gadgets)');
+      expect(bk.realmCurrency, isEmpty, reason: 'Should be empty (property=realmCurrency)');
+      expect(bk.resin, isEmpty, reason: 'Should be empty (property=resin)');
+      expect(bk.weeklyBosses, isEmpty, reason: 'Should be empty (property=weeklyBosses)');
     });
 
     test('data exists', () async {
@@ -2102,15 +2016,15 @@ void main() {
     test('no data to restore and no previous data exist', () async {
       await dataService.notifications.restoreFromBackup(emptyBk, AppServerResetTimeType.europe);
       final bk = dataService.notifications.getDataForBackup();
-      expect(bk.custom, isEmpty);
-      expect(bk.expeditions, isEmpty);
-      expect(bk.farmingArtifact, isEmpty);
-      expect(bk.farmingMaterial, isEmpty);
-      expect(bk.furniture, isEmpty);
-      expect(bk.gadgets, isEmpty);
-      expect(bk.realmCurrency, isEmpty);
-      expect(bk.resin, isEmpty);
-      expect(bk.weeklyBosses, isEmpty);
+      expect(bk.custom, isEmpty, reason: 'Should be empty (property=custom)');
+      expect(bk.expeditions, isEmpty, reason: 'Should be empty (property=expeditions)');
+      expect(bk.farmingArtifact, isEmpty, reason: 'Should be empty (property=farmingArtifact)');
+      expect(bk.farmingMaterial, isEmpty, reason: 'Should be empty (property=farmingMaterial)');
+      expect(bk.furniture, isEmpty, reason: 'Should be empty (property=furniture)');
+      expect(bk.gadgets, isEmpty, reason: 'Should be empty (property=gadgets)');
+      expect(bk.realmCurrency, isEmpty, reason: 'Should be empty (property=realmCurrency)');
+      expect(bk.resin, isEmpty, reason: 'Should be empty (property=resin)');
+      expect(bk.weeklyBosses, isEmpty, reason: 'Should be empty (property=weeklyBosses)');
     });
 
     test('no data to restore and previous data exist', () async {
@@ -2120,15 +2034,15 @@ void main() {
 
       await dataService.notifications.restoreFromBackup(emptyBk, AppServerResetTimeType.northAmerica);
       final bk = dataService.notifications.getDataForBackup();
-      expect(bk.custom, isEmpty);
-      expect(bk.expeditions, isEmpty);
-      expect(bk.farmingArtifact, isEmpty);
-      expect(bk.farmingMaterial, isEmpty);
-      expect(bk.furniture, isEmpty);
-      expect(bk.gadgets, isEmpty);
-      expect(bk.realmCurrency, isEmpty);
-      expect(bk.resin, isEmpty);
-      expect(bk.weeklyBosses, isEmpty);
+      expect(bk.custom, isEmpty, reason: 'Should be empty (property=custom)');
+      expect(bk.expeditions, isEmpty, reason: 'Should be empty (property=expeditions)');
+      expect(bk.farmingArtifact, isEmpty, reason: 'Should be empty (property=farmingArtifact)');
+      expect(bk.farmingMaterial, isEmpty, reason: 'Should be empty (property=farmingMaterial)');
+      expect(bk.furniture, isEmpty, reason: 'Should be empty (property=furniture)');
+      expect(bk.gadgets, isEmpty, reason: 'Should be empty (property=gadgets)');
+      expect(bk.realmCurrency, isEmpty, reason: 'Should be empty (property=realmCurrency)');
+      expect(bk.resin, isEmpty, reason: 'Should be empty (property=resin)');
+      expect(bk.weeklyBosses, isEmpty, reason: 'Should be empty (property=weeklyBosses)');
     });
 
     T updateBackupItem<T extends BackupNotificationModel>(T item) {

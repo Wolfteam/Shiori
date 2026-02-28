@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(WeaponsBloc(genshinService, settingsService).state, const WeaponsState.loading()));
+  test('Initial state', () => expect(WeaponsBloc(genshinService, settingsService).state, const WeaponsState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('Init', () {
     blocTest<WeaponsBloc, WeaponsState>(
@@ -71,14 +71,14 @@ void main() {
             throw Exception('Invalid artifact state');
           case WeaponsStateLoaded():
             final weapons = genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
-            expect(state.weapons.length, weapons.length);
-            expect(state.showWeaponDetails, true);
-            expect(state.rarity, 0);
-            expect(state.tempRarity, 0);
-            expect(state.weaponFilterType, WeaponFilterType.rarity);
-            expect(state.tempWeaponFilterType, WeaponFilterType.rarity);
-            expect(state.sortDirectionType, SortDirectionType.asc);
-            expect(state.tempSortDirectionType, SortDirectionType.asc);
+            expect(state.weapons.length, weapons.length, reason: 'Should match expected value (property=weapons)');
+            expect(state.showWeaponDetails, true, reason: 'Should match expected value (property=showWeaponDetails, expected=true)');
+            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
+            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
+            expect(state.weaponFilterType, WeaponFilterType.rarity, reason: 'Should match expected value (property=weaponFilterType, expected=WeaponFilterType.rarity)');
+            expect(state.tempWeaponFilterType, WeaponFilterType.rarity, reason: 'Should match expected value (property=tempWeaponFilterType, expected=WeaponFilterType.rarity)');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
         }
       },
     );

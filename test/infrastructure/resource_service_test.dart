@@ -20,14 +20,14 @@ void main() {
   group('Get json file types', () {
     test('translation not loaded due to missing language', () {
       final service = getResourceService(MockSettingsService());
-      expect(() => service.getJsonFilePath(AppJsonFileType.translations), throwsA(isA<Exception>()));
+      expect(() => service.getJsonFilePath(AppJsonFileType.translations), throwsA(isA<Exception>()), reason: 'Should be of expected type');
     });
 
     test('translation not loaded due to invalid file type', () {
       final service = getResourceService(MockSettingsService());
       final types = AppJsonFileType.values.where((el) => el != AppJsonFileType.translations).toList();
       for (final type in types) {
-        expect(() => service.getJsonFilePath(type, language: AppLanguageType.english), throwsA(isA<Exception>()));
+        expect(() => service.getJsonFilePath(type, language: AppLanguageType.english), throwsA(isA<Exception>()), reason: 'Should be of expected type');
       }
     });
 
@@ -131,10 +131,10 @@ void main() {
 
   group('Check for updates', () {
     void checkEmptyUpdateResult(AppResourceUpdateResultType expectedResultType, int expectedResourceVersion, CheckForUpdatesResult result) {
-      expect(result.type == expectedResultType, isTrue);
-      expect(result.resourceVersion == expectedResourceVersion, isTrue);
-      expect(result.jsonFileKeyName, isNull);
-      expect(result.keyNames, isEmpty);
+      expect(result.type == expectedResultType, isTrue, reason: 'Should be true (property=type == expectedResultType)');
+      expect(result.resourceVersion == expectedResourceVersion, isTrue, reason: 'Should be true (property=resourceVersion == expectedResourceVersion)');
+      expect(result.jsonFileKeyName, isNull, reason: 'Should be null (property=jsonFileKeyName)');
+      expect(result.keyNames, isEmpty, reason: 'Should be empty (property=keyNames)');
     }
 
     void checkUpdateResult(
@@ -143,11 +143,11 @@ void main() {
       CheckForUpdatesResult result,
       ResourceDiffResponseDto? apiResponse,
     ) {
-      expect(result.type == expectedResultType, isTrue);
-      expect(result.resourceVersion == expectedResourceVersion, isTrue);
+      expect(result.type == expectedResultType, isTrue, reason: 'Should be true (property=type == expectedResultType)');
+      expect(result.resourceVersion == expectedResourceVersion, isTrue, reason: 'Should be true (property=resourceVersion == expectedResourceVersion)');
       if (apiResponse != null) {
-        expect(result.jsonFileKeyName == apiResponse.jsonFileKeyName, isTrue);
-        expect(result.keyNames, apiResponse.keyNames);
+        expect(result.jsonFileKeyName == apiResponse.jsonFileKeyName, isTrue, reason: 'Should be true (property=jsonFileKeyName)');
+        expect(result.keyNames, apiResponse.keyNames, reason: 'Should match expected value (property=keyNames)');
       } else {
         checkEmptyUpdateResult(expectedResultType, expectedResourceVersion, result);
       }
@@ -175,8 +175,8 @@ void main() {
 
     test('invalid app version', () {
       final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
-      expect(() => service.checkForUpdates('', -1), throwsA(isA<Exception>()));
-      expect(() => service.checkForUpdates('1,0,2', -1), throwsA(isA<Exception>()));
+      expect(() => service.checkForUpdates('', -1), throwsA(isA<Exception>()), reason: 'Should be of expected type');
+      expect(() => service.checkForUpdates('1,0,2', -1), throwsA(isA<Exception>()), reason: 'Should be of expected type');
     });
 
     test('no updates available because not enough time has passed', () async {
@@ -347,7 +347,7 @@ void main() {
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
       await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
       await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
-      expect(settingsService.lastResourcesCheckedDate == now, isTrue);
+      expect(settingsService.lastResourcesCheckedDate == now, isTrue, reason: 'Should be true (property=lastResourcesCheckedDate == now)');
     });
   });
 
@@ -356,8 +356,7 @@ void main() {
       final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
       expect(
         () => service.downloadAndApplyUpdates(0, null),
-        throwsA(isA<Exception>().having((ex) => ex.toString(), 'message', contains('The provided targetResourceVersion = 0 is not valid'))),
-      );
+        throwsA(isA<Exception>().having((ex) => ex.toString(), 'message', contains('The provided targetResourceVersion = 0 is not valid'))), reason: 'Should contain expected value');
     });
 
     test('neither json file nor keyNames were provided', () {
@@ -375,8 +374,7 @@ void main() {
             'message',
             contains('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided'),
           ),
-        ),
-      );
+        ), reason: 'Should contain expected value');
     });
 
     test('target resource version already applied', () {
@@ -385,8 +383,7 @@ void main() {
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
         () => service.downloadAndApplyUpdates(2, null, keyNames: ['characters/keqing$imageFileExtension']),
-        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))),
-      );
+        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))), reason: 'Should contain expected value');
     });
 
     test('target resource version is lower than current', () {
@@ -395,8 +392,7 @@ void main() {
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
         () => service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']),
-        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))),
-      );
+        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))), reason: 'Should contain expected value');
     });
 
     test('download main json file, cannot check for updates', () async {
@@ -415,8 +411,8 @@ void main() {
       final appliedA = await service.downloadAndApplyUpdates(1, allJson);
       final appliedB = await service.downloadAndApplyUpdates(1, allJson, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(appliedA, isFalse);
-      expect(appliedB, isFalse);
+      expect(appliedA, isFalse, reason: 'Should be false');
+      expect(appliedB, isFalse, reason: 'Should be false');
     });
 
     test('download partial files, cannot check for updates', () async {
@@ -434,7 +430,7 @@ void main() {
       );
       final applied = await service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(applied, isFalse);
+      expect(applied, isFalse, reason: 'Should be false');
     });
 
     test('download main json file, api throws exception while downloading', () async {
@@ -460,9 +456,9 @@ void main() {
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson);
-      expect(applied, isFalse);
+      expect(applied, isFalse, reason: 'Should be false');
       final dirExists = await tempDir.exists();
-      expect(dirExists, isFalse);
+      expect(dirExists, isFalse, reason: 'Should be false');
     });
 
     test('download partial files, api throws exception while downloading', () async {
@@ -497,9 +493,9 @@ void main() {
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson, keyNames: keyNames);
-      expect(applied, isFalse);
+      expect(applied, isFalse, reason: 'Should be false');
       final dirExists = await tempDir.exists();
-      expect(dirExists, isFalse);
+      expect(dirExists, isFalse, reason: 'Should be false');
     });
   });
 }

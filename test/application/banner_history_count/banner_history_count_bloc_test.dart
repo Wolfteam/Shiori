@@ -41,18 +41,18 @@ void main() {
   void checkBannerItem(BannerHistoryItemModel banner, BannerHistoryItemType expectedType) {
     checkItemKeyAndImage(banner.key, banner.image);
     checkTranslation(banner.name, canBeNull: false);
-    expect(banner.rarity >= 4, isTrue);
-    expect(banner.type, expectedType);
-    expect(banner.versions, isNotEmpty);
+    expect(banner.rarity >= 4, isTrue, reason: 'Should be true (property=rarity >= 4, isTrue)');
+    expect(banner.type, expectedType, reason: 'Should match expected value (property=type)');
+    expect(banner.versions, isNotEmpty, reason: 'Should not be empty (property=versions)');
     for (final version in banner.versions) {
       if (version.released) {
-        expect(version.number, isNull);
-        expect(version.version >= 1, isTrue);
+        expect(version.number, isNull, reason: 'Should be null (property=number)');
+        expect(version.version >= 1, isTrue, reason: 'Should be true (property=version >= 1, isTrue)');
       } else if (version.number == 0) {
-        expect(version.released, isFalse);
+        expect(version.released, isFalse, reason: 'Should be false (property=released)');
       } else {
-        expect(version.released, isFalse);
-        expect(version.number! >= 1, isTrue);
+        expect(version.released, isFalse, reason: 'Should be false (property=released)');
+        expect(version.number! >= 1, isTrue, reason: 'Should be true (property=number! >= 1, isTrue)');
       }
     }
   }
@@ -65,19 +65,19 @@ void main() {
     List<double> selectedVersions = const [],
     bool bannersAreNotEmpty = true,
   }) {
-    expect(state.type, type);
-    expect(state.versions, isNotEmpty);
-    expect(state.versions.length, state.versions.toSet().length);
-    expect(bannersAreNotEmpty ? state.banners.isNotEmpty : state.banners.isEmpty, isTrue);
+    expect(state.type, type, reason: 'Should match expected value (property=type)');
+    expect(state.versions, isNotEmpty, reason: 'Should not be empty (property=versions)');
+    expect(state.versions.length, state.versions.toSet().length, reason: 'Should match expected value (property=versions)');
+    expect(bannersAreNotEmpty ? state.banners.isNotEmpty : state.banners.isEmpty, isTrue, reason: 'Should be true (property=banners)');
     for (final banner in state.banners) {
       checkBannerItem(banner, type);
     }
-    expect(state.sortType, sortType);
-    expect(state.selectedItemKeys, selectedItemKeys);
-    expect(state.selectedVersions, selectedVersions);
+    expect(state.sortType, sortType, reason: 'Should match expected value (property=sortType)');
+    expect(state.selectedItemKeys, selectedItemKeys, reason: 'Should match expected value (property=selectedItemKeys)');
+    expect(state.selectedVersions, selectedVersions, reason: 'Should match expected value (property=selectedVersions)');
 
     if (selectedItemKeys.isNotEmpty && bannersAreNotEmpty) {
-      expect(state.banners.length, state.selectedItemKeys.length);
+      expect(state.banners.length, state.selectedItemKeys.length, reason: 'Should match expected value (property=banners)');
     }
 
     if (selectedVersions.isNotEmpty && bannersAreNotEmpty) {
@@ -87,11 +87,11 @@ void main() {
           .map((e) => e.version)
           .toSet()
           .toList();
-      expect(versions.length, selectedVersions.length);
+      expect(versions.length, selectedVersions.length, reason: 'Should match expected value');
     }
 
     final maxCount = max(characterBanners.length, weaponBanners.length);
-    expect(state.maxNumberOfItems, maxCount);
+    expect(state.maxNumberOfItems, maxCount, reason: 'Should match expected value (property=maxNumberOfItems)');
   }
 
   test(
@@ -104,8 +104,7 @@ void main() {
         banners: [],
         versions: [],
         maxNumberOfItems: 0,
-      ),
-    ),
+      ), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<BannerHistoryCountBloc, BannerHistoryCountState>(
@@ -126,7 +125,7 @@ void main() {
           .where((el) => !el.isComingSoon && !el.key.startsWith('traveler') && !charsWithoutBanner.contains(el.key))
           .length;
       final bannerCount = bloc.state.banners.map((e) => e.key).length;
-      expect(allCharsCount, bannerCount);
+      expect(allCharsCount, bannerCount, reason: 'Should match expected value');
     },
   );
 
@@ -162,7 +161,7 @@ void main() {
         checkCommonState(bloc.state, sortType: BannerHistorySortType.nameDesc);
         final names = bloc.state.banners.map((e) => e.name).toList();
         final sorted = [...names]..sort((x, y) => y.compareTo(x));
-        expect(names, sorted);
+        expect(names, sorted, reason: 'Should match expected value');
       },
     );
 
@@ -176,7 +175,7 @@ void main() {
         checkCommonState(bloc.state, sortType: BannerHistorySortType.versionDesc);
         final versions = bloc.state.versions.map((e) => e).toList();
         final sorted = [...versions]..sort((x, y) => y.compareTo(x));
-        expect(versions, sorted);
+        expect(versions, sorted, reason: 'Should match expected value');
       },
     );
 
@@ -231,7 +230,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: [])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 12);
+        expect(bloc.state.banners.length, 12, reason: 'Should match expected value (property=banners, expected=12)');
       },
     );
 
@@ -244,7 +243,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.typeChanged(type: BannerHistoryItemType.weapon)),
       verify: (bloc) {
         checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 14);
+        expect(bloc.state.banners.length, 14, reason: 'Should match expected value (property=banners, expected=14)');
       },
     );
 
@@ -258,7 +257,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: [])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 12);
+        expect(bloc.state.banners.length, 12, reason: 'Should match expected value (property=banners, expected=12)');
       },
     );
 
@@ -271,7 +270,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: ['keqing'])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.0], selectedItemKeys: ['keqing'], bannersAreNotEmpty: false);
-        expect(bloc.state.banners.length, 0);
+        expect(bloc.state.banners.length, 0, reason: 'Should match expected value (property=banners, expected=0)');
       },
     );
   });
@@ -320,10 +319,10 @@ void main() {
           .toSet()
           .length;
       final expectedItems = bloc.state.banners.map((e) => e.key).toSet().toList();
-      expect(expectedCount, 14);
-      expect(expectedItems.length, expectedCount);
+      expect(expectedCount, 14, reason: 'Should match expected value (expected=14)');
+      expect(expectedItems.length, expectedCount, reason: 'Should match expected value');
       for (final key in expectedItems) {
-        expect(itemsForSearch.any((el) => el.key == key), isTrue);
+        expect(itemsForSearch.any((el) => el.key == key), isTrue, reason: 'Should be true (property=key == key), isTrue)');
       }
     },
   );

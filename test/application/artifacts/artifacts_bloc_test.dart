@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ArtifactsBloc(genshinService).state, const ArtifactsState.loading()));
+  test('Initial state', () => expect(ArtifactsBloc(genshinService).state, const ArtifactsState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('Init', () {
     blocTest<ArtifactsBloc, ArtifactsState>(
@@ -72,14 +72,14 @@ void main() {
                 .getArtifactsForCard()
                 .where((el) => !excludedKeys.contains(el.key))
                 .toList();
-            expect(state.artifacts.length, artifacts.length);
-            expect(state.collapseNotes, false);
-            expect(state.rarity, 0);
-            expect(state.tempRarity, 0);
-            expect(state.artifactFilterType, ArtifactFilterType.name);
-            expect(state.tempArtifactFilterType, ArtifactFilterType.name);
-            expect(state.sortDirectionType, SortDirectionType.asc);
-            expect(state.tempSortDirectionType, SortDirectionType.asc);
+            expect(state.artifacts.length, artifacts.length, reason: 'Should match expected value (property=artifacts)');
+            expect(state.collapseNotes, false, reason: 'Should match expected value (property=collapseNotes, expected=false)');
+            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
+            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
+            expect(state.artifactFilterType, ArtifactFilterType.name, reason: 'Should match expected value (property=artifactFilterType, expected=ArtifactFilterType.name)');
+            expect(state.tempArtifactFilterType, ArtifactFilterType.name, reason: 'Should match expected value (property=tempArtifactFilterType, expected=ArtifactFilterType.name)');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
         }
       },
     );
