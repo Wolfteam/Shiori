@@ -43,7 +43,7 @@ dependencies:
   flutter_timezone: ^5.0.1
   fluttertoast: ^8.2.12
   freezed_annotation: ^3.1.0
-  get_it: ^8.2.0
+  get_it: ^9.2.1
   grouped_list: ^6.0.0
   hive_ce: ^2.11.3
   hive_ce_flutter: ^2.3.1
