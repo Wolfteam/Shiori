@@ -89,7 +89,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^3.2.3
-  hive_ce_generator: ^1.9.2
+  hive_ce_generator: ^1.11.1
   integration_test:
     sdk: flutter
   intl_utils: ^2.8.13
