@@ -71,7 +71,7 @@ dependencies:
   store_checker: ^1.8.0
   synchronized: ^3.4.0
   transparent_image: ^2.0.1
-  two_dimensional_scrollables: ^0.3.7
+  two_dimensional_scrollables: ^0.3.8
   url_launcher: ^6.3.2
   version: ^3.0.0
   version_tracker: ^3.0.0
