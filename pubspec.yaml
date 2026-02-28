@@ -95,7 +95,7 @@ dev_dependencies:
   intl_utils: ^2.8.13
   json_serializable: ^6.11.1
   lint: ^2.8.0
-  mockito: ^5.6.1
+  mockito: ^5.6.3
   msix: ^3.16.12
 
 flutter_launcher_icons:
