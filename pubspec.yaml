@@ -60,7 +60,7 @@ dependencies:
   path_provider: ^2.1.5
   permission_handler: ^12.0.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^9.10.0
+  purchases_flutter: ^9.12.3
   rate_my_app: ^2.3.2
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
