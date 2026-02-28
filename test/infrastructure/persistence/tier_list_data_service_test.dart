@@ -39,17 +39,17 @@ void main() {
   });
 
   void checkTierList(List<TierListRowModel> got, List<TierListRowModel> expected) {
-    expect(got.length, expected.length);
+    expect(got.length, expected.length, reason: 'Should match expected value');
     for (int i = 0; i < got.length; i++) {
       final gotRow = got[i];
       final expectedRow = expected[i];
-      expect(gotRow.tierText, expectedRow.tierText);
-      expect(gotRow.tierColor, expectedRow.tierColor);
-      expect(gotRow.items.length, expectedRow.items.length);
+      expect(gotRow.tierText, expectedRow.tierText, reason: 'Should match expected value (property=tierText)');
+      expect(gotRow.tierColor, expectedRow.tierColor, reason: 'Should match expected value (property=tierColor)');
+      expect(gotRow.items.length, expectedRow.items.length, reason: 'Should match expected value (property=items)');
       for (int j = 0; j < gotRow.items.length; j++) {
         final gotItem = gotRow.items[j];
         final expectedItem = expectedRow.items[j];
-        expect(gotItem.key, expectedItem.key);
+        expect(gotItem.key, expectedItem.key, reason: 'Should match expected value (property=key)');
       }
     }
   }
@@ -76,7 +76,7 @@ void main() {
 
     test('no data exist', () {
       final list = dataService.tierList.getTierList();
-      expect(list.isEmpty, isTrue);
+      expect(list.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
@@ -109,14 +109,14 @@ void main() {
     test('no data to save and no previous data exist', () async {
       await dataService.tierList.saveTierList([]);
       final int count = dataService.tierList.getTierList().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('no data to save and previous data exist', () async {
       await dataService.tierList.saveTierList(defaultTierList);
       await dataService.tierList.saveTierList([]);
       final int count = dataService.tierList.getTierList().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('there is data to save and previous data exist', () async {
@@ -151,14 +151,14 @@ void main() {
     test('no data exist', () async {
       await dataService.tierList.deleteTierList();
       final int count = dataService.tierList.getTierList().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('data exists', () async {
       await dataService.tierList.saveTierList(defaultTierList);
       await dataService.tierList.deleteTierList();
       final int count = dataService.tierList.getTierList().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
   });
 
@@ -184,20 +184,20 @@ void main() {
 
     test('no data exist', () {
       final bk = dataService.tierList.getDataForBackup();
-      expect(bk.isEmpty, isTrue);
+      expect(bk.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       await dataService.tierList.saveTierList(defaultTierList);
       final bk = dataService.tierList.getDataForBackup();
-      expect(bk.length, defaultTierList.length);
+      expect(bk.length, defaultTierList.length, reason: 'Should match expected value');
       for (int i = 0; i < bk.length; i++) {
         final got = bk[i];
         final expected = defaultTierList[i];
-        expect(got.text, expected.tierText);
-        expect(got.color, expected.tierColor);
-        expect(got.position, i);
-        expect(got.charKeys, expected.items.map((e) => e.key).toList());
+        expect(got.text, expected.tierText, reason: 'Should match expected value (property=text)');
+        expect(got.color, expected.tierColor, reason: 'Should match expected value (property=color)');
+        expect(got.position, i, reason: 'Should match expected value (property=position)');
+        expect(got.charKeys, expected.items.map((e) => e.key).toList(), reason: 'Should match expected value (property=charKeys)');
       }
     });
   });
@@ -225,14 +225,14 @@ void main() {
     test('no data to restore and no previous data exist', () async {
       await dataService.tierList.restoreFromBackup([]);
       final count = dataService.tierList.getDataForBackup().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('no data to restore and previous data exist', () async {
       await dataService.tierList.saveTierList(defaultTierList);
       await dataService.inventory.restoreFromBackup([]);
       final count = dataService.inventory.getDataForBackup().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('there is data to restore and previous data exist', () async {
@@ -250,14 +250,14 @@ void main() {
       await dataService.tierList.restoreFromBackup(bk);
 
       final data = dataService.tierList.getDataForBackup();
-      expect(data.length, bk.length);
+      expect(data.length, bk.length, reason: 'Should match expected value');
       for (int i = 0; i < bk.length; i++) {
         final got = data[i];
         final expected = bk[i];
-        expect(got.text, expected.text);
-        expect(got.color, expected.color);
-        expect(got.position, expected.position);
-        expect(got.charKeys, expected.charKeys);
+        expect(got.text, expected.text, reason: 'Should match expected value (property=text)');
+        expect(got.color, expected.color, reason: 'Should match expected value (property=color)');
+        expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
+        expect(got.charKeys, expected.charKeys, reason: 'Should match expected value (property=charKeys)');
       }
     });
   });

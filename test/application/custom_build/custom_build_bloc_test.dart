@@ -196,7 +196,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const CustomBuildState.loading()),
+    () => expect(getBloc().state, const CustomBuildState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Load', () {
@@ -211,18 +211,42 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final character = genshinService.characters.getCharactersForCard().first;
-            expect(state.title, 'DPS PRO');
-            expect(state.type, CharacterRoleType.dps);
-            expect(state.subType, CharacterRoleSubType.none);
-            expect(state.showOnCharacterDetail, true);
-            expect(state.isRecommended, false);
-            expect(state.character.key, character.key);
-            expect(state.weapons.isEmpty, true);
-            expect(state.artifacts.isEmpty, true);
-            expect(state.teamCharacters.isEmpty, true);
-            expect(state.notes.isEmpty, true);
-            expect(state.skillPriorities.isEmpty, true);
-            expect(state.subStatsSummary.isEmpty, true);
+            expect(state.title, 'DPS PRO', reason: 'Should match expected value (property=title, expected=\'DPS PRO\')');
+            expect(
+              state.type,
+              CharacterRoleType.dps,
+              reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)',
+            );
+            expect(
+              state.subType,
+              CharacterRoleSubType.none,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.none)',
+            );
+            expect(
+              state.showOnCharacterDetail,
+              true,
+              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+            );
+            expect(state.isRecommended, false, reason: 'Should match expected value (property=isRecommended, expected=false)');
+            expect(state.character.key, character.key, reason: 'Should match expected value (property=key)');
+            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
+            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(
+              state.teamCharacters.isEmpty,
+              true,
+              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+            );
+            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
+            expect(
+              state.skillPriorities.isEmpty,
+              true,
+              reason: 'Should match expected value (property=skillPriorities, expected=true)',
+            );
+            expect(
+              state.subStatsSummary.isEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
         }
       },
     );
@@ -242,18 +266,50 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.title, '$keqingKey pro DPS');
-            expect(state.type, CharacterRoleType.dps);
-            expect(state.subType, CharacterRoleSubType.electro);
-            expect(state.showOnCharacterDetail, true);
-            expect(state.isRecommended, true);
-            expect(state.character.key, keqingKey);
-            expect(state.weapons.length == 1, true);
-            expect(state.artifacts.length == 5, true);
-            expect(state.teamCharacters.length == 3, true);
-            expect(state.notes.length == 1, true);
-            expect(state.skillPriorities.length == 3, true);
-            expect(state.subStatsSummary.isNotEmpty, true);
+            expect(
+              state.title,
+              '$keqingKey pro DPS',
+              reason: 'Should match expected value (property=title, expected=\'$keqingKey pro DPS\')',
+            );
+            expect(
+              state.type,
+              CharacterRoleType.dps,
+              reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)',
+            );
+            expect(
+              state.subType,
+              CharacterRoleSubType.electro,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+            );
+            expect(
+              state.showOnCharacterDetail,
+              true,
+              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+            );
+            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
+            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
+            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(
+              state.artifacts.length == 5,
+              true,
+              reason: 'Should match expected value (property=length == 5, expected=true)',
+            );
+            expect(
+              state.teamCharacters.length == 3,
+              true,
+              reason: 'Should match expected value (property=length == 3, expected=true)',
+            );
+            expect(state.notes.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(
+              state.skillPriorities.length == 3,
+              true,
+              reason: 'Should match expected value (property=length == 3, expected=true)',
+            );
+            expect(
+              state.subStatsSummary.isNotEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
         }
       },
     );
@@ -272,7 +328,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.character.key, ganyuKey);
+            expect(state.character.key, ganyuKey, reason: 'Should match expected value (property=key)');
         }
       },
     );
@@ -289,7 +345,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.title, 'KEQING PRO');
+            expect(state.title, 'KEQING PRO', reason: 'Should match expected value (property=title, expected=\'KEQING PRO\')');
         }
       },
     );
@@ -306,7 +362,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.type, CharacterRoleType.offFieldDps);
+            expect(
+              state.type,
+              CharacterRoleType.offFieldDps,
+              reason: 'Should match expected value (property=type, expected=CharacterRoleType.offFieldDps)',
+            );
         }
       },
     );
@@ -323,7 +383,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.subType, CharacterRoleSubType.cryo);
+            expect(
+              state.subType,
+              CharacterRoleSubType.cryo,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.cryo)',
+            );
         }
       },
     );
@@ -340,7 +404,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.showOnCharacterDetail, false);
+            expect(
+              state.showOnCharacterDetail,
+              false,
+              reason: 'Should match expected value (property=showOnCharacterDetail, expected=false)',
+            );
         }
       },
     );
@@ -357,7 +425,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.isRecommended, true);
+            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
         }
       },
     );
@@ -377,7 +445,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.notes.length == 2, true);
+            expect(state.notes.length == 2, true, reason: 'Should match expected value (property=length == 2, expected=true)');
         }
       },
     );
@@ -405,7 +473,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.notes.isEmpty, true);
+            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
         }
       },
     );
@@ -435,7 +503,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.skillPriorities.length == 2, true);
+            expect(
+              state.skillPriorities.length == 2,
+              true,
+              reason: 'Should match expected value (property=length == 2, expected=true)',
+            );
         }
       },
     );
@@ -454,7 +526,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.skillPriorities.length == 2, true);
+            expect(
+              state.skillPriorities.length == 2,
+              true,
+              reason: 'Should match expected value (property=length == 2, expected=true)',
+            );
         }
       },
     );
@@ -483,7 +559,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.skillPriorities.length == 1, true);
+            expect(
+              state.skillPriorities.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
         }
       },
     );
@@ -514,8 +594,12 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.length == 1, true);
-            expect(state.weapons.first.key == aquilaFavoniaKey, true);
+            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(
+              state.weapons.first.key == aquilaFavoniaKey,
+              true,
+              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+            );
         }
       },
     );
@@ -555,7 +639,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.first.refinement == 5, true);
+            expect(
+              state.weapons.first.refinement == 5,
+              true,
+              reason: 'Should match expected value (property=refinement == 5, expected=true)',
+            );
         }
       },
     );
@@ -585,7 +673,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.first.refinement == 5, true);
+            expect(
+              state.weapons.first.refinement == 5,
+              true,
+              reason: 'Should match expected value (property=refinement == 5, expected=true)',
+            );
         }
       },
     );
@@ -616,7 +708,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.isEmpty, true);
+            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
         }
       },
     );
@@ -648,7 +740,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.isEmpty, true);
+            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
         }
       },
     );
@@ -675,9 +767,17 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.length == 2, true);
-            expect(state.weapons.first.key == 'the-flute', true);
-            expect(state.weapons.last.key == aquilaFavoniaKey, true);
+            expect(state.weapons.length == 2, true, reason: 'Should match expected value (property=length == 2, expected=true)');
+            expect(
+              state.weapons.first.key == 'the-flute',
+              true,
+              reason: 'Should match expected value (property=key == \'the-flute\', expected=true)',
+            );
+            expect(
+              state.weapons.last.key == aquilaFavoniaKey,
+              true,
+              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+            );
         }
       },
     );
@@ -700,9 +800,17 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats[3];
-            expect(state.weapons.length == 1, true);
-            expect(state.weapons.first.key == aquilaFavoniaKey, true);
-            expect(state.weapons.first.stat == stat, true);
+            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(
+              state.weapons.first.key == aquilaFavoniaKey,
+              true,
+              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+            );
+            expect(
+              state.weapons.first.stat == stat,
+              true,
+              reason: 'Should match expected value (property=stat == stat, expected=true)',
+            );
         }
       },
     );
@@ -721,12 +829,24 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.length == 1, true);
+            expect(
+              state.artifacts.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
             final artifact = state.artifacts.first;
-            expect(artifact.key == thunderingFuryKey, true);
-            expect(artifact.type == ArtifactType.flower, true);
-            expect(artifact.statType == StatType.hp, true);
-            expect(artifact.subStats.isEmpty, true);
+            expect(
+              artifact.key == thunderingFuryKey,
+              true,
+              reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+            );
+            expect(
+              artifact.type == ArtifactType.flower,
+              true,
+              reason: 'Should match expected value (property=flower, expected=true)',
+            );
+            expect(artifact.statType == StatType.hp, true, reason: 'Should match expected value (property=hp, expected=true)');
+            expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
         }
       },
     );
@@ -750,12 +870,28 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.length == 1, true);
+            expect(
+              state.artifacts.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
             final artifact = state.artifacts.first;
-            expect(artifact.key == thunderingFuryKey, true);
-            expect(artifact.type == ArtifactType.crown, true);
-            expect(artifact.statType == StatType.critDmgPercentage, true);
-            expect(artifact.subStats.isEmpty, true);
+            expect(
+              artifact.key == thunderingFuryKey,
+              true,
+              reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+            );
+            expect(
+              artifact.type == ArtifactType.crown,
+              true,
+              reason: 'Should match expected value (property=crown, expected=true)',
+            );
+            expect(
+              artifact.statType == StatType.critDmgPercentage,
+              true,
+              reason: 'Should match expected value (property=critDmgPercentage, expected=true)',
+            );
+            expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
         }
       },
     );
@@ -790,7 +926,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.length == 5, true);
+            expect(
+              state.artifacts.length == 5,
+              true,
+              reason: 'Should match expected value (property=length == 5, expected=true)',
+            );
             final expectedStatTypes = [
               StatType.hp,
               StatType.atk,
@@ -800,10 +940,22 @@ void main() {
             ];
             for (var i = 0; i < state.artifacts.length; i++) {
               final artifact = state.artifacts[i];
-              expect(artifact.key == thunderingFuryKey, true);
-              expect(artifact.type == ArtifactType.values[i], true);
-              expect(artifact.statType == expectedStatTypes[i], true);
-              expect(artifact.subStats.isEmpty, true);
+              expect(
+                artifact.key == thunderingFuryKey,
+                true,
+                reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+              );
+              expect(
+                artifact.type == ArtifactType.values[i],
+                true,
+                reason: 'Should match expected value (property=values[i], expected=true)',
+              );
+              expect(
+                artifact.statType == expectedStatTypes[i],
+                true,
+                reason: 'Should match expected value (property=statType == expectedStatTypes[i], expected=true)',
+              );
+              expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
             }
         }
       },
@@ -846,7 +998,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.length == 5, true);
+            expect(
+              state.artifacts.length == 5,
+              true,
+              reason: 'Should match expected value (property=length == 5, expected=true)',
+            );
             final expectedStatTypes = [
               StatType.hp,
               StatType.atk,
@@ -856,10 +1012,22 @@ void main() {
             ];
             for (var i = 0; i < state.artifacts.length; i++) {
               final artifact = state.artifacts[i];
-              expect(artifact.key == thunderingFuryKey, true);
-              expect(artifact.type == ArtifactType.values[i], true);
-              expect(artifact.statType == expectedStatTypes[i], true);
-              expect(artifact.subStats.isEmpty, true);
+              expect(
+                artifact.key == thunderingFuryKey,
+                true,
+                reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+              );
+              expect(
+                artifact.type == ArtifactType.values[i],
+                true,
+                reason: 'Should match expected value (property=values[i], expected=true)',
+              );
+              expect(
+                artifact.statType == expectedStatTypes[i],
+                true,
+                reason: 'Should match expected value (property=statType == expectedStatTypes[i], expected=true)',
+              );
+              expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
             }
         }
       },
@@ -890,9 +1058,17 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.length == 2, true);
+            expect(
+              state.artifacts.length == 2,
+              true,
+              reason: 'Should match expected value (property=length == 2, expected=true)',
+            );
             final flower = state.artifacts.first;
-            expect(flower.type, ArtifactType.flower);
+            expect(
+              flower.type,
+              ArtifactType.flower,
+              reason: 'Should match expected value (property=type, expected=ArtifactType.flower)',
+            );
             expect(
               listEquals(flower.subStats, [
                 StatType.critDmgPercentage,
@@ -901,16 +1077,26 @@ void main() {
                 StatType.atk,
               ]),
               true,
+              reason: 'Should match expected value (property=atk]), expected=true)',
             );
 
             final plume = state.artifacts.last;
-            expect(plume.type, ArtifactType.plume);
+            expect(
+              plume.type,
+              ArtifactType.plume,
+              reason: 'Should match expected value (property=type, expected=ArtifactType.plume)',
+            );
             expect(
               listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]),
               true,
+              reason: 'Should match expected value (property=atkPercentage]), expected=true)',
             );
 
-            expect(state.subStatsSummary.isNotEmpty, true);
+            expect(
+              state.subStatsSummary.isNotEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
         }
       },
     );
@@ -959,8 +1145,12 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.isEmpty, true);
-            expect(state.subStatsSummary.isEmpty, true);
+            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(
+              state.subStatsSummary.isEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
         }
       },
     );
@@ -989,7 +1179,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.isEmpty, true);
+            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
         }
       },
     );
@@ -1014,10 +1204,22 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.teamCharacters.length == 1, true);
+            expect(
+              state.teamCharacters.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
             final char = state.teamCharacters.first;
-            expect(char.roleType, CharacterRoleType.offFieldDps);
-            expect(char.subType, CharacterRoleSubType.electro);
+            expect(
+              char.roleType,
+              CharacterRoleType.offFieldDps,
+              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.offFieldDps)',
+            );
+            expect(
+              char.subType,
+              CharacterRoleSubType.electro,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+            );
         }
       },
     );
@@ -1063,7 +1265,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.teamCharacters.length == 1, true);
+            expect(
+              state.teamCharacters.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
         }
       },
     );
@@ -1101,14 +1307,34 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.teamCharacters.length == 2, true);
+            expect(
+              state.teamCharacters.length == 2,
+              true,
+              reason: 'Should match expected value (property=length == 2, expected=true)',
+            );
             final keqing = state.teamCharacters.first;
-            expect(keqing.roleType, CharacterRoleType.dps);
-            expect(keqing.subType, CharacterRoleSubType.electro);
+            expect(
+              keqing.roleType,
+              CharacterRoleType.dps,
+              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.dps)',
+            );
+            expect(
+              keqing.subType,
+              CharacterRoleSubType.electro,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+            );
 
             final ganyu = state.teamCharacters.last;
-            expect(ganyu.roleType, CharacterRoleType.offFieldDps);
-            expect(ganyu.subType, CharacterRoleSubType.cryo);
+            expect(
+              ganyu.roleType,
+              CharacterRoleType.offFieldDps,
+              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.offFieldDps)',
+            );
+            expect(
+              ganyu.subType,
+              CharacterRoleSubType.cryo,
+              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.cryo)',
+            );
         }
       },
     );
@@ -1132,7 +1358,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.teamCharacters.isEmpty, true);
+            expect(
+              state.teamCharacters.isEmpty,
+              true,
+              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+            );
         }
       },
     );
@@ -1211,17 +1441,41 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats.first;
-            expect(state.character.key, keqingKey);
-            expect(state.isRecommended, true);
-            expect(state.showOnCharacterDetail, false);
-            expect(state.skillPriorities.length == 1, true);
-            expect(state.notes.length == 1, true);
-            expect(state.weapons.length == 1, true);
-            expect(state.weapons.first.stat.level, stat.level);
-            expect(state.weapons.first.stat.isAnAscension, stat.isAnAscension);
-            expect(state.artifacts.length == 5, true);
-            expect(state.subStatsSummary.isNotEmpty, true);
-            expect(state.teamCharacters.length == 1, true);
+            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
+            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
+            expect(
+              state.showOnCharacterDetail,
+              false,
+              reason: 'Should match expected value (property=showOnCharacterDetail, expected=false)',
+            );
+            expect(
+              state.skillPriorities.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
+            expect(state.notes.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.weapons.first.stat.level, stat.level, reason: 'Should match expected value (property=level)');
+            expect(
+              state.weapons.first.stat.isAnAscension,
+              stat.isAnAscension,
+              reason: 'Should match expected value (property=isAnAscension)',
+            );
+            expect(
+              state.artifacts.length == 5,
+              true,
+              reason: 'Should match expected value (property=length == 5, expected=true)',
+            );
+            expect(
+              state.subStatsSummary.isNotEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
+            expect(
+              state.teamCharacters.length == 1,
+              true,
+              reason: 'Should match expected value (property=length == 1, expected=true)',
+            );
         }
       },
     );
@@ -1240,15 +1494,31 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.character.key, keqingKey);
-            expect(state.isRecommended, false);
-            expect(state.showOnCharacterDetail, true);
-            expect(state.skillPriorities.isEmpty, true);
-            expect(state.notes.isEmpty, true);
-            expect(state.weapons.isEmpty, true);
-            expect(state.artifacts.isEmpty, true);
-            expect(state.subStatsSummary.isEmpty, true);
-            expect(state.teamCharacters.isEmpty, true);
+            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
+            expect(state.isRecommended, false, reason: 'Should match expected value (property=isRecommended, expected=false)');
+            expect(
+              state.showOnCharacterDetail,
+              true,
+              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+            );
+            expect(
+              state.skillPriorities.isEmpty,
+              true,
+              reason: 'Should match expected value (property=skillPriorities, expected=true)',
+            );
+            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
+            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
+            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(
+              state.subStatsSummary.isEmpty,
+              true,
+              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+            );
+            expect(
+              state.teamCharacters.isEmpty,
+              true,
+              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+            );
         }
       },
     );

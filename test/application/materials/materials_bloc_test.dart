@@ -30,7 +30,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(MaterialsBloc(genshinService).state, const MaterialsState.loading()));
+  test('Initial state', () => expect(MaterialsBloc(genshinService).state, const MaterialsState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('Init', () {
     blocTest<MaterialsBloc, MaterialsState>(
@@ -67,13 +67,13 @@ void main() {
                 .getAllMaterialsForCard()
                 .where((el) => !excludedKeys.contains(el.key))
                 .toList();
-            expect(state.materials.length, materials.length);
-            expect(state.rarity, 0);
-            expect(state.tempRarity, 0);
-            expect(state.filterType, MaterialFilterType.grouped);
-            expect(state.tempFilterType, MaterialFilterType.grouped);
-            expect(state.sortDirectionType, SortDirectionType.asc);
-            expect(state.tempSortDirectionType, SortDirectionType.asc);
+            expect(state.materials.length, materials.length, reason: 'Should match expected value (property=materials)');
+            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
+            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
+            expect(state.filterType, MaterialFilterType.grouped, reason: 'Should match expected value (property=filterType, expected=MaterialFilterType.grouped)');
+            expect(state.tempFilterType, MaterialFilterType.grouped, reason: 'Should match expected value (property=tempFilterType, expected=MaterialFilterType.grouped)');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
         }
       },
     );

@@ -70,18 +70,18 @@ void main() {
   }) {
     final banner = period.banners[bannerIndex];
     final bannerType = banner.type;
-    expect(results.length == pulls, isTrue);
+    expect(results.length == pulls, isTrue, reason: 'Should be true (property=length == pulls)');
 
     final gotFourStar = results.any((r) => r.rarity == 4);
     final gotFiveStar = results.any((r) => r.rarity == WishBannerConstants.maxObtainableRarity);
-    expect(gotFourStar || gotFiveStar, isTrue);
+    expect(gotFourStar || gotFiveStar, isTrue, reason: 'Should be true');
 
     if (minFourStarCount != null) {
-      expect(results.count((r) => r.rarity == 4) >= minFourStarCount, isTrue);
+      expect(results.count((r) => r.rarity == 4) >= minFourStarCount, isTrue, reason: 'Should be true (property=rarity == 4) >= minFourStarCount, isTrue)');
     }
 
     if (minFiveStarCount != null) {
-      expect(results.count((r) => r.rarity == WishBannerConstants.maxObtainableRarity) >= minFiveStarCount, isTrue);
+      expect(results.count((r) => r.rarity == WishBannerConstants.maxObtainableRarity) >= minFiveStarCount, isTrue, reason: 'Should be true (property=maxObtainableRarity) >= minFiveStarCount, isTrue)');
     }
 
     for (final item in results) {
@@ -95,9 +95,9 @@ void main() {
       );
       switch (item) {
         case WishSimulatorBannerCharacterResultModel():
-          expect(banner.characters.any((c) => c.key == item.key), isTrue);
+          expect(banner.characters.any((c) => c.key == item.key), isTrue, reason: 'Should be true (property=key), isTrue)');
         case WishSimulatorBannerWeaponResultModel():
-          expect(banner.weapons.any((c) => c.key == item.key), isTrue);
+          expect(banner.weapons.any((c) => c.key == item.key), isTrue, reason: 'Should be true (property=key), isTrue)');
       }
 
       if (item.rarity != WishBannerConstants.maxObtainableRarity || bannerType == BannerItemType.standard) {
@@ -108,11 +108,11 @@ void main() {
         WishSimulatorBannerCharacterResultModel() => BannerItemType.character,
         WishSimulatorBannerWeaponResultModel() => BannerItemType.weapon,
       };
-      expect(bannerType, expectedType);
+      expect(bannerType, expectedType, reason: 'Should match expected value');
     }
   }
 
-  test('Initial state', () => expect(getBloc().state, const WishSimulatorResultState.loading()));
+  test('Initial state', () => expect(getBloc().state, const WishSimulatorResultState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('Init', () {
     blocTest(

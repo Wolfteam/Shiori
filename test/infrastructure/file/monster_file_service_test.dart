@@ -21,7 +21,7 @@ void main() {
         for (final monster in monsters) {
           checkKey(monster.key);
           checkAsset(monster.image);
-          expect(monster.name, allOf([isNotEmpty, isNotNull]));
+          expect(monster.name, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty (property=name, key=${monster.key})');
         }
       });
     }
@@ -29,7 +29,7 @@ void main() {
     test('no resources have been downloaded', () async {
       final service = await getMonsterFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
       final monsters = service.getAllMonstersForCard();
-      expect(monsters.isEmpty, isTrue);
+      expect(monsters.isEmpty, isTrue, reason: 'Should be true');
     });
   });
 
@@ -47,20 +47,28 @@ void main() {
       for (final drop in detail.drops) {
         switch (drop.type) {
           case MonsterDropType.material:
-            expect(() => materialFileService.getMaterial(drop.key), returnsNormally);
+            expect(
+              () => materialFileService.getMaterial(drop.key),
+              returnsNormally,
+              reason: 'Should execute without throwing (key=${drop.key})',
+            );
             if (monster.type == MonsterType.boss) {
               final material = materialFileService.getMaterial(drop.key);
               gotBossMaterials.update(material.type, (val) => val + 1, ifAbsent: () => 1);
             }
           case MonsterDropType.artifact:
-            expect(() => artifactFileService.getArtifact(drop.key), returnsNormally);
+            expect(() => artifactFileService.getArtifact(drop.key), returnsNormally, reason: 'Should execute without throwing (monsterKey=${monster.key}, artifactKey=${drop.key})');
         }
       }
 
       if (monster.type == MonsterType.boss && detail.drops.isNotEmpty) {
-        expect(gotBossMaterials.isNotEmpty, isTrue);
+        expect(gotBossMaterials.isNotEmpty, isTrue, reason: 'Should be true (key=${monster.key})');
         for (final kvp in gotBossMaterials.entries) {
-          expect(_bossMaterialTypes[kvp.key], lessThanOrEqualTo(kvp.value));
+          expect(
+            _bossMaterialTypes[kvp.key],
+            lessThanOrEqualTo(kvp.value),
+            reason: 'Should be less than expected (property=key, monsterKey=${monster.key})',
+          );
         }
       }
     }

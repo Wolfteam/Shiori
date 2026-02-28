@@ -35,8 +35,7 @@ void main() {
     'Initial state',
     () => expect(
       CharactersPerRegionGenderBloc(genshinService).state,
-      const CharactersPerRegionGenderState.loading(),
-    ),
+      const CharactersPerRegionGenderState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {

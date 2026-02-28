@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ItemsAscensionStatsBloc(genshinService).state, const ItemsAscensionStatsState.loading()));
+  test('Initial state', () => expect(ItemsAscensionStatsBloc(genshinService).state, const ItemsAscensionStatsState.loading(), reason: 'Should match expected value (property=state)'));
 
   group('Init', () {
     blocTest<ItemsAscensionStatsBloc, ItemsAscensionStatsState>(

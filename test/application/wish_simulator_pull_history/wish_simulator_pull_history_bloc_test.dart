@@ -100,7 +100,7 @@ void main() {
 
   WishSimulatorPullHistoryBloc getBloc() => WishSimulatorPullHistoryBloc(genshinService, dataService);
 
-  test('Initial state', () => expect(getBloc().state, const WishSimulatorPullHistoryState.loading()));
+  test('Initial state', () => expect(getBloc().state, const WishSimulatorPullHistoryState.loading(), reason: 'Should match expected value (property=state)'));
 
   void checkState(
     BannerItemType bannerType,
@@ -112,33 +112,33 @@ void main() {
     int expectedCurrentPage = 1,
     bool shouldBeEmpty = false,
   }) {
-    expect(bannerType, expectedBannerType);
-    expect(allItems.isEmpty == shouldBeEmpty, isTrue);
-    expect(items.isEmpty == shouldBeEmpty, isTrue);
+    expect(bannerType, expectedBannerType, reason: 'Should match expected value');
+    expect(allItems.isEmpty == shouldBeEmpty, isTrue, reason: 'Should be true (property=isEmpty == shouldBeEmpty)');
+    expect(items.isEmpty == shouldBeEmpty, isTrue, reason: 'Should be true (property=isEmpty == shouldBeEmpty)');
     if (shouldBeEmpty) {
-      expect(currentPage, 1);
-      expect(maxPage, 1);
+      expect(currentPage, 1, reason: 'Should match expected value (expected=1)');
+      expect(maxPage, 1, reason: 'Should match expected value (expected=1)');
       return;
     }
-    expect(currentPage, expectedCurrentPage);
+    expect(currentPage, expectedCurrentPage, reason: 'Should match expected value');
     final expectedMaxPages = (pullsOnBanner[bannerType]! / WishSimulatorPullHistoryBloc.take).ceil();
-    expect(maxPage, expectedMaxPages);
+    expect(maxPage, expectedMaxPages, reason: 'Should match expected value');
 
     final allItemKeys = allItems.map((e) => e.key).toSet();
     final expectedItemTypes = [ItemType.character, ItemType.weapon];
     for (final item in allItems) {
       checkItemKeyAndName(item.key, item.name);
       checkBannerRarity(item.rarity);
-      expect(item.type, isIn(expectedItemTypes));
-      expect(item.pulledOn.isNotEmpty, isTrue);
+      expect(item.type, isIn(expectedItemTypes), reason: 'Should match expected value (property=type)');
+      expect(item.pulledOn.isNotEmpty, isTrue, reason: 'Should be true (property=pulledOn)');
     }
 
     for (final item in items) {
       checkItemKeyAndName(item.key, item.name);
       checkBannerRarity(item.rarity);
-      expect(item.type, isIn(expectedItemTypes));
-      expect(item.pulledOn.isNotEmpty, isTrue);
-      expect(item.key, isIn(allItemKeys));
+      expect(item.type, isIn(expectedItemTypes), reason: 'Should match expected value (property=type)');
+      expect(item.pulledOn.isNotEmpty, isTrue, reason: 'Should be true (property=pulledOn)');
+      expect(item.key, isIn(allItemKeys), reason: 'Should match expected value (property=key)');
     }
   }
 

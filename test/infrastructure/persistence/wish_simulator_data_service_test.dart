@@ -68,13 +68,13 @@ void main() {
     for (final type in BannerItemType.values) {
       test('history does not exist for type = ${type.name} thus it gets created', () async {
         final history = await dataService.wishSimulator.getBannerPullHistory(type, defaultXStarCount: defaultXStarCount);
-        expect(history.type, type.index);
-        expect(history.currentXStarCount, defaultXStarCount);
-        expect(history.fiftyFiftyXStarGuaranteed.length, defaultXStarCount.length);
+        expect(history.type, type.index, reason: 'Should match expected value (property=type)');
+        expect(history.currentXStarCount, defaultXStarCount, reason: 'Should match expected value (property=currentXStarCount)');
+        expect(history.fiftyFiftyXStarGuaranteed.length, defaultXStarCount.length, reason: 'Should match expected value (property=fiftyFiftyXStarGuaranteed)');
         final List<int> rarities = defaultXStarCount.keys.toList();
         for (final kvp in history.fiftyFiftyXStarGuaranteed.entries) {
-          expect(kvp.key, isIn(rarities));
-          expect(kvp.value, isFalse);
+          expect(kvp.key, isIn(rarities), reason: 'Should match expected value (property=key)');
+          expect(kvp.value, isFalse, reason: 'Should be false (property=value)');
         }
       });
     }
@@ -103,15 +103,13 @@ void main() {
     test('item key is not valid', () {
       expect(
         () => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, '', ItemType.character),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item type is not valid', () {
       expect(
         () => dataService.wishSimulator.saveBannerItemPullHistory(BannerItemType.character, 'mora', ItemType.material),
-        throwsArgumentError,
-      );
+        throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     for (final BannerItemType bannerType in BannerItemType.values) {
@@ -121,13 +119,13 @@ void main() {
           final String key = itemType == ItemType.character ? charKey : weaponKey;
           await dataService.wishSimulator.saveBannerItemPullHistory(bannerType, key, itemType);
           final pullHistory = dataService.wishSimulator.getBannerItemsPullHistoryPerType(bannerType);
-          expect(pullHistory.length, 1);
+          expect(pullHistory.length, 1, reason: 'Should match expected value (expected=1)');
 
           final history = pullHistory.first;
-          expect(history.bannerType, bannerType.index);
-          expect(history.itemType, itemType.index);
-          expect(history.itemKey, key);
-          expect(history.pulledOnDate.isAfterInclusive(now), isTrue);
+          expect(history.bannerType, bannerType.index, reason: 'Should match expected value (property=bannerType)');
+          expect(history.itemType, itemType.index, reason: 'Should match expected value (property=itemType)');
+          expect(history.itemKey, key, reason: 'Should match expected value (property=itemKey)');
+          expect(history.pulledOnDate.isAfterInclusive(now), isTrue, reason: 'Should be true (property=isAfterInclusive(now))');
         });
       }
     }
@@ -157,14 +155,14 @@ void main() {
       test('no data exist for type ${type.name}', () async {
         await dataService.wishSimulator.clearBannerItemPullHistory(type);
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       });
 
       test('data exists for type ${type.name}', () async {
         await dataService.wishSimulator.saveBannerItemPullHistory(type, charKey, ItemType.character);
         await dataService.wishSimulator.clearBannerItemPullHistory(type);
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       });
     }
   });
@@ -194,7 +192,7 @@ void main() {
 
       for (final type in BannerItemType.values) {
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       }
     });
 
@@ -208,7 +206,7 @@ void main() {
 
       for (final type in BannerItemType.values) {
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       }
     });
   });
@@ -236,7 +234,7 @@ void main() {
     for (final type in BannerItemType.values) {
       test('no data exist for type ${type.name}', () {
         final count = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type).length;
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       });
 
       test('data exists for type ${type.name}', () async {
@@ -245,14 +243,14 @@ void main() {
         await dataService.wishSimulator.saveBannerItemPullHistory(type, charKey, ItemType.character);
 
         final pullHistory = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type);
-        expect(pullHistory.length, 2);
+        expect(pullHistory.length, 2, reason: 'Should match expected value (expected=2)');
 
         for (int i = 0; i < pullHistory.length; i++) {
           final history = pullHistory[i];
-          expect(history.itemKey, charKey);
-          expect(history.bannerType, type.index);
-          expect(history.itemType, ItemType.character.index);
-          expect(history.pulledOnDate.isAfterInclusive(now), isTrue);
+          expect(history.itemKey, charKey, reason: 'Should match expected value (property=itemKey)');
+          expect(history.bannerType, type.index, reason: 'Should match expected value (property=bannerType)');
+          expect(history.itemType, ItemType.character.index, reason: 'Should match expected value (property=itemType)');
+          expect(history.pulledOnDate.isAfterInclusive(now), isTrue, reason: 'Should be true (property=isAfterInclusive(now))');
         }
       });
     }
@@ -280,9 +278,9 @@ void main() {
 
     test('no data exist', () async {
       final bk = await dataService.wishSimulator.getDataForBackup();
-      expect(bk.pullHistory.length, BannerItemType.values.length);
-      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue);
-      expect(bk.itemPullHistory.isEmpty, isTrue);
+      expect(bk.pullHistory.length, BannerItemType.values.length, reason: 'Should match expected value (property=pullHistory)');
+      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue, reason: 'Should be true (property=isEmpty), isTrue)');
+      expect(bk.itemPullHistory.isEmpty, isTrue, reason: 'Should be true (property=itemPullHistory)');
     });
 
     test('data exists', () async {
@@ -297,19 +295,19 @@ void main() {
         await dataService.wishSimulator.saveBannerItemPullHistory(type, weaponKey, ItemType.weapon);
       }
       final bk = await dataService.wishSimulator.getDataForBackup();
-      expect(bk.pullHistory.length, BannerItemType.values.length);
+      expect(bk.pullHistory.length, BannerItemType.values.length, reason: 'Should match expected value (property=pullHistory)');
       for (int i = 0; i < bk.pullHistory.length; i++) {
         final got = bk.pullHistory[i];
         final expectedType = BannerItemType.values[i];
-        expect(got.type, expectedType);
+        expect(got.type, expectedType, reason: 'Should match expected value (property=type)');
       }
 
-      expect(bk.itemPullHistory.length, BannerItemType.values.length * 2);
+      expect(bk.itemPullHistory.length, BannerItemType.values.length * 2, reason: 'Should match expected value (property=itemPullHistory)');
       for (final history in bk.itemPullHistory) {
-        expect(history.itemType, isIn(validItemTypes));
-        expect(history.itemKey, isIn([charKey, weaponKey]));
-        expect(history.bannerType, isIn(BannerItemType.values));
-        expect(history.pulledOn.isAfterInclusive(now), isTrue);
+        expect(history.itemType, isIn(validItemTypes), reason: 'Should match expected value (property=itemType)');
+        expect(history.itemKey, isIn([charKey, weaponKey]), reason: 'Should match expected value (property=itemKey)');
+        expect(history.bannerType, isIn(BannerItemType.values), reason: 'Should match expected value (property=bannerType)');
+        expect(history.pulledOn.isAfterInclusive(now), isTrue, reason: 'Should be true (property=isAfterInclusive(now))');
       }
     });
   });
@@ -337,9 +335,9 @@ void main() {
     test('no data to restore and no previous data exist', () async {
       await dataService.wishSimulator.restoreFromBackup(const BackupWishSimulatorModel(pullHistory: [], itemPullHistory: []));
       final bk = await dataService.wishSimulator.getDataForBackup();
-      expect(bk.pullHistory.length, BannerItemType.values.length);
-      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue);
-      expect(bk.itemPullHistory, isEmpty);
+      expect(bk.pullHistory.length, BannerItemType.values.length, reason: 'Should match expected value (property=pullHistory)');
+      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue, reason: 'Should be true (property=isEmpty), isTrue)');
+      expect(bk.itemPullHistory, isEmpty, reason: 'Should be empty (property=itemPullHistory)');
     });
 
     test('no data to restore and previous data exist', () async {
@@ -355,9 +353,9 @@ void main() {
 
       await dataService.wishSimulator.restoreFromBackup(const BackupWishSimulatorModel(pullHistory: [], itemPullHistory: []));
       final bk = await dataService.wishSimulator.getDataForBackup();
-      expect(bk.pullHistory.length, BannerItemType.values.length);
-      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue);
-      expect(bk.itemPullHistory, isEmpty);
+      expect(bk.pullHistory.length, BannerItemType.values.length, reason: 'Should match expected value (property=pullHistory)');
+      expect(bk.pullHistory.every((el) => el.currentXStarCount.isEmpty && el.fiftyFiftyXStarGuaranteed.isEmpty), isTrue, reason: 'Should be true (property=isEmpty), isTrue)');
+      expect(bk.itemPullHistory, isEmpty, reason: 'Should be empty (property=itemPullHistory)');
     });
 
     test('there is data to restore and previous data exist', () async {
@@ -400,18 +398,18 @@ void main() {
 
       for (final type in BannerItemType.values) {
         final history = await dataService.wishSimulator.getBannerPullHistory(type);
-        expect(history.type, type.index);
-        expect(history.currentXStarCount, isEmpty);
-        expect(history.fiftyFiftyXStarGuaranteed, isEmpty);
+        expect(history.type, type.index, reason: 'Should match expected value (property=type)');
+        expect(history.currentXStarCount, isEmpty, reason: 'Should be empty (property=currentXStarCount)');
+        expect(history.fiftyFiftyXStarGuaranteed, isEmpty, reason: 'Should be empty (property=fiftyFiftyXStarGuaranteed)');
 
         final itemPullHistory = dataService.wishSimulator.getBannerItemsPullHistoryPerType(type);
-        expect(itemPullHistory.length, 1);
+        expect(itemPullHistory.length, 1, reason: 'Should match expected value (expected=1)');
 
         final item = itemPullHistory.first;
-        expect(item.bannerType, type.index);
-        expect(item.itemKey, startsWith('item-'));
-        expect(item.itemType, isIn(validItemTypes.map((e) => e.index)));
-        expect(item.pulledOnDate, isIn([pulledOnMin, pulledOnMax]));
+        expect(item.bannerType, type.index, reason: 'Should match expected value (property=bannerType)');
+        expect(item.itemKey, startsWith('item-'), reason: 'Should match expected value (property=itemKey)');
+        expect(item.itemType, isIn(validItemTypes.map((e) => e.index)), reason: 'Should match expected value (property=itemType)');
+        expect(item.pulledOnDate, isIn([pulledOnMin, pulledOnMax]), reason: 'Should match expected value (property=pulledOnDate)');
       }
     });
   });

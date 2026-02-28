@@ -176,8 +176,7 @@ void main() {
     'Initial state',
     () => expect(
       getBloc(MockDataService()).state,
-      const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false),
-    ),
+      const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {
@@ -211,20 +210,20 @@ void main() {
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.init(sessionKey: 1)),
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.sessionKey, 1);
-        expect(state.items.length, 1);
+        expect(state.sessionKey, 1, reason: 'Should match expected value (property=sessionKey, expected=1)');
+        expect(state.items.length, 1, reason: 'Should match expected value (property=items, expected=1)');
         for (final item in state.items) {
-          expect(item, keqingItem);
+          expect(item, keqingItem, reason: 'Should match expected value');
         }
 
-        expect(state.summary.length, 2);
+        expect(state.summary.length, 2, reason: 'Should match expected value (property=summary, expected=2)');
         for (final summary in state.summary) {
           final int materialCount = switch (summary.type) {
             AscensionMaterialSummaryType.currency => 1,
             AscensionMaterialSummaryType.exp => 2,
             _ => throw Exception('Invalid summary type'),
           };
-          expect(summary.materials.length, materialCount);
+          expect(summary.materials.length, materialCount, reason: 'Should match expected value (property=materials)');
         }
       },
     );
@@ -393,9 +392,9 @@ void main() {
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
-        expect(createdItem.key, 'ganyu');
+        expect(createdItem.key, 'ganyu', reason: 'Should match expected value (property=key, expected=\'ganyu\')');
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
-        expect(allPossibleMaterialKeys.isNotEmpty, isTrue);
+        expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -522,9 +521,9 @@ void main() {
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
-        expect(createdItem.key, 'aquila-favonia');
+        expect(createdItem.key, 'aquila-favonia', reason: 'Should match expected value (property=key, expected=\'aquila-favonia\')');
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
-        expect(allPossibleMaterialKeys.isNotEmpty, isTrue);
+        expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -760,7 +759,7 @@ void main() {
         );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
-        expect(updatedItem.key, keqingItem.key);
+        expect(updatedItem.key, keqingItem.key, reason: 'Should match expected value (property=key)');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -901,7 +900,7 @@ void main() {
         );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
-        expect(updatedItem.key, theCatchItem.key);
+        expect(updatedItem.key, theCatchItem.key, reason: 'Should match expected value (property=key)');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );

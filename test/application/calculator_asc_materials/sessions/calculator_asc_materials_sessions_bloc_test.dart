@@ -58,7 +58,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const CalculatorAscMaterialsSessionsState.loading()),
+    () => expect(getBloc().state, const CalculatorAscMaterialsSessionsState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {
@@ -79,7 +79,7 @@ void main() {
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             verify(calcMock.getAllSessions()).called(1);
-            expect(state.sessions, sessions);
+            expect(state.sessions, sessions, reason: 'Should match expected value (property=sessions)');
         }
       },
     );
@@ -133,8 +133,8 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, 1);
-            expect(state.sessions.first, createdSession);
+            expect(state.sessions.length, 1, reason: 'Should match expected value (property=sessions, expected=1)');
+            expect(state.sessions.first, createdSession, reason: 'Should match expected value (property=sessions)');
             verify(
               calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage),
             ).called(1);
@@ -205,8 +205,8 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, sessions.length);
-            expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession);
+            expect(state.sessions.length, sessions.length, reason: 'Should match expected value (property=sessions)');
+            expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession, reason: 'Should match expected value (property=key), updatedSession)');
             verify(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage)).called(1);
         }
       },
@@ -245,8 +245,8 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, sessions.length - 1);
-            expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)));
+            expect(state.sessions.length, sessions.length - 1, reason: 'Should match expected value (property=sessions)');
+            expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)), reason: 'Should contain expected value');
             verify(calcMock.deleteSession(sessions.first.key)).called(1);
         }
       },
@@ -348,7 +348,7 @@ void main() {
         expected = 0;
       }
 
-      expect(got, expected);
+      expect(got, expected, reason: 'Should match expected value');
     }
 
     for (int i = 0; i < 2; i++) {
@@ -373,9 +373,9 @@ void main() {
                 if (inState.key == sessions.last.key) {
                   checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
                 } else {
-                  expect(session.numberOfCharacters, inState.numberOfCharacters);
+                  expect(session.numberOfCharacters, inState.numberOfCharacters, reason: 'Should match expected value (property=numberOfCharacters)');
                 }
-                expect(session.numberOfWeapons, inState.numberOfWeapons);
+                expect(session.numberOfWeapons, inState.numberOfWeapons, reason: 'Should match expected value (property=numberOfWeapons)');
               }
               checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
           }
@@ -405,9 +405,9 @@ void main() {
                 if (inState.key == sessions.last.key) {
                   checkCount(sessions.last.numberOfWeapons, state.sessions.last.numberOfWeapons, added);
                 } else {
-                  expect(session.numberOfWeapons, inState.numberOfWeapons);
+                  expect(session.numberOfWeapons, inState.numberOfWeapons, reason: 'Should match expected value (property=numberOfWeapons)');
                 }
-                expect(session.numberOfCharacters, inState.numberOfCharacters);
+                expect(session.numberOfCharacters, inState.numberOfCharacters, reason: 'Should match expected value (property=numberOfCharacters)');
               }
           }
         },

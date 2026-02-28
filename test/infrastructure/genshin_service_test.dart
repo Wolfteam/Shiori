@@ -41,15 +41,15 @@ void main() {
       await service.init(AppLanguageType.english);
       for (final type in types) {
         final tops = service.getTopCharts(type);
-        expect(tops.isNotEmpty, isTrue);
+        expect(tops.isNotEmpty, isTrue, reason: 'Should be true');
         final totalPercentage = tops.map((e) => e.percentage).sum.round();
-        expect(totalPercentage, 100);
+        expect(totalPercentage, 100, reason: 'Should match expected value (expected=100)');
         for (final item in tops) {
-          expect(item.type == type, isTrue);
+          expect(item.type == type, isTrue, reason: 'Should be true (property=type == type)');
           checkKey(item.key);
           checkTranslation(item.name, canBeNull: false, checkForColor: false);
-          expect(item.value > 0, isTrue);
-          expect(item.percentage > 0 && item.percentage < 100, isTrue);
+          expect(item.value > 0, isTrue, reason: 'Should be true (property=value > 0, isTrue)');
+          expect(item.percentage > 0 && item.percentage < 100, isTrue, reason: 'Should be true (property=percentage < 100)');
 
           final expectedStars = type.name.contains('Five') ? 5 : 4;
           switch (type) {
@@ -58,19 +58,19 @@ void main() {
             case ChartType.topFiveStarCharacterLeastReruns:
             case ChartType.topFourStarCharacterLeastReruns:
               final char = service.characters.getCharacter(item.key);
-              expect(char.rarity == expectedStars, isTrue);
+              expect(char.rarity == expectedStars, isTrue, reason: 'Should be true (property=rarity == expectedStars)');
             case ChartType.topFiveStarWeaponMostReruns:
             case ChartType.topFourStarWeaponMostReruns:
             case ChartType.topFiveStarWeaponLeastReruns:
             case ChartType.topFourStarWeaponLeastReruns:
               final weapon = service.weapons.getWeapon(item.key);
-              expect(weapon.rarity == expectedStars, isTrue);
+              expect(weapon.rarity == expectedStars, isTrue, reason: 'Should be true (property=rarity == expectedStars)');
             default:
               throw Exception('Type = $type is not valid');
           }
 
           final releaseCount = service.bannerHistory.getItemReleaseHistory(item.key).length;
-          expect(item.value == releaseCount, isTrue);
+          expect(item.value == releaseCount, isTrue, reason: 'Should be true (property=value == releaseCount)');
         }
       }
     });
@@ -78,7 +78,7 @@ void main() {
     test('check top charts, invalid type', () async {
       final service = getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getTopCharts(ChartType.characterBirthdays), throwsA(isA<Exception>()));
+      expect(() => service.getTopCharts(ChartType.characterBirthdays), throwsA(isA<Exception>()), reason: 'Should be of expected type');
     });
 
     test('check item ascension stats', () async {
@@ -89,18 +89,18 @@ void main() {
       final validForWeapons = getWeaponPossibleAscensionStats();
       for (final type in validTypes) {
         final stats = service.getItemAscensionStatsForCharts(type);
-        expect(stats.isNotEmpty, isTrue);
+        expect(stats.isNotEmpty, isTrue, reason: 'Should be true');
 
         final statTypes = stats.map((e) => e.type);
-        expect(statTypes.toSet().length, statTypes.length);
+        expect(statTypes.toSet().length, statTypes.length, reason: 'Should match expected value (property=toSet())');
 
         for (final stat in stats) {
-          expect(stat.itemType, type);
-          expect(stat.quantity > 0, isTrue);
+          expect(stat.itemType, type, reason: 'Should match expected value (property=itemType)');
+          expect(stat.quantity > 0, isTrue, reason: 'Should be true (property=quantity > 0, isTrue)');
           if (type == ItemType.character) {
-            expect(stat.type, isIn(validForCharacters));
+            expect(stat.type, isIn(validForCharacters), reason: 'Should match expected value (property=type)');
           } else {
-            expect(stat.type, isIn(validForWeapons));
+            expect(stat.type, isIn(validForWeapons), reason: 'Should match expected value (property=type)');
           }
         }
       }
@@ -111,7 +111,7 @@ void main() {
       await service.init(AppLanguageType.english);
       final types = ItemType.values.where((el) => el != ItemType.character && el != ItemType.weapon).toList();
       for (final type in types) {
-        expect(() => service.getItemAscensionStatsForCharts(type), throwsA(isA<Exception>()));
+        expect(() => service.getItemAscensionStatsForCharts(type), throwsA(isA<Exception>()), reason: 'Should be of expected type');
       }
     });
   });
@@ -127,8 +127,8 @@ void main() {
 
       for (final stat in validForCharacters) {
         final items = service.getItemsAscensionStats(stat, ItemType.character);
-        expect(items.isNotEmpty, isTrue);
-        expect(items.length, characters.where((el) => el.subStatType == stat).length);
+        expect(items.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(items.length, characters.where((el) => el.subStatType == stat).length, reason: 'Should match expected value');
 
         for (final item in items) {
           checkItemCommonWithName(item);
@@ -137,8 +137,8 @@ void main() {
 
       for (final stat in validForWeapons) {
         final items = service.getItemsAscensionStats(stat, ItemType.weapon);
-        expect(items.isNotEmpty, isTrue);
-        expect(items.length, weapons.where((el) => el.subStatType == stat).length);
+        expect(items.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(items.length, weapons.where((el) => el.subStatType == stat).length, reason: 'Should match expected value');
 
         for (final item in items) {
           checkItemCommonWithName(item);

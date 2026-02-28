@@ -34,8 +34,7 @@ void main() {
     'Initial state',
     () => expect(
       UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService).state,
-      const UrlPageState.loading(),
-    ),
+      const UrlPageState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<UrlPageBloc, UrlPageState>(
@@ -48,10 +47,10 @@ void main() {
         case UrlPageStateLoading():
           throw InvalidStateError();
         case UrlPageStateLoaded():
-          expect(state.hasInternetConnection, true);
-          expect(state.mapUrl.startsWith(bloc.officialMapUrl), true);
-          expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true);
-          expect(state.userAgent, deviceInfoService.userAgent);
+          expect(state.hasInternetConnection, true, reason: 'Should match expected value (property=hasInternetConnection, expected=true)');
+          expect(state.mapUrl.startsWith(bloc.officialMapUrl), true, reason: 'Should match expected value (property=officialMapUrl), expected=true)');
+          expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true, reason: 'Should match expected value (property=dailyCheckInUrl), expected=true)');
+          expect(state.userAgent, deviceInfoService.userAgent, reason: 'Should match expected value (property=userAgent)');
       }
     },
   );

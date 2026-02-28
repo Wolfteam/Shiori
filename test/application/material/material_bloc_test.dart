@@ -33,7 +33,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading()),
+    () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Load from key', () {
@@ -50,13 +50,13 @@ void main() {
           case MaterialStateLoaded():
             checkTranslation(state.name, canBeNull: false);
             checkAsset(state.fullImage);
-            expect(state.rarity, 2);
-            expect(state.type, MaterialType.common);
+            expect(state.rarity, 2, reason: 'Should match expected value (property=rarity, expected=2)');
+            expect(state.type, MaterialType.common, reason: 'Should match expected value (property=type, expected=MaterialType.common)');
             checkItemsCommonWithName(state.characters);
             checkItemsCommonWithName(state.weapons);
             checkItemsCommonWithName(state.droppedBy);
-            expect(state.days, isEmpty);
-            expect(state.obtainedFrom, isNotEmpty);
+            expect(state.days, isEmpty, reason: 'Should be empty (property=days)');
+            expect(state.obtainedFrom, isNotEmpty, reason: 'Should not be empty (property=obtainedFrom)');
             final items = state.obtainedFrom.expand((el) => el.items).toList();
             for (final item in items) {
               checkItemKeyAndImage(item.key, item.image);

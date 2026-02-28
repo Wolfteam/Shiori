@@ -39,7 +39,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(ChartElementsBloc(genshinService).state, const ChartElementsState.loading()),
+    () => expect(ChartElementsBloc(genshinService).state, const ChartElementsState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {

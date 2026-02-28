@@ -52,7 +52,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(WeaponBloc(genshinService, telemetryService, dataService, resourceService).state, const WeaponState.loading()),
+    () => expect(WeaponBloc(genshinService, telemetryService, dataService, resourceService).state, const WeaponState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Load from key', () {
@@ -61,22 +61,22 @@ void main() {
         case WeaponStateLoading():
           throw InvalidStateError();
         case WeaponStateLoaded():
-          expect(state.key, key);
-          expect(state.name, 'Aquila Favonia');
+          expect(state.key, key, reason: 'Should match expected value (property=key)');
+          expect(state.name, 'Aquila Favonia', reason: 'Should match expected value (property=name, expected=\'Aquila Favonia\')');
           checkAsset(state.fullImage);
           checkTranslation(state.description, canBeNull: false);
-          expect(state.rarity, 5);
-          expect(state.atk, 48);
-          expect(state.secondaryStatValue, 9);
-          expect(state.secondaryStat, StatType.physDmgBonus);
-          expect(state.locationType, ItemLocationType.gacha);
-          expect(state.weaponType, WeaponType.sword);
-          expect(state.isInInventory, isInInventory);
-          expect(state.ascensionMaterials, isNotEmpty);
-          expect(state.refinements, isNotEmpty);
-          expect(state.characters, isNotEmpty);
-          expect(state.stats, isNotEmpty);
-          expect(state.craftingMaterials, isEmpty);
+          expect(state.rarity, 5, reason: 'Should match expected value (property=rarity, expected=5)');
+          expect(state.atk, 48, reason: 'Should match expected value (property=atk, expected=48)');
+          expect(state.secondaryStatValue, 9, reason: 'Should match expected value (property=secondaryStatValue, expected=9)');
+          expect(state.secondaryStat, StatType.physDmgBonus, reason: 'Should match expected value (property=secondaryStat, expected=StatType.physDmgBonus)');
+          expect(state.locationType, ItemLocationType.gacha, reason: 'Should match expected value (property=locationType, expected=ItemLocationType.gacha)');
+          expect(state.weaponType, WeaponType.sword, reason: 'Should match expected value (property=weaponType, expected=WeaponType.sword)');
+          expect(state.isInInventory, isInInventory, reason: 'Should match expected value (property=isInInventory)');
+          expect(state.ascensionMaterials, isNotEmpty, reason: 'Should not be empty (property=ascensionMaterials)');
+          expect(state.refinements, isNotEmpty, reason: 'Should not be empty (property=refinements)');
+          expect(state.characters, isNotEmpty, reason: 'Should not be empty (property=characters)');
+          expect(state.stats, isNotEmpty, reason: 'Should not be empty (property=stats)');
+          expect(state.craftingMaterials, isEmpty, reason: 'Should be empty (property=craftingMaterials)');
       }
     }
 

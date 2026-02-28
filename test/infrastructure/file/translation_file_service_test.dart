@@ -21,12 +21,12 @@ void main() {
           checkTranslation(translation.description, canBeNull: false);
         }
 
-        expect(translation.skills, isNotEmpty);
-        expect(translation.skills.length, equals(detail.skills.length));
-        expect(translation.passives, isNotEmpty);
-        expect(translation.passives.length, equals(detail.passives.length));
-        expect(translation.constellations, isNotEmpty);
-        expect(translation.constellations.length, equals(detail.constellations.length));
+        expect(translation.skills, isNotEmpty, reason: 'Should not be empty (property=skills, key=${character.key}, lang=${lang.name})');
+        expect(translation.skills.length, equals(detail.skills.length), reason: 'Should equal expected value (property=skills, key=${character.key}, lang=${lang.name})');
+        expect(translation.passives, isNotEmpty, reason: 'Should not be empty (property=passives, key=${character.key}, lang=${lang.name})');
+        expect(translation.passives.length, equals(detail.passives.length), reason: 'Should equal expected value (property=passives, key=${character.key}, lang=${lang.name})');
+        expect(translation.constellations, isNotEmpty, reason: 'Should not be empty (property=constellations, key=${character.key}, lang=${lang.name})');
+        expect(translation.constellations.length, equals(detail.constellations.length), reason: 'Should equal expected value (property=constellations, key=${character.key}, lang=${lang.name})');
 
         checkKeys(translation.skills.map((e) => e.key).toList());
         checkKeys(translation.passives.map((e) => e.key).toList());
@@ -35,12 +35,12 @@ void main() {
         for (var i = 0; i < translation.skills.length; i++) {
           final skill = translation.skills[i];
           checkKey(skill.key);
-          expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()));
+          expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()), reason: 'Should match expected value (property=key, characterKey=${character.key}, lang=${lang.name})');
           checkTranslation(skill.title, canBeNull: false);
           if (detail.isComingSoon) {
             continue;
           }
-          expect(skill.stats, isNotEmpty);
+          expect(skill.stats, isNotEmpty, reason: 'Should not be empty (property=stats, key=${character.key}, lang=${lang.name})');
           for (final ability in skill.abilities) {
             final oneAtLeast =
                 ability.name.isNotNullEmptyOrWhitespace ||
@@ -48,7 +48,7 @@ void main() {
                 ability.secondDescription.isNotNullEmptyOrWhitespace;
 
             if (!oneAtLeast) {
-              expect(ability.descriptions, isNotEmpty);
+              expect(ability.descriptions, isNotEmpty, reason: 'Should not be empty (property=descriptions, key=${character.key}, lang=${lang.name})');
               for (final desc in ability.descriptions) {
                 checkTranslation(desc, canBeNull: false);
               }
@@ -56,17 +56,17 @@ void main() {
           }
 
           final stats = service.getCharacterSkillStats(detail.skills[i].stats, skill.stats);
-          expect(stats, isNotEmpty);
+          expect(stats, isNotEmpty, reason: 'Should not be empty (key=${character.key}, lang=${lang.name})');
           switch (detail.skills[i].type) {
             case CharacterSkillType.normalAttack:
             case CharacterSkillType.elementalSkill:
             case CharacterSkillType.elementalBurst:
-              expect(stats.length, 15);
+              expect(stats.length, 15, reason: 'Should match expected value (expected=15, key=${character.key}, lang=${lang.name})');
             case CharacterSkillType.others:
               break;
           }
           final hasPendingParam = stats.expand((el) => el.descriptions).any((el) => el.contains('param'));
-          expect(hasPendingParam, equals(false));
+          expect(hasPendingParam, equals(false), reason: 'Should equal expected value (key=${character.key}, lang=${lang.name})');
 
           for (final stat in stats) {
             for (final description in stat.descriptions) {
@@ -77,7 +77,7 @@ void main() {
 
         for (final passive in translation.passives) {
           checkKey(passive.key);
-          expect(passive.key, isIn(detail.passives.map((e) => e.key).toList()));
+          expect(passive.key, isIn(detail.passives.map((e) => e.key).toList()), reason: 'Should match expected value (property=key, characterKey=${character.key}, lang=${lang.name})');
           if (detail.isComingSoon) {
             continue;
           }
@@ -90,7 +90,7 @@ void main() {
 
         for (final constellation in translation.constellations) {
           checkKey(constellation.key);
-          expect(constellation.key, isIn(detail.constellations.map((e) => e.key).toList()));
+          expect(constellation.key, isIn(detail.constellations.map((e) => e.key).toList()), reason: 'Should match expected value (property=key, characterKey=${character.key}, lang=${lang.name})');
           if (detail.isComingSoon) {
             continue;
           }
@@ -120,12 +120,12 @@ void main() {
           //the ps4 sword, the aloy weapon
           final ignore = ['sword-of-descension', 'predator', 'kagotsurube-isshin'];
           if (!ignore.contains(detail.key)) {
-            expect(translation.refinements.length, 5);
+            expect(translation.refinements.length, 5, reason: 'Should match expected value (property=refinements, expected=5, key=${weapon.key}, lang=${lang.name})');
           } else {
-            expect(translation.refinements, isNotEmpty);
+            expect(translation.refinements, isNotEmpty, reason: 'Should not be empty (property=refinements, key=${weapon.key}, lang=${lang.name})');
           }
         } else {
-          expect(translation.refinements, isEmpty);
+          expect(translation.refinements, isEmpty, reason: 'Should be empty (property=refinements, key=${weapon.key}, lang=${lang.name})');
         }
 
         for (final refinement in translation.refinements) {
@@ -144,7 +144,7 @@ void main() {
         final translation = service.translations.getArtifactTranslation(detail.key);
         checkKey(translation.key);
         checkTranslation(translation.name, canBeNull: false);
-        expect(translation.bonus.length, inInclusiveRange(1, 2));
+        expect(translation.bonus.length, inInclusiveRange(1, 2), reason: 'Should be within expected range (property=bonus, key=${artifact.key}, lang=${lang.name})');
         for (final bonus in translation.bonus) {
           checkTranslation(bonus, canBeNull: false);
         }
