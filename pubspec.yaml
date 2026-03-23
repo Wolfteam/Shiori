@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.8.17+202
+version: 1.8.18+205
 
 environment:
   sdk: '>=3.8.0 <4.0.0'
@@ -25,11 +25,11 @@ dependencies:
   darq: ^2.1.0
   device_info_plus: ^12.3.0
   devicelocale: ^0.8.2
-  envied: ^1.3.2
-  file_picker: ^10.3.7
-  firebase_core: ^4.2.1
-  firebase_messaging: ^16.0.4
-  fl_chart: ^1.1.1
+  envied: ^1.3.3
+  file_picker: ^10.3.10
+  firebase_core: ^4.5.0
+  firebase_messaging: ^16.1.2
+  fl_chart: ^1.2.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -40,27 +40,27 @@ dependencies:
     sdk: flutter
   flutter_markdown_plus: ^1.0.7
   flutter_slidable: ^4.0.3
-  flutter_timezone: ^5.0.1
+  flutter_timezone: ^5.0.2
   fluttertoast: ^8.2.12
   freezed_annotation: ^3.1.0
-  get_it: ^8.2.0
+  get_it: ^9.2.1
   grouped_list: ^6.0.0
-  hive_ce: ^2.11.3
-  hive_ce_flutter: ^2.3.1
+  hive_ce: ^2.19.3
+  hive_ce_flutter: ^2.3.4
   http: ^1.6.0
   image_gallery_saver_plus: ^4.0.1
   infinite_listview: ^1.1.0
-  internet_connection_checker_plus: ^2.9.1+1
+  internet_connection_checker_plus: ^2.9.1+2
   intl: ^0.20.2
-  json_annotation: ^4.9.0
-  logger: ^2.6.2
+  json_annotation: ^4.11.0
+  logger: ^2.7.0
   open_file: ^3.5.11
   package_info_plus: ^9.0.0
   path: ^1.9.1
   path_provider: ^2.1.5
   permission_handler: ^12.0.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^9.10.0
+  purchases_flutter: ^9.15.0
   rate_my_app: ^2.3.2
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
@@ -75,7 +75,7 @@ dependencies:
   url_launcher: ^6.3.2
   version: ^3.0.0
   version_tracker: ^3.0.0
-  wakelock_plus: ^1.4.0
+  wakelock_plus: ^1.5.1
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
@@ -84,19 +84,19 @@ dependencies:
 dev_dependencies:
   bloc_test: ^10.0.0
   build_runner:
-  envied_generator: ^1.3.2
+  envied_generator: ^1.3.3
   flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
-  freezed: ^3.2.3
+  freezed: ^3.2.5
   hive_ce_generator: ^1.11.1
   integration_test:
     sdk: flutter
-  intl_utils: ^2.8.13
-  json_serializable: ^6.11.1
+  intl_utils: ^2.8.14
+  json_serializable: ^6.13.1
   lint: ^2.8.0
-  mockito: ^5.6.1
-  msix: ^3.16.12
+  mockito: ^5.6.3
+  msix: ^3.16.13
 
 flutter_launcher_icons:
   android: "launcher_icon"
