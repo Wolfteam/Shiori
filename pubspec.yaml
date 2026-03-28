@@ -83,7 +83,7 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^10.0.0
-  build_runner:
+  build_runner: 2.13.1
   envied_generator: ^1.3.3
   flutter_launcher_icons: ^0.14.4
   flutter_test:
