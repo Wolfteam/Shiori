@@ -12,10 +12,10 @@ PODS:
   - Firebase/Messaging (12.9.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 12.9.0)
-  - firebase_core (4.5.0):
+  - firebase_core (4.6.0):
     - Firebase/CoreOnly (~> 12.9.0)
     - FlutterMacOS
-  - firebase_messaging (16.1.2):
+  - firebase_messaging (16.1.3):
     - Firebase/CoreOnly (~> 12.9.0)
     - Firebase/Messaging (~> 12.9.0)
     - firebase_core
@@ -85,19 +85,16 @@ PODS:
   - OrderedSet (6.0.3)
   - package_info_plus (0.0.1):
     - FlutterMacOS
-  - path_provider_foundation (0.0.1):
-    - Flutter
-    - FlutterMacOS
   - PromisesObjC (2.4.0)
-  - purchases_flutter (9.15.0):
+  - purchases_flutter (9.16.1):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 17.52.0)
-  - PurchasesHybridCommon (17.52.0):
-    - RevenueCat (= 5.65.0)
+    - PurchasesHybridCommon (= 17.55.1)
+  - PurchasesHybridCommon (17.55.1):
+    - RevenueCat (= 5.67.1)
   - rate_my_app (2.3.2):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.65.0)
+  - RevenueCat (5.67.1)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -125,7 +122,6 @@ DEPENDENCIES:
   - FlutterMacOS (from `Flutter/ephemeral`)
   - open_file_mac (from `Flutter/ephemeral/.symlinks/plugins/open_file_mac/macos`)
   - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
-  - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
   - purchases_flutter (from `Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos`)
   - rate_my_app (from `Flutter/ephemeral/.symlinks/plugins/rate_my_app/darwin`)
   - share_plus (from `Flutter/ephemeral/.symlinks/plugins/share_plus/macos`)
@@ -175,8 +171,6 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/open_file_mac/macos
   package_info_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos
-  path_provider_foundation:
-    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin
   purchases_flutter:
     :path: Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos
   rate_my_app:
@@ -200,8 +194,8 @@ SPEC CHECKSUMS:
   devicelocale: 456a07c045d3113938aa4983065bd8526e2af792
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
   Firebase: 065f2bb395062046623036d8e6dc857bc2521d56
-  firebase_core: c74b220e9288decea6bed17399c249734a7e76d2
-  firebase_messaging: dc3943efc6d8f0212d392d9531a6fd86bc48d1ac
+  firebase_core: 82d678e9e10fc0b515ea1872dd446eee4722f144
+  firebase_messaging: 6e004f3c45170db52669653200c4bf7e7758c699
   FirebaseCore: 428912f751178b06bef0a1793effeb4a5e09a9b8
   FirebaseCoreInternal: b321eafae5362113bc182956fafc9922cfc77b72
   FirebaseInstallations: 7b64ffd006032b2b019a59b803858df5112d9eaa
@@ -216,16 +210,15 @@ SPEC CHECKSUMS:
   open_file_mac: 76f06c8597551249bdb5e8fd8827a98eae0f4585
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
-  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  purchases_flutter: 0c8714b05aa4a0ca1432a9d5e25ff7549282c224
-  PurchasesHybridCommon: 27cca251e01998c53a6b31bf53baf09f84926609
+  purchases_flutter: cfe4e98a24972974fd1567b3153a696e8110fda0
+  PurchasesHybridCommon: ecd9d7c586287625f1225b8de5e24c1021502270
   rate_my_app: cbb89973f870601f80f7bad63aba107260cabc5b
-  RevenueCat: 9a37739bdf42af84dd87e023db340de7e0f9d874
+  RevenueCat: 9357239a9f0978285e68983637b8a602e65c94f0
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
-  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16
-  url_launcher_macos: 0fba8ddabfc33ce0a9afe7c5fef5aab3d8d2d673
+  url_launcher_macos: f87a979182d112f911de6820aefddaf56ee9fbfd
   wakelock_plus: 917609be14d812ddd9e9528876538b2263aaa03b
   window_size: 4bd15034e6e3d0720fd77928a7c42e5492cfece9
 

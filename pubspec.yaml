@@ -23,12 +23,12 @@ environment:
 dependencies:
   bloc_concurrency: ^0.3.0
   darq: ^2.1.0
-  device_info_plus: ^12.3.0
+  device_info_plus: ^12.4.0
   devicelocale: ^0.8.2
-  envied: ^1.3.3
+  envied: ^1.3.4
   file_picker: ^10.3.10
-  firebase_core: ^4.5.0
-  firebase_messaging: ^16.1.2
+  firebase_core: ^4.6.0
+  firebase_messaging: ^16.1.3
   fl_chart: ^1.2.0
   flutter:
     sdk: flutter
@@ -55,23 +55,23 @@ dependencies:
   json_annotation: ^4.11.0
   logger: ^2.7.0
   open_file: ^3.5.11
-  package_info_plus: ^9.0.0
+  package_info_plus: ^9.0.1
   path: ^1.9.1
   path_provider: ^2.1.5
   permission_handler: ^12.0.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^9.15.0
+  purchases_flutter: ^9.16.1
   rate_my_app: ^2.3.2
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
   screenshot: ^3.0.0
-  share_plus: ^12.0.1
-  shared_preferences: ^2.5.4
+  share_plus: ^12.0.2
+  shared_preferences: ^2.5.5
   sprintf: ^7.0.0
   store_checker: ^1.8.0
   synchronized: ^3.4.0
   transparent_image: ^2.0.1
-  two_dimensional_scrollables: ^0.3.8
+  two_dimensional_scrollables: ^0.4.2
   url_launcher: ^6.3.2
   version: ^3.0.0
   version_tracker: ^3.0.0
@@ -84,7 +84,7 @@ dependencies:
 dev_dependencies:
   bloc_test: ^10.0.0
   build_runner:
-  envied_generator: ^1.3.3
+  envied_generator: ^1.3.4
   flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
@@ -95,8 +95,11 @@ dev_dependencies:
   intl_utils: ^2.8.14
   json_serializable: ^6.13.1
   lint: ^2.8.0
-  mockito: ^5.6.3
+  mockito: ^5.6.4
   msix: ^3.16.13
+
+dependency_overrides:
+  analyzer: ^10.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
