@@ -41,8 +41,8 @@ class PurchaseServiceImpl implements PurchaseService {
       final key = Platform.isAndroid
           ? Env.androidPurchasesKey
           : Platform.isIOS || Platform.isMacOS
-              ? Env.iosPurchasesKey
-              : throw Exception('Platform not supported');
+          ? Env.iosPurchasesKey
+          : throw Exception('Platform not supported');
       await Purchases.configure(PurchasesConfiguration(key));
       _initialized = true;
       return true;
@@ -103,8 +103,13 @@ class PurchaseServiceImpl implements PurchaseService {
       //behind the scenes, the purchase method just uses two params...
       //that's why I create dummy object to satisfy the constructor
       const dummyProduct = StoreProduct('', '', '', 0, '0', '');
-      final package = Package(identifier, PackageType.lifetime, dummyProduct, PresentedOfferingContext(offeringIdentifier, null, null));
-      await Purchases.purchasePackage(package);
+      final package = Package(
+        identifier,
+        PackageType.lifetime,
+        dummyProduct,
+        PresentedOfferingContext(offeringIdentifier, null, null),
+      );
+      await Purchases.purchase(PurchaseParams.package(package));
       return true;
     } catch (e, s) {
       _handleError('purchase', e, s);
@@ -159,7 +164,9 @@ class PurchaseServiceImpl implements PurchaseService {
         return _unlockedFeatures!;
       }
 
-      final entitlement = customerInfo.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier && el.isActive);
+      final entitlement = customerInfo.entitlements.active.values.firstWhereOrNull(
+        (el) => el.identifier == entitlementIdentifier && el.isActive,
+      );
       _unlockedFeatures = entitlement != null ? AppUnlockedFeature.values : [];
       return _unlockedFeatures!;
     } catch (e) {

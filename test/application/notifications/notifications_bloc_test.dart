@@ -62,8 +62,7 @@ void main() {
     'Initial state',
     () => expect(
       NotificationsBloc(dataService, notificationService, settingsService, telemetryService).state,
-      const NotificationsState.initial(notifications: []),
-    ),
+      const NotificationsState.initial(notifications: []), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<NotificationsBloc, NotificationsState>(
@@ -84,19 +83,19 @@ void main() {
     },
     act: (bloc) => bloc.add(const NotificationsEvent.init()),
     verify: (bloc) {
-      expect(bloc.state.notifications.length, 1);
-      expect(bloc.state.useTwentyFourHoursFormat, settingsService.useTwentyFourHoursFormat);
+      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
+      expect(bloc.state.useTwentyFourHoursFormat, settingsService.useTwentyFourHoursFormat, reason: 'Should match expected value (property=useTwentyFourHoursFormat)');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, keqingKey);
-      expect(notif.title, defaultTitle);
-      expect(notif.body, defaultBody);
-      expect(notif.note, defaultNote);
+      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
+      expect(notif.itemKey, keqingKey, reason: 'Should match expected value (property=itemKey)');
+      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
+      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
+      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
       checkAsset(notif.image);
-      expect(notif.completesAt, customNotificationCompletesAt);
-      expect(notif.type, AppNotificationType.custom);
-      expect(notif.notificationItemType, AppNotificationItemType.character);
+      expect(notif.completesAt, customNotificationCompletesAt, reason: 'Should match expected value (property=completesAt)');
+      expect(notif.type, AppNotificationType.custom, reason: 'Should match expected value (property=type, expected=AppNotificationType.custom)');
+      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Should match expected value (property=notificationItemType, expected=AppNotificationItemType.character)');
     },
   );
 
@@ -119,7 +118,7 @@ void main() {
     act: (bloc) => bloc.add(const NotificationsEvent.delete(id: 0, type: AppNotificationType.custom)),
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.custom)).called(1);
-      expect(bloc.state.notifications, isEmpty);
+      expect(bloc.state.notifications, isEmpty, reason: 'Should be empty (property=notifications)');
     },
   );
 
@@ -138,17 +137,17 @@ void main() {
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       verify(notificationService.scheduleNotification(any, any, any, any, any)).called(1);
-      expect(bloc.state.notifications.length, 1);
+      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, fragileResinKey);
-      expect(notif.title, defaultTitle);
-      expect(notif.body, defaultBody);
-      expect(notif.note, defaultNote);
+      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
+      expect(notif.itemKey, fragileResinKey, reason: 'Should match expected value (property=itemKey)');
+      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
+      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
+      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin);
-      expect(notif.currentResinValue, 0);
+      expect(notif.type, AppNotificationType.resin, reason: 'Should match expected value (property=type, expected=AppNotificationType.resin)');
+      expect(notif.currentResinValue, 0, reason: 'Should match expected value (property=currentResinValue, expected=0)');
     },
   );
 
@@ -166,18 +165,18 @@ void main() {
       ..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
-      expect(bloc.state.notifications.length, 1);
+      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, fragileResinKey);
-      expect(notif.title, defaultTitle);
-      expect(notif.body, defaultBody);
-      expect(notif.note, defaultNote);
+      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
+      expect(notif.itemKey, fragileResinKey, reason: 'Should match expected value (property=itemKey)');
+      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
+      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
+      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin);
-      expect(notif.currentResinValue, 100);
-      expect(notif.completesAt.difference(DateTime.now()).inSeconds, lessThanOrEqualTo(10));
+      expect(notif.type, AppNotificationType.resin, reason: 'Should match expected value (property=type, expected=AppNotificationType.resin)');
+      expect(notif.currentResinValue, 100, reason: 'Should match expected value (property=currentResinValue, expected=100)');
+      expect(notif.completesAt.difference(DateTime.now()).inSeconds, lessThanOrEqualTo(10), reason: 'Should be less than expected (property=inSeconds)');
     },
   );
 
@@ -201,20 +200,20 @@ void main() {
       ..add(const NotificationsEvent.init())
       ..add(const NotificationsEvent.reduceHours(id: 0, type: AppNotificationType.custom, hoursToReduce: 2)),
     verify: (bloc) {
-      expect(bloc.state.notifications.length, 1);
+      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
       verify(notificationService.cancelNotification(0, AppNotificationType.custom)).called(1);
       verify(notificationService.scheduleNotification(any, any, any, any, any)).called(1);
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, keqingKey);
-      expect(notif.title, defaultTitle);
-      expect(notif.body, defaultBody);
-      expect(notif.note, defaultNote);
+      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
+      expect(notif.itemKey, keqingKey, reason: 'Should match expected value (property=itemKey)');
+      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
+      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
+      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.custom);
-      expect(notif.notificationItemType, AppNotificationItemType.character);
-      expect(notif.completesAt, lessThanOrEqualTo(now.add(const Duration(hours: 1))));
+      expect(notif.type, AppNotificationType.custom, reason: 'Should match expected value (property=type, expected=AppNotificationType.custom)');
+      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Should match expected value (property=notificationItemType, expected=AppNotificationItemType.character)');
+      expect(notif.completesAt, lessThanOrEqualTo(now.add(const Duration(hours: 1))), reason: 'Should be less than expected (property=completesAt)');
     },
   );
 }

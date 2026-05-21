@@ -116,8 +116,7 @@ void main() {
         settingsService,
         deviceInfoService,
       ).state,
-      defaultState,
-    ),
+      defaultState, reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {
@@ -236,10 +235,10 @@ void main() {
       skip: 1,
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.isInternetAvailable, isNull);
-        expect(state.isBusy, isFalse);
-        expect(state.workingGameCodes.length, 1);
-        expect(state.expiredGameCodes.length, 1);
+        expect(state.isInternetAvailable, isNull, reason: 'Should be null (property=isInternetAvailable)');
+        expect(state.isBusy, isFalse, reason: 'Should be false (property=isBusy)');
+        expect(state.workingGameCodes.length, 1, reason: 'Should match expected value (property=workingGameCodes, expected=1)');
+        expect(state.expiredGameCodes.length, 1, reason: 'Should match expected value (property=expiredGameCodes, expected=1)');
       },
     );
 
@@ -262,10 +261,10 @@ void main() {
       skip: 2,
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.isInternetAvailable, isNull);
-        expect(state.isBusy, isFalse);
-        expect(state.workingGameCodes.length, 0);
-        expect(state.expiredGameCodes.length, 0);
+        expect(state.isInternetAvailable, isNull, reason: 'Should be null (property=isInternetAvailable)');
+        expect(state.isBusy, isFalse, reason: 'Should be false (property=isBusy)');
+        expect(state.workingGameCodes.length, 0, reason: 'Should match expected value (property=workingGameCodes, expected=0)');
+        expect(state.expiredGameCodes.length, 0, reason: 'Should match expected value (property=expiredGameCodes, expected=0)');
       },
     );
   });

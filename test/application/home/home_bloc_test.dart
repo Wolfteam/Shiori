@@ -41,21 +41,21 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(HomeBloc(genshinService, settingsService, localeService).state, const HomeState.loading()));
+  test('Initial state', () => expect(HomeBloc(genshinService, settingsService, localeService).state, const HomeState.loading(), reason: 'Should match expected value (property=state)'));
 
   void checkState(HomeState state, AppServerResetTimeType resetTimeType, {bool checkServerDate = true}) {
     switch (state) {
       case HomeStateLoading():
         throw InvalidStateError();
       case HomeStateLoaded():
-        expect(state.charAscMaterials, isNotEmpty);
-        expect(state.weaponAscMaterials, isNotEmpty);
-        expect(state.day, isIn(expectedDays));
+        expect(state.charAscMaterials, isNotEmpty, reason: 'Should not be empty (property=charAscMaterials)');
+        expect(state.weaponAscMaterials, isNotEmpty, reason: 'Should not be empty (property=weaponAscMaterials)');
+        expect(state.day, isIn(expectedDays), reason: 'Should match expected value (property=day)');
         if (checkServerDate) {
           final serverDate = genshinService.getServerDate(resetTimeType);
-          expect(state.day, serverDate.weekday);
+          expect(state.day, serverDate.weekday, reason: 'Should match expected value (property=day)');
           final dayName = localeService.getDayNameFromDate(serverDate);
-          expect(dayName, state.dayName);
+          expect(dayName, state.dayName, reason: 'Should match expected value');
         }
 
         final allChars = genshinService.characters.getCharactersForCard();
@@ -64,12 +64,12 @@ void main() {
           checkKey(material.key);
           checkTranslation(material.name, canBeNull: false);
           checkAsset(material.image);
-          expect(material.days, isNotEmpty);
-          expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
+          expect(material.days, isNotEmpty, reason: 'Should not be empty (property=days)');
+          expect(material.days.every((day) => expectedDays.contains(day)), isTrue, reason: 'Should be true (property=contains(day)), isTrue)');
           if (material.characters.isEmpty) {
             final charsThatUseThisMaterial = allChars.where((c) => c.materials.contains(material.key)).toList();
             for (final char in charsThatUseThisMaterial) {
-              expect(char.isComingSoon, isTrue);
+              expect(char.isComingSoon, isTrue, reason: 'Should be true (property=isComingSoon)');
             }
           }
           checkItemsCommonWithName(material.characters, checkEmpty: material.characters.isNotEmpty);
@@ -79,8 +79,8 @@ void main() {
           checkKey(material.key);
           checkTranslation(material.name, canBeNull: false);
           checkAsset(material.image);
-          expect(material.days, isNotEmpty);
-          expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
+          expect(material.days, isNotEmpty, reason: 'Should not be empty (property=days)');
+          expect(material.days.every((day) => expectedDays.contains(day)), isTrue, reason: 'Should be true (property=contains(day)), isTrue)');
           checkItemsCommonWithName(material.weapons);
         }
 
@@ -147,9 +147,9 @@ void main() {
           final now = DateTime.now();
           final charsForBirthday = genshinService.characters.getCharacterBirthdays(month: now.month, day: now.day);
           checkState(state, AppServerResetTimeType.northAmerica, checkServerDate: false);
-          expect(state.charAscMaterials.length, charMaterials.length);
-          expect(state.weaponAscMaterials.length, weaponMaterials.length);
-          expect(state.characterImgBirthday.length, charsForBirthday.length);
+          expect(state.charAscMaterials.length, charMaterials.length, reason: 'Should match expected value (property=charAscMaterials)');
+          expect(state.weaponAscMaterials.length, weaponMaterials.length, reason: 'Should match expected value (property=weaponAscMaterials)');
+          expect(state.characterImgBirthday.length, charsForBirthday.length, reason: 'Should match expected value (property=characterImgBirthday)');
       }
     },
   );

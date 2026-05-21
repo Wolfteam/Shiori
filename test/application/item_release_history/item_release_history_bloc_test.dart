@@ -34,8 +34,7 @@ void main() {
     'Initial state',
     () => expect(
       ItemReleaseHistoryBloc(genshinService, telemetryService).state,
-      const ItemReleaseHistoryState.loading(),
-    ),
+      const ItemReleaseHistoryState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   group('Init', () {
@@ -49,12 +48,12 @@ void main() {
           case ItemReleaseHistoryStateLoading():
             throw InvalidStateError();
           case ItemReleaseHistoryStateInitial():
-            expect(state.itemKey, 'keqing');
-            expect(state.history.isNotEmpty, isTrue);
+            expect(state.itemKey, 'keqing', reason: 'Should match expected value (property=itemKey, expected=\'keqing\')');
+            expect(state.history.isNotEmpty, isTrue, reason: 'Should be true (property=history)');
             for (final history in state.history) {
-              expect(history.version >= 1, isTrue);
+              expect(history.version >= 1, isTrue, reason: 'Should be true (property=version >= 1, isTrue)');
               for (final dates in history.dates) {
-                expect(dates.until.isAfter(dates.from), isTrue);
+                expect(dates.until.isAfter(dates.from), isTrue, reason: 'Should be true (property=from))');
               }
             }
         }

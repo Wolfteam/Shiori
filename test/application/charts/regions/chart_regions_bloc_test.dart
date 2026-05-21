@@ -32,7 +32,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ChartRegionsBloc(genshinService).state, const ChartRegionsState.loading()));
+  test('Initial state', () => expect(ChartRegionsBloc(genshinService).state, const ChartRegionsState.loading(), reason: 'Should match expected value (property=state)'));
 
   blocTest<ChartRegionsBloc, ChartRegionsState>(
     'Init emits loaded state',

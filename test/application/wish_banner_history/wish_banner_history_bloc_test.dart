@@ -37,7 +37,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(WishBannerHistoryBloc(genshinService).state, const WishBannerHistoryState.loading()),
+    () => expect(WishBannerHistoryBloc(genshinService).state, const WishBannerHistoryState.loading(), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<WishBannerHistoryBloc, WishBannerHistoryState>(
@@ -72,18 +72,18 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods);
-              expect(state.filteredPeriods, isNotEmpty);
-              expect(state.sortDirectionType, isDefault ? SortDirectionType.desc : SortDirectionType.asc);
-              expect(state.groupedType, type);
-              expect(state.selectedItemKeys, isEmpty);
+              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
+              expect(state.filteredPeriods, isNotEmpty, reason: 'Should not be empty (property=filteredPeriods)');
+              expect(state.sortDirectionType, isDefault ? SortDirectionType.desc : SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType)');
+              expect(state.groupedType, type, reason: 'Should match expected value (property=groupedType)');
+              expect(state.selectedItemKeys, isEmpty, reason: 'Should be empty (property=selectedItemKeys)');
               for (final period in state.filteredPeriods) {
                 if (isDefault) {
-                  expect(period.groupingKey == period.groupingTitle, isTrue);
+                  expect(period.groupingKey == period.groupingTitle, isTrue, reason: 'Should be true (property=groupingTitle)');
                 } else {
-                  expect(period.groupingKey != period.groupingTitle, isTrue);
+                  expect(period.groupingKey != period.groupingTitle, isTrue, reason: 'Should be true (property=groupingTitle)');
                 }
-                expect(period.parts, isNotEmpty);
+                expect(period.parts, isNotEmpty, reason: 'Should not be empty (property=parts)');
               }
           }
         },
@@ -114,11 +114,11 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods);
-              expect(state.filteredPeriods, isNotEmpty);
-              expect(state.sortDirectionType, type);
-              expect(state.groupedType, WishBannerGroupedType.version);
-              expect(state.selectedItemKeys, isEmpty);
+              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
+              expect(state.filteredPeriods, isNotEmpty, reason: 'Should not be empty (property=filteredPeriods)');
+              expect(state.sortDirectionType, type, reason: 'Should match expected value (property=sortDirectionType)');
+              expect(state.groupedType, WishBannerGroupedType.version, reason: 'Should match expected value (property=groupedType, expected=WishBannerGroupedType.version)');
+              expect(state.selectedItemKeys, isEmpty, reason: 'Should be empty (property=selectedItemKeys)');
           }
         },
       );
@@ -153,11 +153,11 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods);
-              expect(state.filteredPeriods.length == 1, isTrue);
-              expect(state.filteredPeriods.first.groupingKey, key);
-              expect(state.groupedType, groupType);
-              expect(state.selectedItemKeys, [key]);
+              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
+              expect(state.filteredPeriods.length == 1, isTrue, reason: 'Should be true (property=length == 1)');
+              expect(state.filteredPeriods.first.groupingKey, key, reason: 'Should match expected value (property=groupingKey)');
+              expect(state.groupedType, groupType, reason: 'Should match expected value (property=groupedType)');
+              expect(state.selectedItemKeys, [key], reason: 'Should match expected value (property=selectedItemKeys)');
           }
         },
       );
@@ -176,10 +176,10 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods);
-              expect(state.filteredPeriods.length > 1, isTrue);
-              expect(state.groupedType, groupType);
-              expect(state.selectedItemKeys, []);
+              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
+              expect(state.filteredPeriods.length > 1, isTrue, reason: 'Should be true (property=length > 1, isTrue)');
+              expect(state.groupedType, groupType, reason: 'Should match expected value (property=groupedType)');
+              expect(state.selectedItemKeys, [], reason: 'Should match expected value (property=selectedItemKeys)');
           }
         },
       );

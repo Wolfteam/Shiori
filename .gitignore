@@ -151,3 +151,6 @@ app.*.symbols
 
 # FVM Version Cache
 .fvm/
+
+# JetBrains Junie
+.junie/

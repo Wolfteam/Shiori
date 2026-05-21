@@ -173,7 +173,7 @@ void main() {
     );
   }
 
-  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded()));
+  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded(), reason: 'Should match expected value (property=state)'));
 
   blocTest<CustomBuildsBloc, CustomBuildsState>(
     'Create build for $keqingKey',
@@ -184,32 +184,32 @@ void main() {
     act: (bloc) => bloc.add(const CustomBuildsEvent.load()),
     verify: (bloc) {
       final state = bloc.state;
-      expect(state.builds.length, 1);
+      expect(state.builds.length, 1, reason: 'Should match expected value (property=builds, expected=1)');
 
       final build = state.builds.first;
-      expect(build.character.key, keqingKey);
-      expect(build.character.roleType, CharacterRoleType.dps);
-      expect(build.type, CharacterRoleType.dps);
-      expect(build.subType, CharacterRoleSubType.electro);
-      expect(build.showOnCharacterDetail, true);
-      expect(build.isRecommended, true);
-      expect(build.weapons.length, 1);
+      expect(build.character.key, keqingKey, reason: 'Should match expected value (property=key)');
+      expect(build.character.roleType, CharacterRoleType.dps, reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.dps)');
+      expect(build.type, CharacterRoleType.dps, reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)');
+      expect(build.subType, CharacterRoleSubType.electro, reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)');
+      expect(build.showOnCharacterDetail, true, reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)');
+      expect(build.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
+      expect(build.weapons.length, 1, reason: 'Should match expected value (property=weapons, expected=1)');
 
       final weapon = build.weapons.first;
-      expect(weapon.key == aquilaFavoniaKey, true);
-      expect(weapon.refinement == 5, true);
+      expect(weapon.key == aquilaFavoniaKey, true, reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)');
+      expect(weapon.refinement == 5, true, reason: 'Should match expected value (property=refinement == 5, expected=true)');
 
       final artifacts = build.artifacts;
-      expect(artifacts.length, 5);
-      expect(artifacts.every((el) => el.key == thunderingFuryKey), true);
-      expect(artifacts.every((el) => el.subStats.length > 2), true);
-      expect(artifacts.map((e) => e.type).toSet().length == 5, true);
-      expect(artifacts.map((e) => e.statType).toSet().length == 5, true);
+      expect(artifacts.length, 5, reason: 'Should match expected value (expected=5)');
+      expect(artifacts.every((el) => el.key == thunderingFuryKey), true, reason: 'Should match expected value (property=key == thunderingFuryKey), true)');
+      expect(artifacts.every((el) => el.subStats.length > 2), true, reason: 'Should match expected value (property=length > 2), true)');
+      expect(artifacts.map((e) => e.type).toSet().length == 5, true, reason: 'Should match expected value (property=length == 5, true)');
+      expect(artifacts.map((e) => e.statType).toSet().length == 5, true, reason: 'Should match expected value (property=length == 5, true)');
 
       final teams = build.teamCharacters;
-      expect(teams.length == 3, true);
+      expect(teams.length == 3, true, reason: 'Should match expected value (property=length == 3, expected=true)');
 
-      expect(build.skillPriorities.length == 3, true);
+      expect(build.skillPriorities.length == 3, true, reason: 'Should match expected value (property=length == 3, expected=true)');
     },
   );
 
@@ -226,7 +226,7 @@ void main() {
       ..add(CustomBuildsEvent.delete(key: deleteKey)),
     skip: 1,
     verify: (bloc) {
-      expect(bloc.state.builds.any((el) => el.character.key == ganyuKey), false);
+      expect(bloc.state.builds.any((el) => el.character.key == ganyuKey), false, reason: 'Should match expected value (property=key == ganyuKey), false)');
     },
   );
 }

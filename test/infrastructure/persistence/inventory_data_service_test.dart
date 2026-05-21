@@ -69,20 +69,20 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.inventory.addCharacterToInventory(''), throwsArgumentError);
+      expect(dataService.inventory.addCharacterToInventory(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist in inventory', () async {
       await dataService.inventory.addCharacterToInventory(charKey);
       final int count = dataService.inventory.getItemQuantityFromInventory(charKey, ItemType.character);
-      expect(count, 1);
+      expect(count, 1, reason: 'Should match expected value (expected=1)');
     });
 
     test('which exists in inventory', () async {
       await dataService.inventory.addCharacterToInventory(charKey);
       await dataService.inventory.addCharacterToInventory(charKey);
       final int count = dataService.inventory.getItemQuantityFromInventory(charKey, ItemType.character);
-      expect(count, 1);
+      expect(count, 1, reason: 'Should match expected value (expected=1)');
     });
   });
 
@@ -107,20 +107,20 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.inventory.deleteCharacterFromInventory(''), throwsArgumentError);
+      expect(dataService.inventory.deleteCharacterFromInventory(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist in inventory', () async {
       await dataService.inventory.deleteCharacterFromInventory(charKey);
       final bool exists = dataService.inventory.isItemInInventory(charKey, ItemType.character);
-      expect(exists, isFalse);
+      expect(exists, isFalse, reason: 'Should be false');
     });
 
     test('which exists in inventory', () async {
       await dataService.inventory.addCharacterToInventory(charKey);
       await dataService.inventory.deleteCharacterFromInventory(charKey);
       final bool exists = dataService.inventory.isItemInInventory(charKey, ItemType.character);
-      expect(exists, isFalse);
+      expect(exists, isFalse, reason: 'Should be false');
     });
   });
 
@@ -145,20 +145,20 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.inventory.addWeaponToInventory(''), throwsArgumentError);
+      expect(dataService.inventory.addWeaponToInventory(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist in inventory', () async {
       await dataService.inventory.addWeaponToInventory(weaponKey);
       final int count = dataService.inventory.getItemQuantityFromInventory(weaponKey, ItemType.weapon);
-      expect(count, 1);
+      expect(count, 1, reason: 'Should match expected value (expected=1)');
     });
 
     test('which exists in inventory', () async {
       await dataService.inventory.addWeaponToInventory(weaponKey);
       await dataService.inventory.addWeaponToInventory(weaponKey);
       final int count = dataService.inventory.getItemQuantityFromInventory(weaponKey, ItemType.weapon);
-      expect(count, 1);
+      expect(count, 1, reason: 'Should match expected value (expected=1)');
     });
   });
 
@@ -183,20 +183,20 @@ void main() {
     });
 
     test('invalid item key', () {
-      expect(dataService.inventory.deleteWeaponFromInventory(''), throwsArgumentError);
+      expect(dataService.inventory.deleteWeaponFromInventory(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('which does not exist in inventory', () async {
       await dataService.inventory.deleteWeaponFromInventory(weaponKey);
       final bool exists = dataService.inventory.isItemInInventory(weaponKey, ItemType.weapon);
-      expect(exists, isFalse);
+      expect(exists, isFalse, reason: 'Should be false');
     });
 
     test('which exists in inventory', () async {
       await dataService.inventory.addCharacterToInventory(weaponKey);
       await dataService.inventory.deleteWeaponFromInventory(weaponKey);
       final bool exists = dataService.inventory.isItemInInventory(weaponKey, ItemType.weapon);
-      expect(exists, isFalse);
+      expect(exists, isFalse, reason: 'Should be false');
     });
   });
 
@@ -237,11 +237,11 @@ void main() {
         }
 
         int count = dataService.inventory.getItemQuantityFromInventory(key, type);
-        expect(count, quantity);
+        expect(count, quantity, reason: 'Should match expected value');
 
         dataService.inventory.deleteItemsFromInventory(type);
         count = dataService.inventory.getItemQuantityFromInventory(key, type);
-        expect(count, isZero);
+        expect(count, isZero, reason: 'Should match expected value');
       });
     }
   });
@@ -267,18 +267,18 @@ void main() {
     });
 
     test('no data exist', () {
-      expect(dataService.inventory.deleteAllUsedMaterialItems(), completes);
+      expect(dataService.inventory.deleteAllUsedMaterialItems(), completes, reason: 'Should match expected value (property=deleteAllUsedMaterialItems())');
     });
 
     test('data exists', () async {
       await dataService.inventory.addMaterialToInventory(materialKey, 999);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, 666);
       int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, 666);
+      expect(used, 666, reason: 'Should match expected value (expected=666)');
 
       await dataService.inventory.deleteAllUsedMaterialItems();
       used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
     });
   });
 
@@ -303,18 +303,18 @@ void main() {
     });
 
     test('no data exist', () {
-      expect(dataService.inventory.deleteAllUsedInventoryItems(), completes);
+      expect(dataService.inventory.deleteAllUsedInventoryItems(), completes, reason: 'Should match expected value (property=deleteAllUsedInventoryItems())');
     });
 
     test('data exists', () async {
       await dataService.inventory.addMaterialToInventory(materialKey, 999);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, 666);
       int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, 666);
+      expect(used, 666, reason: 'Should match expected value (expected=666)');
 
       await dataService.inventory.deleteAllUsedInventoryItems();
       used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
     });
   });
 
@@ -340,16 +340,16 @@ void main() {
 
     test('no data exist', () {
       final chars = dataService.inventory.getAllCharactersInInventory();
-      expect(chars.isEmpty, isTrue);
+      expect(chars.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       await dataService.inventory.addCharacterToInventory(charKey);
       final chars = dataService.inventory.getAllCharactersInInventory();
-      expect(chars.length, 1);
+      expect(chars.length, 1, reason: 'Should match expected value (expected=1)');
 
       final char = chars.first;
-      expect(char.key, charKey);
+      expect(char.key, charKey, reason: 'Should match expected value (property=key)');
     });
   });
 
@@ -375,8 +375,8 @@ void main() {
 
     test('no data exist', () {
       final data = dataService.inventory.getAllMaterialsInInventory();
-      expect(data.isNotEmpty, isTrue);
-      expect(data.every((el) => el.quantity == 0 && el.usedQuantity == 0), isTrue);
+      expect(data.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(data.every((el) => el.quantity == 0 && el.usedQuantity == 0), isTrue, reason: 'Should be true (property=usedQuantity == 0), isTrue)');
     });
 
     test('data exists', () async {
@@ -385,12 +385,12 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, quantity);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, used);
       final data = dataService.inventory.getAllMaterialsInInventory();
-      expect(data.isNotEmpty, isTrue);
-      expect(data.where((el) => el.key != materialKey).every((el) => el.quantity == 0 && el.usedQuantity == 0), isTrue);
+      expect(data.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(data.where((el) => el.key != materialKey).every((el) => el.quantity == 0 && el.usedQuantity == 0), isTrue, reason: 'Should be true (property=usedQuantity == 0), isTrue)');
 
       final material = data.firstWhere((el) => el.key == materialKey);
-      expect(material.quantity, quantity);
-      expect(material.usedQuantity, used);
+      expect(material.quantity, quantity, reason: 'Should match expected value (property=quantity)');
+      expect(material.usedQuantity, used, reason: 'Should match expected value (property=usedQuantity)');
     });
   });
 
@@ -416,16 +416,16 @@ void main() {
 
     test('no data exist', () {
       final weapons = dataService.inventory.getAllWeaponsInInventory();
-      expect(weapons.isEmpty, isTrue);
+      expect(weapons.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
       await dataService.inventory.addWeaponToInventory(weaponKey);
       final weapons = dataService.inventory.getAllWeaponsInInventory();
-      expect(weapons.length, 1);
+      expect(weapons.length, 1, reason: 'Should match expected value (expected=1)');
 
       final weapon = weapons.first;
-      expect(weapon.key, weaponKey);
+      expect(weapon.key, weaponKey, reason: 'Should match expected value (property=key)');
     });
   });
 
@@ -450,19 +450,19 @@ void main() {
     });
 
     test('item key is not valid', () {
-      expect(() => dataService.inventory.getItemQuantityFromInventory('', ItemType.material), throwsArgumentError);
+      expect(() => dataService.inventory.getItemQuantityFromInventory('', ItemType.material), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item does not exist', () {
       final int quantity = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(quantity, isZero);
+      expect(quantity, isZero, reason: 'Should match expected value');
     });
 
     test('item exists', () async {
       const int expected = 666;
       await dataService.inventory.addMaterialToInventory(materialKey, expected);
       final int quantity = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(quantity, expected);
+      expect(quantity, expected, reason: 'Should match expected value');
     });
   });
 
@@ -487,30 +487,30 @@ void main() {
     });
 
     test('item key is not valid', () {
-      expect(dataService.inventory.addMaterialToInventory('', 666), throwsArgumentError);
+      expect(dataService.inventory.addMaterialToInventory('', 666), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item quantity is not valid', () {
-      expect(dataService.inventory.addMaterialToInventory(materialKey, -1), throwsArgumentError);
+      expect(dataService.inventory.addMaterialToInventory(materialKey, -1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item does not exist thus it gets added', () async {
       int count = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
 
       await dataService.inventory.addMaterialToInventory(materialKey, 666);
       count = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(count, 666);
+      expect(count, 666, reason: 'Should match expected value (expected=666)');
     });
 
     test('item already exists thus it gets updated', () async {
       await dataService.inventory.addMaterialToInventory(materialKey, 666);
       int count = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(count, 666);
+      expect(count, 666, reason: 'Should match expected value (expected=666)');
 
       await dataService.inventory.addMaterialToInventory(materialKey, 333);
       count = dataService.inventory.getItemQuantityFromInventory(materialKey, ItemType.material);
-      expect(count, 333);
+      expect(count, 333, reason: 'Should match expected value (expected=333)');
     });
   });
 
@@ -536,13 +536,13 @@ void main() {
 
     for (final type in ItemType.values) {
       test('item key is not valid for type = ${type.name}', () {
-        expect(() => dataService.inventory.isItemInInventory('', type), throwsArgumentError);
+        expect(() => dataService.inventory.isItemInInventory('', type), throwsArgumentError, reason: 'Should throw expected exception');
       });
 
       test('no data exist for type = ${type.name}', () {
         final String key = getItemKey(type);
         final bool exist = dataService.inventory.isItemInInventory(key, type);
-        expect(exist, isFalse);
+        expect(exist, isFalse, reason: 'Should be false');
       });
 
       test('data exist for type = ${type.name}', () async {
@@ -558,7 +558,7 @@ void main() {
             return;
         }
         final bool exist = dataService.inventory.isItemInInventory(key, type);
-        expect(exist, isTrue);
+        expect(exist, isTrue, reason: 'Should be true');
       });
     }
   });
@@ -584,12 +584,12 @@ void main() {
     });
 
     test('item key is not valid', () {
-      expect(() => dataService.inventory.getUsedMaterialQuantity(''), throwsArgumentError);
+      expect(() => dataService.inventory.getUsedMaterialQuantity(''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('no data exist', () {
       final int count = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('data exists', () async {
@@ -599,7 +599,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, quantity);
       await dataService.inventory.useMaterialFromInventory(calcId, materialKey, expected);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, expected);
+      expect(used, expected, reason: 'Should match expected value');
     });
   });
 
@@ -624,24 +624,24 @@ void main() {
     });
 
     test('calc key is not valid', () {
-      expect(() => dataService.inventory.redistributeMaterial(-1, [], materialKey, 0), throwsArgumentError);
+      expect(() => dataService.inventory.redistributeMaterial(-1, [], materialKey, 0), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item key is not valid', () {
-      expect(() => dataService.inventory.redistributeMaterial(1, [], '', 0), throwsArgumentError);
+      expect(() => dataService.inventory.redistributeMaterial(1, [], '', 0), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('current quantity is not valid', () {
-      expect(() => dataService.inventory.redistributeMaterial(1, [], materialKey, -1), throwsArgumentError);
+      expect(() => dataService.inventory.redistributeMaterial(1, [], materialKey, -1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('not being used and provided materials array is empty', () async {
       const int available = 666;
       final int remaining = await dataService.inventory.redistributeMaterial(1, [], materialKey, available);
-      expect(remaining, available);
+      expect(remaining, available, reason: 'Should match expected value');
 
       final used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
     });
 
     test('not being used and required quantity is less than available', () async {
@@ -650,10 +650,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(required, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(1, materials, materialKey, available);
-      expect(remaining, available - required);
+      expect(remaining, available - required, reason: 'Should match expected value');
 
       final used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, required);
+      expect(used, required, reason: 'Should match expected value');
     });
 
     test('not being used and required quantity equals available', () async {
@@ -661,10 +661,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(available, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(1, materials, materialKey, available);
-      expect(remaining, isZero);
+      expect(remaining, isZero, reason: 'Should match expected value');
 
       final used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, available);
+      expect(used, available, reason: 'Should match expected value');
     });
 
     test('not being used and required quantity is greater than available', () async {
@@ -672,10 +672,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(available * 2, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(1, materials, materialKey, available);
-      expect(remaining, isZero);
+      expect(remaining, isZero, reason: 'Should match expected value');
 
       final used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, available);
+      expect(used, available, reason: 'Should match expected value');
     });
 
     test('being used and provided materials array is empty', () async {
@@ -684,10 +684,10 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(calcId, materialKey, 10);
       final int remaining = await dataService.inventory.redistributeMaterial(calcId, [], materialKey, available);
-      expect(remaining, available);
+      expect(remaining, available, reason: 'Should match expected value');
 
       final updatedUsed = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(updatedUsed, isZero);
+      expect(updatedUsed, isZero, reason: 'Should match expected value');
     });
 
     test('being used and required quantity is less than available', () async {
@@ -700,10 +700,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(required, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(calcId, materials, materialKey, available);
-      expect(remaining, available - required);
+      expect(remaining, available - required, reason: 'Should match expected value');
 
       final updatedUsed = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(updatedUsed, required);
+      expect(updatedUsed, required, reason: 'Should match expected value');
     });
 
     test('being used and required quantity equals available', () async {
@@ -715,10 +715,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(available, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(calcId, materials, materialKey, available);
-      expect(remaining, isZero);
+      expect(remaining, isZero, reason: 'Should match expected value');
 
       final updatedUsed = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(updatedUsed, available);
+      expect(updatedUsed, available, reason: 'Should match expected value');
     });
 
     test('not being used and required quantity is greater than available', () async {
@@ -730,10 +730,10 @@ void main() {
       final material = genshinService.materials.getMaterial(materialKey);
       final materials = [ItemAscensionMaterialModel.fromMaterial(available * 2, material, '')];
       final int remaining = await dataService.inventory.redistributeMaterial(calcId, materials, materialKey, available);
-      expect(remaining, isZero);
+      expect(remaining, isZero, reason: 'Should match expected value');
 
       final updatedUsed = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(updatedUsed, available);
+      expect(updatedUsed, available, reason: 'Should match expected value');
     });
   });
 
@@ -758,21 +758,21 @@ void main() {
     });
 
     test('calc key is not valid', () {
-      expect(dataService.inventory.useMaterialFromInventory(-1, materialKey, 666), throwsArgumentError);
+      expect(dataService.inventory.useMaterialFromInventory(-1, materialKey, 666), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item key is not valid', () {
-      expect(dataService.inventory.useMaterialFromInventory(1, '', 666), throwsArgumentError);
+      expect(dataService.inventory.useMaterialFromInventory(1, '', 666), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('quantity is not valid', () {
-      expect(dataService.inventory.useMaterialFromInventory(1, materialKey, -1), throwsArgumentError);
+      expect(dataService.inventory.useMaterialFromInventory(1, materialKey, -1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item is not in inventory', () async {
       await dataService.inventory.useMaterialFromInventory(1, materialKey, 666);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
     });
 
     test('quantity to use is zero', () async {
@@ -780,7 +780,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, 0);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
     });
 
     test('quantity to use is greater than available', () async {
@@ -789,7 +789,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, required);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, available);
+      expect(used, available, reason: 'Should match expected value');
     });
 
     test('quantity to use is less than available', () async {
@@ -798,7 +798,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, required);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, required);
+      expect(used, required, reason: 'Should match expected value');
     });
 
     test('quantity to use equals available', () async {
@@ -806,7 +806,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(1, materialKey, available);
       final int used = dataService.inventory.getUsedMaterialQuantity(materialKey);
-      expect(used, available);
+      expect(used, available, reason: 'Should match expected value');
     });
   });
 
@@ -831,11 +831,11 @@ void main() {
     });
 
     test('calc key is not valid', () {
-      expect(dataService.inventory.clearUsedInventoryItems(-1), throwsArgumentError);
+      expect(dataService.inventory.clearUsedInventoryItems(-1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('data does not exist', () {
-      expect(dataService.inventory.clearUsedInventoryItems(1), completes);
+      expect(dataService.inventory.clearUsedInventoryItems(1), completes, reason: 'Should match expected value (property=clearUsedInventoryItems(1))');
     });
 
     test('data exists and no item key is provided', () async {
@@ -845,10 +845,10 @@ void main() {
       await dataService.inventory.clearUsedInventoryItems(1);
 
       final int usedA = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, materialKey);
-      expect(usedA, isZero);
+      expect(usedA, isZero, reason: 'Should match expected value');
 
       final int usedB = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(2, materialKey);
-      expect(usedB, 5);
+      expect(usedB, 5, reason: 'Should match expected value (expected=5)');
     });
 
     test('data exists and item key is provided', () async {
@@ -860,10 +860,10 @@ void main() {
       await dataService.inventory.clearUsedInventoryItems(1, onlyItemKey: materialKey);
 
       int used = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, materialKey);
-      expect(used, isZero);
+      expect(used, isZero, reason: 'Should match expected value');
 
       used = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, primogem);
-      expect(used, 10);
+      expect(used, 10, reason: 'Should match expected value (expected=10)');
     });
   });
 
@@ -888,16 +888,16 @@ void main() {
     });
 
     test('calc key is not valid', () {
-      expect(() => dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(-1, materialKey), throwsArgumentError);
+      expect(() => dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(-1, materialKey), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('item key is not valid', () {
-      expect(() => dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, ''), throwsArgumentError);
+      expect(() => dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, ''), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('no data exist', () {
       final int count = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(1, materialKey);
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('data exists', () async {
@@ -907,7 +907,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, available);
       await dataService.inventory.useMaterialFromInventory(calcKey, materialKey, used);
       final int count = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(calcKey, materialKey);
-      expect(count, used);
+      expect(count, used, reason: 'Should match expected value');
     });
   });
 
@@ -934,7 +934,7 @@ void main() {
     for (final type in ItemType.values) {
       test('of type ${type.name} when no data exist', () {
         final items = dataService.inventory.getItemsForRedistribution(type);
-        expect(items.isEmpty, isTrue);
+        expect(items.isEmpty, isTrue, reason: 'Should be true');
       });
 
       test('of type ${type.name} when data exists', () async {
@@ -950,11 +950,11 @@ void main() {
             return;
         }
         final items = dataService.inventory.getItemsForRedistribution(type);
-        expect(items.length, 1);
+        expect(items.length, 1, reason: 'Should match expected value (expected=1)');
 
         final item = items.first;
-        expect(item.key, itemKey);
-        expect(item.quantity, type == ItemType.material ? 666 : 1);
+        expect(item.key, itemKey, reason: 'Should match expected value (property=key)');
+        expect(item.quantity, type == ItemType.material ? 666 : 1, reason: 'Should match expected value (property=quantity)');
       });
     }
   });
@@ -981,7 +981,7 @@ void main() {
 
     test('no data exist', () {
       final bk = dataService.inventory.getDataForBackup();
-      expect(bk, isEmpty);
+      expect(bk, isEmpty, reason: 'Should be empty');
     });
 
     test('data exists', () async {
@@ -990,7 +990,7 @@ void main() {
       await dataService.inventory.addMaterialToInventory(materialKey, 666);
 
       final bk = dataService.inventory.getDataForBackup();
-      expect(bk.length, 3);
+      expect(bk.length, 3, reason: 'Should match expected value (expected=3)');
 
       const expected = <String, ItemType>{
         charKey: ItemType.character,
@@ -1001,9 +1001,9 @@ void main() {
         final kvp = expected.entries.elementAt(i);
         final bkItem = bk[i];
 
-        expect(bkItem.itemKey, kvp.key);
-        expect(bkItem.quantity, kvp.value == ItemType.material ? 666 : 1);
-        expect(bkItem.type, kvp.value.index);
+        expect(bkItem.itemKey, kvp.key, reason: 'Should match expected value (property=itemKey)');
+        expect(bkItem.quantity, kvp.value == ItemType.material ? 666 : 1, reason: 'Should match expected value (property=quantity)');
+        expect(bkItem.type, kvp.value.index, reason: 'Should match expected value (property=type)');
       }
     });
   });
@@ -1031,14 +1031,14 @@ void main() {
     test('no data to restore and no previous data exist', () async {
       await dataService.inventory.restoreFromBackup([]);
       final count = dataService.inventory.getDataForBackup().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('no data to restore and previous data exist', () async {
       await dataService.inventory.addCharacterToInventory(charKey);
       await dataService.inventory.restoreFromBackup([]);
       final count = dataService.inventory.getDataForBackup().length;
-      expect(count, isZero);
+      expect(count, isZero, reason: 'Should match expected value');
     });
 
     test('there is data to restore and previous data exist', () async {
@@ -1052,10 +1052,10 @@ void main() {
       await dataService.inventory.restoreFromBackup(bk);
 
       final count = dataService.inventory.getDataForBackup().length;
-      expect(count, bk.length);
+      expect(count, bk.length, reason: 'Should match expected value');
       for (final bkItem in bk) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(bkItem.itemKey, ItemType.values[bkItem.type]);
-        expect(quantity, bkItem.quantity);
+        expect(quantity, bkItem.quantity, reason: 'Should match expected value');
       }
     });
   });
@@ -1081,12 +1081,12 @@ void main() {
     });
 
     test('calc key is not valid', () {
-      expect(() => dataService.inventory.getUsedMaterialKeysByCalcKey(-1), throwsArgumentError);
+      expect(() => dataService.inventory.getUsedMaterialKeysByCalcKey(-1), throwsArgumentError, reason: 'Should throw expected exception');
     });
 
     test('no data exist', () {
       final List<String> keys = dataService.inventory.getUsedMaterialKeysByCalcKey(666);
-      expect(keys.isEmpty, isTrue);
+      expect(keys.isEmpty, isTrue, reason: 'Should be true');
     });
 
     test('data exists', () async {
@@ -1099,8 +1099,8 @@ void main() {
       }
 
       final List<String> keys = dataService.inventory.getUsedMaterialKeysByCalcKey(calcId);
-      expect(keys.length, expected.length);
-      expect(keys, expected.keys.toList());
+      expect(keys.length, expected.length, reason: 'Should match expected value');
+      expect(keys, expected.keys.toList(), reason: 'Should match expected value');
     });
   });
 }

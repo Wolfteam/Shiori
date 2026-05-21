@@ -10,13 +10,13 @@ void main() {
       () {
         final completesAt = NotificationTimerBloc().state.completesAt;
         final smallDifference = now.difference(completesAt).inSeconds < 1;
-        expect(smallDifference, true);
+        expect(smallDifference, true, reason: 'Should match expected value (expected=true)');
       },
     );
 
     test(
       'duration is zero',
-      () => expect(NotificationTimerBloc().state.remaining, Duration.zero),
+      () => expect(NotificationTimerBloc().state.remaining, Duration.zero, reason: 'Should match expected value (property=remaining, expected=Duration.zero)'),
     );
   });
 
@@ -27,11 +27,11 @@ void main() {
     wait: const Duration(seconds: 3),
     verify: (bloc) {
       final completesAt = now.add(const Duration(seconds: 30));
-      expect(bloc.state.completesAt, completesAt);
+      expect(bloc.state.completesAt, completesAt, reason: 'Should match expected value (property=completesAt)');
 
       //It is 26 cause we waited 3 seconds
       final diff = bloc.state.remaining.inSeconds - 26;
-      expect(diff, lessThanOrEqualTo(1));
+      expect(diff, lessThanOrEqualTo(1), reason: 'Should be less than expected');
     },
   );
 
@@ -41,7 +41,7 @@ void main() {
     seed: () => NotificationTimerState.loaded(completesAt: now, remaining: Duration.zero),
     act: (bloc) => bloc.add(const NotificationTimerEvent.refresh(ticks: 1)),
     verify: (bloc) {
-      expect(bloc.state, NotificationTimerState.loaded(completesAt: now, remaining: Duration.zero));
+      expect(bloc.state, NotificationTimerState.loaded(completesAt: now, remaining: Duration.zero), reason: 'Should match expected value (property=state)');
     },
   );
 }

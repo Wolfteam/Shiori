@@ -55,8 +55,7 @@ void main() {
     'Initial state',
     () => expect(
       InventoryBloc(genshinService, dataService, telemetryService).state,
-      const InventoryState.loaded(characters: [], weapons: [], materials: []),
-    ),
+      const InventoryState.loaded(characters: [], weapons: [], materials: []), reason: 'Should match expected value (property=state)'),
   );
 
   blocTest<InventoryBloc, InventoryState>(
@@ -77,7 +76,7 @@ void main() {
       final weapon = genshinService.weapons.getWeaponForCard(aquilaFavoniaKey);
       final materials = dataService.inventory.getAllMaterialsInInventory();
       final material = materials.firstWhere((el) => el.key == moraKey);
-      expect(material.quantity, 20000);
+      expect(material.quantity, 20000, reason: 'Should match expected value (property=quantity, expected=20000)');
       return [
         InventoryState.loaded(
           characters: [character],
@@ -148,7 +147,7 @@ void main() {
       expect: () {
         final materials = dataService.inventory.getAllMaterialsInInventory();
         final material = materials.firstWhere((el) => el.key == moraKey);
-        expect(material.quantity, 100000);
+        expect(material.quantity, 100000, reason: 'Should match expected value (property=quantity, expected=100000)');
         return [
           InventoryState.loaded(
             characters: [],
@@ -224,7 +223,7 @@ void main() {
       expect: () {
         final materials = dataService.inventory.getAllMaterialsInInventory();
         final material = materials.firstWhere((el) => el.key == moraKey);
-        expect(material.quantity, 0);
+        expect(material.quantity, 0, reason: 'Should match expected value (property=quantity, expected=0)');
         return [
           InventoryState.loaded(
             characters: [],
@@ -296,7 +295,7 @@ void main() {
       skip: 2,
       expect: () {
         final materials = dataService.inventory.getAllMaterialsInInventory();
-        expect(materials.every((el) => el.quantity == 0), isTrue);
+        expect(materials.every((el) => el.quantity == 0), isTrue, reason: 'Should be true (property=quantity == 0), isTrue)');
         return [
           InventoryState.loaded(
             characters: [],
