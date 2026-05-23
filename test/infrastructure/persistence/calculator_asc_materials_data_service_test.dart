@@ -124,12 +124,24 @@ void main() {
     expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
     expect(got.currentLevel, expected.currentLevel, reason: 'Should match expected value (property=currentLevel)');
     expect(got.desiredLevel, expected.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-    expect(got.currentAscensionLevel, expected.currentAscensionLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-    expect(got.desiredAscensionLevel, expected.desiredAscensionLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
+    expect(
+      got.currentAscensionLevel,
+      expected.currentAscensionLevel,
+      reason: 'Should match expected value (property=currentAscensionLevel)',
+    );
+    expect(
+      got.desiredAscensionLevel,
+      expected.desiredAscensionLevel,
+      reason: 'Should match expected value (property=desiredAscensionLevel)',
+    );
     expect(got.isCharacter, expected.isCharacter, reason: 'Should match expected value (property=isCharacter)');
     expect(got.isWeapon, expected.isWeapon, reason: 'Should match expected value (property=isWeapon)');
     expect(got.isActive, expected.isActive, reason: 'Should match expected value (property=isActive)');
-    expect(got.useMaterialsFromInventory, expected.useMaterialsFromInventory, reason: 'Should match expected value (property=useMaterialsFromInventory)');
+    expect(
+      got.useMaterialsFromInventory,
+      expected.useMaterialsFromInventory,
+      reason: 'Should match expected value (property=useMaterialsFromInventory)',
+    );
     if (expected.isCharacter) {
       expect(expected.skills, isNotEmpty, reason: 'Should not be empty (property=skills)');
       for (int j = 0; j < got.skills.length; j++) {
@@ -176,7 +188,7 @@ void main() {
       expect(sessions.length, 1, reason: 'Should match expected value (expected=1)');
       final session = sessions.first;
       expect(session.key >= 0, isTrue, reason: 'Should be true (property=key >= 0, isTrue)');
-      expect(session.name, 'Dummy', reason: 'Should match expected value (property=name, expected=\'Dummy\')');
+      expect(session.name, 'Dummy', reason: "Should match expected value (property=name, expected='Dummy')");
       expect(session.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
       expect(session.position, 0, reason: 'Should match expected value (property=position, expected=0)');
       expect(session.numberOfCharacters, 0, reason: 'Should match expected value (property=numberOfCharacters, expected=0)');
@@ -244,16 +256,24 @@ void main() {
     });
 
     test('position is not valid', () {
-      expect(dataService.calculator.createSession('New', -1, false), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.createSession('New', -1, false),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('valid call', () async {
       final createdSession = await dataService.calculator.createSession('New', 1, true);
       expect(createdSession.key >= 0, isTrue, reason: 'Should be true (property=key >= 0, isTrue)');
-      expect(createdSession.name, 'New', reason: 'Should match expected value (property=name, expected=\'New\')');
+      expect(createdSession.name, 'New', reason: "Should match expected value (property=name, expected='New')");
       expect(createdSession.position, 1, reason: 'Should match expected value (property=position, expected=1)');
       expect(createdSession.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
-      expect(createdSession.numberOfCharacters, 0, reason: 'Should match expected value (property=numberOfCharacters, expected=0)');
+      expect(
+        createdSession.numberOfCharacters,
+        0,
+        reason: 'Should match expected value (property=numberOfCharacters, expected=0)',
+      );
       expect(createdSession.numberOfWeapons, 0, reason: 'Should match expected value (property=numberOfWeapons, expected=0)');
     });
   });
@@ -279,7 +299,11 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.updateSession(-1, 'Updated', false), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.updateSession(-1, 'Updated', false),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('name is not valid', () {
@@ -287,14 +311,18 @@ void main() {
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.updateSession(1, 'Updated', false), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        dataService.calculator.updateSession(1, 'Updated', false),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
 
     test('valid call', () async {
       final existing = await dataService.calculator.createSession('New', 1, false);
       final updated = await dataService.calculator.updateSession(existing.key, 'Updated', true);
       expect(updated.key, existing.key, reason: 'Should match expected value (property=key)');
-      expect(updated.name, 'Updated', reason: 'Should match expected value (property=name, expected=\'Updated\')');
+      expect(updated.name, 'Updated', reason: "Should match expected value (property=name, expected='Updated')");
       expect(updated.position, existing.position, reason: 'Should match expected value (property=position)');
       expect(updated.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
       expect(updated.numberOfCharacters, 0, reason: 'Should match expected value (property=numberOfCharacters, expected=0)');
@@ -329,14 +357,22 @@ void main() {
     test('session does not exist', () {
       const int key = 666;
       expect(() => dataService.calculator.getSession(key), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
-      expect(dataService.calculator.deleteSession(key), completes, reason: 'Should match expected value (property=deleteSession(key))');
+      expect(
+        dataService.calculator.deleteSession(key),
+        completes,
+        reason: 'Should match expected value (property=deleteSession(key))',
+      );
     });
 
     test('session exists, and gets deleted', () async {
       final session = await dataService.calculator.createSession('Deleted', 0, false);
       expect(() => dataService.calculator.getSession(session.key), returnsNormally, reason: 'Should execute without throwing');
       await dataService.calculator.deleteSession(session.key);
-      expect(() => dataService.calculator.getSession(session.key), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        () => dataService.calculator.getSession(session.key),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
   });
 
@@ -434,11 +470,19 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.addSessionItem(-1, getCharacter(), []), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.addSessionItem(-1, getCharacter(), []),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.addSessionItem(666, getCharacter(), []), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        dataService.calculator.addSessionItem(666, getCharacter(), []),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
 
     test('of type character', () async {
@@ -524,15 +568,27 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.updateSessionItem(-1, 1, getCharacter(), []), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.updateSessionItem(-1, 1, getCharacter(), []),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('position is not valid', () {
-      expect(dataService.calculator.updateSessionItem(1, -1, getCharacter(), []), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.updateSessionItem(1, -1, getCharacter(), []),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.updateSessionItem(666, 1, getCharacter(), []), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        dataService.calculator.updateSessionItem(666, 1, getCharacter(), []),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
 
     test('item does not exist thus a new one gets created', () async {
@@ -589,7 +645,11 @@ void main() {
     });
 
     test('which does not exist, returns normally', () {
-      expect(dataService.calculator.deleteSessionItem(666, 666), completes, reason: 'Should match expected value (property=deleteSessionItem(666, 666))');
+      expect(
+        dataService.calculator.deleteSessionItem(666, 666),
+        completes,
+        reason: 'Should match expected value (property=deleteSessionItem(666, 666))',
+      );
     });
 
     test('which exists and it gets deleted', () async {
@@ -668,12 +728,20 @@ void main() {
     });
 
     test('session does not exist, returns normally', () {
-      expect(dataService.calculator.deleteAllSessionItems(666), completes, reason: 'Should match expected value (property=deleteAllSessionItems(666))');
+      expect(
+        dataService.calculator.deleteAllSessionItems(666),
+        completes,
+        reason: 'Should match expected value (property=deleteAllSessionItems(666))',
+      );
     });
 
     test('session exists but it is empty, returns normally', () async {
       final session = await dataService.calculator.createSession('Delete all items', 0, false);
-      expect(dataService.calculator.deleteAllSessionItems(session.key), completes, reason: 'Should match expected value (property=key))');
+      expect(
+        dataService.calculator.deleteAllSessionItems(session.key),
+        completes,
+        reason: 'Should match expected value (property=key))',
+      );
     });
 
     test('session exists and it is not empty, all items gets deleted', () async {
@@ -805,7 +873,11 @@ void main() {
       expect(availableMora, quantity, reason: 'Should match expected value');
 
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
-      expect(used, weapon.materials.firstWhere((el) => el.key == moraKey).requiredQuantity, reason: 'Should match expected value');
+      expect(
+        used,
+        weapon.materials.firstWhere((el) => el.key == moraKey).requiredQuantity,
+        reason: 'Should match expected value',
+      );
     }
 
     Future<void> runItemUpdateTest(bool useMaterialsFromInventory, bool isActive) async {
@@ -1059,20 +1131,40 @@ void main() {
           expect(gotItem.position, expectedItem.position, reason: 'Should match expected value (property=position)');
           expect(gotItem.currentLevel, expectedItem.currentLevel, reason: 'Should match expected value (property=currentLevel)');
           expect(gotItem.desiredLevel, expectedItem.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-          expect(gotItem.currentAscensionLevel, expectedItem.currentAscensionLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-          expect(gotItem.desiredAscensionLevel, expectedItem.desiredAscensionLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
+          expect(
+            gotItem.currentAscensionLevel,
+            expectedItem.currentAscensionLevel,
+            reason: 'Should match expected value (property=currentAscensionLevel)',
+          );
+          expect(
+            gotItem.desiredAscensionLevel,
+            expectedItem.desiredAscensionLevel,
+            reason: 'Should match expected value (property=desiredAscensionLevel)',
+          );
           expect(gotItem.isCharacter, expectedItem.isCharacter, reason: 'Should match expected value (property=isCharacter)');
           expect(gotItem.isWeapon, expectedItem.isWeapon, reason: 'Should match expected value (property=isWeapon)');
           expect(gotItem.isActive, expectedItem.isActive, reason: 'Should match expected value (property=isActive)');
-          expect(gotItem.useMaterialsFromInventory, expectedItem.useMaterialsFromInventory, reason: 'Should match expected value (property=useMaterialsFromInventory)');
+          expect(
+            gotItem.useMaterialsFromInventory,
+            expectedItem.useMaterialsFromInventory,
+            reason: 'Should match expected value (property=useMaterialsFromInventory)',
+          );
           if (gotItem.isCharacter) {
             expect(gotItem.characterSkills, isNotEmpty, reason: 'Should not be empty (property=characterSkills)');
             for (int j = 0; j < gotItem.characterSkills.length; j++) {
               final gotSkill = gotItem.characterSkills[j];
               final expectedSkill = expectedItem.skills[j];
               expect(gotSkill.skillKey, expectedSkill.key, reason: 'Should match expected value (property=skillKey)');
-              expect(gotSkill.currentLevel, expectedSkill.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(gotSkill.desiredLevel, expectedSkill.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
+              expect(
+                gotSkill.currentLevel,
+                expectedSkill.currentLevel,
+                reason: 'Should match expected value (property=currentLevel)',
+              );
+              expect(
+                gotSkill.desiredLevel,
+                expectedSkill.desiredLevel,
+                reason: 'Should match expected value (property=desiredLevel)',
+              );
               expect(gotSkill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
             }
           } else {
@@ -1172,20 +1264,40 @@ void main() {
         expect(gotItem.position, expectedItem.position, reason: 'Should match expected value (property=position)');
         expect(gotItem.currentLevel, expectedItem.currentLevel, reason: 'Should match expected value (property=currentLevel)');
         expect(gotItem.desiredLevel, expectedItem.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-        expect(gotItem.currentAscensionLevel, expectedItem.currentAscensionLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-        expect(gotItem.desiredAscensionLevel, expectedItem.desiredAscensionLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
+        expect(
+          gotItem.currentAscensionLevel,
+          expectedItem.currentAscensionLevel,
+          reason: 'Should match expected value (property=currentAscensionLevel)',
+        );
+        expect(
+          gotItem.desiredAscensionLevel,
+          expectedItem.desiredAscensionLevel,
+          reason: 'Should match expected value (property=desiredAscensionLevel)',
+        );
         expect(gotItem.isCharacter, expectedItem.isCharacter, reason: 'Should match expected value (property=isCharacter)');
         expect(gotItem.isWeapon, expectedItem.isWeapon, reason: 'Should match expected value (property=isWeapon)');
         expect(gotItem.isActive, expectedItem.isActive, reason: 'Should match expected value (property=isActive)');
-        expect(gotItem.useMaterialsFromInventory, expectedItem.useMaterialsFromInventory, reason: 'Should match expected value (property=useMaterialsFromInventory)');
+        expect(
+          gotItem.useMaterialsFromInventory,
+          expectedItem.useMaterialsFromInventory,
+          reason: 'Should match expected value (property=useMaterialsFromInventory)',
+        );
         if (firstOne) {
           expect(gotItem.skills, isNotEmpty, reason: 'Should not be empty (property=skills)');
           for (int j = 0; j < gotItem.skills.length; j++) {
             final gotSkill = gotItem.skills[j];
             final expectedSkill = expectedItem.characterSkills[j];
             expect(gotSkill.key, expectedSkill.skillKey, reason: 'Should match expected value (property=key)');
-            expect(gotSkill.currentLevel, expectedSkill.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-            expect(gotSkill.desiredLevel, expectedSkill.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
+            expect(
+              gotSkill.currentLevel,
+              expectedSkill.currentLevel,
+              reason: 'Should match expected value (property=currentLevel)',
+            );
+            expect(
+              gotSkill.desiredLevel,
+              expectedSkill.desiredLevel,
+              reason: 'Should match expected value (property=desiredLevel)',
+            );
             expect(gotSkill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
           }
         } else {
@@ -1290,20 +1402,32 @@ void main() {
 
     test('provided data is empty', () async {
       final session = await dataService.calculator.createSession('Dummy', 0, false);
-      expect(dataService.calculator.reorderItems(session.key, []), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderItems(session.key, []),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('data was provided but no previous data exist', () async {
       final session = await dataService.calculator.createSession('Dummy', 0, false);
       final updated = [getCharacter()];
-      expect(dataService.calculator.reorderItems(session.key, updated), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderItems(session.key, updated),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('data was provided and previous data exists but invalid arrays', () async {
       final session = await dataService.calculator.createSession('A', 0, false);
       await dataService.calculator.addSessionItems(session.key, [getCharacter(), getWeapon()]);
       final updated = [getCharacter()];
-      expect(dataService.calculator.reorderItems(session.key, updated), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderItems(session.key, updated),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('valid call', () async {

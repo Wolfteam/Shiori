@@ -113,7 +113,11 @@ void main() {
       expect(gotWeapon.index, expectedWeapon.index, reason: 'Should match expected value (property=index)');
       expect(gotWeapon.refinement, expectedWeapon.refinement, reason: 'Should match expected value (property=refinement)');
       expect(gotWeapon.stat.level, expectedWeapon.stat.level, reason: 'Should match expected value (property=level)');
-      expect(gotWeapon.stat.isAnAscension, expectedWeapon.stat.isAnAscension, reason: 'Should match expected value (property=isAnAscension)');
+      expect(
+        gotWeapon.stat.isAnAscension,
+        expectedWeapon.stat.isAnAscension,
+        reason: 'Should match expected value (property=isAnAscension)',
+      );
     }
   }
 
@@ -156,7 +160,11 @@ void main() {
     expect(got.title, expected.title, reason: 'Should match expected value (property=title)');
     expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
     expect(got.subType, expected.subType, reason: 'Should match expected value (property=subType)');
-    expect(got.showOnCharacterDetail, expected.showOnCharacterDetail, reason: 'Should match expected value (property=showOnCharacterDetail)');
+    expect(
+      got.showOnCharacterDetail,
+      expected.showOnCharacterDetail,
+      reason: 'Should match expected value (property=showOnCharacterDetail)',
+    );
     expect(got.isRecommended, expected.isRecommended, reason: 'Should match expected value (property=isRecommended)');
     expect(got.skillPriorities, expected.skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
     expect(got.subStatsSummary, expected.subStatsSummary, reason: 'Should match expected value (property=subStatsSummary)');
@@ -237,7 +245,11 @@ void main() {
     });
 
     test('build does not exist', () {
-      expect(() => dataService.customBuilds.getCustomBuild(666), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        () => dataService.customBuilds.getCustomBuild(666),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
 
     test('build exists', () async {
@@ -294,7 +306,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('title is not valid', () {
@@ -312,7 +326,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('empty weapons', () {
@@ -330,7 +346,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('empty artifacts', () {
@@ -348,7 +366,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('valid call', () async {
@@ -404,7 +424,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('title is not valid', () {
@@ -422,7 +444,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('weapons are empty', () {
@@ -440,7 +464,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('artifacts are empty', () {
@@ -458,7 +484,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError, reason: 'Should throw expected exception');
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('build does not exist', () {
@@ -476,7 +504,9 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
 
     test('valid call', () async {
@@ -558,9 +588,17 @@ void main() {
         skillPriorities,
       );
 
-      expect(updatedBuild.title, 'Updated', reason: 'Should match expected value (property=title, expected=\'Updated\')');
-      expect(updatedBuild.type, CharacterRoleType.dps, reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)');
-      expect(updatedBuild.subType, CharacterRoleSubType.none, reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.none)');
+      expect(updatedBuild.title, 'Updated', reason: "Should match expected value (property=title, expected='Updated')");
+      expect(
+        updatedBuild.type,
+        CharacterRoleType.dps,
+        reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)',
+      );
+      expect(
+        updatedBuild.subType,
+        CharacterRoleSubType.none,
+        reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.none)',
+      );
       expect(updatedBuild.showOnCharacterDetail, isFalse, reason: 'Should be false (property=showOnCharacterDetail)');
       expect(updatedBuild.isRecommended, isFalse, reason: 'Should be false (property=isRecommended)');
       expect(updatedBuild.skillPriorities, skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
@@ -596,7 +634,11 @@ void main() {
     });
 
     test('build does not exist', () {
-      expect(dataService.customBuilds.deleteCustomBuild(666), completes, reason: 'Should match expected value (property=deleteCustomBuild(666))');
+      expect(
+        dataService.customBuilds.deleteCustomBuild(666),
+        completes,
+        reason: 'Should match expected value (property=deleteCustomBuild(666))',
+      );
     });
 
     test('build exists and gets deleted', () async {
@@ -614,7 +656,11 @@ void main() {
         CharacterSkillType.values,
       );
       await dataService.customBuilds.deleteCustomBuild(build.key);
-      expect(() => dataService.customBuilds.getCustomBuild(build.key), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        () => dataService.customBuilds.getCustomBuild(build.key),
+        throwsA(isA<NotFoundError>()),
+        reason: 'Should be of expected type',
+      );
     });
   });
 
@@ -639,7 +685,11 @@ void main() {
     });
 
     test('invalid key', () {
-      expect(() => dataService.customBuilds.getCustomBuildsForCharacter(''), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        () => dataService.customBuilds.getCustomBuildsForCharacter(''),
+        throwsArgumentError,
+        reason: 'Should throw expected exception',
+      );
     });
 
     test('which does not have any created build', () {
@@ -716,7 +766,7 @@ void main() {
       );
       final bk = dataService.customBuilds.getDataForBackup();
       expect(bk.isNotEmpty, isTrue, reason: 'Should be true');
-      expect(bk.first.characterKey, 'keqing', reason: 'Should match expected value (property=characterKey, expected=\'keqing\')');
+      expect(bk.first.characterKey, 'keqing', reason: "Should match expected value (property=characterKey, expected='keqing')");
     });
   });
 
@@ -741,7 +791,11 @@ void main() {
     });
 
     test('empty backup and no data exist', () {
-      expect(dataService.customBuilds.restoreFromBackup([]), completes, reason: 'Should match expected value (property=restoreFromBackup([]))');
+      expect(
+        dataService.customBuilds.restoreFromBackup([]),
+        completes,
+        reason: 'Should match expected value (property=restoreFromBackup([]))',
+      );
     });
 
     test('empty backup and data exists thus it gets deleted', () async {

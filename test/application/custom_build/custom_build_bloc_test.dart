@@ -211,7 +211,7 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final character = genshinService.characters.getCharactersForCard().first;
-            expect(state.title, 'DPS PRO', reason: 'Should match expected value (property=title, expected=\'DPS PRO\')');
+            expect(state.title, 'DPS PRO', reason: "Should match expected value (property=title, expected='DPS PRO')");
             expect(
               state.type,
               CharacterRoleType.dps,
@@ -269,7 +269,7 @@ void main() {
             expect(
               state.title,
               '$keqingKey pro DPS',
-              reason: 'Should match expected value (property=title, expected=\'$keqingKey pro DPS\')',
+              reason: "Should match expected value (property=title, expected='$keqingKey pro DPS')",
             );
             expect(
               state.type,
@@ -345,7 +345,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.title, 'KEQING PRO', reason: 'Should match expected value (property=title, expected=\'KEQING PRO\')');
+            expect(state.title, 'KEQING PRO', reason: "Should match expected value (property=title, expected='KEQING PRO')");
         }
       },
     );
@@ -771,7 +771,7 @@ void main() {
             expect(
               state.weapons.first.key == 'the-flute',
               true,
-              reason: 'Should match expected value (property=key == \'the-flute\', expected=true)',
+              reason: "Should match expected value (property=key == 'the-flute', expected=true)",
             );
             expect(
               state.weapons.last.key == aquilaFavoniaKey,

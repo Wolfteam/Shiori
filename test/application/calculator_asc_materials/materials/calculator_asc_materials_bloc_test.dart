@@ -176,7 +176,9 @@ void main() {
     'Initial state',
     () => expect(
       getBloc(MockDataService()).state,
-      const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false), reason: 'Should match expected value (property=state)'),
+      const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false),
+      reason: 'Should match expected value (property=state)',
+    ),
   );
 
   group('Init', () {
@@ -392,7 +394,7 @@ void main() {
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
-        expect(createdItem.key, 'ganyu', reason: 'Should match expected value (property=key, expected=\'ganyu\')');
+        expect(createdItem.key, 'ganyu', reason: "Should match expected value (property=key, expected='ganyu')");
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
         expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
@@ -521,7 +523,11 @@ void main() {
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
-        expect(createdItem.key, 'aquila-favonia', reason: 'Should match expected value (property=key, expected=\'aquila-favonia\')');
+        expect(
+          createdItem.key,
+          'aquila-favonia',
+          reason: "Should match expected value (property=key, expected='aquila-favonia')",
+        );
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
         expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
         verify(calcMock.getAllSessionItems(session.key)).called(1);
