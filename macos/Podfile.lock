@@ -1,39 +1,37 @@
 PODS:
-  - connectivity_plus (0.0.1):
-    - FlutterMacOS
   - device_info_plus (0.0.1):
     - FlutterMacOS
   - devicelocale (0.0.1):
     - FlutterMacOS
   - file_picker (0.0.1):
     - FlutterMacOS
-  - Firebase/CoreOnly (12.9.0):
-    - FirebaseCore (~> 12.9.0)
-  - Firebase/Messaging (12.9.0):
+  - Firebase/CoreOnly (12.13.0):
+    - FirebaseCore (~> 12.13.0)
+  - Firebase/Messaging (12.13.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 12.9.0)
-  - firebase_core (4.6.0):
-    - Firebase/CoreOnly (~> 12.9.0)
+    - FirebaseMessaging (~> 12.13.0)
+  - firebase_core (4.9.0):
+    - Firebase/CoreOnly (~> 12.13.0)
     - FlutterMacOS
-  - firebase_messaging (16.1.3):
-    - Firebase/CoreOnly (~> 12.9.0)
-    - Firebase/Messaging (~> 12.9.0)
+  - firebase_messaging (16.2.2):
+    - Firebase/CoreOnly (~> 12.13.0)
+    - Firebase/Messaging (~> 12.13.0)
     - firebase_core
     - FlutterMacOS
-  - FirebaseCore (12.9.0):
-    - FirebaseCoreInternal (~> 12.9.0)
+  - FirebaseCore (12.13.0):
+    - FirebaseCoreInternal (~> 12.13.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/Logger (~> 8.1)
-  - FirebaseCoreInternal (12.9.0):
+  - FirebaseCoreInternal (12.13.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseInstallations (12.9.0):
-    - FirebaseCore (~> 12.9.0)
+  - FirebaseInstallations (12.13.0):
+    - FirebaseCore (~> 12.13.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - PromisesObjC (~> 2.4)
-  - FirebaseMessaging (12.9.0):
-    - FirebaseCore (~> 12.9.0)
-    - FirebaseInstallations (~> 12.9.0)
+  - FirebaseMessaging (12.13.0):
+    - FirebaseCore (~> 12.13.0)
+    - FirebaseInstallations (~> 12.13.0)
     - GoogleDataTransport (~> 10.1)
     - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
     - GoogleUtilities/Environment (~> 8.1)
@@ -91,7 +89,7 @@ PODS:
     - PurchasesHybridCommon (= 17.55.1)
   - PurchasesHybridCommon (17.55.1):
     - RevenueCat (= 5.67.1)
-  - rate_my_app (2.3.2):
+  - rate_my_app (2.4.0):
     - Flutter
     - FlutterMacOS
   - RevenueCat (5.67.1)
@@ -110,7 +108,6 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - connectivity_plus (from `Flutter/ephemeral/.symlinks/plugins/connectivity_plus/macos`)
   - device_info_plus (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos`)
   - devicelocale (from `Flutter/ephemeral/.symlinks/plugins/devicelocale/macos`)
   - file_picker (from `Flutter/ephemeral/.symlinks/plugins/file_picker/macos`)
@@ -147,8 +144,6 @@ SPEC REPOS:
     - RevenueCat
 
 EXTERNAL SOURCES:
-  connectivity_plus:
-    :path: Flutter/ephemeral/.symlinks/plugins/connectivity_plus/macos
   device_info_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos
   devicelocale:
@@ -189,17 +184,16 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/window_size/macos
 
 SPEC CHECKSUMS:
-  connectivity_plus: 4adf20a405e25b42b9c9f87feff8f4b6fde18a4e
   device_info_plus: 4fb280989f669696856f8b129e4a5e3cd6c48f76
   devicelocale: 456a07c045d3113938aa4983065bd8526e2af792
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
-  Firebase: 065f2bb395062046623036d8e6dc857bc2521d56
-  firebase_core: 82d678e9e10fc0b515ea1872dd446eee4722f144
-  firebase_messaging: 6e004f3c45170db52669653200c4bf7e7758c699
-  FirebaseCore: 428912f751178b06bef0a1793effeb4a5e09a9b8
-  FirebaseCoreInternal: b321eafae5362113bc182956fafc9922cfc77b72
-  FirebaseInstallations: 7b64ffd006032b2b019a59b803858df5112d9eaa
-  FirebaseMessaging: 7d6cdbff969127c4151c824fe432f0e301210f15
+  Firebase: 7d62445aeabdaea36f7d372f33052fed9a72514f
+  firebase_core: 8a780c7f989df0ca42dcd55332fc1b203f11f848
+  firebase_messaging: 3cb926039fe036f6b92834334d6e23ab33007f1f
+  FirebaseCore: 58905958aa00a061397a0fd759ae4b55bddb3576
+  FirebaseCoreInternal: 37bee58388fc6d183f0ab1b32d69ae44f2cf8aad
+  FirebaseInstallations: 134bde50e477628ded76070efdb12d515d53f948
+  FirebaseMessaging: 30564b85d2f81a96f9d312bd23acf8186ff092ae
   flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
   flutter_local_notifications: 4bf37a31afde695b56091b4ae3e4d9c7a7e6cda0
   flutter_timezone: d272288c69082ad571630e0d17140b3d6b93dc0c
@@ -213,7 +207,7 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   purchases_flutter: cfe4e98a24972974fd1567b3153a696e8110fda0
   PurchasesHybridCommon: ecd9d7c586287625f1225b8de5e24c1021502270
-  rate_my_app: cbb89973f870601f80f7bad63aba107260cabc5b
+  rate_my_app: 1bd2a80b234634df4af8634da60fe7d0f695d57f
   RevenueCat: 9357239a9f0978285e68983637b8a602e65c94f0
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb

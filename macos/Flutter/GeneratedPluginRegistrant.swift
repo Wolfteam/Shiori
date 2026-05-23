@@ -5,7 +5,6 @@
 import FlutterMacOS
 import Foundation
 
-import connectivity_plus
 import device_info_plus
 import devicelocale
 import file_picker
@@ -26,7 +25,6 @@ import wakelock_plus
 import window_size
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  ConnectivityPlusPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlusPlugin"))
   DeviceInfoPlusMacosPlugin.register(with: registry.registrar(forPlugin: "DeviceInfoPlusMacosPlugin"))
   DevicelocalePlugin.register(with: registry.registrar(forPlugin: "DevicelocalePlugin"))
   FilePickerPlugin.register(with: registry.registrar(forPlugin: "FilePickerPlugin"))

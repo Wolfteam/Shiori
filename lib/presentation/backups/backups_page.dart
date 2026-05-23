@@ -289,18 +289,16 @@ class _Header extends StatelessWidget {
 
   Future<void> _pickFile(S s, BuildContext context) {
     final customFile = Platform.isWindows;
-    return FilePicker.platform
-        .pickFiles(
-          dialogTitle: s.chooseFile,
-          lockParentWindow: true,
-          type: customFile ? FileType.custom : FileType.any,
-          allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
-        )
-        .then((result) {
-          if (context.mounted) {
-            _handlePickerResult(context, result);
-          }
-        });
+    return FilePicker.pickFiles(
+      dialogTitle: s.chooseFile,
+      lockParentWindow: true,
+      type: customFile ? FileType.custom : FileType.any,
+      allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
+    ).then((result) {
+      if (context.mounted) {
+        _handlePickerResult(context, result);
+      }
+    });
   }
 
   void _handlePickerResult(BuildContext context, FilePickerResult? result) {
