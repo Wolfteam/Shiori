@@ -33,6 +33,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access may be requested by web pages opened inside the embedded browser.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location data embedded in photos selected via the file picker may be read. Shiori does not access or store your location.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs permission to save photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
