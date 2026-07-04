@@ -69,7 +69,7 @@ dependencies:
   shared_preferences: ^2.5.5
   sprintf: ^7.0.0
   store_checker: ^1.8.0
-  synchronized: ^3.4.0+1
+  synchronized: ^3.4.1
   transparent_image: ^2.0.1
   two_dimensional_scrollables: ^0.5.2
   url_launcher: ^6.3.2
