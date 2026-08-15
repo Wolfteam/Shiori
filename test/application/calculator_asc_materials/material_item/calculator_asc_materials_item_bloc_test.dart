@@ -43,7 +43,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const CalculatorAscMaterialsItemState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(
+      getBloc().state,
+      const CalculatorAscMaterialsItemState.loading(),
+      reason: 'A freshly built item bloc must start in the loading state before any load event',
+    ),
   );
 
   group('Load', () {
@@ -69,29 +73,53 @@ void main() {
             case CalculatorAscMaterialsItemStateLoaded():
               checkTranslation(state.name);
               checkAsset(state.imageFullPath);
-              expect(state.currentLevel, itemAscensionLevelMap.entries.first.value, reason: 'Should match expected value (property=currentLevel)');
-              expect(state.desiredLevel, maxItemLevel, reason: 'Should match expected value (property=desiredLevel)');
-              expect(state.currentAscensionLevel, minAscensionLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-              expect(state.desiredAscensionLevel, maxAscensionLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
-              expect(state.useMaterialsFromInventory, isFalse, reason: 'Should be false (property=useMaterialsFromInventory)');
+              expect(
+                state.currentLevel,
+                itemAscensionLevelMap.entries.first.value,
+                reason: 'state.currentLevel should equal itemAscensionLevelMap.entries.first.value (Load)',
+              );
+              expect(state.desiredLevel, maxItemLevel, reason: 'state.desiredLevel should equal maxItemLevel (Load)');
+              expect(
+                state.currentAscensionLevel,
+                minAscensionLevel,
+                reason: 'state.currentAscensionLevel should equal minAscensionLevel (Load)',
+              );
+              expect(
+                state.desiredAscensionLevel,
+                maxAscensionLevel,
+                reason: 'state.desiredAscensionLevel should equal maxAscensionLevel (Load)',
+              );
+              expect(
+                state.useMaterialsFromInventory,
+                isFalse,
+                reason: 'state.useMaterialsFromInventory should be false (Load)',
+              );
               if (!isCharacter) {
-                expect(state.skills.isEmpty, isTrue, reason: 'Should be true (property=skills)');
+                expect(state.skills.isEmpty, isTrue, reason: 'state.skills.isEmpty should be true (Load)');
                 return;
               }
 
-              expect(state.skills.length, greaterThanOrEqualTo(3), reason: 'Should be greater than expected (property=skills)');
+              expect(state.skills.length, greaterThanOrEqualTo(3), reason: 'state.skills.length should be >= 3 (Load)');
               for (int i = 0; i < state.skills.length; i++) {
                 final skill = state.skills[i];
                 checkItemKeyAndName(skill.key, skill.name);
-                expect(skill.position == i, isTrue, reason: 'Should be true (property=position == i)');
+                expect(skill.position == i, isTrue, reason: 'skill.position == i should be true (Load)');
 
-                expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-                expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-                expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
+                expect(
+                  skill.currentLevel,
+                  minSkillLevel,
+                  reason: 'skill.currentLevel should equal minSkillLevel (Load)',
+                );
+                expect(skill.isCurrentDecEnabled, isFalse, reason: 'skill.isCurrentDecEnabled should be false (Load)');
+                expect(skill.isCurrentIncEnabled, isFalse, reason: 'skill.isCurrentIncEnabled should be false (Load)');
 
-                expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
-                expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
+                expect(
+                  skill.desiredLevel,
+                  maxSkillLevel,
+                  reason: 'skill.desiredLevel should equal maxSkillLevel (Load)',
+                );
+                expect(skill.isDesiredDecEnabled, isTrue, reason: 'skill.isDesiredDecEnabled should be true (Load)');
+                expect(skill.isDesiredIncEnabled, isFalse, reason: 'skill.isDesiredIncEnabled should be false (Load)');
               }
           }
         },
@@ -162,32 +190,84 @@ void main() {
             case CalculatorAscMaterialsItemStateLoaded():
               checkTranslation(state.name);
               checkAsset(state.imageFullPath);
-              expect(state.currentLevel, currentLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(state.desiredLevel, desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-              expect(state.currentAscensionLevel, currentAscLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-              expect(state.desiredAscensionLevel, desiredAscLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
-              expect(state.useMaterialsFromInventory, isTrue, reason: 'Should be true (property=useMaterialsFromInventory)');
+              expect(
+                state.currentLevel,
+                currentLevel,
+                reason: 'state.currentLevel should equal currentLevel (LoadWith)',
+              );
+              expect(
+                state.desiredLevel,
+                desiredLevel,
+                reason: 'state.desiredLevel should equal desiredLevel (LoadWith)',
+              );
+              expect(
+                state.currentAscensionLevel,
+                currentAscLevel,
+                reason: 'state.currentAscensionLevel should equal currentAscLevel (LoadWith)',
+              );
+              expect(
+                state.desiredAscensionLevel,
+                desiredAscLevel,
+                reason: 'state.desiredAscensionLevel should equal desiredAscLevel (LoadWith)',
+              );
+              expect(
+                state.useMaterialsFromInventory,
+                isTrue,
+                reason: 'state.useMaterialsFromInventory should be true (LoadWith)',
+              );
               if (!isCharacter) {
-                expect(state.skills.isEmpty, isTrue, reason: 'Should be true (property=skills)');
+                expect(state.skills.isEmpty, isTrue, reason: 'state.skills.isEmpty should be true (LoadWith)');
                 return;
               }
 
-              expect(state.skills.length, skills.length, reason: 'Should match expected value (property=skills)');
+              expect(
+                state.skills.length,
+                skills.length,
+                reason: 'state.skills.length should equal skills.length (LoadWith)',
+              );
               for (int i = 0; i < state.skills.length; i++) {
                 final skill = state.skills[i];
                 final expectedSkill = skills[i];
 
-                expect(skill.key, expectedSkill.key, reason: 'Should match expected value (property=key)');
-                expect(skill.name, expectedSkill.name, reason: 'Should match expected value (property=name)');
-                expect(skill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
+                expect(skill.key, expectedSkill.key, reason: 'skill.key should equal expectedSkill.key (LoadWith)');
+                expect(skill.name, expectedSkill.name, reason: 'skill.name should equal expectedSkill.name (LoadWith)');
+                expect(
+                  skill.position,
+                  expectedSkill.position,
+                  reason: 'skill.position should equal expectedSkill.position (LoadWith)',
+                );
 
-                expect(skill.currentLevel, expectedSkill.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-                expect(skill.isCurrentDecEnabled, expectedSkill.isCurrentDecEnabled, reason: 'Should match expected value (property=isCurrentDecEnabled)');
-                expect(skill.isCurrentIncEnabled, expectedSkill.isCurrentIncEnabled, reason: 'Should match expected value (property=isCurrentIncEnabled)');
+                expect(
+                  skill.currentLevel,
+                  expectedSkill.currentLevel,
+                  reason: 'skill.currentLevel should equal expectedSkill.currentLevel (LoadWith)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  expectedSkill.isCurrentDecEnabled,
+                  reason: 'skill.isCurrentDecEnabled should equal expectedSkill.isCurrentDecEnabled (LoadWith)',
+                );
+                expect(
+                  skill.isCurrentIncEnabled,
+                  expectedSkill.isCurrentIncEnabled,
+                  reason: 'skill.isCurrentIncEnabled should equal expectedSkill.isCurrentIncEnabled (LoadWith)',
+                );
 
-                expect(skill.desiredLevel, expectedSkill.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-                expect(skill.isDesiredDecEnabled, expectedSkill.isDesiredDecEnabled, reason: 'Should match expected value (property=isDesiredDecEnabled)');
-                expect(skill.isDesiredIncEnabled, expectedSkill.isDesiredIncEnabled, reason: 'Should match expected value (property=isDesiredIncEnabled)');
+                expect(
+                  skill.desiredLevel,
+                  expectedSkill.desiredLevel,
+                  reason: 'skill.desiredLevel should equal expectedSkill.desiredLevel (LoadWith)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  expectedSkill.isDesiredDecEnabled,
+                  reason: 'skill.isDesiredDecEnabled should equal expectedSkill.isDesiredDecEnabled (LoadWith)',
+                );
+                expect(
+                  skill.isDesiredIncEnabled,
+                  expectedSkill.isDesiredIncEnabled,
+                  reason: 'skill.isDesiredIncEnabled should equal expectedSkill.isDesiredIncEnabled (LoadWith)',
+                );
               }
           }
         },
@@ -224,18 +304,58 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, maxItemLevel, reason: 'Should match expected value (property=desiredLevel)');
-            expect(state.currentAscensionLevel, 2, reason: 'Should match expected value (property=currentAscensionLevel, expected=2)');
-            expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key, reason: 'Should match expected value (property=desiredAscensionLevel)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 50, reason: 'state.currentLevel should equal 50 (Current level changed)');
+            expect(
+              state.desiredLevel,
+              maxItemLevel,
+              reason: 'state.desiredLevel should equal maxItemLevel (Current level changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              2,
+              reason: 'state.currentAscensionLevel should equal 2 (Current level changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              itemAscensionLevelMap.entries.last.key,
+              reason: 'state.desiredAscensionLevel should equal itemAscensionLevelMap.entries.last.key',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Current level changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-              expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Current level changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Current level changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Current level changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                maxSkillLevel,
+                reason: 'skill.desiredLevel should equal maxSkillLevel (Current level changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isFalse,
+                reason: 'skill.isDesiredIncEnabled should be false (Current level changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Current level changed)',
+              );
             }
         }
       },
@@ -271,18 +391,54 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, itemAscensionLevelMap.entries.first.value, reason: 'Should match expected value (property=currentLevel)');
-            expect(state.desiredLevel, 50, reason: 'Should match expected value (property=desiredLevel, expected=50)');
-            expect(state.currentAscensionLevel, 1, reason: 'Should match expected value (property=currentAscensionLevel, expected=1)');
-            expect(state.desiredAscensionLevel, 2, reason: 'Should match expected value (property=desiredAscensionLevel, expected=2)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.currentLevel,
+              itemAscensionLevelMap.entries.first.value,
+              reason: 'state.currentLevel should equal itemAscensionLevelMap.entries.first.value',
+            );
+            expect(state.desiredLevel, 50, reason: 'state.desiredLevel should equal 50 (Desired level changed)');
+            expect(
+              state.currentAscensionLevel,
+              1,
+              reason: 'state.currentAscensionLevel should equal 1 (Desired level changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              2,
+              reason: 'state.desiredAscensionLevel should equal 2 (Desired level changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Desired level changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, 2, reason: 'Should match expected value (property=desiredLevel, expected=2)');
-              expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Desired level changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isFalse,
+                reason: 'skill.isCurrentIncEnabled should be false (Desired level changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Desired level changed)',
+              );
+              expect(skill.desiredLevel, 2, reason: 'skill.desiredLevel should equal 2 (Desired level changed)');
+              expect(
+                skill.isDesiredIncEnabled,
+                isFalse,
+                reason: 'skill.isDesiredIncEnabled should be false (Desired level changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Desired level changed)',
+              );
             }
         }
       },
@@ -303,18 +459,50 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, 70, reason: 'Should match expected value (property=desiredLevel, expected=70)');
-            expect(state.currentAscensionLevel, 2, reason: 'Should match expected value (property=currentAscensionLevel, expected=2)');
-            expect(state.desiredAscensionLevel, 4, reason: 'Should match expected value (property=desiredAscensionLevel, expected=4)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 50, reason: 'state.currentLevel should equal 50 (Level values changed)');
+            expect(state.desiredLevel, 70, reason: 'state.desiredLevel should equal 70 (Level values changed)');
+            expect(
+              state.currentAscensionLevel,
+              2,
+              reason: 'state.currentAscensionLevel should equal 2 (Level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              4,
+              reason: 'state.desiredAscensionLevel should equal 4 (Level values changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Level values changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, 5, reason: 'Should match expected value (property=desiredLevel, expected=5)');
-              expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Level values changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Level values changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Level values changed)',
+              );
+              expect(skill.desiredLevel, 5, reason: 'skill.desiredLevel should equal 5 (Level values changed)');
+              expect(
+                skill.isDesiredIncEnabled,
+                isTrue,
+                reason: 'skill.isDesiredIncEnabled should be true (Level values changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Level values changed)',
+              );
             }
         }
       },
@@ -333,18 +521,54 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 40, reason: 'Should match expected value (property=currentLevel, expected=40)');
-            expect(state.desiredLevel, 40, reason: 'Should match expected value (property=desiredLevel, expected=40)');
-            expect(state.currentAscensionLevel, 2, reason: 'Should match expected value (property=currentAscensionLevel, expected=2)');
-            expect(state.desiredAscensionLevel, 2, reason: 'Should match expected value (property=desiredAscensionLevel, expected=2)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 40, reason: 'state.currentLevel should equal 40 (Level values changed)');
+            expect(state.desiredLevel, 40, reason: 'state.desiredLevel should equal 40 (Level values changed)');
+            expect(
+              state.currentAscensionLevel,
+              2,
+              reason: 'state.currentAscensionLevel should equal 2 (Level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              2,
+              reason: 'state.desiredAscensionLevel should equal 2 (Level values changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Level values changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, minSkillLevel + 1, reason: 'Should match expected value (property=desiredLevel)');
-              expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Level values changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Level values changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Level values changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                minSkillLevel + 1,
+                reason: 'skill.desiredLevel should equal minSkillLevel + 1 (Level values changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isFalse,
+                reason: 'skill.isDesiredIncEnabled should be false (Level values changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Level values changed)',
+              );
             }
         }
       },
@@ -381,18 +605,62 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, maxItemLevel, reason: 'Should match expected value (property=desiredLevel)');
-            expect(state.currentAscensionLevel, 3, reason: 'Should match expected value (property=currentAscensionLevel, expected=3)');
-            expect(state.desiredAscensionLevel, itemAscensionLevelMap.entries.last.key, reason: 'Should match expected value (property=desiredAscensionLevel)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.currentLevel,
+              50,
+              reason: 'state.currentLevel should equal 50 (Current ascension level changed)',
+            );
+            expect(
+              state.desiredLevel,
+              maxItemLevel,
+              reason: 'state.desiredLevel should equal maxItemLevel (Current ascension level changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              3,
+              reason: 'state.currentAscensionLevel should equal 3 (Current ascension level changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              itemAscensionLevelMap.entries.last.key,
+              reason: 'state.desiredAscensionLevel should equal itemAscensionLevelMap.entries.last.key',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Current ascension level changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-              expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Current ascension level changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Current ascension level changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Current ascension level changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                maxSkillLevel,
+                reason: 'skill.desiredLevel should equal maxSkillLevel (Current ascension level changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isFalse,
+                reason: 'skill.isDesiredIncEnabled should be false (Current ascension level changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Current ascension level changed)',
+              );
             }
         }
       },
@@ -429,18 +697,62 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 20, reason: 'Should match expected value (property=currentLevel, expected=20)');
-            expect(state.desiredLevel, 50, reason: 'Should match expected value (property=desiredLevel, expected=50)');
-            expect(state.currentAscensionLevel, itemAscensionLevelMap.keys.first, reason: 'Should match expected value (property=currentAscensionLevel)');
-            expect(state.desiredAscensionLevel, 3, reason: 'Should match expected value (property=desiredAscensionLevel, expected=3)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.currentLevel,
+              20,
+              reason: 'state.currentLevel should equal 20 (Desired ascension level changed)',
+            );
+            expect(
+              state.desiredLevel,
+              50,
+              reason: 'state.desiredLevel should equal 50 (Desired ascension level changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              itemAscensionLevelMap.keys.first,
+              reason: 'state.currentAscensionLevel should equal itemAscensionLevelMap.keys.first',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              3,
+              reason: 'state.desiredAscensionLevel should equal 3 (Desired ascension level changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Desired ascension level changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, 3, reason: 'Should match expected value (property=desiredLevel, expected=3)');
-              expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Desired ascension level changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isFalse,
+                reason: 'skill.isCurrentIncEnabled should be false (Desired ascension level changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Desired ascension level changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                3,
+                reason: 'skill.desiredLevel should equal 3 (Desired ascension level changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isTrue,
+                reason: 'skill.isDesiredIncEnabled should be true (Desired ascension level changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Desired ascension level changed)',
+              );
             }
         }
       },
@@ -461,18 +773,62 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 40, reason: 'Should match expected value (property=currentLevel, expected=40)');
-            expect(state.desiredLevel, 50, reason: 'Should match expected value (property=desiredLevel, expected=50)');
-            expect(state.currentAscensionLevel, 2, reason: 'Should match expected value (property=currentAscensionLevel, expected=2)');
-            expect(state.desiredAscensionLevel, 3, reason: 'Should match expected value (property=desiredAscensionLevel, expected=3)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.currentLevel,
+              40,
+              reason: 'state.currentLevel should equal 40 (Ascension level values changed)',
+            );
+            expect(
+              state.desiredLevel,
+              50,
+              reason: 'state.desiredLevel should equal 50 (Ascension level values changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              2,
+              reason: 'state.currentAscensionLevel should equal 2 (Ascension level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              3,
+              reason: 'state.desiredAscensionLevel should equal 3 (Ascension level values changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Ascension level values changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, 3, reason: 'Should match expected value (property=desiredLevel, expected=3)');
-              expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Ascension level values changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Ascension level values changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Ascension level values changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                3,
+                reason: 'skill.desiredLevel should equal 3 (Ascension level values changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isTrue,
+                reason: 'skill.isDesiredIncEnabled should be true (Ascension level values changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Ascension level values changed)',
+              );
             }
         }
       },
@@ -491,18 +847,62 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, 50, reason: 'Should match expected value (property=desiredLevel, expected=50)');
-            expect(state.currentAscensionLevel, 3, reason: 'Should match expected value (property=currentAscensionLevel, expected=3)');
-            expect(state.desiredAscensionLevel, 3, reason: 'Should match expected value (property=desiredAscensionLevel, expected=3)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.currentLevel,
+              50,
+              reason: 'state.currentLevel should equal 50 (Ascension level values changed)',
+            );
+            expect(
+              state.desiredLevel,
+              50,
+              reason: 'state.desiredLevel should equal 50 (Ascension level values changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              3,
+              reason: 'state.currentAscensionLevel should equal 3 (Ascension level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              3,
+              reason: 'state.desiredAscensionLevel should equal 3 (Ascension level values changed)',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Ascension level values changed)',
+            );
             for (final skill in state.skills) {
-              expect(skill.currentLevel, minItemLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-              expect(skill.desiredLevel, 2, reason: 'Should match expected value (property=desiredLevel, expected=2)');
-              expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minItemLevel,
+                reason: 'skill.currentLevel should equal minItemLevel (Ascension level values changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isTrue,
+                reason: 'skill.isCurrentIncEnabled should be true (Ascension level values changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Ascension level values changed)',
+              );
+              expect(
+                skill.desiredLevel,
+                2,
+                reason: 'skill.desiredLevel should equal 2 (Ascension level values changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isTrue,
+                reason: 'skill.isDesiredIncEnabled should be true (Ascension level values changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Ascension level values changed)',
+              );
             }
         }
       },
@@ -548,25 +948,77 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 40, reason: 'Should match expected value (property=currentLevel, expected=40)');
-            expect(state.desiredLevel, maxItemLevel, reason: 'Should match expected value (property=desiredLevel)');
-            expect(state.currentAscensionLevel, 2, reason: 'Should match expected value (property=currentAscensionLevel, expected=2)');
-            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last, reason: 'Should match expected value (property=desiredAscensionLevel)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 40, reason: 'state.currentLevel should equal 40 (Skill current level changed)');
+            expect(
+              state.desiredLevel,
+              maxItemLevel,
+              reason: 'state.desiredLevel should equal maxItemLevel (Skill current level changed)',
+            );
+            expect(
+              state.currentAscensionLevel,
+              2,
+              reason: 'state.currentAscensionLevel should equal 2 (Skill current level changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              itemAscensionLevelMap.keys.last,
+              reason: 'state.desiredAscensionLevel should equal itemAscensionLevelMap.keys.last',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Skill current level changed)',
+            );
             for (int i = 0; i < state.skills.length; i++) {
               final skill = state.skills[i];
               if (i == 0) {
-                expect(skill.currentLevel, 2, reason: 'Should match expected value (property=currentLevel, expected=2)');
-                expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isTrue, reason: 'Should be true (property=isCurrentDecEnabled)');
+                expect(
+                  skill.currentLevel,
+                  2,
+                  reason: 'skill.currentLevel should equal 2 (Skill current level changed)',
+                );
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isFalse,
+                  reason: 'skill.isCurrentIncEnabled should be false (Skill current level changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentDecEnabled should be true (Skill current level changed)',
+                );
               } else {
-                expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-                expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
+                expect(
+                  skill.currentLevel,
+                  minSkillLevel,
+                  reason: 'skill.currentLevel should equal minSkillLevel (Skill current level changed)',
+                );
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentIncEnabled should be true (Skill current level changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isFalse,
+                  reason: 'skill.isCurrentDecEnabled should be false (Skill current level changed)',
+                );
               }
-              expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-              expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-              expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+              expect(
+                skill.desiredLevel,
+                maxSkillLevel,
+                reason: 'skill.desiredLevel should equal maxSkillLevel (Skill current level changed)',
+              );
+              expect(
+                skill.isDesiredIncEnabled,
+                isFalse,
+                reason: 'skill.isDesiredIncEnabled should be false (Skill current level changed)',
+              );
+              expect(
+                skill.isDesiredDecEnabled,
+                isTrue,
+                reason: 'skill.isDesiredDecEnabled should be true (Skill current level changed)',
+              );
             }
         }
       },
@@ -611,21 +1063,61 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Skill desired level changed)',
+            );
             for (int i = 0; i < state.skills.length; i++) {
               final skill = state.skills[i];
               if (i == 0) {
-                expect(skill.desiredLevel, 9, reason: 'Should match expected value (property=desiredLevel, expected=9)');
-                expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(
+                  skill.desiredLevel,
+                  9,
+                  reason: 'skill.desiredLevel should equal 9 (Skill desired level changed)',
+                );
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredIncEnabled should be true (Skill desired level changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill desired level changed)',
+                );
               } else {
-                expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-                expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(
+                  skill.desiredLevel,
+                  maxSkillLevel,
+                  reason: 'skill.desiredLevel should equal maxSkillLevel (Skill desired level changed)',
+                );
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isFalse,
+                  reason: 'skill.isDesiredIncEnabled should be false (Skill desired level changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill desired level changed)',
+                );
               }
-              expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-              expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
-              expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
+              expect(
+                skill.currentLevel,
+                minSkillLevel,
+                reason: 'skill.currentLevel should equal minSkillLevel (Skill desired level changed)',
+              );
+              expect(
+                skill.isCurrentIncEnabled,
+                isFalse,
+                reason: 'skill.isCurrentIncEnabled should be false (Skill desired level changed)',
+              );
+              expect(
+                skill.isCurrentDecEnabled,
+                isFalse,
+                reason: 'skill.isCurrentDecEnabled should be false (Skill desired level changed)',
+              );
             }
         }
       },
@@ -647,27 +1139,79 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, 90, reason: 'Should match expected value (property=desiredLevel, expected=90)');
-            expect(state.currentAscensionLevel, 3, reason: 'Should match expected value (property=currentAscensionLevel, expected=3)');
-            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last, reason: 'Should match expected value (property=desiredAscensionLevel)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 50, reason: 'state.currentLevel should equal 50 (Skill level values changed)');
+            expect(state.desiredLevel, 90, reason: 'state.desiredLevel should equal 90 (Skill level values changed)');
+            expect(
+              state.currentAscensionLevel,
+              3,
+              reason: 'state.currentAscensionLevel should equal 3 (Skill level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              itemAscensionLevelMap.keys.last,
+              reason: 'state.desiredAscensionLevel should equal itemAscensionLevelMap.keys.last',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Skill level values changed)',
+            );
             for (int i = 0; i < state.skills.length; i++) {
               final skill = state.skills[i];
               if (i == 0) {
-                expect(skill.currentLevel, 4, reason: 'Should match expected value (property=currentLevel, expected=4)');
-                expect(skill.isCurrentIncEnabled, isFalse, reason: 'Should be false (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isTrue, reason: 'Should be true (property=isCurrentDecEnabled)');
-                expect(skill.desiredLevel, 6, reason: 'Should match expected value (property=desiredLevel, expected=6)');
-                expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(skill.currentLevel, 4, reason: 'skill.currentLevel should equal 4 (Skill level values changed)');
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isFalse,
+                  reason: 'skill.isCurrentIncEnabled should be false (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentDecEnabled should be true (Skill level values changed)',
+                );
+                expect(skill.desiredLevel, 6, reason: 'skill.desiredLevel should equal 6 (Skill level values changed)');
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredIncEnabled should be true (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill level values changed)',
+                );
               } else {
-                expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-                expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-                expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-                expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(
+                  skill.currentLevel,
+                  minSkillLevel,
+                  reason: 'skill.currentLevel should equal minSkillLevel (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentIncEnabled should be true (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isFalse,
+                  reason: 'skill.isCurrentDecEnabled should be false (Skill level values changed)',
+                );
+                expect(
+                  skill.desiredLevel,
+                  maxSkillLevel,
+                  reason: 'skill.desiredLevel should equal maxSkillLevel (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isFalse,
+                  reason: 'skill.isDesiredIncEnabled should be false (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill level values changed)',
+                );
               }
             }
         }
@@ -688,27 +1232,79 @@ void main() {
           case CalculatorAscMaterialsItemStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsItemStateLoaded():
-            expect(state.currentLevel, 50, reason: 'Should match expected value (property=currentLevel, expected=50)');
-            expect(state.desiredLevel, 90, reason: 'Should match expected value (property=desiredLevel, expected=90)');
-            expect(state.currentAscensionLevel, 3, reason: 'Should match expected value (property=currentAscensionLevel, expected=3)');
-            expect(state.desiredAscensionLevel, itemAscensionLevelMap.keys.last, reason: 'Should match expected value (property=desiredAscensionLevel)');
-            expect(state.skills.isNotEmpty, isTrue, reason: 'Should be true (property=skills)');
+            expect(state.currentLevel, 50, reason: 'state.currentLevel should equal 50 (Skill level values changed)');
+            expect(state.desiredLevel, 90, reason: 'state.desiredLevel should equal 90 (Skill level values changed)');
+            expect(
+              state.currentAscensionLevel,
+              3,
+              reason: 'state.currentAscensionLevel should equal 3 (Skill level values changed)',
+            );
+            expect(
+              state.desiredAscensionLevel,
+              itemAscensionLevelMap.keys.last,
+              reason: 'state.desiredAscensionLevel should equal itemAscensionLevelMap.keys.last',
+            );
+            expect(
+              state.skills.isNotEmpty,
+              isTrue,
+              reason: 'state.skills.isNotEmpty should be true (Skill level values changed)',
+            );
             for (int i = 0; i < state.skills.length; i++) {
               final skill = state.skills[i];
               if (i == 0) {
-                expect(skill.currentLevel, 3, reason: 'Should match expected value (property=currentLevel, expected=3)');
-                expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isTrue, reason: 'Should be true (property=isCurrentDecEnabled)');
-                expect(skill.desiredLevel, 3, reason: 'Should match expected value (property=desiredLevel, expected=3)');
-                expect(skill.isDesiredIncEnabled, isTrue, reason: 'Should be true (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(skill.currentLevel, 3, reason: 'skill.currentLevel should equal 3 (Skill level values changed)');
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentIncEnabled should be true (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentDecEnabled should be true (Skill level values changed)',
+                );
+                expect(skill.desiredLevel, 3, reason: 'skill.desiredLevel should equal 3 (Skill level values changed)');
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredIncEnabled should be true (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill level values changed)',
+                );
               } else {
-                expect(skill.currentLevel, minSkillLevel, reason: 'Should match expected value (property=currentLevel)');
-                expect(skill.isCurrentIncEnabled, isTrue, reason: 'Should be true (property=isCurrentIncEnabled)');
-                expect(skill.isCurrentDecEnabled, isFalse, reason: 'Should be false (property=isCurrentDecEnabled)');
-                expect(skill.desiredLevel, maxSkillLevel, reason: 'Should match expected value (property=desiredLevel)');
-                expect(skill.isDesiredIncEnabled, isFalse, reason: 'Should be false (property=isDesiredIncEnabled)');
-                expect(skill.isDesiredDecEnabled, isTrue, reason: 'Should be true (property=isDesiredDecEnabled)');
+                expect(
+                  skill.currentLevel,
+                  minSkillLevel,
+                  reason: 'skill.currentLevel should equal minSkillLevel (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentIncEnabled,
+                  isTrue,
+                  reason: 'skill.isCurrentIncEnabled should be true (Skill level values changed)',
+                );
+                expect(
+                  skill.isCurrentDecEnabled,
+                  isFalse,
+                  reason: 'skill.isCurrentDecEnabled should be false (Skill level values changed)',
+                );
+                expect(
+                  skill.desiredLevel,
+                  maxSkillLevel,
+                  reason: 'skill.desiredLevel should equal maxSkillLevel (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredIncEnabled,
+                  isFalse,
+                  reason: 'skill.isDesiredIncEnabled should be false (Skill level values changed)',
+                );
+                expect(
+                  skill.isDesiredDecEnabled,
+                  isTrue,
+                  reason: 'skill.isDesiredDecEnabled should be true (Skill level values changed)',
+                );
               }
             }
         }

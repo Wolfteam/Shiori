@@ -31,7 +31,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(TodayMaterialsBloc(genshinService, telemetryService).state, const TodayMaterialsState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(
+      TodayMaterialsBloc(genshinService, telemetryService).state,
+      const TodayMaterialsState.loading(),
+      reason: 'A fresh TodayMaterialsBloc should start in loading state',
+    ),
   );
 
   blocTest<TodayMaterialsBloc, TodayMaterialsState>(
@@ -44,9 +48,9 @@ void main() {
         case TodayMaterialsStateLoading():
           throw InvalidStateError();
         case TodayMaterialsStateLoaded():
-          expect(state.charAscMaterials, isNotEmpty, reason: 'Should not be empty (property=charAscMaterials)');
-          expect(state.weaponAscMaterials, isNotEmpty, reason: 'Should not be empty (property=weaponAscMaterials)');
-          expect(state.charAscMaterials, isNotEmpty, reason: 'Should not be empty (property=charAscMaterials)');
+          expect(state.charAscMaterials, isNotEmpty, reason: 'After init, today char ascension materials should be non-empty');
+          expect(state.weaponAscMaterials, isNotEmpty, reason: 'After init, today weapon ascension materials should be non-empty');
+          expect(state.charAscMaterials, isNotEmpty, reason: 'After init, today char ascension materials should be non-empty');
           final items =
               state.charAscMaterials.expand((el) => el.characters).toList() +
               state.weaponAscMaterials.expand((el) => el.weapons).toList();
@@ -55,7 +59,7 @@ void main() {
           final days =
               (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList())
                   .toSet();
-          expect(days.length, TodayMaterialsBloc.days.length, reason: 'Should match expected value');
+          expect(days.length, TodayMaterialsBloc.days.length, reason: 'Materials should span all ${TodayMaterialsBloc.days.length} farmable days, got ${days.length}');
       }
     },
   );

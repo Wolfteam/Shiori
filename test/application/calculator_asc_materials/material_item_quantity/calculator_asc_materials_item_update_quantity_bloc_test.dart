@@ -15,7 +15,8 @@ void main() {
     'Initial state',
     () => expect(
       CalculatorAscMaterialsItemUpdateQuantityBloc(MockDataService(), telemetryService).state,
-      const CalculatorAscMaterialsItemUpdateQuantityState.loading(), reason: 'Should match expected value (property=state)'),
+      const CalculatorAscMaterialsItemUpdateQuantityState.loading(),
+      reason: 'A freshly built update-quantity bloc must start in the loading state before any load event'),
   );
 
   blocTest<CalculatorAscMaterialsItemUpdateQuantityBloc, CalculatorAscMaterialsItemUpdateQuantityState>(

@@ -396,160 +396,268 @@ void main() {
   }
 
   void checkSettings(BackupAppSettingsModel got, BackupAppSettingsModel expected) {
-    expect(got.appTheme, expected.appTheme, reason: 'Should match expected value (property=appTheme)');
-    expect(got.useDarkAmoled, expected.useDarkAmoled, reason: 'Should match expected value (property=useDarkAmoled)');
-    expect(got.accentColor, expected.accentColor, reason: 'Should match expected value (property=accentColor)');
-    expect(got.appLanguage, expected.appLanguage, reason: 'Should match expected value (property=appLanguage)');
-    expect(got.showCharacterDetails, expected.showCharacterDetails, reason: 'Should match expected value (property=showCharacterDetails)');
-    expect(got.showWeaponDetails, expected.showWeaponDetails, reason: 'Should match expected value (property=showWeaponDetails)');
-    expect(got.serverResetTime, expected.serverResetTime, reason: 'Should match expected value (property=serverResetTime)');
-    expect(got.doubleBackToClose, expected.doubleBackToClose, reason: 'Should match expected value (property=doubleBackToClose)');
-    expect(got.useOfficialMap, expected.useOfficialMap, reason: 'Should match expected value (property=useOfficialMap)');
-    expect(got.useTwentyFourHoursFormat, expected.useTwentyFourHoursFormat, reason: 'Should match expected value (property=useTwentyFourHoursFormat)');
+    expect(got.appTheme, expected.appTheme, reason: 'Backup round-trip must preserve settings.appTheme');
+    expect(got.useDarkAmoled, expected.useDarkAmoled, reason: 'Backup round-trip must preserve settings.useDarkAmoled');
+    expect(got.accentColor, expected.accentColor, reason: 'Backup round-trip must preserve settings.accentColor');
+    expect(got.appLanguage, expected.appLanguage, reason: 'Backup round-trip must preserve settings.appLanguage');
+    expect(
+      got.showCharacterDetails,
+      expected.showCharacterDetails,
+      reason: 'Backup round-trip must preserve settings.showCharacterDetails',
+    );
+    expect(got.showWeaponDetails, expected.showWeaponDetails, reason: 'Backup round-trip must preserve settings.showWeaponDetails');
+    expect(got.serverResetTime, expected.serverResetTime, reason: 'Backup round-trip must preserve settings.serverResetTime');
+    expect(got.doubleBackToClose, expected.doubleBackToClose, reason: 'Backup round-trip must preserve settings.doubleBackToClose');
+    expect(got.useOfficialMap, expected.useOfficialMap, reason: 'Backup round-trip must preserve settings.useOfficialMap');
+    expect(
+      got.useTwentyFourHoursFormat,
+      expected.useTwentyFourHoursFormat,
+      reason: 'Backup round-trip must preserve settings.useTwentyFourHoursFormat',
+    );
   }
 
   void checkInventory(BackupInventoryModel got, BackupInventoryModel expected) {
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.quantity, expected.quantity, reason: 'Should match expected value (property=quantity)');
-    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve inventory.itemKey (itemKey=${expected.itemKey})');
+    expect(got.quantity, expected.quantity, reason: 'Backup round-trip must preserve inventory.quantity (itemKey=${expected.itemKey})');
+    expect(got.type, expected.type, reason: 'Backup round-trip must preserve inventory.type (itemKey=${expected.itemKey})');
   }
 
   void checkCalAscMatSessionItemSkill(
     BackupCalculatorAscMaterialsSessionCharSkillItemModel got,
     BackupCalculatorAscMaterialsSessionCharSkillItemModel expected,
   ) {
-    expect(got.skillKey, expected.skillKey, reason: 'Should match expected value (property=skillKey)');
-    expect(got.currentLevel, expected.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-    expect(got.desiredLevel, expected.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-    expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
+    expect(got.skillKey, expected.skillKey, reason: 'Backup round-trip must preserve char skill skillKey (skillKey=${expected.skillKey})');
+    expect(
+      got.currentLevel,
+      expected.currentLevel,
+      reason: 'Backup round-trip must preserve char skill currentLevel (skillKey=${expected.skillKey})',
+    );
+    expect(
+      got.desiredLevel,
+      expected.desiredLevel,
+      reason: 'Backup round-trip must preserve char skill desiredLevel (skillKey=${expected.skillKey})',
+    );
+    expect(got.position, expected.position, reason: 'Backup round-trip must preserve char skill position (skillKey=${expected.skillKey})');
   }
 
   void checkCalAscMatSessionItem(
     BackupCalculatorAscMaterialsSessionItemModel got,
     BackupCalculatorAscMaterialsSessionItemModel expected,
   ) {
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
-    expect(got.currentLevel, expected.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-    expect(got.desiredLevel, expected.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-    expect(got.currentAscensionLevel, expected.currentAscensionLevel, reason: 'Should match expected value (property=currentAscensionLevel)');
-    expect(got.desiredAscensionLevel, expected.desiredAscensionLevel, reason: 'Should match expected value (property=desiredAscensionLevel)');
-    expect(got.isCharacter, expected.isCharacter, reason: 'Should match expected value (property=isCharacter)');
-    expect(got.isWeapon, expected.isWeapon, reason: 'Should match expected value (property=isWeapon)');
-    expect(got.isActive, expected.isActive, reason: 'Should match expected value (property=isActive)');
-    expect(got.useMaterialsFromInventory, expected.useMaterialsFromInventory, reason: 'Should match expected value (property=useMaterialsFromInventory)');
-    expect(got.characterSkills.length, expected.characterSkills.length, reason: 'Should match expected value (property=characterSkills)');
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve calc session item itemKey (itemKey=${expected.itemKey})');
+    expect(got.position, expected.position, reason: 'Backup round-trip must preserve calc session item position (itemKey=${expected.itemKey})');
+    expect(
+      got.currentLevel,
+      expected.currentLevel,
+      reason: 'Backup round-trip must preserve calc session item currentLevel (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.desiredLevel,
+      expected.desiredLevel,
+      reason: 'Backup round-trip must preserve calc session item desiredLevel (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.currentAscensionLevel,
+      expected.currentAscensionLevel,
+      reason: 'Backup round-trip must preserve calc session item currentAscensionLevel (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.desiredAscensionLevel,
+      expected.desiredAscensionLevel,
+      reason: 'Backup round-trip must preserve calc session item desiredAscensionLevel (itemKey=${expected.itemKey})',
+    );
+    expect(got.isCharacter, expected.isCharacter, reason: 'Backup round-trip must preserve calc session item isCharacter (itemKey=${expected.itemKey})');
+    expect(got.isWeapon, expected.isWeapon, reason: 'Backup round-trip must preserve calc session item isWeapon (itemKey=${expected.itemKey})');
+    expect(got.isActive, expected.isActive, reason: 'Backup round-trip must preserve calc session item isActive (itemKey=${expected.itemKey})');
+    expect(
+      got.useMaterialsFromInventory,
+      expected.useMaterialsFromInventory,
+      reason: 'Backup round-trip must preserve calc session item useMaterialsFromInventory (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.characterSkills.length,
+      expected.characterSkills.length,
+      reason: 'Restored calc session item skill count must match backup (itemKey=${expected.itemKey})',
+    );
     for (var i = 0; i < expected.characterSkills.length; i++) {
       checkCalAscMatSessionItemSkill(got.characterSkills[i], expected.characterSkills[i]);
     }
   }
 
   void checkCalAscMatSession(BackupCalculatorAscMaterialsSessionModel got, BackupCalculatorAscMaterialsSessionModel expected) {
-    expect(got.name, expected.name, reason: 'Should match expected value (property=name)');
-    expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
-    expect(got.items.length, expected.items.length, reason: 'Should match expected value (property=items)');
+    expect(got.name, expected.name, reason: 'Backup round-trip must preserve calc session name (name=${expected.name})');
+    expect(got.position, expected.position, reason: 'Backup round-trip must preserve calc session position (name=${expected.name})');
+    expect(got.items.length, expected.items.length, reason: 'Restored calc session item count must match backup (name=${expected.name})');
     for (var i = 0; i < expected.items.length; i++) {
       checkCalAscMatSessionItem(got.items[i], expected.items[i]);
     }
   }
 
   void checkTierList(BackupTierListModel got, BackupTierListModel expected) {
-    expect(got.text, expected.text, reason: 'Should match expected value (property=text)');
-    expect(got.color, expected.color, reason: 'Should match expected value (property=color)');
-    expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
-    expect(got.charKeys, expected.charKeys, reason: 'Should match expected value (property=charKeys)');
+    expect(got.text, expected.text, reason: 'Backup round-trip must preserve tier list text (position=${expected.position})');
+    expect(got.color, expected.color, reason: 'Backup round-trip must preserve tier list color (position=${expected.position})');
+    expect(got.position, expected.position, reason: 'Backup round-trip must preserve tier list position (text=${expected.text})');
+    expect(got.charKeys, expected.charKeys, reason: 'Backup round-trip must preserve tier list charKeys (position=${expected.position})');
   }
 
   void checkCustomBuildNote(BackupCustomBuildNoteModel got, BackupCustomBuildNoteModel expected) {
-    expect(got.index, expected.index, reason: 'Should match expected value (property=index)');
-    expect(got.note, expected.note, reason: 'Should match expected value (property=note)');
+    expect(got.index, expected.index, reason: 'Backup round-trip must preserve custom build note index (index=${expected.index})');
+    expect(got.note, expected.note, reason: 'Backup round-trip must preserve custom build note text (index=${expected.index})');
   }
 
   void checkCustomBuildWeapon(BackupCustomBuildWeaponModel got, BackupCustomBuildWeaponModel expected) {
-    expect(got.weaponKey, expected.weaponKey, reason: 'Should match expected value (property=weaponKey)');
-    expect(got.index, expected.index, reason: 'Should match expected value (property=index)');
-    expect(got.refinement, expected.refinement, reason: 'Should match expected value (property=refinement)');
-    expect(got.level, expected.level, reason: 'Should match expected value (property=level)');
-    expect(got.isAnAscension, expected.isAnAscension, reason: 'Should match expected value (property=isAnAscension)');
+    expect(got.weaponKey, expected.weaponKey, reason: 'Backup round-trip must preserve custom build weaponKey (weaponKey=${expected.weaponKey})');
+    expect(got.index, expected.index, reason: 'Backup round-trip must preserve custom build weapon index (weaponKey=${expected.weaponKey})');
+    expect(
+      got.refinement,
+      expected.refinement,
+      reason: 'Backup round-trip must preserve custom build weapon refinement (weaponKey=${expected.weaponKey})',
+    );
+    expect(got.level, expected.level, reason: 'Backup round-trip must preserve custom build weapon level (weaponKey=${expected.weaponKey})');
+    expect(
+      got.isAnAscension,
+      expected.isAnAscension,
+      reason: 'Backup round-trip must preserve custom build weapon isAnAscension (weaponKey=${expected.weaponKey})',
+    );
   }
 
   void checkCustomBuildArtifact(BackupCustomBuildArtifactModel got, BackupCustomBuildArtifactModel expected) {
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
-    expect(got.statType, expected.statType, reason: 'Should match expected value (property=statType)');
-    expect(got.subStats, expected.subStats, reason: 'Should match expected value (property=subStats)');
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve custom build artifact itemKey (itemKey=${expected.itemKey})');
+    expect(got.type, expected.type, reason: 'Backup round-trip must preserve custom build artifact type (itemKey=${expected.itemKey})');
+    expect(got.statType, expected.statType, reason: 'Backup round-trip must preserve custom build artifact statType (itemKey=${expected.itemKey})');
+    expect(got.subStats, expected.subStats, reason: 'Backup round-trip must preserve custom build artifact subStats (itemKey=${expected.itemKey})');
   }
 
   void checkCustomBuildTeam(BackupCustomBuildTeamCharacterModel got, BackupCustomBuildTeamCharacterModel expected) {
-    expect(got.index, expected.index, reason: 'Should match expected value (property=index)');
-    expect(got.characterKey, expected.characterKey, reason: 'Should match expected value (property=characterKey)');
-    expect(got.roleType, expected.roleType, reason: 'Should match expected value (property=roleType)');
-    expect(got.subType, expected.subType, reason: 'Should match expected value (property=subType)');
+    expect(got.index, expected.index, reason: 'Backup round-trip must preserve team member index (characterKey=${expected.characterKey})');
+    expect(
+      got.characterKey,
+      expected.characterKey,
+      reason: 'Backup round-trip must preserve team member characterKey (characterKey=${expected.characterKey})',
+    );
+    expect(got.roleType, expected.roleType, reason: 'Backup round-trip must preserve team member roleType (characterKey=${expected.characterKey})');
+    expect(got.subType, expected.subType, reason: 'Backup round-trip must preserve team member subType (characterKey=${expected.characterKey})');
   }
 
   void checkCustomBuild(BackupCustomBuildModel got, BackupCustomBuildModel expected) {
-    expect(got.characterKey, expected.characterKey, reason: 'Should match expected value (property=characterKey)');
-    expect(got.showOnCharacterDetail, expected.showOnCharacterDetail, reason: 'Should match expected value (property=showOnCharacterDetail)');
-    expect(got.title, expected.title, reason: 'Should match expected value (property=title)');
-    expect(got.roleType, expected.roleType, reason: 'Should match expected value (property=roleType)');
-    expect(got.roleSubType, expected.roleSubType, reason: 'Should match expected value (property=roleSubType)');
-    expect(got.skillPriorities, expected.skillPriorities, reason: 'Should match expected value (property=skillPriorities)');
-    expect(got.isRecommended, expected.isRecommended, reason: 'Should match expected value (property=isRecommended)');
-    expect(got.notes.length, expected.notes.length, reason: 'Should match expected value (property=notes)');
+    expect(
+      got.characterKey,
+      expected.characterKey,
+      reason: 'Backup round-trip must preserve custom build characterKey (characterKey=${expected.characterKey})',
+    );
+    expect(
+      got.showOnCharacterDetail,
+      expected.showOnCharacterDetail,
+      reason: 'Backup round-trip must preserve custom build showOnCharacterDetail (characterKey=${expected.characterKey})',
+    );
+    expect(got.title, expected.title, reason: 'Backup round-trip must preserve custom build title (characterKey=${expected.characterKey})');
+    expect(got.roleType, expected.roleType, reason: 'Backup round-trip must preserve custom build roleType (characterKey=${expected.characterKey})');
+    expect(
+      got.roleSubType,
+      expected.roleSubType,
+      reason: 'Backup round-trip must preserve custom build roleSubType (characterKey=${expected.characterKey})',
+    );
+    expect(
+      got.skillPriorities,
+      expected.skillPriorities,
+      reason: 'Backup round-trip must preserve custom build skillPriorities (characterKey=${expected.characterKey})',
+    );
+    expect(
+      got.isRecommended,
+      expected.isRecommended,
+      reason: 'Backup round-trip must preserve custom build isRecommended (characterKey=${expected.characterKey})',
+    );
+    expect(
+      got.notes.length,
+      expected.notes.length,
+      reason: 'Restored custom build note count must match backup (characterKey=${expected.characterKey})',
+    );
     for (var i = 0; i < expected.notes.length; i++) {
       checkCustomBuildNote(got.notes[i], expected.notes[i]);
     }
-    expect(got.weapons.length, expected.weapons.length, reason: 'Should match expected value (property=weapons)');
+    expect(
+      got.weapons.length,
+      expected.weapons.length,
+      reason: 'Restored custom build weapon count must match backup (characterKey=${expected.characterKey})',
+    );
     for (var i = 0; i < expected.weapons.length; i++) {
       checkCustomBuildWeapon(got.weapons[i], expected.weapons[i]);
     }
-    expect(got.artifacts.length, expected.artifacts.length, reason: 'Should match expected value (property=artifacts)');
+    expect(
+      got.artifacts.length,
+      expected.artifacts.length,
+      reason: 'Restored custom build artifact count must match backup (characterKey=${expected.characterKey})',
+    );
     for (var i = 0; i < expected.artifacts.length; i++) {
       checkCustomBuildArtifact(got.artifacts[i], expected.artifacts[i]);
     }
-    expect(got.team.length, expected.team.length, reason: 'Should match expected value (property=team)');
+    expect(
+      got.team.length,
+      expected.team.length,
+      reason: 'Restored custom build team count must match backup (characterKey=${expected.characterKey})',
+    );
     for (var i = 0; i < expected.team.length; i++) {
       checkCustomBuildTeam(got.team[i], expected.team[i]);
     }
   }
 
   void checkGameCodeReward(BackupGameCodeRewardModel got, BackupGameCodeRewardModel expected) {
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.quantity, expected.quantity, reason: 'Should match expected value (property=quantity)');
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve game code reward itemKey (itemKey=${expected.itemKey})');
+    expect(got.quantity, expected.quantity, reason: 'Backup round-trip must preserve game code reward quantity (itemKey=${expected.itemKey})');
   }
 
   void checkGameCode(BackupGameCodeModel got, BackupGameCodeModel expected) {
-    expect(got.code, expected.code, reason: 'Should match expected value (property=code)');
-    expect(got.usedOn, expected.usedOn, reason: 'Should match expected value (property=usedOn)');
-    expect(got.discoveredOn, expected.discoveredOn, reason: 'Should match expected value (property=discoveredOn)');
-    expect(got.expiredOn, expected.expiredOn, reason: 'Should match expected value (property=expiredOn)');
-    expect(got.isExpired, expected.isExpired, reason: 'Should match expected value (property=isExpired)');
-    expect(got.region, expected.region, reason: 'Should match expected value (property=region)');
-    expect(got.rewards.length, expected.rewards.length, reason: 'Should match expected value (property=rewards)');
+    expect(got.code, expected.code, reason: 'Backup round-trip must preserve game code (code=${expected.code})');
+    expect(got.usedOn, expected.usedOn, reason: 'Backup round-trip must preserve game code usedOn (code=${expected.code})');
+    expect(got.discoveredOn, expected.discoveredOn, reason: 'Backup round-trip must preserve game code discoveredOn (code=${expected.code})');
+    expect(got.expiredOn, expected.expiredOn, reason: 'Backup round-trip must preserve game code expiredOn (code=${expected.code})');
+    expect(got.isExpired, expected.isExpired, reason: 'Backup round-trip must preserve game code isExpired (code=${expected.code})');
+    expect(got.region, expected.region, reason: 'Backup round-trip must preserve game code region (code=${expected.code})');
+    expect(got.rewards.length, expected.rewards.length, reason: 'Restored game code reward count must match backup (code=${expected.code})');
     for (var i = 0; i < got.rewards.length; i++) {
       checkGameCodeReward(got.rewards[i], expected.rewards[i]);
     }
   }
 
   void checkNotification(BaseBackupNotificationModel got, BaseBackupNotificationModel expected) {
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.completesAt, expected.completesAt, reason: 'Should match expected value (property=completesAt)');
-    expect(got.note, expected.note, reason: 'Should match expected value (property=note)');
-    expect(got.showNotification, expected.showNotification, reason: 'Should match expected value (property=showNotification)');
-    expect(got.title, expected.title, reason: 'Should match expected value (property=title)');
-    expect(got.body, expected.body, reason: 'Should match expected value (property=body)');
-    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve notification itemKey (itemKey=${expected.itemKey})');
+    expect(
+      got.completesAt,
+      expected.completesAt,
+      reason: 'Backup round-trip must preserve notification completesAt (itemKey=${expected.itemKey})',
+    );
+    expect(got.note, expected.note, reason: 'Backup round-trip must preserve notification note (itemKey=${expected.itemKey})');
+    expect(
+      got.showNotification,
+      expected.showNotification,
+      reason: 'Backup round-trip must preserve notification showNotification (itemKey=${expected.itemKey})',
+    );
+    expect(got.title, expected.title, reason: 'Backup round-trip must preserve notification title (itemKey=${expected.itemKey})');
+    expect(got.body, expected.body, reason: 'Backup round-trip must preserve notification body (itemKey=${expected.itemKey})');
+    expect(got.type, expected.type, reason: 'Backup round-trip must preserve notification type (itemKey=${expected.itemKey})');
   }
 
   void checkCustomNotification(BackupCustomNotificationModel got, BackupCustomNotificationModel expected) {
     checkNotification(got, expected);
-    expect(got.notificationItemType, expected.notificationItemType, reason: 'Should match expected value (property=notificationItemType)');
+    expect(
+      got.notificationItemType,
+      expected.notificationItemType,
+      reason: 'Backup round-trip must preserve custom notification notificationItemType (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkExpeditionNotification(BackupExpeditionNotificationModel got, BackupExpeditionNotificationModel expected) {
     checkNotification(got, expected);
-    expect(got.expeditionTimeType, expected.expeditionTimeType, reason: 'Should match expected value (property=expeditionTimeType)');
-    expect(got.withTimeReduction, expected.withTimeReduction, reason: 'Should match expected value (property=withTimeReduction)');
+    expect(
+      got.expeditionTimeType,
+      expected.expeditionTimeType,
+      reason: 'Backup round-trip must preserve expedition notification expeditionTimeType (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.withTimeReduction,
+      expected.withTimeReduction,
+      reason: 'Backup round-trip must preserve expedition notification withTimeReduction (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkFarmingArtifactNotification(
@@ -557,7 +665,11 @@ void main() {
     BackupFarmingArtifactNotificationModel expected,
   ) {
     checkNotification(got, expected);
-    expect(got.artifactFarmingTimeType, expected.artifactFarmingTimeType, reason: 'Should match expected value (property=artifactFarmingTimeType)');
+    expect(
+      got.artifactFarmingTimeType,
+      expected.artifactFarmingTimeType,
+      reason: 'Backup round-trip must preserve farming artifact notification artifactFarmingTimeType (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkFarmingMaterialNotification(
@@ -569,7 +681,11 @@ void main() {
 
   void checkFurnitureNotification(BackupFurnitureNotificationModel got, BackupFurnitureNotificationModel expected) {
     checkNotification(got, expected);
-    expect(got.furnitureCraftingTimeType, expected.furnitureCraftingTimeType, reason: 'Should match expected value (property=furnitureCraftingTimeType)');
+    expect(
+      got.furnitureCraftingTimeType,
+      expected.furnitureCraftingTimeType,
+      reason: 'Backup round-trip must preserve furniture notification furnitureCraftingTimeType (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkGadgetNotification(BackupGadgetNotificationModel got, BackupGadgetNotificationModel expected) {
@@ -578,14 +694,30 @@ void main() {
 
   void checkRealmCurrencyNotification(BackupRealmCurrencyNotificationModel got, BackupRealmCurrencyNotificationModel expected) {
     checkNotification(got, expected);
-    expect(got.realmTrustRank, expected.realmTrustRank, reason: 'Should match expected value (property=realmTrustRank)');
-    expect(got.realmRankType, expected.realmRankType, reason: 'Should match expected value (property=realmRankType)');
-    expect(got.realmCurrency, expected.realmCurrency, reason: 'Should match expected value (property=realmCurrency)');
+    expect(
+      got.realmTrustRank,
+      expected.realmTrustRank,
+      reason: 'Backup round-trip must preserve realm currency notification realmTrustRank (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.realmRankType,
+      expected.realmRankType,
+      reason: 'Backup round-trip must preserve realm currency notification realmRankType (itemKey=${expected.itemKey})',
+    );
+    expect(
+      got.realmCurrency,
+      expected.realmCurrency,
+      reason: 'Backup round-trip must preserve realm currency notification realmCurrency (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkResinNotification(BackupResinNotificationModel got, BackupResinNotificationModel expected) {
     checkNotification(got, expected);
-    expect(got.currentResinValue, expected.currentResinValue, reason: 'Should match expected value (property=currentResinValue)');
+    expect(
+      got.currentResinValue,
+      expected.currentResinValue,
+      reason: 'Backup round-trip must preserve resin notification currentResinValue (itemKey=${expected.itemKey})',
+    );
   }
 
   void checkWeeklyBossNotification(BackupWeeklyBossNotificationModel got, BackupWeeklyBossNotificationModel expected) {
@@ -593,19 +725,31 @@ void main() {
   }
 
   void checkWishSimulatorPullHistory(BackupWishSimulatorBannerPullHistory got, BackupWishSimulatorBannerPullHistory expected) {
-    expect(got.type, expected.type, reason: 'Should match expected value (property=type)');
-    expect(got.currentXStarCount, expected.currentXStarCount, reason: 'Should match expected value (property=currentXStarCount)');
-    expect(got.fiftyFiftyXStarGuaranteed, expected.fiftyFiftyXStarGuaranteed, reason: 'Should match expected value (property=fiftyFiftyXStarGuaranteed)');
+    expect(got.type, expected.type, reason: 'Backup round-trip must preserve wish pull history bannerItemType (type=${expected.type})');
+    expect(
+      got.currentXStarCount,
+      expected.currentXStarCount,
+      reason: 'Backup round-trip must preserve wish pull history currentXStarCount (type=${expected.type})',
+    );
+    expect(
+      got.fiftyFiftyXStarGuaranteed,
+      expected.fiftyFiftyXStarGuaranteed,
+      reason: 'Backup round-trip must preserve wish pull history fiftyFiftyXStarGuaranteed (type=${expected.type})',
+    );
   }
 
   void checkWishSimualtorItemPullHistory(
     BackupWishSimulatorBannerItemPullHistory got,
     BackupWishSimulatorBannerItemPullHistory expected,
   ) {
-    expect(got.bannerType, expected.bannerType, reason: 'Should match expected value (property=bannerType)');
-    expect(got.itemKey, expected.itemKey, reason: 'Should match expected value (property=itemKey)');
-    expect(got.itemType, expected.itemType, reason: 'Should match expected value (property=itemType)');
-    expect(got.pulledOn, expected.pulledOn, reason: 'Should match expected value (property=pulledOn)');
+    expect(
+      got.bannerType,
+      expected.bannerType,
+      reason: 'Backup round-trip must preserve wish item pull bannerType (itemKey=${expected.itemKey})',
+    );
+    expect(got.itemKey, expected.itemKey, reason: 'Backup round-trip must preserve wish item pull itemKey (itemKey=${expected.itemKey})');
+    expect(got.itemType, expected.itemType, reason: 'Backup round-trip must preserve wish item pull itemType (itemKey=${expected.itemKey})');
+    expect(got.pulledOn, expected.pulledOn, reason: 'Backup round-trip must preserve wish item pull pulledOn (itemKey=${expected.itemKey})');
   }
 
   DataService getMockedDataService(List<AppBackupDataType> dataTypes) {
@@ -651,7 +795,11 @@ void main() {
   group('Create backup', () {
     test('but no data types are provided', () {
       final service = getService(settings);
-      expect(() => service.createBackup([]), throwsA(isA<Exception>()), reason: 'Should be of expected type');
+      expect(
+        () => service.createBackup([]),
+        throwsA(isA<Exception>()),
+        reason: 'createBackup with no data types must throw; an empty backup is not allowed',
+      );
     });
 
     test('fails to be created due to exception', () async {
@@ -663,9 +811,9 @@ void main() {
       final service = getService(settings, dataService: dataService);
       final dataTypes = [AppBackupDataType.inventory];
       final result = await service.createBackup(dataTypes);
-      expect(result.succeed, isFalse, reason: 'Should be false (property=succeed)');
-      expect(result.dataTypes, containsAll(dataTypes), reason: 'Should match expected value (property=dataTypes)');
-      expect(result.path, isNotEmpty, reason: 'Should not be empty (property=path)');
+      expect(result.succeed, isFalse, reason: 'createBackup must report failure when a data service throws');
+      expect(result.dataTypes, containsAll(dataTypes), reason: 'Failed backup result must still echo the requested data types');
+      expect(result.path, isNotEmpty, reason: 'Backup result must expose the target file path even when it fails');
     });
 
     test('gets successfully created', () async {
@@ -673,9 +821,9 @@ void main() {
       final dataService = getMockedDataService(dataTypes);
       final service = getService(settings, dataService: dataService);
       final result = await service.createBackup(dataTypes);
-      expect(result.succeed, isTrue, reason: 'Should be true (property=succeed)');
-      expect(result.dataTypes, containsAll(dataTypes), reason: 'Should match expected value (property=dataTypes)');
-      expect(result.path, isNotEmpty, reason: 'Should not be empty (property=path)');
+      expect(result.succeed, isTrue, reason: 'createBackup must succeed when every requested data service returns data');
+      expect(result.dataTypes, containsAll(dataTypes), reason: 'Successful backup result must list all requested data types');
+      expect(result.path, isNotEmpty, reason: 'Successful backup must expose a non-empty file path');
     });
   });
 
@@ -685,15 +833,19 @@ void main() {
     final service = getService(settings, dataService: dataService);
     final result = await service.createBackup(dataTypes);
     final bks = await service.readBackups();
-    expect(bks.length, greaterThanOrEqualTo(1), reason: 'Should be greater than expected');
-    expect(bks.any((bk) => bk.filePath == result.path), isTrue, reason: 'Should be true (property=path), isTrue)');
+    expect(bks.length, greaterThanOrEqualTo(1), reason: 'readBackups must return at least the backup just created');
+    expect(
+      bks.any((bk) => bk.filePath == result.path),
+      isTrue,
+      reason: 'readBackups must include the newly created backup file path',
+    );
   });
 
   group('Read backup', () {
     test('file does not exist, returns null', () async {
       final service = getService(settings);
       final bk = await service.readBackup(join(backupDirPath, 'non_existent_file.bk'));
-      expect(bk, isNull, reason: 'Should be null');
+      expect(bk, isNull, reason: 'readBackup must return null when the backup file does not exist');
     });
 
     test('file exists, returns valid value', () async {
@@ -702,96 +854,144 @@ void main() {
       final service = getService(settings, dataService: dataService);
       final result = await service.createBackup(dataTypes);
       final bk = await service.readBackup(result.path);
-      expect(bk, isNotNull, reason: 'Should not be null');
-      expect(bk!.settings, isNotNull, reason: 'Should not be null (property=settings)');
-      expect(bk.inventory, isNotNull, reason: 'Should not be null (property=inventory)');
-      expect(bk.calculatorAscMaterials, isNotNull, reason: 'Should not be null (property=calculatorAscMaterials)');
-      expect(bk.tierList, isNotNull, reason: 'Should not be null (property=tierList)');
-      expect(bk.customBuilds, isNotNull, reason: 'Should not be null (property=customBuilds)');
-      expect(bk.gameCodes, isNotNull, reason: 'Should not be null (property=gameCodes)');
-      expect(bk.notifications, isNotNull, reason: 'Should not be null (property=notifications)');
+      expect(bk, isNotNull, reason: 'readBackup must return a parsed backup for an existing file');
+      expect(bk!.settings, isNotNull, reason: 'Restored backup must include the settings section');
+      expect(bk.inventory, isNotNull, reason: 'Restored backup must include the inventory section');
+      expect(bk.calculatorAscMaterials, isNotNull, reason: 'Restored backup must include the calculatorAscMaterials section');
+      expect(bk.tierList, isNotNull, reason: 'Restored backup must include the tierList section');
+      expect(bk.customBuilds, isNotNull, reason: 'Restored backup must include the customBuilds section');
+      expect(bk.gameCodes, isNotNull, reason: 'Restored backup must include the gameCodes section');
+      expect(bk.notifications, isNotNull, reason: 'Restored backup must include the notifications section');
 
       checkSettings(bk.settings!, settings);
 
-      expect(bk.inventory!.length, inventoryData.length, reason: 'Should match expected value (property=inventory!)');
+      expect(bk.inventory!.length, inventoryData.length, reason: 'Restored inventory count must match the backed-up inventory');
       for (var i = 0; i < bk.inventory!.length; i++) {
         final item = bk.inventory![i];
         checkInventory(item, inventoryData[i]);
       }
-      expect(bk.calculatorAscMaterials!.length, calAscMatData.length, reason: 'Should match expected value (property=calculatorAscMaterials!)');
+      expect(
+        bk.calculatorAscMaterials!.length,
+        calAscMatData.length,
+        reason: 'Restored calculatorAscMaterials count must match the backed-up sessions',
+      );
       for (var i = 0; i < bk.calculatorAscMaterials!.length; i++) {
         final item = bk.calculatorAscMaterials![i];
         checkCalAscMatSession(item, calAscMatData[i]);
       }
-      expect(bk.tierList!.length, tierListData.length, reason: 'Should match expected value (property=tierList!)');
+      expect(bk.tierList!.length, tierListData.length, reason: 'Restored tierList count must match the backed-up tier lists');
       for (var i = 0; i < bk.tierList!.length; i++) {
         final item = bk.tierList![i];
         checkTierList(item, tierListData[i]);
       }
-      expect(bk.customBuilds!.length, customBuildsData.length, reason: 'Should match expected value (property=customBuilds!)');
+      expect(bk.customBuilds!.length, customBuildsData.length, reason: 'Restored customBuilds count must match the backed-up builds');
       for (var i = 0; i < bk.customBuilds!.length; i++) {
         final item = bk.customBuilds![i];
         checkCustomBuild(item, customBuildsData[i]);
       }
-      expect(bk.gameCodes!.length, gameCodesData.length, reason: 'Should match expected value (property=gameCodes!)');
+      expect(bk.gameCodes!.length, gameCodesData.length, reason: 'Restored gameCodes count must match the backed-up game codes');
       for (var i = 0; i < bk.gameCodes!.length; i++) {
         final item = bk.gameCodes![i];
         checkGameCode(item, gameCodesData[i]);
       }
-      expect(bk.notifications, isNotNull, reason: 'Should not be null (property=notifications)');
-      expect(bk.notifications!.custom.length, notificationsData.custom.length, reason: 'Should match expected value (property=custom)');
+      expect(bk.notifications, isNotNull, reason: 'Restored backup must include the notifications section');
+      expect(
+        bk.notifications!.custom.length,
+        notificationsData.custom.length,
+        reason: 'Restored custom notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.custom.length; i++) {
         final item = bk.notifications!.custom[i];
         checkCustomNotification(item, notificationsData.custom[i]);
       }
-      expect(bk.notifications!.expeditions.length, notificationsData.expeditions.length, reason: 'Should match expected value (property=expeditions)');
+      expect(
+        bk.notifications!.expeditions.length,
+        notificationsData.expeditions.length,
+        reason: 'Restored expedition notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.expeditions.length; i++) {
         final item = bk.notifications!.expeditions[i];
         checkExpeditionNotification(item, notificationsData.expeditions[i]);
       }
-      expect(bk.notifications!.farmingMaterial.length, notificationsData.farmingMaterial.length, reason: 'Should match expected value (property=farmingMaterial)');
+      expect(
+        bk.notifications!.farmingMaterial.length,
+        notificationsData.farmingMaterial.length,
+        reason: 'Restored farmingMaterial notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.farmingMaterial.length; i++) {
         final item = bk.notifications!.farmingMaterial[i];
         checkFarmingMaterialNotification(item, notificationsData.farmingMaterial[i]);
       }
-      expect(bk.notifications!.farmingArtifact.length, notificationsData.farmingArtifact.length, reason: 'Should match expected value (property=farmingArtifact)');
+      expect(
+        bk.notifications!.farmingArtifact.length,
+        notificationsData.farmingArtifact.length,
+        reason: 'Restored farmingArtifact notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.farmingArtifact.length; i++) {
         final item = bk.notifications!.farmingArtifact[i];
         checkFarmingArtifactNotification(item, notificationsData.farmingArtifact[i]);
       }
-      expect(bk.notifications!.furniture.length, notificationsData.furniture.length, reason: 'Should match expected value (property=furniture)');
+      expect(
+        bk.notifications!.furniture.length,
+        notificationsData.furniture.length,
+        reason: 'Restored furniture notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.furniture.length; i++) {
         final item = bk.notifications!.furniture[i];
         checkFurnitureNotification(item, notificationsData.furniture[i]);
       }
-      expect(bk.notifications!.gadgets.length, notificationsData.gadgets.length, reason: 'Should match expected value (property=gadgets)');
+      expect(
+        bk.notifications!.gadgets.length,
+        notificationsData.gadgets.length,
+        reason: 'Restored gadget notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.gadgets.length; i++) {
         final item = bk.notifications!.gadgets[i];
         checkGadgetNotification(item, notificationsData.gadgets[i]);
       }
-      expect(bk.notifications!.realmCurrency.length, notificationsData.realmCurrency.length, reason: 'Should match expected value (property=realmCurrency)');
+      expect(
+        bk.notifications!.realmCurrency.length,
+        notificationsData.realmCurrency.length,
+        reason: 'Restored realmCurrency notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.realmCurrency.length; i++) {
         final item = bk.notifications!.realmCurrency[i];
         checkRealmCurrencyNotification(item, notificationsData.realmCurrency[i]);
       }
-      expect(bk.notifications!.resin.length, notificationsData.resin.length, reason: 'Should match expected value (property=resin)');
+      expect(
+        bk.notifications!.resin.length,
+        notificationsData.resin.length,
+        reason: 'Restored resin notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.resin.length; i++) {
         final item = bk.notifications!.resin[i];
         checkResinNotification(item, notificationsData.resin[i]);
       }
-      expect(bk.notifications!.weeklyBosses.length, notificationsData.weeklyBosses.length, reason: 'Should match expected value (property=weeklyBosses)');
+      expect(
+        bk.notifications!.weeklyBosses.length,
+        notificationsData.weeklyBosses.length,
+        reason: 'Restored weeklyBoss notification count must match backup',
+      );
       for (var i = 0; i < bk.notifications!.weeklyBosses.length; i++) {
         final item = bk.notifications!.weeklyBosses[i];
         checkWeeklyBossNotification(item, notificationsData.weeklyBosses[i]);
       }
 
-      expect(bk.wishSimulator!.pullHistory.length, wishSimulatorData.pullHistory.length, reason: 'Should match expected value (property=pullHistory)');
+      expect(
+        bk.wishSimulator!.pullHistory.length,
+        wishSimulatorData.pullHistory.length,
+        reason: 'Restored wish simulator pullHistory count must match backup',
+      );
       for (var i = 0; i < bk.wishSimulator!.pullHistory.length; i++) {
         final item = bk.wishSimulator!.pullHistory[i];
         checkWishSimulatorPullHistory(item, wishSimulatorData.pullHistory[i]);
       }
 
-      expect(bk.wishSimulator!.itemPullHistory.length, wishSimulatorData.itemPullHistory.length, reason: 'Should match expected value (property=itemPullHistory)');
+      expect(
+        bk.wishSimulator!.itemPullHistory.length,
+        wishSimulatorData.itemPullHistory.length,
+        reason: 'Restored wish simulator itemPullHistory count must match backup',
+      );
       for (var i = 0; i < bk.wishSimulator!.itemPullHistory.length; i++) {
         final item = bk.wishSimulator!.itemPullHistory[i];
         checkWishSimualtorItemPullHistory(item, wishSimulatorData.itemPullHistory[i]);
@@ -803,13 +1003,13 @@ void main() {
     test('it cannot', () {
       final service = getService(settings, appVersion: '1.6.9');
       final canBeRestored = service.canBackupBeRestored('1.7.0');
-      expect(canBeRestored, isFalse, reason: 'Should be false');
+      expect(canBeRestored, isFalse, reason: 'Backup from newer app version 1.7.0 must not be restorable on 1.6.9');
     });
 
     test('it can', () {
       final service = getService(settings, appVersion: '1.6.9');
       final canBeRestored = service.canBackupBeRestored('1.6.8');
-      expect(canBeRestored, isTrue, reason: 'Should be true');
+      expect(canBeRestored, isTrue, reason: 'Backup from older app version 1.6.8 must be restorable on 1.6.9');
     });
   });
 
@@ -823,7 +1023,11 @@ void main() {
         deviceInfo: {},
         dataTypes: [],
       );
-      expect(() => service.restoreBackup(bk, []), throwsA(isA<Exception>()), reason: 'Should be of expected type');
+      expect(
+        () => service.restoreBackup(bk, []),
+        throwsA(isA<Exception>()),
+        reason: 'restoreBackup with no data types to restore must throw',
+      );
     });
 
     test("backup's data types is empty thus completing without restore", () async {
@@ -836,7 +1040,7 @@ void main() {
         dataTypes: [],
       );
       final restored = await service.restoreBackup(bk, AppBackupDataType.values);
-      expect(restored, isTrue, reason: 'Should be true');
+      expect(restored, isTrue, reason: 'Restoring a backup with empty dataTypes must complete as a no-op and report success');
     });
 
     test('process throws exception thus it cannot be restored', () async {
@@ -855,7 +1059,7 @@ void main() {
       );
       final service = getService(settings);
       final restored = await service.restoreBackup(bk, AppBackupDataType.values);
-      expect(restored, isFalse, reason: 'Should be false');
+      expect(restored, isFalse, reason: 'restoreBackup must report failure when a data service throws mid-restore');
     });
 
     test('backup gets restored', () async {
@@ -901,7 +1105,7 @@ void main() {
         notificationService: notificationService,
       );
       final restored = await service.restoreBackup(bk, AppBackupDataType.values);
-      expect(restored, isTrue, reason: 'Should be true');
+      expect(restored, isTrue, reason: 'restoreBackup must report success when every data section restores without error');
 
       verify(settingsService.restoreFromBackup(bk.settings)).called(1);
       verify(inventory.restoreFromBackup(bk.inventory)).called(1);
@@ -918,7 +1122,7 @@ void main() {
     test('file does not exist, nothing gets deleted', () async {
       final service = getService(settings);
       final deleted = await service.deleteBackup(join(backupDirPath, 'non_existent_file.bk'));
-      expect(deleted, isFalse, reason: 'Should be false');
+      expect(deleted, isFalse, reason: 'deleteBackup must report false when the target file does not exist');
     });
 
     test('file exists, so it gets deleted', () async {
@@ -927,7 +1131,7 @@ void main() {
       final service = getService(settings, dataService: dataService);
       final result = await service.createBackup(dataTypes);
       final deleted = await service.deleteBackup(result.path);
-      expect(deleted, isTrue, reason: 'Should be true');
+      expect(deleted, isTrue, reason: 'deleteBackup must report true after removing an existing backup file');
     });
   });
 
@@ -935,7 +1139,7 @@ void main() {
     test('file does not exist, nothing gets copied', () async {
       final service = getService(settings);
       final copied = await service.copyImportedFile(join(backupDirPath, 'non_existent_file.bk'));
-      expect(copied, isFalse, reason: 'Should be false');
+      expect(copied, isFalse, reason: 'copyImportedFile must report false when the source file does not exist');
     });
 
     test('file exists, file gets copied', () async {
@@ -949,7 +1153,7 @@ void main() {
       await file.copy(importedPath);
       await file.delete();
       final copied = await service.copyImportedFile(importedPath);
-      expect(copied, isTrue, reason: 'Should be true');
+      expect(copied, isTrue, reason: 'copyImportedFile must report true after copying an existing backup file into the backups dir');
     });
   });
 }

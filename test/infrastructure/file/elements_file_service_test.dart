@@ -9,10 +9,22 @@ void main() {
     for (final lang in AppLanguageType.values) {
       final service = await getElementFileService(lang);
       final debuffs = service.getElementDebuffs();
-      expect(debuffs.length, equals(4), reason: 'Should equal expected value (lang=${lang.name})');
+      expect(
+        debuffs.length,
+        equals(4),
+        reason: 'Expected exactly 4 element debuffs, got ${debuffs.length} (lang=${lang.name})',
+      );
       for (final debuff in debuffs) {
-        expect(debuff.name, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=name, lang=${lang.name})');
-        expect(debuff.effect, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=effect, lang=${lang.name})');
+        expect(
+          debuff.name,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element debuff name is empty or malformed (name=${debuff.name}, lang=${lang.name})',
+        );
+        expect(
+          debuff.effect,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element debuff effect is empty or malformed (name=${debuff.name}, lang=${lang.name})',
+        );
         checkAsset(debuff.image);
       }
     }
@@ -22,12 +34,32 @@ void main() {
     for (final lang in AppLanguageType.values) {
       final service = await getElementFileService(lang);
       final reactions = service.getElementReactions();
-      expect(reactions.length, equals(17), reason: 'Should equal expected value (lang=${lang.name})');
+      expect(
+        reactions.length,
+        equals(17),
+        reason: 'Expected exactly 17 element reactions, got ${reactions.length} (lang=${lang.name})',
+      );
       for (final reaction in reactions) {
-        expect(reaction.name, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=name, lang=${lang.name})');
-        expect(reaction.effect, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=effect, lang=${lang.name})');
-        expect(reaction.principal, isNotEmpty, reason: 'Should not be empty (property=principal, lang=${lang.name})');
-        expect(reaction.secondary, isNotEmpty, reason: 'Should not be empty (property=secondary, lang=${lang.name})');
+        expect(
+          reaction.name,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element reaction name is empty or malformed (name=${reaction.name}, lang=${lang.name})',
+        );
+        expect(
+          reaction.effect,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element reaction effect is empty or malformed (name=${reaction.name}, lang=${lang.name})',
+        );
+        expect(
+          reaction.principal,
+          isNotEmpty,
+          reason: 'Element reaction has no principal element images (name=${reaction.name}, lang=${lang.name})',
+        );
+        expect(
+          reaction.secondary,
+          isNotEmpty,
+          reason: 'Element reaction has no secondary element images (name=${reaction.name}, lang=${lang.name})',
+        );
 
         final imgs = reaction.principal + reaction.secondary;
         for (final img in imgs) {
@@ -41,10 +73,22 @@ void main() {
     for (final lang in AppLanguageType.values) {
       final service = await getElementFileService(lang);
       final resonances = service.getElementResonances();
-      expect(resonances.length, equals(8), reason: 'Should equal expected value (lang=${lang.name})');
+      expect(
+        resonances.length,
+        equals(8),
+        reason: 'Expected exactly 8 element resonances, got ${resonances.length} (lang=${lang.name})',
+      );
       for (final resonance in resonances) {
-        expect(resonance.name, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=name, lang=${lang.name})');
-        expect(resonance.effect, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty (property=effect, lang=${lang.name})');
+        expect(
+          resonance.name,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element resonance name is empty or malformed (name=${resonance.name}, lang=${lang.name})',
+        );
+        expect(
+          resonance.effect,
+          allOf([isNotNull, isNotEmpty]),
+          reason: 'Element resonance effect is empty or malformed (name=${resonance.name}, lang=${lang.name})',
+        );
 
         final imgs = resonance.principal + resonance.secondary;
         for (final img in imgs) {
@@ -59,8 +103,20 @@ void main() {
     final debuffs = service.getElementDebuffs();
     final reactions = service.getElementReactions();
     final resonances = service.getElementResonances();
-    expect(debuffs.isEmpty, isTrue, reason: 'Should be true');
-    expect(reactions.isEmpty, isTrue, reason: 'Should be true');
-    expect(resonances.isEmpty, isTrue, reason: 'Should be true');
+    expect(
+      debuffs.isEmpty,
+      isTrue,
+      reason: 'With no resources downloaded, element debuffs must be empty, got ${debuffs.length}',
+    );
+    expect(
+      reactions.isEmpty,
+      isTrue,
+      reason: 'With no resources downloaded, element reactions must be empty, got ${reactions.length}',
+    );
+    expect(
+      resonances.isEmpty,
+      isTrue,
+      reason: 'With no resources downloaded, element resonances must be empty, got ${resonances.length}',
+    );
   });
 }

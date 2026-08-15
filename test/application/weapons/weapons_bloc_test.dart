@@ -34,7 +34,14 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(WeaponsBloc(genshinService, settingsService).state, const WeaponsState.loading(), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      WeaponsBloc(genshinService, settingsService).state,
+      const WeaponsState.loading(),
+      reason: 'A fresh WeaponsBloc should start in loading state',
+    ),
+  );
 
   group('Init', () {
     blocTest<WeaponsBloc, WeaponsState>(
@@ -71,14 +78,18 @@ void main() {
             throw Exception('Invalid artifact state');
           case WeaponsStateLoaded():
             final weapons = genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
-            expect(state.weapons.length, weapons.length, reason: 'Should match expected value (property=weapons)');
-            expect(state.showWeaponDetails, true, reason: 'Should match expected value (property=showWeaponDetails, expected=true)');
-            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
-            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
-            expect(state.weaponFilterType, WeaponFilterType.rarity, reason: 'Should match expected value (property=weaponFilterType, expected=WeaponFilterType.rarity)');
-            expect(state.tempWeaponFilterType, WeaponFilterType.rarity, reason: 'Should match expected value (property=tempWeaponFilterType, expected=WeaponFilterType.rarity)');
-            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
-            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
+            expect(
+              state.weapons.length,
+              weapons.length,
+              reason: 'init(excludeKeys: [aquila-favonia]) should drop it, leaving ${weapons.length} weapons, got ${state.weapons.length}',
+            );
+            expect(state.showWeaponDetails, true, reason: 'showWeaponDetails setting is true so state should reflect true, got ${state.showWeaponDetails}');
+            expect(state.rarity, 0, reason: 'No rarity filter on init so rarity should be 0, got ${state.rarity}');
+            expect(state.tempRarity, 0, reason: 'No rarity filter on init so tempRarity should be 0, got ${state.tempRarity}');
+            expect(state.weaponFilterType, WeaponFilterType.rarity, reason: 'Default weapon filter should be rarity, got ${state.weaponFilterType}');
+            expect(state.tempWeaponFilterType, WeaponFilterType.rarity, reason: 'Default temp weapon filter should be rarity, got ${state.tempWeaponFilterType}');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Default sort direction should be asc, got ${state.sortDirectionType}');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Default temp sort direction should be asc, got ${state.tempSortDirectionType}');
         }
       },
     );

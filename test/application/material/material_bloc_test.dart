@@ -33,7 +33,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(
+      MaterialBloc(genshinService, telemetryService, resourceService).state,
+      const MaterialState.loading(),
+      reason: 'A fresh MaterialBloc should start in loading state',
+    ),
   );
 
   group('Load from key', () {
@@ -50,13 +54,13 @@ void main() {
           case MaterialStateLoaded():
             checkTranslation(state.name, canBeNull: false);
             checkAsset(state.fullImage);
-            expect(state.rarity, 2, reason: 'Should match expected value (property=rarity, expected=2)');
-            expect(state.type, MaterialType.common, reason: 'Should match expected value (property=type, expected=MaterialType.common)');
+            expect(state.rarity, 2, reason: 'slime-secretions rarity should be 2, got ${state.rarity}');
+            expect(state.type, MaterialType.common, reason: 'slime-secretions should be a common material, got ${state.type}');
             checkItemsCommonWithName(state.characters);
             checkItemsCommonWithName(state.weapons);
             checkItemsCommonWithName(state.droppedBy);
-            expect(state.days, isEmpty, reason: 'Should be empty (property=days)');
-            expect(state.obtainedFrom, isNotEmpty, reason: 'Should not be empty (property=obtainedFrom)');
+            expect(state.days, isEmpty, reason: 'slime-secretions is not farmable by day so days should be empty');
+            expect(state.obtainedFrom, isNotEmpty, reason: 'slime-secretions should list at least one obtainedFrom source');
             final items = state.obtainedFrom.expand((el) => el.items).toList();
             for (final item in items) {
               checkItemKeyAndImage(item.key, item.image);

@@ -116,7 +116,7 @@ void main() {
         settingsService,
         deviceInfoService,
       ).state,
-      defaultState, reason: 'Should match expected value (property=state)'),
+      defaultState, reason: 'A freshly built GameCodesBloc must start in the empty loaded state'),
   );
 
   group('Init', () {
@@ -235,10 +235,10 @@ void main() {
       skip: 1,
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.isInternetAvailable, isNull, reason: 'Should be null (property=isInternetAvailable)');
-        expect(state.isBusy, isFalse, reason: 'Should be false (property=isBusy)');
-        expect(state.workingGameCodes.length, 1, reason: 'Should match expected value (property=workingGameCodes, expected=1)');
-        expect(state.expiredGameCodes.length, 1, reason: 'Should match expected value (property=expiredGameCodes, expected=1)');
+        expect(state.isInternetAvailable, isNull, reason: 'After a successful refresh, isInternetAvailable must be cleared to null');
+        expect(state.isBusy, isFalse, reason: 'After refresh completes, isBusy must be false');
+        expect(state.workingGameCodes.length, 1, reason: 'After refresh, exactly 1 working (non-expired) game code must remain');
+        expect(state.expiredGameCodes.length, 1, reason: 'After refresh, exactly 1 expired game code must remain');
       },
     );
 
@@ -261,10 +261,10 @@ void main() {
       skip: 2,
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.isInternetAvailable, isNull, reason: 'Should be null (property=isInternetAvailable)');
-        expect(state.isBusy, isFalse, reason: 'Should be false (property=isBusy)');
-        expect(state.workingGameCodes.length, 0, reason: 'Should match expected value (property=workingGameCodes, expected=0)');
-        expect(state.expiredGameCodes.length, 0, reason: 'Should match expected value (property=expiredGameCodes, expected=0)');
+        expect(state.isInternetAvailable, isNull, reason: 'When throttled, isInternetAvailable must remain null');
+        expect(state.isBusy, isFalse, reason: 'When throttled, isBusy must be false');
+        expect(state.workingGameCodes.length, 0, reason: 'When throttled (not enough time passed), no working game codes are fetched');
+        expect(state.expiredGameCodes.length, 0, reason: 'When throttled (not enough time passed), no expired game codes are fetched');
       },
     );
   });

@@ -70,18 +70,26 @@ void main() {
   }) {
     final banner = period.banners[bannerIndex];
     final bannerType = banner.type;
-    expect(results.length == pulls, isTrue, reason: 'Should be true (property=length == pulls)');
+    expect(results.length == pulls, isTrue, reason: 'A $pulls-pull should yield $pulls results, got ${results.length}');
 
     final gotFourStar = results.any((r) => r.rarity == 4);
     final gotFiveStar = results.any((r) => r.rarity == WishBannerConstants.maxObtainableRarity);
-    expect(gotFourStar || gotFiveStar, isTrue, reason: 'Should be true');
+    expect(gotFourStar || gotFiveStar, isTrue, reason: 'A $pulls-pull should yield at least one 4-star or 5-star result');
 
     if (minFourStarCount != null) {
-      expect(results.count((r) => r.rarity == 4) >= minFourStarCount, isTrue, reason: 'Should be true (property=rarity == 4) >= minFourStarCount, isTrue)');
+      expect(
+        results.count((r) => r.rarity == 4) >= minFourStarCount,
+        isTrue,
+        reason: 'A $pulls-pull should yield at least $minFourStarCount four-star results',
+      );
     }
 
     if (minFiveStarCount != null) {
-      expect(results.count((r) => r.rarity == WishBannerConstants.maxObtainableRarity) >= minFiveStarCount, isTrue, reason: 'Should be true (property=maxObtainableRarity) >= minFiveStarCount, isTrue)');
+      expect(
+        results.count((r) => r.rarity == WishBannerConstants.maxObtainableRarity) >= minFiveStarCount,
+        isTrue,
+        reason: 'A $pulls-pull should yield at least $minFiveStarCount five-star results',
+      );
     }
 
     for (final item in results) {
@@ -95,9 +103,9 @@ void main() {
       );
       switch (item) {
         case WishSimulatorBannerCharacterResultModel():
-          expect(banner.characters.any((c) => c.key == item.key), isTrue, reason: 'Should be true (property=key), isTrue)');
+          expect(banner.characters.any((c) => c.key == item.key), isTrue, reason: 'Pulled character ${item.key} should belong to the banner character pool');
         case WishSimulatorBannerWeaponResultModel():
-          expect(banner.weapons.any((c) => c.key == item.key), isTrue, reason: 'Should be true (property=key), isTrue)');
+          expect(banner.weapons.any((c) => c.key == item.key), isTrue, reason: 'Pulled weapon ${item.key} should belong to the banner weapon pool');
       }
 
       if (item.rarity != WishBannerConstants.maxObtainableRarity || bannerType == BannerItemType.standard) {
@@ -108,11 +116,18 @@ void main() {
         WishSimulatorBannerCharacterResultModel() => BannerItemType.character,
         WishSimulatorBannerWeaponResultModel() => BannerItemType.weapon,
       };
-      expect(bannerType, expectedType, reason: 'Should match expected value');
+      expect(bannerType, expectedType, reason: 'A featured 5-star on a ${bannerType.name} banner should match the item type ${expectedType.name}');
     }
   }
 
-  test('Initial state', () => expect(getBloc().state, const WishSimulatorResultState.loading(), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      getBloc().state,
+      const WishSimulatorResultState.loading(),
+      reason: 'A fresh WishSimulatorResultBloc should start in loading state',
+    ),
+  );
 
   group('Init', () {
     blocTest(

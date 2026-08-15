@@ -37,7 +37,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(WishBannerHistoryBloc(genshinService).state, const WishBannerHistoryState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(
+      WishBannerHistoryBloc(genshinService).state,
+      const WishBannerHistoryState.loading(),
+      reason: 'A fresh WishBannerHistoryBloc should start in loading state',
+    ),
   );
 
   blocTest<WishBannerHistoryBloc, WishBannerHistoryState>(
@@ -72,18 +76,30 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
-              expect(state.filteredPeriods, isNotEmpty, reason: 'Should not be empty (property=filteredPeriods)');
-              expect(state.sortDirectionType, isDefault ? SortDirectionType.desc : SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType)');
-              expect(state.groupedType, type, reason: 'Should match expected value (property=groupedType)');
-              expect(state.selectedItemKeys, isEmpty, reason: 'Should be empty (property=selectedItemKeys)');
+              expect(state.allPeriods, groupedPeriods, reason: 'Changing group type should not alter allPeriods');
+              expect(state.filteredPeriods, isNotEmpty, reason: 'Grouping by ${type.name} should yield non-empty filtered periods');
+              expect(
+                state.sortDirectionType,
+                isDefault ? SortDirectionType.desc : SortDirectionType.asc,
+                reason: 'Group type ${type.name} should default sort to ${isDefault ? 'desc' : 'asc'}, got ${state.sortDirectionType}',
+              );
+              expect(state.groupedType, type, reason: 'After groupTypeChanged(${type.name}), groupedType should be ${type.name}, got ${state.groupedType}');
+              expect(state.selectedItemKeys, isEmpty, reason: 'Changing group type should clear selectedItemKeys');
               for (final period in state.filteredPeriods) {
                 if (isDefault) {
-                  expect(period.groupingKey == period.groupingTitle, isTrue, reason: 'Should be true (property=groupingTitle)');
+                  expect(
+                    period.groupingKey == period.groupingTitle,
+                    isTrue,
+                    reason: 'When grouped by version, groupingKey should equal groupingTitle for ${period.groupingKey}',
+                  );
                 } else {
-                  expect(period.groupingKey != period.groupingTitle, isTrue, reason: 'Should be true (property=groupingTitle)');
+                  expect(
+                    period.groupingKey != period.groupingTitle,
+                    isTrue,
+                    reason: 'When grouped by ${type.name}, groupingKey should differ from groupingTitle for ${period.groupingKey}',
+                  );
                 }
-                expect(period.parts, isNotEmpty, reason: 'Should not be empty (property=parts)');
+                expect(period.parts, isNotEmpty, reason: 'Each grouped period should contain at least one part (${period.groupingKey})');
               }
           }
         },
@@ -114,11 +130,11 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
-              expect(state.filteredPeriods, isNotEmpty, reason: 'Should not be empty (property=filteredPeriods)');
-              expect(state.sortDirectionType, type, reason: 'Should match expected value (property=sortDirectionType)');
-              expect(state.groupedType, WishBannerGroupedType.version, reason: 'Should match expected value (property=groupedType, expected=WishBannerGroupedType.version)');
-              expect(state.selectedItemKeys, isEmpty, reason: 'Should be empty (property=selectedItemKeys)');
+              expect(state.allPeriods, groupedPeriods, reason: 'Changing sort direction should not alter allPeriods');
+              expect(state.filteredPeriods, isNotEmpty, reason: 'Sorting should keep filtered periods non-empty');
+              expect(state.sortDirectionType, type, reason: 'After sortDirectionTypeChanged(${type.name}), sortDirectionType should be ${type.name}, got ${state.sortDirectionType}');
+              expect(state.groupedType, WishBannerGroupedType.version, reason: 'Sorting should not change grouping from version, got ${state.groupedType}');
+              expect(state.selectedItemKeys, isEmpty, reason: 'Sorting should not select any items, selectedItemKeys should be empty');
           }
         },
       );
@@ -153,11 +169,11 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
-              expect(state.filteredPeriods.length == 1, isTrue, reason: 'Should be true (property=length == 1)');
-              expect(state.filteredPeriods.first.groupingKey, key, reason: 'Should match expected value (property=groupingKey)');
-              expect(state.groupedType, groupType, reason: 'Should match expected value (property=groupedType)');
-              expect(state.selectedItemKeys, [key], reason: 'Should match expected value (property=selectedItemKeys)');
+              expect(state.allPeriods, groupedPeriods, reason: 'Selecting items should not alter allPeriods');
+              expect(state.filteredPeriods.length == 1, isTrue, reason: 'Filtering by key $key should leave exactly 1 period, got ${state.filteredPeriods.length}');
+              expect(state.filteredPeriods.first.groupingKey, key, reason: 'The single filtered period should have groupingKey $key, got ${state.filteredPeriods.first.groupingKey}');
+              expect(state.groupedType, groupType, reason: 'Grouping should remain ${groupType.name}, got ${state.groupedType}');
+              expect(state.selectedItemKeys, [key], reason: 'selectedItemKeys should be [$key], got ${state.selectedItemKeys}');
           }
         },
       );
@@ -176,10 +192,10 @@ void main() {
             case WishBannerHistoryStateLoading():
               throw InvalidStateError();
             case WishBannerHistoryStateLoaded():
-              expect(state.allPeriods, groupedPeriods, reason: 'Should match expected value (property=allPeriods)');
-              expect(state.filteredPeriods.length > 1, isTrue, reason: 'Should be true (property=length > 1, isTrue)');
-              expect(state.groupedType, groupType, reason: 'Should match expected value (property=groupedType)');
-              expect(state.selectedItemKeys, [], reason: 'Should match expected value (property=selectedItemKeys)');
+              expect(state.allPeriods, groupedPeriods, reason: 'Clearing selection should not alter allPeriods');
+              expect(state.filteredPeriods.length > 1, isTrue, reason: 'Clearing keys should remove the filter, leaving more than 1 period, got ${state.filteredPeriods.length}');
+              expect(state.groupedType, groupType, reason: 'Grouping should remain ${groupType.name} after clearing keys, got ${state.groupedType}');
+              expect(state.selectedItemKeys, [], reason: 'Clearing keys should empty selectedItemKeys, got ${state.selectedItemKeys}');
           }
         },
       );

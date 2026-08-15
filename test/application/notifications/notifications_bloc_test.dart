@@ -62,7 +62,7 @@ void main() {
     'Initial state',
     () => expect(
       NotificationsBloc(dataService, notificationService, settingsService, telemetryService).state,
-      const NotificationsState.initial(notifications: []), reason: 'Should match expected value (property=state)'),
+      const NotificationsState.initial(notifications: []), reason: 'A freshly constructed NotificationsBloc should start in NotificationsState.initial with no notifications'),
   );
 
   blocTest<NotificationsBloc, NotificationsState>(
@@ -83,19 +83,19 @@ void main() {
     },
     act: (bloc) => bloc.add(const NotificationsEvent.init()),
     verify: (bloc) {
-      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
-      expect(bloc.state.useTwentyFourHoursFormat, settingsService.useTwentyFourHoursFormat, reason: 'Should match expected value (property=useTwentyFourHoursFormat)');
+      expect(bloc.state.notifications.length, 1, reason: 'After init, bloc should surface the single saved notification');
+      expect(bloc.state.useTwentyFourHoursFormat, settingsService.useTwentyFourHoursFormat, reason: 'Init should propagate settings.useTwentyFourHoursFormat into state');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
-      expect(notif.itemKey, keqingKey, reason: 'Should match expected value (property=itemKey)');
-      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
-      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
-      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
+      expect(notif.key, 0, reason: 'First saved notification should get key 0');
+      expect(notif.itemKey, keqingKey, reason: 'Loaded notification should keep its item key (expected=$keqingKey)');
+      expect(notif.title, defaultTitle, reason: 'Loaded notification should keep its saved title');
+      expect(notif.body, defaultBody, reason: 'Loaded notification should keep its saved body');
+      expect(notif.note, defaultNote, reason: 'Loaded notification should keep its saved note');
       checkAsset(notif.image);
-      expect(notif.completesAt, customNotificationCompletesAt, reason: 'Should match expected value (property=completesAt)');
-      expect(notif.type, AppNotificationType.custom, reason: 'Should match expected value (property=type, expected=AppNotificationType.custom)');
-      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Should match expected value (property=notificationItemType, expected=AppNotificationItemType.character)');
+      expect(notif.completesAt, customNotificationCompletesAt, reason: 'Loaded notification should keep its saved completesAt');
+      expect(notif.type, AppNotificationType.custom, reason: 'Loaded notification type should be custom');
+      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Loaded custom notification item type should be character');
     },
   );
 
@@ -118,7 +118,7 @@ void main() {
     act: (bloc) => bloc.add(const NotificationsEvent.delete(id: 0, type: AppNotificationType.custom)),
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.custom)).called(1);
-      expect(bloc.state.notifications, isEmpty, reason: 'Should be empty (property=notifications)');
+      expect(bloc.state.notifications, isEmpty, reason: 'After delete, the notifications list should be empty');
     },
   );
 
@@ -137,17 +137,17 @@ void main() {
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       verify(notificationService.scheduleNotification(any, any, any, any, any)).called(1);
-      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
+      expect(bloc.state.notifications.length, 1, reason: 'After reset, the resin notification should remain in the list');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
-      expect(notif.itemKey, fragileResinKey, reason: 'Should match expected value (property=itemKey)');
-      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
-      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
-      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
+      expect(notif.key, 0, reason: 'Reset notification should keep key 0');
+      expect(notif.itemKey, fragileResinKey, reason: 'Reset notification should keep its item key (expected=$fragileResinKey)');
+      expect(notif.title, defaultTitle, reason: 'Reset notification should keep its saved title');
+      expect(notif.body, defaultBody, reason: 'Reset notification should keep its saved body');
+      expect(notif.note, defaultNote, reason: 'Reset notification should keep its saved note');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin, reason: 'Should match expected value (property=type, expected=AppNotificationType.resin)');
-      expect(notif.currentResinValue, 0, reason: 'Should match expected value (property=currentResinValue, expected=0)');
+      expect(notif.type, AppNotificationType.resin, reason: 'Reset notification type should stay resin');
+      expect(notif.currentResinValue, 0, reason: 'Reset should set resin back to 0, got ${notif.currentResinValue}');
     },
   );
 
@@ -165,18 +165,18 @@ void main() {
       ..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
-      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
+      expect(bloc.state.notifications.length, 1, reason: 'After stop, the resin notification should remain in the list');
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
-      expect(notif.itemKey, fragileResinKey, reason: 'Should match expected value (property=itemKey)');
-      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
-      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
-      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
+      expect(notif.key, 0, reason: 'Stopped notification should keep key 0');
+      expect(notif.itemKey, fragileResinKey, reason: 'Stopped notification should keep its item key (expected=$fragileResinKey)');
+      expect(notif.title, defaultTitle, reason: 'Stopped notification should keep its saved title');
+      expect(notif.body, defaultBody, reason: 'Stopped notification should keep its saved body');
+      expect(notif.note, defaultNote, reason: 'Stopped notification should keep its saved note');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin, reason: 'Should match expected value (property=type, expected=AppNotificationType.resin)');
-      expect(notif.currentResinValue, 100, reason: 'Should match expected value (property=currentResinValue, expected=100)');
-      expect(notif.completesAt.difference(DateTime.now()).inSeconds, lessThanOrEqualTo(10), reason: 'Should be less than expected (property=inSeconds)');
+      expect(notif.type, AppNotificationType.resin, reason: 'Stopped notification type should stay resin');
+      expect(notif.currentResinValue, 100, reason: 'Stop should preserve current resin at 100, got ${notif.currentResinValue}');
+      expect(notif.completesAt.difference(DateTime.now()).inSeconds, lessThanOrEqualTo(10), reason: 'Stop should mark the notification as completing now (within 10s)');
     },
   );
 
@@ -200,20 +200,20 @@ void main() {
       ..add(const NotificationsEvent.init())
       ..add(const NotificationsEvent.reduceHours(id: 0, type: AppNotificationType.custom, hoursToReduce: 2)),
     verify: (bloc) {
-      expect(bloc.state.notifications.length, 1, reason: 'Should match expected value (property=notifications, expected=1)');
+      expect(bloc.state.notifications.length, 1, reason: 'After reduceHours, the custom notification should remain in the list');
       verify(notificationService.cancelNotification(0, AppNotificationType.custom)).called(1);
       verify(notificationService.scheduleNotification(any, any, any, any, any)).called(1);
 
       final notif = bloc.state.notifications.first;
-      expect(notif.key, 0, reason: 'Should match expected value (property=key, expected=0)');
-      expect(notif.itemKey, keqingKey, reason: 'Should match expected value (property=itemKey)');
-      expect(notif.title, defaultTitle, reason: 'Should match expected value (property=title)');
-      expect(notif.body, defaultBody, reason: 'Should match expected value (property=body)');
-      expect(notif.note, defaultNote, reason: 'Should match expected value (property=note)');
+      expect(notif.key, 0, reason: 'Reduced notification should keep key 0');
+      expect(notif.itemKey, keqingKey, reason: 'Reduced notification should keep its item key (expected=$keqingKey)');
+      expect(notif.title, defaultTitle, reason: 'Reduced notification should keep its saved title');
+      expect(notif.body, defaultBody, reason: 'Reduced notification should keep its saved body');
+      expect(notif.note, defaultNote, reason: 'Reduced notification should keep its saved note');
       checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.custom, reason: 'Should match expected value (property=type, expected=AppNotificationType.custom)');
-      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Should match expected value (property=notificationItemType, expected=AppNotificationItemType.character)');
-      expect(notif.completesAt, lessThanOrEqualTo(now.add(const Duration(hours: 1))), reason: 'Should be less than expected (property=completesAt)');
+      expect(notif.type, AppNotificationType.custom, reason: 'Reduced notification type should stay custom');
+      expect(notif.notificationItemType, AppNotificationItemType.character, reason: 'Reduced custom notification item type should stay character');
+      expect(notif.completesAt, lessThanOrEqualTo(now.add(const Duration(hours: 1))), reason: 'Reducing 3h notification by 2h should push completesAt to <= now+1h');
     },
   );
 }

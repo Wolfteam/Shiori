@@ -37,7 +37,7 @@ void main() {
     'Initial state',
     () => expect(
       CharactersBirthdaysPerMonthBloc(genshinService, telemetryService).state,
-      const CharactersBirthdaysPerMonthState.loading(), reason: 'Should match expected value (property=state)'),
+      const CharactersBirthdaysPerMonthState.loading(), reason: 'A freshly built CharactersBirthdaysPerMonthBloc must start in loading before init'),
   );
 
   group('Init', () {

@@ -37,14 +37,34 @@ void manuallyInitLocale(LocaleService service, AppLanguageType language) {
   initializeDateFormatting(locale);
 }
 
-void checkKey(String value) {
-  expect(value, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty');
-  final lower = value.toLowerCase();
-  expect(lower, equals(value), reason: 'Should equal expected value');
+// Builds a trailing context fragment like " (owner=furina, lang=english)" so a failure in a
+// deeply-nested shared helper still names the entity (and language) that tripped it.
+String _ctx({String? ownerKey, AppLanguageType? lang, String? extra}) {
+  final parts = [
+    if (ownerKey != null) 'owner=$ownerKey',
+    if (lang != null) 'lang=${lang.name}',
+    if (extra != null) extra,
+  ];
+  return parts.isEmpty ? '' : ' (${parts.join(', ')})';
 }
 
-void checkKeys(List<String> keys) {
-  expect(keys.toSet().length, equals(keys.length), reason: 'Should equal expected value (property=toSet())');
+void checkKey(String value, {String? ownerKey}) {
+  expect(value, isNotEmpty, reason: 'Entity key is empty — every item needs a stable kebab-case slug${_ctx(ownerKey: ownerKey)}');
+  final lower = value.toLowerCase();
+  expect(
+    lower,
+    equals(value),
+    reason: 'Key "$value" must be lowercase kebab-case, but it contains uppercase characters${_ctx(ownerKey: ownerKey)}',
+  );
+}
+
+void checkKeys(List<String> keys, {String? entity}) {
+  final duplicates = keys.where((k) => keys.where((x) => x == k).length > 1).toSet().toList();
+  expect(
+    keys.toSet().length,
+    equals(keys.length),
+    reason: 'Duplicate ${entity ?? 'entity'} keys found: $duplicates — keys must be unique across the resource file',
+  );
 }
 
 Future<bool> _assetExists(String path) async {
@@ -62,37 +82,57 @@ Future<bool> _assetExists(String path) async {
 
 Future<bool> _fileExists(String path) => File(path).exists();
 
-void checkAsset(String path, {bool isAnAsset = false}) {
-  expect(path, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty');
+void checkAsset(String path, {bool isAnAsset = false, String? ownerKey}) {
+  expect(path, isNotEmpty, reason: 'Asset path is empty — every item must reference an image${_ctx(ownerKey: ownerKey)}');
   final ext = p.extension(path);
   if (isAnAsset) {
-    expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
+    expect(
+      _assetExists(path),
+      completion(isTrue),
+      reason: 'Bundled asset does not exist: $path${_ctx(ownerKey: ownerKey)}',
+    );
   } else {
-    expect(_fileExists(path), completion(equals(true)), reason: 'File = $path does not exist');
+    expect(
+      _fileExists(path),
+      completion(isTrue),
+      reason: 'Referenced image file is missing on disk: $path${_ctx(ownerKey: ownerKey)}',
+    );
   }
   if (ext.toLowerCase() == '.webp') {
-    isValidWebp(path);
+    isValidWebp(path, ownerKey: ownerKey);
   }
 }
 
-void isValidWebp(String path) {
+void isValidWebp(String path, {String? ownerKey}) {
   //https://developers.google.com/speed/webp/docs/riff_container
   final raf = File(path).openSync();
   final bytes = raf.readSync(12).toList();
   raf.closeSync();
-  expect(bytes.length, 12, reason: 'Should match expected value (expected=12)');
+  expect(
+    bytes.length,
+    12,
+    reason: 'Image file is truncated (need 12+ bytes for the WebP header): $path${_ctx(ownerKey: ownerKey)}',
+  );
 
   //RIFF
   final first = bytes.take(4).join(',');
-  expect(first == '82,73,70,70', isTrue, reason: 'File = $path is not a valid webp');
+  expect(
+    first == '82,73,70,70',
+    isTrue,
+    reason: 'Image is not a valid WebP — missing "RIFF" magic bytes: $path${_ctx(ownerKey: ownerKey)}',
+  );
   //WEBP
   final last = bytes.skip(8).join(',');
-  expect(last == '87,69,66,80', isTrue, reason: 'File = $path is not a valid webp');
+  expect(
+    last == '87,69,66,80',
+    isTrue,
+    reason: 'Image is not a valid WebP — missing "WEBP" marker: $path${_ctx(ownerKey: ownerKey)}',
+  );
 }
 
-void checkAssets(List<String> paths, {bool isAnAsset = false}) {
+void checkAssets(List<String> paths, {bool isAnAsset = false, String? ownerKey}) {
   for (final path in paths) {
-    checkAsset(path, isAnAsset: isAnAsset);
+    checkAsset(path, isAnAsset: isAnAsset, ownerKey: ownerKey);
   }
 }
 
@@ -102,17 +142,17 @@ void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
   }
 
   if (checkEmpty) {
-    expect(items, isNotEmpty, reason: 'Should not be empty');
+    expect(items, isNotEmpty, reason: 'Item list is empty — expected at least one ItemCommon');
   }
 }
 
-void checkItemsCommonWithName(List<ItemCommonWithName> items, {bool checkEmpty = true}) {
+void checkItemsCommonWithName(List<ItemCommonWithName> items, {bool checkEmpty = true, AppLanguageType? lang}) {
   for (final item in items) {
-    checkItemCommonWithName(item);
+    checkItemCommonWithName(item, lang: lang);
   }
 
   if (checkEmpty) {
-    expect(items, isNotEmpty, reason: 'Should not be empty');
+    expect(items, isNotEmpty, reason: 'Item list is empty — expected at least one named item${_ctx(lang: lang)}');
   }
 }
 
@@ -120,42 +160,50 @@ void checkItemCommon(ItemCommon item) {
   checkItemKeyAndImage(item.key, item.image);
 }
 
-void checkItemCommonWithName(ItemCommonWithName item) {
+void checkItemCommonWithName(ItemCommonWithName item, {AppLanguageType? lang}) {
   checkItemKeyAndImage(item.key, item.image);
-  checkTranslation(item.name, canBeNull: false);
+  checkTranslation(item.name, canBeNull: false, lang: lang, ownerKey: item.key);
 }
 
 void checkItemKeyAndImage(String key, String image) {
-  checkKey(key);
-  checkAsset(image);
+  checkKey(key, ownerKey: key);
+  checkAsset(image, ownerKey: key);
 }
 
-void checkItemKeyNameAndImage(String key, String name, String image) {
+void checkItemKeyNameAndImage(String key, String name, String image, {AppLanguageType? lang}) {
   checkItemKeyAndImage(key, image);
-  checkTranslation(name, canBeNull: false);
+  checkTranslation(name, canBeNull: false, lang: lang, ownerKey: key);
 }
 
-void checkItemKeyAndName(String key, String name) {
-  checkKey(key);
-  checkTranslation(name, canBeNull: false);
+void checkItemKeyAndName(String key, String name, {AppLanguageType? lang}) {
+  checkKey(key, ownerKey: key);
+  checkTranslation(name, canBeNull: false, lang: lang, ownerKey: key);
 }
 
-void checkBannerRarity(int rarity, {int? min, int? max}) {
+void checkBannerRarity(int rarity, {int? min, int? max, String? ownerKey}) {
   final minRarity = min ?? WishBannerConstants.minObtainableRarity;
   final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
-  expect(rarity >= minRarity && rarity <= maxRarity, isTrue, reason: 'Should be true');
+  expect(
+    rarity,
+    inInclusiveRange(minRarity, maxRarity),
+    reason: 'Banner item rarity out of range — obtainable items must be $minRarity–$maxRarity stars${_ctx(ownerKey: ownerKey)}',
+  );
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {
-  expect(all, isNotEmpty, reason: 'Should not be empty');
+  expect(all, isNotEmpty, reason: 'Ascension material list is empty — expected at least one required material');
   for (final material in all) {
-    checkKey(material.key);
+    checkKey(material.key, ownerKey: material.key);
     expect(
       () => materialFileService.getMaterial(material.key),
       returnsNormally,
-      reason: 'Should execute without throwing (key=${material.key})',
+      reason: 'Ascension references material "${material.key}" that does not exist in the materials resource file',
     );
-    expect(material.quantity, greaterThanOrEqualTo(0), reason: 'Should be greater than expected (property=quantity)');
+    expect(
+      material.quantity,
+      greaterThanOrEqualTo(0),
+      reason: 'Ascension material "${material.key}" has a negative required quantity (${material.quantity})',
+    );
   }
 }
 
@@ -164,30 +212,36 @@ void checkCharacterFileAscensionMaterialModel(
   List<CharacterFileAscensionMaterialModel> all, {
   bool checkMaterialType = true,
 }) {
-  expect(all, isNotEmpty, reason: 'Should not be empty');
+  expect(all, isNotEmpty, reason: 'Character ascension material list is empty — expected one entry per ascension rank');
   for (final ascMaterial in all) {
     expect(
       ascMaterial.rank,
-      allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]),
-      reason: 'Should be greater than expected (property=rank)',
+      inInclusiveRange(1, 6),
+      reason: 'Character ascension rank must be 1–6, got ${ascMaterial.rank}',
     );
     expect(
       ascMaterial.level,
-      allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]),
-      reason: 'Should be greater than expected (property=level)',
+      inInclusiveRange(20, 80),
+      reason: 'Character ascension level must be 20–80, got ${ascMaterial.level}',
     );
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
       final types = [MaterialType.jewels, MaterialType.local, MaterialType.common, MaterialType.currency];
       for (final type in types) {
         final materials = ascMaterial.materials.where((el) => el.type == type).toList();
-        expect(materials.length == 1, isTrue, reason: 'Should be true (property=length == 1)');
+        expect(
+          materials.length,
+          1,
+          reason: 'Ascension rank ${ascMaterial.rank} must require exactly one "${type.name}" '
+              'material, but requires ${materials.length}',
+        );
         final current = materials.first;
         final expected = materialFileService.getMaterial(current.key);
         expect(
-          current.type == expected.type,
-          isTrue,
-          reason: 'CurrentKey = ${current.key} has a type = ${current.type} != ${expected.type}',
+          current.type,
+          expected.type,
+          reason: 'Ascension material "${current.key}" is tagged as ${current.type} but the '
+              'materials file defines it as ${expected.type}',
         );
       }
     }
@@ -199,9 +253,13 @@ void checkCharacterFileTalentAscensionMaterialModel(
   List<CharacterFileTalentAscensionMaterialModel> all, {
   bool checkMaterialTypeAndLength = true,
 }) {
-  expect(all, isNotEmpty, reason: 'Should not be empty');
+  expect(all, isNotEmpty, reason: 'Talent ascension material list is empty — expected one entry per talent level');
   for (final ascMaterial in all) {
-    expect(ascMaterial.level, inInclusiveRange(2, 10), reason: 'Should be within expected range (property=level)');
+    expect(
+      ascMaterial.level,
+      inInclusiveRange(2, 10),
+      reason: 'Talent ascension level must be 2–10, got ${ascMaterial.level}',
+    );
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
 
     if (checkMaterialTypeAndLength) {
@@ -213,17 +271,18 @@ void checkCharacterFileTalentAscensionMaterialModel(
       expect(
         ascMaterial.materials.where((el) => el.type == MaterialType.talents).length,
         expectedLengthForTalents,
-        reason: 'Should match expected value (property=length, expectedLengthForTalents)',
+        reason: 'Talent level ${ascMaterial.level} must require $expectedLengthForTalents talent-book '
+            'material(s), per the talent-book progression rule',
       );
       expect(
         ascMaterial.materials.where((el) => el.type == MaterialType.common).length,
         1,
-        reason: 'Should match expected value (property=length, 1)',
+        reason: 'Talent level ${ascMaterial.level} must require exactly one common material',
       );
       expect(
         ascMaterial.materials.where((el) => el.type == MaterialType.currency).length,
         1,
-        reason: 'Should match expected value (property=length, 1)',
+        reason: 'Talent level ${ascMaterial.level} must require exactly one currency material (Mora)',
       );
     }
   }
@@ -235,27 +294,43 @@ final _tagPattern = RegExp(r'\{([^{}]+)#?([^{}]+)\}([^{}]*)\{/\1\}', caseSensiti
 //This makes sure that if we have brackets, only the {paramX} are allowed
 final _bracesPattern = RegExp(r'\{(?!param\d+\})[^}]*\}');
 
-void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true, bool checkParamX = true}) {
+void checkTranslation(
+  String? text, {
+  bool canBeNull = true,
+  bool checkForColor = true,
+  bool checkParamX = true,
+  AppLanguageType? lang,
+  String? ownerKey,
+}) {
   if (canBeNull && text.isNullEmptyOrWhitespace) {
     return;
   }
 
-  expect(text, allOf([isNotNull, isNotEmpty]), reason: 'Should not be empty');
+  final ctx = _ctx(ownerKey: ownerKey, lang: lang);
+  expect(text, allOf([isNotNull, isNotEmpty]), reason: 'Translation is null or empty — a name/description is required$ctx');
   final weirdCharacters = text!.contains('#') || text.contains('LAYOUT');
 
-  expect(weirdCharacters, isFalse, reason: 'Should be false');
+  expect(
+    weirdCharacters,
+    isFalse,
+    reason: 'Translation contains an unresolved scrape artifact ("#" or "LAYOUT"): "$text"$ctx',
+  );
   if (checkForColor) {
     final hasColor = text.contains('{color}') || text.contains('{/color}');
-    expect(hasColor, isFalse, reason: 'Text contains invalid color tags. $text');
+    expect(hasColor, isFalse, reason: 'Translation contains raw {color} tags that were not stripped: "$text"$ctx');
   }
 
-  expect(_tagPattern.hasMatch(text), isFalse, reason: 'Should be false (property=hasMatch(text))');
+  expect(
+    _tagPattern.hasMatch(text),
+    isFalse,
+    reason: 'Translation contains an unclosed/mismatched formatting tag: "$text"$ctx',
+  );
 
   if (checkParamX) {
     expect(
       _bracesPattern.hasMatch(text),
       isFalse,
-      reason: 'Text contains invalid content between curly braces. Only {paramX} is allowed. $text',
+      reason: 'Translation has invalid content in curly braces — only {paramX} placeholders are allowed: "$text"$ctx',
     );
   }
 }

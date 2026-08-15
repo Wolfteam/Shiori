@@ -3,7 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/application/bloc.dart';
 
 void main() {
-  test('Initial state', () => expect(TierListFormBloc().state, const TierListFormState.loaded(name: '', isNameDirty: false, isNameValid: false), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      TierListFormBloc().state,
+      const TierListFormState.loaded(name: '', isNameDirty: false, isNameValid: false),
+      reason: 'A fresh TierListFormBloc should start with empty name, not dirty and invalid',
+    ),
+  );
 
   group('Name changed', () {
     blocTest<TierListFormBloc, TierListFormState>(

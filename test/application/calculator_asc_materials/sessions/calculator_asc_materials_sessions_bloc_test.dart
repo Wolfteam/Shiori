@@ -58,7 +58,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const CalculatorAscMaterialsSessionsState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(
+      getBloc().state,
+      const CalculatorAscMaterialsSessionsState.loading(),
+      reason: 'A freshly built sessions bloc must start in the loading state before init',
+    ),
   );
 
   group('Init', () {
@@ -79,7 +83,11 @@ void main() {
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
             verify(calcMock.getAllSessions()).called(1);
-            expect(state.sessions, sessions, reason: 'Should match expected value (property=sessions)');
+            expect(
+              state.sessions,
+              sessions,
+              reason: 'After init, loaded state must expose all stored sessions from the repository',
+            );
         }
       },
     );
@@ -133,8 +141,16 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, 1, reason: 'Should match expected value (property=sessions, expected=1)');
-            expect(state.sessions.first, createdSession, reason: 'Should match expected value (property=sessions)');
+            expect(
+              state.sessions.length,
+              1,
+              reason: 'After createSession, loaded state must hold exactly the one newly created session',
+            );
+            expect(
+              state.sessions.first,
+              createdSession,
+              reason: 'After createSession, the stored session must equal the created one (key=${createdSession.key})',
+            );
             verify(
               calcMock.createSession(createdSession.name, createdSession.position, createdSession.showMaterialUsage),
             ).called(1);
@@ -205,8 +221,16 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, sessions.length, reason: 'Should match expected value (property=sessions)');
-            expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession, reason: 'Should match expected value (property=key), updatedSession)');
+            expect(
+              state.sessions.length,
+              sessions.length,
+              reason: 'After updateSession, the session count must be unchanged (only one session is edited in place)',
+            );
+            expect(
+              state.sessions.firstWhere((el) => el.key == updatedSession.key),
+              updatedSession,
+              reason: 'After updateSession, the edited session must reflect the new name (key=${updatedSession.key})',
+            );
             verify(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.showMaterialUsage)).called(1);
         }
       },
@@ -245,8 +269,16 @@ void main() {
           case CalculatorAscMaterialsSessionsStateLoading():
             throw InvalidStateError();
           case CalculatorAscMaterialsSessionsStateLoaded():
-            expect(state.sessions.length, sessions.length - 1, reason: 'Should match expected value (property=sessions)');
-            expect(state.sessions.map((e) => e.key).toList(), isNot(contains(sessions.first.key)), reason: 'Should contain expected value');
+            expect(
+              state.sessions.length,
+              sessions.length - 1,
+              reason: 'After deleteSession, exactly one session must be removed from the loaded list',
+            );
+            expect(
+              state.sessions.map((e) => e.key).toList(),
+              isNot(contains(sessions.first.key)),
+              reason: 'After deleteSession, the deleted key must no longer appear (key=${sessions.first.key})',
+            );
             verify(calcMock.deleteSession(sessions.first.key)).called(1);
         }
       },
@@ -348,7 +380,11 @@ void main() {
         expected = 0;
       }
 
-      expect(got, expected, reason: 'Should match expected value');
+      expect(
+        got,
+        expected,
+        reason: 'After item ${added ? 'added' : 'deleted'}, session count must go $current -> $expected (clamped at 0)',
+      );
     }
 
     for (int i = 0; i < 2; i++) {
@@ -373,9 +409,17 @@ void main() {
                 if (inState.key == sessions.last.key) {
                   checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
                 } else {
-                  expect(session.numberOfCharacters, inState.numberOfCharacters, reason: 'Should match expected value (property=numberOfCharacters)');
+                  expect(
+                    session.numberOfCharacters,
+                    inState.numberOfCharacters,
+                    reason: 'Non-target session character count unchanged by character event (key=${session.key})',
+                  );
                 }
-                expect(session.numberOfWeapons, inState.numberOfWeapons, reason: 'Should match expected value (property=numberOfWeapons)');
+                expect(
+                  session.numberOfWeapons,
+                  inState.numberOfWeapons,
+                  reason: 'Weapon count must be unchanged by a character add/delete event (key=${session.key})',
+                );
               }
               checkCount(sessions.last.numberOfCharacters, state.sessions.last.numberOfCharacters, added);
           }
@@ -405,9 +449,17 @@ void main() {
                 if (inState.key == sessions.last.key) {
                   checkCount(sessions.last.numberOfWeapons, state.sessions.last.numberOfWeapons, added);
                 } else {
-                  expect(session.numberOfWeapons, inState.numberOfWeapons, reason: 'Should match expected value (property=numberOfWeapons)');
+                  expect(
+                    session.numberOfWeapons,
+                    inState.numberOfWeapons,
+                    reason: 'Non-target session weapon count unchanged by weapon event (key=${session.key})',
+                  );
                 }
-                expect(session.numberOfCharacters, inState.numberOfCharacters, reason: 'Should match expected value (property=numberOfCharacters)');
+                expect(
+                  session.numberOfCharacters,
+                  inState.numberOfCharacters,
+                  reason: 'Character count must be unchanged by a weapon add/delete event (key=${session.key})',
+                );
               }
           }
         },

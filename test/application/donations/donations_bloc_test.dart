@@ -19,7 +19,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(DonationsBloc(MockPurchaseService(), MockNetworkService(), MockTelemetryService()).state, const DonationsState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(DonationsBloc(MockPurchaseService(), MockNetworkService(), MockTelemetryService()).state, const DonationsState.loading(), reason: 'A freshly built DonationsBloc must start in DonationsState.loading before init'),
   );
 
   group('init', () {

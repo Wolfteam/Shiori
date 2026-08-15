@@ -53,7 +53,7 @@ void main() {
     () => expect(
       TierListBloc(genshinService, dataService, telemetryService, loggingService).state,
       const TierListState.loaded(rows: [], charsAvailable: [], readyToSave: false),
-      reason: 'Should match expected value (property=state)',
+      reason: 'A fresh TierListBloc should start loaded with empty rows, no available chars and not ready to save',
     ),
   );
 
@@ -86,9 +86,9 @@ void main() {
       build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init()),
       verify: (bloc) {
-        expect(bloc.state.rows.length, 2, reason: 'Should match expected value (property=rows, expected=2)');
-        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Should not be empty (property=charsAvailable)');
-        expect(bloc.state.readyToSave, false, reason: 'Should match expected value (property=readyToSave, expected=false)');
+        expect(bloc.state.rows.length, 2, reason: 'Custom saved tier list has 2 rows so state should load 2 rows, got ${bloc.state.rows.length}');
+        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Custom tier list omits some chars so charsAvailable should be non-empty');
+        expect(bloc.state.readyToSave, false, reason: 'Loading a tier list should not mark it readyToSave, got ${bloc.state.readyToSave}');
         checkItemsCommon(bloc.state.rows.expand((el) => el.items).toList());
       },
     );
@@ -128,7 +128,7 @@ void main() {
         expect(
           bloc.state.rows.first.tierText,
           'Updated',
-          reason: "Should match expected value (property=tierText, expected='Updated')",
+          reason: 'After rowTextChanged(index: 0, Updated), first row tierText should be Updated, got ${bloc.state.rows.first.tierText}',
         );
       },
     );
@@ -145,7 +145,7 @@ void main() {
       verify: (bloc) {
         final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         final movedOne = defaultTierList.first;
-        expect(movedOne.tierText, bloc.state.rows[5].tierText, reason: 'Should match expected value (property=tierText)');
+        expect(movedOne.tierText, bloc.state.rows[5].tierText, reason: 'After rowPositionChanged(0 -> 5), the moved row should now sit at index 5');
       },
     );
 
@@ -162,7 +162,7 @@ void main() {
         expect(
           bloc.state.rows.first.tierColor,
           TierListBloc.defaultColors.last,
-          reason: 'Should match expected value (property=tierColor)',
+          reason: 'After rowColorChanged(index: 0), first row tierColor should be the new color',
         );
       },
     );
@@ -181,8 +181,12 @@ void main() {
           ..add(TierListEvent.addCharacterToRow(index: 0, item: firstRow.items.first));
       },
       verify: (bloc) {
-        expect(bloc.state.rows.first.items.length, 1, reason: 'Should match expected value (property=items, expected=1)');
-        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Should not be empty (property=charsAvailable)');
+        expect(
+          bloc.state.rows.first.items.length,
+          1,
+          reason: 'After clearing row 0 and adding one character, first row should hold 1 item, got ${bloc.state.rows.first.items.length}',
+        );
+        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Clearing a row should leave its characters available in charsAvailable');
       },
     );
 
@@ -203,9 +207,9 @@ void main() {
         expect(
           bloc.state.rows.first.items.length,
           firstRow.items.length - 1,
-          reason: 'Should match expected value (property=items)',
+          reason: 'Deleting one character from row 0 should leave firstRow.items.length - 1 items',
         );
-        expect(bloc.state.charsAvailable.length, 1, reason: 'Should match expected value (property=charsAvailable, expected=1)');
+        expect(bloc.state.charsAvailable.length, 1, reason: 'Deleting one character should make exactly 1 char available, got ${bloc.state.charsAvailable.length}');
       },
     );
   });
@@ -222,11 +226,15 @@ void main() {
         ..add(const TierListEvent.addNewRow(index: 0, above: true)),
       verify: (bloc) {
         final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        expect(bloc.state.rows.length, defaultTierList.length + 1, reason: 'Should match expected value (property=rows)');
+        expect(
+          bloc.state.rows.length,
+          defaultTierList.length + 1,
+          reason: 'Adding a row above should increase row count by 1 to ${defaultTierList.length + 1}, got ${bloc.state.rows.length}',
+        );
         expect(
           bloc.state.rows.first.tierText != defaultTierList.first.tierText,
           isTrue,
-          reason: 'Should be true (property=tierText)',
+          reason: 'New row added above should replace the first tierText with a different value',
         );
       },
     );
@@ -242,11 +250,15 @@ void main() {
         ..add(const TierListEvent.addNewRow(index: 0, above: false)),
       verify: (bloc) {
         final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        expect(bloc.state.rows.length, defaultTierList.length + 1, reason: 'Should match expected value (property=rows)');
+        expect(
+          bloc.state.rows.length,
+          defaultTierList.length + 1,
+          reason: 'Adding a row below should increase row count by 1 to ${defaultTierList.length + 1}, got ${bloc.state.rows.length}',
+        );
         expect(
           defaultTierList.any((el) => el.tierText == bloc.state.rows[1].tierText),
           isFalse,
-          reason: 'Should be false (property=tierText), isFalse)',
+          reason: 'New row inserted below at index 1 should have a tierText not present in the default list',
         );
       },
     );
@@ -261,8 +273,8 @@ void main() {
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.clearRow(index: 0)),
       verify: (bloc) {
-        expect(bloc.state.rows.first.items, isEmpty, reason: 'Should be empty (property=items)');
-        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Should not be empty (property=charsAvailable)');
+        expect(bloc.state.rows.first.items, isEmpty, reason: 'After clearRow(index: 0), first row should have no items');
+        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Clearing row 0 should release its characters into charsAvailable');
       },
     );
 
@@ -279,9 +291,9 @@ void main() {
         expect(
           bloc.state.rows.expand((el) => el.items).toList(),
           isEmpty,
-          reason: 'Should be empty (property=toList(), isEmpty)',
+          reason: 'After clearAllRows, no row should contain any items',
         );
-        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Should not be empty (property=charsAvailable)');
+        expect(bloc.state.charsAvailable, isNotEmpty, reason: 'Clearing all rows should release every character into charsAvailable');
       },
     );
   });
@@ -298,7 +310,7 @@ void main() {
         ..add(const TierListEvent.readyToSave(ready: true))
         ..add(const TierListEvent.screenshotTaken(succeed: true)),
       verify: (bloc) {
-        expect(bloc.state.readyToSave, false, reason: 'Should match expected value (property=readyToSave, expected=false)');
+        expect(bloc.state.readyToSave, false, reason: 'A successful screenshot should reset readyToSave to false, got ${bloc.state.readyToSave}');
       },
     );
 
@@ -313,7 +325,7 @@ void main() {
         ..add(const TierListEvent.readyToSave(ready: true))
         ..add(const TierListEvent.screenshotTaken(succeed: false)),
       verify: (bloc) {
-        expect(bloc.state.readyToSave, true, reason: 'Should match expected value (property=readyToSave, expected=true)');
+        expect(bloc.state.readyToSave, true, reason: 'A failed screenshot should keep readyToSave true, got ${bloc.state.readyToSave}');
       },
     );
   });

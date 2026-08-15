@@ -31,7 +31,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ElementsBloc(genshinService).state, const ElementsState.loading(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(ElementsBloc(genshinService).state, const ElementsState.loading(), reason: 'A freshly built ElementsBloc must start in ElementsState.loading before init'));
 
   blocTest<ElementsBloc, ElementsState>(
     'Init',
@@ -43,9 +43,9 @@ void main() {
         case ElementsStateLoading():
           throw InvalidStateError();
         case ElementsStateLoaded():
-          expect(state.debuffs.length, 4, reason: 'Should match expected value (property=debuffs, expected=4)');
-          expect(state.reactions.length, 17, reason: 'Should match expected value (property=reactions, expected=17)');
-          expect(state.resonances.length, 8, reason: 'Should match expected value (property=resonances, expected=8)');
+          expect(state.debuffs.length, 4, reason: 'After init, loaded state must contain 4 elemental debuffs');
+          expect(state.reactions.length, 17, reason: 'After init, loaded state must contain 17 elemental reactions');
+          expect(state.resonances.length, 8, reason: 'After init, loaded state must contain 8 elemental resonances');
 
           for (final debuff in state.debuffs) {
             checkTranslation(debuff.name, canBeNull: false);

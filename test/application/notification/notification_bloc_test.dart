@@ -86,28 +86,28 @@ void main() {
   }) {
     if (checkKey) {
       //By default the key starts at 0
-      expect(state.key, 0, reason: 'Should match expected value (property=key, expected=0)');
+      expect(state.key, 0, reason: 'A newly added notification should get key 0');
     }
-    expect(state.title, title, reason: 'Should match expected value (property=title)');
-    expect(state.body, body, reason: 'Should match expected value (property=body)');
+    expect(state.title, title, reason: 'Notification state should carry the expected title (type=${type.name})');
+    expect(state.body, body, reason: 'Notification state should carry the expected body (type=${type.name})');
     if (checkNote) {
-      expect(state.note, note, reason: 'Should match expected value (property=note)');
+      expect(state.note, note, reason: 'Notification state should carry the expected note (type=${type.name})');
     }
-    expect(state.isTitleValid, true, reason: 'Should match expected value (property=isTitleValid, expected=true)');
-    expect(state.isBodyValid, true, reason: 'Should match expected value (property=isBodyValid, expected=true)');
-    expect(state.showNotification, showNotification, reason: 'Should match expected value (property=showNotification)');
-    expect(state.type, type, reason: 'Should match expected value (property=type)');
-    expect(state.images, isNotEmpty, reason: 'Should not be empty (property=images)');
-    expect(state.images.any((el) => el.isSelected), true, reason: 'Should match expected value (property=isSelected), true)');
+    expect(state.isTitleValid, true, reason: 'A non-empty title should be valid (type=${type.name})');
+    expect(state.isBodyValid, true, reason: 'A non-empty body should be valid (type=${type.name})');
+    expect(state.showNotification, showNotification, reason: 'Notification state should reflect showNotification=$showNotification (type=${type.name})');
+    expect(state.type, type, reason: 'Notification state type should be ${type.name}, got ${state.type.name}');
+    expect(state.images, isNotEmpty, reason: 'Notification state should offer selectable images (type=${type.name})');
+    expect(state.images.any((el) => el.isSelected), true, reason: 'Exactly one image should be selected (type=${type.name})');
     for (final item in state.images) {
       checkItemKeyAndImage(item.itemKey, item.image);
     }
   }
 
   void checkNotDirtyFields(NotificationState state, {bool shouldBeDirty = true}) {
-    expect(state.isTitleDirty, shouldBeDirty, reason: 'Should match expected value (property=isTitleDirty)');
-    expect(state.isNoteDirty, shouldBeDirty, reason: 'Should match expected value (property=isNoteDirty)');
-    expect(state.isBodyDirty, shouldBeDirty, reason: 'Should match expected value (property=isBodyDirty)');
+    expect(state.isTitleDirty, shouldBeDirty, reason: 'Title dirty flag should be $shouldBeDirty for this notification state');
+    expect(state.isNoteDirty, shouldBeDirty, reason: 'Note dirty flag should be $shouldBeDirty for this notification state');
+    expect(state.isBodyDirty, shouldBeDirty, reason: 'Body dirty flag should be $shouldBeDirty for this notification state');
   }
 
   NotificationBloc buildBloc() {
@@ -128,7 +128,7 @@ void main() {
     'Initial state',
     () => expect(
       buildBloc().state,
-      const NotificationState.resin(currentResin: 0), reason: 'Should match expected value (property=state)'),
+      const NotificationState.resin(currentResin: 0), reason: 'A freshly constructed NotificationBloc should start in NotificationState.resin with currentResin=0'),
   );
 
   blocTest<NotificationBloc, NotificationState>(
@@ -141,8 +141,8 @@ void main() {
         case NotificationStateResin():
           checkState(state, AppNotificationType.resin, checkKey: false);
           checkNotDirtyFields(state, shouldBeDirty: false);
-          expect(state.showOtherImages, false, reason: 'Should match expected value (property=showOtherImages, expected=false)');
-          expect(state.currentResin, 0, reason: 'Should match expected value (property=currentResin, expected=0)');
+          expect(state.showOtherImages, false, reason: 'A default resin notification should not show other images');
+          expect(state.currentResin, 0, reason: 'A default resin notification should start with currentResin=0');
         default:
           throw InvalidStateError();
       }
@@ -169,7 +169,7 @@ void main() {
           case NotificationStateResin():
             checkState(state, AppNotificationType.resin, checkNote: true);
             checkNotDirtyFields(state);
-            expect(state.currentResin, 60, reason: 'Should match expected value (property=currentResin, expected=60)');
+            expect(state.currentResin, 60, reason: 'Editing the saved resin notification should load currentResin=60');
           default:
             throw InvalidStateError();
         }
@@ -203,8 +203,8 @@ void main() {
           case NotificationStateExpedition():
             checkState(state, AppNotificationType.expedition, checkNote: true);
             checkNotDirtyFields(state);
-            expect(state.withTimeReduction, true, reason: 'Should match expected value (property=withTimeReduction, expected=true)');
-            expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours, reason: 'Should match expected value (property=expeditionTimeType, expected=ExpeditionTimeType.twelveHours)');
+            expect(state.withTimeReduction, true, reason: 'Editing the saved expedition notification should load withTimeReduction=true');
+            expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours, reason: 'Editing the saved expedition notification should load expeditionTimeType=twelveHours');
           default:
             throw InvalidStateError();
         }
@@ -237,7 +237,7 @@ void main() {
           case NotificationStateFarmingArtifact():
             checkState(state, AppNotificationType.farmingArtifacts, checkNote: true);
             checkNotDirtyFields(state);
-            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours, reason: 'Should match expected value (property=artifactFarmingTimeType, expected=ArtifactFarmingTimeType.twelveHours)');
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours, reason: 'Editing the saved farming-artifact notification should load artifactFarmingTimeType=twelveHours');
           default:
             throw InvalidStateError();
         }
@@ -327,7 +327,7 @@ void main() {
           case NotificationStateFurniture():
             checkState(state, AppNotificationType.furniture, checkNote: true);
             checkNotDirtyFields(state);
-            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours, reason: 'Should match expected value (property=timeType, expected=FurnitureCraftingTimeType.fourteenHours)');
+            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours, reason: 'Editing the saved furniture notification should load timeType=fourteenHours');
           default:
             throw InvalidStateError();
         }
@@ -361,9 +361,9 @@ void main() {
           case NotificationStateRealmCurrency():
             checkState(state, AppNotificationType.realmCurrency, checkNote: true);
             checkNotDirtyFields(state);
-            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'Should match expected value (property=currentRealmRankType, expected=RealmRankType.luxury)');
-            expect(state.currentTrustRank, 7, reason: 'Should match expected value (property=currentTrustRank, expected=7)');
-            expect(state.currentRealmCurrency, 100, reason: 'Should match expected value (property=currentRealmCurrency, expected=100)');
+            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'Editing the saved realm-currency notification should load currentRealmRankType=luxury');
+            expect(state.currentTrustRank, 7, reason: 'Editing the saved realm-currency notification should load currentTrustRank=7');
+            expect(state.currentRealmCurrency, 100, reason: 'Editing the saved realm-currency notification should load currentRealmCurrency=100');
           default:
             throw InvalidStateError();
         }
@@ -470,7 +470,7 @@ void main() {
             case NotificationStateCustom():
               checkState(state, AppNotificationType.custom, checkNote: true);
               checkNotDirtyFields(state);
-              expect(state.itemType, type, reason: 'Should match expected value (property=itemType)');
+              expect(state.itemType, type, reason: 'Editing a saved custom notification should load itemType=${type.name}, got ${state.itemType.name}');
             default:
               throw InvalidStateError();
           }
@@ -561,7 +561,7 @@ void main() {
           case NotificationStateResin():
             checkState(state, AppNotificationType.resin, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.currentResin, 100, reason: 'Should match expected value (property=currentResin, expected=100)');
+            expect(state.currentResin, 100, reason: 'resinChanged(100) should set currentResin to 100');
           default:
             throw InvalidStateError();
         }
@@ -589,7 +589,7 @@ void main() {
           case NotificationStateResin():
             checkState(state, AppNotificationType.resin);
             checkNotDirtyFields(state);
-            expect(state.currentResin, 100, reason: 'Should match expected value (property=currentResin, expected=100)');
+            expect(state.currentResin, 100, reason: 'resinChanged(100) on the edited notification should set currentResin to 100');
           default:
             throw InvalidStateError();
         }
@@ -612,8 +612,8 @@ void main() {
           case NotificationStateExpedition():
             checkState(state, AppNotificationType.expedition, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.expeditionTimeType, ExpeditionTimeType.fourHours, reason: 'Should match expected value (property=expeditionTimeType, expected=ExpeditionTimeType.fourHours)');
-            expect(state.withTimeReduction, true, reason: 'Should match expected value (property=withTimeReduction, expected=true)');
+            expect(state.expeditionTimeType, ExpeditionTimeType.fourHours, reason: 'expeditionTimeTypeChanged(fourHours) should set expeditionTimeType to fourHours');
+            expect(state.withTimeReduction, true, reason: 'timeReductionChanged(true) should set withTimeReduction to true');
           default:
             throw InvalidStateError();
         }
@@ -649,8 +649,8 @@ void main() {
           case NotificationStateExpedition():
             checkState(state, AppNotificationType.expedition, checkKey: false);
             checkNotDirtyFields(state);
-            expect(state.expeditionTimeType, ExpeditionTimeType.eightHours, reason: 'Should match expected value (property=expeditionTimeType, expected=ExpeditionTimeType.eightHours)');
-            expect(state.withTimeReduction, false, reason: 'Should match expected value (property=withTimeReduction, expected=false)');
+            expect(state.expeditionTimeType, ExpeditionTimeType.eightHours, reason: 'expeditionTimeTypeChanged(eightHours) on the edited notification should set expeditionTimeType to eightHours');
+            expect(state.withTimeReduction, false, reason: 'timeReductionChanged(false) on the edited notification should set withTimeReduction to false');
           default:
             throw InvalidStateError();
         }
@@ -672,7 +672,7 @@ void main() {
           case NotificationStateFarmingArtifact():
             checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours, reason: 'Should match expected value (property=artifactFarmingTimeType, expected=ArtifactFarmingTimeType.twelveHours)');
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours, reason: 'artifactFarmingTimeTypeChanged(twelveHours) should set artifactFarmingTimeType to twelveHours');
           default:
             throw InvalidStateError();
         }
@@ -707,7 +707,7 @@ void main() {
           case NotificationStateFarmingArtifact():
             checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
             checkNotDirtyFields(state);
-            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours, reason: 'Should match expected value (property=artifactFarmingTimeType, expected=ArtifactFarmingTimeType.twentyFourHours)');
+            expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours, reason: 'artifactFarmingTimeTypeChanged(twentyFourHours) on the edited notification should set artifactFarmingTimeType to twentyFourHours');
           default:
             throw InvalidStateError();
         }
@@ -735,7 +735,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
             final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
-            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'Should be true (property=image == imgPath), isTrue)');
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'imageChanged should select the material image $imgPath');
           default:
             throw InvalidStateError();
         }
@@ -773,7 +773,7 @@ void main() {
             checkNotDirtyFields(state);
             final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
             final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
-            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'Should be true (property=image == imgPath), isTrue)');
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'imageChanged on the edited notification should select the material image $imgPath');
           default:
             throw InvalidStateError();
         }
@@ -801,7 +801,7 @@ void main() {
             checkNotDirtyFields(state, shouldBeDirty: false);
             final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
             final imgPath = resourceService.getGadgetImagePath(gadget.image);
-            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'Should be true (property=image == imgPath), isTrue)');
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'imageChanged should select the gadget image $imgPath');
           default:
             throw InvalidStateError();
         }
@@ -834,7 +834,7 @@ void main() {
             checkNotDirtyFields(state);
             final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
             final imgPath = resourceService.getGadgetImagePath(gadget.image);
-            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'Should be true (property=image == imgPath), isTrue)');
+            expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue, reason: 'imageChanged on the edited notification should select the gadget image $imgPath');
           default:
             throw InvalidStateError();
         }
@@ -856,7 +856,7 @@ void main() {
           case NotificationStateFurniture():
             checkState(state, AppNotificationType.furniture, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours, reason: 'Should match expected value (property=timeType, expected=FurnitureCraftingTimeType.fourteenHours)');
+            expect(state.timeType, FurnitureCraftingTimeType.fourteenHours, reason: 'furnitureCraftingTimeTypeChanged(fourteenHours) should set timeType to fourteenHours');
           default:
             throw InvalidStateError();
         }
@@ -891,7 +891,7 @@ void main() {
           case NotificationStateFurniture():
             checkState(state, AppNotificationType.furniture, checkKey: false);
             checkNotDirtyFields(state);
-            expect(state.timeType, FurnitureCraftingTimeType.sixteenHours, reason: 'Should match expected value (property=timeType, expected=FurnitureCraftingTimeType.sixteenHours)');
+            expect(state.timeType, FurnitureCraftingTimeType.sixteenHours, reason: 'furnitureCraftingTimeTypeChanged(sixteenHours) on the edited notification should set timeType to sixteenHours');
           default:
             throw InvalidStateError();
         }
@@ -915,9 +915,9 @@ void main() {
           case NotificationStateRealmCurrency():
             checkState(state, AppNotificationType.realmCurrency, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.currentRealmCurrency, 100, reason: 'Should match expected value (property=currentRealmCurrency, expected=100)');
-            expect(state.currentTrustRank, 10, reason: 'Should match expected value (property=currentTrustRank, expected=10)');
-            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'Should match expected value (property=currentRealmRankType, expected=RealmRankType.luxury)');
+            expect(state.currentRealmCurrency, 100, reason: 'realmCurrencyChanged(100) should set currentRealmCurrency to 100');
+            expect(state.currentTrustRank, 10, reason: 'realmTrustRankLevelChanged(10) should set currentTrustRank to 10');
+            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'realmRankTypeChanged(luxury) should set currentRealmRankType to luxury');
           default:
             throw InvalidStateError();
         }
@@ -955,9 +955,9 @@ void main() {
           case NotificationStateRealmCurrency():
             checkState(state, AppNotificationType.realmCurrency, checkKey: false);
             checkNotDirtyFields(state);
-            expect(state.currentRealmCurrency, 1000, reason: 'Should match expected value (property=currentRealmCurrency, expected=1000)');
-            expect(state.currentTrustRank, 9, reason: 'Should match expected value (property=currentTrustRank, expected=9)');
-            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'Should match expected value (property=currentRealmRankType, expected=RealmRankType.luxury)');
+            expect(state.currentRealmCurrency, 1000, reason: 'realmCurrencyChanged(1000) on the edited notification should set currentRealmCurrency to 1000');
+            expect(state.currentTrustRank, 9, reason: 'realmTrustRankLevelChanged(9) on the edited notification should set currentTrustRank to 9');
+            expect(state.currentRealmRankType, RealmRankType.luxury, reason: 'realmRankTypeChanged(luxury) on the edited notification should set currentRealmRankType to luxury');
           default:
             throw InvalidStateError();
         }
@@ -1014,7 +1014,7 @@ void main() {
             checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
             checkNotDirtyFields(state);
             final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
-            expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue, reason: 'Should be true (property=image), isTrue)');
+            expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue, reason: 'imageChanged should select the weekly boss image ${boss.image}');
           default:
             throw InvalidStateError();
         }
@@ -1036,7 +1036,7 @@ void main() {
           case NotificationStateCustom():
             checkState(state, AppNotificationType.custom, checkKey: false);
             checkNotDirtyFields(state, shouldBeDirty: false);
-            expect(state.itemType, AppNotificationItemType.character, reason: 'Should match expected value (property=itemType, expected=AppNotificationItemType.character)');
+            expect(state.itemType, AppNotificationItemType.character, reason: 'itemTypeChanged(character) should set itemType to character');
           default:
             throw InvalidStateError();
         }
@@ -1072,7 +1072,7 @@ void main() {
           case NotificationStateCustom():
             checkState(state, AppNotificationType.custom, checkKey: false);
             checkNotDirtyFields(state);
-            expect(state.itemType, AppNotificationItemType.artifact, reason: 'Should match expected value (property=itemType, expected=AppNotificationItemType.artifact)');
+            expect(state.itemType, AppNotificationItemType.artifact, reason: 'itemTypeChanged(artifact) on the edited notification should set itemType to artifact');
           default:
             throw InvalidStateError();
         }

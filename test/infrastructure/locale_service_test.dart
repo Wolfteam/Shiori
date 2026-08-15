@@ -9,8 +9,16 @@ void main() {
     for (final lang in languages) {
       final service = getLocaleService(lang);
       final birthday = service.getCharBirthDate('02/29');
-      expect(birthday.month, equals(DateTime.february), reason: 'Should equal expected value (property=month, lang=${lang.name})');
-      expect(birthday.day, 29, reason: 'Should match expected value (property=day, expected=29, lang=${lang.name})');
+      expect(
+        birthday.month,
+        equals(DateTime.february),
+        reason: 'Parsed birthday month must be February for input 02/29, got ${birthday.month} (lang=${lang.name})',
+      );
+      expect(
+        birthday.day,
+        29,
+        reason: 'Parsed birthday day must be 29 for input 02/29, got ${birthday.day} (lang=${lang.name})',
+      );
     }
   });
 }

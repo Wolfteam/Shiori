@@ -42,7 +42,7 @@ void main() {
     'Initial state',
     () => expect(
       ChartAscensionStatsBloc(genshinService).state,
-      const ChartAscensionStatsState.loading(), reason: 'Should match expected value (property=state)'),
+      const ChartAscensionStatsState.loading(), reason: 'A freshly built ChartAscensionStatsBloc must start in loading before init'),
   );
 
   group('Init', () {

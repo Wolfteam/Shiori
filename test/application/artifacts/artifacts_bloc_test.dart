@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ArtifactsBloc(genshinService).state, const ArtifactsState.loading(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(ArtifactsBloc(genshinService).state, const ArtifactsState.loading(), reason: 'A freshly built ArtifactsBloc must start in ArtifactsState.loading before init'));
 
   group('Init', () {
     blocTest<ArtifactsBloc, ArtifactsState>(
@@ -72,14 +72,14 @@ void main() {
                 .getArtifactsForCard()
                 .where((el) => !excludedKeys.contains(el.key))
                 .toList();
-            expect(state.artifacts.length, artifacts.length, reason: 'Should match expected value (property=artifacts)');
-            expect(state.collapseNotes, false, reason: 'Should match expected value (property=collapseNotes, expected=false)');
-            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
-            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
-            expect(state.artifactFilterType, ArtifactFilterType.name, reason: 'Should match expected value (property=artifactFilterType, expected=ArtifactFilterType.name)');
-            expect(state.tempArtifactFilterType, ArtifactFilterType.name, reason: 'Should match expected value (property=tempArtifactFilterType, expected=ArtifactFilterType.name)');
-            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
-            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
+            expect(state.artifacts.length, artifacts.length, reason: 'init(excludeKeys) must drop the excluded keys, leaving ${artifacts.length} artifacts');
+            expect(state.collapseNotes, false, reason: 'init must default collapseNotes to false');
+            expect(state.rarity, 0, reason: 'init must default the applied rarity filter to 0 (no filter)');
+            expect(state.tempRarity, 0, reason: 'init must default the pending rarity filter to 0 (no filter)');
+            expect(state.artifactFilterType, ArtifactFilterType.name, reason: 'init must default the applied filter type to name');
+            expect(state.tempArtifactFilterType, ArtifactFilterType.name, reason: 'init must default the pending filter type to name');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'init must default the applied sort direction to asc');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'init must default the pending sort direction to asc');
         }
       },
     );

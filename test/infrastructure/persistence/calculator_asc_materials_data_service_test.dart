@@ -120,40 +120,94 @@ void main() {
   }
 
   void checkSessionItem(ItemAscensionMaterials got, ItemAscensionMaterials expected) {
-    expect(got.key, expected.key, reason: 'Should match expected value (property=key)');
-    expect(got.position, expected.position, reason: 'Should match expected value (property=position)');
-    expect(got.currentLevel, expected.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-    expect(got.desiredLevel, expected.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
+    expect(got.key, expected.key, reason: 'Persisted session item key must round-trip (expected=${expected.key})');
+    expect(
+      got.position,
+      expected.position,
+      reason: 'Persisted session item position must round-trip (key=${expected.key}, expected=${expected.position})',
+    );
+    expect(
+      got.currentLevel,
+      expected.currentLevel,
+      reason: 'Persisted currentLevel must round-trip (key=${expected.key}, expected=${expected.currentLevel})',
+    );
+    expect(
+      got.desiredLevel,
+      expected.desiredLevel,
+      reason: 'Persisted desiredLevel must round-trip (key=${expected.key}, expected=${expected.desiredLevel})',
+    );
     expect(
       got.currentAscensionLevel,
       expected.currentAscensionLevel,
-      reason: 'Should match expected value (property=currentAscensionLevel)',
+      reason: 'Persisted currentAscensionLevel must round-trip '
+          '(key=${expected.key}, expected=${expected.currentAscensionLevel})',
     );
     expect(
       got.desiredAscensionLevel,
       expected.desiredAscensionLevel,
-      reason: 'Should match expected value (property=desiredAscensionLevel)',
+      reason: 'Persisted desiredAscensionLevel must round-trip '
+          '(key=${expected.key}, expected=${expected.desiredAscensionLevel})',
     );
-    expect(got.isCharacter, expected.isCharacter, reason: 'Should match expected value (property=isCharacter)');
-    expect(got.isWeapon, expected.isWeapon, reason: 'Should match expected value (property=isWeapon)');
-    expect(got.isActive, expected.isActive, reason: 'Should match expected value (property=isActive)');
+    expect(
+      got.isCharacter,
+      expected.isCharacter,
+      reason: 'Persisted isCharacter flag must round-trip (key=${expected.key}, expected=${expected.isCharacter})',
+    );
+    expect(
+      got.isWeapon,
+      expected.isWeapon,
+      reason: 'Persisted isWeapon flag must round-trip (key=${expected.key}, expected=${expected.isWeapon})',
+    );
+    expect(
+      got.isActive,
+      expected.isActive,
+      reason: 'Persisted isActive flag must round-trip (key=${expected.key}, expected=${expected.isActive})',
+    );
     expect(
       got.useMaterialsFromInventory,
       expected.useMaterialsFromInventory,
-      reason: 'Should match expected value (property=useMaterialsFromInventory)',
+      reason: 'Persisted useMaterialsFromInventory flag must round-trip '
+          '(key=${expected.key}, expected=${expected.useMaterialsFromInventory})',
     );
     if (expected.isCharacter) {
-      expect(expected.skills, isNotEmpty, reason: 'Should not be empty (property=skills)');
+      expect(
+        expected.skills,
+        isNotEmpty,
+        reason: 'A character session item must carry at least one skill (key=${expected.key})',
+      );
       for (int j = 0; j < got.skills.length; j++) {
         final gotSkill = got.skills[j];
         final expectedSkill = expected.skills[j];
-        expect(gotSkill.key, expectedSkill.key, reason: 'Should match expected value (property=key)');
-        expect(gotSkill.currentLevel, expectedSkill.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-        expect(gotSkill.desiredLevel, expectedSkill.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
-        expect(gotSkill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
+        expect(
+          gotSkill.key,
+          expectedSkill.key,
+          reason: 'Persisted skill key must round-trip (itemKey=${expected.key}, expected=${expectedSkill.key})',
+        );
+        expect(
+          gotSkill.currentLevel,
+          expectedSkill.currentLevel,
+          reason: 'Persisted skill currentLevel must round-trip '
+              '(itemKey=${expected.key}, skill=${expectedSkill.key}, expected=${expectedSkill.currentLevel})',
+        );
+        expect(
+          gotSkill.desiredLevel,
+          expectedSkill.desiredLevel,
+          reason: 'Persisted skill desiredLevel must round-trip '
+              '(itemKey=${expected.key}, skill=${expectedSkill.key}, expected=${expectedSkill.desiredLevel})',
+        );
+        expect(
+          gotSkill.position,
+          expectedSkill.position,
+          reason: 'Persisted skill position must round-trip '
+              '(itemKey=${expected.key}, skill=${expectedSkill.key}, expected=${expectedSkill.position})',
+        );
       }
     } else {
-      expect(got.skills, isEmpty, reason: 'Should be empty (property=skills)');
+      expect(
+        got.skills,
+        isEmpty,
+        reason: 'A weapon session item must carry no skills (key=${expected.key})',
+      );
     }
   }
 
@@ -179,20 +233,20 @@ void main() {
 
     test('no data exist', () {
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.isEmpty, isTrue, reason: 'Should be true');
+      expect(sessions, isEmpty, reason: 'getAllSessions must return no sessions when none were created');
     });
 
     test('data exists', () async {
       await dataService.calculator.createSession('Dummy', 0, true);
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(sessions.length, 1, reason: 'getAllSessions must return the single created session');
       final session = sessions.first;
-      expect(session.key >= 0, isTrue, reason: 'Should be true (property=key >= 0, isTrue)');
-      expect(session.name, 'Dummy', reason: "Should match expected value (property=name, expected='Dummy')");
-      expect(session.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
-      expect(session.position, 0, reason: 'Should match expected value (property=position, expected=0)');
-      expect(session.numberOfCharacters, 0, reason: 'Should match expected value (property=numberOfCharacters, expected=0)');
-      expect(session.numberOfWeapons, 0, reason: 'Should match expected value (property=numberOfWeapons, expected=0)');
+      expect(session.key, greaterThanOrEqualTo(0), reason: 'Created session must have a non-negative Hive key');
+      expect(session.name, 'Dummy', reason: 'Persisted session name must round-trip (expected=Dummy)');
+      expect(session.showMaterialUsage, isTrue, reason: 'Session created with showMaterialUsage=true must persist it');
+      expect(session.position, 0, reason: 'Persisted session position must round-trip (expected=0)');
+      expect(session.numberOfCharacters, 0, reason: 'A freshly created session must contain no characters');
+      expect(session.numberOfWeapons, 0, reason: 'A freshly created session must contain no weapons');
     });
   });
 
@@ -217,17 +271,29 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(() => dataService.calculator.getSession(-1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        () => dataService.calculator.getSession(-1),
+        throwsArgumentError,
+        reason: 'getSession must reject a negative key (-1) with ArgumentError',
+      );
     });
 
     test('key does not exist', () {
-      expect(() => dataService.calculator.getSession(666), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        () => dataService.calculator.getSession(666),
+        throwsA(isA<NotFoundError>()),
+        reason: 'getSession must throw NotFoundError for an absent key (666)',
+      );
     });
 
     test('key exists', () async {
       final createdSession = await dataService.calculator.createSession('Exists', 0, false);
       final existingSession = dataService.calculator.getSession(createdSession.key);
-      expect(existingSession.key, createdSession.key, reason: 'Should match expected value (property=key)');
+      expect(
+        existingSession.key,
+        createdSession.key,
+        reason: 'getSession must return the session matching the created key (${createdSession.key})',
+      );
     });
   });
 
@@ -252,29 +318,37 @@ void main() {
     });
 
     test('name is not valid', () {
-      expect(dataService.calculator.createSession('', 0, false), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.createSession('', 0, false),
+        throwsArgumentError,
+        reason: 'createSession must reject an empty name with ArgumentError',
+      );
     });
 
     test('position is not valid', () {
       expect(
         dataService.calculator.createSession('New', -1, false),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'createSession must reject a negative position (-1) with ArgumentError',
       );
     });
 
     test('valid call', () async {
       final createdSession = await dataService.calculator.createSession('New', 1, true);
-      expect(createdSession.key >= 0, isTrue, reason: 'Should be true (property=key >= 0, isTrue)');
-      expect(createdSession.name, 'New', reason: "Should match expected value (property=name, expected='New')");
-      expect(createdSession.position, 1, reason: 'Should match expected value (property=position, expected=1)');
-      expect(createdSession.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
+      expect(createdSession.key, greaterThanOrEqualTo(0), reason: 'Created session must have a non-negative Hive key');
+      expect(createdSession.name, 'New', reason: 'Created session must keep the provided name (expected=New)');
+      expect(createdSession.position, 1, reason: 'Created session must keep the provided position (expected=1)');
+      expect(
+        createdSession.showMaterialUsage,
+        isTrue,
+        reason: 'Session created with showMaterialUsage=true must persist it',
+      );
       expect(
         createdSession.numberOfCharacters,
         0,
-        reason: 'Should match expected value (property=numberOfCharacters, expected=0)',
+        reason: 'A freshly created session must contain no characters',
       );
-      expect(createdSession.numberOfWeapons, 0, reason: 'Should match expected value (property=numberOfWeapons, expected=0)');
+      expect(createdSession.numberOfWeapons, 0, reason: 'A freshly created session must contain no weapons');
     });
   });
 
@@ -302,31 +376,39 @@ void main() {
       expect(
         dataService.calculator.updateSession(-1, 'Updated', false),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'updateSession must reject a negative key (-1) with ArgumentError',
       );
     });
 
     test('name is not valid', () {
-      expect(dataService.calculator.updateSession(1, '', false), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.updateSession(1, '', false),
+        throwsArgumentError,
+        reason: 'updateSession must reject an empty name with ArgumentError',
+      );
     });
 
     test('session does not exist', () {
       expect(
         dataService.calculator.updateSession(1, 'Updated', false),
         throwsA(isA<NotFoundError>()),
-        reason: 'Should be of expected type',
+        reason: 'updateSession must throw NotFoundError for an absent key (1)',
       );
     });
 
     test('valid call', () async {
       final existing = await dataService.calculator.createSession('New', 1, false);
       final updated = await dataService.calculator.updateSession(existing.key, 'Updated', true);
-      expect(updated.key, existing.key, reason: 'Should match expected value (property=key)');
-      expect(updated.name, 'Updated', reason: "Should match expected value (property=name, expected='Updated')");
-      expect(updated.position, existing.position, reason: 'Should match expected value (property=position)');
-      expect(updated.showMaterialUsage, isTrue, reason: 'Should be true (property=showMaterialUsage)');
-      expect(updated.numberOfCharacters, 0, reason: 'Should match expected value (property=numberOfCharacters, expected=0)');
-      expect(updated.numberOfWeapons, 0, reason: 'Should match expected value (property=numberOfWeapons, expected=0)');
+      expect(updated.key, existing.key, reason: 'updateSession must keep the same key (${existing.key})');
+      expect(updated.name, 'Updated', reason: 'updateSession must apply the new name (expected=Updated)');
+      expect(
+        updated.position,
+        existing.position,
+        reason: 'updateSession must leave position unchanged (expected=${existing.position})',
+      );
+      expect(updated.showMaterialUsage, isTrue, reason: 'updateSession must apply showMaterialUsage=true');
+      expect(updated.numberOfCharacters, 0, reason: 'Updating an empty session must leave zero characters');
+      expect(updated.numberOfWeapons, 0, reason: 'Updating an empty session must leave zero weapons');
     });
   });
 
@@ -351,27 +433,39 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.deleteSession(-1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.deleteSession(-1),
+        throwsArgumentError,
+        reason: 'deleteSession must reject a negative key (-1) with ArgumentError',
+      );
     });
 
     test('session does not exist', () {
       const int key = 666;
-      expect(() => dataService.calculator.getSession(key), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        () => dataService.calculator.getSession(key),
+        throwsA(isA<NotFoundError>()),
+        reason: 'getSession must throw NotFoundError for an absent key ($key)',
+      );
       expect(
         dataService.calculator.deleteSession(key),
         completes,
-        reason: 'Should match expected value (property=deleteSession(key))',
+        reason: 'deleteSession must complete without error for an absent key ($key)',
       );
     });
 
     test('session exists, and gets deleted', () async {
       final session = await dataService.calculator.createSession('Deleted', 0, false);
-      expect(() => dataService.calculator.getSession(session.key), returnsNormally, reason: 'Should execute without throwing');
+      expect(
+        () => dataService.calculator.getSession(session.key),
+        returnsNormally,
+        reason: 'Created session (key=${session.key}) must be retrievable before deletion',
+      );
       await dataService.calculator.deleteSession(session.key);
       expect(
         () => dataService.calculator.getSession(session.key),
         throwsA(isA<NotFoundError>()),
-        reason: 'Should be of expected type',
+        reason: 'getSession must throw NotFoundError after the session (key=${session.key}) was deleted',
       );
     });
   });
@@ -399,14 +493,14 @@ void main() {
     test('no data exists, completes normally', () async {
       await dataService.calculator.deleteAllSessions();
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.isEmpty, isTrue, reason: 'Should be true');
+      expect(sessions, isEmpty, reason: 'deleteAllSessions on an empty store must leave zero sessions');
     });
 
     test('data exists and gets deleted', () async {
       await dataService.calculator.createSession('To be deleted', 5, false);
       await dataService.calculator.deleteAllSessions();
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.isEmpty, isTrue, reason: 'Should be true');
+      expect(sessions, isEmpty, reason: 'deleteAllSessions must remove every previously created session');
     });
   });
 
@@ -431,12 +525,16 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(() => dataService.calculator.getAllSessionItems(-1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        () => dataService.calculator.getAllSessionItems(-1),
+        throwsArgumentError,
+        reason: 'getAllSessionItems must reject a negative session key (-1) with ArgumentError',
+      );
     });
 
     test('no data exists, returns empty', () {
       final items = dataService.calculator.getAllSessionItems(666);
-      expect(items.isEmpty, isTrue, reason: 'Should be true');
+      expect(items, isEmpty, reason: 'getAllSessionItems must return no items for an absent session key (666)');
     });
 
     test('data exists', () async {
@@ -445,7 +543,11 @@ void main() {
       final weaponItem = getWeapon();
       final items = <ItemAscensionMaterials>[charItem, weaponItem];
       await dataService.calculator.addSessionItems(session.key, items);
-      expect(items.length, items.length, reason: 'Should match expected value');
+      expect(
+        items.length,
+        items.length,
+        reason: 'Session ${session.key} must hold the added char+weapon items (expected=${items.length})',
+      );
     });
   });
 
@@ -473,7 +575,7 @@ void main() {
       expect(
         dataService.calculator.addSessionItem(-1, getCharacter(), []),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'addSessionItem must reject a negative session key (-1) with ArgumentError',
       );
     });
 
@@ -481,7 +583,7 @@ void main() {
       expect(
         dataService.calculator.addSessionItem(666, getCharacter(), []),
         throwsA(isA<NotFoundError>()),
-        reason: 'Should be of expected type',
+        reason: 'addSessionItem must throw NotFoundError for an absent session key (666)',
       );
     });
 
@@ -490,7 +592,7 @@ void main() {
       final session = await dataService.calculator.createSession('Characters', 1, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
-      expect(items.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(items.length, 1, reason: 'Session ${session.key} must hold exactly the one added character item');
       checkSessionItem(items.first, item);
     });
 
@@ -499,7 +601,7 @@ void main() {
       final session = await dataService.calculator.createSession('Weapons', 1, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
-      expect(items.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(items.length, 1, reason: 'Session ${session.key} must hold exactly the one added weapon item');
       checkSessionItem(items.first, item);
     });
 
@@ -510,7 +612,7 @@ void main() {
       final session = await dataService.calculator.createSession('Chars&Weapons', 1, false);
       await dataService.calculator.addSessionItems(session.key, items);
       final existing = dataService.calculator.getAllSessionItems(session.key);
-      expect(existing.length, 2, reason: 'Should match expected value (expected=2)');
+      expect(existing.length, 2, reason: 'Session ${session.key} must hold both added items (character + weapon)');
       checkSessionItem(existing.first, charItem);
       checkSessionItem(existing.last, weaponItem);
     });
@@ -524,7 +626,11 @@ void main() {
           .map((g) => MapEntry<String, int>(g.key, g.map((e) => e.requiredQuantity).sum()))
           .toList();
 
-      expect(requiredMaterials.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(
+        requiredMaterials,
+        isNotEmpty,
+        reason: 'Ascension of a char + weapon must require at least one material to drive this test',
+      );
       for (final kvp in requiredMaterials) {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
@@ -533,16 +639,24 @@ void main() {
       await dataService.calculator.addSessionItems(session.key, [charItem, weaponItem]);
       final existing = dataService.calculator.getAllSessionItems(session.key);
 
-      expect(existing.length, 2, reason: 'Should match expected value (expected=2)');
+      expect(existing.length, 2, reason: 'Session ${session.key} must hold both added items (character + weapon)');
       checkSessionItem(existing.first, charItem);
       checkSessionItem(existing.last, weaponItem);
 
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Inventory stock of ${kvp.key} must stay at what was added (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(kvp.value, used, reason: 'Should match expected value (property=value)');
+        expect(
+          used,
+          kvp.value,
+          reason: 'Items using inventory must reserve all of ${kvp.key} (expected used=${kvp.value})',
+        );
       }
     });
   });
@@ -571,7 +685,7 @@ void main() {
       expect(
         dataService.calculator.updateSessionItem(-1, 1, getCharacter(), []),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'updateSessionItem must reject a negative session key (-1) with ArgumentError',
       );
     });
 
@@ -579,7 +693,7 @@ void main() {
       expect(
         dataService.calculator.updateSessionItem(1, -1, getCharacter(), []),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'updateSessionItem must reject a negative item position (-1) with ArgumentError',
       );
     });
 
@@ -587,7 +701,7 @@ void main() {
       expect(
         dataService.calculator.updateSessionItem(666, 1, getCharacter(), []),
         throwsA(isA<NotFoundError>()),
-        reason: 'Should be of expected type',
+        reason: 'updateSessionItem must throw NotFoundError for an absent session key (666)',
       );
     });
 
@@ -596,7 +710,11 @@ void main() {
       final session = await dataService.calculator.createSession('UpdateItem', 0, false);
       await dataService.calculator.updateSessionItem(session.key, itemChar.position, itemChar, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
-      expect(items.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(
+        items.length,
+        1,
+        reason: 'updateSessionItem on a missing position (${itemChar.position}) must insert one new item',
+      );
 
       final got = items.first;
       checkSessionItem(got, itemChar);
@@ -609,7 +727,11 @@ void main() {
       final updated = getCharacter().copyWith(desiredLevel: 80);
       await dataService.calculator.updateSessionItem(session.key, 5, updated, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
-      expect(items.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(
+        items.length,
+        1,
+        reason: 'updateSessionItem must replace, not append, leaving a single item in the session',
+      );
 
       final got = items.first;
       checkSessionItem(got, updated.copyWith(position: 5));
@@ -637,18 +759,26 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.deleteSessionItem(-1, 1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.deleteSessionItem(-1, 1),
+        throwsArgumentError,
+        reason: 'deleteSessionItem must reject a negative session key (-1) with ArgumentError',
+      );
     });
 
     test('position is not valid', () {
-      expect(dataService.calculator.deleteSessionItem(1, -1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.deleteSessionItem(1, -1),
+        throwsArgumentError,
+        reason: 'deleteSessionItem must reject a negative item position (-1) with ArgumentError',
+      );
     });
 
     test('which does not exist, returns normally', () {
       expect(
         dataService.calculator.deleteSessionItem(666, 666),
         completes,
-        reason: 'Should match expected value (property=deleteSessionItem(666, 666))',
+        reason: 'deleteSessionItem must complete without error for an absent session/position (666, 666)',
       );
     });
 
@@ -657,11 +787,11 @@ void main() {
       final session = await dataService.calculator.createSession('Item Deleted', 0, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(currentCount, 1, reason: 'Should match expected value (expected=1)');
+      expect(currentCount, 1, reason: 'Session ${session.key} must hold the one added item before deletion');
 
       await dataService.calculator.deleteSessionItem(session.key, item.position);
       final newCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(newCount, 0, reason: 'Should match expected value (expected=0)');
+      expect(newCount, 0, reason: 'Session ${session.key} must hold no items after its only item was deleted');
     });
 
     test('which exists and it was using materials from inventory', () async {
@@ -674,31 +804,47 @@ void main() {
           )
           .toList();
 
-      expect(requiredMaterials.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(
+        requiredMaterials,
+        isNotEmpty,
+        reason: 'Weapon ascension must require at least one material to drive this test',
+      );
       for (final kvp in requiredMaterials) {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
       await dataService.calculator.addSessionItem(session.key, item, []);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(currentCount, 1, reason: 'Should match expected value (expected=1)');
+      expect(currentCount, 1, reason: 'Session ${session.key} must hold the one added item before deletion');
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Inventory stock of ${kvp.key} must stay at what was added (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(kvp.value, used, reason: 'Should match expected value (property=value)');
+        expect(
+          used,
+          kvp.value,
+          reason: 'Item using inventory must reserve all of ${kvp.key} while present (expected used=${kvp.value})',
+        );
       }
 
       await dataService.calculator.deleteSessionItem(session.key, item.position);
       final newCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(newCount, 0, reason: 'Should match expected value (expected=0)');
+      expect(newCount, 0, reason: 'Session ${session.key} must hold no items after its only item was deleted');
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Deleting an item must not change inventory stock of ${kvp.key} (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(used, 0, reason: 'Should match expected value (expected=0)');
+        expect(used, 0, reason: 'Deleting the item must release all reserved ${kvp.key} (expected used=0)');
       }
     });
   });
@@ -724,14 +870,18 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.deleteAllSessionItems(-1), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.deleteAllSessionItems(-1),
+        throwsArgumentError,
+        reason: 'deleteAllSessionItems must reject a negative session key (-1) with ArgumentError',
+      );
     });
 
     test('session does not exist, returns normally', () {
       expect(
         dataService.calculator.deleteAllSessionItems(666),
         completes,
-        reason: 'Should match expected value (property=deleteAllSessionItems(666))',
+        reason: 'deleteAllSessionItems must complete without error for an absent session key (666)',
       );
     });
 
@@ -740,7 +890,7 @@ void main() {
       expect(
         dataService.calculator.deleteAllSessionItems(session.key),
         completes,
-        reason: 'Should match expected value (property=key))',
+        reason: 'deleteAllSessionItems must complete without error on an empty session (key=${session.key})',
       );
     });
 
@@ -748,11 +898,11 @@ void main() {
       final session = await dataService.calculator.createSession('Delete all items', 0, false);
       await dataService.calculator.addSessionItems(session.key, [getCharacter(), getWeapon()]);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(currentCount, 2, reason: 'Should match expected value (expected=2)');
+      expect(currentCount, 2, reason: 'Session ${session.key} must hold both added items before deletion');
 
       await dataService.calculator.deleteAllSessionItems(session.key);
       final newCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(newCount, 0, reason: 'Should match expected value (expected=0)');
+      expect(newCount, 0, reason: 'deleteAllSessionItems must leave session ${session.key} with no items');
     });
 
     test('session exists, it is not empty and items were using materials from inventory', () async {
@@ -763,7 +913,11 @@ void main() {
           .map((g) => MapEntry<String, int>(g.key, g.map((e) => e.requiredQuantity).sum()))
           .toList();
 
-      expect(requiredMaterials.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(
+        requiredMaterials,
+        isNotEmpty,
+        reason: 'Ascension of a char + weapon must require at least one material to drive this test',
+      );
       for (final kvp in requiredMaterials) {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
@@ -771,24 +925,36 @@ void main() {
       final session = await dataService.calculator.createSession('Delete all items', 0, false);
       await dataService.calculator.addSessionItems(session.key, items);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(currentCount, 2, reason: 'Should match expected value (expected=2)');
+      expect(currentCount, 2, reason: 'Session ${session.key} must hold both added items before deletion');
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Inventory stock of ${kvp.key} must stay at what was added (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(kvp.value, used, reason: 'Should match expected value (property=value)');
+        expect(
+          used,
+          kvp.value,
+          reason: 'Items using inventory must reserve all of ${kvp.key} while present (expected used=${kvp.value})',
+        );
       }
 
       await dataService.calculator.deleteAllSessionItems(session.key);
       final newCount = dataService.calculator.getAllSessionItems(session.key).length;
-      expect(newCount, 0, reason: 'Should match expected value (expected=0)');
+      expect(newCount, 0, reason: 'deleteAllSessionItems must leave session ${session.key} with no items');
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Deleting all items must not change inventory stock of ${kvp.key} (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(used, 0, reason: 'Should match expected value (expected=0)');
+        expect(used, 0, reason: 'Deleting all items must release all reserved ${kvp.key} (expected used=0)');
       }
     });
   });
@@ -827,7 +993,11 @@ void main() {
           )
           .toList();
 
-      expect(requiredMaterials.isNotEmpty, isTrue, reason: 'Should be true');
+      expect(
+        requiredMaterials,
+        isNotEmpty,
+        reason: 'Ascension of a char + weapon must require at least one material to drive this test',
+      );
       for (final kvp in requiredMaterials) {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
@@ -843,10 +1013,18 @@ void main() {
 
       for (final kvp in requiredMaterials) {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
-        expect(kvp.value, quantity, reason: 'Should match expected value (property=value)');
+        expect(
+          quantity,
+          kvp.value,
+          reason: 'Inventory stock of ${kvp.key} must be unchanged by removing sessionA (expected=${kvp.value})',
+        );
 
         final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
-        expect(used, kvp.value, reason: 'Should match expected value');
+        expect(
+          used,
+          kvp.value,
+          reason: 'Surviving sessionB must still reserve ${kvp.key} after sessionA removal (used=${kvp.value})',
+        );
       }
     }
 
@@ -870,13 +1048,17 @@ void main() {
       }
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
-      expect(availableMora, quantity, reason: 'Should match expected value');
+      expect(
+        quantity,
+        availableMora,
+        reason: 'Deleting the character must not change mora stock (expected=$availableMora)',
+      );
 
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(
         used,
         weapon.materials.firstWhere((el) => el.key == moraKey).requiredQuantity,
-        reason: 'Should match expected value',
+        reason: 'After deleting the character, only the surviving weapon must reserve mora',
       );
     }
 
@@ -902,7 +1084,11 @@ void main() {
 
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'Before update, item at calcKey=${kvp.key} must reserve mora=${kvp.value} (first item claims all)',
+        );
       }
 
       await dataService.calculator.updateSessionItem(
@@ -913,9 +1099,17 @@ void main() {
       );
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
-      expect(availableMora, quantity, reason: 'Should match expected value');
+      expect(
+        quantity,
+        availableMora,
+        reason: 'Updating the item must not change total mora stock (expected=$availableMora)',
+      );
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
-      expect(used, availableMora, reason: 'Should match expected value');
+      expect(
+        used,
+        availableMora,
+        reason: 'Total reserved mora must still equal available stock after update (expected=$availableMora)',
+      );
 
       expectedQuantityMap = <int, int>{
         0: 0,
@@ -923,7 +1117,11 @@ void main() {
       };
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'After char disabled/opted-out, mora must shift to calcKey=${kvp.key} (expected=${kvp.value})',
+        );
       }
     }
 
@@ -953,9 +1151,17 @@ void main() {
       await dataService.calculator.addSessionItems(sessionB.key, items);
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
-      expect(availableMora, quantity, reason: 'Should match expected value');
+      expect(
+        quantity,
+        availableMora,
+        reason: 'Adding items must not change total mora stock (expected=$availableMora)',
+      );
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
-      expect(used, availableMora, reason: 'Should match expected value');
+      expect(
+        used,
+        availableMora,
+        reason: 'Scarce mora must be fully reserved by the winning item (expected=$availableMora)',
+      );
 
       var expectedQuantityMap = <int, int>{
         0: availableMora,
@@ -965,7 +1171,11 @@ void main() {
       };
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'Pre-reorder, mora reserved only by first item; calcKey=${kvp.key} expects ${kvp.value}',
+        );
       }
 
       await dataService.calculator.reorderSessions([sessionB, sessionA]);
@@ -978,7 +1188,11 @@ void main() {
       };
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'After moving sessionB first, mora must follow to calcKey=${kvp.key} (expected=${kvp.value})',
+        );
       }
     });
 
@@ -1008,15 +1222,27 @@ void main() {
 
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'Pre-reorder, mora reserved only by first item; calcKey=${kvp.key} expects ${kvp.value}',
+        );
       }
 
       await dataService.calculator.reorderItems(session.key, [weapon, char]);
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
-      expect(availableMora, quantity, reason: 'Should match expected value');
+      expect(
+        quantity,
+        availableMora,
+        reason: 'Reordering items must not change total mora stock (expected=$availableMora)',
+      );
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
-      expect(used, availableMora, reason: 'Should match expected value');
+      expect(
+        used,
+        availableMora,
+        reason: 'Total reserved mora must stay at available stock after reorder (expected=$availableMora)',
+      );
 
       expectedQuantityMap = <int, int>{
         0: 0,
@@ -1024,7 +1250,11 @@ void main() {
       };
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'After moving the weapon first, mora must follow to calcKey=${kvp.key} (expected=${kvp.value})',
+        );
       }
     });
 
@@ -1047,15 +1277,28 @@ void main() {
 
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'With only the character added, calcKey=${kvp.key} must reserve mora=${kvp.value}',
+        );
       }
 
       await dataService.calculator.addSessionItem(session.key, weapon, []);
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
-      expect(availableMora, quantity, reason: 'Should match expected value');
+      expect(
+        quantity,
+        availableMora,
+        reason: 'Adding the weapon must not change total mora stock (expected=$availableMora)',
+      );
       final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
-      expect(used, charRequiredMora + weaponRequiredMora, reason: 'Should match expected value');
+      expect(
+        used,
+        charRequiredMora + weaponRequiredMora,
+        reason: 'With ample mora, both items must reserve their full need '
+            '(expected=${charRequiredMora + weaponRequiredMora})',
+      );
 
       expectedQuantityMap = <int, int>{
         0: charRequiredMora,
@@ -1063,7 +1306,11 @@ void main() {
       };
       for (final kvp in expectedQuantityMap.entries) {
         final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
-        expect(usedMora, kvp.value, reason: 'Should match expected value');
+        expect(
+          usedMora,
+          kvp.value,
+          reason: 'Each item must reserve its own mora need; calcKey=${kvp.key} expects ${kvp.value}',
+        );
       }
     });
 
@@ -1102,7 +1349,7 @@ void main() {
 
     test('no data exists, returns empty', () {
       final bk = dataService.calculator.getDataForBackup();
-      expect(bk.isEmpty, isTrue, reason: 'Should be true');
+      expect(bk, isEmpty, reason: 'getDataForBackup must return no sessions when none were created');
     });
 
     test('data exists', () async {
@@ -1112,63 +1359,111 @@ void main() {
       await dataService.calculator.addSessionItems(sessionB.key, items);
 
       final bk = dataService.calculator.getDataForBackup();
-      expect(bk.length, 2, reason: 'Should match expected value (expected=2)');
+      expect(bk.length, 2, reason: 'Backup must contain both created sessions (A and B)');
       for (int i = 0; i < bk.length; i++) {
         final bool firstOne = i == 0;
         final session = bk[i];
         if (firstOne) {
-          expect(session.items.isEmpty, isTrue, reason: 'Should be true (property=items)');
+          expect(session.items, isEmpty, reason: 'Backup of session A must carry no items (none were added)');
         } else {
-          expect(session.items.isNotEmpty, isTrue, reason: 'Should be true (property=items)');
+          expect(session.items, isNotEmpty, reason: 'Backup of session B must carry the items that were added');
         }
         final expectedSession = firstOne ? sessionA : sessionB;
-        expect(session.name, expectedSession.name, reason: 'Should match expected value (property=name)');
-        expect(session.position, expectedSession.position, reason: 'Should match expected value (property=position)');
+        expect(
+          session.name,
+          expectedSession.name,
+          reason: 'Backup session name must match source (expected=${expectedSession.name})',
+        );
+        expect(
+          session.position,
+          expectedSession.position,
+          reason: 'Backup session position must match source (expected=${expectedSession.position})',
+        );
 
         for (int j = 0; j < session.items.length; j++) {
           final expectedItem = items[j];
           final gotItem = session.items[j];
-          expect(gotItem.position, expectedItem.position, reason: 'Should match expected value (property=position)');
-          expect(gotItem.currentLevel, expectedItem.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-          expect(gotItem.desiredLevel, expectedItem.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
+          expect(
+            gotItem.position,
+            expectedItem.position,
+            reason: 'Backup item position must match source (key=${expectedItem.key}, pos=${expectedItem.position})',
+          );
+          expect(
+            gotItem.currentLevel,
+            expectedItem.currentLevel,
+            reason: 'Backup item currentLevel must match source (key=${expectedItem.key})',
+          );
+          expect(
+            gotItem.desiredLevel,
+            expectedItem.desiredLevel,
+            reason: 'Backup item desiredLevel must match source (key=${expectedItem.key})',
+          );
           expect(
             gotItem.currentAscensionLevel,
             expectedItem.currentAscensionLevel,
-            reason: 'Should match expected value (property=currentAscensionLevel)',
+            reason: 'Backup item currentAscensionLevel must match source (key=${expectedItem.key})',
           );
           expect(
             gotItem.desiredAscensionLevel,
             expectedItem.desiredAscensionLevel,
-            reason: 'Should match expected value (property=desiredAscensionLevel)',
+            reason: 'Backup item desiredAscensionLevel must match source (key=${expectedItem.key})',
           );
-          expect(gotItem.isCharacter, expectedItem.isCharacter, reason: 'Should match expected value (property=isCharacter)');
-          expect(gotItem.isWeapon, expectedItem.isWeapon, reason: 'Should match expected value (property=isWeapon)');
-          expect(gotItem.isActive, expectedItem.isActive, reason: 'Should match expected value (property=isActive)');
+          expect(
+            gotItem.isCharacter,
+            expectedItem.isCharacter,
+            reason: 'Backup item isCharacter flag must match source (key=${expectedItem.key})',
+          );
+          expect(
+            gotItem.isWeapon,
+            expectedItem.isWeapon,
+            reason: 'Backup item isWeapon flag must match source (key=${expectedItem.key})',
+          );
+          expect(
+            gotItem.isActive,
+            expectedItem.isActive,
+            reason: 'Backup item isActive flag must match source (key=${expectedItem.key})',
+          );
           expect(
             gotItem.useMaterialsFromInventory,
             expectedItem.useMaterialsFromInventory,
-            reason: 'Should match expected value (property=useMaterialsFromInventory)',
+            reason: 'Backup item useMaterialsFromInventory flag must match source (key=${expectedItem.key})',
           );
           if (gotItem.isCharacter) {
-            expect(gotItem.characterSkills, isNotEmpty, reason: 'Should not be empty (property=characterSkills)');
+            expect(
+              gotItem.characterSkills,
+              isNotEmpty,
+              reason: 'Backup of a character item must include its skills (key=${expectedItem.key})',
+            );
             for (int j = 0; j < gotItem.characterSkills.length; j++) {
               final gotSkill = gotItem.characterSkills[j];
               final expectedSkill = expectedItem.skills[j];
-              expect(gotSkill.skillKey, expectedSkill.key, reason: 'Should match expected value (property=skillKey)');
+              expect(
+                gotSkill.skillKey,
+                expectedSkill.key,
+                reason: 'Backup skill key must match source (itemKey=${expectedItem.key}, key=${expectedSkill.key})',
+              );
               expect(
                 gotSkill.currentLevel,
                 expectedSkill.currentLevel,
-                reason: 'Should match expected value (property=currentLevel)',
+                reason: 'Backup skill currentLevel must match source (skill=${expectedSkill.key})',
               );
               expect(
                 gotSkill.desiredLevel,
                 expectedSkill.desiredLevel,
-                reason: 'Should match expected value (property=desiredLevel)',
+                reason: 'Backup skill desiredLevel must match source (skill=${expectedSkill.key})',
               );
-              expect(gotSkill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
+              expect(
+                gotSkill.position,
+                expectedSkill.position,
+                reason: 'Backup skill position must match source (skill=${expectedSkill.key})',
+              );
             }
           } else {
-            expect(gotItem.characterSkills, isEmpty, reason: 'Should be empty (property=characterSkills)');
+            expect(
+              gotItem.characterSkills,
+              isEmpty,
+              reason: 'Backup of a weapon item must include no skills (key=${expectedItem.key})',
+            );
           }
         }
       }
@@ -1198,14 +1493,14 @@ void main() {
     test('no data to restore and no previous data exist', () async {
       await dataService.calculator.restoreFromBackup([]);
       final count = dataService.calculator.getAllSessions().length;
-      expect(count, isZero, reason: 'Should match expected value');
+      expect(count, isZero, reason: 'Restoring an empty backup into an empty store must leave zero sessions');
     });
 
     test('no data to restore and previous data exist', () async {
       await dataService.calculator.createSession('Restore', 0, false);
       await dataService.calculator.restoreFromBackup([]);
       final count = dataService.calculator.getAllSessions().length;
-      expect(count, isZero, reason: 'Should match expected value');
+      expect(count, isZero, reason: 'Restoring an empty backup must wipe pre-existing sessions, leaving zero');
     });
 
     test('there is data to restore and previous data exist', () async {
@@ -1246,62 +1541,118 @@ void main() {
       );
       await dataService.calculator.restoreFromBackup([bk]);
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.length, 1, reason: 'Should match expected value (expected=1)');
+      expect(
+        sessions.length,
+        1,
+        reason: 'Restore must replace prior sessions with only the single backed-up session',
+      );
 
       final session = sessions.first;
-      expect(session.name, bk.name, reason: 'Should match expected value (property=name)');
-      expect(session.position, bk.position, reason: 'Should match expected value (property=position)');
-      expect(session.numberOfCharacters, 1, reason: 'Should match expected value (property=numberOfCharacters, expected=1)');
-      expect(session.numberOfWeapons, 1, reason: 'Should match expected value (property=numberOfWeapons, expected=1)');
+      expect(session.name, bk.name, reason: 'Restored session name must match backup (expected=${bk.name})');
+      expect(
+        session.position,
+        bk.position,
+        reason: 'Restored session position must match backup (expected=${bk.position})',
+      );
+      expect(session.numberOfCharacters, 1, reason: 'Restored session must report its one character item');
+      expect(session.numberOfWeapons, 1, reason: 'Restored session must report its one weapon item');
 
       final createdItems = dataService.calculator.getAllSessionItems(session.key);
-      expect(createdItems.length, bk.items.length, reason: 'Should match expected value');
+      expect(
+        createdItems.length,
+        bk.items.length,
+        reason: 'Restored session must hold every backed-up item (expected=${bk.items.length})',
+      );
       for (int i = 0; i < createdItems.length; i++) {
         final bool firstOne = i == 0;
         final gotItem = createdItems[i];
         final expectedItem = firstOne ? bk.items.first : bk.items.last;
-        expect(gotItem.key, expectedItem.itemKey, reason: 'Should match expected value (property=key)');
-        expect(gotItem.position, expectedItem.position, reason: 'Should match expected value (property=position)');
-        expect(gotItem.currentLevel, expectedItem.currentLevel, reason: 'Should match expected value (property=currentLevel)');
-        expect(gotItem.desiredLevel, expectedItem.desiredLevel, reason: 'Should match expected value (property=desiredLevel)');
+        expect(
+          gotItem.key,
+          expectedItem.itemKey,
+          reason: 'Restored item key must match backup (expected=${expectedItem.itemKey})',
+        );
+        expect(
+          gotItem.position,
+          expectedItem.position,
+          reason: 'Restored item position must match backup (key=${expectedItem.itemKey})',
+        );
+        expect(
+          gotItem.currentLevel,
+          expectedItem.currentLevel,
+          reason: 'Restored item currentLevel must match backup (key=${expectedItem.itemKey})',
+        );
+        expect(
+          gotItem.desiredLevel,
+          expectedItem.desiredLevel,
+          reason: 'Restored item desiredLevel must match backup (key=${expectedItem.itemKey})',
+        );
         expect(
           gotItem.currentAscensionLevel,
           expectedItem.currentAscensionLevel,
-          reason: 'Should match expected value (property=currentAscensionLevel)',
+          reason: 'Restored item currentAscensionLevel must match backup (key=${expectedItem.itemKey})',
         );
         expect(
           gotItem.desiredAscensionLevel,
           expectedItem.desiredAscensionLevel,
-          reason: 'Should match expected value (property=desiredAscensionLevel)',
+          reason: 'Restored item desiredAscensionLevel must match backup (key=${expectedItem.itemKey})',
         );
-        expect(gotItem.isCharacter, expectedItem.isCharacter, reason: 'Should match expected value (property=isCharacter)');
-        expect(gotItem.isWeapon, expectedItem.isWeapon, reason: 'Should match expected value (property=isWeapon)');
-        expect(gotItem.isActive, expectedItem.isActive, reason: 'Should match expected value (property=isActive)');
+        expect(
+          gotItem.isCharacter,
+          expectedItem.isCharacter,
+          reason: 'Restored item isCharacter flag must match backup (key=${expectedItem.itemKey})',
+        );
+        expect(
+          gotItem.isWeapon,
+          expectedItem.isWeapon,
+          reason: 'Restored item isWeapon flag must match backup (key=${expectedItem.itemKey})',
+        );
+        expect(
+          gotItem.isActive,
+          expectedItem.isActive,
+          reason: 'Restored item isActive flag must match backup (key=${expectedItem.itemKey})',
+        );
         expect(
           gotItem.useMaterialsFromInventory,
           expectedItem.useMaterialsFromInventory,
-          reason: 'Should match expected value (property=useMaterialsFromInventory)',
+          reason: 'Restored item useMaterialsFromInventory flag must match backup (key=${expectedItem.itemKey})',
         );
         if (firstOne) {
-          expect(gotItem.skills, isNotEmpty, reason: 'Should not be empty (property=skills)');
+          expect(
+            gotItem.skills,
+            isNotEmpty,
+            reason: 'Restored character item must carry its skills (key=${expectedItem.itemKey})',
+          );
           for (int j = 0; j < gotItem.skills.length; j++) {
             final gotSkill = gotItem.skills[j];
             final expectedSkill = expectedItem.characterSkills[j];
-            expect(gotSkill.key, expectedSkill.skillKey, reason: 'Should match expected value (property=key)');
+            expect(
+              gotSkill.key,
+              expectedSkill.skillKey,
+              reason: 'Restored skill key must match backup (key=${expectedSkill.skillKey})',
+            );
             expect(
               gotSkill.currentLevel,
               expectedSkill.currentLevel,
-              reason: 'Should match expected value (property=currentLevel)',
+              reason: 'Restored skill currentLevel must match backup (skill=${expectedSkill.skillKey})',
             );
             expect(
               gotSkill.desiredLevel,
               expectedSkill.desiredLevel,
-              reason: 'Should match expected value (property=desiredLevel)',
+              reason: 'Restored skill desiredLevel must match backup (skill=${expectedSkill.skillKey})',
             );
-            expect(gotSkill.position, expectedSkill.position, reason: 'Should match expected value (property=position)');
+            expect(
+              gotSkill.position,
+              expectedSkill.position,
+              reason: 'Restored skill position must match backup (skill=${expectedSkill.skillKey})',
+            );
           }
         } else {
-          expect(gotItem.skills, isEmpty, reason: 'Should be empty (property=skills)');
+          expect(
+            gotItem.skills,
+            isEmpty,
+            reason: 'Restored weapon item must carry no skills (key=${expectedItem.itemKey})',
+          );
         }
       }
     });
@@ -1328,7 +1679,11 @@ void main() {
     });
 
     test('provided array is empty', () {
-      expect(dataService.calculator.reorderSessions([]), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderSessions([]),
+        throwsArgumentError,
+        reason: 'reorderSessions must reject an empty session list with ArgumentError',
+      );
     });
 
     test('data was provided but no previous data exist', () {
@@ -1342,7 +1697,11 @@ void main() {
           showMaterialUsage: false,
         ),
       ];
-      expect(dataService.calculator.reorderSessions(updated), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderSessions(updated),
+        throwsArgumentError,
+        reason: 'reorderSessions must reject a reorder whose count mismatches the (empty) stored sessions',
+      );
     });
 
     test('data was provided and previous data exists but invalid arrays', () async {
@@ -1358,7 +1717,11 @@ void main() {
           showMaterialUsage: false,
         ),
       ];
-      expect(dataService.calculator.reorderSessions(updated), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderSessions(updated),
+        throwsArgumentError,
+        reason: 'reorderSessions must reject a 1-item reorder when 2 sessions are stored',
+      );
     });
 
     test('valid call', () async {
@@ -1367,8 +1730,16 @@ void main() {
       await dataService.calculator.reorderSessions([sessionB, sessionA]);
 
       final sessions = dataService.calculator.getAllSessions();
-      expect(sessions.first.key, sessionB.key, reason: 'Should match expected value (property=key)');
-      expect(sessions.last.key, sessionA.key, reason: 'Should match expected value (property=key)');
+      expect(
+        sessions.first.key,
+        sessionB.key,
+        reason: 'After reorder [B, A], sessionB must be first (key=${sessionB.key})',
+      );
+      expect(
+        sessions.last.key,
+        sessionA.key,
+        reason: 'After reorder [B, A], sessionA must be last (key=${sessionA.key})',
+      );
     });
   });
 
@@ -1393,11 +1764,19 @@ void main() {
     });
 
     test('session key is not valid', () {
-      expect(dataService.calculator.reorderItems(-1, []), throwsArgumentError, reason: 'Should throw expected exception');
+      expect(
+        dataService.calculator.reorderItems(-1, []),
+        throwsArgumentError,
+        reason: 'reorderItems must reject a negative session key (-1) with ArgumentError',
+      );
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.reorderItems(666, []), throwsA(isA<NotFoundError>()), reason: 'Should be of expected type');
+      expect(
+        dataService.calculator.reorderItems(666, []),
+        throwsA(isA<NotFoundError>()),
+        reason: 'reorderItems must throw NotFoundError for an absent session key (666)',
+      );
     });
 
     test('provided data is empty', () async {
@@ -1405,7 +1784,7 @@ void main() {
       expect(
         dataService.calculator.reorderItems(session.key, []),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'reorderItems must reject an empty item list for an existing session (key=${session.key})',
       );
     });
 
@@ -1415,7 +1794,7 @@ void main() {
       expect(
         dataService.calculator.reorderItems(session.key, updated),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'reorderItems must reject a 1-item reorder when the session (key=${session.key}) has no items',
       );
     });
 
@@ -1426,7 +1805,7 @@ void main() {
       expect(
         dataService.calculator.reorderItems(session.key, updated),
         throwsArgumentError,
-        reason: 'Should throw expected exception',
+        reason: 'reorderItems must reject a 1-item reorder when the session (key=${session.key}) holds 2 items',
       );
     });
 
@@ -1437,8 +1816,16 @@ void main() {
       await dataService.calculator.reorderItems(session.key, updated);
 
       final items = dataService.calculator.getAllSessionItems(session.key);
-      expect(items.first.key, updated.first.key, reason: 'Should match expected value (property=key)');
-      expect(items.last.key, updated.last.key, reason: 'Should match expected value (property=key)');
+      expect(
+        items.first.key,
+        updated.first.key,
+        reason: 'After reorder, first item must be the weapon (${updated.first.key})',
+      );
+      expect(
+        items.last.key,
+        updated.last.key,
+        reason: 'After reorder, last item must be the character (${updated.last.key})',
+      );
     });
   });
 }

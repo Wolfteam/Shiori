@@ -41,15 +41,19 @@ void main() {
       await service.init(AppLanguageType.english);
       for (final type in types) {
         final tops = service.getTopCharts(type);
-        expect(tops.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(tops.isNotEmpty, isTrue, reason: 'Top charts list is empty for chart type ${type.name}');
         final totalPercentage = tops.map((e) => e.percentage).sum.round();
-        expect(totalPercentage, 100, reason: 'Should match expected value (expected=100)');
+        expect(totalPercentage, 100, reason: 'Top chart percentages must sum to 100, got $totalPercentage (type=${type.name})');
         for (final item in tops) {
-          expect(item.type == type, isTrue, reason: 'Should be true (property=type == type)');
+          expect(item.type, type, reason: 'Chart item type mismatch: ${item.type} vs $type (key=${item.key})');
           checkKey(item.key);
-          checkTranslation(item.name, canBeNull: false, checkForColor: false);
-          expect(item.value > 0, isTrue, reason: 'Should be true (property=value > 0, isTrue)');
-          expect(item.percentage > 0 && item.percentage < 100, isTrue, reason: 'Should be true (property=percentage < 100)');
+          checkTranslation(item.name, canBeNull: false, checkForColor: false, ownerKey: item.key);
+          expect(item.value, greaterThan(0), reason: 'Chart item value must be positive, got ${item.value} (key=${item.key})');
+          expect(
+            item.percentage,
+            inExclusiveRange(0, 100),
+            reason: 'Chart item percentage must be between 0 and 100 exclusive, got ${item.percentage} (key=${item.key})',
+          );
 
           final expectedStars = type.name.contains('Five') ? 5 : 4;
           switch (type) {
@@ -58,19 +62,31 @@ void main() {
             case ChartType.topFiveStarCharacterLeastReruns:
             case ChartType.topFourStarCharacterLeastReruns:
               final char = service.characters.getCharacter(item.key);
-              expect(char.rarity == expectedStars, isTrue, reason: 'Should be true (property=rarity == expectedStars)');
+              expect(
+                char.rarity,
+                expectedStars,
+                reason: 'Character rarity must be $expectedStars for chart ${type.name}, got ${char.rarity} (key=${item.key})',
+              );
             case ChartType.topFiveStarWeaponMostReruns:
             case ChartType.topFourStarWeaponMostReruns:
             case ChartType.topFiveStarWeaponLeastReruns:
             case ChartType.topFourStarWeaponLeastReruns:
               final weapon = service.weapons.getWeapon(item.key);
-              expect(weapon.rarity == expectedStars, isTrue, reason: 'Should be true (property=rarity == expectedStars)');
+              expect(
+                weapon.rarity,
+                expectedStars,
+                reason: 'Weapon rarity must be $expectedStars for chart ${type.name}, got ${weapon.rarity} (key=${item.key})',
+              );
             default:
               throw Exception('Type = $type is not valid');
           }
 
           final releaseCount = service.bannerHistory.getItemReleaseHistory(item.key).length;
-          expect(item.value == releaseCount, isTrue, reason: 'Should be true (property=value == releaseCount)');
+          expect(
+            item.value,
+            releaseCount,
+            reason: 'Chart item value must equal banner release count $releaseCount, got ${item.value} (key=${item.key})',
+          );
         }
       }
     });
@@ -78,7 +94,11 @@ void main() {
     test('check top charts, invalid type', () async {
       final service = getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getTopCharts(ChartType.characterBirthdays), throwsA(isA<Exception>()), reason: 'Should be of expected type');
+      expect(
+        () => service.getTopCharts(ChartType.characterBirthdays),
+        throwsA(isA<Exception>()),
+        reason: 'getTopCharts must throw for unsupported chart type characterBirthdays',
+      );
     });
 
     test('check item ascension stats', () async {
@@ -89,18 +109,34 @@ void main() {
       final validForWeapons = getWeaponPossibleAscensionStats();
       for (final type in validTypes) {
         final stats = service.getItemAscensionStatsForCharts(type);
-        expect(stats.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(stats.isNotEmpty, isTrue, reason: 'Ascension stats list is empty for item type ${type.name}');
 
         final statTypes = stats.map((e) => e.type);
-        expect(statTypes.toSet().length, statTypes.length, reason: 'Should match expected value (property=toSet())');
+        expect(
+          statTypes.toSet().length,
+          statTypes.length,
+          reason: 'Ascension stat types contain duplicates for item type ${type.name}',
+        );
 
         for (final stat in stats) {
-          expect(stat.itemType, type, reason: 'Should match expected value (property=itemType)');
-          expect(stat.quantity > 0, isTrue, reason: 'Should be true (property=quantity > 0, isTrue)');
+          expect(stat.itemType, type, reason: 'Ascension stat itemType mismatch: ${stat.itemType} vs $type');
+          expect(
+            stat.quantity,
+            greaterThan(0),
+            reason: 'Ascension stat quantity must be positive, got ${stat.quantity} (statType=${stat.type}, itemType=${type.name})',
+          );
           if (type == ItemType.character) {
-            expect(stat.type, isIn(validForCharacters), reason: 'Should match expected value (property=type)');
+            expect(
+              stat.type,
+              isIn(validForCharacters),
+              reason: 'Ascension stat ${stat.type} is not a valid character ascension stat',
+            );
           } else {
-            expect(stat.type, isIn(validForWeapons), reason: 'Should match expected value (property=type)');
+            expect(
+              stat.type,
+              isIn(validForWeapons),
+              reason: 'Ascension stat ${stat.type} is not a valid weapon ascension stat',
+            );
           }
         }
       }
@@ -111,7 +147,11 @@ void main() {
       await service.init(AppLanguageType.english);
       final types = ItemType.values.where((el) => el != ItemType.character && el != ItemType.weapon).toList();
       for (final type in types) {
-        expect(() => service.getItemAscensionStatsForCharts(type), throwsA(isA<Exception>()), reason: 'Should be of expected type');
+        expect(
+          () => service.getItemAscensionStatsForCharts(type),
+          throwsA(isA<Exception>()),
+          reason: 'getItemAscensionStatsForCharts must throw for unsupported item type ${type.name}',
+        );
       }
     });
   });
@@ -127,8 +167,12 @@ void main() {
 
       for (final stat in validForCharacters) {
         final items = service.getItemsAscensionStats(stat, ItemType.character);
-        expect(items.isNotEmpty, isTrue, reason: 'Should be true');
-        expect(items.length, characters.where((el) => el.subStatType == stat).length, reason: 'Should match expected value');
+        expect(items.isNotEmpty, isTrue, reason: 'No character items found for ascension stat ${stat.name}');
+        expect(
+          items.length,
+          characters.where((el) => el.subStatType == stat).length,
+          reason: 'Character ascension-stat item count mismatch for stat ${stat.name}, got ${items.length}',
+        );
 
         for (final item in items) {
           checkItemCommonWithName(item);
@@ -137,8 +181,12 @@ void main() {
 
       for (final stat in validForWeapons) {
         final items = service.getItemsAscensionStats(stat, ItemType.weapon);
-        expect(items.isNotEmpty, isTrue, reason: 'Should be true');
-        expect(items.length, weapons.where((el) => el.subStatType == stat).length, reason: 'Should match expected value');
+        expect(items.isNotEmpty, isTrue, reason: 'No weapon items found for ascension stat ${stat.name}');
+        expect(
+          items.length,
+          weapons.where((el) => el.subStatType == stat).length,
+          reason: 'Weapon ascension-stat item count mismatch for stat ${stat.name}, got ${items.length}',
+        );
 
         for (final item in items) {
           checkItemCommonWithName(item);
