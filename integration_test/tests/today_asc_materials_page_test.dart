@@ -35,7 +35,11 @@ void main() {
       await widgetTester.doAppDragUntilVisible(find.text('For characters'), scrollViewFinder, BasePage.verticalDragOffset);
       await widgetTester.pumpAndSettle();
 
-      expect(find.byType(CharCardAscensionMaterial), findsAtLeastNWidgets(2));
+      expect(
+        find.byType(CharCardAscensionMaterial),
+        findsAtLeastNWidgets(2),
+        reason: 'Opening the today ascension page for characters should list at least two character material cards',
+      );
     });
 
     testWidgets('opens page by tapping on weapons', (widgetTester) async {
@@ -45,7 +49,11 @@ void main() {
       await widgetTester.doAppDragUntilVisible(find.text('For weapons'), scrollViewFinder, BasePage.verticalDragOffset);
       await widgetTester.pumpAndSettle();
 
-      expect(find.byType(WeaponCardAscensionMaterial), findsAtLeastNWidgets(2));
+      expect(
+        find.byType(WeaponCardAscensionMaterial),
+        findsAtLeastNWidgets(2),
+        reason: 'Opening the today ascension page for weapons should list at least two weapon material cards',
+      );
     });
   });
 }

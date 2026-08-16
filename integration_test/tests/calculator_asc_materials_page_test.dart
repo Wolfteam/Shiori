@@ -8,6 +8,7 @@ import 'package:shiori/presentation/calculator_asc_materials/widgets/session_lis
 import 'package:shiori/presentation/shared/details/detail_section.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import '../game_data.dart';
 import '../views/views.dart';
 
 void main() {
@@ -27,7 +28,11 @@ void main() {
       await widgetTester.pumpAndSettle();
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
-      expect(find.byType(SessionListItem), findsNothing);
+      expect(
+        find.byType(SessionListItem),
+        findsNothing,
+        reason: 'Deleting the only session should leave no rows in the list',
+      );
     });
 
     testWidgets('creates a session and edits it', (widgetTester) async {
@@ -50,7 +55,11 @@ void main() {
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(SessionListItem, newName), findsOneWidget);
+      expect(
+        find.widgetWithText(SessionListItem, newName),
+        findsOneWidget,
+        reason: 'Renaming a session should relabel its row to the new name',
+      );
     });
 
     testWidgets('creates 2 sessions and deletes them all', (widgetTester) async {
@@ -62,7 +71,11 @@ void main() {
 
       await page.deleteAll();
 
-      expect(find.byType(SessionListItem), findsNothing);
+      expect(
+        find.byType(SessionListItem),
+        findsNothing,
+        reason: 'Delete-all should remove every session row',
+      );
     });
 
     testWidgets('creates 2 sessions which gets reordered', (widgetTester) async {
@@ -95,7 +108,11 @@ void main() {
       final Finder sessionsFinder = find.byType(SessionListItem);
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        expect(find.descendant(of: sessionsFinder.at(i), matching: find.text(name)), findsOneWidget);
+        expect(
+          find.descendant(of: sessionsFinder.at(i), matching: find.text(name)),
+          findsOneWidget,
+          reason: 'Session "$name" should sit at position $i after the reorder',
+        );
       }
     });
 
@@ -107,11 +124,19 @@ void main() {
       await page.createSession(sessionName);
       await page.tapOnSession(sessionName);
 
-      await page.addItem('Nahida', true);
-      await page.addItem('Sacrificial Sword', false);
+      await page.addItem(GameData.nahida.name, true);
+      await page.addItem(GameData.sacrificialSword.name, false);
 
-      expect(find.byType(ItemCard), findsNWidgets(2));
-      expect(find.byType(AscensionMaterialsSummaryWidget), findsAtLeastNWidgets(1));
+      expect(
+        find.byType(ItemCard),
+        findsNWidgets(2),
+        reason: 'Adding a character and a weapon should yield exactly two item cards',
+      );
+      expect(
+        find.byType(AscensionMaterialsSummaryWidget),
+        findsAtLeastNWidgets(1),
+        reason: 'Adding items should render at least one ascension-materials summary',
+      );
     });
 
     testWidgets('create session, add a character, a weapon and clear items', (widgetTester) async {
@@ -122,19 +147,27 @@ void main() {
       await page.createSession(sessionName);
       await page.tapOnSession(sessionName);
 
-      await page.addItem('Nahida', true);
-      await page.addItem('Sacrificial Sword', false);
+      await page.addItem(GameData.nahida.name, true);
+      await page.addItem(GameData.sacrificialSword.name, false);
 
       await page.deleteAll();
 
-      expect(find.byType(ItemCard), findsNothing);
-      expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
+      expect(
+        find.byType(ItemCard),
+        findsNothing,
+        reason: 'Clearing items should remove all item cards',
+      );
+      expect(
+        find.byType(AscensionMaterialsSummaryWidget),
+        findsNothing,
+        reason: 'Clearing items should remove the ascension-materials summary',
+      );
     });
 
     testWidgets('create session, add 2 items and reorder them', (widgetTester) async {
       const String sessionName = 'Reorder items';
-      const String charNameA = 'Keqing';
-      const String charNameB = 'Nahida';
+      final String charNameA = GameData.keqing.name;
+      final String charNameB = GameData.nahida.name;
       final page = CalculatorAscMaterialsPage(widgetTester);
       await page.navigate();
 
@@ -156,7 +189,11 @@ void main() {
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailSection, 'Summary'), findsOneWidget);
+      expect(
+        find.widgetWithText(DetailSection, 'Summary'),
+        findsOneWidget,
+        reason: 'The materials summary section must remain present after the reorder',
+      );
 
       //Check that the new order is Nahida,Keqing
       final expected = <String>[
@@ -167,7 +204,11 @@ void main() {
       final Finder itemsFinder = find.byType(ItemCard);
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        expect(find.descendant(of: itemsFinder.at(i), matching: find.text(name)), findsOneWidget);
+        expect(
+          find.descendant(of: itemsFinder.at(i), matching: find.text(name)),
+          findsOneWidget,
+          reason: '"$name" should occupy position $i after reordering the items',
+        );
         // await widgetTester.tap(itemsFinder.at(i));
         // await widgetTester.pumpAndSettle();
         // expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
@@ -178,8 +219,8 @@ void main() {
 
     testWidgets('create session, add 2 items and mark them as inactive them', (widgetTester) async {
       const String sessionName = 'Mark items as inactive';
-      const String charNameA = 'Keqing';
-      const String charNameB = 'Nahida';
+      final String charNameA = GameData.keqing.name;
+      final String charNameB = GameData.nahida.name;
       final page = CalculatorAscMaterialsPage(widgetTester);
       await page.navigate();
 
@@ -200,13 +241,17 @@ void main() {
         await sheet.markItemAsInactive(name);
       }
 
-      expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
+      expect(
+        find.byType(AscensionMaterialsSummaryWidget),
+        findsNothing,
+        reason: 'Marking every item inactive should hide the ascension-materials summary',
+      );
     });
 
     testWidgets('create session, add 2 items and delete them one by one', (widgetTester) async {
       const String sessionName = 'Delete items one by one';
-      const String charNameA = 'Keqing';
-      const String charNameB = 'Nahida';
+      final String charNameA = GameData.keqing.name;
+      final String charNameB = GameData.nahida.name;
       final page = CalculatorAscMaterialsPage(widgetTester);
       await page.navigate();
 
@@ -227,16 +272,24 @@ void main() {
         await sheet.deleteItem(name);
       }
 
-      expect(find.byType(ItemCard), findsNothing);
-      expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
+      expect(
+        find.byType(ItemCard),
+        findsNothing,
+        reason: 'Deleting every item one by one should remove all item cards',
+      );
+      expect(
+        find.byType(AscensionMaterialsSummaryWidget),
+        findsNothing,
+        reason: 'Deleting every item should remove the ascension-materials summary',
+      );
     });
 
     testWidgets('create session, add 2 items, mark one as inactive thus only materials from the first one should be shown', (
       widgetTester,
     ) async {
       const String sessionName = 'Updates 1 item';
-      const String charNameA = 'Keqing';
-      const String charNameB = 'Nahida';
+      final String charNameA = GameData.keqing.name;
+      final String charNameB = GameData.nahida.name;
       final page = CalculatorAscMaterialsPage(widgetTester);
       await page.navigate();
 
@@ -260,7 +313,11 @@ void main() {
 
       //Check the obtained materials
       final Finder summaryDescriptionFinder = find.widgetWithText(DetailSection, 'Summary');
-      expect(summaryDescriptionFinder, findsOneWidget);
+      expect(
+        summaryDescriptionFinder,
+        findsOneWidget,
+        reason: 'The summary section must render for the single remaining active item',
+      );
 
       final expected = [
         AscensionMaterialSummaryType.worldBoss,
@@ -291,16 +348,24 @@ void main() {
           matching: find.byType(MaterialItem),
         );
 
-        expect(materialsFinder, findsNWidgets(expectedMaterialCount));
+        expect(
+          materialsFinder,
+          findsNWidgets(expectedMaterialCount),
+          reason: 'Keqing at max talents should list $expectedMaterialCount ${type.name} materials',
+        );
         count++;
       }
 
-      expect(count, equals(expected.length));
+      expect(
+        count,
+        equals(expected.length),
+        reason: 'Every expected summary type should have been present and asserted',
+      );
     });
 
     testWidgets('create session, add item using materials from inventory and update inventory quantity', (widgetTester) async {
       const String sessionName = 'Uses mat. from inv.';
-      const String charNameA = 'Keqing';
+      final String charNameA = GameData.keqing.name;
       const String requiredQuantity = '7.005.900';
       const String newInventoryQuantity = '1.000.000';
       final page = CalculatorAscMaterialsPage(widgetTester);
@@ -318,12 +383,20 @@ void main() {
         matching: find.byType(MaterialItem),
       );
       final Finder customScrollViewFinder = find.byType(CustomScrollView).last;
-      expect(customScrollViewFinder, findsOneWidget);
+      expect(
+        customScrollViewFinder,
+        findsOneWidget,
+        reason: 'The scrollable summary list must be present to scroll the Mora item into view',
+      );
       await widgetTester.doAppDragUntilVisible(moraFinder, customScrollViewFinder, BasePage.verticalDragOffset);
       await widgetTester.pumpAndSettle();
 
       //Tap on the Mora item
-      expect(find.widgetWithText(MaterialItem, '0 / $requiredQuantity'), findsOneWidget);
+      expect(
+        find.widgetWithText(MaterialItem, '0 / $requiredQuantity'),
+        findsOneWidget,
+        reason: 'Mora should start at 0 owned out of the required $requiredQuantity',
+      );
       await widgetTester.tap(moraFinder);
       await widgetTester.pumpAndSettle();
 
@@ -337,7 +410,11 @@ void main() {
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(MaterialItem, '$newInventoryQuantity / $requiredQuantity'), findsOneWidget);
+      expect(
+        find.widgetWithText(MaterialItem, '$newInventoryQuantity / $requiredQuantity'),
+        findsOneWidget,
+        reason: 'Updating inventory should show $newInventoryQuantity owned out of $requiredQuantity',
+      );
     });
   });
 }

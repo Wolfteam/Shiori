@@ -15,7 +15,11 @@ void main() {
 
       await page.tapClearAllButton();
 
-      expect(find.byType(Draggable<ItemCommon>), findsAtLeastNWidgets(3));
+      expect(
+        find.byType(Draggable<ItemCommon>),
+        findsAtLeastNWidgets(3),
+        reason: 'Clearing the tier list should return all placed items to the draggable pool (>= 3)',
+      );
     });
 
     testWidgets('clears all data and restores it', (widgetTester) async {
@@ -26,7 +30,11 @@ void main() {
       await page.tapClearAllButton();
       await page.tapRestoreButton();
 
-      expect(find.byType(Draggable<ItemCommon>), findsNothing);
+      expect(
+        find.byType(Draggable<ItemCommon>),
+        findsNothing,
+        reason: 'Restoring after a clear should put every item back into its row, leaving no draggables in the pool',
+      );
     });
 
     testWidgets('drags 3 items to the empty tier list', (widgetTester) async {
@@ -41,7 +49,11 @@ void main() {
       }
 
       final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CharacterIconImage));
-      expect(charactersFinder, findsNWidgets(3));
+      expect(
+        charactersFinder,
+        findsNWidgets(3),
+        reason: 'Dragging three items into a row should place exactly three character icons in the tier rows',
+      );
     });
 
     testWidgets('drags 3 items to the empty tier list and changes its order', (widgetTester) async {
@@ -57,7 +69,11 @@ void main() {
       }
 
       final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CharacterIconImage));
-      expect(charactersFinder, findsNWidgets(3));
+      expect(
+        charactersFinder,
+        findsNWidgets(3),
+        reason: 'Dragging three items across rows should place exactly three character icons in the tier rows',
+      );
 
       //Move SSS 2 rows below
       for (int i = 0; i < 2; i++) {
@@ -69,7 +85,11 @@ void main() {
       for (int i = 0; i < 3; i++) {
         final String row = 'S' * (i + 1);
         final Finder rowFinder = find.byType(TierListRow).at(i);
-        expect(find.descendant(of: rowFinder, matching: find.text(row)), findsOneWidget);
+        expect(
+          find.descendant(of: rowFinder, matching: find.text(row)),
+          findsOneWidget,
+          reason: 'After reordering, the row at index $i should display the "$row" tier title',
+        );
       }
     });
 
@@ -89,11 +109,16 @@ void main() {
       expect(
         find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)),
         findsOneWidget,
+        reason: 'Row $rowIndex should hold the single item dropped into it before it is cleared',
       );
 
       await page.tapOnSettingPopupMenuItem(rowIndex, 4);
 
-      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)), findsNothing);
+      expect(
+        find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)),
+        findsNothing,
+        reason: 'Clearing row $rowIndex should remove its character icon',
+      );
     });
 
     testWidgets('adds row above SSS', (widgetTester) async {
@@ -107,11 +132,13 @@ void main() {
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
         findsOneWidget,
+        reason: 'The default top tier row should be "$row" at index 0',
       );
       await page.tapOnSettingPopupMenuItem(0, 0);
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row),
         findsOneWidget,
+        reason: 'Adding a row above should push the "$row" row down to index 1',
       );
     });
 
@@ -126,11 +153,13 @@ void main() {
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row),
         findsOneWidget,
+        reason: 'The default second tier row should be "$row" at index 1',
       );
       await page.tapOnSettingPopupMenuItem(0, 1);
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 2 && widget.title == row),
         findsOneWidget,
+        reason: 'Adding a row below SSS should push the "$row" row down to index 2',
       );
     });
 
@@ -146,6 +175,7 @@ void main() {
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
         findsOneWidget,
+        reason: 'The "$row" row should start at index 0 before being renamed',
       );
       await page.tapOnSettingPopupMenuItem(0, 2);
 
@@ -158,6 +188,7 @@ void main() {
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == newName),
         findsOneWidget,
+        reason: 'Renaming the top row should change its title to "$newName" at index 0',
       );
     });
 
@@ -172,9 +203,14 @@ void main() {
       expect(
         find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
         findsOneWidget,
+        reason: 'The "$row" row should be present at index 0 before deletion',
       );
       await page.tapOnSettingPopupMenuItem(0, 3);
-      expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsNothing);
+      expect(
+        find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row),
+        findsNothing,
+        reason: 'Deleting the "$row" row should remove it from index 0',
+      );
     });
 
     testWidgets('changes SSS row color', (widgetTester) async {
@@ -194,6 +230,7 @@ void main() {
               widget.color.toARGB32() == Colors.red.toARGB32(),
         ),
         findsOneWidget,
+        reason: 'The default "$row" row should be red before its color is changed',
       );
       await page.tapOnSettingPopupMenuItem(0, 4);
 
@@ -218,6 +255,7 @@ void main() {
               widget.color.toARGB32() == Colors.red.toARGB32(),
         ),
         findsNothing,
+        reason: 'Changing the "$row" row color should leave it no longer red',
       );
     });
   });

@@ -48,7 +48,11 @@ class WishSimulatorPage extends BasePage {
     await tester.tap(button);
     await tester.pumpAndSettle();
 
-    expect(find.byType(WishResultItem), findsAtLeastNWidgets(1));
+    expect(
+      find.byType(WishResultItem),
+      findsAtLeastNWidgets(1),
+      reason: 'Pulling $quantity time(s) should produce at least one wish result item',
+    );
 
     await tester.tap(find.byIcon(Icons.close));
     await tester.pumpAndSettle();

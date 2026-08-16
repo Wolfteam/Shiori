@@ -6,12 +6,13 @@ import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:two_dimensional_scrollables/two_dimensional_scrollables.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import '../game_data.dart';
 import '../views/views.dart';
 
 void main() {
-  const String character = 'Nahida';
+  final String character = GameData.nahida.name;
   const double version = 3.2;
-  const String weapon = 'A Thousand Floating Dreams';
+  final String weapon = GameData.aThousandFloatingDreams.name;
 
   Future<void> navigate(WidgetTester widgetTester) async {
     final splashPage = SplashPage(widgetTester);
@@ -45,7 +46,7 @@ void main() {
 
     //Tap on version button
     final Finder versionButton = find.text(versionString);
-    expect(versionButton, findsOneWidget);
+    expect(versionButton, findsOneWidget, reason: 'The v$versionString button must be present to select that version');
 
     await widgetTester.tap(versionButton);
     await widgetTester.pumpAndSettle();
@@ -73,17 +74,21 @@ void main() {
 
   Future<void> openCardItemDialog(String name, WidgetTester widgetTester) async {
     final Finder cardFinder = find.widgetWithText(GradientCard, name);
-    expect(cardFinder, findsOneWidget);
+    expect(cardFinder, findsOneWidget, reason: 'The $name card must be present to open its dialog');
 
     await widgetTester.tap(cardFinder);
     await widgetTester.pumpAndSettle();
 
-    expect(find.byType(AlertDialog), findsOneWidget);
+    expect(find.byType(AlertDialog), findsOneWidget, reason: 'Tapping the $name card should open its detail dialog');
   }
 
   Future<void> tapOnDetailItemDialogOption(bool details, WidgetTester widgetTester) async {
     final Finder dialogItemsFinder = find.byType(ListTile);
-    expect(dialogItemsFinder, findsNWidgets(2));
+    expect(
+      dialogItemsFinder,
+      findsNWidgets(2),
+      reason: 'The item dialog must offer exactly two options (Details and Release history)',
+    );
 
     //Tap on Details or Release history
     await widgetTester.tap(details ? dialogItemsFinder.first : dialogItemsFinder.last);

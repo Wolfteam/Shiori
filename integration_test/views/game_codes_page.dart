@@ -31,14 +31,22 @@ class GameCodesPage extends BasePage {
     await tester.doAppDragFromLocation(Offset(center.dx, center.dy / 2), center);
     await tester.pumpAndSettle();
     await tester.pumpUntilFound(find.byType(GameCodeListItem));
-    expect(find.byType(GameCodeListItem), findsAtLeastNWidgets(3));
+    expect(
+      find.byType(GameCodeListItem),
+      findsAtLeastNWidgets(3),
+      reason: 'Pulling to refresh should load the game codes list (>= 3 items)',
+    );
   }
 
   Future<void> markGameCodeAsUsed(int index, {bool fromWorkingOnes = true}) async {
     final Finder listFinder = find.byType(SliverList).at(fromWorkingOnes ? 0 : 1);
     final Finder itemFinder = find.descendant(of: listFinder, matching: find.byType(GameCodeListItem)).at(index);
     final Offset center = tester.getCenter(itemFinder);
-    expect(tester.widget<GameCodeListItem>(itemFinder).isUsed, isFalse);
+    expect(
+      tester.widget<GameCodeListItem>(itemFinder).isUsed,
+      isFalse,
+      reason: 'The game code must start unused before we mark it as used',
+    );
 
     await tester.doAppDragFromLocation(center, Offset(center.dx / 3, center.dy));
     await tester.pumpAndSettle();
@@ -46,6 +54,10 @@ class GameCodesPage extends BasePage {
     await tester.tap(find.byIcon(Icons.check));
     await tester.pumpAndSettle();
 
-    expect(tester.widget<GameCodeListItem>(itemFinder).isUsed, isTrue);
+    expect(
+      tester.widget<GameCodeListItem>(itemFinder).isUsed,
+      isTrue,
+      reason: 'Marking a game code as used should flip its isUsed flag to true',
+    );
   }
 }

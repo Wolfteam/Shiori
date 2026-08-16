@@ -29,7 +29,11 @@ class NotificationsPage extends BasePage {
 
   Future<NotificationBottomSheet> tapOnItem(AppNotificationType type) async {
     final Finder notifFinder = find.byWidgetPredicate((widget) => widget is NotificationListTitle && widget.type == type);
-    expect(notifFinder, findsOneWidget);
+    expect(
+      notifFinder,
+      findsOneWidget,
+      reason: 'The ${type.name} notification tile must be present to tap it open',
+    );
 
     await tester.tap(notifFinder);
     await tester.pumpAndSettle();

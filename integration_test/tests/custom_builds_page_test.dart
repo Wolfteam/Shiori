@@ -8,6 +8,7 @@ import 'package:shiori/presentation/custom_builds/widgets/custom_build_card.dart
 import 'package:shiori/presentation/shared/character_stack_image.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import '../game_data.dart';
 import '../views/views.dart';
 
 void main() {
@@ -18,7 +19,7 @@ void main() {
       await page.tapOnFab();
 
       //Set common stuff
-      await page.selectCharacter('keqing');
+      await page.selectCharacter(GameData.keqing.key);
       await page.selectRole(CharacterRoleType.burstSupport);
       await page.selectRoleSubType(CharacterRoleSubType.dendro);
       await page.selectCharacterSkillTypeDialog(CharacterSkillType.elementalBurst);
@@ -36,7 +37,11 @@ void main() {
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,
       );
-      expect(find.byType(WeaponRow), findsNWidgets(3));
+      expect(
+        find.byType(WeaponRow),
+        findsNWidgets(3),
+        reason: 'Adding three weapons must render exactly three weapon rows in the build',
+      );
 
       //Set artifact stuff
       for (final type in ArtifactType.values) {
@@ -48,11 +53,15 @@ void main() {
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,
       );
-      expect(find.byType(ArtifactRow), findsNWidgets(ArtifactType.values.length));
+      expect(
+        find.byType(ArtifactRow),
+        findsNWidgets(ArtifactType.values.length),
+        reason: 'Adding one artifact per type must render a row for each of the ${ArtifactType.values.length} slots',
+      );
 
       //Set team characters
-      await page.addTeamCharacter('fischl', CharacterRoleType.offFieldDps, CharacterRoleSubType.electro);
-      await page.addTeamCharacter('nahida', CharacterRoleType.support, CharacterRoleSubType.dendro);
+      await page.addTeamCharacter(GameData.fischl.key, CharacterRoleType.offFieldDps, CharacterRoleSubType.electro);
+      await page.addTeamCharacter(GameData.nahida.key, CharacterRoleType.support, CharacterRoleSubType.dendro);
       await page.addTeamCharacter('kazuha', CharacterRoleType.support, CharacterRoleSubType.anemo);
       await widgetTester.pumpAndSettle(BasePage.threeHundredMsDuration);
       await widgetTester.doAppDragUntilVisible(
@@ -60,12 +69,33 @@ void main() {
         find.byType(CustomScrollView),
         BasePage.verticalDragOffset,
       );
-      expect(find.byType(TeamCharacterRow), findsNWidgets(3));
+      expect(
+        find.byType(TeamCharacterRow),
+        findsNWidgets(3),
+        reason: 'Adding three team characters must render exactly three team character rows',
+      );
 
       await page.tapOnSave();
       await page.tapOnBackButton();
 
-      expect(find.byType(CustomBuildCard), findsOneWidget);
+      final Finder cardFinder = find.byType(CustomBuildCard);
+      expect(
+        cardFinder,
+        findsOneWidget,
+        reason: 'Saving the build should list exactly one custom build card to inspect',
+      );
+
+      final CustomBuildCard card = widgetTester.widget<CustomBuildCard>(cardFinder);
+      expect(
+        card.item.character.key,
+        GameData.keqing.key,
+        reason: 'The saved custom build must lead with ${GameData.keqing.name} (key ${GameData.keqing.key})',
+      );
+      expect(
+        card.item.character.elementType,
+        GameData.keqing.element,
+        reason: '${GameData.keqing.name} on the custom build must show element ${GameData.keqing.element.name}',
+      );
     });
 
     testWidgets('creates custom build and deletes it', (widgetTester) async {
@@ -74,7 +104,7 @@ void main() {
       await page.tapOnFab();
 
       //Set common stuff
-      await page.selectCharacter('keqing');
+      await page.selectCharacter(GameData.keqing.key);
 
       //Set weapon stuff
       await page.addWeapon('mistspl');
@@ -89,9 +119,17 @@ void main() {
       await page.tapOnSave();
       await page.tapOnBackButton();
 
-      expect(find.byType(CustomBuildCard), findsOneWidget);
+      expect(
+        find.byType(CustomBuildCard),
+        findsOneWidget,
+        reason: 'Saving the build should list exactly one custom build card',
+      );
       await page.tapOnDelete();
-      expect(find.byType(CustomBuildCard), findsNothing);
+      expect(
+        find.byType(CustomBuildCard),
+        findsNothing,
+        reason: 'Deleting the only build should clear the custom builds list',
+      );
     });
 
     testWidgets('creates custom build and updates it', (widgetTester) async {
@@ -100,7 +138,7 @@ void main() {
       await page.tapOnFab();
 
       //Set common stuff
-      await page.selectCharacter('keqing');
+      await page.selectCharacter(GameData.keqing.key);
 
       //Set weapon stuff
       await page.addWeapon('mistspl');
@@ -115,14 +153,18 @@ void main() {
       await page.tapOnSave();
       await page.tapOnBackButton();
 
-      expect(find.byType(CustomBuildCard), findsOneWidget);
+      expect(
+        find.byType(CustomBuildCard),
+        findsOneWidget,
+        reason: 'The build must exist as a single card before it can be opened for updating',
+      );
 
       //Update it
       //The CharacterStackImage has an absorb pointer
       await widgetTester.tap(find.byType(CharacterStackImage), warnIfMissed: false);
       await widgetTester.pumpAndSettle();
 
-      await page.selectCharacter('nahida');
+      await page.selectCharacter(GameData.nahida.key);
       await page.selectRole(CharacterRoleType.dps);
       await page.selectRoleSubType(CharacterRoleSubType.dendro);
       await page.selectCharacterSkillTypeDialog(CharacterSkillType.elementalSkill);
@@ -130,12 +172,16 @@ void main() {
       await page.selectCharacterSkillTypeDialog(CharacterSkillType.normalAttack);
       await page.addWeapon('thousand floating');
       await widgetTester.pumpAndSettle(BasePage.threeHundredMsDuration);
-      await page.addTeamCharacter('keqing', CharacterRoleType.dps, CharacterRoleSubType.electro);
+      await page.addTeamCharacter(GameData.keqing.key, CharacterRoleType.dps, CharacterRoleSubType.electro);
 
       await page.tapOnSave();
       await page.tapOnBackButton();
 
-      expect(find.byType(CustomBuildCard), findsOneWidget);
+      expect(
+        find.byType(CustomBuildCard),
+        findsOneWidget,
+        reason: 'Updating the build should keep a single custom build card, not create a duplicate',
+      );
     });
   });
 }
