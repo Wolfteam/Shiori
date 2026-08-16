@@ -178,7 +178,7 @@ abstract final class GameData {
   );
 
   // --- Monsters (monsters.json) ---
-  static const TestMonster raidenShogun = TestMonster(key: 'raiden-shogun', name: 'Raiden Shogun');
+  static const TestMonster theDoctor = TestMonster(key: 'the-doctor', name: 'The Doctor');
 
   // --- Banner history (banners_history.json, immutable) ---
   static const TestBanner banner32 = TestBanner(

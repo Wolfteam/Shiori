@@ -15,9 +15,9 @@ void main() {
     await mainPage.tapOnMonstersCard();
   }
 
-  Future<void> filterForRaidenShogun(WidgetTester widgetTester) async {
+  Future<void> filterForTheDoctor(WidgetTester widgetTester) async {
     final mainPage = MainTabPage(widgetTester);
-    await mainPage.enterSearchText('raiden');
+    await mainPage.enterSearchText(GameData.theDoctor.name);
     final CommonBottomSheet bottomSheet = await mainPage.tapFilterIcon();
     await bottomSheet.tapOnFilterListIcon(3);
     await bottomSheet.tapOnButton(onOk: true);
@@ -26,7 +26,7 @@ void main() {
   group('Monsters page', () {
     testWidgets('filter changes but gets reset', (widgetTester) async {
       await navigate(widgetTester);
-      await filterForRaidenShogun(widgetTester);
+      await filterForTheDoctor(widgetTester);
 
       final mainPage = MainTabPage(widgetTester);
       await mainPage.enterSearchText('');
@@ -43,20 +43,20 @@ void main() {
 
     testWidgets('filter returns 1 result', (widgetTester) async {
       await navigate(widgetTester);
-      await filterForRaidenShogun(widgetTester);
+      await filterForTheDoctor(widgetTester);
 
       final Finder finder = find.byType(MonsterCard);
       expect(
         finder,
         findsOneWidget,
-        reason: 'Filtering for ${GameData.raidenShogun.name} should leave exactly one monster card',
+        reason: 'Filtering for ${GameData.theDoctor.name} should leave exactly one monster card',
       );
 
       final MonsterCard card = widgetTester.widget<MonsterCard>(finder);
       expect(
         card.itemKey,
-        GameData.raidenShogun.key,
-        reason: 'Filtering must isolate the ${GameData.raidenShogun.name} monster',
+        GameData.theDoctor.key,
+        reason: 'Filtering must isolate the ${GameData.theDoctor.name} monster',
       );
     });
   });

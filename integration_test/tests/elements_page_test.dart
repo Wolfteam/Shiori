@@ -26,27 +26,32 @@ void main() {
       await navigate(widgetTester);
 
       final Finder scrollViewFinder = find.byType(CustomScrollView);
-      await widgetTester.doAppDragUntilVisible(find.byType(SliverElementDebuffs), scrollViewFinder, BasePage.verticalDragOffset);
-      await widgetTester.doAppDragUntilVisible(
-        find.byType(SliverElementReactions),
-        scrollViewFinder,
-        BasePage.verticalDragOffset,
-      );
-      await widgetTester.doAppDragUntilVisible(
-        find.byType(SliverElementResonances),
-        scrollViewFinder,
-        const Offset(0, BasePage.verticalScrollDelta * -5),
-      );
 
+      // Assert each section's count right after scrolling it into view. The slivers are lazy: once a
+      // section scrolls past the viewport's cache extent its cards are disposed, so a single batch of
+      // asserts at the bottom would find 0 debuffs. Verify each while it is still materialized.
+      await widgetTester.doAppDragUntilVisible(find.byType(SliverElementDebuffs), scrollViewFinder, BasePage.verticalDragOffset);
       expect(
         find.descendant(of: find.byType(SliverElementDebuffs), matching: find.byType(ElementDebuffCard)),
         findsNWidgets(GameData.elementDebuffCount),
         reason: 'Elements page must render all ${GameData.elementDebuffCount} elemental debuffs from elements.json',
       );
+
+      await widgetTester.doAppDragUntilVisible(
+        find.byType(SliverElementReactions),
+        scrollViewFinder,
+        BasePage.verticalDragOffset,
+      );
       expect(
         find.descendant(of: find.byType(SliverElementReactions), matching: find.byType(ElementReactionCard)),
         findsNWidgets(GameData.elementReactionCount),
         reason: 'Elements page must render all ${GameData.elementReactionCount} elemental reactions from elements.json',
+      );
+
+      await widgetTester.doAppDragUntilVisible(
+        find.byType(SliverElementResonances),
+        scrollViewFinder,
+        const Offset(0, BasePage.verticalScrollDelta * -5),
       );
       expect(
         find.descendant(of: find.byType(SliverElementResonances), matching: find.byType(ElementReactionCard)),

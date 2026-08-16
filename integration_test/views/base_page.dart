@@ -21,6 +21,7 @@ import 'package:window_size/window_size.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../fcm_mock.dart';
+import '../local_notifications_mock.dart';
 import '../permission_handler_mock.dart';
 import 'common_bottom_sheet.dart';
 
@@ -108,6 +109,7 @@ abstract class BasePage {
   Future<void> _init(bool resetResources, bool deleteData) async {
     if (!initialized) {
       setupFirebaseMessagingMocks();
+      setupLocalNotificationsMocks();
       PermissionHandlerPlatform.instance = MockPermissionHandler();
       FirebaseMessagingPlatform.instance = kMockMessagingPlatform;
       await Firebase.initializeApp();
