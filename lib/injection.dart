@@ -262,6 +262,10 @@ class Injection {
     return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, telemetryService);
   }
 
+  static ExportLogsBloc get exportLogsBloc {
+    return ExportLogsBloc(getIt<LogFileService>());
+  }
+
   static BackupRestoreBloc get backupRestoreBloc {
     final backupRestoreService = getIt<BackupRestoreService>();
     final telemetryService = getIt<TelemetryService>();
