@@ -5,6 +5,7 @@ export 'package:shiori/infrastructure/changelog_provider.dart';
 export 'package:shiori/infrastructure/device_info_service.dart';
 export 'package:shiori/infrastructure/genshin_service.dart';
 export 'package:shiori/infrastructure/locale_service.dart';
+export 'package:shiori/infrastructure/log_sink.dart';
 export 'package:shiori/infrastructure/logging_service.dart';
 export 'package:shiori/infrastructure/network_service.dart';
 export 'package:shiori/infrastructure/notification_service.dart';
