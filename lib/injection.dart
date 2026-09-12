@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/log_file_service.dart';
 import 'package:shiori/domain/services/log_sink.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
@@ -347,6 +348,10 @@ class Injection {
     final LogSink logSink = LogSinkImpl(Directory(path.join(supportDir.path, 'logs')));
     await logSink.init();
     getIt.registerSingleton<LogSink>(logSink);
+
+    getIt.registerLazySingleton<LogFileService>(
+      () => LogFileServiceImpl(getIt<LogSink>(), getIt<DeviceInfoService>(), supportDir),
+    );
 
     getIt.registerLazySingleton<LoggingService>(
       () => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, getIt<LogSink>()),
