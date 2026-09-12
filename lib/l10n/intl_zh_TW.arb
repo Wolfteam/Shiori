@@ -500,5 +500,9 @@
   "showMaterialUsage": "Show material usage",
   "version": "版本",
   "reruns": "Reruns",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "Download size: {value}",
+  "exportLogs": "匯出日誌",
+  "exportLogsSubtitle": "匯出應用程式日誌以排除問題",
+  "generatingLogsFile": "正在產生日誌檔案...",
+  "logsExportFailed": "無法匯出日誌"
 }

@@ -500,5 +500,9 @@
   "showMaterialUsage": "Показати використання матеріалів",
   "version": "Версії",
   "reruns": "Рерани",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "Download size: {value}",
+  "exportLogs": "Експортувати логи",
+  "exportLogsSubtitle": "Експортувати логи застосунку для усунення несправностей",
+  "generatingLogsFile": "Створення файлу логів...",
+  "logsExportFailed": "Не вдалося експортувати логи"
 }

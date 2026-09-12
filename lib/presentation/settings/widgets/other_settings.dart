@@ -9,6 +9,7 @@ import 'package:shiori/presentation/backups/backups_page.dart';
 import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/export_logs_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/requires_resources_widget.dart';
@@ -98,6 +99,14 @@ class OtherSettings extends StatelessWidget {
                       title: Text(s.backups),
                       subtitle: Text(s.createAndRestoreLocalBackups),
                       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(s.exportLogs),
+                    subtitle: Text(s.exportLogsSubtitle),
+                    onTap: () => showDialog(
+                      context: context,
+                      builder: (_) => const ExportLogsDialog(),
                     ),
                   ),
                   ListTile(

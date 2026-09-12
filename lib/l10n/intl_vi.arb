@@ -500,5 +500,9 @@
   "showMaterialUsage": "Show material usage",
   "version": "Phiên bản",
   "reruns": "Reruns",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "Download size: {value}",
+  "exportLogs": "Xuất nhật ký",
+  "exportLogsSubtitle": "Xuất nhật ký ứng dụng để khắc phục sự cố",
+  "generatingLogsFile": "Đang tạo tệp nhật ký...",
+  "logsExportFailed": "Không thể xuất nhật ký"
 }

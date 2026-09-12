@@ -500,5 +500,9 @@
   "showMaterialUsage": "Mostrar uso de materiales",
   "version": "Versión",
   "reruns": "Reruns",
-  "downloadSize": "Tamaño de descarga: {value}"
+  "downloadSize": "Tamaño de descarga: {value}",
+  "exportLogs": "Exportar registros",
+  "exportLogsSubtitle": "Exporta los registros de la aplicación para solucionar problemas",
+  "generatingLogsFile": "Generando el archivo de registros...",
+  "logsExportFailed": "No se pudieron exportar los registros"
 }
