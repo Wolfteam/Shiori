@@ -731,10 +731,10 @@ packages:
     dependency: "direct main"
     description:
       name: image_gallery_saver_plus
-      sha256: "199b9e24f8d85e98f11e3d35571ab68ae50626ad40e2bb85c84383f69a6950ad"
+      sha256: "83135406297c8fc50d76dcfee25011c97c741406a471c15671f2ecd33800f745"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.1"
+    version: "5.0.0"
   infinite_listview:
     dependency: "direct main"
     description:
