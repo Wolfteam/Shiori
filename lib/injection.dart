@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
@@ -13,6 +12,7 @@ import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/log_sink.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
@@ -343,22 +343,13 @@ class Injection {
 
     getIt.registerSingleton<DeviceInfoService>(DeviceInfoServiceImpl());
 
-    File? loggingFile;
-    if (kDebugMode && isLoggingEnabled) {
-      try {
-        final Directory? loggingDir = await getDownloadsDirectory();
-        final String loggingPath = path.join(loggingDir!.path, 'logs.txt');
-        loggingFile = File(loggingPath);
-        if (!await loggingFile.exists()) {
-          await loggingFile.create(recursive: true);
-        }
-      } catch (_) {
-        //no op
-      }
-    }
+    final Directory supportDir = await getApplicationSupportDirectory();
+    final LogSink logSink = LogSinkImpl(Directory(path.join(supportDir.path, 'logs')));
+    await logSink.init();
+    getIt.registerSingleton<LogSink>(logSink);
 
     getIt.registerLazySingleton<LoggingService>(
-      () => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, loggingFile),
+      () => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, getIt<LogSink>()),
     );
 
     getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));

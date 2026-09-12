@@ -4,6 +4,7 @@ import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';
+import 'package:shiori/domain/services/log_sink.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
@@ -22,6 +23,7 @@ import 'package:shiori/domain/services/telemetry_service.dart';
 @GenerateNiceMocks([
   MockSpec<SettingsService>(),
   MockSpec<LoggingService>(),
+  MockSpec<LogSink>(),
   MockSpec<TelemetryService>(),
   MockSpec<DeviceInfoService>(),
   MockSpec<NetworkService>(),

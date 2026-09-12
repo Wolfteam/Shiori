@@ -1,20 +1,21 @@
-import 'dart:io';
+import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/services/log_sink.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:sprintf/sprintf.dart';
 
 class LoggingServiceImpl implements LoggingService {
   final TelemetryService _telemetryService;
+  final LogSink _sink;
   final Logger _logger;
   final bool _isLoggingEnabled;
 
-  LoggingServiceImpl(this._telemetryService, this._isLoggingEnabled, File? fileOutput)
+  LoggingServiceImpl(this._telemetryService, this._isLoggingEnabled, this._sink)
     : _logger = Logger(
-        output: fileOutput != null ? FileOutput(file: fileOutput) : null,
         printer: PrefixPrinter(PrettyPrinter(colors: false, printEmojis: false, dateTimeFormat: DateTimeFormat.dateAndTime)),
       );
 
@@ -26,11 +27,9 @@ class LoggingServiceImpl implements LoggingService {
       return;
     }
 
-    if (args != null && args.isNotEmpty) {
-      _logger.i('$type - ${sprintf(msg, args)}');
-    } else {
-      _logger.i('$type - $msg');
-    }
+    final String message = args != null && args.isNotEmpty ? sprintf(msg, args) : msg;
+    _logger.i('$type - $message');
+    _sink.write(_format('INFO', type, message));
   }
 
   @override
@@ -44,11 +43,9 @@ class LoggingServiceImpl implements LoggingService {
       return;
     }
 
-    if (args != null && args.isNotEmpty) {
-      _logger.d('$type - ${sprintf(msg, args)}');
-    } else {
-      _logger.d('$type - $msg');
-    }
+    final String message = args != null && args.isNotEmpty ? sprintf(msg, args) : msg;
+    _logger.d('$type - $message');
+    _sink.write(_format('DEBUG', type, message));
   }
 
   @override
@@ -61,6 +58,7 @@ class LoggingServiceImpl implements LoggingService {
 
     final tag = type.toString();
     _logger.w('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
+    _sink.write(_format('WARNING', type, msg, ex, trace));
 
     if (kReleaseMode) {
       _trackWarningOrError(tag, msg, ex, trace);
@@ -77,10 +75,25 @@ class LoggingServiceImpl implements LoggingService {
 
     final tag = type.toString();
     _logger.e('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
+    _sink.write(_format('ERROR', type, msg, ex, trace));
+
+    //An error is the line most likely to be followed by a crash, so it must not sit in the buffer
+    unawaited(_sink.flush());
 
     if (kReleaseMode) {
       _trackWarningOrError(tag, msg, ex, trace, true);
     }
+  }
+
+  String _format(String level, Type type, String msg, [dynamic ex, StackTrace? trace]) {
+    final buffer = StringBuffer('${DateTime.now().toIso8601String()} [$level] $type - $msg');
+    if (ex != null) {
+      buffer.write('\n$ex');
+    }
+    if (trace != null) {
+      buffer.write('\n$trace');
+    }
+    return buffer.toString();
   }
 
   String _formatEx(String msg, dynamic ex) {
