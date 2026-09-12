@@ -16,6 +16,7 @@ import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/domain/utils/telemetry_chunk_utils.dart';
 import 'package:shiori/env.dart';
 
 part 'splash_bloc.freezed.dart';
@@ -250,11 +251,15 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     }
     _settingsService.lastTelemetryCheckedDate = DateTime.now();
 
-    final logs = telemetryData.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
-    final request = SaveAppLogsRequestDto(logs: logs);
-    await Future.wait([
-      _apiService.sendTelemetryData(request),
-      _dataService.telemetry.deleteByIds(telemetryData.map((t) => t.id).toList()),
-    ]);
+    final List<List<Telemetry>> chunks = TelemetryChunkUtils.chunk(telemetryData, Env.maxTelemetryPayloadBytes);
+    for (final List<Telemetry> chunk in chunks) {
+      final logs = chunk.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
+      final EmptyResponseDto response = await _apiService.sendTelemetryData(SaveAppLogsRequestDto(logs: logs));
+      //Deleting before confirmation is how telemetry was being lost; leave the rest queued for the next run
+      if (!response.succeed) {
+        return;
+      }
+      await _dataService.telemetry.deleteByIds(chunk.map((t) => t.id).toList());
+    }
   }
 }
