@@ -35,7 +35,7 @@ void main() {
     'Initial state',
     () => expect(
       BannerVersionHistoryBloc(genshinService, telemetryService).state,
-      const BannerVersionHistoryState.loading(), reason: 'Should match expected value (property=state)'),
+      const BannerVersionHistoryState.loading(), reason: 'A freshly built BannerVersionHistoryBloc must start in BannerVersionHistoryState.loading'),
   );
 
   group('Init', () {
@@ -45,21 +45,21 @@ void main() {
           throw InvalidStateError();
         case BannerVersionHistoryStateLoaded():
           final validItemTypes = [ItemType.character, ItemType.weapon];
-          expect(state.version, version, reason: 'Should match expected value (property=version)');
-          expect(state.items.isNotEmpty, isTrue, reason: 'Should be true (property=items)');
+          expect(state.version, version, reason: 'After init(version), loaded state version must be $version');
+          expect(state.items, isNotEmpty, reason: 'Loaded state must expose banner period groups for version $version');
           for (final grouped in state.items) {
             final from = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.from);
             final until = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.until);
-            expect(until.isAfter(from), isTrue, reason: 'Should be true (property=isAfter(from))');
-            expect(grouped.items.isNotEmpty, isTrue, reason: 'Should be true (property=items)');
+            expect(until.isAfter(from), isTrue, reason: 'Banner period must end after it begins (from=${grouped.from}, until=${grouped.until})');
+            expect(grouped.items, isNotEmpty, reason: 'Banner period group must contain at least one item (from=${grouped.from})');
 
             final keys = grouped.items.map((e) => e.key).toList();
-            expect(keys.toSet().length == keys.length, isTrue, reason: 'Should be true (property=length == keys)');
+            expect(keys.toSet().length == keys.length, isTrue, reason: 'Item keys within a banner period group must be unique (from=${grouped.from})');
 
             for (final group in grouped.items) {
               checkItemKeyAndImage(group.key, group.image);
-              expect(group.rarity >= 4, isTrue, reason: 'Should be true (property=rarity >= 4, isTrue)');
-              expect(validItemTypes.contains(group.type), isTrue, reason: 'Should be true (property=type))');
+              expect(group.rarity, greaterThanOrEqualTo(4), reason: 'Banner item rarity must be >= 4 (key=${group.key})');
+              expect(validItemTypes.contains(group.type), isTrue, reason: 'Banner item type must be character or weapon, got ${group.type} (key=${group.key})');
             }
           }
       }

@@ -5,7 +5,14 @@ import 'package:shiori/application/bloc.dart';
 void main() {
   const defaultState = ItemQuantityFormState.loaded(quantity: 0, isQuantityDirty: false, isQuantityValid: true);
 
-  test('Initial state', () => expect(ItemQuantityFormBloc().state, defaultState, reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      ItemQuantityFormBloc().state,
+      defaultState,
+      reason: 'A fresh ItemQuantityFormBloc should start with quantity 0, not dirty and valid',
+    ),
+  );
 
   group('Quantity changed', () {
     blocTest<ItemQuantityFormBloc, ItemQuantityFormState>(

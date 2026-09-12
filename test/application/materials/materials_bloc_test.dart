@@ -30,7 +30,14 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(MaterialsBloc(genshinService).state, const MaterialsState.loading(), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      MaterialsBloc(genshinService).state,
+      const MaterialsState.loading(),
+      reason: 'A fresh MaterialsBloc should start in loading state',
+    ),
+  );
 
   group('Init', () {
     blocTest<MaterialsBloc, MaterialsState>(
@@ -67,13 +74,17 @@ void main() {
                 .getAllMaterialsForCard()
                 .where((el) => !excludedKeys.contains(el.key))
                 .toList();
-            expect(state.materials.length, materials.length, reason: 'Should match expected value (property=materials)');
-            expect(state.rarity, 0, reason: 'Should match expected value (property=rarity, expected=0)');
-            expect(state.tempRarity, 0, reason: 'Should match expected value (property=tempRarity, expected=0)');
-            expect(state.filterType, MaterialFilterType.grouped, reason: 'Should match expected value (property=filterType, expected=MaterialFilterType.grouped)');
-            expect(state.tempFilterType, MaterialFilterType.grouped, reason: 'Should match expected value (property=tempFilterType, expected=MaterialFilterType.grouped)');
-            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
-            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
+            expect(
+              state.materials.length,
+              materials.length,
+              reason: 'init(excludeKeys: [mora]) should drop mora, leaving ${materials.length} materials, got ${state.materials.length}',
+            );
+            expect(state.rarity, 0, reason: 'No rarity filter on init so rarity should be 0, got ${state.rarity}');
+            expect(state.tempRarity, 0, reason: 'No rarity filter on init so tempRarity should be 0, got ${state.tempRarity}');
+            expect(state.filterType, MaterialFilterType.grouped, reason: 'Default material filter should be grouped, got ${state.filterType}');
+            expect(state.tempFilterType, MaterialFilterType.grouped, reason: 'Default temp material filter should be grouped, got ${state.tempFilterType}');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Default sort direction should be asc, got ${state.sortDirectionType}');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Default temp sort direction should be asc, got ${state.tempSortDirectionType}');
         }
       },
     );

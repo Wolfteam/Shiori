@@ -12,7 +12,7 @@ class DetailPage extends BasePage {
     const verticalOffset = Offset(0, -50);
 
     final Finder scrollViewFinder = find.byType(SingleChildScrollView);
-    expect(scrollViewFinder, findsOneWidget);
+    expect(scrollViewFinder, findsOneWidget, reason: 'The portrait detail scroll view must be present to scroll its sections');
 
     for (final String description in expectedDescriptions) {
       final Finder finder = find.widgetWithText(DetailSection, description);
@@ -31,12 +31,12 @@ class DetailPage extends BasePage {
     const verticalOffset = Offset(0, -50);
 
     final Finder tabControllerFinder = find.byType(TabBar);
-    expect(tabControllerFinder, findsOneWidget);
+    expect(tabControllerFinder, findsOneWidget, reason: 'The landscape detail tab bar must be present to navigate its tabs');
 
     for (int i = 0; i < expectedTabTitles.length; i++) {
       final String tabTitle = expectedTabTitles[i];
       final Finder tabFinder = find.widgetWithText(Tab, tabTitle);
-      expect(tabFinder, findsOneWidget);
+      expect(tabFinder, findsOneWidget, reason: 'The "$tabTitle" tab must be present to select it');
       await tester.doAppDragUntilVisible(tabFinder, tabControllerFinder, horizontalOffset);
 
       await tester.tap(tabFinder);

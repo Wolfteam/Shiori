@@ -173,7 +173,7 @@ void main() {
     );
   }
 
-  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded(), reason: 'A freshly constructed CustomBuildsBloc should start in CustomBuildsState.loaded (empty list)'));
 
   blocTest<CustomBuildsBloc, CustomBuildsState>(
     'Create build for $keqingKey',
@@ -184,32 +184,32 @@ void main() {
     act: (bloc) => bloc.add(const CustomBuildsEvent.load()),
     verify: (bloc) {
       final state = bloc.state;
-      expect(state.builds.length, 1, reason: 'Should match expected value (property=builds, expected=1)');
+      expect(state.builds.length, 1, reason: 'After load, bloc should list the single saved build (key=$keqingKey)');
 
       final build = state.builds.first;
-      expect(build.character.key, keqingKey, reason: 'Should match expected value (property=key)');
-      expect(build.character.roleType, CharacterRoleType.dps, reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.dps)');
-      expect(build.type, CharacterRoleType.dps, reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)');
-      expect(build.subType, CharacterRoleSubType.electro, reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)');
-      expect(build.showOnCharacterDetail, true, reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)');
-      expect(build.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
-      expect(build.weapons.length, 1, reason: 'Should match expected value (property=weapons, expected=1)');
+      expect(build.character.key, keqingKey, reason: 'Loaded build should belong to the saved character (expected key=$keqingKey)');
+      expect(build.character.roleType, CharacterRoleType.dps, reason: 'Loaded build character role should be dps (key=$keqingKey)');
+      expect(build.type, CharacterRoleType.dps, reason: 'Loaded build type should round-trip as dps (key=$keqingKey)');
+      expect(build.subType, CharacterRoleSubType.electro, reason: 'Loaded build subType should round-trip as electro (key=$keqingKey)');
+      expect(build.showOnCharacterDetail, true, reason: 'Loaded build should preserve showOnCharacterDetail=true (key=$keqingKey)');
+      expect(build.isRecommended, true, reason: 'Loaded build should preserve isRecommended=true (key=$keqingKey)');
+      expect(build.weapons.length, 1, reason: 'Loaded build should keep its single saved weapon (key=$keqingKey)');
 
       final weapon = build.weapons.first;
-      expect(weapon.key == aquilaFavoniaKey, true, reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)');
-      expect(weapon.refinement == 5, true, reason: 'Should match expected value (property=refinement == 5, expected=true)');
+      expect(weapon.key == aquilaFavoniaKey, true, reason: 'Loaded weapon should be $aquilaFavoniaKey, got ${weapon.key}');
+      expect(weapon.refinement == 5, true, reason: 'Loaded weapon should keep refinement 5, got ${weapon.refinement}');
 
       final artifacts = build.artifacts;
-      expect(artifacts.length, 5, reason: 'Should match expected value (expected=5)');
-      expect(artifacts.every((el) => el.key == thunderingFuryKey), true, reason: 'Should match expected value (property=key == thunderingFuryKey), true)');
-      expect(artifacts.every((el) => el.subStats.length > 2), true, reason: 'Should match expected value (property=length > 2), true)');
-      expect(artifacts.map((e) => e.type).toSet().length == 5, true, reason: 'Should match expected value (property=length == 5, true)');
-      expect(artifacts.map((e) => e.statType).toSet().length == 5, true, reason: 'Should match expected value (property=length == 5, true)');
+      expect(artifacts.length, 5, reason: 'Loaded build should keep all 5 saved artifacts (key=$keqingKey)');
+      expect(artifacts.every((el) => el.key == thunderingFuryKey), true, reason: 'Every loaded artifact should belong to set $thunderingFuryKey');
+      expect(artifacts.every((el) => el.subStats.length > 2), true, reason: 'Every loaded artifact should retain its saved sub-stats (>2 each)');
+      expect(artifacts.map((e) => e.type).toSet().length == 5, true, reason: 'Loaded artifacts should cover 5 distinct types (flower/plume/clock/goblet/crown)');
+      expect(artifacts.map((e) => e.statType).toSet().length == 5, true, reason: 'Loaded artifacts should have 5 distinct main stat types');
 
       final teams = build.teamCharacters;
-      expect(teams.length == 3, true, reason: 'Should match expected value (property=length == 3, expected=true)');
+      expect(teams.length == 3, true, reason: 'Loaded build should keep all 3 saved team characters (key=$keqingKey)');
 
-      expect(build.skillPriorities.length == 3, true, reason: 'Should match expected value (property=length == 3, expected=true)');
+      expect(build.skillPriorities.length == 3, true, reason: 'Loaded build should keep all 3 saved skill priorities (key=$keqingKey)');
     },
   );
 
@@ -226,7 +226,7 @@ void main() {
       ..add(CustomBuildsEvent.delete(key: deleteKey)),
     skip: 1,
     verify: (bloc) {
-      expect(bloc.state.builds.any((el) => el.character.key == ganyuKey), false, reason: 'Should match expected value (property=key == ganyuKey), false)');
+      expect(bloc.state.builds.any((el) => el.character.key == ganyuKey), false, reason: 'After delete, the $ganyuKey build should no longer be in the list');
     },
   );
 }

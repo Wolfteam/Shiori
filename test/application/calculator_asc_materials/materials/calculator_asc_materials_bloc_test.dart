@@ -177,7 +177,7 @@ void main() {
     () => expect(
       getBloc(MockDataService()).state,
       const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false),
-      reason: 'Should match expected value (property=state)',
+      reason: 'A freshly built calculator bloc must start empty (sessionKey=-1, no items or summary)',
     ),
   );
 
@@ -212,20 +212,28 @@ void main() {
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.init(sessionKey: 1)),
       verify: (bloc) {
         final state = bloc.state;
-        expect(state.sessionKey, 1, reason: 'Should match expected value (property=sessionKey, expected=1)');
-        expect(state.items.length, 1, reason: 'Should match expected value (property=items, expected=1)');
+        expect(state.sessionKey, 1, reason: 'After init, state.sessionKey must equal the loaded session key');
+        expect(state.items.length, 1, reason: 'After init with one stored item, state must contain exactly 1 item');
         for (final item in state.items) {
-          expect(item, keqingItem, reason: 'Should match expected value');
+          expect(
+            item,
+            keqingItem,
+            reason: 'After init, the loaded item must equal the stored session item (key=${keqingItem.key})',
+          );
         }
 
-        expect(state.summary.length, 2, reason: 'Should match expected value (property=summary, expected=2)');
+        expect(state.summary.length, 2, reason: 'After init, summary must group Keqing materials into 2 buckets');
         for (final summary in state.summary) {
           final int materialCount = switch (summary.type) {
             AscensionMaterialSummaryType.currency => 1,
             AscensionMaterialSummaryType.exp => 2,
             _ => throw Exception('Invalid summary type'),
           };
-          expect(summary.materials.length, materialCount, reason: 'Should match expected value (property=materials)');
+          expect(
+            summary.materials.length,
+            materialCount,
+            reason: '${summary.type.name} summary bucket must list $materialCount material(s) for Keqing',
+          );
         }
       },
     );
@@ -394,9 +402,17 @@ void main() {
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
-        expect(createdItem.key, 'ganyu', reason: "Should match expected value (property=key, expected='ganyu')");
+        expect(
+          createdItem.key,
+          'ganyu',
+          reason: 'addCharacter must persist an item whose key matches the requested character (ganyu)',
+        );
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
-        expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(
+          allPossibleMaterialKeys.isNotEmpty,
+          isTrue,
+          reason: 'addCharacter must pass a non-empty list of possible material keys (key=ganyu)',
+        );
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -526,10 +542,14 @@ void main() {
         expect(
           createdItem.key,
           'aquila-favonia',
-          reason: "Should match expected value (property=key, expected='aquila-favonia')",
+          reason: 'addWeapon must persist an item whose key matches the requested weapon (aquila-favonia)',
         );
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
-        expect(allPossibleMaterialKeys.isNotEmpty, isTrue, reason: 'Should be true');
+        expect(
+          allPossibleMaterialKeys.isNotEmpty,
+          isTrue,
+          reason: 'addWeapon must pass a non-empty list of possible material keys (key=aquila-favonia)',
+        );
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -765,7 +785,11 @@ void main() {
         );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
-        expect(updatedItem.key, keqingItem.key, reason: 'Should match expected value (property=key)');
+        expect(
+          updatedItem.key,
+          keqingItem.key,
+          reason: 'updateCharacter must persist the same item at index 0 (key=${keqingItem.key})',
+        );
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
@@ -906,7 +930,11 @@ void main() {
         );
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
-        expect(updatedItem.key, theCatchItem.key, reason: 'Should match expected value (property=key)');
+        expect(
+          updatedItem.key,
+          theCatchItem.key,
+          reason: 'updateWeapon must persist the same item at index 0 (key=${theCatchItem.key})',
+        );
         verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );

@@ -105,7 +105,11 @@ class CalculatorAscMaterialsItemBottomSheet extends CommonBottomSheet {
     int skillCount = 3,
   }) async {
     final Finder skillsFinder = find.byType(SkillItem);
-    expect(skillsFinder, findsNWidgets(skillCount));
+    expect(
+      skillsFinder,
+      findsNWidgets(skillCount),
+      reason: 'The item sheet must expose all $skillCount skills before adjusting one',
+    );
 
     final Finder skillItemFinder = skillsFinder.at(index);
     final IconData icon = increase ? Icons.add : Icons.remove;
@@ -126,13 +130,21 @@ class CalculatorAscMaterialsItemBottomSheet extends CommonBottomSheet {
   }
 
   Future<void> deleteItem(String itemName) async {
-    expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)), findsOneWidget);
+    expect(
+      find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)),
+      findsOneWidget,
+      reason: 'The item bottom sheet for "$itemName" must be open before deleting it',
+    );
     await tester.tap(find.widgetWithText(TextButton, 'Delete'));
     await tester.pumpAndSettle();
   }
 
   Future<void> markItemAsInactive(String itemName) async {
-    expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)), findsOneWidget);
+    expect(
+      find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)),
+      findsOneWidget,
+      reason: 'The item bottom sheet for "$itemName" must be open before marking it inactive',
+    );
     await tester.tap(find.widgetWithText(TextButton, 'Inactive'));
     await tester.pumpAndSettle();
   }

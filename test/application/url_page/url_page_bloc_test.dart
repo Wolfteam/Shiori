@@ -34,7 +34,8 @@ void main() {
     'Initial state',
     () => expect(
       UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService).state,
-      const UrlPageState.loading(), reason: 'Should match expected value (property=state)'),
+      const UrlPageState.loading(),
+      reason: 'A fresh UrlPageBloc should start in loading state'),
   );
 
   blocTest<UrlPageBloc, UrlPageState>(
@@ -47,10 +48,10 @@ void main() {
         case UrlPageStateLoading():
           throw InvalidStateError();
         case UrlPageStateLoaded():
-          expect(state.hasInternetConnection, true, reason: 'Should match expected value (property=hasInternetConnection, expected=true)');
-          expect(state.mapUrl.startsWith(bloc.officialMapUrl), true, reason: 'Should match expected value (property=officialMapUrl), expected=true)');
-          expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true, reason: 'Should match expected value (property=dailyCheckInUrl), expected=true)');
-          expect(state.userAgent, deviceInfoService.userAgent, reason: 'Should match expected value (property=userAgent)');
+          expect(state.hasInternetConnection, true, reason: 'Network is available so hasInternetConnection should be true, got ${state.hasInternetConnection}');
+          expect(state.mapUrl.startsWith(bloc.officialMapUrl), true, reason: 'With useOfficialMap true, mapUrl should start with the official map url, got ${state.mapUrl}');
+          expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true, reason: 'dailyCheckInUrl should start with the bloc daily check-in url, got ${state.dailyCheckInUrl}');
+          expect(state.userAgent, deviceInfoService.userAgent, reason: 'Loaded state should carry the device userAgent, got ${state.userAgent}');
       }
     },
   );

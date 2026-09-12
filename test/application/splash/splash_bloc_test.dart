@@ -66,7 +66,10 @@ void main() {
     );
   }
 
-  test('Initial state', () => expect(getBloc(MockResourceService()).state, const SplashState.loading(), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(getBloc(MockResourceService()).state, const SplashState.loading(), reason: 'A fresh SplashBloc should start in loading state'),
+  );
 
   group('Init', () {
     blocTest<SplashBloc, SplashState>(

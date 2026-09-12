@@ -21,6 +21,7 @@ import 'package:window_size/window_size.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../fcm_mock.dart';
+import '../local_notifications_mock.dart';
 import '../permission_handler_mock.dart';
 import 'common_bottom_sheet.dart';
 
@@ -70,8 +71,12 @@ abstract class BasePage {
       ToastType.error => Colors.red,
     };
     final container = tester.firstWidget<Container>(find.byKey(toastKey));
-    expect(container.decoration, isNotNull);
-    expect((container.decoration! as BoxDecoration).color, color);
+    expect(container.decoration, isNotNull, reason: 'The toast container must be decorated to carry its type colour');
+    expect(
+      (container.decoration! as BoxDecoration).color,
+      color,
+      reason: '${type.name} toasts must render in their $color colour',
+    );
     return this;
   }
 
@@ -87,7 +92,7 @@ abstract class BasePage {
 
   Future<BasePage> enterSearchText(String text) async {
     final Finder finder = find.byType(TextField);
-    expect(finder, findsOneWidget);
+    expect(finder, findsOneWidget, reason: 'The search field must be present to enter filter text');
     await tester.enterText(finder, text);
     await tester.pumpAndSettle();
     return this;
@@ -95,7 +100,7 @@ abstract class BasePage {
 
   Future<CommonBottomSheet> tapFilterIcon() async {
     final Finder finder = find.byIcon(Shiori.filter);
-    expect(finder, findsOneWidget);
+    expect(finder, findsOneWidget, reason: 'The filter icon must be present to open the filter bottom sheet');
     await tester.tap(finder);
     await tester.pumpAndSettle();
     return CommonBottomSheet(tester);
@@ -104,6 +109,7 @@ abstract class BasePage {
   Future<void> _init(bool resetResources, bool deleteData) async {
     if (!initialized) {
       setupFirebaseMessagingMocks();
+      setupLocalNotificationsMocks();
       PermissionHandlerPlatform.instance = MockPermissionHandler();
       FirebaseMessagingPlatform.instance = kMockMessagingPlatform;
       await Firebase.initializeApp();
@@ -140,14 +146,18 @@ abstract class BasePage {
 
   Future<void> tapOnAssetImageIcon(String path, {int expectedCount = 1}) async {
     final Finder finder = find.widgetWithImage(IconButton, AssetImage(path));
-    expect(finder, findsAtLeastNWidgets(expectedCount));
+    expect(
+      finder,
+      findsAtLeastNWidgets(expectedCount),
+      reason: 'The asset image icon button must be present to tap it',
+    );
     await tester.tap(finder);
     await tester.pumpAndSettle();
   }
 
   Future<void> tapOnPopupMenuButtonIcon(IconData icon, int index) async {
     final Finder finder = find.byIcon(icon);
-    expect(finder, findsOneWidget);
+    expect(finder, findsOneWidget, reason: 'The popup menu button icon must be present to open its menu');
     await tester.tap(finder);
     await tester.pumpAndSettle();
 
@@ -156,7 +166,11 @@ abstract class BasePage {
 
   Future<void> tapOnPopupMenuEntry(int index) async {
     final Finder menuItems = find.byWidgetPredicate((widget) => widget is PopupMenuEntry);
-    expect(menuItems, findsAtLeastNWidgets(index + 1));
+    expect(
+      menuItems,
+      findsAtLeastNWidgets(index + 1),
+      reason: 'The popup menu must expose at least ${index + 1} entries to tap the one at index $index',
+    );
 
     await tester.tap(menuItems.at(index));
     await tester.pumpAndSettle();
@@ -196,7 +210,7 @@ abstract class BasePage {
       final Text selectedText = tester.firstWidget<Text>(selectedTextFinder);
       final int selectedValue = int.parse(selectedText.data!);
       final int diff = value - selectedValue;
-      expect(diff, isZero);
+      expect(diff, isZero, reason: 'The number picker should have scrolled to select the requested value $value');
     }
 
     await tester.tap(find.descendant(of: find.byType(NumberPickerDialog), matching: find.byType(FilledButton)));

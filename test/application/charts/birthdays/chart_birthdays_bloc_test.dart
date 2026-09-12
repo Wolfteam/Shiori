@@ -32,7 +32,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(ChartBirthdaysBloc(genshinService).state, const ChartBirthdaysState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(ChartBirthdaysBloc(genshinService).state, const ChartBirthdaysState.loading(), reason: 'A freshly built ChartBirthdaysBloc must start in loading before init'),
   );
 
   blocTest<ChartBirthdaysBloc, ChartBirthdaysState>(

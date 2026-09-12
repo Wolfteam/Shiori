@@ -29,7 +29,14 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(MonstersBloc(genshinService).state, const MonstersState.loading(), reason: 'Should match expected value (property=state)'));
+  test(
+    'Initial state',
+    () => expect(
+      MonstersBloc(genshinService).state,
+      const MonstersState.loading(),
+      reason: 'A fresh MonstersBloc should start in loading state',
+    ),
+  );
 
   group('Init', () {
     blocTest<MonstersBloc, MonstersState>(
@@ -64,11 +71,15 @@ void main() {
                 .getAllMonstersForCard()
                 .where((el) => !excludedKeys.contains(el.key))
                 .toList();
-            expect(state.monsters.length, monsters.length, reason: 'Should match expected value (property=monsters)');
-            expect(state.filterType, MonsterFilterType.name, reason: 'Should match expected value (property=filterType, expected=MonsterFilterType.name)');
-            expect(state.tempFilterType, MonsterFilterType.name, reason: 'Should match expected value (property=tempFilterType, expected=MonsterFilterType.name)');
-            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=sortDirectionType, expected=SortDirectionType.asc)');
-            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Should match expected value (property=tempSortDirectionType, expected=SortDirectionType.asc)');
+            expect(
+              state.monsters.length,
+              monsters.length,
+              reason: 'init(excludeKeys: [azhdaha]) should drop azhdaha, leaving ${monsters.length} monsters, got ${state.monsters.length}',
+            );
+            expect(state.filterType, MonsterFilterType.name, reason: 'Default monster filter should be name, got ${state.filterType}');
+            expect(state.tempFilterType, MonsterFilterType.name, reason: 'Default temp monster filter should be name, got ${state.tempFilterType}');
+            expect(state.sortDirectionType, SortDirectionType.asc, reason: 'Default sort direction should be asc, got ${state.sortDirectionType}');
+            expect(state.tempSortDirectionType, SortDirectionType.asc, reason: 'Default temp sort direction should be asc, got ${state.tempSortDirectionType}');
         }
       },
     );

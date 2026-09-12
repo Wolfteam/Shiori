@@ -106,7 +106,10 @@ class MockFirebaseMessaging extends Mock with MockPlatformInterfaceMixin impleme
   }
 
   @override
-  Future<String> getToken({String? vapidKey}) {
+  Future<String> getToken({
+    String? vapidKey,
+    String? serviceWorkerScriptPath,
+  }) {
     return super.noSuchMethod(
           Invocation.method(#getToken, [], {#vapidKey: vapidKey}),
           returnValue: Future<String>.value(''),

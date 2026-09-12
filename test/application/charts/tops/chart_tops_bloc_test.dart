@@ -33,7 +33,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(ChartTopsBloc(genshinService, telemetryService).state, const ChartTopsState.loading(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(ChartTopsBloc(genshinService, telemetryService).state, const ChartTopsState.loading(), reason: 'A freshly built ChartTopsBloc must start in loading before init'));
 
   blocTest<ChartTopsBloc, ChartTopsState>(
     'Init emits loaded state',

@@ -59,7 +59,7 @@ void main() {
     () => expect(
       CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService).state,
       const CharacterState.loading(),
-      reason: 'Should match expected value (property=state)',
+      reason: 'A freshly built CharacterBloc must start in CharacterState.loading before any event',
     ),
   );
 
@@ -69,52 +69,52 @@ void main() {
         case CharacterStateLoading():
           throw InvalidStateError();
         case CharacterStateLoaded():
-          expect(state.key, 'keqing', reason: "Should match expected value (property=key, expected='keqing')");
-          expect(state.name, 'Keqing', reason: "Should match expected value (property=name, expected='Keqing')");
+          expect(state.key, 'keqing', reason: "Loaded character key must be 'keqing'");
+          expect(state.name, 'Keqing', reason: "Loaded character name must be 'Keqing'");
           checkAsset(state.fullImage);
-          expect(state.secondFullImage, isNull, reason: 'Should be null (property=secondFullImage)');
+          expect(state.secondFullImage, isNull, reason: 'Keqing has a single splash art, so secondFullImage must be null');
           checkTranslation(state.description, canBeNull: false);
-          expect(state.rarity, 5, reason: 'Should match expected value (property=rarity, expected=5)');
+          expect(state.rarity, 5, reason: 'Keqing is a 5-star character (rarity=5)');
           expect(
             state.elementType,
             ElementType.electro,
-            reason: 'Should match expected value (property=elementType, expected=ElementType.electro)',
+            reason: 'Keqing element must be electro',
           );
           expect(
             state.weaponType,
             WeaponType.sword,
-            reason: 'Should match expected value (property=weaponType, expected=WeaponType.sword)',
+            reason: 'Keqing weapon type must be sword',
           );
           expect(
             state.region,
             RegionType.liyue,
-            reason: 'Should match expected value (property=region, expected=RegionType.liyue)',
+            reason: 'Keqing region must be liyue',
           );
           expect(
             state.role,
             CharacterRoleType.dps,
-            reason: 'Should match expected value (property=role, expected=CharacterRoleType.dps)',
+            reason: 'Keqing role must be dps',
           );
-          expect(state.isFemale, true, reason: 'Should match expected value (property=isFemale, expected=true)');
-          expect(state.birthday, isNotEmpty, reason: 'Should not be empty (property=birthday)');
-          expect(state.isInInventory, isInInventory, reason: 'Should match expected value (property=isInInventory)');
-          expect(state.ascensionMaterials, isNotEmpty, reason: 'Should not be empty (property=ascensionMaterials)');
-          expect(state.talentAscensionsMaterials, isNotEmpty, reason: 'Should not be empty (property=talentAscensionsMaterials)');
+          expect(state.isFemale, true, reason: 'Keqing must be flagged female');
+          expect(state.birthday, isNotEmpty, reason: 'Keqing must expose a non-empty birthday');
+          expect(state.isInInventory, isInInventory, reason: 'Keqing isInInventory must reflect the setUp inventory state ($isInInventory)');
+          expect(state.ascensionMaterials, isNotEmpty, reason: 'Keqing must expose ascension materials');
+          expect(state.talentAscensionsMaterials, isNotEmpty, reason: 'Keqing must expose talent ascension materials');
           expect(
             state.multiTalentAscensionMaterials,
             isEmpty,
-            reason: 'Should be empty (property=multiTalentAscensionMaterials)',
+            reason: 'Keqing has no per-talent ascension variants, so multiTalentAscensionMaterials must be empty',
           );
-          expect(state.skills, isNotEmpty, reason: 'Should not be empty (property=skills)');
-          expect(state.passives, isNotEmpty, reason: 'Should not be empty (property=passives)');
-          expect(state.constellations, isNotEmpty, reason: 'Should not be empty (property=constellations)');
-          expect(state.builds, isNotEmpty, reason: 'Should not be empty (property=builds)');
+          expect(state.skills, isNotEmpty, reason: 'Keqing must expose combat skills');
+          expect(state.passives, isNotEmpty, reason: 'Keqing must expose passive talents');
+          expect(state.constellations, isNotEmpty, reason: 'Keqing must expose constellations');
+          expect(state.builds, isNotEmpty, reason: 'Keqing must expose recommended builds');
           expect(
             state.subStatType,
             StatType.critDmgPercentage,
-            reason: 'Should match expected value (property=subStatType, expected=StatType.critDmgPercentage)',
+            reason: 'Keqing ascension substat must be critDmgPercentage',
           );
-          expect(state.stats, isNotEmpty, reason: 'Should not be empty (property=stats)');
+          expect(state.stats, isNotEmpty, reason: 'Keqing must expose per-level stats');
       }
     }
 

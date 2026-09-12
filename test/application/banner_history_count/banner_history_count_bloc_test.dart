@@ -41,18 +41,18 @@ void main() {
   void checkBannerItem(BannerHistoryItemModel banner, BannerHistoryItemType expectedType) {
     checkItemKeyAndImage(banner.key, banner.image);
     checkTranslation(banner.name, canBeNull: false);
-    expect(banner.rarity >= 4, isTrue, reason: 'Should be true (property=rarity >= 4, isTrue)');
-    expect(banner.type, expectedType, reason: 'Should match expected value (property=type)');
-    expect(banner.versions, isNotEmpty, reason: 'Should not be empty (property=versions)');
+    expect(banner.rarity, greaterThanOrEqualTo(4), reason: 'Banner item rarity must be >= 4 (key=${banner.key})');
+    expect(banner.type, expectedType, reason: 'Banner item type must match requested $expectedType (key=${banner.key})');
+    expect(banner.versions, isNotEmpty, reason: 'Banner item must appear in at least one version (key=${banner.key})');
     for (final version in banner.versions) {
       if (version.released) {
-        expect(version.number, isNull, reason: 'Should be null (property=number)');
-        expect(version.version >= 1, isTrue, reason: 'Should be true (property=version >= 1, isTrue)');
+        expect(version.number, isNull, reason: 'A released banner version must carry no slot number (key=${banner.key})');
+        expect(version.version, greaterThanOrEqualTo(1), reason: 'Released banner version must be >= 1 (key=${banner.key})');
       } else if (version.number == 0) {
-        expect(version.released, isFalse, reason: 'Should be false (property=released)');
+        expect(version.released, isFalse, reason: 'A slot-0 version is a gap and must not be released (key=${banner.key})');
       } else {
-        expect(version.released, isFalse, reason: 'Should be false (property=released)');
-        expect(version.number! >= 1, isTrue, reason: 'Should be true (property=number! >= 1, isTrue)');
+        expect(version.released, isFalse, reason: 'An upcoming version must not be released (key=${banner.key})');
+        expect(version.number! >= 1, isTrue, reason: 'Upcoming banner slot number must be >= 1 (key=${banner.key})');
       }
     }
   }
@@ -65,19 +65,19 @@ void main() {
     List<double> selectedVersions = const [],
     bool bannersAreNotEmpty = true,
   }) {
-    expect(state.type, type, reason: 'Should match expected value (property=type)');
-    expect(state.versions, isNotEmpty, reason: 'Should not be empty (property=versions)');
-    expect(state.versions.length, state.versions.toSet().length, reason: 'Should match expected value (property=versions)');
-    expect(bannersAreNotEmpty ? state.banners.isNotEmpty : state.banners.isEmpty, isTrue, reason: 'Should be true (property=banners)');
+    expect(state.type, type, reason: 'Loaded state banner type must be $type');
+    expect(state.versions, isNotEmpty, reason: 'Loaded state must expose the list of game versions');
+    expect(state.versions.length, state.versions.toSet().length, reason: 'Loaded state versions must be unique (no duplicates)');
+    expect(bannersAreNotEmpty ? state.banners.isNotEmpty : state.banners.isEmpty, isTrue, reason: 'Loaded state banners emptiness must match bannersAreNotEmpty=$bannersAreNotEmpty');
     for (final banner in state.banners) {
       checkBannerItem(banner, type);
     }
-    expect(state.sortType, sortType, reason: 'Should match expected value (property=sortType)');
-    expect(state.selectedItemKeys, selectedItemKeys, reason: 'Should match expected value (property=selectedItemKeys)');
-    expect(state.selectedVersions, selectedVersions, reason: 'Should match expected value (property=selectedVersions)');
+    expect(state.sortType, sortType, reason: 'Loaded state sortType must be $sortType');
+    expect(state.selectedItemKeys, selectedItemKeys, reason: 'Loaded state selectedItemKeys must be $selectedItemKeys');
+    expect(state.selectedVersions, selectedVersions, reason: 'Loaded state selectedVersions must be $selectedVersions');
 
     if (selectedItemKeys.isNotEmpty && bannersAreNotEmpty) {
-      expect(state.banners.length, state.selectedItemKeys.length, reason: 'Should match expected value (property=banners)');
+      expect(state.banners.length, state.selectedItemKeys.length, reason: 'With item keys selected, one banner must remain per key (${state.selectedItemKeys.length})');
     }
 
     if (selectedVersions.isNotEmpty && bannersAreNotEmpty) {
@@ -87,11 +87,11 @@ void main() {
           .map((e) => e.version)
           .toSet()
           .toList();
-      expect(versions.length, selectedVersions.length, reason: 'Should match expected value');
+      expect(versions.length, selectedVersions.length, reason: 'Every selected version must be represented among released banner versions');
     }
 
     final maxCount = max(characterBanners.length, weaponBanners.length);
-    expect(state.maxNumberOfItems, maxCount, reason: 'Should match expected value (property=maxNumberOfItems)');
+    expect(state.maxNumberOfItems, maxCount, reason: 'maxNumberOfItems must equal the larger of character/weapon banner counts ($maxCount)');
   }
 
   test(
@@ -104,7 +104,7 @@ void main() {
         banners: [],
         versions: [],
         maxNumberOfItems: 0,
-      ), reason: 'Should match expected value (property=state)'),
+      ), reason: 'A freshly built BannerHistoryCountBloc must start in the initial character state'),
   );
 
   blocTest<BannerHistoryCountBloc, BannerHistoryCountState>(
@@ -125,7 +125,7 @@ void main() {
           .where((el) => !el.isComingSoon && !el.key.startsWith('traveler') && !charsWithoutBanner.contains(el.key))
           .length;
       final bannerCount = bloc.state.banners.map((e) => e.key).length;
-      expect(allCharsCount, bannerCount, reason: 'Should match expected value');
+      expect(allCharsCount, bannerCount, reason: 'Every released, non-traveler character with a banner must appear once ($allCharsCount expected)');
     },
   );
 
@@ -161,7 +161,7 @@ void main() {
         checkCommonState(bloc.state, sortType: BannerHistorySortType.nameDesc);
         final names = bloc.state.banners.map((e) => e.name).toList();
         final sorted = [...names]..sort((x, y) => y.compareTo(x));
-        expect(names, sorted, reason: 'Should match expected value');
+        expect(names, sorted, reason: 'After sortTypeChanged(nameDesc), banner names must be in descending order');
       },
     );
 
@@ -175,7 +175,7 @@ void main() {
         checkCommonState(bloc.state, sortType: BannerHistorySortType.versionDesc);
         final versions = bloc.state.versions.map((e) => e).toList();
         final sorted = [...versions]..sort((x, y) => y.compareTo(x));
-        expect(versions, sorted, reason: 'Should match expected value');
+        expect(versions, sorted, reason: 'After sortTypeChanged(versionDesc), versions must be in descending order');
       },
     );
 
@@ -230,7 +230,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: [])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 12, reason: 'Should match expected value (property=banners, expected=12)');
+        expect(bloc.state.banners.length, 12, reason: 'Selecting version 1.3 with no item selected must keep all 12 character banners');
       },
     );
 
@@ -243,7 +243,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.typeChanged(type: BannerHistoryItemType.weapon)),
       verify: (bloc) {
         checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 14, reason: 'Should match expected value (property=banners, expected=14)');
+        expect(bloc.state.banners.length, 14, reason: 'After switching to weapon banners on version 1.3, 14 weapon banners must remain');
       },
     );
 
@@ -257,7 +257,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: [])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.3]);
-        expect(bloc.state.banners.length, 12, reason: 'Should match expected value (property=banners, expected=12)');
+        expect(bloc.state.banners.length, 12, reason: 'Selecting then deselecting an item on version 1.3 must restore all 12 character banners');
       },
     );
 
@@ -270,7 +270,7 @@ void main() {
         ..add(const BannerHistoryCountEvent.itemsSelected(keys: ['keqing'])),
       verify: (bloc) {
         checkCommonState(bloc.state, selectedVersions: [1.0], selectedItemKeys: ['keqing'], bannersAreNotEmpty: false);
-        expect(bloc.state.banners.length, 0, reason: 'Should match expected value (property=banners, expected=0)');
+        expect(bloc.state.banners.length, 0, reason: 'Selecting keqing on version 1.0 (unreleased then) must yield 0 banners');
       },
     );
   });
@@ -319,10 +319,10 @@ void main() {
           .toSet()
           .length;
       final expectedItems = bloc.state.banners.map((e) => e.key).toSet().toList();
-      expect(expectedCount, 14, reason: 'Should match expected value (expected=14)');
-      expect(expectedItems.length, expectedCount, reason: 'Should match expected value');
+      expect(expectedCount, 14, reason: 'Version 1.1 weapon banners must expose 14 distinct items');
+      expect(expectedItems.length, expectedCount, reason: 'State banner item count must match the 14 distinct weapon items');
       for (final key in expectedItems) {
-        expect(itemsForSearch.any((el) => el.key == key), isTrue, reason: 'Should be true (property=key == key), isTrue)');
+        expect(itemsForSearch.any((el) => el.key == key), isTrue, reason: 'Every banner item key must be searchable via getItemsForSearch (key=$key)');
       }
     },
   );

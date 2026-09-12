@@ -80,7 +80,7 @@ void main() {
 
   BackupRestoreBloc getBloc() => BackupRestoreBloc(backupRestoreService, MockTelemetryService());
 
-  test('Initial state', () => expect(getBloc().state, const BackupRestoreState.loading(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(getBloc().state, const BackupRestoreState.loading(), reason: 'A freshly built BackupRestoreBloc must start in BackupRestoreState.loading before init'));
 
   group('Init', () {
     blocTest<BackupRestoreBloc, BackupRestoreState>(
@@ -108,7 +108,7 @@ void main() {
           case BackupRestoreStateLoadine():
             throw InvalidStateError();
           case BackupRestoreStateLoaded():
-            expect(state.backups.length, greaterThanOrEqualTo(1), reason: 'Should be greater than expected (property=backups)');
+            expect(state.backups.length, greaterThanOrEqualTo(1), reason: 'After init with a backup on disk, loaded state must list at least 1 backup');
         }
       },
     );

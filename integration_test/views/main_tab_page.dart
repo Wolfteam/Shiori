@@ -67,8 +67,16 @@ class MainTabPage extends BasePage {
     await _tapOnTab(_MainPageTabType.home);
 
     final Finder customScrollView = find.byType(CustomScrollView);
-    expect(customScrollView, findsOneWidget);
-    expect(find.byType(SliverTodayMainTitle), findsOneWidget);
+    expect(
+      customScrollView,
+      findsOneWidget,
+      reason: 'The Home tab must render its scrollable content view to browse the today sections',
+    );
+    expect(
+      find.byType(SliverTodayMainTitle),
+      findsOneWidget,
+      reason: "The Home tab should show the today's-materials header",
+    );
 
     if (!updatesWereSkipped) {
       final Finder charAscMaterialsFinder = find.byType(SliverCharacterAscensionMaterials);
@@ -77,6 +85,7 @@ class MainTabPage extends BasePage {
       expect(
         find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial)),
         findsAtLeastNWidgets(2),
+        reason: 'The character ascension-materials section should list several character cards for the day',
       );
       await tester.drag(
         find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial).first),
@@ -90,6 +99,7 @@ class MainTabPage extends BasePage {
       expect(
         find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial)),
         findsAtLeastNWidgets(2),
+        reason: 'The weapon ascension-materials section should list several weapon cards for the day',
       );
       //TODO: WARN IN THIS DRAG
       await tester.drag(
@@ -98,8 +108,16 @@ class MainTabPage extends BasePage {
       );
       await tester.pumpAndSettle();
     } else {
-      expect(find.byType(SliverCharacterAscensionMaterials), findsNothing);
-      expect(find.byType(SliverWeaponAscensionMaterials), findsNothing);
+      expect(
+        find.byType(SliverCharacterAscensionMaterials),
+        findsNothing,
+        reason: 'When resource updates are skipped, no character ascension-materials section should render',
+      );
+      expect(
+        find.byType(SliverWeaponAscensionMaterials),
+        findsNothing,
+        reason: 'When resource updates are skipped, no weapon ascension-materials section should render',
+      );
     }
 
     final expectedTypes = <Type>[
@@ -113,16 +131,28 @@ class MainTabPage extends BasePage {
       await tester.pumpAndSettle();
 
       final Finder listViewFinder = find.ancestor(of: find.byType(type), matching: find.byType(ListView));
-      expect(find.descendant(of: listViewFinder, matching: find.byType(CardItem)), findsAtLeastNWidgets(2));
+      expect(
+        find.descendant(of: listViewFinder, matching: find.byType(CardItem)),
+        findsAtLeastNWidgets(2),
+        reason: 'The $type row should contain several card items to tap into',
+      );
 
       await tester.drag(listViewFinder, BasePage.horizontalDragOffset);
       await tester.pumpAndSettle();
     }
 
     if (!tester.isUsingDesktopLayout) {
-      expect(find.byType(SettingsCard), findsOneWidget);
+      expect(
+        find.byType(SettingsCard),
+        findsOneWidget,
+        reason: 'On the mobile layout the Home tab should expose the Settings card',
+      );
     } else {
-      expect(find.byIcon(Icons.settings), findsOneWidget);
+      expect(
+        find.byIcon(Icons.settings),
+        findsOneWidget,
+        reason: 'On the desktop layout the settings entry point should be shown as an icon',
+      );
     }
 
     return this;
@@ -131,39 +161,67 @@ class MainTabPage extends BasePage {
   Future<MainTabPage> doCheckOnCharactersTab({bool updatesWereSkipped = false}) async {
     await _tapOnTab(_MainPageTabType.characters);
     if (updatesWereSkipped) {
-      expect(find.byType(SliverNothingFound), findsOneWidget);
+      expect(
+        find.byType(SliverNothingFound),
+        findsOneWidget,
+        reason: 'When updates are skipped the Characters tab has no data and should show the nothing-found placeholder',
+      );
       return this;
     }
 
-    expect(find.byType(SliverGrid), findsOneWidget);
+    expect(
+      find.byType(SliverGrid),
+      findsOneWidget,
+      reason: 'The Characters tab should render the characters grid',
+    );
     return this;
   }
 
   Future<MainTabPage> doCheckOnWeaponsTab({bool updatesWereSkipped = false}) async {
     await _tapOnTab(_MainPageTabType.weapons);
     if (updatesWereSkipped) {
-      expect(find.byType(SliverNothingFound), findsOneWidget);
+      expect(
+        find.byType(SliverNothingFound),
+        findsOneWidget,
+        reason: 'When updates are skipped the Weapons tab has no data and should show the nothing-found placeholder',
+      );
       return this;
     }
 
-    expect(find.byType(SliverGrid), findsOneWidget);
+    expect(
+      find.byType(SliverGrid),
+      findsOneWidget,
+      reason: 'The Weapons tab should render the weapons grid',
+    );
     return this;
   }
 
   Future<MainTabPage> doCheckOnArtifactsTab({bool updatesWereSkipped = false}) async {
     await _tapOnTab(_MainPageTabType.artifacts);
     if (updatesWereSkipped) {
-      expect(find.byType(SliverNothingFound), findsOneWidget);
+      expect(
+        find.byType(SliverNothingFound),
+        findsOneWidget,
+        reason: 'When updates are skipped the Artifacts tab has no data and should show the nothing-found placeholder',
+      );
       return this;
     }
 
-    expect(find.byType(SliverGrid), findsOneWidget);
+    expect(
+      find.byType(SliverGrid),
+      findsOneWidget,
+      reason: 'The Artifacts tab should render the artifacts grid',
+    );
     return this;
   }
 
   Future<MainTabPage> doCheckOnMapTab({bool updatesWereSkipped = false}) async {
     await _tapOnTab(_MainPageTabType.map);
-    expect(find.byType(AppWebView), findsOneWidget);
+    expect(
+      find.byType(AppWebView),
+      findsOneWidget,
+      reason: 'The Map tab should render the interactive map inside a webview',
+    );
     return this;
   }
 
@@ -180,7 +238,11 @@ class MainTabPage extends BasePage {
       of: find.byType(tester.isUsingDesktopLayout ? NavigationRail : BottomNavigationBar),
       matching: find.byIcon(icon),
     );
-    expect(item, findsOneWidget);
+    expect(
+      item,
+      findsOneWidget,
+      reason: 'The $type navigation item must be present to switch to that tab',
+    );
 
     await tester.tap(item);
     await tester.pumpAndSettle();
@@ -190,7 +252,11 @@ class MainTabPage extends BasePage {
 
   Future<MainTabPage> doCheckTodayAscMaterialsDay() async {
     final Finder finder = find.descendant(of: find.byType(SliverTodayMainTitle), matching: find.byType(GestureDetector));
-    expect(finder, findsOneWidget);
+    expect(
+      finder,
+      findsOneWidget,
+      reason: "The today's-materials title must be tappable to open the day-selector dialog",
+    );
 
     await tester.tap(finder);
     await tester.pump(const Duration(milliseconds: 100));
@@ -224,14 +290,30 @@ class MainTabPage extends BasePage {
     await tester.doAppDragUntilVisible(newDayFinder, listViewFinder, BasePage.verticalDragOffset);
     await tester.pumpAndSettle();
 
-    expect(tester.widget<ListTile>(currentDayFinder).selected, isTrue);
-    expect(tester.widget<ListTile>(newDayFinder).selected, isFalse);
+    expect(
+      tester.widget<ListTile>(currentDayFinder).selected,
+      isTrue,
+      reason: 'The current server day ($currentDayText) should start selected in the day picker',
+    );
+    expect(
+      tester.widget<ListTile>(newDayFinder).selected,
+      isFalse,
+      reason: 'The not-yet-chosen day ($newDayText) should start unselected in the day picker',
+    );
 
     await tester.tap(newDayFinder);
     await tester.pumpAndSettle();
 
-    expect(tester.widget<ListTile>(currentDayFinder).selected, isFalse);
-    expect(tester.widget<ListTile>(newDayFinder).selected, isTrue);
+    expect(
+      tester.widget<ListTile>(currentDayFinder).selected,
+      isFalse,
+      reason: 'Choosing a new day should deselect the previously selected day ($currentDayText)',
+    );
+    expect(
+      tester.widget<ListTile>(newDayFinder).selected,
+      isTrue,
+      reason: 'Choosing $newDayText should mark it as the selected day',
+    );
 
     await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
@@ -245,7 +327,11 @@ class MainTabPage extends BasePage {
     await tester.pumpAndSettle();
 
     final Finder listTileFinder = find.ancestor(of: find.text(text), matching: find.byType(ListTile));
-    expect(listTileFinder, findsOneWidget);
+    expect(
+      listTileFinder,
+      findsOneWidget,
+      reason: "The '$text' entry must be present to open its today ascension-materials list",
+    );
 
     await tester.tap(listTileFinder);
     await tester.pumpAndSettle();
@@ -386,7 +472,11 @@ class MainTabPage extends BasePage {
 
   Future<void> _scrollToCardItem(Type verticalType, Type horizontalType) async {
     final Finder verticalCustomScrollViewFinder = find.byType(CustomScrollView);
-    expect(verticalCustomScrollViewFinder, findsOneWidget);
+    expect(
+      verticalCustomScrollViewFinder,
+      findsOneWidget,
+      reason: 'The Home scroll view must be present to scroll down to the target card',
+    );
 
     await tester.doAppDragUntilVisible(find.byType(verticalType), verticalCustomScrollViewFinder, BasePage.verticalDragOffset);
     await tester.pumpAndSettle();
@@ -396,7 +486,11 @@ class MainTabPage extends BasePage {
     }
 
     final Finder horizontalScrollViewFinder = find.ancestor(of: find.byType(verticalType), matching: find.byType(ListView));
-    expect(horizontalScrollViewFinder, findsOneWidget);
+    expect(
+      horizontalScrollViewFinder,
+      findsOneWidget,
+      reason: 'The horizontal card row must be present to scroll sideways to the target card',
+    );
     final horizontalListView = tester.widget<ListView>(horizontalScrollViewFinder);
 
     await tester.doAppDragUntilVisible(

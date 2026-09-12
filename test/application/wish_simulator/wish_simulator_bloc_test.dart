@@ -41,25 +41,25 @@ void main() {
     WishSimulatorBannerItemsPerPeriodModel period, {
     int expectedSelectedBannerIndex = 0,
   }) {
-    expect(selectedBannerIndex == expectedSelectedBannerIndex, isTrue, reason: 'Should be true');
+    expect(selectedBannerIndex == expectedSelectedBannerIndex, isTrue, reason: 'selectedBannerIndex should be $expectedSelectedBannerIndex, got $selectedBannerIndex');
     checkAsset(wishIconImage);
-    expect(period.version == expectedVersion, isTrue, reason: 'Should be true (property=version == expectedVersion)');
+    expect(period.version == expectedVersion, isTrue, reason: 'Loaded period version should be $expectedVersion, got ${period.version}');
 
     for (final type in BannerItemType.values) {
-      expect(period.banners.any((el) => el.type == type), isTrue, reason: 'Should be true (property=type == type), isTrue)');
+      expect(period.banners.any((el) => el.type == type), isTrue, reason: 'Period should include a ${type.name} banner');
     }
     for (final banner in period.banners) {
       checkAsset(banner.image);
-      expect(banner.featuredImages.isNotEmpty, isTrue, reason: 'Should be true (property=featuredImages)');
+      expect(banner.featuredImages.isNotEmpty, isTrue, reason: '${banner.type.name} banner should have featured images');
 
       if (banner.type == BannerItemType.standard) {
-        expect(banner.featuredItems.isEmpty, isTrue, reason: 'Should be true (property=featuredItems)');
+        expect(banner.featuredItems.isEmpty, isTrue, reason: 'Standard banner should have no featured items');
       } else {
-        expect(banner.featuredItems.isNotEmpty, isTrue, reason: 'Should be true (property=featuredItems)');
+        expect(banner.featuredItems.isNotEmpty, isTrue, reason: '${banner.type.name} banner should have featured items');
       }
 
-      expect(banner.characters.isNotEmpty, isTrue, reason: 'Should be true (property=characters)');
-      expect(banner.weapons.isNotEmpty, isTrue, reason: 'Should be true (property=weapons)');
+      expect(banner.characters.isNotEmpty, isTrue, reason: '${banner.type.name} banner should have characters in its pool');
+      expect(banner.weapons.isNotEmpty, isTrue, reason: '${banner.type.name} banner should have weapons in its pool');
 
       for (final img in banner.featuredImages) {
         checkAsset(img);
@@ -68,7 +68,7 @@ void main() {
       for (final item in banner.featuredItems) {
         checkItemKeyAndImage(item.key, item.iconImage);
         checkBannerRarity(item.rarity);
-        expect(item.type, isIn([ItemType.character, ItemType.weapon]), reason: 'Should match expected value (property=type)');
+        expect(item.type, isIn([ItemType.character, ItemType.weapon]), reason: 'Featured item type should be character or weapon (key=${item.key}), got ${item.type}');
       }
 
       for (final item in banner.characters) {
@@ -87,7 +87,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const WishSimulatorState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(getBloc().state, const WishSimulatorState.loading(), reason: 'A fresh WishSimulatorBloc should start in loading state'),
   );
 
   blocTest(

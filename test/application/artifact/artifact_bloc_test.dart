@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-  test('Initial state', () => expect(artifactBloc.state, const ArtifactState.loading(), reason: 'Should match expected value (property=state)'));
+  test('Initial state', () => expect(artifactBloc.state, const ArtifactState.loading(), reason: 'A freshly built ArtifactBloc must start in ArtifactState.loading before any event'));
 
   group('Load from key', () {
     const key = 'wanderers-troupe';
@@ -59,9 +59,9 @@ void main() {
             for (final item in state.droppedBy) {
               checkItemCommonWithName(item);
             }
-            expect(state.minRarity, inInclusiveRange(2, 4), reason: 'Should be within expected range (property=minRarity)');
-            expect(state.maxRarity, inInclusiveRange(4, 5), reason: 'Should be within expected range (property=maxRarity)');
-            expect(state.bonus, isNotEmpty, reason: 'Should not be empty (property=bonus)');
+            expect(state.minRarity, inInclusiveRange(2, 4), reason: 'After loadFromKey, artifact minRarity must be 2-4 (key=$key)');
+            expect(state.maxRarity, inInclusiveRange(4, 5), reason: 'After loadFromKey, artifact maxRarity must be 4-5 (key=$key)');
+            expect(state.bonus, isNotEmpty, reason: 'Loaded artifact must expose at least one set bonus (key=$key)');
         }
       },
     );

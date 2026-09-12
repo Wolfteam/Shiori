@@ -55,7 +55,7 @@ void main() {
     () => expect(
       WeaponBloc(genshinService, telemetryService, dataService, resourceService).state,
       const WeaponState.loading(),
-      reason: 'Should match expected value (property=state)',
+      reason: 'A fresh WeaponBloc should start in loading state',
     ),
   );
 
@@ -65,34 +65,34 @@ void main() {
         case WeaponStateLoading():
           throw InvalidStateError();
         case WeaponStateLoaded():
-          expect(state.key, key, reason: 'Should match expected value (property=key)');
-          expect(state.name, 'Aquila Favonia', reason: "Should match expected value (property=name, expected='Aquila Favonia')");
+          expect(state.key, key, reason: 'Loaded weapon should carry key aquila-favonia, got ${state.key}');
+          expect(state.name, 'Aquila Favonia', reason: 'aquila-favonia name should be Aquila Favonia, got ${state.name}');
           checkAsset(state.fullImage);
           checkTranslation(state.description, canBeNull: false);
-          expect(state.rarity, 5, reason: 'Should match expected value (property=rarity, expected=5)');
-          expect(state.atk, 48, reason: 'Should match expected value (property=atk, expected=48)');
-          expect(state.secondaryStatValue, 9, reason: 'Should match expected value (property=secondaryStatValue, expected=9)');
+          expect(state.rarity, 5, reason: 'aquila-favonia rarity should be 5, got ${state.rarity}');
+          expect(state.atk, 48, reason: 'aquila-favonia base atk should be 48, got ${state.atk}');
+          expect(state.secondaryStatValue, 9, reason: 'aquila-favonia secondary stat value should be 9, got ${state.secondaryStatValue}');
           expect(
             state.secondaryStat,
             StatType.physDmgBonus,
-            reason: 'Should match expected value (property=secondaryStat, expected=StatType.physDmgBonus)',
+            reason: 'aquila-favonia secondary stat should be physDmgBonus, got ${state.secondaryStat}',
           );
           expect(
             state.locationType,
             ItemLocationType.gacha,
-            reason: 'Should match expected value (property=locationType, expected=ItemLocationType.gacha)',
+            reason: 'aquila-favonia location should be gacha, got ${state.locationType}',
           );
           expect(
             state.weaponType,
             WeaponType.sword,
-            reason: 'Should match expected value (property=weaponType, expected=WeaponType.sword)',
+            reason: 'aquila-favonia weapon type should be sword, got ${state.weaponType}',
           );
-          expect(state.isInInventory, isInInventory, reason: 'Should match expected value (property=isInInventory)');
-          expect(state.ascensionMaterials, isNotEmpty, reason: 'Should not be empty (property=ascensionMaterials)');
-          expect(state.refinements, isNotEmpty, reason: 'Should not be empty (property=refinements)');
-          expect(state.characters, isNotEmpty, reason: 'Should not be empty (property=characters)');
-          expect(state.stats, isNotEmpty, reason: 'Should not be empty (property=stats)');
-          expect(state.craftingMaterials, isEmpty, reason: 'Should be empty (property=craftingMaterials)');
+          expect(state.isInInventory, isInInventory, reason: 'aquila-favonia isInInventory should match the seeded inventory state ($isInInventory)');
+          expect(state.ascensionMaterials, isNotEmpty, reason: 'aquila-favonia should list ascension materials');
+          expect(state.refinements, isNotEmpty, reason: 'aquila-favonia should list refinements');
+          expect(state.characters, isNotEmpty, reason: 'aquila-favonia should list characters that use it');
+          expect(state.stats, isNotEmpty, reason: 'aquila-favonia should list stats');
+          expect(state.craftingMaterials, isEmpty, reason: 'aquila-favonia is not craftable so craftingMaterials should be empty');
       }
     }
 

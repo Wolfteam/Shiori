@@ -35,7 +35,7 @@ void main() {
     () => expect(
       ItemReleaseHistoryBloc(genshinService, telemetryService).state,
       const ItemReleaseHistoryState.loading(),
-      reason: 'Should match expected value (property=state)',
+      reason: 'A fresh ItemReleaseHistoryBloc should start in loading state',
     ),
   );
 
@@ -50,12 +50,16 @@ void main() {
           case ItemReleaseHistoryStateLoading():
             throw InvalidStateError();
           case ItemReleaseHistoryStateInitial():
-            expect(state.itemKey, 'keqing', reason: "Should match expected value (property=itemKey, expected='keqing')");
-            expect(state.history.isNotEmpty, isTrue, reason: 'Should be true (property=history)');
+            expect(state.itemKey, 'keqing', reason: 'After init(itemKey: keqing), state should carry itemKey keqing, got ${state.itemKey}');
+            expect(state.history.isNotEmpty, isTrue, reason: 'keqing should have a non-empty release history after init');
             for (final history in state.history) {
-              expect(history.version >= 1, isTrue, reason: 'Should be true (property=version >= 1, isTrue)');
+              expect(history.version, greaterThanOrEqualTo(1), reason: 'keqing release-history version must be >= 1, got ${history.version}');
               for (final dates in history.dates) {
-                expect(dates.until.isAfter(dates.from), isTrue, reason: 'Should be true (property=from))');
+                expect(
+                  dates.until.isAfter(dates.from),
+                  isTrue,
+                  reason: 'keqing release window must end after it starts (from=${dates.from}, until=${dates.until})',
+                );
               }
             }
         }

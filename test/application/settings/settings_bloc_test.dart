@@ -68,14 +68,15 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const SettingsState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(getBloc().state, const SettingsState.loading(), reason: 'A fresh SettingsBloc should start in loading state'),
   );
 
   test(
     'Double back to close returns valid value',
     () => expect(
       getBloc().doubleBackToClose(),
-      defaultSettings.doubleBackToClose, reason: 'Should match expected value (property=doubleBackToClose())'),
+      defaultSettings.doubleBackToClose,
+      reason: 'doubleBackToClose() should reflect the persisted setting (${defaultSettings.doubleBackToClose})'),
   );
 
   blocTest<SettingsBloc, SettingsState>(

@@ -5,6 +5,7 @@ import 'package:shiori/presentation/characters/widgets/character_card.dart';
 import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart';
 import 'package:shiori/presentation/notifications/widgets/items/notification_list_tile.dart';
 
+import '../game_data.dart';
 import '../views/views.dart';
 
 void main() {
@@ -39,9 +40,21 @@ void main() {
 
     await page.tapOnItem(type);
 
-    expect(find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(title)), findsOneWidget);
-    expect(find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(body)), findsOneWidget);
-    expect(find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(note)), findsOneWidget);
+    expect(
+      find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(title)),
+      findsOneWidget,
+      reason: 'Reopening the ${type.name} notification must show the persisted title "$title"',
+    );
+    expect(
+      find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(body)),
+      findsOneWidget,
+      reason: 'Reopening the ${type.name} notification must show the persisted body "$body"',
+    );
+    expect(
+      find.descendant(of: find.byType(AddEditNotificationBottomSheet), matching: find.text(note)),
+      findsOneWidget,
+      reason: 'Reopening the ${type.name} notification must show the persisted note "$note"',
+    );
   }
 
   group('Notifications page', () {
@@ -59,7 +72,11 @@ void main() {
       await form.save();
 
       await doCheckCommon(type, page);
-      expect(find.textContaining('Current: $quantity'), findsOneWidget);
+      expect(
+        find.textContaining('Current: $quantity'),
+        findsOneWidget,
+        reason: 'The resin notification must retain the entered current resin value of $quantity',
+      );
     });
 
     testWidgets('create expedition notification', (widgetTester) async {
@@ -183,7 +200,18 @@ void main() {
       await form.tapOnCircleItem();
 
       await form.enterSearchText('Keq');
-      await widgetTester.tap(find.byType(CharacterCard));
+      final Finder keqingFinder = find.byType(CharacterCard);
+      expect(
+        keqingFinder,
+        findsOneWidget,
+        reason: 'The searched character card must be present to pick it for the custom notification',
+      );
+      expect(
+        widgetTester.widget<CharacterCard>(keqingFinder).keyName,
+        GameData.keqing.key,
+        reason: 'Searching "Keq" must isolate ${GameData.keqing.name} (key ${GameData.keqing.key})',
+      );
+      await widgetTester.tap(keqingFinder);
       await widgetTester.pumpAndSettle();
 
       await form.save();
@@ -224,7 +252,11 @@ void main() {
       await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.byType(NotificationListTitle), findsNothing);
+      expect(
+        find.byType(NotificationListTitle),
+        findsNothing,
+        reason: 'Deleting the only notification should clear the notifications list',
+      );
     });
 
     testWidgets('create notification which gets stopped', (widgetTester) async {
@@ -238,14 +270,22 @@ void main() {
       await setCommon(type, form);
       await form.save();
 
-      expect(find.widgetWithText(NotificationListTitle, 'Completed'), findsNothing);
+      expect(
+        find.widgetWithText(NotificationListTitle, 'Completed'),
+        findsNothing,
+        reason: 'A freshly created notification should still be running, not marked as Completed',
+      );
 
       await form.swipeHorizontallyOnItem(find.byType(NotificationListTitle));
 
       await widgetTester.tap(find.byIcon(Icons.stop));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(NotificationListTitle, 'Completed'), findsOneWidget);
+      expect(
+        find.widgetWithText(NotificationListTitle, 'Completed'),
+        findsOneWidget,
+        reason: 'Stopping the notification should mark it as Completed',
+      );
     });
 
     testWidgets('create notification which gets stopped and later reset', (widgetTester) async {
@@ -264,14 +304,22 @@ void main() {
       await widgetTester.tap(find.byIcon(Icons.stop));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(NotificationListTitle, 'Completed'), findsOneWidget);
+      expect(
+        find.widgetWithText(NotificationListTitle, 'Completed'),
+        findsOneWidget,
+        reason: 'Stopping the notification should mark it as Completed',
+      );
 
       await form.swipeHorizontallyOnItem(find.byType(NotificationListTitle), rightToLeft: true);
 
       await widgetTester.tap(find.byIcon(Icons.restore));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(NotificationListTitle, 'Completed'), findsNothing);
+      expect(
+        find.widgetWithText(NotificationListTitle, 'Completed'),
+        findsNothing,
+        reason: 'Resetting the stopped notification should clear its Completed state',
+      );
     });
 
     testWidgets('create notification whose hours gets reduced', (widgetTester) async {
@@ -285,7 +333,11 @@ void main() {
       await setCommon(type, form);
       await form.save();
 
-      expect(find.descendant(of: find.byType(NotificationListTitle), matching: find.textContaining('23:59:')), findsOneWidget);
+      expect(
+        find.descendant(of: find.byType(NotificationListTitle), matching: find.textContaining('23:59:')),
+        findsOneWidget,
+        reason: 'A fresh daily check-in notification should count down from roughly 24 hours (23:59:...)',
+      );
 
       await form.swipeHorizontallyOnItem(find.byType(NotificationListTitle), rightToLeft: true);
 
@@ -294,7 +346,11 @@ void main() {
 
       await form.selectValueInNumberPickerDialog('In 13 hour(s)');
 
-      expect(find.descendant(of: find.byType(NotificationListTitle), matching: find.textContaining('10:59:')), findsOneWidget);
+      expect(
+        find.descendant(of: find.byType(NotificationListTitle), matching: find.textContaining('10:59:')),
+        findsOneWidget,
+        reason: 'Reducing the remaining time to 13 hours should shorten the countdown to roughly 10:59',
+      );
     });
 
     testWidgets('update notification', (widgetTester) async {

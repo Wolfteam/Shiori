@@ -26,7 +26,7 @@ class CommonBottomSheet extends BasePage {
     assert(rarity >= 1 && rarity <= 5);
     final Finder finder = find.byIcon(Icons.star_border);
     await doVerticalScroll(finder);
-    expect(finder, findsAtLeastNWidgets(5));
+    expect(finder, findsAtLeastNWidgets(5), reason: 'All 5 rarity star icons must be present to tap the ${rarity}th one');
     await tester.tap(finder.at(rarity - 1));
     await tester.pumpAndSettle();
     return this;
@@ -77,7 +77,7 @@ class CommonBottomSheet extends BasePage {
   Future<CommonBottomSheet> tapOnButton({bool onOk = false, bool onReset = false, bool onCancel = false}) async {
     assert(onOk || onReset || onCancel);
     final Finder finder = find.byType(onOk ? FilledButton : TextButton);
-    expect(finder, findsAtLeastNWidgets(1));
+    expect(finder, findsAtLeastNWidgets(1), reason: 'The bottom sheet action button must be present to tap it');
 
     if (onOk) {
       await tester.tap(finder);
@@ -90,7 +90,7 @@ class CommonBottomSheet extends BasePage {
 
   Future<CommonBottomSheet> doVerticalScroll(Finder matching) async {
     final Finder scrollView = find.ancestor(of: find.byType(BottomSheetTitle), matching: find.byType(SingleChildScrollView));
-    expect(scrollView, findsOneWidget);
+    expect(scrollView, findsOneWidget, reason: 'The bottom sheet scroll view must be present to scroll to the target widget');
     await tester.doAppDragUntilVisible(
       find.descendant(of: scrollView, matching: matching.first),
       scrollView,

@@ -19,9 +19,13 @@ void main() {
         final monsters = service.getAllMonstersForCard();
         checkKeys(monsters.map((e) => e.key).toList());
         for (final monster in monsters) {
-          checkKey(monster.key);
-          checkAsset(monster.image);
-          expect(monster.name, allOf([isNotEmpty, isNotNull]), reason: 'Should not be empty (property=name, key=${monster.key})');
+          checkKey(monster.key, ownerKey: monster.key);
+          checkAsset(monster.image, ownerKey: monster.key);
+          expect(
+            monster.name,
+            allOf([isNotEmpty, isNotNull]),
+            reason: 'Monster name is empty or malformed (key=${monster.key}, lang=${lang.name})',
+          );
         }
       });
     }
@@ -29,7 +33,11 @@ void main() {
     test('no resources have been downloaded', () async {
       final service = await getMonsterFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
       final monsters = service.getAllMonstersForCard();
-      expect(monsters.isEmpty, isTrue, reason: 'Should be true');
+      expect(
+        monsters.isEmpty,
+        isTrue,
+        reason: 'With no resources downloaded, monsters for card must be empty, got ${monsters.length}',
+      );
     });
   });
 
@@ -40,8 +48,8 @@ void main() {
     final monsters = service.getAllMonstersForCard();
     for (final monster in monsters) {
       final detail = service.getMonster(monster.key);
-      checkKey(detail.key);
-      checkAsset(service.resources.getMonsterImagePath(detail.image));
+      checkKey(detail.key, ownerKey: detail.key);
+      checkAsset(service.resources.getMonsterImagePath(detail.image), ownerKey: detail.key);
 
       final gotBossMaterials = <MaterialType, int>{};
       for (final drop in detail.drops) {
@@ -50,24 +58,35 @@ void main() {
             expect(
               () => materialFileService.getMaterial(drop.key),
               returnsNormally,
-              reason: 'Should execute without throwing (key=${drop.key})',
+              reason: 'Monster drops material "${drop.key}" that does not exist in the materials file '
+                  '(monsterKey=${monster.key})',
             );
             if (monster.type == MonsterType.boss) {
               final material = materialFileService.getMaterial(drop.key);
               gotBossMaterials.update(material.type, (val) => val + 1, ifAbsent: () => 1);
             }
           case MonsterDropType.artifact:
-            expect(() => artifactFileService.getArtifact(drop.key), returnsNormally, reason: 'Should execute without throwing (monsterKey=${monster.key}, artifactKey=${drop.key})');
+            expect(
+              () => artifactFileService.getArtifact(drop.key),
+              returnsNormally,
+              reason: 'Monster drops artifact "${drop.key}" that does not exist in the artifacts file '
+                  '(monsterKey=${monster.key})',
+            );
         }
       }
 
       if (monster.type == MonsterType.boss && detail.drops.isNotEmpty) {
-        expect(gotBossMaterials.isNotEmpty, isTrue, reason: 'Should be true (key=${monster.key})');
+        expect(
+          gotBossMaterials.isNotEmpty,
+          isTrue,
+          reason: 'Boss monster with drops yielded no boss materials (key=${monster.key})',
+        );
         for (final kvp in gotBossMaterials.entries) {
           expect(
             _bossMaterialTypes[kvp.key],
             lessThanOrEqualTo(kvp.value),
-            reason: 'Should be less than expected (property=key, monsterKey=${monster.key})',
+            reason: 'Boss drops fewer "${kvp.key.name}" materials than the expected minimum '
+                '${_bossMaterialTypes[kvp.key]}, got ${kvp.value} (monsterKey=${monster.key})',
           );
         }
       }

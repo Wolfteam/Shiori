@@ -33,7 +33,7 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
-    packagingOptions {
+    packaging {
         jniLibs {
             useLegacyPackaging = true
         }

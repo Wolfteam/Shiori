@@ -196,7 +196,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc().state, const CustomBuildState.loading(), reason: 'Should match expected value (property=state)'),
+    () => expect(getBloc().state, const CustomBuildState.loading(), reason: 'A freshly constructed CustomBuildBloc should start in CustomBuildState.loading'),
   );
 
   group('Load', () {
@@ -211,41 +211,41 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final character = genshinService.characters.getCharactersForCard().first;
-            expect(state.title, 'DPS PRO', reason: "Should match expected value (property=title, expected='DPS PRO')");
+            expect(state.title, 'DPS PRO', reason: "load(initialTitle:'DPS PRO') should seed the title to 'DPS PRO'");
             expect(
               state.type,
               CharacterRoleType.dps,
-              reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)',
+              reason: 'A new build should default its role type to dps',
             );
             expect(
               state.subType,
               CharacterRoleSubType.none,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.none)',
+              reason: 'A new build should default its sub role to none',
             );
             expect(
               state.showOnCharacterDetail,
               true,
-              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+              reason: 'A new build should default showOnCharacterDetail to true',
             );
-            expect(state.isRecommended, false, reason: 'Should match expected value (property=isRecommended, expected=false)');
-            expect(state.character.key, character.key, reason: 'Should match expected value (property=key)');
-            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
-            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(state.isRecommended, false, reason: 'A new build should default isRecommended to false');
+            expect(state.character.key, character.key, reason: 'A new build should default to the first character card (expected key=${character.key})');
+            expect(state.weapons.isEmpty, true, reason: 'A new build should start with no weapons');
+            expect(state.artifacts.isEmpty, true, reason: 'A new build should start with no artifacts');
             expect(
               state.teamCharacters.isEmpty,
               true,
-              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+              reason: 'A new build should start with no team characters',
             );
-            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
+            expect(state.notes.isEmpty, true, reason: 'A new build should start with no notes');
             expect(
               state.skillPriorities.isEmpty,
               true,
-              reason: 'Should match expected value (property=skillPriorities, expected=true)',
+              reason: 'A new build should start with no skill priorities',
             );
             expect(
               state.subStatsSummary.isEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'A new build with no artifacts should have an empty sub-stats summary',
             );
         }
       },
@@ -269,46 +269,46 @@ void main() {
             expect(
               state.title,
               '$keqingKey pro DPS',
-              reason: "Should match expected value (property=title, expected='$keqingKey pro DPS')",
+              reason: 'Loading an existing build should restore its saved title (key=$keqingKey)',
             );
             expect(
               state.type,
               CharacterRoleType.dps,
-              reason: 'Should match expected value (property=type, expected=CharacterRoleType.dps)',
+              reason: 'Loading an existing build should restore role type dps (key=$keqingKey)',
             );
             expect(
               state.subType,
               CharacterRoleSubType.electro,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+              reason: 'Loading an existing build should restore sub role electro (key=$keqingKey)',
             );
             expect(
               state.showOnCharacterDetail,
               true,
-              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+              reason: 'Loading an existing build should restore showOnCharacterDetail=true (key=$keqingKey)',
             );
-            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
-            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
-            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.isRecommended, true, reason: 'Loading an existing build should restore isRecommended=true (key=$keqingKey)');
+            expect(state.character.key, keqingKey, reason: 'Loading an existing build should restore its character (expected key=$keqingKey)');
+            expect(state.weapons.length == 1, true, reason: 'Loaded build should restore its single weapon, got ${state.weapons.length}');
             expect(
               state.artifacts.length == 5,
               true,
-              reason: 'Should match expected value (property=length == 5, expected=true)',
+              reason: 'Loaded build should restore all 5 artifacts, got ${state.artifacts.length}',
             );
             expect(
               state.teamCharacters.length == 3,
               true,
-              reason: 'Should match expected value (property=length == 3, expected=true)',
+              reason: 'Loaded build should restore all 3 team characters, got ${state.teamCharacters.length}',
             );
-            expect(state.notes.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.notes.length == 1, true, reason: 'Loaded build should restore its single note, got ${state.notes.length}');
             expect(
               state.skillPriorities.length == 3,
               true,
-              reason: 'Should match expected value (property=length == 3, expected=true)',
+              reason: 'Loaded build should restore all 3 skill priorities, got ${state.skillPriorities.length}',
             );
             expect(
               state.subStatsSummary.isNotEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'Loaded build with artifacts should compute a non-empty sub-stats summary',
             );
         }
       },
@@ -328,7 +328,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.character.key, ganyuKey, reason: 'Should match expected value (property=key)');
+            expect(state.character.key, ganyuKey, reason: 'characterChanged($ganyuKey) should switch the build character to $ganyuKey');
         }
       },
     );
@@ -345,7 +345,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.title, 'KEQING PRO', reason: "Should match expected value (property=title, expected='KEQING PRO')");
+            expect(state.title, 'KEQING PRO', reason: "titleChanged('KEQING PRO') should update the build title");
         }
       },
     );
@@ -365,7 +365,7 @@ void main() {
             expect(
               state.type,
               CharacterRoleType.offFieldDps,
-              reason: 'Should match expected value (property=type, expected=CharacterRoleType.offFieldDps)',
+              reason: 'roleChanged(offFieldDps) should set the build role type to offFieldDps',
             );
         }
       },
@@ -386,7 +386,7 @@ void main() {
             expect(
               state.subType,
               CharacterRoleSubType.cryo,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.cryo)',
+              reason: 'subRoleChanged(cryo) should set the build sub role to cryo',
             );
         }
       },
@@ -407,7 +407,7 @@ void main() {
             expect(
               state.showOnCharacterDetail,
               false,
-              reason: 'Should match expected value (property=showOnCharacterDetail, expected=false)',
+              reason: 'showOnCharacterDetailChanged(false) should set showOnCharacterDetail to false',
             );
         }
       },
@@ -425,7 +425,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
+            expect(state.isRecommended, true, reason: 'isRecommendedChanged(true) should set isRecommended to true');
         }
       },
     );
@@ -445,7 +445,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.notes.length == 2, true, reason: 'Should match expected value (property=length == 2, expected=true)');
+            expect(state.notes.length == 2, true, reason: 'Adding two notes should leave 2 notes, got ${state.notes.length}');
         }
       },
     );
@@ -473,7 +473,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
+            expect(state.notes.isEmpty, true, reason: 'Deleting the only note (index 0) should leave no notes');
         }
       },
     );
@@ -506,7 +506,7 @@ void main() {
             expect(
               state.skillPriorities.length == 2,
               true,
-              reason: 'Should match expected value (property=length == 2, expected=true)',
+              reason: 'Adding two distinct skill priorities should leave 2, got ${state.skillPriorities.length}',
             );
         }
       },
@@ -529,7 +529,7 @@ void main() {
             expect(
               state.skillPriorities.length == 2,
               true,
-              reason: 'Should match expected value (property=length == 2, expected=true)',
+              reason: 'Re-adding an existing skill priority should not duplicate it (still 2)',
             );
         }
       },
@@ -562,7 +562,7 @@ void main() {
             expect(
               state.skillPriorities.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'Deleting one of two skill priorities should leave 1, got ${state.skillPriorities.length}',
             );
         }
       },
@@ -594,11 +594,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.weapons.length == 1, true, reason: 'addWeapon should leave exactly 1 weapon, got ${state.weapons.length}');
             expect(
               state.weapons.first.key == aquilaFavoniaKey,
               true,
-              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+              reason: 'Added weapon should be $aquilaFavoniaKey, got ${state.weapons.first.key}',
             );
         }
       },
@@ -642,7 +642,7 @@ void main() {
             expect(
               state.weapons.first.refinement == 5,
               true,
-              reason: 'Should match expected value (property=refinement == 5, expected=true)',
+              reason: 'weaponRefinementChanged(5) should set the weapon refinement to 5, got ${state.weapons.first.refinement}',
             );
         }
       },
@@ -676,7 +676,7 @@ void main() {
             expect(
               state.weapons.first.refinement == 5,
               true,
-              reason: 'Should match expected value (property=refinement == 5, expected=true)',
+              reason: 'Re-applying refinement 5 should keep it at 5, got ${state.weapons.first.refinement}',
             );
         }
       },
@@ -708,7 +708,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
+            expect(state.weapons.isEmpty, true, reason: 'deleteWeapon($aquilaFavoniaKey) should leave no weapons');
         }
       },
     );
@@ -740,7 +740,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
+            expect(state.weapons.isEmpty, true, reason: 'deleteWeapons() should remove all weapons');
         }
       },
     );
@@ -767,16 +767,16 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.weapons.length == 2, true, reason: 'Should match expected value (property=length == 2, expected=true)');
+            expect(state.weapons.length == 2, true, reason: 'weaponsOrderChanged should keep both weapons, got ${state.weapons.length}');
             expect(
               state.weapons.first.key == 'the-flute',
               true,
-              reason: "Should match expected value (property=key == 'the-flute', expected=true)",
+              reason: 'weaponsOrderChanged should reorder the-flute to first, got ${state.weapons.first.key}',
             );
             expect(
               state.weapons.last.key == aquilaFavoniaKey,
               true,
-              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+              reason: 'weaponsOrderChanged should reorder $aquilaFavoniaKey to last, got ${state.weapons.last.key}',
             );
         }
       },
@@ -800,16 +800,16 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats[3];
-            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
+            expect(state.weapons.length == 1, true, reason: 'weaponStatChanged should keep the single weapon, got ${state.weapons.length}');
             expect(
               state.weapons.first.key == aquilaFavoniaKey,
               true,
-              reason: 'Should match expected value (property=key == aquilaFavoniaKey, expected=true)',
+              reason: 'weaponStatChanged should target $aquilaFavoniaKey, got ${state.weapons.first.key}',
             );
             expect(
               state.weapons.first.stat == stat,
               true,
-              reason: 'Should match expected value (property=stat == stat, expected=true)',
+              reason: 'weaponStatChanged should set the weapon stat to the requested stats[3]',
             );
         }
       },
@@ -832,21 +832,21 @@ void main() {
             expect(
               state.artifacts.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'addArtifact should leave exactly 1 artifact, got ${state.artifacts.length}',
             );
             final artifact = state.artifacts.first;
             expect(
               artifact.key == thunderingFuryKey,
               true,
-              reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+              reason: 'Added artifact should belong to set $thunderingFuryKey, got ${artifact.key}',
             );
             expect(
               artifact.type == ArtifactType.flower,
               true,
-              reason: 'Should match expected value (property=flower, expected=true)',
+              reason: 'Added artifact type should be flower, got ${artifact.type}',
             );
-            expect(artifact.statType == StatType.hp, true, reason: 'Should match expected value (property=hp, expected=true)');
-            expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
+            expect(artifact.statType == StatType.hp, true, reason: 'Added flower main stat should be hp, got ${artifact.statType}');
+            expect(artifact.subStats.isEmpty, true, reason: 'A freshly added artifact should have no sub-stats yet');
         }
       },
     );
@@ -873,25 +873,25 @@ void main() {
             expect(
               state.artifacts.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'Re-adding the same crown type should not duplicate it (still 1), got ${state.artifacts.length}',
             );
             final artifact = state.artifacts.first;
             expect(
               artifact.key == thunderingFuryKey,
               true,
-              reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+              reason: 'Added artifact should belong to set $thunderingFuryKey, got ${artifact.key}',
             );
             expect(
               artifact.type == ArtifactType.crown,
               true,
-              reason: 'Should match expected value (property=crown, expected=true)',
+              reason: 'Artifact type should remain crown, got ${artifact.type}',
             );
             expect(
               artifact.statType == StatType.critDmgPercentage,
               true,
-              reason: 'Should match expected value (property=critDmgPercentage, expected=true)',
+              reason: 'Re-adding crown should overwrite its main stat to critDmgPercentage, got ${artifact.statType}',
             );
-            expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
+            expect(artifact.subStats.isEmpty, true, reason: 'A freshly added artifact should have no sub-stats yet');
         }
       },
     );
@@ -929,7 +929,7 @@ void main() {
             expect(
               state.artifacts.length == 5,
               true,
-              reason: 'Should match expected value (property=length == 5, expected=true)',
+              reason: 'Build should contain all 5 artifacts, got ${state.artifacts.length}',
             );
             final expectedStatTypes = [
               StatType.hp,
@@ -943,19 +943,19 @@ void main() {
               expect(
                 artifact.key == thunderingFuryKey,
                 true,
-                reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+                reason: 'Artifact at index $i should belong to set $thunderingFuryKey, got ${artifact.key}',
               );
               expect(
                 artifact.type == ArtifactType.values[i],
                 true,
-                reason: 'Should match expected value (property=values[i], expected=true)',
+                reason: 'Artifact at index $i should have type ${ArtifactType.values[i]}, got ${artifact.type}',
               );
               expect(
                 artifact.statType == expectedStatTypes[i],
                 true,
-                reason: 'Should match expected value (property=statType == expectedStatTypes[i], expected=true)',
+                reason: 'Artifact at index $i should have main stat ${expectedStatTypes[i]}, got ${artifact.statType}',
               );
-              expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
+              expect(artifact.subStats.isEmpty, true, reason: 'A freshly added artifact should have no sub-stats yet');
             }
         }
       },
@@ -1001,7 +1001,7 @@ void main() {
             expect(
               state.artifacts.length == 5,
               true,
-              reason: 'Should match expected value (property=length == 5, expected=true)',
+              reason: 'Build should contain all 5 artifacts, got ${state.artifacts.length}',
             );
             final expectedStatTypes = [
               StatType.hp,
@@ -1015,19 +1015,19 @@ void main() {
               expect(
                 artifact.key == thunderingFuryKey,
                 true,
-                reason: 'Should match expected value (property=key == thunderingFuryKey, expected=true)',
+                reason: 'Artifact at index $i should belong to set $thunderingFuryKey, got ${artifact.key}',
               );
               expect(
                 artifact.type == ArtifactType.values[i],
                 true,
-                reason: 'Should match expected value (property=values[i], expected=true)',
+                reason: 'Artifact at index $i should have type ${ArtifactType.values[i]}, got ${artifact.type}',
               );
               expect(
                 artifact.statType == expectedStatTypes[i],
                 true,
-                reason: 'Should match expected value (property=statType == expectedStatTypes[i], expected=true)',
+                reason: 'Artifact at index $i should have main stat ${expectedStatTypes[i]}, got ${artifact.statType}',
               );
-              expect(artifact.subStats.isEmpty, true, reason: 'Should match expected value (property=subStats, expected=true)');
+              expect(artifact.subStats.isEmpty, true, reason: 'A freshly added artifact should have no sub-stats yet');
             }
         }
       },
@@ -1061,13 +1061,13 @@ void main() {
             expect(
               state.artifacts.length == 2,
               true,
-              reason: 'Should match expected value (property=length == 2, expected=true)',
+              reason: 'Two artifacts (flower, plume) should be present, got ${state.artifacts.length}',
             );
             final flower = state.artifacts.first;
             expect(
               flower.type,
               ArtifactType.flower,
-              reason: 'Should match expected value (property=type, expected=ArtifactType.flower)',
+              reason: 'First artifact should be the flower',
             );
             expect(
               listEquals(flower.subStats, [
@@ -1077,25 +1077,25 @@ void main() {
                 StatType.atk,
               ]),
               true,
-              reason: 'Should match expected value (property=atk]), expected=true)',
+              reason: 'addArtifactSubStats(flower) should store the 4 requested sub-stats in order',
             );
 
             final plume = state.artifacts.last;
             expect(
               plume.type,
               ArtifactType.plume,
-              reason: 'Should match expected value (property=type, expected=ArtifactType.plume)',
+              reason: 'Last artifact should be the plume',
             );
             expect(
               listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]),
               true,
-              reason: 'Should match expected value (property=atkPercentage]), expected=true)',
+              reason: 'addArtifactSubStats(plume) should store the 3 requested sub-stats in order',
             );
 
             expect(
               state.subStatsSummary.isNotEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'Adding artifact sub-stats should produce a non-empty sub-stats summary',
             );
         }
       },
@@ -1145,11 +1145,11 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(state.artifacts.isEmpty, true, reason: 'deleteArtifact(flower) should leave no artifacts');
             expect(
               state.subStatsSummary.isEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'With no artifacts left, the sub-stats summary should be empty',
             );
         }
       },
@@ -1179,7 +1179,7 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(state.artifacts.isEmpty, true, reason: 'deleteArtifacts() should remove all artifacts');
         }
       },
     );
@@ -1207,18 +1207,18 @@ void main() {
             expect(
               state.teamCharacters.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'addTeamCharacter should leave exactly 1 team character, got ${state.teamCharacters.length}',
             );
             final char = state.teamCharacters.first;
             expect(
               char.roleType,
               CharacterRoleType.offFieldDps,
-              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.offFieldDps)',
+              reason: 'Added team character role should be offFieldDps, got ${char.roleType}',
             );
             expect(
               char.subType,
               CharacterRoleSubType.electro,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+              reason: 'Added team character sub role should be electro, got ${char.subType}',
             );
         }
       },
@@ -1268,7 +1268,7 @@ void main() {
             expect(
               state.teamCharacters.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'Adding the same team character twice should not duplicate it (still 1)',
             );
         }
       },
@@ -1310,30 +1310,30 @@ void main() {
             expect(
               state.teamCharacters.length == 2,
               true,
-              reason: 'Should match expected value (property=length == 2, expected=true)',
+              reason: 'teamCharactersOrderChanged should keep both characters, got ${state.teamCharacters.length}',
             );
             final keqing = state.teamCharacters.first;
             expect(
               keqing.roleType,
               CharacterRoleType.dps,
-              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.dps)',
+              reason: 'Reorder should move $keqingKey to first, preserving role dps',
             );
             expect(
               keqing.subType,
               CharacterRoleSubType.electro,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.electro)',
+              reason: 'Reordered $keqingKey should preserve sub role electro',
             );
 
             final ganyu = state.teamCharacters.last;
             expect(
               ganyu.roleType,
               CharacterRoleType.offFieldDps,
-              reason: 'Should match expected value (property=roleType, expected=CharacterRoleType.offFieldDps)',
+              reason: 'Reorder should move $ganyuKey to last, preserving role offFieldDps',
             );
             expect(
               ganyu.subType,
               CharacterRoleSubType.cryo,
-              reason: 'Should match expected value (property=subType, expected=CharacterRoleSubType.cryo)',
+              reason: 'Reordered $ganyuKey should preserve sub role cryo',
             );
         }
       },
@@ -1361,7 +1361,7 @@ void main() {
             expect(
               state.teamCharacters.isEmpty,
               true,
-              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+              reason: 'deleteTeamCharacter($ganyuKey) should leave no team characters',
             );
         }
       },
@@ -1441,40 +1441,40 @@ void main() {
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
             final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats.first;
-            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
-            expect(state.isRecommended, true, reason: 'Should match expected value (property=isRecommended, expected=true)');
+            expect(state.character.key, keqingKey, reason: 'After saveChanges, state should keep character $keqingKey');
+            expect(state.isRecommended, true, reason: 'After saveChanges, isRecommended should stay true');
             expect(
               state.showOnCharacterDetail,
               false,
-              reason: 'Should match expected value (property=showOnCharacterDetail, expected=false)',
+              reason: 'After saveChanges, showOnCharacterDetail should stay false',
             );
             expect(
               state.skillPriorities.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'After saveChanges, the single skill priority should be retained',
             );
-            expect(state.notes.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
-            expect(state.weapons.length == 1, true, reason: 'Should match expected value (property=length == 1, expected=true)');
-            expect(state.weapons.first.stat.level, stat.level, reason: 'Should match expected value (property=level)');
+            expect(state.notes.length == 1, true, reason: 'After saveChanges, the single note should be retained');
+            expect(state.weapons.length == 1, true, reason: 'After saveChanges, the single weapon should be retained');
+            expect(state.weapons.first.stat.level, stat.level, reason: 'Saved weapon stat should keep its level (weaponStatChanged to stats.first)');
             expect(
               state.weapons.first.stat.isAnAscension,
               stat.isAnAscension,
-              reason: 'Should match expected value (property=isAnAscension)',
+              reason: 'Saved weapon stat should keep its isAnAscension flag',
             );
             expect(
               state.artifacts.length == 5,
               true,
-              reason: 'Should match expected value (property=length == 5, expected=true)',
+              reason: 'Build should contain all 5 artifacts, got ${state.artifacts.length}',
             );
             expect(
               state.subStatsSummary.isNotEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'After saveChanges with artifact sub-stats, the summary should be non-empty',
             );
             expect(
               state.teamCharacters.length == 1,
               true,
-              reason: 'Should match expected value (property=length == 1, expected=true)',
+              reason: 'After saveChanges, the single team character should be retained',
             );
         }
       },
@@ -1494,30 +1494,30 @@ void main() {
           case CustomBuildStateLoading():
             throw Exception('Invalid custom build state');
           case CustomBuildStateLoaded():
-            expect(state.character.key, keqingKey, reason: 'Should match expected value (property=key)');
-            expect(state.isRecommended, false, reason: 'Should match expected value (property=isRecommended, expected=false)');
+            expect(state.character.key, keqingKey, reason: 'Failed save should preserve the selected character $keqingKey');
+            expect(state.isRecommended, false, reason: 'Untouched isRecommended should remain false after the rejected save');
             expect(
               state.showOnCharacterDetail,
               true,
-              reason: 'Should match expected value (property=showOnCharacterDetail, expected=true)',
+              reason: 'Untouched showOnCharacterDetail should remain true after the rejected save',
             );
             expect(
               state.skillPriorities.isEmpty,
               true,
-              reason: 'Should match expected value (property=skillPriorities, expected=true)',
+              reason: 'Saving with nothing set should leave skill priorities empty',
             );
-            expect(state.notes.isEmpty, true, reason: 'Should match expected value (property=notes, expected=true)');
-            expect(state.weapons.isEmpty, true, reason: 'Should match expected value (property=weapons, expected=true)');
-            expect(state.artifacts.isEmpty, true, reason: 'Should match expected value (property=artifacts, expected=true)');
+            expect(state.notes.isEmpty, true, reason: 'Saving with nothing set should leave notes empty');
+            expect(state.weapons.isEmpty, true, reason: 'Saving with nothing set should leave weapons empty');
+            expect(state.artifacts.isEmpty, true, reason: 'Saving with nothing set should leave artifacts empty');
             expect(
               state.subStatsSummary.isEmpty,
               true,
-              reason: 'Should match expected value (property=subStatsSummary, expected=true)',
+              reason: 'Saving with no artifacts should leave the sub-stats summary empty',
             );
             expect(
               state.teamCharacters.isEmpty,
               true,
-              reason: 'Should match expected value (property=teamCharacters, expected=true)',
+              reason: 'Saving with nothing set should leave team characters empty',
             );
         }
       },

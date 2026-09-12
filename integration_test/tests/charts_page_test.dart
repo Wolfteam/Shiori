@@ -37,7 +37,11 @@ void main() {
           scrollViewFinder,
           BasePage.verticalDragOffset,
         );
-        expect(find.descendant(of: find.widgetWithText(Column, title), matching: find.byType(Card)), findsAtLeastNWidgets(1));
+        expect(
+          find.descendant(of: find.widgetWithText(Column, title), matching: find.byType(Card)),
+          findsAtLeastNWidgets(1),
+          reason: 'The "$title" chart section should render at least one data card',
+        );
       }
     });
   });
