@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as p;
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -9,13 +10,18 @@ import '../mocks.mocks.dart';
 void main() {
   late Directory tempDir;
   late HttpServer server;
+  late http.Client httpClient;
 
   setUp(() async {
     tempDir = await Directory.systemTemp.createTemp('shiori-dl');
     server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+    //A plain client, because the default one loads a client certificate from Env, which CI fills
+    //with placeholders
+    httpClient = http.Client();
   });
 
   tearDown(() async {
+    httpClient.close();
     await server.close(force: true);
     if (tempDir.existsSync()) {
       await tempDir.delete(recursive: true);
@@ -38,7 +44,7 @@ void main() {
       await request.response.close();
     });
 
-    final service = ApiServiceImpl(MockLoggingService());
+    final service = ApiServiceImpl(MockLoggingService(), httpClient: httpClient);
     final destPath = p.join(tempDir.path, 'sub', 'delta.zip');
     final progress = <int>[];
     int? reportedTotal;
@@ -68,7 +74,7 @@ void main() {
       await request.response.close();
     });
 
-    final service = ApiServiceImpl(MockLoggingService());
+    final service = ApiServiceImpl(MockLoggingService(), httpClient: httpClient);
     final destPath = p.join(tempDir.path, 'delta.zip');
 
     final written = await service.downloadAssetStreamed(
@@ -93,7 +99,7 @@ void main() {
       await server.close(force: true);
     });
 
-    final service = ApiServiceImpl(MockLoggingService());
+    final service = ApiServiceImpl(MockLoggingService(), httpClient: httpClient);
     final destPath = p.join(tempDir.path, 'delta.zip');
 
     final written = await service.downloadAssetStreamed(

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/io_client.dart';
 import 'package:shiori/domain/app_constants.dart';
@@ -41,9 +42,12 @@ class _AppAgentClient extends http.BaseClient {
 
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
-  final _AppAgentClient _httpClient;
+  final http.Client _httpClient;
 
-  ApiServiceImpl(this._loggingService) : _httpClient = _AppAgentClient();
+  /// [httpClient] exists for tests. The default client loads the client certificate from Env, which
+  /// CI populates with placeholders, so building it there throws before a test can run.
+  ApiServiceImpl(this._loggingService, {@visibleForTesting http.Client? httpClient})
+    : _httpClient = httpClient ?? _AppAgentClient();
 
   @override
   Future<String> getChangelog(String defaultValue) async {
