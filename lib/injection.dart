@@ -10,6 +10,7 @@ import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/disk_space_checker.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/log_file_service.dart';
@@ -18,6 +19,7 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
+import 'package:shiori/domain/services/resource_archive_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -365,8 +367,20 @@ class Injection {
 
     getIt.registerLazySingleton<ApiService>(() => ApiServiceImpl(getIt<LoggingService>()));
 
+    getIt.registerLazySingleton<DiskSpaceChecker>(() => const DiskSpaceInfoChecker());
+
+    getIt.registerLazySingleton<ResourceArchiveService>(
+      () => ResourceArchiveServiceImpl(getIt<LoggingService>(), getIt<ApiService>(), getIt<DiskSpaceChecker>()),
+    );
+
     getIt.registerLazySingleton<ResourceService>(
-      () => ResourceServiceImpl(getIt<LoggingService>(), getIt<SettingsService>(), getIt<NetworkService>(), getIt<ApiService>()),
+      () => ResourceServiceImpl(
+        getIt<LoggingService>(),
+        getIt<SettingsService>(),
+        getIt<NetworkService>(),
+        getIt<ApiService>(),
+        getIt<ResourceArchiveService>(),
+      ),
     );
 
     getIt.registerLazySingleton<LocaleService>(() => LocaleServiceImpl(getIt<SettingsService>()));

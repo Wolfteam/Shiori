@@ -9,8 +9,11 @@ import 'package:path/path.dart' as p;
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/resource_archive_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/wish_banner_constants.dart';
@@ -336,7 +339,50 @@ void checkTranslation(
 }
 
 ResourceService getResourceService(SettingsService settingsService) {
-  final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+  final resourceService = ResourceServiceImpl(
+    MockLoggingService(),
+    settingsService,
+    MockNetworkService(),
+    MockApiService(),
+    MockResourceArchiveService(),
+  );
+  resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
+  return resourceService;
+}
+
+ResourceService getResourceServiceWith(
+  SettingsService settingsService,
+  NetworkService networkService,
+  ApiService apiService,
+) {
+  final resourceService = ResourceServiceImpl(
+    MockLoggingService(),
+    settingsService,
+    networkService,
+    apiService,
+    MockResourceArchiveService(),
+  );
+  resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
+  return resourceService;
+}
+
+ResourceService getResourceServiceWithArchives(
+  SettingsService settingsService,
+  ResourceArchiveService archiveService, {
+  bool isInternetAvailable = true,
+  //Zero keeps a legacy download from burning 45s of retry backoff in a unit test
+  int maxRetryAttempts = 0,
+}) {
+  final networkService = MockNetworkService();
+  when(networkService.isInternetAvailable()).thenAnswer((_) async => isInternetAvailable);
+  final resourceService = ResourceServiceImpl(
+    MockLoggingService(),
+    settingsService,
+    networkService,
+    MockApiService(),
+    archiveService,
+    maxRetryAttempts: maxRetryAttempts,
+  );
   resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
   return resourceService;
 }

@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:http/io_client.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
@@ -70,6 +71,7 @@ class ApiServiceImpl implements ApiService {
       final dto = GetResourceDiffRequestDto(
         appVersion: currentAppVersion,
         currentVersion: currentResourcesVersion > 0 ? currentResourcesVersion : null,
+        contractVersion: appResourceContractVersion.value,
       );
 
       final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/resources/diff', queryParameters: _toQueryMap(dto.toJson()));
@@ -88,6 +90,16 @@ class ApiServiceImpl implements ApiService {
         json,
         (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
       );
+
+      final result = apiResponse.result;
+      if (result != null) {
+        _loggingService.info(
+          runtimeType,
+          'checkForUpdates: Requested contract = ${appResourceContractVersion.value}, '
+          'server answered mode = ${result.mode} with ${result.archives.length} archive(s)',
+        );
+      }
+
       return apiResponse;
     } catch (e, s) {
       _handleError('checkForUpdates', e, s);
@@ -120,6 +132,57 @@ class ApiServiceImpl implements ApiService {
       return response.contentLength;
     } catch (e, s) {
       _handleError('downloadAsset', e, s);
+      return null;
+    }
+  }
+
+  @override
+  Future<int?> downloadAssetStreamed(
+    String keyName,
+    String destPath, {
+    String? overrideUrl,
+    void Function(int receivedBytes, int? totalBytes)? onBytes,
+  }) async {
+    final file = File(destPath);
+    try {
+      await file.parent.create(recursive: true);
+      if (await file.exists()) {
+        await file.delete();
+      }
+
+      final url = overrideUrl ?? '${Env.assetsBaseUrl}/$keyName';
+      final request = http.Request('GET', Uri.parse(url));
+      request.headers.addAll(_getCommonApiHeaders());
+      final response = await _httpClient.send(request);
+
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'downloadAssetStreamed: Got status code = ${response.statusCode} for keyName = $keyName',
+        );
+        return null;
+      }
+
+      final sink = file.openWrite();
+      int received = 0;
+      try {
+        await for (final chunk in response.stream) {
+          sink.add(chunk);
+          received += chunk.length;
+          onBytes?.call(received, response.contentLength);
+        }
+        await sink.flush();
+      } finally {
+        await sink.close();
+      }
+
+      return received;
+    } catch (e, s) {
+      _handleError('downloadAssetStreamed', e, s);
+      //A partial file must never survive: a later hash check would be comparing garbage
+      if (await file.exists()) {
+        await file.delete();
+      }
       return null;
     }
   }

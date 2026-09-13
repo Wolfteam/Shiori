@@ -1,4 +1,5 @@
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 
@@ -35,10 +36,12 @@ abstract class ResourceService {
     bool updateResourceCheckedDate = true,
   });
 
-  Future<bool> downloadAndApplyUpdates(
+  Future<ResourceUpdateResult> downloadAndApplyUpdates(
     int targetResourceVersion,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
+    List<ResourceArchiveResponseDto> archives = const <ResourceArchiveResponseDto>[],
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
     ProgressChanged? onProgress,
   });
 }

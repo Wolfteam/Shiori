@@ -198,11 +198,11 @@ void main() {
       final apiService = MockApiService();
       when(apiService.checkForUpdates(appVersion, currentResourceVersion)).thenAnswer((_) => Future.value(apiResult));
 
-      return ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
+      return ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService, MockResourceArchiveService());
     }
 
     test('invalid app version', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
+      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService(), MockResourceArchiveService());
       expect(() => service.checkForUpdates('', -1), throwsA(isA<Exception>()), reason: 'checkForUpdates must throw for an empty app version');
       expect(
         () => service.checkForUpdates('1,0,2', -1),
@@ -218,7 +218,7 @@ void main() {
       when(settingsService.lastResourcesCheckedDate).thenReturn(DateTime.now());
       when(settingsService.resourceVersion).thenReturn(version);
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService(), MockResourceArchiveService());
 
       final result = await service.checkForUpdates('1.0.0', version);
       checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, version, result);
@@ -376,7 +376,7 @@ void main() {
         ),
       );
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService, MockResourceArchiveService());
       await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
       await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
       expect(
@@ -390,7 +390,7 @@ void main() {
 
   group('Download and apply updates', () {
     test('invalid target version', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
+      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService(), MockResourceArchiveService());
       expect(
         () => service.downloadAndApplyUpdates(0, null),
         throwsA(isA<Exception>().having((ex) => ex.toString(), 'message', contains('The provided targetResourceVersion = 0 is not valid'))),
@@ -404,6 +404,7 @@ void main() {
         MockSettingsService(),
         MockNetworkService(),
         MockApiService(),
+        MockResourceArchiveService(),
       );
       expect(
         () => service.downloadAndApplyUpdates(1, null),
@@ -411,17 +412,17 @@ void main() {
           isA<Exception>().having(
             (ex) => ex.toString(),
             'message',
-            contains('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided'),
+            contains('This platform uses either a jsonKeyName, keyNames or archives but none were provided'),
           ),
         ),
-        reason: 'downloadAndApplyUpdates must throw when neither jsonKeyName nor keyNames are provided',
+        reason: 'downloadAndApplyUpdates must throw when neither jsonKeyName, keyNames nor archives are provided',
       );
     });
 
     test('target resource version already applied', () {
       final settingsService = MockSettingsService();
       when(settingsService.resourceVersion).thenReturn(2);
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService(), MockResourceArchiveService());
       expect(
         () => service.downloadAndApplyUpdates(2, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))),
@@ -432,7 +433,7 @@ void main() {
     test('target resource version is lower than current', () {
       final settingsService = MockSettingsService();
       when(settingsService.resourceVersion).thenReturn(2);
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService(), MockResourceArchiveService());
       expect(
         () => service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))),
@@ -452,12 +453,13 @@ void main() {
         settingsService,
         networkService,
         MockApiService(),
+        MockResourceArchiveService(),
       );
       final appliedA = await service.downloadAndApplyUpdates(1, allJson);
       final appliedB = await service.downloadAndApplyUpdates(1, allJson, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(appliedA, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when internet is unavailable');
-      expect(appliedB, isFalse, reason: 'downloadAndApplyUpdates (keyNames) must return false when internet is unavailable');
+      expect(appliedA.applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when internet is unavailable');
+      expect(appliedB.applied, isFalse, reason: 'downloadAndApplyUpdates (keyNames) must return false when internet is unavailable');
     });
 
     test('download partial files, cannot check for updates', () async {
@@ -472,10 +474,11 @@ void main() {
         settingsService,
         networkService,
         MockApiService(),
+        MockResourceArchiveService(),
       );
       final applied = await service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when internet is unavailable');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when internet is unavailable');
     });
 
     test('download main json file, api throws exception while downloading', () async {
@@ -495,13 +498,19 @@ void main() {
         settingsService,
         networkService,
         apiService,
+        MockResourceArchiveService(),
         maxItemsPerBatch: 1,
         maxRetryAttempts: 1,
       );
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson);
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when the download throws');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when the download throws');
+      expect(
+        applied.failureType,
+        AppResourceUpdateFailureType.downloadFailed,
+        reason: 'the legacy path must report the failing stage so telemetry can compare it with the archive path',
+      );
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed main-json download');
     });
@@ -532,13 +541,15 @@ void main() {
         settingsService,
         networkService,
         apiService,
+        MockResourceArchiveService(),
         maxItemsPerBatch: 1,
         maxRetryAttempts: 1,
       );
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson, keyNames: keyNames);
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when a download throws');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when a download throws');
+      expect(applied.failureType, AppResourceUpdateFailureType.downloadFailed);
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed partial-files download');
     });

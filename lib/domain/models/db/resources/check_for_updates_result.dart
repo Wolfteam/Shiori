@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/dtos.dart';
 
 part 'check_for_updates_result.freezed.dart';
 
@@ -11,5 +12,7 @@ abstract class CheckForUpdatesResult with _$CheckForUpdatesResult {
     String? jsonFileKeyName,
     int? downloadTotalSize,
     @Default(<String>[]) List<String> keyNames,
+    @Default(ResourceUpdateMode.legacy) ResourceUpdateMode mode,
+    @Default(<ResourceArchiveResponseDto>[]) List<ResourceArchiveResponseDto> archives,
   }) = _CheckForUpdatesResult;
 }

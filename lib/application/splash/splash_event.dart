@@ -17,5 +17,6 @@ sealed class SplashEvent with _$SplashEvent {
   const factory SplashEvent.updateCompleted({
     required bool applied,
     required int resourceVersion,
+    @Default(AppResourceUpdateFailureType.none) AppResourceUpdateFailureType failureType,
   }) = SplashEventUpdateCompleted;
 }
