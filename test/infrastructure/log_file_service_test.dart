@@ -3,7 +3,10 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:path/path.dart' as p;
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/log_sink.dart';
+import 'package:shiori/env.dart';
 import 'package:shiori/infrastructure/log_file_service.dart';
 
 import '../nice_mocks.mocks.dart';
@@ -61,8 +64,42 @@ void main() {
     return service;
   }
 
+  AppSettings buildAppSettings({int resourceVersion = 57}) {
+    return AppSettings(
+      appTheme: AppThemeType.dark,
+      useDarkAmoled: false,
+      accentColor: AppAccentColorType.blue,
+      appLanguage: AppLanguageType.english,
+      showCharacterDetails: true,
+      showWeaponDetails: true,
+      isFirstInstall: false,
+      serverResetTime: AppServerResetTimeType.northAmerica,
+      doubleBackToClose: true,
+      useOfficialMap: false,
+      useTwentyFourHoursFormat: false,
+      resourceVersion: resourceVersion,
+      checkForUpdatesOnStartup: true,
+    );
+  }
+
+  MockSettingsService getSettingsService({
+    int resourceVersion = 57,
+    bool noResourcesHasBeenDownloaded = false,
+    DateTime? lastResourcesCheckedDate,
+    DateTime? lastTelemetryCheckedDate,
+    String pushNotificationsToken = 'unused-token',
+  }) {
+    final service = MockSettingsService();
+    when(service.appSettings).thenReturn(buildAppSettings(resourceVersion: resourceVersion));
+    when(service.noResourcesHasBeenDownloaded).thenReturn(noResourcesHasBeenDownloaded);
+    when(service.lastResourcesCheckedDate).thenReturn(lastResourcesCheckedDate);
+    when(service.lastTelemetryCheckedDate).thenReturn(lastTelemetryCheckedDate);
+    when(service.pushNotificationsToken).thenReturn(pushNotificationsToken);
+    return service;
+  }
+
   test('returns null when there are no log files', () async {
-    final service = LogFileServiceImpl(_FakeLogSink([]), getDeviceInfoService(), dir);
+    final service = LogFileServiceImpl(_FakeLogSink([]), getDeviceInfoService(), getSettingsService(), dir);
     expect(await service.buildExport(), isNull, reason: 'A fresh install has nothing to export');
   });
 
@@ -71,7 +108,7 @@ void main() {
     await logFile.writeAsString('line one\n');
     final sink = _FakeLogSink([logFile]);
 
-    await LogFileServiceImpl(sink, getDeviceInfoService(), dir).buildExport();
+    await LogFileServiceImpl(sink, getDeviceInfoService(), getSettingsService(), dir).buildExport();
     expect(sink.flushCount, 1, reason: 'Buffered lines must reach disk before the export is built');
   });
 
@@ -84,6 +121,7 @@ void main() {
     final export = await LogFileServiceImpl(
       _FakeLogSink([rotated, active]),
       getDeviceInfoService(),
+      getSettingsService(),
       dir,
     ).buildExport();
 
@@ -99,7 +137,12 @@ void main() {
     final logFile = File(p.join(dir.path, 'shiori.log'));
     await logFile.writeAsString('line one\n');
 
-    final export = await LogFileServiceImpl(_FakeLogSink([logFile]), getDeviceInfoService(), dir).buildExport();
+    final export = await LogFileServiceImpl(
+      _FakeLogSink([logFile]),
+      getDeviceInfoService(),
+      getSettingsService(),
+      dir,
+    ).buildExport();
     final content = await export!.readAsString();
 
     expect(content, contains('Pixel 8'));
@@ -110,7 +153,12 @@ void main() {
     final logFile = File(p.join(dir.path, 'shiori.log'));
     await logFile.writeAsString('Trying to read file = ${dir.path}/backups/backup.json\n');
 
-    final export = await LogFileServiceImpl(_FakeLogSink([logFile]), getDeviceInfoService(), dir).buildExport();
+    final export = await LogFileServiceImpl(
+      _FakeLogSink([logFile]),
+      getDeviceInfoService(),
+      getSettingsService(),
+      dir,
+    ).buildExport();
     final content = await export!.readAsString();
 
     expect(content, isNot(contains(dir.path)), reason: 'A raw home path can expose a real name');
@@ -126,6 +174,7 @@ void main() {
     final export = await LogFileServiceImpl(
       _FakeLogSink([logFile]),
       getDeviceInfoService(),
+      getSettingsService(),
       dir,
       environment: const {'HOME': '/'},
     ).buildExport();
@@ -141,7 +190,7 @@ void main() {
   test('a previous export is deleted before a new one is written', () async {
     final logFile = File(p.join(dir.path, 'shiori.log'));
     await logFile.writeAsString('line one\n');
-    final service = LogFileServiceImpl(_FakeLogSink([logFile]), getDeviceInfoService(), dir);
+    final service = LogFileServiceImpl(_FakeLogSink([logFile]), getDeviceInfoService(), getSettingsService(), dir);
 
     await service.buildExport();
     //Guarantees the second export gets a distinct timestamp-based filename from the first
@@ -164,10 +213,46 @@ void main() {
     final export = await LogFileServiceImpl(
       _FakeLogSink([present, vanished]),
       getDeviceInfoService(),
+      getSettingsService(),
       dir,
     ).buildExport();
 
     expect(export, isNotNull, reason: 'One unreadable file must not fail the entire export');
     expect(await export!.readAsString(), contains('kept entry'));
+  });
+
+  test('the header carries the resource version and the minimum required version', () async {
+    final logFile = File(p.join(dir.path, 'shiori.log'));
+    await logFile.writeAsString('line one\n');
+
+    final export = await LogFileServiceImpl(
+      _FakeLogSink([logFile]),
+      getDeviceInfoService(),
+      getSettingsService(),
+      dir,
+    ).buildExport();
+    final content = await export!.readAsString();
+
+    expect(content, contains('resourceVersion: 57'));
+    expect(content, contains('minResourceVersion: ${Env.minResourceVersion}'));
+  });
+
+  test('the push notifications token never appears in an export', () async {
+    final logFile = File(p.join(dir.path, 'shiori.log'));
+    await logFile.writeAsString('line one\n');
+
+    final export = await LogFileServiceImpl(
+      _FakeLogSink([logFile]),
+      getDeviceInfoService(),
+      getSettingsService(pushNotificationsToken: 'THIS-TOKEN-MUST-NOT-LEAK'),
+      dir,
+    ).buildExport();
+    final content = await export!.readAsString();
+
+    expect(
+      content,
+      isNot(contains('THIS-TOKEN-MUST-NOT-LEAK')),
+      reason: 'The push token is device-addressable and these exports are shared publicly',
+    );
   });
 }

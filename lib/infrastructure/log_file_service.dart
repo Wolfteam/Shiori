@@ -4,6 +4,8 @@ import 'package:path/path.dart' as p;
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/log_file_service.dart';
 import 'package:shiori/domain/services/log_sink.dart';
+import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/env.dart';
 
 class LogFileServiceImpl implements LogFileService {
   static const String redactedDirectory = '<appdir>';
@@ -12,6 +14,7 @@ class LogFileServiceImpl implements LogFileService {
 
   final LogSink _logSink;
   final DeviceInfoService _deviceInfoService;
+  final SettingsService _settingsService;
   final Directory _outputDir;
   //Defaults to the real process environment; overridable only so tests can pin a degenerate
   //HOME value deterministically instead of depending on whatever the host machine happens to have
@@ -20,6 +23,7 @@ class LogFileServiceImpl implements LogFileService {
   LogFileServiceImpl(
     this._logSink,
     this._deviceInfoService,
+    this._settingsService,
     this._outputDir, {
     Map<String, String>? environment,
   }) : _environment = environment ?? Platform.environment;
@@ -83,6 +87,15 @@ class LogFileServiceImpl implements LogFileService {
     _deviceInfoService.appInfo.forEach((key, value) => buffer.writeln('  $key: $value'));
     buffer.writeln('Device:');
     _deviceInfoService.deviceInfo.forEach((key, value) => buffer.writeln('  $key: $value'));
+    buffer.writeln('Settings:');
+    //AppSettings.toJson() never includes pushNotificationsToken; this model boundary is what
+    //keeps that device-addressable identifier out of an export that gets pasted into public
+    //channels, so serializing the model wholesale here is safe
+    _settingsService.appSettings.toJson().forEach((key, value) => buffer.writeln('  $key: $value'));
+    buffer.writeln('  minResourceVersion: ${Env.minResourceVersion}');
+    buffer.writeln('  noResourcesHasBeenDownloaded: ${_settingsService.noResourcesHasBeenDownloaded}');
+    buffer.writeln('  lastResourcesCheckedDate: ${_settingsService.lastResourcesCheckedDate}');
+    buffer.writeln('  lastTelemetryCheckedDate: ${_settingsService.lastTelemetryCheckedDate}');
     buffer.writeln('===================');
     buffer.writeln();
   }

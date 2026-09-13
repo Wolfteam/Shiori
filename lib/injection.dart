@@ -353,15 +353,15 @@ class Injection {
     await logSink.init();
     getIt.registerSingleton<LogSink>(logSink);
 
-    getIt.registerLazySingleton<LogFileService>(
-      () => LogFileServiceImpl(getIt<LogSink>(), getIt<DeviceInfoService>(), supportDir),
-    );
-
     getIt.registerLazySingleton<LoggingService>(
       () => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, getIt<LogSink>()),
     );
 
     getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));
+
+    getIt.registerLazySingleton<LogFileService>(
+      () => LogFileServiceImpl(getIt<LogSink>(), getIt<DeviceInfoService>(), getIt<SettingsService>(), supportDir),
+    );
 
     getIt.registerLazySingleton<ApiService>(() => ApiServiceImpl(getIt<LoggingService>()));
 
