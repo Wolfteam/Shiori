@@ -6,4 +6,5 @@ export 'dtos/requests/get_resource_diff_request_dto.dart';
 export 'dtos/requests/register_device_token_request_dto.dart';
 export 'dtos/requests/save_app_logs_request_dto.dart';
 export 'dtos/responses/game_code_response_dto.dart';
+export 'dtos/responses/resource_archive_response_dto.dart';
 export 'dtos/responses/resource_diff_response_dto.dart';

@@ -7,10 +7,15 @@ part 'get_resource_diff_request_dto.g.dart';
 class GetResourceDiffRequestDto extends BaseRequestDto {
   final int? targetVersion;
 
+  /// The response contract this build understands. Defaults to 1 so an older caller keeps getting
+  /// the per-file response.
+  final int contractVersion;
+
   const GetResourceDiffRequestDto({
     required super.appVersion,
     required super.currentVersion,
     this.targetVersion,
+    this.contractVersion = 1,
   });
 
   @override
