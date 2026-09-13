@@ -503,6 +503,5 @@
   "downloadSize": "ダウンロードサイズ: {value}",
   "exportLogs": "ログをエクスポート",
   "exportLogsSubtitle": "トラブルシューティング用にアプリのログをエクスポートします",
-  "generatingLogsFile": "ログファイルを生成しています...",
   "logsExportFailed": "ログをエクスポートできませんでした"
 }

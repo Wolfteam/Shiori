@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Ekspor log",
   "exportLogsSubtitle": "Ekspor log aplikasi untuk pemecahan masalah",
-  "generatingLogsFile": "Membuat berkas log...",
   "logsExportFailed": "Tidak dapat mengekspor log"
 }

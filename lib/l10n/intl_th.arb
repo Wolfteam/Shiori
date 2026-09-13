@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "ส่งออกบันทึก",
   "exportLogsSubtitle": "ส่งออกบันทึกของแอปเพื่อแก้ไขปัญหา",
-  "generatingLogsFile": "กำลังสร้างไฟล์บันทึก...",
   "logsExportFailed": "ไม่สามารถส่งออกบันทึกได้"
 }

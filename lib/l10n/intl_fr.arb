@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Exporter les journaux",
   "exportLogsSubtitle": "Exporter les journaux de l'application pour le dépannage",
-  "generatingLogsFile": "Génération du fichier de journaux...",
   "logsExportFailed": "Impossible d'exporter les journaux"
 }

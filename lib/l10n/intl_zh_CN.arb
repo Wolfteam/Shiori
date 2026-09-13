@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "导出日志",
   "exportLogsSubtitle": "导出应用日志以排查问题",
-  "generatingLogsFile": "正在生成日志文件...",
   "logsExportFailed": "无法导出日志"
 }

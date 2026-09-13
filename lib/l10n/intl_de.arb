@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Protokolle exportieren",
   "exportLogsSubtitle": "App-Protokolle zur Fehlerbehebung exportieren",
-  "generatingLogsFile": "Protokolldatei wird erstellt...",
   "logsExportFailed": "Die Protokolle konnten nicht exportiert werden"
 }

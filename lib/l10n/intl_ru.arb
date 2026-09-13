@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Экспорт логов",
   "exportLogsSubtitle": "Экспортировать логи приложения для диагностики",
-  "generatingLogsFile": "Создание файла логов...",
   "logsExportFailed": "Не удалось экспортировать логи"
 }

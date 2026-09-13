@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Export logs",
   "exportLogsSubtitle": "Export app logs for troubleshooting",
-  "generatingLogsFile": "Generating the logs file...",
   "logsExportFailed": "Could not export the logs"
 }

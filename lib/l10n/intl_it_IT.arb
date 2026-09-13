@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Esporta i log",
   "exportLogsSubtitle": "Esporta i log dell'app per la risoluzione dei problemi",
-  "generatingLogsFile": "Generazione del file di log...",
   "logsExportFailed": "Impossibile esportare i log"
 }

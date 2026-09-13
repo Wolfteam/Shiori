@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Експортувати логи",
   "exportLogsSubtitle": "Експортувати логи застосунку для усунення несправностей",
-  "generatingLogsFile": "Створення файлу логів...",
   "logsExportFailed": "Не вдалося експортувати логи"
 }

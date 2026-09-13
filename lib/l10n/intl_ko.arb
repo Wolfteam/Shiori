@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "로그 내보내기",
   "exportLogsSubtitle": "문제 해결을 위해 앱 로그를 내보냅니다",
-  "generatingLogsFile": "로그 파일을 생성하는 중...",
   "logsExportFailed": "로그를 내보낼 수 없습니다"
 }

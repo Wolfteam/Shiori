@@ -503,6 +503,5 @@
   "downloadSize": "Download size: {value}",
   "exportLogs": "Günlükleri dışa aktar",
   "exportLogsSubtitle": "Sorun giderme için uygulama günlüklerini dışa aktarın",
-  "generatingLogsFile": "Günlük dosyası oluşturuluyor...",
   "logsExportFailed": "Günlükler dışa aktarılamadı"
 }
