@@ -293,8 +293,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: b90972c06ae3446c99cd549595db7a0f6f206fdd
-      resolved-ref: b90972c06ae3446c99cd549595db7a0f6f206fdd
+      ref: "88dba67fa1613f5e19a347c3b4c6e775210d98dc"
+      resolved-ref: "88dba67fa1613f5e19a347c3b4c6e775210d98dc"
       url: "https://github.com/Wolfteam/disk_space_info.git"
     source: git
     version: "0.1.0"

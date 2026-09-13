@@ -401,6 +401,46 @@ void main() {
     expect(File(p.join(assetsPath, 'skills', 'doomed.webp')).existsSync(), isFalse);
   });
 
+  test('full mode still honours re-adds, where the whole staging folder is renamed', () async {
+    final assetsPath = await createAssetsFolder();
+
+    final first = _buildArchiveWith(
+      tempDir: tempDir,
+      filename: 'a.zip',
+      entries: {'db/characters.json': '{"v":1}'},
+      deleted: ['skills/revived.webp'],
+    );
+    final second = _buildArchiveWith(
+      tempDir: tempDir,
+      filename: 'b.zip',
+      entries: {'db/characters.json': '{"v":2}', 'skills/revived.webp': 'back'},
+    );
+
+    final sources = [first.path, second.path];
+    var call = 0;
+    when(
+      apiService.downloadAssetStreamed(any, any, overrideUrl: anyNamed('overrideUrl'), onBytes: anyNamed('onBytes')),
+    ).thenAnswer((invocation) async {
+      final destPath = invocation.positionalArguments[1] as String;
+      final dest = File(destPath);
+      await dest.parent.create(recursive: true);
+      await File(sources[call++]).copy(destPath);
+      return dest.lengthSync();
+    });
+
+    final result = await createService().downloadAndApply(
+      [archiveDto(first.sha256), archiveDto(second.sha256)],
+      p.join(tempDir.path, 'temp'),
+      assetsPath,
+      //Full mode deletes the assets folder first, so the move happens as a single rename
+      replaceAssetsFolder: true,
+    );
+
+    expect(result.failureType, AppResourceUpdateFailureType.none);
+    expect(File(p.join(assetsPath, 'skills', 'revived.webp')).readAsStringSync(), 'back');
+    expect(File(p.join(assetsPath, 'db', 'characters.json')).readAsStringSync(), '{"v":2}');
+  });
+
   test('leaves the temp folder clean after a successful apply', () async {
     final built = buildArchive();
     stubDownload(built.path);

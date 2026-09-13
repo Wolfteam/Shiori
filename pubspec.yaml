@@ -31,7 +31,7 @@ dependencies:
   disk_space_info:
     git:
       url: https://github.com/Wolfteam/disk_space_info.git
-      ref: b90972c06ae3446c99cd549595db7a0f6f206fdd
+      ref: 88dba67fa1613f5e19a347c3b4c6e775210d98dc
   envied: ^1.3.8
   file_picker: ^11.0.2
   firebase_core: ^4.9.0

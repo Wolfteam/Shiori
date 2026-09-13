@@ -131,18 +131,28 @@ class ResourceArchiveServiceImpl implements ResourceArchiveService {
         await _deleteFileIfExists(p.join(stagingPath, ResourceArchiveExtractor.manifestFilename));
       }
 
+      //Resolved before the swap: staging is consumed by the move below, so asking it afterwards
+      //whether a later archive re-added a file would always answer no
+      final pendingDeletions = <String>[];
+      for (final relativePath in deletions) {
+        if (!await File(p.join(stagingPath, relativePath)).exists()) {
+          pendingDeletions.add(relativePath);
+        }
+      }
+
+      bool moved = false;
       if (replaceAssetsFolder) {
         await _deleteDirectoryIfExists(assetsPath);
+        //With the destination gone the whole tree moves as one metadata operation
+        moved = await _tryRenameDirectory(stagingPath, assetsPath);
       }
-      await Directory(assetsPath).create(recursive: true);
 
-      await _copyDirectory(stagingPath, assetsPath);
+      if (!moved) {
+        await Directory(assetsPath).create(recursive: true);
+        await _moveDirectoryContents(stagingPath, assetsPath);
+      }
 
-      for (final relativePath in deletions) {
-        //A later archive in the chain may have re-added what an earlier one deleted
-        if (await File(p.join(stagingPath, relativePath)).exists()) {
-          continue;
-        }
+      for (final relativePath in pendingDeletions) {
         await _deleteFileIfExists(p.join(assetsPath, relativePath));
       }
 
@@ -173,7 +183,18 @@ class ResourceArchiveServiceImpl implements ResourceArchiveService {
     }
   }
 
-  Future<void> _copyDirectory(String from, String to) async {
+  Future<bool> _tryRenameDirectory(String from, String to) async {
+    try {
+      await Directory(from).rename(to);
+      return true;
+    } catch (e) {
+      _loggingService.info(runtimeType, 'downloadAndApply: Could not rename $from, falling back to a per-file move');
+      return false;
+    }
+  }
+
+  /// Moves rather than copies, so a 150 MB tree never exists twice on disk at once.
+  Future<void> _moveDirectoryContents(String from, String to) async {
     final entities = await Directory(from).list(recursive: true).toList();
     for (final entity in entities) {
       final relative = p.relative(entity.path, from: from);
@@ -185,7 +206,13 @@ class ResourceArchiveServiceImpl implements ResourceArchiveService {
 
       if (entity is File) {
         await Directory(p.dirname(target)).create(recursive: true);
-        await entity.copy(target);
+        try {
+          await entity.rename(target);
+        } catch (e) {
+          //Renaming only works within one filesystem, so fall back for anything else
+          await entity.copy(target);
+          await entity.delete();
+        }
       }
     }
   }
