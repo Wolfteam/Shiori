@@ -813,5 +813,22 @@ void main() {
       verify(apiService.sendTelemetryData(any)).called(greaterThan(1));
       await bloc.close();
     });
+
+    test('caps the number of chunks sent per run and leaves the remainder queued', () async {
+      final apiService = MockApiService();
+      when(apiService.sendTelemetryData(any)).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: true)));
+      final telemetryDataService = MockTelemetryDataService();
+      //Well beyond Env.maxTelemetryChunksPerRun worth of chunks at the real chunking budget
+      final queued = await boxedTelemetry(List.generate(100, (i) => telemetryEntry('{"event":"${'x' * 5000}"}')));
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      verify(apiService.sendTelemetryData(any)).called(Env.maxTelemetryChunksPerRun);
+      //Only the SENT chunks may be deleted; the remainder must stay queued for the next launch
+      verify(telemetryDataService.deleteByIds(any)).called(Env.maxTelemetryChunksPerRun);
+      await bloc.close();
+    });
   });
 }

@@ -117,6 +117,44 @@ void main() {
     expect(content, contains('<appdir>'));
   });
 
+  test('ordinary forward slashes survive intact when HOME is degenerate', () async {
+    //Android app processes commonly inherit HOME = '/'. Without the platform + length guard,
+    //replaceAll('/', redactedDirectory) shreds every URL and stack frame in the export.
+    final logFile = File(p.join(dir.path, 'shiori.log'));
+    await logFile.writeAsString('Fetching https://example.com/db/a.json\n');
+
+    final export = await LogFileServiceImpl(
+      _FakeLogSink([logFile]),
+      getDeviceInfoService(),
+      dir,
+      environment: const {'HOME': '/'},
+    ).buildExport();
+    final content = await export!.readAsString();
+
+    expect(
+      content,
+      contains('https://example.com/db/a.json'),
+      reason: 'A degenerate HOME must never shred ordinary forward slashes',
+    );
+  });
+
+  test('a previous export is deleted before a new one is written', () async {
+    final logFile = File(p.join(dir.path, 'shiori.log'));
+    await logFile.writeAsString('line one\n');
+    final service = LogFileServiceImpl(_FakeLogSink([logFile]), getDeviceInfoService(), dir);
+
+    await service.buildExport();
+    //Guarantees the second export gets a distinct timestamp-based filename from the first
+    await Future.delayed(const Duration(seconds: 1));
+    await service.buildExport();
+
+    final List<FileSystemEntity> exports = dir
+        .listSync()
+        .where((e) => e is File && p.basename(e.path).startsWith('shiori-logs-'))
+        .toList();
+    expect(exports.length, 1, reason: 'Nothing ever deletes a stale export, leaving unbounded disk use');
+  });
+
   test('an unreadable log file is skipped rather than failing the whole export', () async {
     final present = File(p.join(dir.path, 'shiori.1.log'));
     await present.writeAsString('kept entry\n');

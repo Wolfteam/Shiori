@@ -18,9 +18,15 @@ class Env {
   /// entry can ever exceed the payload budget and stall the queue.
   static const int maxTelemetryMessageBytes = 16 * 1024;
 
-  /// Budget for one upload request. SQS caps messages at 256 KB and the API
-  /// Gateway integration URL-encodes the body, so this leaves ample headroom.
-  static const int maxTelemetryPayloadBytes = 120 * 1024;
+  /// Budget for one upload request. Targets ~50% of the 256 KB SQS ceiling because the
+  /// API Gateway integration URL-encodes the body (`$util.urlEncode($input.json('$'))`),
+  /// which measurably inflates it beyond what a naive pre-encoding estimate assumes.
+  static const int maxTelemetryPayloadBytes = 64 * 1024;
+
+  /// Caps how many chunks are uploaded per app launch, bounding splash-screen latency on a
+  /// slow connection. Any remainder stays queued and drains on the next launch, the same
+  /// designed behaviour as a failed chunk.
+  static const int maxTelemetryChunksPerRun = 4;
 
   /// The active log file rotates at this size. Disk is hard-bounded at 2x.
   static const int maxLogFileSizeInBytes = 2 * 1024 * 1024;

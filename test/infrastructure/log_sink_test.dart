@@ -181,6 +181,28 @@ void main() {
     await sink.dispose();
   });
 
+  test('a failed rotation disables the sink but the already-written file stays listed', () async {
+    final sink = getSink(maxFileSizeInBytes: 64);
+    await sink.init();
+    //Pre-create the rotation target as a directory so the rename inside _rotate() throws AFTER
+    //the active file's chunk has already been flushed to disk, mirroring a momentary IO failure
+    //that leaves perfectly readable logs on disk behind it
+    await Directory(p.join(dir.path, 'shiori.1.log')).create();
+
+    sink.write('a' * 100);
+    await sink.flush();
+
+    final activeFile = File(p.join(dir.path, 'shiori.log'));
+    expect(await activeFile.exists(), isTrue, reason: 'The chunk was flushed to disk before the rotation failed');
+    //Guard protects nothing here: the file is genuinely readable, yet _disabled would hide it
+    expect(
+      sink.files.map((f) => p.basename(f.path)).toList(),
+      contains('shiori.log'),
+      reason: 'A momentary write failure must not hide logs that are on disk',
+    );
+    await sink.dispose();
+  });
+
   test('files returns existing files oldest first', () async {
     final sink = getSink(maxFileSizeInBytes: 32);
     await sink.init();

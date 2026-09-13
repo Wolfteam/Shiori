@@ -3,13 +3,15 @@ import 'dart:convert';
 import 'package:shiori/domain/models/entities.dart';
 
 class TelemetryChunkUtils {
-  //Covers the timestamp field and the JSON punctuation each item adds to the request body
-  static const int perItemOverheadInBytes = 64;
+  //Covers the timestamp field, the JSON punctuation each item adds to the request body, and the
+  //`\"` escaping the API Gateway integration applies to every quote inside `message` (~13% on
+  //real payloads) once it URL-encodes the body
+  static const int perItemOverheadInBytes = 96;
 
   /// Splits [entries] into chunks that each stay within [maxPayloadBytes].
   ///
-  /// The estimate is pre-URL-encoding; the budget is set well below the 256 KB
-  /// SQS ceiling so the encoding inflation is absorbed without modelling it.
+  /// The estimate is pre-URL-encoding; the budget targets ~50% of the 256 KB SQS ceiling
+  /// because the API Gateway integration URL-encodes the body, which measurably inflates it.
   static List<List<Telemetry>> chunk(List<Telemetry> entries, int maxPayloadBytes) {
     final List<List<Telemetry>> chunks = [];
     List<Telemetry> current = [];

@@ -7,12 +7,22 @@ import 'package:shiori/domain/services/log_sink.dart';
 
 class LogFileServiceImpl implements LogFileService {
   static const String redactedDirectory = '<appdir>';
+  static const String _exportFilePrefix = 'shiori-logs-';
+  static const String _exportFileSuffix = '.txt';
 
   final LogSink _logSink;
   final DeviceInfoService _deviceInfoService;
   final Directory _outputDir;
+  //Defaults to the real process environment; overridable only so tests can pin a degenerate
+  //HOME value deterministically instead of depending on whatever the host machine happens to have
+  final Map<String, String> _environment;
 
-  LogFileServiceImpl(this._logSink, this._deviceInfoService, this._outputDir);
+  LogFileServiceImpl(
+    this._logSink,
+    this._deviceInfoService,
+    this._outputDir, {
+    Map<String, String>? environment,
+  }) : _environment = environment ?? Platform.environment;
 
   @override
   Future<File?> buildExport() async {
@@ -35,11 +45,35 @@ class LogFileServiceImpl implements LogFileService {
       }
     }
 
+    await _deletePreviousExports();
+
     final String content = _scrub(buffer.toString());
     final String timestamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
-    final File export = File(p.join(_outputDir.path, 'shiori-logs-$timestamp.txt'));
+    final File export = File(p.join(_outputDir.path, '$_exportFilePrefix$timestamp$_exportFileSuffix'));
     await export.writeAsString(content, flush: true);
     return export;
+  }
+
+  //Every buildExport() call used to leave a new file behind forever, the one unbounded-disk hole
+  //in an otherwise fully bounded feature. Best-effort: a failure here must never stop the export
+  //itself from being written, same spirit as the per-file read guard above. Only files matching
+  //this service's own export naming are touched — ResourceService and others share this directory.
+  Future<void> _deletePreviousExports() async {
+    try {
+      for (final FileSystemEntity entity in _outputDir.listSync()) {
+        final String name = p.basename(entity.path);
+        if (entity is! File || !name.startsWith(_exportFilePrefix) || !name.endsWith(_exportFileSuffix)) {
+          continue;
+        }
+        try {
+          await entity.delete();
+        } catch (_) {
+          //Best-effort: leave this one behind rather than fail the export over it
+        }
+      }
+    } catch (_) {
+      //Listing the directory failed; leave existing exports in place rather than fail the export
+    }
   }
 
   void _writeHeader(StringBuffer buffer) {
@@ -57,9 +91,14 @@ class LogFileServiceImpl implements LogFileService {
   //the OS account name, which would expose a real person in a publicly shared file
   String _scrub(String content) {
     String result = content.replaceAll(_outputDir.path, redactedDirectory);
-    final String? home = Platform.environment['HOME'] ?? Platform.environment['USERPROFILE'];
-    if (home != null && home.isNotEmpty) {
-      result = result.replaceAll(home, redactedDirectory);
+    //The account-name leak this guards against only exists on Windows and macOS; on Android/iOS
+    //paths embed no account name at all, and Android app processes commonly inherit a degenerate
+    //HOME (often '/'), which would otherwise shred every forward slash in the export
+    if (Platform.isMacOS || Platform.isWindows) {
+      final String? home = _environment['HOME'] ?? _environment['USERPROFILE'];
+      if (home != null && home.length > 1) {
+        result = result.replaceAll(home, redactedDirectory);
+      }
     }
     return result;
   }

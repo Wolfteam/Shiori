@@ -252,7 +252,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     _settingsService.lastTelemetryCheckedDate = DateTime.now();
 
     final List<List<Telemetry>> chunks = TelemetryChunkUtils.chunk(telemetryData, Env.maxTelemetryPayloadBytes);
-    for (final List<Telemetry> chunk in chunks) {
+    //Caps sequential blocking round trips on the splash critical path; any remainder stays
+    //queued and drains on the next launch, the same designed behaviour as a failed chunk
+    for (final List<Telemetry> chunk in chunks.take(Env.maxTelemetryChunksPerRun)) {
       final logs = chunk.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
       final EmptyResponseDto response = await _apiService.sendTelemetryData(SaveAppLogsRequestDto(logs: logs));
       //Deleting before confirmation is how telemetry was being lost; leave the rest queued for the next run

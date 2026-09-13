@@ -50,11 +50,10 @@ class LogSinkImpl implements LogSink {
 
   @override
   List<File> get files {
+    //Intentionally ignores _disabled: a write/rotation failure only means new lines cannot be
+    //appended right now, not that the files already on disk stopped being readable. Returning []
+    //here defeats the export feature in exactly the scenario it exists for.
     final List<File> existing = [];
-    if (_disabled) {
-      return existing;
-    }
-
     if (_rotatedFile.existsSync()) {
       existing.add(_rotatedFile);
     }
@@ -79,18 +78,19 @@ class LogSinkImpl implements LogSink {
       await _deleteIfExpired(_rotatedFile);
       await _deleteIfExpired(_activeFile);
       _activeFileSize = await _activeFile.exists() ? await _activeFile.length() : 0;
+
+      //Inside the try block because AppLifecycleListener asserts an initialized WidgetsBinding
+      //and can throw; logging must never break the app, so any failure here goes quiet too
+      _timer = Timer.periodic(_flushInterval, (_) => flush());
+      if (_attachLifecycleListener) {
+        _lifecycleListener = AppLifecycleListener(
+          onPause: flush,
+          onDetach: dispose,
+        );
+      }
     } catch (_) {
       //Logging must never break the app, so a sink that cannot reach disk goes quiet instead
       _disabled = true;
-      return;
-    }
-
-    _timer = Timer.periodic(_flushInterval, (_) => flush());
-    if (_attachLifecycleListener) {
-      _lifecycleListener = AppLifecycleListener(
-        onPause: flush,
-        onDetach: dispose,
-      );
     }
   }
 

@@ -74,8 +74,50 @@ void main() {
     await service.saveTelemetry({'event': 'big', 'trace': 'y' * 5000});
 
     final message = service.getAll().single.message;
-    expect(message.length, lessThan(200), reason: 'An oversized message must be truncated at save time');
-    expect(message, endsWith('...[truncated]'));
+    expect(
+      utf8.encode(message).length,
+      lessThanOrEqualTo(128),
+      reason: 'An oversized message must be truncated at save time',
+    );
+    expect(message, contains('...[truncated]'));
+  });
+
+  test('a truncated message is still valid JSON', () async {
+    final service = await getService('${_baseDbFolder}_json', maxMessageBytes: 512);
+    await service.saveTelemetry({
+      'event': 'Error',
+      'deviceInfo': {'model': 'Pixel 8'},
+      'data': {'Trace': 'y' * 20000},
+    });
+
+    final String message = service.getAll().single.message;
+    //The backend deserializes every message and rethrows on failure, poisoning the whole SQS batch
+    expect(() => json.decode(message), returnsNormally, reason: 'Invalid JSON poisons the server batch');
+    expect(utf8.encode(message).length, lessThanOrEqualTo(512));
+  });
+
+  test('truncation preserves the top level keys the backend relies on', () async {
+    final service = await getService('${_baseDbFolder}_shape', maxMessageBytes: 512);
+    await service.saveTelemetry({
+      'event': 'Error',
+      'deviceInfo': {'model': 'Pixel 8'},
+      'data': {'Trace': 'y' * 20000},
+    });
+
+    final Map<String, dynamic> decoded = json.decode(service.getAll().single.message) as Map<String, dynamic>;
+    expect(decoded['event'], 'Error', reason: 'The event name must survive truncation');
+  });
+
+  test('an enormous map still produces valid JSON within the cap', () async {
+    final service = await getService('${_baseDbFolder}_huge', maxMessageBytes: 256);
+    await service.saveTelemetry({
+      'event': 'Error',
+      'data': {for (int i = 0; i < 200; i++) 'key$i': 'z' * 500},
+    });
+
+    final String message = service.getAll().single.message;
+    expect(() => json.decode(message), returnsNormally);
+    expect(utf8.encode(message).length, lessThanOrEqualTo(256));
   });
 
   test('running byte total stays correct across save and delete cycles', () async {
