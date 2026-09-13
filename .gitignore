@@ -91,6 +91,8 @@ unlinked_spec.ds
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
+# Kotlin compiler session scratch files, written by the Gradle build
+**/android/.kotlin/
 *.jks
 
 # iOS/XCode related
