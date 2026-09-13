@@ -1,34 +1,21 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/dtos/responses/resource_archive_response_dto.dart';
 
+part 'resource_diff_response_dto.freezed.dart';
 part 'resource_diff_response_dto.g.dart';
 
-@JsonSerializable()
-class ResourceDiffResponseDto {
-  final int currentResourceVersion;
-
-  final int targetResourceVersion;
-
-  final int? downloadTotalSize;
-
-  final String? jsonFileKeyName;
-
-  final List<String> keyNames;
-
-  /// ResourceUpdateMode wire value. Defaults to legacy so a pre-archive backend parses.
-  final int mode;
-
-  final List<ResourceArchiveResponseDto> archives;
-
-  ResourceDiffResponseDto({
-    required this.currentResourceVersion,
-    required this.targetResourceVersion,
-    this.downloadTotalSize,
-    this.jsonFileKeyName,
-    required this.keyNames,
-    this.mode = 1,
-    this.archives = const <ResourceArchiveResponseDto>[],
-  });
+@freezed
+abstract class ResourceDiffResponseDto with _$ResourceDiffResponseDto {
+  factory ResourceDiffResponseDto({
+    required int currentResourceVersion,
+    required int targetResourceVersion,
+    int? downloadTotalSize,
+    String? jsonFileKeyName,
+    required List<String> keyNames,
+    //ResourceUpdateMode wire value. Defaults to legacy so a pre-archive backend parses
+    @Default(1) int mode,
+    @Default(<ResourceArchiveResponseDto>[]) List<ResourceArchiveResponseDto> archives,
+  }) = _ResourceDiffResponseDto;
 
   factory ResourceDiffResponseDto.fromJson(Map<String, dynamic> json) => _$ResourceDiffResponseDtoFromJson(json);
 }
