@@ -5,6 +5,7 @@ import 'package:archive/archive_io.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as path;
+import 'package:shiori/domain/utils/file_hash_utils.dart';
 
 import '../secrets.dart';
 
@@ -25,8 +26,6 @@ void main() {
   }
 
   Map<String, dynamic>? archivesOfLatest() => latestVersion()['Archives'] as Map<String, dynamic>?;
-
-  String sha256OfFile(File file) => sha256.convert(file.readAsBytesSync()).toString();
 
   //Excludes the manifest, which describes the archive rather than being an asset
   Set<String> assetEntriesOf(String archivePath) {
@@ -53,7 +52,7 @@ void main() {
       expect(archives['Full'], isNotNull, reason: 'the newest version must publish a full archive');
     });
 
-    test('every declared archive resolves and matches its recorded size and hash', () {
+    test('every declared archive resolves and matches its recorded size and hash', () async {
       final archives = archivesOfLatest();
       if (archives == null) {
         markTestSkipped('No archives generated yet');
@@ -70,7 +69,8 @@ void main() {
         expect(file.existsSync(), isTrue, reason: '${record['KeyName']} must exist on disk');
         //The backend picks delta versus full by comparing these sizes
         expect(file.lengthSync(), record['SizeInBytes'], reason: '${record['KeyName']} size mismatch');
-        expect(sha256OfFile(file), record['Sha256'], reason: '${record['KeyName']} sha256 mismatch');
+        //Uses the production hasher, so this also proves it agrees with the CLI on a real 150 MB archive
+        expect(await FileHashUtils.sha256OfFile(file), record['Sha256'], reason: '${record['KeyName']} sha256 mismatch');
       }
     });
 
