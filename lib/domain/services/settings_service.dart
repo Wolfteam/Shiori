@@ -43,6 +43,10 @@ abstract class SettingsService {
   int get resourceVersion;
   set resourceVersion(int value);
 
+  /// Records a successfully applied resource update. Both values move together: a bumped version
+  /// with a stale checked-date would make the next check fire immediately.
+  void markResourcesAsUpdated(int resourceVersion);
+
   bool get noResourcesHasBeenDownloaded;
 
   bool get checkForUpdatesOnStartup;

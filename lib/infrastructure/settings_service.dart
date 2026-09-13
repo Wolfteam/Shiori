@@ -113,6 +113,12 @@ class SettingsServiceImpl extends SettingsService {
   set resourceVersion(int value) => _prefs.setInt(_resourcesVersionKey, value);
 
   @override
+  void markResourcesAsUpdated(int resourceVersion) {
+    this.resourceVersion = resourceVersion;
+    lastResourcesCheckedDate = DateTime.now();
+  }
+
+  @override
   bool get noResourcesHasBeenDownloaded => resourceVersion <= 0 || lastResourcesCheckedDate == null;
 
   @override

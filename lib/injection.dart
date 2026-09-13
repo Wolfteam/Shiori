@@ -374,7 +374,13 @@ class Injection {
     );
 
     getIt.registerLazySingleton<ResourceService>(
-      () => ResourceServiceImpl(getIt<LoggingService>(), getIt<SettingsService>(), getIt<NetworkService>(), getIt<ApiService>()),
+      () => ResourceServiceImpl(
+        getIt<LoggingService>(),
+        getIt<SettingsService>(),
+        getIt<NetworkService>(),
+        getIt<ApiService>(),
+        getIt<ResourceArchiveService>(),
+      ),
     );
 
     getIt.registerLazySingleton<LocaleService>(() => LocaleServiceImpl(getIt<SettingsService>()));

@@ -139,6 +139,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
               result.resourceVersion,
               result.jsonFileKeyName,
               keyNames: result.keyNames,
+              archives: result.archives,
+              mode: result.mode,
               onProgress: (progress, downloadedBytes) =>
                   add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
             )
@@ -147,7 +149,11 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         await _downloadStream?.cancel();
         _downloadStream = downloadStream.listen(
           (updateResult) => add(
-            SplashEvent.updateCompleted(applied: updateResult.applied, resourceVersion: result.resourceVersion),
+            SplashEvent.updateCompleted(
+              applied: updateResult.applied,
+              resourceVersion: result.resourceVersion,
+              failureType: updateResult.failureType,
+            ),
           ),
         );
       case SplashEventProgressChanged():

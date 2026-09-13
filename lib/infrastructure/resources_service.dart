@@ -13,6 +13,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/resource_archive_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/env.dart';
@@ -25,6 +26,7 @@ class ResourceServiceImpl implements ResourceService {
   final SettingsService _settingsService;
   final NetworkService _networkService;
   final ApiService _apiService;
+  final ResourceArchiveService _resourceArchiveService;
   final int maxRetryAttempts;
   final int maxItemsPerBatch;
 
@@ -35,7 +37,8 @@ class ResourceServiceImpl implements ResourceService {
     this._loggingService,
     this._settingsService,
     this._networkService,
-    this._apiService, {
+    this._apiService,
+    this._resourceArchiveService, {
     this.maxRetryAttempts = 10,
     this.maxItemsPerBatch = 10,
   });
@@ -359,20 +362,23 @@ class ResourceServiceImpl implements ResourceService {
     int targetResourceVersion,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
+    List<ResourceArchiveResponseDto> archives = const <ResourceArchiveResponseDto>[],
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
     ProgressChanged? onProgress,
   }) async {
     if (targetResourceVersion <= 0) {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion is not valid');
     }
 
-    if (jsonFileKeyName.isNullEmptyOrWhitespace && keyNames.isEmpty) {
-      throw Exception('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided');
+    final archivesMustBeDownloaded = archives.isNotEmpty;
+    if (jsonFileKeyName.isNullEmptyOrWhitespace && keyNames.isEmpty && !archivesMustBeDownloaded) {
+      throw Exception('This platform uses either a jsonKeyName, keyNames or archives but none were provided');
     }
 
     final partialFilesMustBeDownloaded = keyNames.isNotEmpty;
     final mainFilesMustBeDownloaded = !partialFilesMustBeDownloaded && jsonFileKeyName.isNotNullEmptyOrWhitespace;
 
-    if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded) {
+    if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded && !archivesMustBeDownloaded) {
       throw Exception('You need to either provide a main or partial files');
     }
 
@@ -386,6 +392,32 @@ class ResourceServiceImpl implements ResourceService {
 
     if (!_canCheckForUpdates(checkDate: false)) {
       return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
+    }
+
+    if (archivesMustBeDownloaded) {
+      _loggingService.info(
+        runtimeType,
+        'downloadAndApplyUpdates: Applying ${archives.length} archive(s) in ${mode.name} mode...',
+      );
+      final result = await _resourceArchiveService.downloadAndApply(
+        archives,
+        _tempPath,
+        _assetsPath,
+        //Full mode is a complete replacement; delta mode overlays what is already there
+        replaceAssetsFolder: mode == ResourceUpdateMode.full,
+        onProgress: onProgress,
+      );
+
+      if (!result.succeed) {
+        _loggingService.error(
+          runtimeType,
+          'downloadAndApplyUpdates: Archive update failed with ${result.failureType.name}',
+        );
+        return ResourceUpdateResult.failure(result.failureType, result.bytesDownloaded);
+      }
+
+      _settingsService.markResourcesAsUpdated(targetResourceVersion);
+      return ResourceUpdateResult.success(result.bytesDownloaded);
     }
 
     try {
@@ -423,8 +455,7 @@ class ResourceServiceImpl implements ResourceService {
       }
 
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Update completed');
-      _settingsService.resourceVersion = targetResourceVersion;
-      _settingsService.lastResourcesCheckedDate = DateTime.now();
+      _settingsService.markResourcesAsUpdated(targetResourceVersion);
       return ResourceUpdateResult.success(0);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Unknown error', e, s);
