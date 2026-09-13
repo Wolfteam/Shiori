@@ -266,7 +266,7 @@ void main() {
         when(resourceService.checkForUpdates(defaultAppVersion, defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         when(
           resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames),
-        ).thenAnswer((_) => Future.value(true));
+        ).thenAnswer((_) => Future.value(ResourceUpdateResult.success(0)));
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);
@@ -308,7 +308,7 @@ void main() {
         when(resourceService.checkForUpdates(defaultAppVersion, defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         when(
           resourceService.downloadAndApplyUpdates(result.resourceVersion, jsonFileKeyName, keyNames: keyNames),
-        ).thenAnswer((_) => Future.value(true));
+        ).thenAnswer((_) => Future.value(ResourceUpdateResult.success(0)));
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);

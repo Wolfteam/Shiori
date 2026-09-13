@@ -355,7 +355,7 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   @override
-  Future<bool> downloadAndApplyUpdates(
+  Future<ResourceUpdateResult> downloadAndApplyUpdates(
     int targetResourceVersion,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
@@ -385,7 +385,7 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     if (!_canCheckForUpdates(checkDate: false)) {
-      return false;
+      return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
     }
 
     try {
@@ -402,7 +402,7 @@ class ResourceServiceImpl implements ResourceService {
         if (downloadedBytes == null) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
           await _deleteDirectoryIfExists(_tempPath);
-          return false;
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
         }
 
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Processing files...');
@@ -410,7 +410,7 @@ class ResourceServiceImpl implements ResourceService {
 
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the main file');
-          return false;
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
         }
       } else {
         //we need to download a portion
@@ -418,17 +418,17 @@ class ResourceServiceImpl implements ResourceService {
         final processed = await _processPartialUpdate(_tempPath, _assetsPath, keyNames, onProgress);
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the partial file');
-          return false;
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
         }
       }
 
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Update completed');
       _settingsService.resourceVersion = targetResourceVersion;
       _settingsService.lastResourcesCheckedDate = DateTime.now();
-      return true;
+      return ResourceUpdateResult.success(0);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Unknown error', e, s);
-      return false;
+      return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
     }
   }
 

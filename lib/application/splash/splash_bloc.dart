@@ -146,7 +146,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
         await _downloadStream?.cancel();
         _downloadStream = downloadStream.listen(
-          (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
+          (updateResult) => add(
+            SplashEvent.updateCompleted(applied: updateResult.applied, resourceVersion: result.resourceVersion),
+          ),
         );
       case SplashEventProgressChanged():
         assert(state is SplashStateLoaded, 'The current state should be loaded');

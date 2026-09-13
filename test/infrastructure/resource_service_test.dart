@@ -456,8 +456,8 @@ void main() {
       final appliedA = await service.downloadAndApplyUpdates(1, allJson);
       final appliedB = await service.downloadAndApplyUpdates(1, allJson, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(appliedA, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when internet is unavailable');
-      expect(appliedB, isFalse, reason: 'downloadAndApplyUpdates (keyNames) must return false when internet is unavailable');
+      expect(appliedA.applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when internet is unavailable');
+      expect(appliedB.applied, isFalse, reason: 'downloadAndApplyUpdates (keyNames) must return false when internet is unavailable');
     });
 
     test('download partial files, cannot check for updates', () async {
@@ -475,7 +475,7 @@ void main() {
       );
       final applied = await service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']);
 
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when internet is unavailable');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when internet is unavailable');
     });
 
     test('download main json file, api throws exception while downloading', () async {
@@ -501,7 +501,7 @@ void main() {
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson);
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when the download throws');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when the download throws');
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed main-json download');
     });
@@ -538,7 +538,7 @@ void main() {
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
       final applied = await service.downloadAndApplyUpdates(1, allJson, keyNames: keyNames);
-      expect(applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when a download throws');
+      expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when a download throws');
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed partial-files download');
     });

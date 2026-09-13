@@ -35,7 +35,7 @@ abstract class ResourceService {
     bool updateResourceCheckedDate = true,
   });
 
-  Future<bool> downloadAndApplyUpdates(
+  Future<ResourceUpdateResult> downloadAndApplyUpdates(
     int targetResourceVersion,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],

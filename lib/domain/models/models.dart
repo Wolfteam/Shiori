@@ -58,6 +58,7 @@ export 'db/resources/archive_apply_result.dart';
 export 'db/resources/archive_manifest.dart';
 export 'db/resources/check_for_updates_result.dart';
 export 'db/resources/json_versions_file.dart';
+export 'db/resources/resource_update_result.dart';
 export 'db/translations/translation_artifact_file.dart';
 export 'db/translations/translation_character_file.dart';
 export 'db/translations/translation_element_file.dart';
