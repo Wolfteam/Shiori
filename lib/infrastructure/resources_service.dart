@@ -318,8 +318,9 @@ class ResourceServiceImpl implements ResourceService {
 
       final mainFileMustBeDownloaded = apiResponse.result!.jsonFileKeyName.isNotNullEmptyOrWhitespace;
       final partialFilesMustBeDownloaded = apiResponse.result!.keyNames.isNotEmpty;
+      final archivesMustBeDownloaded = apiResponse.result!.archives.isNotEmpty;
 
-      if (!mainFileMustBeDownloaded && !partialFilesMustBeDownloaded) {
+      if (!mainFileMustBeDownloaded && !partialFilesMustBeDownloaded && !archivesMustBeDownloaded) {
         _loggingService.warning(
           runtimeType,
           'checkForUpdates: We got a case were we do not have nothing to process. Error = ${apiResponse.message}',
@@ -331,12 +332,16 @@ class ResourceServiceImpl implements ResourceService {
       }
 
       final ResourceDiffResponseDto result = apiResponse.result!;
+      //An unknown mode from a newer backend degrades to the legacy path rather than failing
+      final ResourceUpdateMode mode = ResourceUpdateMode.fromValue(result.mode) ?? ResourceUpdateMode.legacy;
       return CheckForUpdatesResult(
         type: AppResourceUpdateResultType.updatesAvailable,
         resourceVersion: targetResourceVersion,
         jsonFileKeyName: result.jsonFileKeyName,
         downloadTotalSize: result.downloadTotalSize,
         keyNames: result.keyNames,
+        mode: mode,
+        archives: result.archives,
       );
     } catch (e, s) {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
