@@ -434,15 +434,16 @@ class ResourceServiceImpl implements ResourceService {
         if (downloadedBytes == null) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
           await _deleteDirectoryIfExists(_tempPath);
-          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.downloadFailed);
         }
 
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Processing files...');
         final processed = await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath, onProgress);
 
         if (!processed) {
+          //Both legacy processors only fail when an asset download did, so the stage is the download
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the main file');
-          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.downloadFailed);
         }
       } else {
         //we need to download a portion
@@ -450,7 +451,7 @@ class ResourceServiceImpl implements ResourceService {
         final processed = await _processPartialUpdate(_tempPath, _assetsPath, keyNames, onProgress);
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the partial file');
-          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.unknown);
+          return ResourceUpdateResult.failure(AppResourceUpdateFailureType.downloadFailed);
         }
       }
 

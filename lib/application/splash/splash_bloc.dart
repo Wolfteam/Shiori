@@ -35,6 +35,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
   StreamSubscription? _downloadStream;
 
+  //Kept on the bloc because the completed event is raised from a stream listener, long after the
+  //download started, so the elapsed time and transferred bytes are not available there
+  DateTime? _updateStartedAt;
+  int _lastDownloadedBytes = 0;
+  ResourceUpdateMode _currentMode = ResourceUpdateMode.legacy;
+
   SplashBloc(
     this._resourceService,
     this._settingsService,
@@ -99,7 +105,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
         final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
         final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
-        await _telemetryService.trackCheckForResourceUpdates(resultType);
+        await _telemetryService.trackCheckForResourceUpdates(
+          resultType,
+          requestedContractVersion: appResourceContractVersion,
+          mode: result.mode,
+          archiveCount: result.archives.length,
+        );
         emit(
           SplashState.loaded(
             updateResultType: resultType,
@@ -134,6 +145,15 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
         //the stream is required to avoid blocking the bloc
         final result = currentState.result!;
+        _updateStartedAt = DateTime.now();
+        _lastDownloadedBytes = 0;
+        _currentMode = result.mode;
+        await _telemetryService.trackResourceUpdateDownload(
+          result.resourceVersion,
+          mode: result.mode,
+          archiveCount: result.archives.length,
+          totalBytes: result.downloadTotalSize ?? 0,
+        );
         final downloadStream = _resourceService
             .downloadAndApplyUpdates(
               result.resourceVersion,
@@ -166,7 +186,11 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         final double progress = event.progress;
         final int downloadedBytes = event.downloadedBytes;
         final int downloadTotalSize = currentState.result!.downloadTotalSize!;
+        //Recorded before the early returns below, so telemetry sees the last reported figure
+        _lastDownloadedBytes = downloadedBytes;
+
         if (progress >= 100) {
+          _lastDownloadedBytes = downloadTotalSize;
           emit(currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize));
           return;
         }
@@ -182,7 +206,15 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             : _settingsService.noResourcesHasBeenDownloaded
             ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
             : AppResourceUpdateResultType.unknownError;
-        await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
+        final startedAt = _updateStartedAt;
+        await _telemetryService.trackResourceUpdateCompleted(
+          event.applied,
+          event.resourceVersion,
+          mode: _currentMode,
+          durationMs: startedAt == null ? 0 : DateTime.now().difference(startedAt).inMilliseconds,
+          bytesDownloaded: _lastDownloadedBytes,
+          failureType: event.failureType,
+        );
         emit(
           SplashState.loaded(
             updateResultType: appliedResult,

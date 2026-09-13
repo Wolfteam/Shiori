@@ -506,6 +506,11 @@ void main() {
 
       final applied = await service.downloadAndApplyUpdates(1, allJson);
       expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (main json) must return false when the download throws');
+      expect(
+        applied.failureType,
+        AppResourceUpdateFailureType.downloadFailed,
+        reason: 'the legacy path must report the failing stage so telemetry can compare it with the archive path',
+      );
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed main-json download');
     });
@@ -544,6 +549,7 @@ void main() {
 
       final applied = await service.downloadAndApplyUpdates(1, allJson, keyNames: keyNames);
       expect(applied.applied, isFalse, reason: 'downloadAndApplyUpdates (partial files) must return false when a download throws');
+      expect(applied.failureType, AppResourceUpdateFailureType.downloadFailed);
       final dirExists = await tempDir.exists();
       expect(dirExists, isFalse, reason: 'Temp resources directory must be cleaned up after a failed partial-files download');
     });

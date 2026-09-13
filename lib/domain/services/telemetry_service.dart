@@ -74,11 +74,28 @@ abstract class TelemetryService {
 
   Future<void> trackBirthdaysPerMonthOpened(int month);
 
-  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result);
+  Future<void> trackCheckForResourceUpdates(
+    AppResourceUpdateResultType result, {
+    ResourceContractVersion? requestedContractVersion,
+    ResourceUpdateMode? mode,
+    int archiveCount = 0,
+  });
 
-  Future<void> trackResourceUpdateDownload(int targetResourceVersion);
+  Future<void> trackResourceUpdateDownload(
+    int targetResourceVersion, {
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
+    int archiveCount = 0,
+    int totalBytes = 0,
+  });
 
-  Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion);
+  Future<void> trackResourceUpdateCompleted(
+    bool applied,
+    int targetResourceVersion, {
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
+    int durationMs = 0,
+    int bytesDownloaded = 0,
+    AppResourceUpdateFailureType failureType = AppResourceUpdateFailureType.none,
+  });
 
   Future<void> trackBackupCreated(bool succeed);
 

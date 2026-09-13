@@ -50,7 +50,12 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
       _settingsService.resourceVersion,
       updateResourceCheckedDate: false,
     );
-    await _telemetryService.trackCheckForResourceUpdates(result.type);
+    await _telemetryService.trackCheckForResourceUpdates(
+      result.type,
+      requestedContractVersion: appResourceContractVersion,
+      mode: result.mode,
+      archiveCount: result.archives.length,
+    );
     return CheckForResourceUpdatesState.loaded(
       updateResultType: result.type,
       currentResourceVersion: _settingsService.resourceVersion,

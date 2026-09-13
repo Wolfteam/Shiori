@@ -219,24 +219,58 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result) {
-    return trackEventAsync('Resource_Updates_Check', <String, dynamic>{}.addEnumTypeName(result));
+  Future<void> trackCheckForResourceUpdates(
+    AppResourceUpdateResultType result, {
+    ResourceContractVersion? requestedContractVersion,
+    ResourceUpdateMode? mode,
+    int archiveCount = 0,
+  }) {
+    final props = <String, dynamic>{}.addEnumTypeName(result);
+    //Left out entirely rather than defaulted, so a check that never negotiated stays distinguishable
+    if (requestedContractVersion != null) {
+      props['contractVersion'] = requestedContractVersion.value;
+    }
+    if (mode != null) {
+      props['mode'] = mode.name;
+    }
+    props['archiveCount'] = archiveCount;
+    return trackEventAsync('Resource_Updates_Check', props);
   }
 
   @override
-  Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion) {
-    return trackEventAsync(
-      'Resource_Updates_Completed',
-      {'applied': applied, 'targetResourceVersion': targetResourceVersion},
-    );
+  Future<void> trackResourceUpdateCompleted(
+    bool applied,
+    int targetResourceVersion, {
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
+    int durationMs = 0,
+    int bytesDownloaded = 0,
+    AppResourceUpdateFailureType failureType = AppResourceUpdateFailureType.none,
+  }) {
+    return trackEventAsync('Resource_Updates_Completed', {
+      'applied': applied,
+      'targetResourceVersion': targetResourceVersion,
+      'contractVersion': appResourceContractVersion.value,
+      'mode': mode.name,
+      'durationMs': durationMs,
+      'bytesDownloaded': bytesDownloaded,
+      'failureType': failureType.name,
+    });
   }
 
   @override
-  Future<void> trackResourceUpdateDownload(int targetResourceVersion) {
-    return trackEventAsync(
-      'Resource_Updates_Download',
-      {'targetResourceVersion': targetResourceVersion},
-    );
+  Future<void> trackResourceUpdateDownload(
+    int targetResourceVersion, {
+    ResourceUpdateMode mode = ResourceUpdateMode.legacy,
+    int archiveCount = 0,
+    int totalBytes = 0,
+  }) {
+    return trackEventAsync('Resource_Updates_Download', {
+      'targetResourceVersion': targetResourceVersion,
+      'contractVersion': appResourceContractVersion.value,
+      'mode': mode.name,
+      'archiveCount': archiveCount,
+      'totalBytes': totalBytes,
+    });
   }
 
   @override
