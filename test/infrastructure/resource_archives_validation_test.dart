@@ -5,8 +5,11 @@ import 'package:archive/archive_io.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as path;
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/file_hash_utils.dart';
+import 'package:shiori/infrastructure/resource_archive_extractor.dart';
+import 'package:shiori/infrastructure/resource_archive_verifier.dart';
 
 import '../secrets.dart';
 
@@ -156,6 +159,30 @@ void main() {
       final actual = assetEntriesOf(path.join(resourcesPath, full['KeyName'] as String));
 
       expect(actual, expected, reason: 'full.zip and all.json must describe the same file set');
+    });
+
+    test('the real delta archive extracts and verifies through the production code path', () async {
+      final archives = archivesOfLatest();
+      if (archives == null) {
+        markTestSkipped('No archives generated yet');
+        return;
+      }
+
+      final delta = archives['Delta'] as Map<String, dynamic>;
+      final tempDir = await Directory.systemTemp.createTemp('shiori-real-delta');
+      try {
+        final archivePath = path.join(resourcesPath, delta['KeyName'] as String);
+        await ResourceArchiveExtractor.extract(archivePath, tempDir.path);
+
+        final manifest = await ResourceArchiveExtractor.readManifest(tempDir.path);
+        //End to end on real CLI output: if the app cannot apply this, the release is broken
+        expect(
+          await ResourceArchiveVerifier.verifyExtracted(tempDir.path, manifest),
+          AppResourceUpdateFailureType.none,
+        );
+      } finally {
+        await tempDir.delete(recursive: true);
+      }
     });
   });
 }
