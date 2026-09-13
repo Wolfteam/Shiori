@@ -8,11 +8,7 @@ import 'package:path/path.dart' as path;
 
 import '../secrets.dart';
 
-/// Validates the archives the CLI generated. A bad archive is a production incident, so these run as
-/// part of the resource validation stage rather than being left to manual inspection.
-///
-/// Skips itself when the resources tree has no archives yet, so it does not fail the suite before the
-/// one-time backfill has run.
+/// Validates the archives the CLI generated. Skips itself when the tree has no archives yet.
 void main() {
   final resourcesPath = Secrets.testAssetsPath;
 
@@ -32,7 +28,7 @@ void main() {
 
   String sha256OfFile(File file) => sha256.convert(file.readAsBytesSync()).toString();
 
-  /// Entries excluding the manifest, which describes the archive rather than being an asset.
+  //Excludes the manifest, which describes the archive rather than being an asset
   Set<String> assetEntriesOf(String archivePath) {
     final decoder = ZipDecoder().decodeStream(InputFileStream(archivePath));
     return decoder.files.where((f) => f.isFile && f.name != 'manifest.json').map((f) => f.name).toSet();
@@ -52,7 +48,7 @@ void main() {
         return;
       }
 
-      expect(archives['ContractVersion'], 2);
+      expect(latestVersion()['ContractVersion'], 2);
       expect(archives['Delta'], isNotNull, reason: 'every version must publish a delta archive');
       expect(archives['Full'], isNotNull, reason: 'the newest version must publish a full archive');
     });
@@ -72,7 +68,7 @@ void main() {
 
         final file = File(path.join(resourcesPath, record['KeyName'] as String));
         expect(file.existsSync(), isTrue, reason: '${record['KeyName']} must exist on disk');
-        //The backend picks delta versus full by comparing these sizes, so they must be accurate
+        //The backend picks delta versus full by comparing these sizes
         expect(file.lengthSync(), record['SizeInBytes'], reason: '${record['KeyName']} size mismatch');
         expect(sha256OfFile(file), record['Sha256'], reason: '${record['KeyName']} sha256 mismatch');
       }
@@ -126,7 +122,7 @@ void main() {
 
       for (final entry in entries) {
         expect(entry.startsWith('versions/'), isFalse, reason: '$entry must not keep the versions prefix');
-        //A leftover timestamp shows up as a middle dot segment, e.g. characters.638...json
+        //A leftover timestamp shows up as a middle dot segment
         expect(
           '.'.allMatches(path.basename(entry)).length,
           1,
@@ -157,7 +153,7 @@ void main() {
   });
 }
 
-/// Dart port of VersionService.ToAssetPath: drops the versions/vN prefix and the generated timestamp.
+//Dart port of VersionService.ToAssetPath
 String _toAssetPath(String keyName) {
   final result = keyName.replaceAll('\\', '/').replaceFirst(RegExp('^versions/v[0-9]+/'), '');
   final dir = path.dirname(result);
