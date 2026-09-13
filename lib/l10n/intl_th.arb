@@ -500,5 +500,8 @@
   "showMaterialUsage": "Show material usage",
   "version": "Version",
   "reruns": "Reruns",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "Download size: {value}",
+  "exportLogs": "ส่งออกบันทึก",
+  "exportLogsSubtitle": "ส่งออกบันทึกของแอปเพื่อแก้ไขปัญหา",
+  "logsExportFailed": "ไม่สามารถส่งออกบันทึกได้"
 }

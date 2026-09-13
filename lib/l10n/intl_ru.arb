@@ -500,5 +500,8 @@
   "showMaterialUsage": "Show material usage",
   "version": "Версия",
   "reruns": "повторов",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "Download size: {value}",
+  "exportLogs": "Экспорт логов",
+  "exportLogsSubtitle": "Экспортировать логи приложения для диагностики",
+  "logsExportFailed": "Не удалось экспортировать логи"
 }

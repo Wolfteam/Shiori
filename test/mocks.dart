@@ -4,6 +4,8 @@ import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';
+import 'package:shiori/domain/services/log_file_service.dart';
+import 'package:shiori/domain/services/log_sink.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
@@ -12,6 +14,7 @@ import 'package:shiori/domain/services/persistence/custom_builds_data_service.da
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
+import 'package:shiori/domain/services/persistence/telemetry_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
@@ -22,6 +25,8 @@ import 'package:shiori/domain/services/telemetry_service.dart';
 @GenerateMocks([
   SettingsService,
   LoggingService,
+  LogSink,
+  LogFileService,
   TelemetryService,
   DeviceInfoService,
   NetworkService,
@@ -40,5 +45,6 @@ import 'package:shiori/domain/services/telemetry_service.dart';
   GameCodesDataService,
   TierListDataService,
   WishSimulatorDataService,
+  TelemetryDataService,
 ])
 void main() {}

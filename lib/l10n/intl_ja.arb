@@ -500,5 +500,8 @@
   "showMaterialUsage": "材料の使用量を表示",
   "version": "バージョン",
   "reruns": "復刻数",
-  "downloadSize": "ダウンロードサイズ: {value}"
+  "downloadSize": "ダウンロードサイズ: {value}",
+  "exportLogs": "ログをエクスポート",
+  "exportLogsSubtitle": "トラブルシューティング用にアプリのログをエクスポートします",
+  "logsExportFailed": "ログをエクスポートできませんでした"
 }

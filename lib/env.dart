@@ -6,6 +6,34 @@ part 'env.g.dart';
 class Env {
   static const int minResourceVersion = 44;
 
+  /// Max number of queued telemetry entries. Binds in the normal case.
+  static const int maxTelemetryEntries = 5000;
+
+  /// Max total bytes of queued telemetry. Binds in the pathological case
+  /// (a run of large stack traces), where the count cap alone would allow
+  /// ~80 MB resident in a plain Hive box.
+  static const int maxTelemetryTotalBytes = 8 * 1024 * 1024;
+
+  /// Each telemetry message is truncated to this at save time, so no single
+  /// entry can ever exceed the payload budget and stall the queue.
+  static const int maxTelemetryMessageBytes = 16 * 1024;
+
+  /// Budget for one upload request. Targets ~50% of the 256 KB SQS ceiling because the
+  /// API Gateway integration URL-encodes the body (`$util.urlEncode($input.json('$'))`),
+  /// which measurably inflates it beyond what a naive pre-encoding estimate assumes.
+  static const int maxTelemetryPayloadBytes = 64 * 1024;
+
+  /// Caps how many chunks are uploaded per app launch, bounding splash-screen latency on a
+  /// slow connection. Any remainder stays queued and drains on the next launch, the same
+  /// designed behaviour as a failed chunk.
+  static const int maxTelemetryChunksPerRun = 4;
+
+  /// The active log file rotates at this size. Disk is hard-bounded at 2x.
+  static const int maxLogFileSizeInBytes = 2 * 1024 * 1024;
+
+  /// Log files older than this are deleted at startup.
+  static const int maxLogFileAgeInDays = 14;
+
   static const String androidPurchasesKey = CommonEnv.androidPurchasesKey;
 
   static const String iosPurchasesKey = CommonEnv.iosPurchasesKey;

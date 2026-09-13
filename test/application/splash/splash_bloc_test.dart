@@ -1,9 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/dtos.dart';
+import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -68,7 +71,11 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc(MockResourceService()).state, const SplashState.loading(), reason: 'A fresh SplashBloc should start in loading state'),
+    () => expect(
+      getBloc(MockResourceService()).state,
+      const SplashState.loading(),
+      reason: 'A fresh SplashBloc should start in loading state',
+    ),
   );
 
   group('Init', () {
@@ -679,5 +686,149 @@ void main() {
         ),
       ],
     );
+  });
+
+  group('Telemetry upload', () {
+    late String telemetryDbPath;
+
+    setUpAll(() {
+      TestWidgetsFlutterBinding.ensureInitialized();
+      Hive.registerAdapter(TelemetryAdapter());
+    });
+
+    tearDown(() {
+      return Future(() async {
+        await Hive.close();
+        await deleteDbFolder(telemetryDbPath);
+      });
+    });
+
+    Telemetry telemetryEntry(String message) => Telemetry(DateTime.now().toUtc(), message);
+
+    //Mocked getAll() must hand back entries with real Hive keys: _sendTelemetryData maps
+    //chunk entries to t.id (BaseEntity.id => key as int) when building deleteByIds, and an
+    //un-boxed Telemetry has a null key, which throws on that cast.
+    Future<List<Telemetry>> boxedTelemetry(List<Telemetry> entries) async {
+      telemetryDbPath = await getDbPath('shiori_splash_bloc_telemetry');
+      Hive.init(telemetryDbPath);
+      final box = await Hive.openBox<Telemetry>('telemetry');
+      await box.addAll(entries);
+      return box.values.toList();
+    }
+
+    SplashBloc getTelemetryBloc(
+      MockApiService apiService,
+      MockTelemetryDataService telemetryDataService,
+      List<Telemetry> queued,
+    ) {
+      when(telemetryDataService.getAll()).thenReturn(queued);
+      when(telemetryDataService.deleteByIds(any)).thenAnswer((_) => Future.value());
+
+      final dataService = MockDataService();
+      when(dataService.telemetry).thenReturn(telemetryDataService);
+
+      final networkService = MockNetworkService();
+      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+
+      final settings = MockSettingsService();
+      when(settings.lastTelemetryCheckedDate).thenReturn(null);
+      //resourceVersion must be >= minResourceVersion so skipCheck short-circuits the bloc
+      //after _sendTelemetryData. Otherwise it calls checkForUpdates on an unstubbed
+      //MockResourceService, which returns null and throws on result.type.
+      when(settings.resourceVersion).thenReturn(Env.minResourceVersion);
+      when(settings.noResourcesHasBeenDownloaded).thenReturn(false);
+      when(settings.checkForUpdatesOnStartup).thenReturn(false);
+
+      final deviceInfoService = MockDeviceInfoService();
+      when(deviceInfoService.version).thenReturn(defaultAppVersion);
+
+      return SplashBloc(
+        MockResourceService(),
+        settings,
+        deviceInfoService,
+        MockTelemetryService(),
+        dataService,
+        apiService,
+        networkService,
+        getLocaleService(AppLanguageType.english),
+      );
+    }
+
+    test('deletes queued entries only after a successful send', () async {
+      final apiService = MockApiService();
+      when(apiService.sendTelemetryData(any)).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: true)));
+      final telemetryDataService = MockTelemetryDataService();
+      final queued = await boxedTelemetry([telemetryEntry('{"event":"a"}')]);
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 100));
+
+      verify(telemetryDataService.deleteByIds(any)).called(1);
+      await bloc.close();
+    });
+
+    test('does not delete queued entries when the send fails', () async {
+      final apiService = MockApiService();
+      when(
+        apiService.sendTelemetryData(any),
+      ).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: false, message: 'nope')));
+      final telemetryDataService = MockTelemetryDataService();
+      final queued = await boxedTelemetry([telemetryEntry('{"event":"a"}')]);
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 100));
+
+      verifyNever(telemetryDataService.deleteByIds(any));
+      await bloc.close();
+    });
+
+    test('stops sending after the first failed chunk', () async {
+      final apiService = MockApiService();
+      when(
+        apiService.sendTelemetryData(any),
+      ).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: false, message: 'nope')));
+      final telemetryDataService = MockTelemetryDataService();
+      final queued = await boxedTelemetry(List.generate(50, (i) => telemetryEntry('{"event":"${'x' * 5000}"}')));
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 200));
+
+      verify(apiService.sendTelemetryData(any)).called(1);
+      await bloc.close();
+    });
+
+    test('sends a large queue across multiple chunks', () async {
+      final apiService = MockApiService();
+      when(apiService.sendTelemetryData(any)).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: true)));
+      final telemetryDataService = MockTelemetryDataService();
+      final queued = await boxedTelemetry(List.generate(100, (i) => telemetryEntry('{"event":"${'x' * 5000}"}')));
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      verify(apiService.sendTelemetryData(any)).called(greaterThan(1));
+      await bloc.close();
+    });
+
+    test('caps the number of chunks sent per run and leaves the remainder queued', () async {
+      final apiService = MockApiService();
+      when(apiService.sendTelemetryData(any)).thenAnswer((_) => Future.value(const EmptyResponseDto(succeed: true)));
+      final telemetryDataService = MockTelemetryDataService();
+      //Well beyond Env.maxTelemetryChunksPerRun worth of chunks at the real chunking budget
+      final queued = await boxedTelemetry(List.generate(100, (i) => telemetryEntry('{"event":"${'x' * 5000}"}')));
+
+      final bloc = getTelemetryBloc(apiService, telemetryDataService, queued);
+      bloc.add(const SplashEvent.init());
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      verify(apiService.sendTelemetryData(any)).called(Env.maxTelemetryChunksPerRun);
+      //Only the SENT chunks may be deleted; the remainder must stay queued for the next launch
+      verify(telemetryDataService.deleteByIds(any)).called(Env.maxTelemetryChunksPerRun);
+      await bloc.close();
+    });
   });
 }

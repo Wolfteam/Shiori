@@ -8,6 +8,7 @@ import 'package:shiori/domain/utils/format_utils.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/export_logs_wrapper.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
@@ -221,6 +222,14 @@ class _Buttons extends StatelessWidget {
                 icon: const Icon(Icons.refresh, color: Colors.white),
                 label: Text(s.retry, style: const TextStyle(color: Colors.white)),
                 style: buttonStyle,
+              ),
+              ExportLogsWrapper(
+                builder: (context, onExport) => TextButton.icon(
+                  onPressed: onExport,
+                  icon: const Icon(Icons.description, color: Colors.white),
+                  label: Text(s.exportLogs, style: const TextStyle(color: Colors.white)),
+                  style: buttonStyle,
+                ),
               ),
               if (canSkipUpdate)
                 TextButton.icon(
