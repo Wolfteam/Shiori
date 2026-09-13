@@ -5,6 +5,7 @@ import 'package:archive/archive_io.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as path;
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/file_hash_utils.dart';
 
 import '../secrets.dart';
@@ -90,6 +91,12 @@ void main() {
         final archivePath = path.join(resourcesPath, record['KeyName'] as String);
         final manifest = manifestOf(archivePath);
         expect(manifest['contractVersion'], 2);
+
+        //The app parses this exact file, so a CLI key rename must fail here rather than in the field
+        final parsed = ArchiveManifest.fromJson(manifest);
+        expect(parsed.isSupported, isTrue);
+        expect(parsed.files, isNotEmpty);
+        expect(parsed.version, latestVersion()['Version']);
 
         final manifestFiles = (manifest['files'] as List).cast<Map<String, dynamic>>();
         final manifestPaths = manifestFiles.map((f) => f['path'] as String).toSet();
