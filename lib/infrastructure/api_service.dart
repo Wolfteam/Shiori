@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:http/io_client.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
@@ -70,6 +71,7 @@ class ApiServiceImpl implements ApiService {
       final dto = GetResourceDiffRequestDto(
         appVersion: currentAppVersion,
         currentVersion: currentResourcesVersion > 0 ? currentResourcesVersion : null,
+        contractVersion: appResourceContractVersion.value,
       );
 
       final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/resources/diff', queryParameters: _toQueryMap(dto.toJson()));
@@ -88,6 +90,16 @@ class ApiServiceImpl implements ApiService {
         json,
         (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
       );
+
+      final result = apiResponse.result;
+      if (result != null) {
+        _loggingService.info(
+          runtimeType,
+          'checkForUpdates: Requested contract = ${appResourceContractVersion.value}, '
+          'server answered mode = ${result.mode} with ${result.archives.length} archive(s)',
+        );
+      }
+
       return apiResponse;
     } catch (e, s) {
       _handleError('checkForUpdates', e, s);
