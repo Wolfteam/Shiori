@@ -1,6 +1,9 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
 project(shiori LANGUAGES CXX)
+# Silence the error STL1011: The /await compiler option,
+# <experimental/coroutine>, <experimental/generator>, and <experimental/resumable> are deprecated by Microsoft and will be REMOVED SOON
+add_definitions(-D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
