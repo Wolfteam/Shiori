@@ -289,6 +289,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.1"
+  disk_space_info:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: b90972c06ae3446c99cd549595db7a0f6f206fdd
+      resolved-ref: b90972c06ae3446c99cd549595db7a0f6f206fdd
+      url: "https://github.com/Wolfteam/disk_space_info.git"
+    source: git
+    version: "0.1.0"
   envied:
     dependency: "direct main"
     description:
