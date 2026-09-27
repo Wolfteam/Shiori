@@ -110,7 +110,6 @@ class _BodyState extends State<_Body> {
 
   void _handlePurchaseOrRestoreCompleted(bool isPurchase, bool error, BuildContext context) {
     final s = S.of(context);
-    final toast = ToastUtils.of(context);
     String msg = '';
     if (isPurchase) {
       msg = error ? s.paymentError : '${s.paymentSucceed}\n${s.restartMayBeNeeded}';
@@ -118,12 +117,12 @@ class _BodyState extends State<_Body> {
       msg = error ? s.restorePurchaseError : '${s.restorePurchaseSucceed}\n${s.restartMayBeNeeded}';
     }
 
-    if (!error) {
-      ToastUtils.showSucceedToast(toast, msg);
-      Navigator.pop(context);
-    } else {
-      ToastUtils.showWarningToast(toast, msg);
+    if (error) {
+      ToastUtils.showWarningToast(ToastUtils.of(context), msg);
+      return;
     }
+
+    Navigator.pop(context, msg);
   }
 }
 
