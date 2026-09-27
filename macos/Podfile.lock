@@ -84,15 +84,15 @@ PODS:
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - PromisesObjC (2.4.1)
-  - purchases_flutter (9.16.1):
+  - purchases_flutter (10.13.1):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 17.55.1)
-  - PurchasesHybridCommon (17.55.1):
-    - RevenueCat (= 5.67.1)
+    - PurchasesHybridCommon (= 19.2.0)
+  - PurchasesHybridCommon (19.2.0):
+    - RevenueCat (= 5.90.1)
   - rate_my_app (2.4.1):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.67.1)
+  - RevenueCat (5.90.1)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -197,7 +197,7 @@ SPEC CHECKSUMS:
   flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
   flutter_local_notifications: 4bf37a31afde695b56091b4ae3e4d9c7a7e6cda0
   flutter_timezone: d272288c69082ad571630e0d17140b3d6b93dc0c
-  FlutterMacOS: d0db08ddef1a9af05a5ec4b724367152bb0500b1
+  FlutterMacOS: c232990155153907050900a2e175c7773903ba4e
   GoogleDataTransport: a24e58982ab3ba2f64d79613e027fe7f57e88539
   GoogleUtilities: 4e0c2ad9fa0d0d18b5c4df8bf57b461cba35b0bb
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
@@ -205,10 +205,10 @@ SPEC CHECKSUMS:
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
-  purchases_flutter: cfe4e98a24972974fd1567b3153a696e8110fda0
-  PurchasesHybridCommon: ecd9d7c586287625f1225b8de5e24c1021502270
+  purchases_flutter: 82d7351c22b8da124c18784559dc97b2dea3896a
+  PurchasesHybridCommon: d3ac1e960252e66c535d5bde6ac6dc7c9716d7eb
   rate_my_app: 651141a9053a9ca42177410504a79882044d9a87
-  RevenueCat: 9357239a9f0978285e68983637b8a602e65c94f0
+  RevenueCat: fafa0b7c0c2f6b04333f4a2c81624723c672f38e
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16
@@ -216,6 +216,6 @@ SPEC CHECKSUMS:
   wakelock_plus: 917609be14d812ddd9e9528876538b2263aaa03b
   window_size: 4bd15034e6e3d0720fd77928a7c42e5492cfece9
 
-PODFILE CHECKSUM: 1f02476f9e73f16a119b5390ca6852427632198e
+PODFILE CHECKSUM: 646637047cb180068b5178bf5524822007a7b32e
 
 COCOAPODS: 1.17.0

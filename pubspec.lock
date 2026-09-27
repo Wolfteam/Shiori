@@ -1249,10 +1249,10 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: "7608be2dc1f48cf34f15cc5830af256b89d2d7966d5da63788a87a7a8925ff87"
+      sha256: "114ae9d228aa249dc38546f54259cb3c24bdf81816bec923a3f46525938ca43b"
       url: "https://pub.dev"
     source: hosted
-    version: "9.16.1"
+    version: "10.13.1"
   rate_my_app:
     dependency: "direct main"
     description:
