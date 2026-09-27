@@ -46,7 +46,7 @@ String _ctx({String? ownerKey, AppLanguageType? lang, String? extra}) {
   final parts = [
     if (ownerKey != null) 'owner=$ownerKey',
     if (lang != null) 'lang=${lang.name}',
-    if (extra != null) extra,
+    ?extra,
   ];
   return parts.isEmpty ? '' : ' (${parts.join(', ')})';
 }

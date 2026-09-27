@@ -4,7 +4,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shiori/presentation/game_codes/widgets/game_code_list_item.dart';
 
 import '../extensions/widget_tester_extensions.dart';
-import '../views/views.dart';
+import 'views.dart';
 
 class GameCodesPage extends BasePage {
   const GameCodesPage(super.tester);

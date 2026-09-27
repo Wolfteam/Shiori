@@ -121,7 +121,7 @@ class _MenuItemContent<T> extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 20),
           child: lang.enumValue != currentValue ? const SizedBox(width: 20) : const Center(child: Icon(Icons.check, size: 20)),
         ),
-        if (leadingIcon != null) leadingIcon!,
+        ?leadingIcon,
         Expanded(
           child: Text(
             lang.translation,

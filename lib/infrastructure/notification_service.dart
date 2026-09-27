@@ -188,7 +188,7 @@ class NotificationServiceImpl implements NotificationService {
     final newId = _generateUniqueId(id, type);
     final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
-    return _flutterLocalNotificationsPlugin.zonedSchedule(
+    return await _flutterLocalNotificationsPlugin.zonedSchedule(
       newId,
       title,
       body,
@@ -307,7 +307,7 @@ class NotificationServiceImpl implements NotificationService {
       AppPushNotificationType.newGameCodesAvailable => 1,
     };
     final newId = _generateUniqueId(id, type);
-    return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
+    return await _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
   }
 
   Future<void> _onTokenRefresh(String deviceToken) {

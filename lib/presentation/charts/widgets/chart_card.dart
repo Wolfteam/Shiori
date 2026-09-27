@@ -41,7 +41,7 @@ class ChartCard extends StatelessWidget {
                 ),
               ),
               Expanded(child: child),
-              if (bottom != null) bottom!,
+              ?bottom,
             ],
           ),
         ),
