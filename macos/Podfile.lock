@@ -5,33 +5,33 @@ PODS:
     - FlutterMacOS
   - file_picker (0.0.1):
     - FlutterMacOS
-  - Firebase/CoreOnly (12.18.0):
-    - FirebaseCore (~> 12.18.0)
-  - Firebase/Messaging (12.18.0):
+  - Firebase/CoreOnly (12.19.0):
+    - FirebaseCore (~> 12.19.0)
+  - Firebase/Messaging (12.19.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 12.18.0)
-  - firebase_core (4.14.0):
-    - Firebase/CoreOnly (~> 12.18.0)
+    - FirebaseMessaging (~> 12.19.0)
+  - firebase_core (4.15.0):
+    - Firebase/CoreOnly (~> 12.19.0)
     - FlutterMacOS
-  - firebase_messaging (16.6.0):
-    - Firebase/CoreOnly (~> 12.18.0)
-    - Firebase/Messaging (~> 12.18.0)
+  - firebase_messaging (16.7.0):
+    - Firebase/CoreOnly (~> 12.19.0)
+    - Firebase/Messaging (~> 12.19.0)
     - firebase_core
     - FlutterMacOS
-  - FirebaseCore (12.18.0):
-    - FirebaseCoreInternal (~> 12.18.0)
+  - FirebaseCore (12.19.0):
+    - FirebaseCoreInternal (~> 12.19.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/Logger (~> 8.1)
-  - FirebaseCoreInternal (12.18.0):
+  - FirebaseCoreInternal (12.19.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseInstallations (12.18.0):
-    - FirebaseCore (~> 12.18.0)
+  - FirebaseInstallations (12.19.0):
+    - FirebaseCore (~> 12.19.0)
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - PromisesObjC (~> 2.4)
-  - FirebaseMessaging (12.18.0):
-    - FirebaseCore (~> 12.18.0)
-    - FirebaseInstallations (~> 12.18.0)
+  - FirebaseMessaging (12.19.0):
+    - FirebaseCore (~> 12.19.0)
+    - FirebaseInstallations (~> 12.19.0)
     - GoogleDataTransport (~> 10.1)
     - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
     - GoogleUtilities/Environment (~> 8.1)
@@ -84,15 +84,15 @@ PODS:
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - PromisesObjC (2.4.1)
-  - purchases_flutter (10.13.1):
+  - purchases_flutter (10.13.2):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 19.2.0)
-  - PurchasesHybridCommon (19.2.0):
-    - RevenueCat (= 5.90.1)
-  - rate_my_app (2.4.1):
+    - PurchasesHybridCommon (= 19.3.1)
+  - PurchasesHybridCommon (19.3.1):
+    - RevenueCat (= 5.90.2)
+  - rate_my_app (2.4.2):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.90.1)
+  - RevenueCat (5.90.2)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -187,13 +187,13 @@ SPEC CHECKSUMS:
   device_info_plus: 4fb280989f669696856f8b129e4a5e3cd6c48f76
   devicelocale: 3fdb563870da4b3148317a0c625de057b66cb2f3
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
-  Firebase: 5523dd53ebe603451b4e1befcd99fa20a5c015cd
-  firebase_core: 5f190df25ceffc6489da57874358a952e5ef259b
-  firebase_messaging: b252762164122b64d4452b39f73333bd9807f05d
-  FirebaseCore: 96787d19ee32dc2242cc487b301bc616afeb398b
-  FirebaseCoreInternal: 93b2d5f9e184c6818a04433891c358b0720a6a38
-  FirebaseInstallations: 933b2747e8594084c9117b65e8358fce29d7ced7
-  FirebaseMessaging: 422bb80cbf8ff83e69e50bea4d4984fc4704f665
+  Firebase: 7ca191e43724142f79fae653547b3382c45413cc
+  firebase_core: 43e1937898a25c5d76bc3ac4e58539465c9f219d
+  firebase_messaging: cf6920ca401d6870c1095a15cec1d4b9ca92b89f
+  FirebaseCore: c990214798d7c568ad436a15ba7da25c7a278c9a
+  FirebaseCoreInternal: 656b1c2fd5a1c5976183dc54b73deda78fb26ee3
+  FirebaseInstallations: f70a49eed611f5602f373e40974b3b01556ac217
+  FirebaseMessaging: c15f48126adbe8b4d3238a5e1fa24bab3ad3e472
   flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
   flutter_local_notifications: 4bf37a31afde695b56091b4ae3e4d9c7a7e6cda0
   flutter_timezone: d272288c69082ad571630e0d17140b3d6b93dc0c
@@ -205,10 +205,10 @@ SPEC CHECKSUMS:
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
-  purchases_flutter: 82d7351c22b8da124c18784559dc97b2dea3896a
-  PurchasesHybridCommon: d3ac1e960252e66c535d5bde6ac6dc7c9716d7eb
-  rate_my_app: 651141a9053a9ca42177410504a79882044d9a87
-  RevenueCat: fafa0b7c0c2f6b04333f4a2c81624723c672f38e
+  purchases_flutter: 38666312b8697d696bb427a29d28d84e69631946
+  PurchasesHybridCommon: c364d4198150bf4027b00fcada9b4ddc280df108
+  rate_my_app: 4f6150024136b4749e8f88f34bb4a654f4c46f4b
+  RevenueCat: c44e15b3ee88506da1fdf537c62a6c239cc41b21
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16
