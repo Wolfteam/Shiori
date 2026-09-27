@@ -7,7 +7,7 @@ import Foundation
 
 import device_info_plus
 import devicelocale
-import file_picker
+import file_picker_darwin
 import firebase_core
 import firebase_messaging
 import flutter_inappwebview_macos

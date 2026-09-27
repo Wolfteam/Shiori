@@ -50,17 +50,17 @@ class ExportLogsWrapper extends StatelessWidget {
   Future<void> _deliver(BuildContext context, File file, S s) async {
     //On desktop the export otherwise lands in the sandbox container, which a user cannot navigate to
     if (Platform.isMacOS || Platform.isWindows) {
-      final String? savePath = await FilePicker.saveFile(
+      final Uri? savedTo = await FilePicker.saveFile(
         dialogTitle: s.exportLogs,
         fileName: p.basename(file.path),
+        bytes: await file.readAsBytes(),
         type: FileType.custom,
         allowedExtensions: ['txt'],
       );
-      if (savePath == null) {
+      if (savedTo == null) {
         //The user cancelled the save dialog; that is not an error
         return;
       }
-      await file.copy(savePath);
       return;
     }
 

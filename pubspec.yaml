@@ -25,11 +25,11 @@ dependencies:
   bloc_concurrency: ^0.3.0
   crypto: ^3.0.7
   darq: ^2.1.0
-  device_info_plus: ^12.4.0
+  device_info_plus: ^13.2.0
   devicelocale: ^0.9.1
   disk_space_info: ^0.1.0
   envied: ^1.3.9
-  file_picker: ^11.0.3
+  file_picker: ^13.1.0
   firebase_core: ^4.15.0
   firebase_messaging: ^16.7.0
   fl_chart: ^1.2.0
@@ -38,7 +38,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
-  flutter_local_notifications: ^19.5.0
+  flutter_local_notifications: ^22.3.1
   flutter_localizations:
     sdk: flutter
   flutter_markdown_plus: ^1.0.12
@@ -51,14 +51,14 @@ dependencies:
   hive_ce: ^2.20.0
   hive_ce_flutter: ^2.3.4
   http: ^1.6.0
-  image_gallery_saver_plus: ^4.0.1
+  image_gallery_saver_plus: ^5.1.1
   infinite_listview: ^1.1.0
   internet_connection_checker_plus: ^3.1.2
   intl: ^0.20.3
   json_annotation: ^4.12.0
   logger: ^2.8.0
-  open_file: ^3.5.11
-  package_info_plus: ^9.0.1
+  open_file: ^4.0.0
+  package_info_plus: ^10.2.1
   path: ^1.9.1
   path_provider: ^2.1.6
   permission_handler: ^12.0.2
@@ -68,7 +68,7 @@ dependencies:
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
   screenshot: ^3.0.0
-  share_plus: ^12.0.2
+  share_plus: ^13.3.0
   shared_preferences: ^2.5.5
   sprintf: ^7.0.0
   store_checker: ^1.8.0
@@ -77,8 +77,14 @@ dependencies:
   two_dimensional_scrollables: ^0.5.5
   url_launcher: ^6.3.2
   version: ^3.0.2
-  version_tracker: ^3.0.0
-  wakelock_plus: ^1.5.2
+  #Pinned to a fork commit until the upstream PR widening the package_info_plus
+  #constraint is merged and published; 3.0.0 pins package_info_plus ^9.0.0, which
+  #holds back the win32 6.x cluster (file_picker 13, share_plus 13, wakelock_plus 1.8)
+  version_tracker:
+    git:
+      url: https://github.com/Wolfteam/version_tracker.git
+      ref: 6dcd98db46873fdab1abb68b0281d6f5bc31f82e
+  wakelock_plus: ^1.8.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding

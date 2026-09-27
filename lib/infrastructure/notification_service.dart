@@ -101,7 +101,7 @@ class NotificationServiceImpl implements NotificationService {
       const iOS = DarwinInitializationSettings();
       const macOS = DarwinInitializationSettings();
       const initializationSettings = InitializationSettings(android: android, iOS: iOS, macOS: macOS);
-      await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
+      await _flutterLocalNotificationsPlugin.initialize(settings: initializationSettings);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'init: Unknown error occurred', e, s);
     }
@@ -144,7 +144,13 @@ class NotificationServiceImpl implements NotificationService {
     }
     final specifics = _getPlatformChannelSpecifics(type, body);
     final newId = _generateUniqueId(id, type);
-    return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
+    return _flutterLocalNotificationsPlugin.show(
+      id: newId,
+      title: title,
+      body: body,
+      notificationDetails: specifics,
+      payload: payload,
+    );
   }
 
   @override
@@ -153,7 +159,7 @@ class NotificationServiceImpl implements NotificationService {
       return Future.value();
     }
     final realId = _generateUniqueId(id, type);
-    return _flutterLocalNotificationsPlugin.cancel(realId, tag: _getTagFromNotificationType(type));
+    return _flutterLocalNotificationsPlugin.cancel(id: realId, tag: _getTagFromNotificationType(type));
   }
 
   @override
@@ -189,12 +195,12 @@ class NotificationServiceImpl implements NotificationService {
     final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
     return await _flutterLocalNotificationsPlugin.zonedSchedule(
-      newId,
-      title,
-      body,
-      scheduledDate,
-      specifics,
+      id: newId,
+      scheduledDate: scheduledDate,
+      notificationDetails: specifics,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      title: title,
+      body: body,
       payload: payload,
     );
   }
@@ -307,7 +313,7 @@ class NotificationServiceImpl implements NotificationService {
       AppPushNotificationType.newGameCodesAvailable => 1,
     };
     final newId = _generateUniqueId(id, type);
-    return await _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
+    return await _flutterLocalNotificationsPlugin.show(id: newId, title: title, body: body, notificationDetails: specifics);
   }
 
   Future<void> _onTokenRefresh(String deviceToken) {
