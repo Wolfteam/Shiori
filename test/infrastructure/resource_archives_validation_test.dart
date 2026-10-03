@@ -13,7 +13,8 @@ import 'package:shiori/infrastructure/resource_archive_verifier.dart';
 
 import '../secrets.dart';
 
-/// Validates the archives the CLI generated. Skips itself when the tree has no archives yet.
+/// Validates the archives the CLI generated. Skips itself when the tree has no archives to validate:
+/// the archives are gitignored, so a fresh checkout declares them in versions.json without carrying them.
 void main() {
   final resourcesPath = Secrets.testAssetsPath;
 
@@ -30,6 +31,26 @@ void main() {
   }
 
   Map<String, dynamic>? archivesOfLatest() => latestVersion()['Archives'] as Map<String, dynamic>?;
+
+  Map<String, dynamic>? archivesOnDisk() {
+    final archives = archivesOfLatest();
+    if (archives == null) {
+      return null;
+    }
+
+    for (final key in ['Delta', 'Full']) {
+      final record = archives[key] as Map<String, dynamic>?;
+      if (record == null) {
+        continue;
+      }
+
+      if (!File(path.join(resourcesPath, record['KeyName'] as String)).existsSync()) {
+        return null;
+      }
+    }
+
+    return archives;
+  }
 
   //Excludes the manifest, which describes the archive rather than being an asset
   Set<String> assetEntriesOf(String archivePath) {
@@ -57,9 +78,9 @@ void main() {
     });
 
     test('every declared archive resolves and matches its recorded size and hash', () async {
-      final archives = archivesOfLatest();
+      final archives = archivesOnDisk();
       if (archives == null) {
-        markTestSkipped('No archives generated yet');
+        markTestSkipped('No archives in this tree; run: versions generate --only-archives');
         return;
       }
 
@@ -79,9 +100,9 @@ void main() {
     });
 
     test('each manifest matches its archive entries and per-file hashes', () {
-      final archives = archivesOfLatest();
+      final archives = archivesOnDisk();
       if (archives == null) {
-        markTestSkipped('No archives generated yet');
+        markTestSkipped('No archives in this tree; run: versions generate --only-archives');
         return;
       }
 
@@ -121,9 +142,9 @@ void main() {
     });
 
     test('archive entry paths carry no version prefix or timestamp', () {
-      final archives = archivesOfLatest();
+      final archives = archivesOnDisk();
       if (archives == null) {
-        markTestSkipped('No archives generated yet');
+        markTestSkipped('No archives in this tree; run: versions generate --only-archives');
         return;
       }
 
@@ -142,9 +163,9 @@ void main() {
     });
 
     test('the full archive contains exactly what all.json lists', () {
-      final archives = archivesOfLatest();
+      final archives = archivesOnDisk();
       if (archives == null) {
-        markTestSkipped('No archives generated yet');
+        markTestSkipped('No archives in this tree; run: versions generate --only-archives');
         return;
       }
 
@@ -162,9 +183,9 @@ void main() {
     });
 
     test('the real delta archive extracts and verifies through the production code path', () async {
-      final archives = archivesOfLatest();
+      final archives = archivesOnDisk();
       if (archives == null) {
-        markTestSkipped('No archives generated yet');
+        markTestSkipped('No archives in this tree; run: versions generate --only-archives');
         return;
       }
 
