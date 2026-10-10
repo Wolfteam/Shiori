@@ -96,15 +96,15 @@ PODS:
   - permission_handler_apple (9.3.0):
     - Flutter
   - PromisesObjC (2.4.1)
-  - purchases_flutter (10.13.2):
+  - purchases_flutter (10.15.2):
     - Flutter
-    - PurchasesHybridCommon (= 19.3.1)
-  - PurchasesHybridCommon (19.3.1):
-    - RevenueCat (= 5.90.2)
+    - PurchasesHybridCommon (= 19.10.0)
+  - PurchasesHybridCommon (19.10.0):
+    - RevenueCat (= 5.94.0)
   - rate_my_app (2.4.2):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.90.2)
+  - RevenueCat (5.94.0)
   - share_plus (0.0.1):
     - Flutter
   - shared_preferences_foundation (0.0.1):
@@ -217,7 +217,7 @@ SPEC CHECKSUMS:
   flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
   flutter_local_notifications: 643a3eda1ce1c0599413ca31672536d423dee214
   flutter_timezone: 7c838e17ffd4645d261e87037e5bebf6d38fe544
-  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
+  fluttertoast: 1a1c71b9fbdf68f5fef34d2c548d5038ac51c0ea
   GoogleDataTransport: a24e58982ab3ba2f64d79613e027fe7f57e88539
   GoogleUtilities: 4e0c2ad9fa0d0d18b5c4df8bf57b461cba35b0bb
   image_gallery_saver_plus: 29f7e4ab574bebf7c9dedbaf03864885e9553953
@@ -228,11 +228,11 @@ SPEC CHECKSUMS:
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
-  purchases_flutter: 92f7f2c4730b13452fcc4301df141cc4b06bbca5
-  PurchasesHybridCommon: c364d4198150bf4027b00fcada9b4ddc280df108
+  purchases_flutter: d695b22943fb094b02badf0f5f5a8bd7ab1c035f
+  PurchasesHybridCommon: 4ea84285a799df27db9e4a0cc180d9129e6e9cf2
   rate_my_app: 4f6150024136b4749e8f88f34bb4a654f4c46f4b
-  RevenueCat: c44e15b3ee88506da1fdf537c62a6c239cc41b21
-  share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
+  RevenueCat: f381deba42a93e5194104b17a1f653a389d2e215
+  share_plus: eccd7beb7cea61271aeed1800e8ccb2b952c0c7f
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   store_checker: bcaa4c645cbb578f7f087cd6088d42ba26135470
   url_launcher_ios: 7a95fa5b60cc718a708b8f2966718e93db0cef1b

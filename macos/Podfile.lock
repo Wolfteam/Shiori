@@ -85,15 +85,15 @@ PODS:
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - PromisesObjC (2.4.1)
-  - purchases_flutter (10.13.2):
+  - purchases_flutter (10.15.2):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 19.3.1)
-  - PurchasesHybridCommon (19.3.1):
-    - RevenueCat (= 5.90.2)
+    - PurchasesHybridCommon (= 19.10.0)
+  - PurchasesHybridCommon (19.10.0):
+    - RevenueCat (= 5.94.0)
   - rate_my_app (2.4.2):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.90.2)
+  - RevenueCat (5.94.0)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -206,10 +206,10 @@ SPEC CHECKSUMS:
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
-  purchases_flutter: 38666312b8697d696bb427a29d28d84e69631946
-  PurchasesHybridCommon: c364d4198150bf4027b00fcada9b4ddc280df108
+  purchases_flutter: 47c17ce25e5b62a2a1550a7fc4b9779b4163dc21
+  PurchasesHybridCommon: 4ea84285a799df27db9e4a0cc180d9129e6e9cf2
   rate_my_app: 4f6150024136b4749e8f88f34bb4a654f4c46f4b
-  RevenueCat: c44e15b3ee88506da1fdf537c62a6c239cc41b21
+  RevenueCat: f381deba42a93e5194104b17a1f653a389d2e215
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16
