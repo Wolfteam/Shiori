@@ -242,7 +242,12 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     _checkSessionKey(sessionKey);
 
     await deleteSessionItem(sessionKey, item.position, redistribute: false);
-    return addSessionItem(sessionKey, item.copyWith.call(position: newItemPosition), allPossibleItemMaterialsKeys, redistribute: redistribute);
+    return await addSessionItem(
+      sessionKey,
+      item.copyWith.call(position: newItemPosition),
+      allPossibleItemMaterialsKeys,
+      redistribute: redistribute,
+    );
   }
 
   @override

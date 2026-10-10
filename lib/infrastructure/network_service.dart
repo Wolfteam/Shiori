@@ -28,6 +28,6 @@ class NetworkServiceImpl implements NetworkService {
     } catch (_) {
       //ignore
     }
-    return _checker.hasInternetAccess;
+    return await _checker.hasInternetAccess;
   }
 }

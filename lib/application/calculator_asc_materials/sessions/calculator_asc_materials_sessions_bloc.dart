@@ -62,7 +62,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
   @override
   Future<void> close() async {
     await Future.wait(_calcItemSubscriptions.map((e) => e.cancel()));
-    return super.close();
+    await super.close();
   }
 
   Future<CalculatorAscMaterialsSessionsState> _init() async {

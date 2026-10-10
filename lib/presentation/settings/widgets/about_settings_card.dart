@@ -13,6 +13,7 @@ import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutSettingsCard extends StatelessWidget {
@@ -211,13 +212,16 @@ class AboutSettingsCard extends StatelessWidget {
     }
   }
 
-  Future<void> _showDonationsDialog(BuildContext context) {
-    return showModalBottomSheet(
+  Future<void> _showDonationsDialog(BuildContext context) async {
+    final String? successMsg = await showModalBottomSheet<String>(
       context: context,
       shape: Styles.modalBottomSheetShape,
       isScrollControlled: true,
       useSafeArea: true,
       builder: (ctx) => const DonationsBottomSheet(),
     );
+    if (successMsg != null && context.mounted) {
+      ToastUtils.showSucceedToast(ToastUtils.of(context), successMsg);
+    }
   }
 }

@@ -20,6 +20,11 @@ analyzer:
     - lib/generated/**/*.dart
     - '**/mocks.mocks.dart'
     - '**/shiori_icons.dart'
+    - build/**
+    - android/**
+    - ios/**
+    - windows/**
+    - macos/**
   errors:
     missing_return: error
     invalid_annotation_target: ignore

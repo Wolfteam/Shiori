@@ -88,7 +88,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   @override
   Future<void> close() async {
     await _cancelSubscriptions();
-    return super.close();
+    await super.close();
   }
 
   Future<MainState> _init({
@@ -123,7 +123,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       await Future.delayed(const Duration(milliseconds: 250));
     }
 
-    return state;
+    return await state;
   }
 
   Future<MainState> _loadThemeData(

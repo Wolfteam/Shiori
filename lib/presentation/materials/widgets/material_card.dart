@@ -188,7 +188,7 @@ class MaterialCard extends StatelessWidget {
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
     if (isInQuantityMode) {
-      return _showQuantityPickerDialog(context);
+      return await _showQuantityPickerDialog(context);
     }
 
     if (isInSelectionMode) {

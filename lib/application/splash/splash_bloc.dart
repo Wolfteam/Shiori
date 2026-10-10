@@ -235,7 +235,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   @override
   Future<void> close() async {
     await _downloadStream?.cancel();
-    return super.close();
+    await super.close();
   }
 
   bool _isLoading(AppResourceUpdateResultType type) {
